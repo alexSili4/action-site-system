@@ -19,3 +19,6 @@ const App: FC = () => {
 };
 
 export default App;
+
+/* @media (min-width: ${theme.breakpoints.desktop}px) {
+  } */
