@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
 import { theme } from '@/constants';
-import { geologicaRegular } from '@/fonts';
+import { geologicaRegular, delaGothicOneRegular } from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
@@ -11,6 +11,13 @@ const GlobalStyles: FC = () => (
         font-family: ${theme.fontFamily.geologica};
         src: local(${theme.fontFamily.geologica}),
           url(${geologicaRegular}) format('truetype');
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.delaGothicOne};
+        src: local(${theme.fontFamily.delaGothicOne}),
+          url(${delaGothicOneRegular}) format('truetype');
         font-weight: 400;
       }
 

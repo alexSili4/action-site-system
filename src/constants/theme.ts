@@ -11,9 +11,11 @@ interface ITheme {
   };
   fontFamily: {
     geologica: string;
+    delaGothicOne: string;
   };
   iconSizes: {
     socialList: number;
+    cabinet: number;
   };
   containerWidth: {
     desktop: number;
@@ -39,13 +41,15 @@ const theme: ITheme = {
   // borderRadius: {  },
   fontFamily: {
     geologica: 'Geologica',
+    delaGothicOne: 'Dela Gothic One',
   },
   iconSizes: {
     socialList: 24,
+    cabinet: 14,
   },
   containerWidth: {
     desktop: 1376,
-    mobile: 375,
+    mobile: 343,
   },
   breakpoints: {
     desktop: 1410,

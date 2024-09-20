@@ -9,7 +9,6 @@ export const StyledFooter = styled.footer<IStyledProps>`
   padding-top: ${({ theme }) => theme.spacing(8)};
   padding-bottom: ${({ theme, isRootPage }) =>
     theme.spacing(isRootPage ? 52 : 8)};
-  outline: 1px solid red;
 `;
 
 // TODO color in theme
