@@ -1,5 +1,5 @@
 import { FC, Suspense } from 'react';
-import { Container, Main } from './SharedLayout.styled';
+import { Content, Main, Background } from './SharedLayout.styled';
 import { Outlet, useLocation } from 'react-router-dom';
 import Loader from '@/components/Loader';
 import Header from '@/components/Header';
@@ -14,15 +14,18 @@ const SharedLayout: FC = () => {
   const isRootPage = pathname === PagePaths.root;
 
   return (
-    <Container>
-      <Header isRootPage={isRootPage} isDesktop={isDesktop} />
-      <Main>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
-      </Main>
-      <Footer isRootPage={isRootPage} />
-    </Container>
+    <>
+      <Background></Background>
+      <Content>
+        <Header isRootPage={isRootPage} isDesktop={isDesktop} />
+        <Main>
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
+        </Main>
+        <Footer isRootPage={isRootPage} />
+      </Content>
+    </>
   );
 };
 

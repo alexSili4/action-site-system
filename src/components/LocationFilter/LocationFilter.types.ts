@@ -3,7 +3,12 @@ export interface IProps {
   isHidden?: boolean;
 }
 
-export interface IStyledProps {
+export interface IStyledContainerProps {
   isRootPage: boolean;
   isHidden: boolean;
+}
+
+export interface IStyledShowLocationsBtnProps {
+  isRootPage: boolean;
+  showLocationList: boolean;
 }

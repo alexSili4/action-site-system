@@ -27,7 +27,6 @@ const GlobalStyles: FC = () => (
           'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: pink;
       }
 
       code {
@@ -64,18 +63,6 @@ const GlobalStyles: FC = () => (
 
       a {
         text-decoration: none;
-      }
-
-      div#root {
-        height: 100vh;
-        min-height: 812px;
-      }
-
-      @media (min-width: ${theme.breakpoints.desktop}px) {
-        div#root {
-          height: 100vh;
-          min-height: 960px;
-        }
       }
     `}
   />

@@ -16,6 +16,7 @@ interface ITheme {
   iconSizes: {
     socialList: number;
     cabinet: number;
+    showLocationsBtn: number;
   };
   containerWidth: {
     desktop: number;
@@ -46,6 +47,7 @@ const theme: ITheme = {
   iconSizes: {
     socialList: 24,
     cabinet: 14,
+    showLocationsBtn: 12,
   },
   containerWidth: {
     desktop: 1376,
