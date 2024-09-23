@@ -17,6 +17,7 @@ import {
   StyledTopRightConfetti,
   StyledMiddleLeftConfettiImg,
 } from './AppBackground.styled';
+import SmoothAppearanceAnimation from '@/components/SmoothAppearanceAnimation';
 
 const AppBackground: FC = () => {
   return (
@@ -26,8 +27,40 @@ const AppBackground: FC = () => {
       <StyledBottomRightConfettiImg src={BottomRightConfettiImg} />
       <StyledTopLeftConfettiImg src={TopLeftConfettiImg} />
       <StyledTopMiddleConfetti src={TopMiddleConfettiImg} />
-      <StyledTopRightConfetti src={TopRightConfettiImg} />
-      <StyledMiddleLeftConfettiImg src={MiddleLeftConfettiImg} />
+      <SmoothAppearanceAnimation
+        top={150}
+        deskTop={110}
+        bottom={'auto'}
+        deskBottom={'auto'}
+        right={181}
+        deskRight={82}
+        left={'auto'}
+        deskLeft={'auto'}
+        width={149}
+        deskWidth={294}
+        height={118}
+        deskHeight={226}
+        isHiddenOnMobile={false}
+      >
+        <StyledTopRightConfetti src={TopRightConfettiImg} />
+      </SmoothAppearanceAnimation>
+      <SmoothAppearanceAnimation
+        top={'auto'}
+        deskTop={'auto'}
+        bottom={74}
+        deskBottom={74}
+        right={'auto'}
+        deskRight={'auto'}
+        left={246}
+        deskLeft={246}
+        width={396}
+        height={396}
+        deskWidth={396}
+        deskHeight={396}
+        isHiddenOnMobile
+      >
+        <StyledMiddleLeftConfettiImg src={MiddleLeftConfettiImg} />
+      </SmoothAppearanceAnimation>
     </Background>
   );
 };

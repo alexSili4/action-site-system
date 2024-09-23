@@ -103,29 +103,20 @@ export const StyledTopMiddleConfetti = styled.img`
 
 export const StyledTopRightConfetti = styled.img`
   position: absolute;
-  right: 181px;
-  top: 150px;
+  right: px;
+  top: px;
   display: block;
-  width: 149px;
-  height: 118px;
+  width: px;
+  height: px;
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
-    right: 82px;
-    top: 110px;
-    width: 294px;
-    height: 226px;
+    right: px;
+    top: px;
+    width: px;
+    height: px;
   }
 `;
 
 export const StyledMiddleLeftConfettiImg = styled.img`
-  position: absolute;
-  left: 246px;
-  bottom: 74px;
   display: block;
-  width: 396px;
-  height: 396px;
-
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
-    display: none;
-  }
 `;
