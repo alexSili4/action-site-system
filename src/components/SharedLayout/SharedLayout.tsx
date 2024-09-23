@@ -1,11 +1,12 @@
 import { FC, Suspense } from 'react';
-import { Content, Main, Background } from './SharedLayout.styled';
+import { Content, Main } from './SharedLayout.styled';
 import { Outlet, useLocation } from 'react-router-dom';
 import Loader from '@/components/Loader';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { PagePaths, theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
+import AppBackground from '@/components/AppBackground';
 
 const SharedLayout: FC = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
@@ -15,7 +16,7 @@ const SharedLayout: FC = () => {
 
   return (
     <>
-      <Background></Background>
+      <AppBackground />
       <Content>
         <Header isRootPage={isRootPage} isDesktop={isDesktop} />
         <Main>
