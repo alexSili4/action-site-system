@@ -1,13 +1,14 @@
-import Container from '@/components/Container';
-import Section from '@/components/Section';
 import { FC } from 'react';
+import Container from '@/components/Container';
+import HeroSection from '@/components/HeroSection';
+import AppInfo from '@/components/AppInfo';
 
 const NotFoundPage: FC = () => (
-  <Section>
+  <HeroSection>
     <Container>
-      <p>main page</p>
+      <AppInfo />
     </Container>
-  </Section>
+  </HeroSection>
 );
 
 export default NotFoundPage;

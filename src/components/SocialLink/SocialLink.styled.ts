@@ -15,8 +15,14 @@ export const Link = styled.a`
     rgba(255, 255, 255, 0) 100%
   );
   background-color: #9066cc;
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
 
   & > svg {
     fill: ${({ theme }) => theme.colors.white};
+  }
+
+  &:is(:hover, :focus) {
+    box-shadow: 1px 1px 0px 0px #7a4ebd,
+      inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   }
 `;

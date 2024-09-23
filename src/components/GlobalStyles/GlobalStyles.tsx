@@ -65,6 +65,18 @@ const GlobalStyles: FC = () => (
       a {
         text-decoration: none;
       }
+
+      div#root {
+        height: 100vh;
+        min-height: 812px;
+      }
+
+      @media (min-width: ${theme.breakpoints.desktop}px) {
+        div#root {
+          height: 100vh;
+          min-height: 960px;
+        }
+      }
     `}
   />
 );

@@ -14,7 +14,7 @@ const NavBar: FC<IProps> = ({ isRootPage, isDesktop }) => {
     : 'Акції з подарунками';
 
   return (
-    <Nav isRootPage={isRootPage}>
+    <Nav isRootPage={isRootPage} isDesktop={isDesktop}>
       <NavControls isRootPage={isRootPage} isFake />
       <NavControls isRootPage={isRootPage} />
       <Link to={PagePaths.root}>

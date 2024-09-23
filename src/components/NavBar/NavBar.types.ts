@@ -5,4 +5,5 @@ export interface IProps {
 
 export interface IStyledProps {
   isRootPage: boolean;
+  isDesktop: boolean;
 }

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import ExternalLinkFooter from '@/components/ExternalLinkFooter';
+import SocialLink from '@/components/SocialLink';
 import { ExternalLinks, theme } from '@/constants';
 import { List, ListItem } from './SocialLinksList.styled';
 import { RiInstagramFill } from 'react-icons/ri';
@@ -10,21 +10,21 @@ const SocialLinksList: FC = () => {
   return (
     <List>
       <ListItem>
-        <ExternalLinkFooter
+        <SocialLink
           href={ExternalLinks.facebook}
           icon={TiSocialFacebook}
           iconSize={theme.iconSizes.socialList}
         />
       </ListItem>
       <ListItem>
-        <ExternalLinkFooter
+        <SocialLink
           href={ExternalLinks.instagram}
           icon={RiInstagramFill}
           iconSize={theme.iconSizes.socialList}
         />
       </ListItem>
       <ListItem>
-        <ExternalLinkFooter
+        <SocialLink
           href={ExternalLinks.telegram}
           icon={FaTelegramPlane}
           iconSize={theme.iconSizes.socialList}

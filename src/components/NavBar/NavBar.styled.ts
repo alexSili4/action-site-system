@@ -15,6 +15,7 @@ export const Nav = styled.nav<IStyledProps>`
     align-items: center;
     justify-content: center;
     gap: ${({ theme, isRootPage }) => theme.spacing(isRootPage ? 3 : 1)};
+    width: ${({ isRootPage, isDesktop }) => !isDesktop && isRootPage && '100%'};
     order: ${({ isRootPage }) => (isRootPage ? 2 : 1)};
 
     & > svg {
@@ -31,6 +32,10 @@ export const Nav = styled.nav<IStyledProps>`
       flex-direction: ${({ isRootPage }) => (isRootPage ? 'column' : 'row')};
       gap: ${({ theme, isRootPage }) => theme.spacing(isRootPage ? 4 : 2)};
     }
+  }
+
+  @media (min-width: ${theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(13)};
   }
 `;
 
