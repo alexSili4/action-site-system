@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import {
   IStyledContainerProps,
   IStyledShowLocationsBtnProps,
+  IStyledLocationListProps,
 } from './LocationFilter.types';
 
 export const Container = styled.div<IStyledContainerProps>`
@@ -68,15 +69,23 @@ export const ShowLocationsBtnTitle = styled.span`
   text-align: center;
 `;
 
-export const LocationList = styled.div`
+export const LocationList = styled.div<IStyledLocationListProps>`
   position: absolute;
   bottom: -16px;
   left: 50%;
-  width: 330px;
+  width: ${({ isRootPage }) => (isRootPage ? '330px' : '100%')};
   max-height: 272px;
   padding: ${({ theme }) => theme.spacing(4)};
   border-radius: 16px;
   box-shadow: 0px -8px 25px 0px rgba(58, 52, 86, 0.1);
   background-color: ${({ theme }) => theme.colors.white};
   transform: translateY(100%) translateX(-50%);
+
+  @media (min-width: ${theme.breakpoints.desktop}px) {
+    bottom: ${({ isRootPage }) => (isRootPage ? -28 : -16)}px;
+    width: ${({ isRootPage }) => (isRootPage ? '710px' : '100%')};
+    max-height: 291px;
+    padding: ${({ theme }) => theme.spacing(8)};
+    border-radius: 24px;
+  }
 `;

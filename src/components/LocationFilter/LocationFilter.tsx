@@ -37,7 +37,7 @@ const LocationFilter: FC<IProps> = ({ isRootPage, isHidden = false }) => {
         <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
       </ShowLocationsBtn>
       <SmoothFadeInDropdownList isVisible={showLocationList}>
-        <LocationList>location list</LocationList>
+        <LocationList isRootPage={isRootPage}>location list</LocationList>
       </SmoothFadeInDropdownList>
     </Container>
   );

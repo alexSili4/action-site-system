@@ -12,3 +12,7 @@ export interface IStyledShowLocationsBtnProps {
   isRootPage: boolean;
   showLocationList: boolean;
 }
+
+export interface IStyledLocationListProps {
+  isRootPage: boolean;
+}
