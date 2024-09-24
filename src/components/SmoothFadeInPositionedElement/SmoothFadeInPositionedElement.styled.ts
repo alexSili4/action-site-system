@@ -1,7 +1,7 @@
 import { theme } from '@/constants';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { IStyledProps } from './SmoothAppearanceAnimation.types';
+import { IStyledProps } from './SmoothFadeInPositionedElement.types';
 
 export const MotionDiv = styled(motion.div)<IStyledProps>`
   position: absolute;

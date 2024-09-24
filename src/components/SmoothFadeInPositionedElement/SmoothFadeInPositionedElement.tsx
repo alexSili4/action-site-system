@@ -1,15 +1,17 @@
 import { FC } from 'react';
-import { IProps } from './SmoothAppearanceAnimation.types';
+import { IProps } from './SmoothFadeInPositionedElement.types';
 import { motion, Variants } from 'framer-motion';
-import { MotionDiv } from './SmoothAppearanceAnimation.styled';
+import { MotionDiv } from './SmoothFadeInPositionedElement.styled';
 
 const SmoothAppearanceAnimation: FC<IProps> = ({ children, ...otherProps }) => {
   const smoothAppearanceVariant: Variants = {
     offscreen: {
-      y: 300,
+      y: 200,
+      opacity: 0,
     },
     onscreen: {
       y: 0,
+      opacity: 1,
       transition: {
         type: 'spring',
         bounce: 0.4,
@@ -22,7 +24,7 @@ const SmoothAppearanceAnimation: FC<IProps> = ({ children, ...otherProps }) => {
     <MotionDiv
       initial='offscreen'
       whileInView='onscreen'
-      viewport={{ once: true, amount: 0.8 }}
+      viewport={{ once: true }}
       {...otherProps}
     >
       <motion.div variants={smoothAppearanceVariant}>{children}</motion.div>
