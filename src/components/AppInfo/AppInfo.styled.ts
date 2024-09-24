@@ -29,7 +29,7 @@ export const TextWrap = styled.div`
 export const Description = styled.p`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
+  gap: ${({ theme }) => theme.spacing(2)};
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
   font-size: 18px;
@@ -39,7 +39,6 @@ export const Description = styled.p`
   text-transform: uppercase;
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(7)};
     font-size: 30px;
   }
 `;

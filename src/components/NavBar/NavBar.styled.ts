@@ -6,7 +6,8 @@ export const Nav = styled.nav<IStyledProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: ${({ theme, isRootPage }) => theme.spacing(isRootPage ? 7 : 4)};
+  column-gap: ${({ theme, isRootPage }) => theme.spacing(isRootPage ? 7 : 4)};
+  row-gap: ${({ theme }) => theme.spacing(6)};
   flex-wrap: wrap;
 
   & > a {

@@ -19,6 +19,7 @@ export const Container = styled.div<IStyledProps>`
   @media (min-width: ${theme.breakpoints.desktop}px) {
     flex-grow: 0;
     display: ${({ isFake, isRootPage }) => isFake && !isRootPage && 'none'};
+    gap: ${({ theme }) => theme.spacing(2)};
     order: ${({ isFake }) => (isFake ? 1 : 3)};
     width: auto;
     opacity: ${({ isFake }) => isFake && 0};
