@@ -3,6 +3,7 @@ import {
   Container,
   ShowLocationsBtn,
   ShowLocationsBtnTitle,
+  LocationList,
 } from './LocationFilter.styled';
 import { IProps } from './LocationFilter.types';
 import { FaChevronDown } from 'react-icons/fa';
@@ -34,7 +35,7 @@ const LocationFilter: FC<IProps> = ({ isRootPage, isHidden = false }) => {
         <ShowLocationsBtnTitle>Оберіть місто</ShowLocationsBtnTitle>
         <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
       </ShowLocationsBtn>
-      {showLocationList && <p>location list</p>}
+      {showLocationList && <LocationList>location list</LocationList>}
     </Container>
   );
 };

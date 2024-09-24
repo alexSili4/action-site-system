@@ -7,6 +7,7 @@ import {
 
 export const Container = styled.div<IStyledContainerProps>`
   flex-grow: 1;
+  position: relative;
   display: ${({ isHidden, isRootPage }) => isRootPage && isHidden && 'none'};
   width: 100%;
   order: 4;
@@ -65,4 +66,17 @@ export const ShowLocationsBtnTitle = styled.span`
   font-size: 16px;
   font-weight: 400;
   text-align: center;
+`;
+
+export const LocationList = styled.div`
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  width: 330px;
+  max-height: 272px;
+  padding: ${({ theme }) => theme.spacing(4)};
+  border-radius: 16px;
+  box-shadow: 0px -8px 25px 0px rgba(58, 52, 86, 0.1);
+  background-color: ${({ theme }) => theme.colors.white};
+  transform: translateY(100%) translateX(-50%);
 `;
