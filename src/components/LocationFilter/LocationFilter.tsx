@@ -10,6 +10,7 @@ import { FaChevronDown } from 'react-icons/fa';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
 import { theme } from '@/constants';
+import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
 
 const LocationFilter: FC<IProps> = ({ isRootPage, isHidden = false }) => {
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
@@ -35,7 +36,9 @@ const LocationFilter: FC<IProps> = ({ isRootPage, isHidden = false }) => {
         <ShowLocationsBtnTitle>Оберіть місто</ShowLocationsBtnTitle>
         <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
       </ShowLocationsBtn>
-      {showLocationList && <LocationList>location list</LocationList>}
+      <SmoothFadeInDropdownList isVisible={showLocationList}>
+        <LocationList>location list</LocationList>
+      </SmoothFadeInDropdownList>
     </Container>
   );
 };
