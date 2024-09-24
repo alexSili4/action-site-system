@@ -4,18 +4,22 @@ import styled from '@emotion/styled';
 
 const textGlitch = keyframes`
   from, 20%, 53%, 80%, to {
+    top:0px;
     left: 0px;
   }
 
   40%, 43% {
+    top:1px;
     left: -8px;
   }
 
   70% {
+     top:-1px;
     left: -5px;
   }
 
   90% {
+    top:1px;
     left: -2px;
   }
 `;

@@ -1,5 +1,6 @@
 export interface IProps {
   isRootPage: boolean;
+
   isHidden?: boolean;
 }
 
@@ -15,4 +16,8 @@ export interface IStyledShowLocationsBtnProps {
 
 export interface IStyledLocationListProps {
   isRootPage: boolean;
+}
+
+export interface IStyledShowLocationsBtnTitleProps {
+  targetLocation: string | null;
 }

@@ -4,6 +4,7 @@ import {
   IStyledContainerProps,
   IStyledShowLocationsBtnProps,
   IStyledLocationListProps,
+  IStyledShowLocationsBtnTitleProps,
 } from './LocationFilter.types';
 
 export const Container = styled.div<IStyledContainerProps>`
@@ -61,31 +62,45 @@ export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
   }
 `;
 
-export const ShowLocationsBtnTitle = styled.span`
-  color: #7e8494;
+export const ShowLocationsBtnTitle = styled.span<IStyledShowLocationsBtnTitleProps>`
+  color: ${({ targetLocation }) => (targetLocation ? '#3F3D5C' : '#7e8494')};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16px;
   font-weight: 400;
   text-align: center;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
-export const LocationList = styled.div<IStyledLocationListProps>`
+export const LocationListContainer = styled.div<IStyledLocationListProps>`
   position: absolute;
   bottom: -16px;
   left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(3)};
   width: ${({ isRootPage }) => (isRootPage ? '330px' : '100%')};
-  max-height: 272px;
+  height: 272px;
   padding: ${({ theme }) => theme.spacing(4)};
+  padding-right: ${({ theme }) => theme.spacing(3)};
   border-radius: 16px;
   box-shadow: 0px -8px 25px 0px rgba(58, 52, 86, 0.1);
   background-color: ${({ theme }) => theme.colors.white};
   transform: translateY(100%) translateX(-50%);
+  overflow-y: hidden;
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
     bottom: ${({ isRootPage }) => (isRootPage ? -28 : -16)}px;
     width: ${({ isRootPage }) => (isRootPage ? '710px' : '100%')};
-    max-height: 291px;
+    height: 291px;
     padding: ${({ theme }) => theme.spacing(8)};
     border-radius: 24px;
   }
+`;
+
+export const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
