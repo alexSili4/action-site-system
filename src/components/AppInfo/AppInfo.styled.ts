@@ -1,5 +1,66 @@
 import { theme } from '@/constants';
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+
+const textGlitch = keyframes`
+  from, 20%, 53%, 80%, to {
+    left: 0px;
+  }
+
+  40%, 43% {
+    left: -8px;
+  }
+
+  70% {
+    left: -5px;
+  }
+
+  90% {
+    left: -2px;
+  }
+`;
+
+const firstAccentShadowGlitch = keyframes`
+  from, 20%, 53%, 80%, to {
+   transform: translateX(-50%) translateY(-50%) rotate(1deg)
+  }
+
+  40%, 43% {
+       transform: translateX(-50%) translateY(-50%) rotate(3deg)
+
+  }
+
+  70% {
+      transform: translateX(-50%) translateY(-50%) rotate(2deg)
+
+  }
+
+  90% {
+       transform: translateX(-50%) translateY(-50%) rotate(1.5deg)
+
+  }
+`;
+
+const secondAccentShadowGlitch = keyframes`
+  from, 20%, 53%, 80%, to {
+   transform: translateX(-50%) translateY(-50%) rotate(-1deg)
+  }
+
+  40%, 43% {
+       transform: translateX(-50%) translateY(-50%) rotate(-3deg)
+
+  }
+
+  70% {
+      transform: translateX(-50%) translateY(-50%) rotate(-2deg)
+
+  }
+
+  90% {
+       transform: translateX(-50%) translateY(-50%) rotate(-1.5deg)
+
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -56,6 +117,8 @@ export const Accent = styled.span`
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
+  transform: translateX(50px);
+  animation: ${textGlitch} 500ms linear infinite;
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
     font-size: 70px;
@@ -75,6 +138,7 @@ export const FirstAccentShadow = styled.span`
   text-align: center;
   text-transform: uppercase;
   transform: translateX(-50%) translateY(-50%) rotate(1deg);
+  animation: ${firstAccentShadowGlitch} 500ms linear infinite;
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
     font-size: 70px;
@@ -92,6 +156,7 @@ export const SecondAccentShadow = styled.span`
   text-align: center;
   text-transform: uppercase;
   transform: translateX(-50%) translateY(-50%) rotate(-1deg);
+  animation: ${secondAccentShadowGlitch} 500ms linear infinite;
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
     font-size: 70px;
