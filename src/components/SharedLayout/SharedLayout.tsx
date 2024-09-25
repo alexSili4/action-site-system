@@ -7,8 +7,7 @@ import Footer from '@/components/Footer';
 import { PagePaths, theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 import AppBackground from '@/components/AppBackground';
-import AnimatedModalWin from '@/components/AnimatedModalWin';
-import { AnimatePresence } from 'framer-motion';
+import AnimatedModalWin from '@/components/AnimatedModalWinContainer';
 
 const SharedLayout: FC = () => {
   const [showRegisterCodeModalWin, setShowRegisterCodeModalWin] =
@@ -38,14 +37,12 @@ const SharedLayout: FC = () => {
         </Main>
         <Footer isRootPage={isRootPage} />
       </Content>
-      <AnimatePresence>
-        <AnimatedModalWin
-          setModalWinState={setRegisterCodeModalWinState}
-          showModalWin={showRegisterCodeModalWin}
-        >
-          <p>registerCode</p>
-        </AnimatedModalWin>
-      </AnimatePresence>
+      <AnimatedModalWin
+        setModalWinState={setRegisterCodeModalWinState}
+        showModalWin={showRegisterCodeModalWin}
+      >
+        <p>registerCode</p>
+      </AnimatedModalWin>
     </>
   );
 };

@@ -4,4 +4,5 @@ import { ReactNode } from 'react';
 export interface IProps {
   setModalWinState: Func;
   children: ReactNode;
+  showModalWin: boolean;
 }
