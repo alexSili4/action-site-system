@@ -13,7 +13,7 @@ const textGlitch = keyframes`
   }
 
   70% {
-    transform: translateX(calc(-50% - 5px)) translateY(-50%)
+    transform: translateX(calc(-50% - 5px)) translateY(calc(-50% - 1px))
   }
 
   90% {

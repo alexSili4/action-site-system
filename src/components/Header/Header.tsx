@@ -18,7 +18,6 @@ const Header: FC<IProps> = ({
           isDesktop={isDesktop}
           setRegisterCodeModalWinState={setRegisterCodeModalWinState}
         />
-        {/* <div>PromotionsFilter</div> */}
       </Container>
     </StyledHeader>
   );

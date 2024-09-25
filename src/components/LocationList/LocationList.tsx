@@ -31,7 +31,7 @@ const LocationList: FC<IProps> = ({ setLocation, locations }) => {
         const accentPart = item.slice(0, search.length);
         const otherPart = item.slice(search.length);
 
-        const path = `${PagePaths.promotions}/${item}`;
+        const path = `${PagePaths.promotions}#${item}`;
 
         return (
           <ListItem key={item}>

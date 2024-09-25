@@ -16,7 +16,7 @@ import LocationList from '@/components/LocationList';
 import LocationSearchField from '@/components/LocationSearchField';
 import { useSetSearchParams } from '@/hooks';
 
-const LocationFilter: FC<IProps> = ({ isRootPage, isHidden = false }) => {
+const LocationFilter: FC<IProps> = ({ isRootPage }) => {
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
   const [targetLocation, setTargetLocation] = useState<string | null>(null);
   const { updateSearchParams } = useSetSearchParams();
@@ -43,8 +43,9 @@ const LocationFilter: FC<IProps> = ({ isRootPage, isHidden = false }) => {
 
   return (
     // TODO: відредагувати логіку появи тексту Міста на кнопці
+    // TODO: видалити список міст
     <>
-      <Container isRootPage={isRootPage} isHidden={isHidden}>
+      <Container isRootPage={isRootPage}>
         <ShowLocationsBtn
           type='button'
           onClick={onShowListBtnClick}

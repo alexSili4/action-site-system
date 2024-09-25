@@ -10,6 +10,10 @@ export type AnchorClickEvent = MouseEvent<HTMLAnchorElement>;
 
 export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 
-export type SetLocationFunc = (location: string) => void;
+export type InputChangeFunc = (e: InputChangeEvent) => void;
+
+export type SetLocationFunc = (data: string) => void;
 
 export type onDivClickFunc = (e: DivClickEvent) => void;
+
+export type ChangePromotionCategoryFunc = (data: string) => void;

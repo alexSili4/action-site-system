@@ -10,7 +10,6 @@ import {
 export const Container = styled.div<IStyledContainerProps>`
   flex-grow: 1;
   position: relative;
-  display: ${({ isHidden, isRootPage }) => isRootPage && isHidden && 'none'};
   width: 100%;
   order: 4;
 

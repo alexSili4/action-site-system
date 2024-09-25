@@ -12,18 +12,21 @@ const NavBar: FC<IProps> = ({
   isDesktop,
   setRegisterCodeModalWinState,
 }) => {
-  const showShortLogoLinkTitle = !isDesktop && !isRootPage;
+  const showShortLogoLinkTitle = !isRootPage && !isDesktop;
+  const showFakeNavControls = isRootPage && isDesktop;
   const logoLinkTitle = showShortLogoLinkTitle
     ? 'Акції'
     : 'Акції з подарунками';
 
   return (
     <Nav isRootPage={isRootPage} isDesktop={isDesktop}>
-      <NavControls
-        isRootPage={isRootPage}
-        setRegisterCodeModalWinState={setRegisterCodeModalWinState}
-        isFake
-      />
+      {showFakeNavControls && (
+        <NavControls
+          isRootPage={isRootPage}
+          setRegisterCodeModalWinState={setRegisterCodeModalWinState}
+          isFake
+        />
+      )}
       <NavControls
         isRootPage={isRootPage}
         setRegisterCodeModalWinState={setRegisterCodeModalWinState}
@@ -32,7 +35,7 @@ const NavBar: FC<IProps> = ({
         <AtbLogo />
         <LogoLinkTitle>{logoLinkTitle}</LogoLinkTitle>
       </Link>
-      <LocationFilter isRootPage={isRootPage} isHidden />
+      {!isRootPage && <LocationFilter isRootPage={isRootPage} />}
     </Nav>
   );
 };
