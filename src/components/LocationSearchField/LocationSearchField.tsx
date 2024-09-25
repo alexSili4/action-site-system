@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import { Input } from './SearchField.styled';
+import { FC,  } from 'react';
+import { Input } from './LocationSearchField.styled';
 import { InputChangeEvent } from '@/types/types';
 import { useSetSearchParams } from '@/hooks';
 import { SearchParamsKeys } from '@/constants';
 
-const SearchField: FC = () => {
+const LocationSearchField: FC = () => {
   const { updateSearchParams, searchParams } = useSetSearchParams();
   const search = searchParams.get(SearchParamsKeys.search) ?? '';
 
@@ -26,4 +26,4 @@ const SearchField: FC = () => {
   );
 };
 
-export default SearchField;
+export default LocationSearchField;
