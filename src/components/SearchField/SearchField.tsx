@@ -6,7 +6,7 @@ import { SearchParamsKeys } from '@/constants';
 
 const SearchField: FC = () => {
   const { updateSearchParams, searchParams } = useSetSearchParams();
-  const location = searchParams.get(SearchParamsKeys.location) ?? '';
+  const search = searchParams.get(SearchParamsKeys.search) ?? '';
 
   const onInputChange = (e: InputChangeEvent) => {
     const { value, name: key } = e.currentTarget;
@@ -18,9 +18,9 @@ const SearchField: FC = () => {
     <Input
       type='text'
       placeholder='Пошук'
-      name={SearchParamsKeys.location}
+      name={SearchParamsKeys.search}
       onChange={onInputChange}
-      defaultValue={location}
+      defaultValue={search}
       autoFocus
     />
   );

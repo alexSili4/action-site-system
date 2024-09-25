@@ -1,5 +1,8 @@
+import { Func } from '@/types/types';
+
 export interface IProps {
   isRootPage: boolean;
+  setRegisterCodeModalWinState: Func;
   isFake?: boolean;
 }
 

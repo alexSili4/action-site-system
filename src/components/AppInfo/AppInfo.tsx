@@ -18,9 +18,10 @@ const AppInfo: FC = () => {
         <Description>
           Приєднуйтесь і беріть участь у розіграші
           <AccentWrap>
-            <Accent>подарунків</Accent>
+            <Accent isFake>подарунків</Accent>
             <FirstAccentShadow>подарунків</FirstAccentShadow>
             <SecondAccentShadow>подарунків</SecondAccentShadow>
+            <Accent>подарунків</Accent>
           </AccentWrap>
         </Description>
         <Title>

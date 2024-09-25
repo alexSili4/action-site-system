@@ -1,5 +1,5 @@
 const enum SearchParamsKeys {
-  location = 'location',
+  search = 'search',
 }
 
 export default SearchParamsKeys;

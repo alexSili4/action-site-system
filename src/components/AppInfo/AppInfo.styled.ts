@@ -1,26 +1,23 @@
 import { theme } from '@/constants';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { IStyledProps } from './AppInfo.types';
 
 const textGlitch = keyframes`
   from, 20%, 53%, 80%, to {
-    top:0px;
-    left: 0px;
+    transform: translateX(-50%) translateY(-50%)
   }
 
   40%, 43% {
-    top:1px;
-    left: -8px;
+    transform: translateX(calc(-50% - 8px)) translateY(calc(-50% + 1px))
   }
 
   70% {
-     top:-1px;
-    left: -5px;
+    transform: translateX(calc(-50% - 5px)) translateY(-50%)
   }
 
   90% {
-    top:1px;
-    left: -2px;
+    transform: translateX(calc(-50% - 2px)) translateY(calc(-50% + 1px))
   }
 `;
 
@@ -112,17 +109,19 @@ export const AccentWrap = styled.span`
   position: relative;
 `;
 
-export const Accent = styled.span`
-  position: relative;
-  z-index: 1;
+export const Accent = styled.span<IStyledProps>`
+  position: ${({ isFake }) => !isFake && 'absolute'};
+  top: 50%;
+  left: 50%;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
   font-size: 36.23px;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
-  transform: translateX(50px);
+  transform: translateX(-50%) translateY(-50%);
   animation: ${textGlitch} 500ms linear infinite;
+  opacity: ${({ isFake }) => isFake && 0};
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
     font-size: 70px;

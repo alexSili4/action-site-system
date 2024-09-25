@@ -5,11 +5,19 @@ import { IProps } from './Header.types';
 import Container from '@/components/Container';
 
 // TODO add PromotionsFilter
-const Header: FC<IProps> = ({ isRootPage, isDesktop }) => {
+const Header: FC<IProps> = ({
+  isRootPage,
+  isDesktop,
+  setRegisterCodeModalWinState,
+}) => {
   return (
     <StyledHeader>
       <Container>
-        <NavBar isRootPage={isRootPage} isDesktop={isDesktop} />
+        <NavBar
+          isRootPage={isRootPage}
+          isDesktop={isDesktop}
+          setRegisterCodeModalWinState={setRegisterCodeModalWinState}
+        />
         {/* <div>PromotionsFilter</div> */}
       </Container>
     </StyledHeader>

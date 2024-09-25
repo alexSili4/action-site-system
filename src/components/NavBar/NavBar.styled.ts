@@ -4,7 +4,7 @@ import { theme } from '@/constants';
 
 export const Nav = styled.nav<IStyledProps>`
   display: flex;
-  align-items: flex-start;
+  align-items: ${({ isRootPage }) => (isRootPage ? 'flex-start' : 'center')};
   justify-content: space-between;
   column-gap: ${({ theme, isRootPage }) => theme.spacing(isRootPage ? 7 : 4)};
   row-gap: ${({ theme }) => theme.spacing(6)};

@@ -8,16 +8,16 @@ import { SearchParamsKeys } from '@/constants';
 
 const LocationList: FC<IProps> = ({ setLocation, locations }) => {
   const { searchParams } = useSetSearchParams();
-  const locationSearchQuery = searchParams.get(SearchParamsKeys.location);
+  const search = searchParams.get(SearchParamsKeys.search);
 
   const filteredLocations = useMemo(
     () =>
-      locationSearchQuery
+      search
         ? locations.filter((item) =>
-            item.toLowerCase().startsWith(locationSearchQuery.toLowerCase())
+            item.toLowerCase().startsWith(search.toLowerCase())
           )
         : locations,
-    [locationSearchQuery, locations]
+    [search, locations]
   );
 
   const onLocationClick = (e: AnchorClickEvent) => {
