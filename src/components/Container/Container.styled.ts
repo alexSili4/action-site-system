@@ -1,11 +1,21 @@
 import { theme } from '@/constants';
 import styled from '@emotion/styled';
+import { IStyledProps } from './Container.types';
 
-export const StyledContainer = styled.div`
-  width: ${({ theme: { containerWidth, padding } }) =>
-    containerWidth.mobile + padding.container * 2}px;
-  padding-left: ${({ theme }) => theme.padding.container}px;
-  padding-right: ${({ theme }) => theme.padding.container}px;
+export const StyledContainer = styled.div<IStyledProps>`
+  width: ${({ compactPadding, theme: { containerWidth, padding } }) => {
+    const totalPadding =
+      (compactPadding ? padding.compact : padding.container) * 2;
+    const width = compactPadding
+      ? containerWidth.largeMobile
+      : containerWidth.mobile;
+
+    return width + totalPadding;
+  }}px;
+  padding-left: ${({ compactPadding, theme: { padding } }) =>
+    compactPadding ? padding.compact : padding.container}px;
+  padding-right: ${({ compactPadding, theme: { padding } }) =>
+    compactPadding ? padding.compact : padding.container}px;
   margin-left: auto;
   margin-right: auto;
 

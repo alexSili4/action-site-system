@@ -8,6 +8,7 @@ interface ITheme {
   };
   padding: {
     container: number;
+    compact: number;
   };
   fontFamily: {
     geologica: string;
@@ -22,6 +23,7 @@ interface ITheme {
   containerWidth: {
     desktop: number;
     mobile: number;
+    largeMobile: number;
   };
   breakpoints: {
     desktop: number;
@@ -39,6 +41,7 @@ const theme: ITheme = {
   // fontSize: {  },
   padding: {
     container: 16,
+    compact: 8,
   },
   // borderRadius: {  },
   fontFamily: {
@@ -54,6 +57,7 @@ const theme: ITheme = {
   containerWidth: {
     desktop: 1376,
     mobile: 343,
+    largeMobile: 359,
   },
   breakpoints: {
     desktop: 1410,

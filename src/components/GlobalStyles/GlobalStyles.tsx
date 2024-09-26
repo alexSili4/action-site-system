@@ -2,11 +2,25 @@ import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
 import { theme } from '@/constants';
-import { geologicaRegular, delaGothicOneRegular } from '@/fonts';
+import { geologicaBold, geologicaSemiBold,geologicaRegular, delaGothicOneRegular } from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
     styles={css`
+      @font-face {
+        font-family: ${theme.fontFamily.geologica};
+        src: local(${theme.fontFamily.geologica}),
+          url(${geologicaBold}) format('truetype');
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.geologica};
+        src: local(${theme.fontFamily.geologica}),
+          url(${geologicaSemiBold}) format('truetype');
+        font-weight: 600;
+      }
+
       @font-face {
         font-family: ${theme.fontFamily.geologica};
         src: local(${theme.fontFamily.geologica}),
