@@ -1,3 +1,4 @@
+import { PromotionsSortTypesKeys } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 
 export type Func = () => void;
@@ -17,3 +18,9 @@ export type SetLocationFunc = (data: string) => void;
 export type onDivClickFunc = (e: DivClickEvent) => void;
 
 export type ChangePromotionCategoryFunc = (data: string) => void;
+
+export type TranslatedPromotionsSortTypesKeys = {
+  [key in PromotionsSortTypesKeys]: string;
+};
+
+export type PromotionsSortTypesValues = PromotionsSortTypesKeys[];

@@ -1,6 +1,6 @@
 import { PromotionsCategoriesKeys } from '@/constants';
 import { FC } from 'react';
-import PromotionsCategoriesCheckbox from '@/components/PromotionsCategoriesCheckbox';
+import PromotionsCategory from '@/components/PromotionsCategory';
 import { List, ListItem } from './PromotionsCategories.styled';
 import { IProps } from './PromotionsCategories.types';
 import { InputChangeEvent } from '@/types/types';
@@ -17,7 +17,7 @@ const PromotionsCategories: FC<IProps> = ({
   return (
     <List>
       <ListItem>
-        <PromotionsCategoriesCheckbox
+        <PromotionsCategory
           title='Активні акції'
           value={PromotionsCategoriesKeys.active}
           checked={isActiveCategory}
@@ -25,7 +25,7 @@ const PromotionsCategories: FC<IProps> = ({
         />
       </ListItem>
       <ListItem>
-        <PromotionsCategoriesCheckbox
+        <PromotionsCategory
           title='Попередні акції'
           value={PromotionsCategoriesKeys.previous}
           checked={isPreviousCategory}

@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Container } from './PromotionsFilter.styled';
 import PromotionsCategories from '@/components/PromotionsCategories';
-import { IProps } from './PromotionsFilterюtypes';
+import { IProps } from './PromotionsFilter.types';
+import PromotionsSortTypesContainer from '@/components/PromotionsSortTypesContainer';
 
 const PromotionsFilter: FC<IProps> = ({
   isActiveCategory,
@@ -15,6 +16,7 @@ const PromotionsFilter: FC<IProps> = ({
         isPreviousCategory={isPreviousCategory}
         changePromotionCategory={changePromotionCategory}
       />
+      <PromotionsSortTypesContainer />
     </Container>
   );
 };

@@ -1,13 +1,9 @@
 import { FC } from 'react';
-import { IProps } from './PromotionsCategoriesCheckbox.types';
+import { IProps } from './PromotionsCategory.types';
 import { PromotionsCategoriesKeys } from '@/constants';
-import {
-  Checkbox,
-  Container,
-  Title,
-} from './PromotionsCategoriesCheckbox.styled';
+import { RadioBtn, Container, Title } from './PromotionsCategory.styled';
 
-const PromotionsCategoriesCheckbox: FC<IProps> = ({
+const PromotionsCategory: FC<IProps> = ({
   title,
   value,
   checked,
@@ -16,8 +12,8 @@ const PromotionsCategoriesCheckbox: FC<IProps> = ({
   return (
     <Container>
       <Title>{title}</Title>
-      <Checkbox
-        type='checkbox'
+      <RadioBtn
+        type='radio'
         name={PromotionsCategoriesKeys.name}
         value={value}
         checked={checked}
@@ -27,4 +23,4 @@ const PromotionsCategoriesCheckbox: FC<IProps> = ({
   );
 };
 
-export default PromotionsCategoriesCheckbox;
+export default PromotionsCategory;

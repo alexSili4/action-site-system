@@ -17,6 +17,7 @@ interface ITheme {
     socialList: number;
     cabinet: number;
     showLocationsBtn: number;
+    showSortTypesBtn: number;
   };
   containerWidth: {
     desktop: number;
@@ -48,6 +49,7 @@ const theme: ITheme = {
     socialList: 24,
     cabinet: 14,
     showLocationsBtn: 12,
+    showSortTypesBtn: 12,
   },
   containerWidth: {
     desktop: 1376,

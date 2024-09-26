@@ -51,7 +51,7 @@ export const Title = styled.span`
   }
 `;
 
-export const Checkbox = styled.input`
+export const RadioBtn = styled.input`
   position: absolute;
   transform: scale(0);
 `;
