@@ -1,7 +1,10 @@
-import { ChangePromotionCategoryFunc } from '@/types/types';
+import {
+  ChangePromotionCategoryFunc,
+  PromotionsCategoriesValues,
+} from '@/types/types';
 
 export interface IProps {
-  isActiveCategory: boolean;
-  isPreviousCategory: boolean;
+  promotionCategory: string;
+  categories: PromotionsCategoriesValues;
   changePromotionCategory: ChangePromotionCategoryFunc;
 }

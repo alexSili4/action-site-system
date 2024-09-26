@@ -7,10 +7,7 @@ const Promotions: FC = () => {
     () => PromotionsCategoriesKeys.active
   );
 
-  const isActiveCategory =
-    promotionCategory === PromotionsCategoriesKeys.active;
-  const isPreviousCategory =
-    promotionCategory === PromotionsCategoriesKeys.previous;
+  const categories = Object.values(PromotionsCategoriesKeys);
 
   const changePromotionCategory = (category: string): void => {
     setPromotionCategory(category);
@@ -19,8 +16,8 @@ const Promotions: FC = () => {
   return (
     <>
       <PromotionsFilter
-        isActiveCategory={isActiveCategory}
-        isPreviousCategory={isPreviousCategory}
+        promotionCategory={promotionCategory}
+        categories={categories}
         changePromotionCategory={changePromotionCategory}
       />
       <p>{promotionCategory}</p>

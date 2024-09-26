@@ -5,3 +5,4 @@ export { default as SearchParamsKeys } from './searchParamsKeys';
 export { default as PromotionsCategoriesKeys } from './promotionsCategoriesKeys';
 export { default as PromotionsSortTypesKeys } from './promotionsSortTypesKeys';
 export { default as translatedPromotionsSortTypesKeys } from './translatedPromotionsSortTypesKeys';
+export { default as translatedPromotionsCategoriesKeys } from './translatedPromotionsCategoriesKeys';

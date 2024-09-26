@@ -1,5 +1,4 @@
-const enum PromotionsCategoriesKeys {
-  name = 'promotionsCategories',
+enum PromotionsCategoriesKeys {
   active = 'active',
   previous = 'previous',
 }

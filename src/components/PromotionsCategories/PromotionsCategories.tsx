@@ -1,14 +1,14 @@
-import { PromotionsCategoriesKeys } from '@/constants';
 import { FC } from 'react';
 import PromotionsCategory from '@/components/PromotionsCategory';
 import { List, ListItem } from './PromotionsCategories.styled';
 import { IProps } from './PromotionsCategories.types';
 import { InputChangeEvent } from '@/types/types';
+import { getTranslatedPromotionsCategory } from '@/utils';
 
 const PromotionsCategories: FC<IProps> = ({
-  isActiveCategory,
-  isPreviousCategory,
+  categories,
   changePromotionCategory,
+  promotionCategory,
 }) => {
   const onPromotionsCategoriesCheckboxChange = (e: InputChangeEvent) => {
     changePromotionCategory(e.currentTarget.value);
@@ -16,22 +16,21 @@ const PromotionsCategories: FC<IProps> = ({
 
   return (
     <List>
-      <ListItem>
-        <PromotionsCategory
-          title='Активні акції'
-          value={PromotionsCategoriesKeys.active}
-          checked={isActiveCategory}
-          onChange={onPromotionsCategoriesCheckboxChange}
-        />
-      </ListItem>
-      <ListItem>
-        <PromotionsCategory
-          title='Попередні акції'
-          value={PromotionsCategoriesKeys.previous}
-          checked={isPreviousCategory}
-          onChange={onPromotionsCategoriesCheckboxChange}
-        />
-      </ListItem>
+      {categories.map((category) => {
+        const checked = category === promotionCategory;
+        const title = getTranslatedPromotionsCategory(category);
+
+        return (
+          <ListItem key={category}>
+            <PromotionsCategory
+              title={title}
+              value={category}
+              checked={checked}
+              onChange={onPromotionsCategoriesCheckboxChange}
+            />
+          </ListItem>
+        );
+      })}
     </List>
   );
 };

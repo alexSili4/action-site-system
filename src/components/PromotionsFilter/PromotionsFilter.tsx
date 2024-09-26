@@ -5,16 +5,16 @@ import { IProps } from './PromotionsFilter.types';
 import PromotionsSortTypesContainer from '@/components/PromotionsSortTypesContainer';
 
 const PromotionsFilter: FC<IProps> = ({
-  isActiveCategory,
-  isPreviousCategory,
   changePromotionCategory,
+  categories,
+  promotionCategory,
 }) => {
   return (
     <Container>
       <PromotionsCategories
-        isActiveCategory={isActiveCategory}
-        isPreviousCategory={isPreviousCategory}
         changePromotionCategory={changePromotionCategory}
+        categories={categories}
+        promotionCategory={promotionCategory}
       />
       <PromotionsSortTypesContainer />
     </Container>

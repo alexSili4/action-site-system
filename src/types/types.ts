@@ -1,4 +1,4 @@
-import { PromotionsSortTypesKeys } from '@/constants';
+import { PromotionsCategoriesKeys, PromotionsSortTypesKeys } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
 
 export type Func = () => void;
@@ -24,3 +24,9 @@ export type TranslatedPromotionsSortTypesKeys = {
 };
 
 export type PromotionsSortTypesValues = PromotionsSortTypesKeys[];
+
+export type PromotionsCategoriesValues = PromotionsCategoriesKeys[];
+
+export type TranslatedPromotionsCategoriesKeys = {
+  [key in PromotionsCategoriesKeys]: string;
+};
