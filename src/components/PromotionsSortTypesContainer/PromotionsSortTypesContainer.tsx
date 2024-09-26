@@ -5,6 +5,7 @@ import {
   Container,
   ShowSortTypesBtn,
   BtnTitle,
+  Backdrop,
 } from './PromotionsSortTypesContainer.styled';
 import PromotionsSortTypesList from '@/components/PromotionsSortTypesList';
 import { useSetSearchParams } from '@/hooks';
@@ -38,19 +39,26 @@ const PromotionsSortTypesContainer: FC = () => {
   };
 
   return (
-    <Container>
-      <ShowSortTypesBtn type='button' onClick={onShowSortTypesBtnClick}>
-        <BtnTitle>{btnTitle}</BtnTitle>
-        <FaChevronDown size={theme.iconSizes.showSortTypesBtn} />
-      </ShowSortTypesBtn>
-      <SmoothFadeInDropdownList isVisible={showSortTypesList}>
-        <PromotionsSortTypesList
-          types={sortTypes}
-          sortType={sortType}
-          onChange={onSortTypeInputChange}
-        />
-      </SmoothFadeInDropdownList>
-    </Container>
+    <>
+      {showSortTypesList && <Backdrop onClick={toggleShowSortTypesList} />}
+      <Container>
+        <ShowSortTypesBtn
+          type='button'
+          onClick={onShowSortTypesBtnClick}
+          showSortTypesList={showSortTypesList}
+        >
+          <BtnTitle showSortTypesList={showSortTypesList}>{btnTitle}</BtnTitle>
+          <FaChevronDown size={theme.iconSizes.showSortTypesBtn} />
+        </ShowSortTypesBtn>
+        <SmoothFadeInDropdownList isVisible={showSortTypesList}>
+          <PromotionsSortTypesList
+            types={sortTypes}
+            sortType={sortType}
+            onChange={onSortTypeInputChange}
+          />
+        </SmoothFadeInDropdownList>
+      </Container>
+    </>
   );
 };
 
