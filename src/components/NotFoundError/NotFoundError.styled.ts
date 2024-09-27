@@ -60,13 +60,19 @@ export const StyledLink = styled(Link)`
   margin-top: ${({ theme }) => theme.spacing(20)};
   border-radius: 16px;
   box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
-    3px 3px 0px 0px rgb(204, 51, 51);
+    3px 3px 0px 0px #cc3333;
   background-color: #fd4b3c;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
+      1px 1px 0px 0px #cc3333;
+  }
 
   @media (min-width: ${theme.breakpoints.desktop}px) {
     order: 3;
