@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './NavBar.types';
-import { theme } from '@/constants';
 
 export const Nav = styled.nav<IStyledProps>`
   display: flex;
@@ -23,19 +22,19 @@ export const Nav = styled.nav<IStyledProps>`
       width: ${({ isRootPage }) => (isRootPage ? 90 : 66)}px;
       height: ${({ isRootPage }) => (isRootPage ? 32 : 24)}px;
 
-      @media (min-width: ${theme.breakpoints.desktop}px) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
         width: 90px;
         height: 32px;
       }
     }
 
-    @media (min-width: ${theme.breakpoints.desktop}px) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
       flex-direction: ${({ isRootPage }) => (isRootPage ? 'column' : 'row')};
       gap: ${({ theme, isRootPage }) => theme.spacing(isRootPage ? 4 : 2)};
     }
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(13)};
   }
 `;

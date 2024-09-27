@@ -30,6 +30,3 @@ const App: FC = () => {
 };
 
 export default App;
-// TODO delete
-/* @media (min-width: ${theme.breakpoints.desktop}px) {
-  } */

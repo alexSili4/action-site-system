@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './Footer.types';
-import { theme } from '@/constants';
 
 export const StyledFooter = styled.footer<IStyledProps>`
   display: flex;
@@ -11,7 +10,7 @@ export const StyledFooter = styled.footer<IStyledProps>`
   padding-bottom: ${({ theme, isRootPage }) =>
     theme.spacing(isRootPage ? 17 : 8)};
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     padding-bottom: ${({ theme, isRootPage }) =>
       theme.spacing(isRootPage ? 52 : 8)};
   }

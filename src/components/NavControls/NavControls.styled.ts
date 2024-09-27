@@ -1,4 +1,3 @@
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 import { IStyledProps } from './NavControls.types';
 import { Link } from 'react-router-dom';
@@ -12,7 +11,7 @@ export const Container = styled.div<IStyledProps>`
   order: ${({ isRootPage }) => (isRootPage ? 1 : 2)};
   width: ${({ isRootPage }) => (isRootPage ? '100%' : 'auto')};
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     flex-grow: 0;
     gap: ${({ theme }) => theme.spacing(2)};
     order: ${({ isFake }) => (isFake ? 1 : 3)};
@@ -47,7 +46,7 @@ export const RegisterCodeBtn = styled.button`
       inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     min-width: 202px;
   }
 `;

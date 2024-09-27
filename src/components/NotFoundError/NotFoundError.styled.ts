@@ -1,4 +1,4 @@
-import { theme } from '@/constants';
+import { animations, theme } from '@/constants';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
@@ -19,16 +19,18 @@ export const Title = styled.p`
   text-align: center;
   text-transform: uppercase;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     order: 2;
     width: auto;
-    margin-top: ${({ theme }) => theme.spacing(15)};
+    margin-top: ${({ theme }) => theme.spacing(20)};
     font-size: 32px;
     letter-spacing: 1px;
   }
 `;
 
 export const ImgWrap = styled.div`
+  position: relative;
+
   @media (max-width: ${theme.breakpoints.desktop - 1}px) {
     margin-top: ${({ theme }) => theme.spacing(18)};
   }
@@ -51,13 +53,41 @@ export const DeskImage = styled.img`
   }
 `;
 
+export const WheelImgWrap = styled.div`
+  position: absolute;
+  top: 5px;
+  left: 112px;
+
+  @media (min-width: ${theme.breakpoints.desktop}px) {
+    top: 37px;
+    left: 364px;
+  }
+`;
+
+export const Wheel = styled.img`
+  position: relative;
+  width: 136px;
+
+  @media (min-width: ${theme.breakpoints.desktop}px) {
+    width: 340px;
+  }
+`;
+
+export const Slots = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: ${animations.wheelRotate} 20000ms linear infinite;
+`;
+
 export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 48px;
-  margin-top: ${({ theme }) => theme.spacing(20)};
+  margin-top: ${({ theme }) => theme.spacing(25)};
   border-radius: 16px;
   box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
     3px 3px 0px 0px #cc3333;

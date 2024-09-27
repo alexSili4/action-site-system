@@ -3,8 +3,6 @@ import LeftBoxImg from '@/images/layout/left-box.png';
 import RightBoxImg from '@/images/layout/right-box.png';
 import LeftConfetti from '@/images/layout/left-bg-confetti.png';
 import RightConfetti from '@/images/layout/right-bg-confetti.png';
-
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 
 export const Background = styled.div`
@@ -20,7 +18,7 @@ export const Background = styled.div`
     right -60px bottom 72px, right -125px top -98px, center;
   background-repeat: no-repeat;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     background-size: 500px 519px, 423px 442px, 566px 622px, 665px 637px, cover;
     background-position: right -185px bottom 143px, left -150px bottom 51px,
       right 147px bottom -142px, left -43px top -234px, center;

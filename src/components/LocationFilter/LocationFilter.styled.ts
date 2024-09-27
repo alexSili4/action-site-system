@@ -1,4 +1,3 @@
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 import {
   IStyledContainerProps,
@@ -13,7 +12,7 @@ export const Container = styled.div<IStyledContainerProps>`
   width: 100%;
   order: 4;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: auto;
     order: ${({ isRootPage }) => (isRootPage ? 1 : 2)};
   }
@@ -50,7 +49,7 @@ export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
     );
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: ${({ isRootPage }) => (isRootPage ? '676px' : '100%')};
     height: ${({ isRootPage }) => (isRootPage ? 76 : 50)}px;
     padding-left: ${({ theme }) => theme.spacing(10)};
@@ -87,7 +86,7 @@ export const LocationListContainer = styled.div<IStyledLocationListProps>`
   transform: translateY(100%) translateX(-50%);
   overflow-y: hidden;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     bottom: ${({ isRootPage }) => (isRootPage ? -28 : -16)}px;
     width: ${({ isRootPage }) => (isRootPage ? '710px' : '100%')};
     height: 291px;

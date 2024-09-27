@@ -1,16 +1,5 @@
-import { theme } from '@/constants';
-import { keyframes } from '@emotion/react';
+import { animations, theme } from '@/constants';
 import styled from '@emotion/styled';
-
-const wheelRotate = keyframes`
-  0% {
-    transform: translateX(-50%) translateY(-50%) rotate(0deg)
-  }
-  
-  100% {
-    transform: translateX(-50%) translateY(-50%) rotate(360deg)
-  }
-`;
 
 export const Container = styled.div`
   display: flex;
@@ -87,7 +76,7 @@ export const Slots = styled.img`
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  animation: ${wheelRotate} 20000ms linear infinite;
+  animation: ${animations.wheelRotate} 20000ms linear infinite;
 `;
 
 export const Text = styled.p`

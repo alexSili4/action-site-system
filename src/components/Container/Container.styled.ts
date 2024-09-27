@@ -1,4 +1,3 @@
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 import { IStyledProps } from './Container.types';
 
@@ -19,7 +18,7 @@ export const StyledContainer = styled.div<IStyledProps>`
   margin-left: auto;
   margin-right: auto;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: ${({ theme: { containerWidth, padding } }) =>
       containerWidth.desktop + padding.container * 2}px;
   }
