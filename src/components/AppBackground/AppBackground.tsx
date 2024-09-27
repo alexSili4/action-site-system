@@ -6,13 +6,28 @@ import TopLeftConfettiImg from '@/images/layout/top-left-confetti.png';
 import TopMiddleConfettiImg from '@/images/layout/top-middle-confetti.png';
 import TopRightConfettiImg from '@/images/layout/top-right-confetti.png';
 import MiddleLeftConfettiImg from '@/images/layout/middle-left-confetti.png';
-import { Background, StyledImg } from './AppBackground.styled';
 import SmoothFadeInPositionedElement from '@/components/SmoothFadeInPositionedElement';
 import { animations } from '@/constants';
+import {
+  Background,
+  StyledImg,
+  RightBox,
+  RightConfetti,
+  LeftBox,
+  LeftConfetti,
+} from './AppBackground.styled';
+import RightBoxImg from '@/images/layout/right-box.png';
+import RightConfettiImg from '@/images/layout/right-bg-confetti.png';
+import LeftBoxImg from '@/images/layout/left-box.png';
+import LeftConfettiImg from '@/images/layout/left-bg-confetti.png';
 
 const AppBackground: FC = () => {
   return (
     <Background>
+      <RightBox src={RightBoxImg} />
+      <RightConfetti src={RightConfettiImg} />
+      <LeftBox src={LeftBoxImg} />
+      <LeftConfetti src={LeftConfettiImg} />
       <SmoothFadeInPositionedElement
         top={'auto'}
         deskTop={'auto'}

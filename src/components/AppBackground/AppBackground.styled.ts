@@ -1,8 +1,5 @@
 import GradientImg from '@/images/layout/gradient.jpg';
-import LeftBoxImg from '@/images/layout/left-box.png';
-import RightBoxImg from '@/images/layout/right-box.png';
-import LeftConfetti from '@/images/layout/left-bg-confetti.png';
-import RightConfetti from '@/images/layout/right-bg-confetti.png';
+
 import styled from '@emotion/styled';
 
 export const Background = styled.div`
@@ -11,18 +8,77 @@ export const Background = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url(${RightBoxImg}), url(${LeftBoxImg}),
-    url(${RightConfetti}), url(${LeftConfetti}), url(${GradientImg});
-  background-size: 250px 260px, 212px 221px, 283px 311px, 333px 319px, cover;
-  background-position: right -114px top 152px, left -97px bottom 92px,
-    right -60px bottom 72px, right -125px top -98px, center;
+  background-image: url(${GradientImg});
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    background-size: 500px 519px, 423px 442px, 566px 622px, 665px 637px, cover;
-    background-position: right -185px bottom 143px, left -150px bottom 51px,
-      right 147px bottom -142px, left -43px top -234px, center;
+    background-size: cover;
+    background-position: center;
   }
 `;
 
 export const StyledImg = styled.img``;
+
+export const LeftConfetti = styled.img`
+  position: absolute;
+  right: -125px;
+  top: -98px;
+  width: 333px;
+  height: 319px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: -234px;
+    right: auto;
+    left: -43px;
+    width: 665px;
+    height: 637px;
+  }
+`;
+
+export const RightBox = styled.img`
+  position: absolute;
+  top: 152px;
+  right: -114px;
+  width: 250px;
+  height: 260px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: auto;
+    bottom: 143px;
+    right: -185px;
+    width: 500px;
+    height: 519px;
+  }
+`;
+
+export const RightConfetti = styled.img`
+  position: absolute;
+  right: -60px;
+  bottom: 72px;
+  width: 283px;
+  height: 311px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    right: 147px;
+    bottom: -142px;
+    width: 566px;
+    height: 622px;
+  }
+`;
+
+export const LeftBox = styled.img`
+  position: absolute;
+  left: -97px;
+  bottom: 92px;
+  width: 212px;
+  height: 221px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    left: -150px;
+    bottom: 51px;
+    width: 423px;
+    height: 442px;
+  }
+`;
