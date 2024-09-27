@@ -1,4 +1,3 @@
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 import { IStyledProps } from './PromotionsSortTypesContainer.types';
 
@@ -6,7 +5,7 @@ export const Container = styled.div`
   position: relative;
   width: 173px;
 
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: none;
   }
 `;

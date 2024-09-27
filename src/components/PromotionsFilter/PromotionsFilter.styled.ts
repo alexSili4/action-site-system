@@ -1,4 +1,3 @@
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
@@ -7,7 +6,7 @@ export const Container = styled.div`
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.white};
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
   }
 `;

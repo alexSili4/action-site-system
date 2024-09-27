@@ -1,4 +1,3 @@
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 
 export const Container = styled.label`
@@ -26,11 +25,11 @@ export const Container = styled.label`
     color: #2e305b;
   }
 
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     padding: ${({ theme }) => theme.spacing(4)};
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     min-width: 182px;
     padding-top: ${({ theme }) => theme.spacing(7)};
     padding-bottom: ${({ theme }) => theme.spacing(7)};
@@ -46,7 +45,7 @@ export const Title = styled.span`
   text-align: center;
   transition: ${({ theme }) => theme.transitionDurationAndFunc};
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 18px;
   }
 `;

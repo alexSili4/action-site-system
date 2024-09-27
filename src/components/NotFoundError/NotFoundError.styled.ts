@@ -1,4 +1,4 @@
-import { animations, theme } from '@/constants';
+import { animations } from '@/constants';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
@@ -31,24 +31,24 @@ export const Title = styled.p`
 export const ImgWrap = styled.div`
   position: relative;
 
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     margin-top: ${({ theme }) => theme.spacing(18)};
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     order: 1;
     width: 1055px;
   }
 `;
 
 export const MobileImage = styled.img`
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: none;
   }
 `;
 
 export const DeskImage = styled.img`
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: none;
   }
 `;
@@ -58,7 +58,7 @@ export const WheelImgWrap = styled.div`
   top: 5px;
   left: 112px;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 37px;
     left: 364px;
   }
@@ -68,7 +68,7 @@ export const Wheel = styled.img`
   position: relative;
   width: 136px;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 340px;
   }
 `;
@@ -104,7 +104,7 @@ export const StyledLink = styled(Link)`
       1px 1px 0px 0px #cc3333;
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     order: 3;
     width: 280px;
     height: 50px;

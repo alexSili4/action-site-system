@@ -1,4 +1,3 @@
-import { theme } from '@/constants';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { IStyledProps } from './SmoothFadeInPositionedElement.types';
@@ -13,11 +12,11 @@ export const MotionDiv = styled(motion.div)<IStyledProps>`
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
 
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: ${({ isHiddenOnMobile }) => isHiddenOnMobile && 'none'};
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: ${({ deskTop }) => deskTop}px;
     bottom: ${({ deskBottom }) => deskBottom}px;
     left: ${({ deskLeft }) => deskLeft}px;

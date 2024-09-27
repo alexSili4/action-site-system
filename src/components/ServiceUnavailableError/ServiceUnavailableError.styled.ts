@@ -1,4 +1,4 @@
-import { animations, theme } from '@/constants';
+import { animations } from '@/constants';
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
@@ -29,24 +29,24 @@ export const Title = styled.p`
 export const ImgWrap = styled.div`
   position: relative;
 
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     margin-top: ${({ theme }) => theme.spacing(18)};
   }
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     order: 1;
     width: 1024px;
   }
 `;
 
 export const MobileImage = styled.img`
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: none;
   }
 `;
 
 export const DeskImage = styled.img`
-  @media (max-width: ${theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: none;
   }
 `;
@@ -56,7 +56,7 @@ export const WheelImgWrap = styled.div`
   top: 5px;
   left: 114px;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 39px;
     left: 348px;
   }
@@ -66,7 +66,7 @@ export const Wheel = styled.img`
   position: relative;
   width: 136px;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 340px;
   }
 `;
@@ -88,7 +88,7 @@ export const Text = styled.p`
   line-height: 1.13;
   text-align: center;
 
-  @media (min-width: ${theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     order: 3;
     margin-top: ${({ theme }) => theme.spacing(6)};
   }
