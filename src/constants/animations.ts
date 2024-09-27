@@ -70,11 +70,37 @@ const wheelRotate = keyframes`
   }
 `;
 
+const moveUpDown = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
+const moveDownUp = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
 const animations = {
   textGlitch,
   firstAccentShadowGlitch,
   secondAccentShadowGlitch,
   wheelRotate,
+  moveUpDown,
+  moveDownUp,
 };
 
 export default animations;

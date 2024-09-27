@@ -8,6 +8,7 @@ import TopRightConfettiImg from '@/images/layout/top-right-confetti.png';
 import MiddleLeftConfettiImg from '@/images/layout/middle-left-confetti.png';
 import { Background, StyledImg } from './AppBackground.styled';
 import SmoothFadeInPositionedElement from '@/components/SmoothFadeInPositionedElement';
+import { animations } from '@/constants';
 
 const AppBackground: FC = () => {
   return (
@@ -25,6 +26,7 @@ const AppBackground: FC = () => {
         deskWidth={72}
         height={104}
         deskHeight={104}
+        animation={animations.moveDownUp}
         isHiddenOnMobile
       >
         <StyledImg src={BottomLeftConfettiImg} />
@@ -42,6 +44,7 @@ const AppBackground: FC = () => {
         deskWidth={198}
         height={80}
         deskHeight={161}
+        animation={animations.moveUpDown}
         isHiddenOnMobile={false}
       >
         <StyledImg src={BottomMiddleConfettiImg} />
@@ -59,6 +62,7 @@ const AppBackground: FC = () => {
         deskWidth={236}
         height={118}
         deskHeight={236}
+        animation={animations.moveDownUp}
         isHiddenOnMobile={false}
       >
         <StyledImg src={BottomRightConfettiImg} />
@@ -76,6 +80,7 @@ const AppBackground: FC = () => {
         deskWidth={281}
         height={150}
         deskHeight={301}
+        animation={animations.moveUpDown}
         isHiddenOnMobile={false}
       >
         <StyledImg src={TopLeftConfettiImg} />
@@ -93,6 +98,7 @@ const AppBackground: FC = () => {
         deskWidth={141}
         height={211}
         deskHeight={211}
+        animation={animations.moveDownUp}
         isHiddenOnMobile
       >
         <StyledImg src={TopMiddleConfettiImg} />
@@ -110,6 +116,7 @@ const AppBackground: FC = () => {
         deskWidth={294}
         height={118}
         deskHeight={226}
+        animation={animations.moveDownUp}
         isHiddenOnMobile={false}
       >
         <StyledImg src={TopRightConfettiImg} />
@@ -127,6 +134,7 @@ const AppBackground: FC = () => {
         height={396}
         deskWidth={396}
         deskHeight={396}
+        animation={animations.moveDownUp}
         isHiddenOnMobile
       >
         <StyledImg src={MiddleLeftConfettiImg} />

@@ -88,6 +88,7 @@ export const Rays = styled.img`
   max-width: 1370px;
   width: 1370px;
   height: 1083px;
+  pointer-events: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: none;

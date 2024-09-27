@@ -1,3 +1,4 @@
+import { Keyframes } from '@emotion/react';
 import { ReactNode } from 'react';
 
 export interface IProps extends IStyledProps {
@@ -18,4 +19,5 @@ export interface IStyledProps {
   deskWidth: number;
   deskHeight: number;
   isHiddenOnMobile: boolean;
+  animation: Keyframes;
 }
