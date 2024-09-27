@@ -19,6 +19,8 @@ interface ITheme {
     cabinet: number;
     showLocationsBtn: number;
     showSortTypesBtn: number;
+    showDatePickerBtn: number;
+    datePickerBtnLabel: number;
   };
   containerWidth: {
     desktop: number;
@@ -53,6 +55,8 @@ const theme: ITheme = {
     cabinet: 14,
     showLocationsBtn: 12,
     showSortTypesBtn: 12,
+    showDatePickerBtn: 12,
+    datePickerBtnLabel: 20,
   },
   containerWidth: {
     desktop: 1376,

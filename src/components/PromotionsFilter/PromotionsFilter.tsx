@@ -3,6 +3,7 @@ import { Container } from './PromotionsFilter.styled';
 import PromotionsCategories from '@/components/PromotionsCategories';
 import { IProps } from './PromotionsFilter.types';
 import PromotionsSortTypesContainer from '@/components/PromotionsSortTypesContainer';
+import PromotionsControls from '@/components/PromotionsControls';
 
 const PromotionsFilter: FC<IProps> = ({
   changePromotionCategory,
@@ -11,6 +12,7 @@ const PromotionsFilter: FC<IProps> = ({
 }) => {
   return (
     <Container>
+      <PromotionsControls promotionCategory={promotionCategory} />
       <PromotionsCategories
         changePromotionCategory={changePromotionCategory}
         categories={categories}

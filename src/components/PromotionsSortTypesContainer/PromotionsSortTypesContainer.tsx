@@ -5,13 +5,13 @@ import {
   Container,
   ShowSortTypesBtn,
   BtnTitle,
-  Backdrop,
 } from './PromotionsSortTypesContainer.styled';
 import PromotionsSortTypesList from '@/components/PromotionsSortTypesList';
 import { useSetSearchParams } from '@/hooks';
 import { getTranslatedPromotionsSortType, makeBlur } from '@/utils';
 import { BtnClickEvent, InputChangeEvent } from '@/types/types';
 import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
+import DropdownBackdrop from '@/components/DropdownBackdrop';
 
 const PromotionsSortTypesContainer: FC = () => {
   const [showSortTypesList, setShowSortTypesList] = useState<boolean>(false);
@@ -40,7 +40,9 @@ const PromotionsSortTypesContainer: FC = () => {
 
   return (
     <>
-      {showSortTypesList && <Backdrop onClick={toggleShowSortTypesList} />}
+      {showSortTypesList && (
+        <DropdownBackdrop onClick={toggleShowSortTypesList} />
+      )}
       <Container>
         <ShowSortTypesBtn
           type='button'

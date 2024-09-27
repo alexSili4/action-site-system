@@ -3,6 +3,8 @@ import { ChangeEvent, MouseEvent } from 'react';
 
 export type Func = () => void;
 
+export type DatePickerEvent = Date | null;
+
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
 
 export type DivClickEvent = MouseEvent<HTMLDivElement>;

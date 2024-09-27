@@ -4,7 +4,6 @@ import {
   ShowLocationsBtn,
   ShowLocationsBtnTitle,
   LocationListContainer,
-  Backdrop,
 } from './LocationFilter.styled';
 import { IProps } from './LocationFilter.types';
 import { FaChevronDown } from 'react-icons/fa';
@@ -15,6 +14,7 @@ import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
 import LocationList from '@/components/LocationList';
 import LocationSearchField from '@/components/LocationSearchField';
 import { useSetSearchParams } from '@/hooks';
+import DropdownBackdrop from '@/components/DropdownBackdrop';
 
 const LocationFilter: FC<IProps> = ({ isRootPage }) => {
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
@@ -82,7 +82,9 @@ const LocationFilter: FC<IProps> = ({ isRootPage }) => {
           </LocationListContainer>
         </SmoothFadeInDropdownList>
       </Container>
-      {showLocationList && <Backdrop onClick={toggleShowLocationList} />}
+      {showLocationList && (
+        <DropdownBackdrop onClick={toggleShowLocationList} />
+      )}
     </>
   );
 };
