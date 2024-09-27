@@ -62,6 +62,19 @@ export const WheelImgWrap = styled.div`
   }
 `;
 
+export const Rays = styled.img`
+  position: absolute;
+  top: -262px;
+  left: -532px;
+  max-width: 1370px;
+  width: 1370px;
+  height: 1083px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
+  }
+`;
+
 export const Wheel = styled.img`
   position: relative;
   width: 136px;

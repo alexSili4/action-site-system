@@ -81,6 +81,19 @@ export const Slots = styled.img`
   animation: ${animations.wheelRotate} 20000ms linear infinite;
 `;
 
+export const Rays = styled.img`
+  position: absolute;
+  top: -262px;
+  left: -532px;
+  max-width: 1370px;
+  width: 1370px;
+  height: 1083px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
+  }
+`;
+
 export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;

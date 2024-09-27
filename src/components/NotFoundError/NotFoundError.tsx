@@ -9,12 +9,14 @@ import {
   Wheel,
   Slots,
   WheelImgWrap,
+  Rays,
 } from './NotFoundError.styled';
 import { PagePaths } from '@/constants';
 import Error404ImgMobile from '@/images/error/error-404-mobile.png';
 import Error404ImgDesk from '@/images/error/error-404-desk.png';
 import WheelImg from '@/images/error/wheel.png';
 import Slots404Img from '@/images/error/slots-404.png';
+import RaysImg from '@/images/error/rays.png';
 
 const NotFoundError: FC = () => (
   <Container>
@@ -23,6 +25,7 @@ const NotFoundError: FC = () => (
       <MobileImage src={Error404ImgMobile} />
       <DeskImage src={Error404ImgDesk} />
       <WheelImgWrap>
+        <Rays src={RaysImg} />
         <Slots src={Slots404Img} />
         <Wheel src={WheelImg} />
       </WheelImgWrap>
