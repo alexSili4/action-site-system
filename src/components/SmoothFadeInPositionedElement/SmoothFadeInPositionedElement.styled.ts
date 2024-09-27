@@ -11,7 +11,7 @@ export const MotionDiv = styled(motion.div)<IStyledProps>`
   display: block;
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
-  animation: ${({ animation }) => animation} 2s linear infinite;
+  animation: ${({ animation }) => animation} 3s linear infinite;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: ${({ isHiddenOnMobile }) => isHiddenOnMobile && 'none'};

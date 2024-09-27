@@ -1,3 +1,4 @@
+import { animations } from '@/constants';
 import GradientImg from '@/images/layout/gradient.jpg';
 
 import styled from '@emotion/styled';
@@ -27,6 +28,7 @@ export const LeftConfetti = styled.img`
   top: -98px;
   width: 333px;
   height: 319px;
+  animation: ${animations.moveDownUp} 3s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: -234px;
@@ -43,6 +45,7 @@ export const RightBox = styled.img`
   right: -114px;
   width: 250px;
   height: 260px;
+  animation: ${animations.moveUpDown} 3s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: auto;
@@ -59,6 +62,7 @@ export const RightConfetti = styled.img`
   bottom: 72px;
   width: 283px;
   height: 311px;
+  animation: ${animations.moveDownUp} 3s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     right: 147px;
@@ -74,6 +78,7 @@ export const LeftBox = styled.img`
   bottom: 92px;
   width: 212px;
   height: 221px;
+  animation: ${animations.moveUpDown} 3s linear infinite;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     left: -150px;
