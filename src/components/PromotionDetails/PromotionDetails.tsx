@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Container } from './PromotionDetails.styled';
+import { Container, BannerWrap } from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import PromotionPageBreadcrumbs from '@/components/PromotionPageBreadcrumbs';
 import { PromotionDetailsState } from '@/types/types';
@@ -25,6 +25,7 @@ const PromotionDetails: FC = () => {
         promotionCategory={targetPromotionCategory}
         promotionTitle='Дуже довга назва акції'
       />
+      <BannerWrap></BannerWrap>
     </Container>
   );
 };

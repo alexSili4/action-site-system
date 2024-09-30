@@ -19,6 +19,10 @@ export const Container = styled.div`
   & > *:not(:last-child) {
     white-space: nowrap;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: none;
+  }
 `;
 
 export const DecorativeSymbol = styled.span`
