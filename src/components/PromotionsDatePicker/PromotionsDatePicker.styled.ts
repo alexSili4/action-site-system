@@ -1,8 +1,11 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './PromotionsDatePicker.types';
+import {
+  IStyledDatePickerBtn,
+  IStyledProps,
+} from './PromotionsDatePicker.types';
 import 'react-datepicker/dist/react-datepicker.css';
 
-export const ShowDatePickerBtn = styled.button<IStyledProps>`
+export const DatePickerBtn = styled.button<IStyledDatePickerBtn>`
   position: relative;
   display: flex;
   align-items: center;
@@ -26,6 +29,7 @@ export const ShowDatePickerBtn = styled.button<IStyledProps>`
     }
 
     &:last-of-type {
+      color: ${({ isSelectedDate }) => isSelectedDate && '#FD4B3C'};
       transform: rotate(
         ${({ showDatePicker }) => (showDatePicker ? 180 : 0)}deg
       );

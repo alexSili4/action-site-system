@@ -7,3 +7,4 @@ export { default as PromotionsSortTypesKeys } from './promotionsSortTypesKeys';
 export { default as translatedPromotionsSortTypesKeys } from './translatedPromotionsSortTypesKeys';
 export { default as translatedPromotionsCategoriesKeys } from './translatedPromotionsCategoriesKeys';
 export { default as animations } from './animations';
+export { default as DateFormats } from './dateFormats';

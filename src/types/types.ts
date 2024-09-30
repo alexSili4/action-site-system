@@ -32,3 +32,8 @@ export type PromotionsCategoriesValues = PromotionsCategoriesKeys[];
 export type TranslatedPromotionsCategoriesKeys = {
   [key in PromotionsCategoriesKeys]: string;
 };
+
+export interface IFormatDateProps {
+  date: Date | string;
+  dateFormat: string;
+}

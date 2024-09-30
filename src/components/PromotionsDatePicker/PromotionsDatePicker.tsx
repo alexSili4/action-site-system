@@ -1,22 +1,30 @@
 import { FC, useState } from 'react';
 import { uk } from 'date-fns/locale';
-import { IoCalendarClearOutline } from 'react-icons/io5';
+import { IoCalendarClearOutline, IoClose } from 'react-icons/io5';
 import { FaChevronDown } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import {
-  ShowDatePickerBtn,
+  DatePickerBtn,
   BtnLabel,
   DatePickerContainer,
 } from './PromotionsDatePicker.styled';
-import { makeBlur } from '@/utils';
+import { getPromotionsDatePickerBtnLabel, makeBlur } from '@/utils';
 import { BtnClickEvent, DatePickerEvent } from '@/types/types';
 import { theme } from '@/constants';
 import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
 import DropdownBackdrop from '@/components/DropdownBackdrop';
 
 const PromotionsDatePicker: FC = () => {
-  const [date, setDate] = useState<Date>(() => new Date());
+  const [date, setDate] = useState<Date | null>(null);
   const [showDatePicker, setShowDatePicker] = useState<boolean>(false);
+
+  const isSelectedDate = Boolean(date);
+  const btnLabel = getPromotionsDatePickerBtnLabel(date);
+  const datePickerBtnIcon = date ? (
+    <IoClose size={theme.iconSizes.showDatePickerBtn} />
+  ) : (
+    <FaChevronDown size={theme.iconSizes.showDatePickerBtn} />
+  );
 
   const onDatePickerChange = (e: DatePickerEvent) => {
     toggleShowDatePicker();
@@ -28,23 +36,32 @@ const PromotionsDatePicker: FC = () => {
     setShowDatePicker((prevState) => !prevState);
   };
 
-  const onShowDatePickerBtnClick = (e: BtnClickEvent) => {
+  const clearDate = () => {
+    setDate(null);
+  };
+
+  const onDatePickerBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    toggleShowDatePicker();
+    if (date) {
+      clearDate();
+    } else {
+      toggleShowDatePicker();
+    }
   };
 
   return (
     <>
       {showDatePicker && <DropdownBackdrop onClick={toggleShowDatePicker} />}
-      <ShowDatePickerBtn
-        onClick={onShowDatePickerBtnClick}
+      <DatePickerBtn
+        onClick={onDatePickerBtnClick}
         showDatePicker={showDatePicker}
+        isSelectedDate={isSelectedDate}
       >
         <IoCalendarClearOutline size={theme.iconSizes.datePickerBtnLabel} />
-        <BtnLabel showDatePicker={showDatePicker}>Період дії</BtnLabel>
-        <FaChevronDown size={theme.iconSizes.showDatePickerBtn} />
-      </ShowDatePickerBtn>
+        <BtnLabel showDatePicker={showDatePicker}>{btnLabel}</BtnLabel>
+        {datePickerBtnIcon}
+      </DatePickerBtn>
       <SmoothFadeInDropdownList isVisible={showDatePicker}>
         <DatePickerContainer>
           <DatePicker
