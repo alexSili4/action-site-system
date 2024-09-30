@@ -3,6 +3,7 @@ const enum PagePaths {
   cabinet = '/cabinet',
   promotions = '/promotions',
   serviceUnavailable = '/service-unavailable',
+  dynamicParam = 'id',
 }
 
 export default PagePaths;

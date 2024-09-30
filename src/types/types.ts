@@ -1,5 +1,6 @@
 import { PromotionsCategoriesKeys, PromotionsSortTypesKeys } from '@/constants';
 import { ChangeEvent, MouseEvent } from 'react';
+import { Location } from 'react-router-dom';
 
 export type Func = () => void;
 
@@ -19,8 +20,6 @@ export type SetLocationFunc = (data: string) => void;
 
 export type onDivClickFunc = (e: DivClickEvent) => void;
 
-export type ChangePromotionCategoryFunc = (data: string) => void;
-
 export type TranslatedPromotionsSortTypesKeys = {
   [key in PromotionsSortTypesKeys]: string;
 };
@@ -37,3 +36,14 @@ export interface IFormatDateProps {
   date: Date | string;
   dateFormat: string;
 }
+
+export interface IPromotionDetailsState {
+  from: Location<any>;
+  promotionCategory: string;
+}
+
+export type PartialPromotionDetailsState = Partial<IPromotionDetailsState>;
+
+export type PromotionDetailsState = {
+  state: PartialPromotionDetailsState;
+};

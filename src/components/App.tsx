@@ -10,6 +10,7 @@ const ServiceUnavailablePage = lazy(
 const MainPage = lazy(() => import('@/pages/MainPage'));
 const CabinetPage = lazy(() => import('@/pages/CabinetPage'));
 const PromotionsPage = lazy(() => import('@/pages/PromotionsPage'));
+const PromotionDetailsPage = lazy(() => import('@/pages/PromotionDetailsPage'));
 
 const App: FC = () => {
   return (
@@ -19,6 +20,10 @@ const App: FC = () => {
         <Route path={PagePaths.root} element={<MainPage />} />
         <Route path={PagePaths.cabinet} element={<CabinetPage />} />
         <Route path={PagePaths.promotions} element={<PromotionsPage />} />
+        <Route
+          path={`${PagePaths.promotions}/:${PagePaths.dynamicParam}`}
+          element={<PromotionDetailsPage />}
+        />
         <Route
           path={PagePaths.serviceUnavailable}
           element={<ServiceUnavailablePage />}
