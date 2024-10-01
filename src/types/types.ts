@@ -37,8 +37,10 @@ export interface IFormatDateProps {
   dateFormat: string;
 }
 
+export type PageLocation = Location<any>;
+
 export interface IPromotionDetailsState {
-  from: Location<any>;
+  from: PageLocation;
   promotionCategory: string;
 }
 

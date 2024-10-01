@@ -22,6 +22,7 @@ interface ITheme {
     showSortTypesBtn: number;
     showDatePickerBtn: number;
     datePickerBtnLabel: number;
+    goBackLink: number;
   };
   containerWidth: {
     desktop: number;
@@ -60,6 +61,7 @@ const theme: ITheme = {
     showSortTypesBtn: 12,
     showDatePickerBtn: 12,
     datePickerBtnLabel: 20,
+    goBackLink: 10,
   },
   containerWidth: {
     desktop: 1376,

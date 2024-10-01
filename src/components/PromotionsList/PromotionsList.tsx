@@ -1,16 +1,10 @@
 import { FC } from 'react';
-import {
-  Card,
-  Container,
-  Date,
-  DateWrap,
-  List,
-  ListItem,
-} from './PromotionsList.styled';
+import { Card, Container, List, ListItem } from './PromotionsList.styled';
 import LinkWithQuery from '@/components/LinkWithQuery';
 import { useLocation } from 'react-router-dom';
 import { IProps } from './PromotionsList.types';
 import { IPromotionDetailsState } from '@/types/types';
+import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
 // import { useSetSearchParams } from '@/hooks';
 // import { SearchParamsKeys } from '@/constants';
 // import { useCitiesStore } from '@/store/store';
@@ -43,9 +37,7 @@ const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
           <ListItem key={id}>
             <LinkWithQuery to={`${id}`} state={linkState}>
               <Card>
-                <DateWrap>
-                  <Date>{date}</Date>
-                </DateWrap>
+                <PromotionPeriodLabel period={date} />
               </Card>
             </LinkWithQuery>
           </ListItem>
