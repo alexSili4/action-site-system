@@ -69,6 +69,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  width: calc((100% - ${({ theme }) => theme.spacing(12)} * 2) / 3);
-  outline: 1px solid red;
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: calc((100% - ${({ theme }) => theme.spacing(12)} * 2) / 3);
+  }
 `;

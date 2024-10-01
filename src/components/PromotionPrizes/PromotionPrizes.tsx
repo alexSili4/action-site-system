@@ -7,6 +7,7 @@ import {
   ListItem,
   Title,
 } from './PromotionPrizes.styled';
+import PromotionPrizesSlider from '@/components/PromotionPrizesSlider';
 
 const PromotionPrizes: FC = () => {
   return (
@@ -16,11 +17,21 @@ const PromotionPrizes: FC = () => {
         <BannerTitle>Унікальні призи від головного партнера акції</BannerTitle>
       </BannerWrap>
       <List>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
+        <ListItem>
+          <PromotionPrizesSlider />
+        </ListItem>
+        <ListItem>
+          <PromotionPrizesSlider />
+        </ListItem>
+        <ListItem>
+          <PromotionPrizesSlider />
+        </ListItem>
+        <ListItem>
+          <PromotionPrizesSlider />
+        </ListItem>
+        <ListItem>
+          <PromotionPrizesSlider />
+        </ListItem>
       </List>
     </Container>
   );
