@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import {
   Container,
   ShowLocationsBtn,
@@ -15,14 +15,24 @@ import LocationList from '@/components/LocationList';
 import LocationSearchField from '@/components/LocationSearchField';
 import { useSetSearchParams } from '@/hooks';
 import DropdownBackdrop from '@/components/DropdownBackdrop';
+import { useCitiesStore } from '@/store/store';
+import { selectGetCities } from '@/store/cities/selectors';
 
 const LocationFilter: FC<IProps> = ({ isRootPage }) => {
+  const getCities = useCitiesStore(selectGetCities);
+  const { updateSearchParams, searchParams } = useSetSearchParams();
+  const city = searchParams.get(SearchParamsKeys.city);
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
-  const [targetLocation, setTargetLocation] = useState<string | null>(null);
-  const { updateSearchParams } = useSetSearchParams();
+  const [targetLocation, setTargetLocation] = useState<string | null>(() =>
+    city ? city : null
+  );
   const showLocationsBtnTitle = targetLocation
     ? targetLocation
     : 'Оберіть місто';
+
+  useEffect(() => {
+    getCities();
+  }, [getCities]);
 
   const toggleShowLocationList = () => {
     setShowLocationList((prevState) => !prevState);
@@ -43,7 +53,6 @@ const LocationFilter: FC<IProps> = ({ isRootPage }) => {
 
   return (
     // TODO: відредагувати логіку появи тексту Міста на кнопці
-    // TODO: видалити список міст
     <>
       <Container isRootPage={isRootPage}>
         <ShowLocationsBtn
@@ -60,25 +69,7 @@ const LocationFilter: FC<IProps> = ({ isRootPage }) => {
         <SmoothFadeInDropdownList isVisible={showLocationList}>
           <LocationListContainer isRootPage={isRootPage}>
             <LocationSearchField />
-            <LocationList
-              setLocation={setLocation}
-              locations={[
-                'Київ',
-                'Дніпро',
-                'Львів',
-                'Андрушівка',
-                'Арциз',
-                'Нікополь',
-                'Енергодар',
-                'Марганець',
-                'Маріуполь',
-                'Запоріжжя',
-                'Суми',
-                'Донецьк',
-                'Луганськ',
-                'Бахмут',
-              ]}
-            />
+            <LocationList setLocation={setLocation} />
           </LocationListContainer>
         </SmoothFadeInDropdownList>
       </Container>
