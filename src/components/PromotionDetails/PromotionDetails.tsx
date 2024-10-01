@@ -1,5 +1,10 @@
 import { FC } from 'react';
-import { Container, BannerWrap } from './PromotionDetails.styled';
+import {
+  Container,
+  BannerWrap,
+  Title,
+  InfoWrap,
+} from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import PromotionPageBreadcrumbs from '@/components/PromotionPageBreadcrumbs';
 import { PromotionDetailsState } from '@/types/types';
@@ -7,6 +12,7 @@ import { useSetSearchParams } from '@/hooks';
 import { PromotionsCategoriesKeys, SearchParamsKeys } from '@/constants';
 import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
 import PromotionGoBackLink from '@/components/PromotionGoBackLink';
+import PromotionPrizes from '@/components/PromotionPrizes';
 
 const PromotionDetails: FC = () => {
   // TODO delete promotion
@@ -36,11 +42,12 @@ const PromotionDetails: FC = () => {
       />
       <BannerWrap>
         <PromotionGoBackLink from={from} />
-        <div>
+        <InfoWrap>
           <PromotionPeriodLabel period={promotion.date} />
-          <p>дуже довга назва акції</p>
-        </div>
+          <Title>дуже довга назва акції</Title>
+        </InfoWrap>
       </BannerWrap>
+      <PromotionPrizes />
     </Container>
   );
 };

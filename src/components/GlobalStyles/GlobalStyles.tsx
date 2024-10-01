@@ -2,7 +2,13 @@ import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
 import { theme } from '@/constants';
-import { geologicaBold, geologicaSemiBold,geologicaRegular, delaGothicOneRegular } from '@/fonts';
+import {
+  geologicaBold,
+  geologicaSemiBold,
+  geologicaRegular,
+  delaGothicOneRegular,
+  oswaldBold,
+} from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
@@ -33,6 +39,13 @@ const GlobalStyles: FC = () => (
         src: local(${theme.fontFamily.delaGothicOne}),
           url(${delaGothicOneRegular}) format('truetype');
         font-weight: 400;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.oswald};
+        src: local(${theme.fontFamily.oswald}),
+          url(${oswaldBold}) format('truetype');
+        font-weight: 700;
       }
 
       body {

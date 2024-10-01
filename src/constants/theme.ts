@@ -14,6 +14,7 @@ interface ITheme {
   fontFamily: {
     geologica: string;
     delaGothicOne: string;
+    oswald: string;
   };
   iconSizes: {
     socialList: number;
@@ -53,6 +54,7 @@ const theme: ITheme = {
   fontFamily: {
     geologica: 'Geologica',
     delaGothicOne: 'Dela Gothic One',
+    oswald: 'Oswald',
   },
   iconSizes: {
     socialList: 24,
