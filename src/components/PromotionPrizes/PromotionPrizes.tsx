@@ -20,6 +20,7 @@ const PromotionPrizes: FC = () => {
         <ListItem></ListItem>
         <ListItem></ListItem>
         <ListItem></ListItem>
+        <ListItem></ListItem>
       </List>
     </Container>
   );
