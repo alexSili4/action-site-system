@@ -5,14 +5,14 @@ import {
   Container,
   List,
   ListItem,
-  Title,
 } from './PromotionPrizes.styled';
 import PromotionPrizesSlider from '@/components/PromotionPrizesSlider';
+import PromotionSectionTitle from '@/components/PromotionSectionTitle';
 
 const PromotionPrizes: FC = () => {
   return (
     <Container>
-      <Title>Призи</Title>
+      <PromotionSectionTitle title='Призи' />
       <BannerWrap>
         <BannerTitle>Унікальні призи від головного партнера акції</BannerTitle>
       </BannerWrap>

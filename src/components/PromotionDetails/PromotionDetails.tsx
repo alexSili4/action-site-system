@@ -13,6 +13,7 @@ import { PromotionsCategoriesKeys, SearchParamsKeys } from '@/constants';
 import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
 import PromotionGoBackLink from '@/components/PromotionGoBackLink';
 import PromotionPrizes from '@/components/PromotionPrizes';
+import PromotionFAQs from '@/components/PromotionFAQs';
 
 const PromotionDetails: FC = () => {
   // TODO delete promotion
@@ -48,6 +49,7 @@ const PromotionDetails: FC = () => {
         </InfoWrap>
       </BannerWrap>
       <PromotionPrizes />
+      <PromotionFAQs />
     </Container>
   );
 };

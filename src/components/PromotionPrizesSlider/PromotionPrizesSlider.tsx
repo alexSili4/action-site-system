@@ -32,7 +32,7 @@ const PromotionPrizesSlider: FC = () => {
       grabCursor
     >
       {prizes.map(({ title }) => (
-        <SwiperSlide>
+        <SwiperSlide key={title}>
           <Card>
             <ImgWrap></ImgWrap>
             <TitleWrap>

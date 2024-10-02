@@ -49,3 +49,10 @@ export type PartialPromotionDetailsState = Partial<IPromotionDetailsState>;
 export type PromotionDetailsState = {
   state: PartialPromotionDetailsState;
 };
+
+export interface IFAQ {
+  question: string;
+  answer: string;
+}
+
+export type FAQs = IFAQ[];

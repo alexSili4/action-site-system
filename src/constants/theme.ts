@@ -25,6 +25,7 @@ interface ITheme {
     datePickerBtnLabel: number;
     goBackLink: number;
     promotionPrizesSliderBtn: number;
+    faqBtn: number;
   };
   containerWidth: {
     desktop: number;
@@ -66,6 +67,7 @@ const theme: ITheme = {
     datePickerBtnLabel: 20,
     goBackLink: 10,
     promotionPrizesSliderBtn: 10,
+    faqBtn: 12,
   },
   containerWidth: {
     desktop: 1376,
@@ -76,7 +78,7 @@ const theme: ITheme = {
     desktop: 1410,
   },
   // shadows: {  },
-  transitionDurationAndFunc: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
+  transitionDurationAndFunc: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
   trimText:
     'word-wrap: break-word; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;',
