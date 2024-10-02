@@ -55,6 +55,6 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: calc((100% - ${({ theme }) => theme.spacing(12)} * 2) / 3);
+    width: calc((100% - ${({ theme }) => theme.spacing(4)} * 2) / 3);
   }
 `;
