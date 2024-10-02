@@ -14,6 +14,9 @@ import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
 import PromotionGoBackLink from '@/components/PromotionGoBackLink';
 import PromotionPrizes from '@/components/PromotionPrizes';
 import PromotionFAQs from '@/components/PromotionFAQs';
+import PromotionConditions from '@/components/PromotionConditions';
+import PromotionWinners from '@/components/PromotionWinners';
+import PromotionContacts from '@/components/PromotionContacts';
 
 const PromotionDetails: FC = () => {
   // TODO delete promotion
@@ -48,8 +51,11 @@ const PromotionDetails: FC = () => {
           <Title>дуже довга назва акції</Title>
         </InfoWrap>
       </BannerWrap>
+      <PromotionConditions />
       <PromotionPrizes />
       <PromotionFAQs />
+      <PromotionWinners />
+      <PromotionContacts />
     </Container>
   );
 };

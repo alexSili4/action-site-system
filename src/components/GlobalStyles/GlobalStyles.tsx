@@ -8,6 +8,7 @@ import {
   geologicaRegular,
   delaGothicOneRegular,
   oswaldBold,
+  oswaldMedium,
 } from '@/fonts';
 
 const GlobalStyles: FC = () => (
@@ -45,6 +46,13 @@ const GlobalStyles: FC = () => (
         font-family: ${theme.fontFamily.oswald};
         src: local(${theme.fontFamily.oswald}),
           url(${oswaldBold}) format('truetype');
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.oswald};
+        src: local(${theme.fontFamily.oswald}),
+          url(${oswaldMedium}) format('truetype');
         font-weight: 700;
       }
 

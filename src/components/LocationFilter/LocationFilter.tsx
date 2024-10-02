@@ -21,11 +21,12 @@ import { selectGetCities } from '@/store/cities/selectors';
 const LocationFilter: FC<IProps> = ({ isRootPage }) => {
   const getCities = useCitiesStore(selectGetCities);
   const { updateSearchParams, searchParams } = useSetSearchParams();
-  const city = searchParams.get(SearchParamsKeys.city);
+  const city = searchParams.get(SearchParamsKeys.search);
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
   const [targetLocation, setTargetLocation] = useState<string | null>(() =>
     city ? city : null
   );
+  // TODO fix location name
   const showLocationsBtnTitle = targetLocation
     ? targetLocation
     : 'Оберіть місто';

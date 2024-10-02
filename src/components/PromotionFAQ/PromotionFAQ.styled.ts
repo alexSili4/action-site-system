@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './PromotionFAQ.types';
+import { IStyledAnswerWrapProps, IStyledProps } from './PromotionFAQ.types';
 
 export const ListItem = styled.li``;
 
 export const QuestionWrap = styled.div``;
 
-export const QuestionBtn = styled.button`
+export const QuestionBtn = styled.button<IStyledProps>`
   display: flex;
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(5)};
@@ -19,6 +19,12 @@ export const QuestionBtn = styled.button`
   & > svg {
     flex-shrink: 0;
     color: #a282f7;
+    transform: rotate(${({ showAnswer }) => (showAnswer ? 180 : 0)}deg);
+    transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+  }
+
+  &:is(:hover, :focus) > svg {
+    transform: rotate(${({ showAnswer }) => (showAnswer ? 0 : 180)}deg);
   }
 `;
 
@@ -31,7 +37,7 @@ export const QuestionBtnTitle = styled.span`
   text-align: left;
 `;
 
-export const AnswerWrap = styled.div<IStyledProps>`
+export const AnswerWrap = styled.div<IStyledAnswerWrapProps>`
   max-height: ${({ showAnswer, scrollHeight }) =>
     showAnswer ? `${scrollHeight}px` : '0px'};
   overflow-y: hidden;

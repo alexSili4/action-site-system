@@ -16,8 +16,8 @@ const citiesSlice = (
   getCities: async (): Promise<Cities | undefined> =>
     await getCities({
       set: setState({ set, name: 'getCities' }),
-      data: undefined,
       get,
+      data: undefined,
     }),
 });
 

@@ -10,6 +10,8 @@ import {
   QuestionWrap,
   Answer,
 } from './PromotionFAQ.styled';
+import { BtnClickEvent } from '@/types/types';
+import { makeBlur } from '@/utils';
 
 const PromotionFAQ: FC<IProps> = ({ faq: { answer, question } }) => {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
@@ -20,10 +22,16 @@ const PromotionFAQ: FC<IProps> = ({ faq: { answer, question } }) => {
     setShowAnswer((prevState) => !prevState);
   };
 
+  const onQuestionBtnClick = (e: BtnClickEvent) => {
+    makeBlur(e.currentTarget);
+
+    toggleSetShowAnswer();
+  };
+
   return (
     <ListItem>
       <QuestionWrap>
-        <QuestionBtn onClick={toggleSetShowAnswer}>
+        <QuestionBtn onClick={onQuestionBtnClick} showAnswer={showAnswer}>
           <QuestionBtnTitle>{question}</QuestionBtnTitle>
           <FaChevronDown size={theme.iconSizes.faqBtn} />
         </QuestionBtn>

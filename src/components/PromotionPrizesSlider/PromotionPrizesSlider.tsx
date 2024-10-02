@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {
@@ -10,6 +9,7 @@ import {
   TitleWrap,
 } from './PromotionPrizesSlider.styled';
 import PromotionPrizesSliderControls from '@/components/PromotionPrizesSliderControls';
+import PromotionPrizesSliderPagination from '@/components/PromotionPrizesSliderPagination';
 
 const PromotionPrizesSlider: FC = () => {
   // TODO delete prizes
@@ -22,15 +22,7 @@ const PromotionPrizesSlider: FC = () => {
   ];
 
   return (
-    <Swiper
-      modules={[Pagination]}
-      speed={800}
-      spaceBetween={30}
-      slidesPerView={1}
-      loop
-      pagination={{ clickable: true }}
-      grabCursor
-    >
+    <Swiper speed={800} spaceBetween={30} slidesPerView={1} loop grabCursor>
       {prizes.map(({ title }) => (
         <SwiperSlide key={title}>
           <Card>
@@ -42,6 +34,7 @@ const PromotionPrizesSlider: FC = () => {
         </SwiperSlide>
       ))}
       <PromotionPrizesSliderControls />
+      <PromotionPrizesSliderPagination />
     </Swiper>
   );
 };

@@ -3,3 +3,4 @@ export { default as delaGothicOneRegular } from './delaGothicOne/DelaGothicOne-R
 export { default as geologicaBold } from './geologica/Geologica-Bold.ttf';
 export { default as geologicaSemiBold } from './geologica/Geologica-SemiBold.ttf';
 export { default as oswaldBold } from './oswald/Oswald-Bold.ttf';
+export { default as oswaldMedium } from './oswald/Oswald-Medium.ttf';

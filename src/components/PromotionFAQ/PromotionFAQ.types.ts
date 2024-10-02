@@ -6,5 +6,8 @@ export interface IProps {
 
 export interface IStyledProps {
   showAnswer: boolean;
+}
+
+export interface IStyledAnswerWrapProps extends IStyledProps {
   scrollHeight: number;
 }

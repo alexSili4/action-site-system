@@ -1,4 +1,4 @@
-import { FC,  } from 'react';
+import { FC } from 'react';
 import { Input } from './LocationSearchField.styled';
 import { InputChangeEvent } from '@/types/types';
 import { useSetSearchParams } from '@/hooks';

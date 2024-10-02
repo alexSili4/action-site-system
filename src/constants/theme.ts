@@ -26,6 +26,7 @@ interface ITheme {
     goBackLink: number;
     promotionPrizesSliderBtn: number;
     faqBtn: number;
+    phoneLink: number;
   };
   containerWidth: {
     desktop: number;
@@ -68,6 +69,7 @@ const theme: ITheme = {
     goBackLink: 10,
     promotionPrizesSliderBtn: 10,
     faqBtn: 12,
+    phoneLink: 16,
   },
   containerWidth: {
     desktop: 1376,

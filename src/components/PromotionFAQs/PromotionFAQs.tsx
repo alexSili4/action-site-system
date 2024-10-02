@@ -1,8 +1,19 @@
 import { FC } from 'react';
 import PromotionSectionTitle from '@/components/PromotionSectionTitle';
-import { Container, ContentWrap, List } from './PromotionFAQs.styled';
+import {
+  AdditionalIfoWrap,
+  Container,
+  ContentWrap,
+  List,
+  PhoneLink,
+  PhoneLinkTitle,
+  Title,
+  WorkingHours,
+} from './PromotionFAQs.styled';
 import PromotionFAQ from '@/components/PromotionFAQ';
 import { FAQs } from '@/types/types';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { theme } from '@/constants';
 
 const PromotionFAQs: FC = () => {
   //  TODO delete FAQs
@@ -40,6 +51,19 @@ const PromotionFAQs: FC = () => {
             <PromotionFAQ faq={faq} key={faq.question} />
           ))}
         </List>
+        <AdditionalIfoWrap>
+          <Title>
+            текст, який описує як отримати додаткову інформацію про
+            обслуговування на декілька рядків
+          </Title>
+          <WorkingHours>
+            а тут буде вказано графік роботи гарячої лінії
+          </WorkingHours>
+          <PhoneLink href='tel:+0000000000'>
+            <FaPhoneAlt size={theme.iconSizes.phoneLink} />
+            <PhoneLinkTitle>0000000000</PhoneLinkTitle>
+          </PhoneLink>
+        </AdditionalIfoWrap>
       </ContentWrap>
     </Container>
   );
