@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(3)};
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
   padding-top: ${({ theme }) => theme.spacing(4)};

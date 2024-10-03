@@ -8,3 +8,4 @@ export { default as translatedPromotionsSortTypesKeys } from './translatedPromot
 export { default as translatedPromotionsCategoriesKeys } from './translatedPromotionsCategoriesKeys';
 export { default as animations } from './animations';
 export { default as DateFormats } from './dateFormats';
+export { default as ClassNames } from './classNames';

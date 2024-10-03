@@ -9,11 +9,20 @@ import {
   delaGothicOneRegular,
   oswaldBold,
   oswaldMedium,
+  geologicaExtraBold,
+  geologicaMedium,
 } from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
     styles={css`
+      @font-face {
+        font-family: ${theme.fontFamily.geologica};
+        src: local(${theme.fontFamily.geologica}),
+          url(${geologicaExtraBold}) format('truetype');
+        font-weight: 800;
+      }
+
       @font-face {
         font-family: ${theme.fontFamily.geologica};
         src: local(${theme.fontFamily.geologica}),
@@ -26,6 +35,13 @@ const GlobalStyles: FC = () => (
         src: local(${theme.fontFamily.geologica}),
           url(${geologicaSemiBold}) format('truetype');
         font-weight: 600;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.geologica};
+        src: local(${theme.fontFamily.geologica}),
+          url(${geologicaMedium}) format('truetype');
+        font-weight: 500;
       }
 
       @font-face {
