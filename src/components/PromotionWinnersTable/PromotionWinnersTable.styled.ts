@@ -23,7 +23,15 @@ export const Header = styled.th`
   }
 `;
 
-export const Body = styled.tbody``;
+export const Body = styled.tbody`
+  & > tr:not(:last-of-type) > td {
+    padding-bottom: ${({ theme }) => theme.spacing(2)};
+  }
+
+  & > tr:last-of-type > td {
+    padding-bottom: ${({ theme }) => theme.spacing(8)};
+  }
+`;
 
 export const Data = styled.td`
   color: #383e45;
