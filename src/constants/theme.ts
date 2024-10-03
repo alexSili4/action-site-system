@@ -27,6 +27,7 @@ interface ITheme {
     promotionPrizesSliderBtn: number;
     faqBtn: number;
     phoneLink: number;
+    regCodeLink: number;
   };
   containerWidth: {
     desktop: number;
@@ -70,6 +71,7 @@ const theme: ITheme = {
     promotionPrizesSliderBtn: 10,
     faqBtn: 12,
     phoneLink: 16,
+    regCodeLink: 16,
   },
   containerWidth: {
     desktop: 1376,

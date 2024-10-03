@@ -2,7 +2,9 @@ const enum SearchParamsKeys {
   search = 'search',
   sort = 'sort',
   category = 'category',
-  cityId = 'cityId',
+  cityId = 'city-id',
+  from = 'from',
+  to = 'to',
 }
 
 export default SearchParamsKeys;

@@ -2,13 +2,14 @@ import { FC } from 'react';
 import PromotionWinnersTable from '@/components/PromotionWinnersTable';
 import {
   Container,
-  PromotionWinnersTableWrap,
   ContentWrap,
   ElementWrap,
-  RegisterCodeLink,
+  ControlsWrap,
 } from './PromotionWinners.styled';
-import PromotionSectionTitle from '../PromotionSectionTitle';
-import { PagePaths } from '@/constants';
+import PromotionSectionTitle from '@/components/PromotionSectionTitle';
+import { PagePaths, theme } from '@/constants';
+import RegisterCodeLink from '@/components/RegisterCodeLink';
+import PromotionPrizeDrawsDatePicker from '@/components/PromotionPrizeDrawsDatePicker';
 
 const PromotionWinners: FC = () => {
   return (
@@ -16,22 +17,16 @@ const PromotionWinners: FC = () => {
       <PromotionSectionTitle title='Переможці' />
       <ContentWrap>
         <ElementWrap>
-          <div>
-            <div>datePicker</div>
-            <RegisterCodeLink to={PagePaths.code}>
-              registerCodeLink
-            </RegisterCodeLink>
-          </div>
+          <ControlsWrap>
+            <PromotionPrizeDrawsDatePicker />
+            <RegisterCodeLink to={PagePaths.code} isHiddenOnMobile />
+          </ControlsWrap>
         </ElementWrap>
-        <ElementWrap isTable>
-          <PromotionWinnersTableWrap>
-            <PromotionWinnersTable />
-          </PromotionWinnersTableWrap>
+        <ElementWrap marginTop={theme.spacing(8)} isTable>
+          <PromotionWinnersTable />
         </ElementWrap>
-        <ElementWrap>
-          <RegisterCodeLink to={PagePaths.code}>
-            registerCodeLink
-          </RegisterCodeLink>
+        <ElementWrap marginTop={theme.spacing(12)}>
+          <RegisterCodeLink to={PagePaths.code} />
         </ElementWrap>
       </ContentWrap>
     </Container>
