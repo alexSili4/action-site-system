@@ -6,8 +6,10 @@ import {
   Container,
   List,
   ListItem,
+  ListWrap,
 } from './PromotionPrizeDrawsDatePickerList.styled';
 import PromotionPrizeDrawsDatePickerDate from '@/components/PromotionPrizeDrawsDatePickerDate';
+import { useSetSearchParams } from '@/hooks';
 
 const PromotionPrizeDrawsDatePickerList: FC = () => {
   // TODO delete dates
@@ -19,32 +21,52 @@ const PromotionPrizeDrawsDatePickerList: FC = () => {
     { from: '13.08.24', to: '20.08.24' },
     { from: '14.08.24', to: '21.08.24' },
   ];
+  const { updateSearchParams } = useSetSearchParams();
+
+  const setDateSearchQuery = ({
+    key,
+    value,
+  }: {
+    key: string;
+    value: string;
+  }) => {
+    const [dateFromValue, dateToValue] = value.split(' - ');
+    const [dateFromKey, dateToKey] = key.split(' - ');
+
+    updateSearchParams({ key: dateFromKey, value: dateFromValue });
+    updateSearchParams({ key: dateToKey, value: dateToValue });
+  };
 
   const onDateInputChange = (e: InputChangeEvent) => {
+    const { value, name: key } = e.currentTarget;
+
     makeBlur(e.currentTarget);
+    setDateSearchQuery({ key, value });
   };
 
   return (
     <Container>
-      <List>
-        {dates.map(({ from, to }) => {
-          const datePickerDateName = `${SearchParamsKeys.from} - ${SearchParamsKeys.to}`;
-          const datePickerDateValue = `${from} - ${to}`;
-          // TODO fix checked
-          const checked = false;
+      <ListWrap>
+        <List>
+          {dates.map(({ from, to }) => {
+            const datePickerDateName = `${SearchParamsKeys.from} - ${SearchParamsKeys.to}`;
+            const datePickerDateValue = `${from} - ${to}`;
+            // TODO fix checked
+            const checked = false;
 
-          return (
-            <ListItem key={from}>
-              <PromotionPrizeDrawsDatePickerDate
-                value={datePickerDateValue}
-                name={datePickerDateName}
-                checked={checked}
-                onChange={onDateInputChange}
-              />
-            </ListItem>
-          );
-        })}
-      </List>
+            return (
+              <ListItem key={from}>
+                <PromotionPrizeDrawsDatePickerDate
+                  value={datePickerDateValue}
+                  name={datePickerDateName}
+                  checked={checked}
+                  onChange={onDateInputChange}
+                />
+              </ListItem>
+            );
+          })}
+        </List>
+      </ListWrap>
     </Container>
   );
 };
