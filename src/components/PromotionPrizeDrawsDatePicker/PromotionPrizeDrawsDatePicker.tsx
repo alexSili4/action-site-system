@@ -30,10 +30,15 @@ const PromotionPrizeDrawsDatePicker: FC = () => {
   return (
     //   TODO fix title
     <>
+      {showDatesList && <DropdownBackdrop onClick={toggleShowDatesList} />}
       <Container>
         <Title>Дата розіграшу</Title>
         <DatePickerWrap>
-          <DatePickerBtn type='button' onClick={onDatePickerBtnClick}>
+          <DatePickerBtn
+            type='button'
+            onClick={onDatePickerBtnClick}
+            showDatesList={showDatesList}
+          >
             <DatePickerBtnTitle>пофікси мене</DatePickerBtnTitle>
             <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
           </DatePickerBtn>
@@ -42,7 +47,6 @@ const PromotionPrizeDrawsDatePicker: FC = () => {
           </SmoothFadeInDropdownList>
         </DatePickerWrap>
       </Container>
-      {showDatesList && <DropdownBackdrop onClick={toggleShowDatesList} />}
     </>
   );
 };
