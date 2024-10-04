@@ -1,6 +1,4 @@
 import { SearchParamsKeys } from '@/constants';
-import { InputChangeEvent } from '@/types/types';
-import { makeBlur } from '@/utils';
 import { FC } from 'react';
 import {
   Container,
@@ -9,9 +7,11 @@ import {
   ListWrap,
 } from './PromotionPrizeDrawsDatePickerList.styled';
 import PromotionPrizeDrawsDatePickerDate from '@/components/PromotionPrizeDrawsDatePickerDate';
-import { useSetSearchParams } from '@/hooks';
+import { IProps } from './PromotionPrizeDrawsDatePickerList.types';
 
-const PromotionPrizeDrawsDatePickerList: FC = () => {
+const PromotionPrizeDrawsDatePickerList: FC<IProps> = ({
+  onDateInputChange,
+}) => {
   // TODO delete dates
   const dates: { from: string; to: string }[] = [
     { from: '09.08.24', to: '16.08.24' },
@@ -21,28 +21,6 @@ const PromotionPrizeDrawsDatePickerList: FC = () => {
     { from: '13.08.24', to: '20.08.24' },
     { from: '14.08.24', to: '21.08.24' },
   ];
-  const { updateSearchParams } = useSetSearchParams();
-
-  const setDateSearchQuery = ({
-    key,
-    value,
-  }: {
-    key: string;
-    value: string;
-  }) => {
-    const [dateFromValue, dateToValue] = value.split(' - ');
-    const [dateFromKey, dateToKey] = key.split(' - ');
-
-    updateSearchParams({ key: dateFromKey, value: dateFromValue });
-    updateSearchParams({ key: dateToKey, value: dateToValue });
-  };
-
-  const onDateInputChange = (e: InputChangeEvent) => {
-    const { value, name: key } = e.currentTarget;
-
-    makeBlur(e.currentTarget);
-    setDateSearchQuery({ key, value });
-  };
 
   return (
     <Container>

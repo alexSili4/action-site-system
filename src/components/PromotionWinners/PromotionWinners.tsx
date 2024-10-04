@@ -25,7 +25,7 @@ const PromotionWinners: FC = () => {
         <ElementWrap marginTop={theme.spacing(8)} isTable>
           <PromotionWinnersTable />
         </ElementWrap>
-        <ElementWrap marginTop={theme.spacing(12)}>
+        <ElementWrap marginTop={theme.spacing(12)} isHiddenOnDesk>
           <RegisterCodeLink to={PagePaths.code} />
         </ElementWrap>
       </ContentWrap>

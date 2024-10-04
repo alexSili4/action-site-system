@@ -42,6 +42,30 @@ const PromotionWinnersTable: FC = () => {
       code: 'ys156G34O45Bio9',
       prize: 'Сертифікат на 500 грн в мережу Foxtrot',
     },
+    {
+      name: 'хтось6',
+      phone: 'phone',
+      code: 'ys156G34O45Bio9',
+      prize: 'Сертифікат на 500 грн в мережу Foxtrot',
+    },
+    {
+      name: 'хтось7',
+      phone: 'phone',
+      code: 'ys156G34O45Bio9',
+      prize: 'Сертифікат на 500 грн в мережу Foxtrot',
+    },
+    {
+      name: 'хтось8',
+      phone: 'phone',
+      code: 'ys156G34O45Bio9',
+      prize: 'Сертифікат на 500 грн в мережу Foxtrot',
+    },
+    {
+      name: 'хтось9',
+      phone: 'phone',
+      code: 'ys156G34O45Bio9',
+      prize: 'Сертифікат на 500 грн в мережу Foxtrot',
+    },
   ];
 
   return (

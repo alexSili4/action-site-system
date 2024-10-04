@@ -25,6 +25,10 @@ export const Container = styled.div`
 export const Table = styled.table`
   flex-grow: 1;
   border-collapse: collapse;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 100%;
+  }
 `;
 
 export const Head = styled.thead``;
@@ -43,6 +47,16 @@ export const Header = styled.th`
   &:not(:first-of-type) {
     padding-left: ${({ theme }) => theme.spacing(4)};
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    color: #383e45;
+    padding-bottom: ${({ theme }) => theme.spacing(5)};
+
+    &:last-of-type {
+      color: #7e8494;
+      text-align: right;
+    }
+  }
 `;
 
 export const Body = styled.tbody`
@@ -50,8 +64,10 @@ export const Body = styled.tbody`
     padding-bottom: ${({ theme }) => theme.spacing(2)};
   }
 
-  & > tr:last-of-type > td {
-    padding-bottom: ${({ theme }) => theme.spacing(8)};
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    & > tr:last-of-type > td {
+      padding-bottom: ${({ theme }) => theme.spacing(8)};
+    }
   }
 `;
 
@@ -65,5 +81,12 @@ export const Data = styled.td`
 
   &:not(:first-of-type) {
     padding-left: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    &:last-of-type {
+      color: #7e8494;
+      text-align: right;
+    }
   }
 `;
