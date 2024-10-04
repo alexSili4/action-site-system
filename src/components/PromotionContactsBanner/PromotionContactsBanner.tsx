@@ -11,7 +11,9 @@ import {
   TitleImg,
   TitleWrap,
   LinkTitle,
+  IconWrap,
 } from './PromotionContactsBanner.styled';
+import { theme } from '@/constants';
 
 const PromotionContactsBanner: FC = () => {
   return (
@@ -24,14 +26,22 @@ const PromotionContactsBanner: FC = () => {
         <LinkWrap>
           <Label>Гаряча лінія</Label>
           <Link href='tel:+0000000000'>
-            <HiOutlinePhone />
+            <IconWrap>
+              <HiOutlinePhone
+                size={theme.iconSizes.promotionContactsPhoneLink}
+              />
+            </IconWrap>
             <LinkTitle>0000000000</LinkTitle>
           </Link>
         </LinkWrap>
         <LinkWrap>
-          <Title>Пошта</Title>
+          <Label>Пошта</Label>
           <Link href='mailto:someemail'>
-            <MdOutlineMailOutline />
+            <IconWrap>
+              <MdOutlineMailOutline
+                size={theme.iconSizes.promotionContactsMailLink}
+              />
+            </IconWrap>
             <LinkTitle>someemail</LinkTitle>
           </Link>
         </LinkWrap>

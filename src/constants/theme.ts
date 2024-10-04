@@ -28,6 +28,8 @@ interface ITheme {
     faqBtn: number;
     phoneLink: number;
     regCodeLink: number;
+    promotionContactsPhoneLink: number;
+    promotionContactsMailLink: number;
   };
   containerWidth: {
     desktop: number;
@@ -72,6 +74,8 @@ const theme: ITheme = {
     faqBtn: 12,
     phoneLink: 16,
     regCodeLink: 16,
+    promotionContactsPhoneLink: 16,
+    promotionContactsMailLink: 18,
   },
   containerWidth: {
     desktop: 1376,
