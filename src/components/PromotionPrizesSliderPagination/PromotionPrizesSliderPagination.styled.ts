@@ -7,6 +7,7 @@ export const List = styled.ul`
   bottom: 16px;
   left: 0;
   width: 100%;
+  height: 8px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

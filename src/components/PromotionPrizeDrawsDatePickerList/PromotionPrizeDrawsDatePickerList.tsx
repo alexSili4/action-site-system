@@ -11,17 +11,8 @@ import { IProps } from './PromotionPrizeDrawsDatePickerList.types';
 
 const PromotionPrizeDrawsDatePickerList: FC<IProps> = ({
   onDateInputChange,
+  dates,
 }) => {
-  // TODO delete dates
-  const dates: { from: string; to: string }[] = [
-    { from: '09.08.24', to: '16.08.24' },
-    { from: '10.08.24', to: '17.08.24' },
-    { from: '11.08.24', to: '18.08.24' },
-    { from: '12.08.24', to: '19.08.24' },
-    { from: '13.08.24', to: '20.08.24' },
-    { from: '14.08.24', to: '21.08.24' },
-  ];
-
   return (
     <Container>
       <ListWrap>

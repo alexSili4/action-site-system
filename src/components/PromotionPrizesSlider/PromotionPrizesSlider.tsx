@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -10,6 +10,7 @@ import {
 } from './PromotionPrizesSlider.styled';
 import PromotionPrizesSliderControls from '@/components/PromotionPrizesSliderControls';
 import PromotionPrizesSliderPagination from '@/components/PromotionPrizesSliderPagination';
+import { Swiper as ISwiper } from 'swiper';
 
 const PromotionPrizesSlider: FC = () => {
   // TODO delete prizes
@@ -20,9 +21,21 @@ const PromotionPrizesSlider: FC = () => {
     { title: 'Сертифікат на 200 грн в мережі магазинів Люксоптика' },
     { title: 'Кухонна машина PHILIPS 5шт' },
   ];
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const onSlideChange = (swiper: ISwiper) => {
+    setActiveIndex(swiper.activeIndex);
+  };
 
   return (
-    <Swiper speed={800} spaceBetween={30} slidesPerView={1} loop grabCursor>
+    <Swiper
+      onSlideChange={onSlideChange}
+      speed={800}
+      spaceBetween={30}
+      slidesPerView={1}
+      loop
+      grabCursor
+    >
       {prizes.map(({ title }) => (
         <SwiperSlide key={title}>
           <Card>
@@ -34,7 +47,10 @@ const PromotionPrizesSlider: FC = () => {
         </SwiperSlide>
       ))}
       <PromotionPrizesSliderControls />
-      <PromotionPrizesSliderPagination />
+      <PromotionPrizesSliderPagination
+        prizes={prizes}
+        activeIndex={activeIndex}
+      />
     </Swiper>
   );
 };

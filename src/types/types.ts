@@ -56,3 +56,10 @@ export interface IFAQ {
 }
 
 export type FAQs = IFAQ[];
+
+export interface IPromotionPrizeDraws {
+  from: string;
+  to: string;
+}
+
+export type PromotionPrizeDraws = IPromotionPrizeDraws[];

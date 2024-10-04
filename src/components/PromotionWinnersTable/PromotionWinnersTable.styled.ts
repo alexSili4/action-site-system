@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
-    margin-right: ${({ theme }) => theme.spacing(5)};
+    padding-right: ${({ theme }) => theme.spacing(5)};
     overflow-x: auto;
 
     &::-webkit-scrollbar {
@@ -12,6 +12,7 @@ export const Container = styled.div`
     &::-webkit-scrollbar-track {
       background-color: ${({ theme }) => theme.colors.white};
       border-radius: 100px;
+      margin-right: ${({ theme }) => theme.spacing(5)};
     }
 
     &::-webkit-scrollbar-thumb {
