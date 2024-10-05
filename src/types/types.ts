@@ -1,9 +1,8 @@
 import { PromotionsCategoriesKeys, PromotionsSortTypesKeys } from '@/constants';
-import { ChangeEvent, MouseEvent } from 'react';
 import { Location } from 'react-router-dom';
+import { ChangeEvent, MouseEvent } from 'react';
 
-export type Func = () => void;
-
+// events
 export type DatePickerEvent = Date | null;
 
 export type BtnClickEvent = MouseEvent<HTMLButtonElement>;
@@ -14,6 +13,9 @@ export type AnchorClickEvent = MouseEvent<HTMLAnchorElement>;
 
 export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 
+// functions
+export type Func = () => void;
+
 export type InputChangeFunc = (e: InputChangeEvent) => void;
 
 export type SetLocationFunc = (data: string) => void;
@@ -21,6 +23,8 @@ export type SetLocationFunc = (data: string) => void;
 export type SetActiveMarkerFunc = (data: number) => void;
 
 export type onDivClickFunc = (e: DivClickEvent) => void;
+
+// other
 
 export type TranslatedPromotionsSortTypesKeys = {
   [key in PromotionsSortTypesKeys]: string;
@@ -67,3 +71,11 @@ export interface IPromotionPrizeDraws {
 export type PromotionPrizeDraws = IPromotionPrizeDraws[];
 
 export type ActiveMarkerId = number | null;
+
+export interface IShop {
+  id: number;
+  position: [number, number];
+  popupText: string;
+}
+
+export type Shops = IShop[];

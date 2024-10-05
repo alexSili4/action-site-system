@@ -1,5 +1,5 @@
 import { IUseModalWin } from '@/types/hooks.types';
-import { DivClickEvent, Func } from '@/types/types';
+import { Func, DivClickEvent } from '@/types/types';
 import { useEffect } from 'react';
 
 const useModalWin = (setModalWinState: Func): IUseModalWin => {

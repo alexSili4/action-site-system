@@ -10,6 +10,7 @@ import { ClassNames } from '@/constants';
 const PromotionContactsVisicomMap: FC<IProps> = ({
   setActiveMarker,
   activeMarkerId,
+  markers,
 }) => {
   // TODO fix component and constants
   const tileLayerUrl = `https://tms{s}.visicom.ua/2.0.0/planet3/base/{z}/{x}/{y}.png?key=${
@@ -17,12 +18,6 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
   }`;
   const tileLayerAttribution =
     "<a href='https://sun.agency' target='_blank' rel='noopener noreferrer'>Зроблено Сонцем ●</a>";
-
-  const markers = [
-    { id: 1, position: [50.4501, 30.5234], popupText: 'Киев' },
-    { id: 2, position: [49.8383, 24.0232], popupText: 'Львов' },
-    { id: 3, position: [48.9226, 24.7103], popupText: 'Ивано-Франковск' },
-  ];
 
   const customMarkerIcon = new L.DivIcon({
     html: MarkerIcon,

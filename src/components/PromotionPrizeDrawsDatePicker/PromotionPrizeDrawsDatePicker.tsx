@@ -10,10 +10,13 @@ import {
   DatePickerWrap,
   Title,
 } from './PromotionPrizeDrawsDatePicker.styled';
-import { BtnClickEvent, PromotionPrizeDraws } from '@/types/types';
+import {
+  PromotionPrizeDraws,
+  BtnClickEvent,
+  InputChangeEvent,
+} from '@/types/types';
 import { makeBlur } from '@/utils';
 import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
-import { InputChangeEvent } from '@/types/types';
 import { useSetSearchParams } from '@/hooks';
 
 const PromotionPrizeDrawsDatePicker: FC = () => {
