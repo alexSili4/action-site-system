@@ -1,11 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './PromotionContactsMapHeader.types';
 
-const PromotionContactsMapHeader: FC<IProps> = ({
-  setActiveMarker,
-  activeMarkerId,
-  markers,
-}) => {
+const PromotionContactsMapHeader: FC<IProps> = () => {
   return <div>PromotionContactsMapHeader</div>;
 };
 
