@@ -18,6 +18,8 @@ export type InputChangeFunc = (e: InputChangeEvent) => void;
 
 export type SetLocationFunc = (data: string) => void;
 
+export type SetActiveMarkerFunc = (data: number) => void;
+
 export type onDivClickFunc = (e: DivClickEvent) => void;
 
 export type TranslatedPromotionsSortTypesKeys = {
