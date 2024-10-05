@@ -30,6 +30,8 @@ interface ITheme {
     regCodeLink: number;
     promotionContactsPhoneLink: number;
     promotionContactsMailLink: number;
+    promotionContactsMapHeader: number;
+    promotionContactsMapListClose: number;
   };
   containerWidth: {
     desktop: number;
@@ -76,6 +78,8 @@ const theme: ITheme = {
     regCodeLink: 16,
     promotionContactsPhoneLink: 16,
     promotionContactsMailLink: 18,
+    promotionContactsMapHeader: 20,
+    promotionContactsMapListClose: 12,
   },
   containerWidth: {
     desktop: 1376,
