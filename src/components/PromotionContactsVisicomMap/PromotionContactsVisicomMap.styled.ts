@@ -11,4 +11,10 @@ export const StyledMapContainer = styled(MapContainer)`
     height: 100%;
     fill: #9066cc;
   }
+
+  & .${ClassNames.activeMarkerWrap} > svg {
+    width: 100%;
+    height: 100%;
+    fill: greenyellow;
+  }
 `;

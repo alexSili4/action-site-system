@@ -1,14 +1,20 @@
 import { FC, useState } from 'react';
 import PromotionContactsVisicomMap from '@/components/PromotionContactsVisicomMap';
+import { ActiveMarkerId } from '@/types/types';
 
 const PromotionContactsMap: FC = () => {
-  const [activeMarker, setActiveMarker] = useState<number | null>(null);
+  const [activeMarkerId, setActiveMarkerId] = useState<ActiveMarkerId>(null);
 
-  const setActiveMarkerId = (id: number) => {
-    setActiveMarker(id);
+  const setActiveMarker = (id: number) => {
+    setActiveMarkerId(id);
   };
 
-  return <PromotionContactsVisicomMap setActiveMarker={setActiveMarkerId} />;
+  return (
+    <PromotionContactsVisicomMap
+      setActiveMarker={setActiveMarker}
+      activeMarkerId={activeMarkerId}
+    />
+  );
 };
 
 export default PromotionContactsMap;

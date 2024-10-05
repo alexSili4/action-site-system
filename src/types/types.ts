@@ -65,3 +65,5 @@ export interface IPromotionPrizeDraws {
 }
 
 export type PromotionPrizeDraws = IPromotionPrizeDraws[];
+
+export type ActiveMarkerId = number | null;
