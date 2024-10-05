@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import PromotionSectionTitle from '@/components/PromotionSectionTitle';
 import PromotionContactsBanner from '@/components/PromotionContactsBanner';
+import PromotionContactsMap from '@/components/PromotionContactsMap';
 import { Container, ContentWrap } from './PromotionContacts.styled';
 
 const PromotionContacts: FC = () => {
@@ -8,7 +9,7 @@ const PromotionContacts: FC = () => {
     <Container>
       <PromotionSectionTitle title='Контакти' />
       <ContentWrap>
-        <div>map</div>
+        <PromotionContactsMap />
         <PromotionContactsBanner />
       </ContentWrap>
     </Container>

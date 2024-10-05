@@ -20,7 +20,7 @@ const PromotionContactsBanner: FC = () => {
     <Container>
       <TitleWrap>
         <Title>Організатор акції</Title>
-        <TitleImg src='' alt='Логотип організатор акції' />
+        <TitleImg src='' alt='Логотип організатора акції' />
       </TitleWrap>
       <Links>
         <LinkWrap>

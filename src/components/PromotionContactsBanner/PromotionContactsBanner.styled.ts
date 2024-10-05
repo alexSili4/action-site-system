@@ -7,6 +7,10 @@ export const Container = styled.div`
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) => `${theme.spacing(10)} ${theme.spacing(5)}`};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    height: 480px;
+  }
 `;
 
 export const TitleWrap = styled.div`
