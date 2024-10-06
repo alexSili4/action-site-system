@@ -57,6 +57,7 @@ const PromotionContactsMapHeader: FC<IProps> = ({
                 makeBlur(e.currentTarget);
 
                 setActiveMarker(Number(e.currentTarget.value));
+                toggleShowShopsList();
               };
 
               return (

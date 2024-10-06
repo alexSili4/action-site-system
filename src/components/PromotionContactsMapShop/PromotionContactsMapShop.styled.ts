@@ -3,10 +3,19 @@ import styled from '@emotion/styled';
 export const Container = styled.label`
   display: block;
   padding: ${({ theme }) => theme.spacing(6)};
+  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
   cursor: pointer;
 
   &:not(:last-of-type) {
     border-bottom: 1px solid #e3e7ed;
+  }
+
+  &:is(:hover, :focus, :has(input:checked)) {
+    background-color: #9066cc;
+  }
+
+  &:is(:hover, :focus, :has(input:checked)) > span > span {
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
 
@@ -22,6 +31,7 @@ export const Name = styled.span`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
 export const Address = styled.span`
@@ -30,6 +40,7 @@ export const Address = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
 export const WorkSchedule = styled.span`
@@ -38,6 +49,7 @@ export const WorkSchedule = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
 export const RadioBtn = styled.input`
