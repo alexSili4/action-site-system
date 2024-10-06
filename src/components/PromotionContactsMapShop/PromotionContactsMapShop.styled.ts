@@ -6,10 +6,6 @@ export const Container = styled.label`
   transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
   cursor: pointer;
 
-  &:not(:last-of-type) {
-    border-bottom: 1px solid #e3e7ed;
-  }
-
   &:is(:hover, :focus, :has(input:checked)) {
     background-color: #9066cc;
   }

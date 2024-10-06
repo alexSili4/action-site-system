@@ -14,6 +14,7 @@ import {
 import { makeBlur } from '@/utils';
 import { BtnClickEvent, InputChangeEvent } from '@/types/types';
 import PromotionContactsMapShop from '@/components/PromotionContactsMapShop';
+import { useMediaQuery } from '@/hooks';
 
 const PromotionContactsMapHeader: FC<IProps> = ({
   activeMarkerId,
@@ -21,6 +22,7 @@ const PromotionContactsMapHeader: FC<IProps> = ({
   setActiveMarker,
 }) => {
   const [showShopsList, setShowShopsList] = useState<boolean>(false);
+  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
 
   const toggleShowShopsList = () => {
     setShowShopsList((prevState) => !prevState);
@@ -57,7 +59,10 @@ const PromotionContactsMapHeader: FC<IProps> = ({
                 makeBlur(e.currentTarget);
 
                 setActiveMarker(Number(e.currentTarget.value));
-                toggleShowShopsList();
+
+                if (!isDesktop) {
+                  toggleShowShopsList();
+                }
               };
 
               return (

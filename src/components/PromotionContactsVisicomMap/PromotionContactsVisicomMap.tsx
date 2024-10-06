@@ -6,6 +6,7 @@ import { IProps } from './PromotionContactsVisicomMap.types';
 import { StyledMapContainer } from './PromotionContactsVisicomMap.styled';
 import MarkerIcon from '@/icons/contacts-map/marker.svg?raw';
 import { ClassNames } from '@/constants';
+import PromotionContactsVisicomMapController from '@/components/PromotionContactsVisicomMapController';
 
 const PromotionContactsVisicomMap: FC<IProps> = ({
   setActiveMarker,
@@ -47,6 +48,10 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
         tms
       />
       <ZoomControl position='bottomright' />
+      <PromotionContactsVisicomMapController
+        activeMarkerId={activeMarkerId}
+        markers={markers}
+      />
       {markers.map(({ position, id }) => {
         const isActiveMarker = activeMarkerId === id;
         const markerPosition: LatLngExpression = {
@@ -66,9 +71,7 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
             eventHandlers={{
               click: onMarkerClick,
             }}
-          >
-            1
-          </Marker>
+          ></Marker>
         );
       })}
     </StyledMapContainer>
