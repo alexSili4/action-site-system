@@ -1,7 +1,13 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './PromotionWinners.types';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin-top: ${({ theme }) => theme.spacing(30)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    margin-top: ${({ theme }) => theme.spacing(28)};
+  }
+`;
 
 export const ContentWrap = styled.div`
   border-radius: 12px;

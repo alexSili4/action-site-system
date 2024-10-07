@@ -4,3 +4,4 @@ export { default as getTranslatedPromotionsCategory } from './getTranslatedPromo
 export { default as formatDate } from './formatDate';
 export { default as getPromotionsDatePickerBtnLabel } from './getPromotionsDatePickerBtnLabel';
 export { default as smoothScroll } from './smoothScroll';
+export { default as getTranslatedPromotionDetailsPageSectionName } from './getTranslatedPromotionDetailsPageSectionName';

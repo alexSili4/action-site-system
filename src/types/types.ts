@@ -1,4 +1,8 @@
-import { PromotionsCategoriesKeys, PromotionsSortTypesKeys } from '@/constants';
+import {
+  PromotionDetailsPageSections,
+  PromotionsCategoriesKeys,
+  PromotionsSortTypesKeys,
+} from '@/constants';
 import { Location } from 'react-router-dom';
 import { ChangeEvent, MouseEvent } from 'react';
 
@@ -79,3 +83,7 @@ export interface IShop {
 }
 
 export type Shops = IShop[];
+
+export type TranslatedPromotionDetailsPageSections = {
+  [key in PromotionDetailsPageSections]: string;
+};

@@ -10,6 +10,10 @@ export const Container = styled.div`
   padding-top: ${({ theme }) => theme.spacing(8)};
   border-radius: 8px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    margin-top: ${({ theme }) => theme.spacing(3)};
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     height: 600px;
     padding: ${({ theme }) =>
