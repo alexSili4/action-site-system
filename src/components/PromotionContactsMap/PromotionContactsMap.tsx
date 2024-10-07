@@ -3,6 +3,7 @@ import PromotionContactsVisicomMap from '@/components/PromotionContactsVisicomMa
 import { ActiveMarkerId, Shops } from '@/types/types';
 import { Container } from './PromotionContactsMap.styled';
 import PromotionContactsMapHeader from '@/components/PromotionContactsMapHeader';
+import { smoothScroll } from '@/utils';
 
 const PromotionContactsMap: FC = () => {
   // TODO elete markers
@@ -33,6 +34,7 @@ const PromotionContactsMap: FC = () => {
 
   const setActiveMarker = (id: number) => {
     setActiveMarkerId(id);
+    smoothScroll(String(id));
   };
 
   return (
