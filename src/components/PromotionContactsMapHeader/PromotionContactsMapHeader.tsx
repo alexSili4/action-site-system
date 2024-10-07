@@ -7,7 +7,7 @@ import {
   ShopsListBtn,
   Container,
   Title,
-} from './PromotionContactsMapHeader. styled';
+} from './PromotionContactsMapHeader.styled';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
 import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';

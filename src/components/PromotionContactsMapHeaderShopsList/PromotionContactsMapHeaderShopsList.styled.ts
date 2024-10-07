@@ -8,6 +8,7 @@ export const ListWrap = styled.div`
   width: 100%;
   max-height: 320px;
   background-color: #f4f6f9;
+  box-shadow: -4px 20px 20px 0px rgba(32, 31, 47, 0.1);
   overflow-y: scroll;
 
   &::-webkit-scrollbar {

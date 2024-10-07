@@ -20,6 +20,7 @@ export const ShopsListBtn = styled.button`
   padding: ${({ theme }) => theme.spacing(6)};
   border: none;
   background-color: #f4f6f9;
+  box-shadow: -4px 0px 20px 0px rgba(32, 31, 47, 0.1);
 
   & > svg {
     color: #2e305b;
