@@ -41,6 +41,17 @@ interface ITheme {
   breakpoints: {
     desktop: number;
   };
+  zIndex: {
+    animatedModalWin: number;
+    promotionMapHeader: number;
+    promotionShopsList: number;
+    promotionNavBar: number;
+    promotionSliderControls: number;
+    promotionSliderPagination: number;
+    dropdownBackdrop: number;
+    selectCityDropdown: number;
+    selectSortTypeDropdown: number;
+  };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
   trimText: string;
@@ -90,6 +101,17 @@ const theme: ITheme = {
     desktop: 1410,
   },
   // shadows: {  },
+  zIndex: {
+    animatedModalWin: 10,
+    promotionSliderControls: 10,
+    promotionSliderPagination: 10,
+    promotionMapHeader: 1000,
+    promotionShopsList: 1000,
+    promotionNavBar: 1000,
+    dropdownBackdrop: 10000,
+    selectCityDropdown: 10000,
+    selectSortTypeDropdown: 10000,
+  },
   transitionDurationAndFunc: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
   trimText:

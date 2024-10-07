@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   position: absolute;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.promotionSliderControls};
   top: 50%;
   left: 0;
   display: flex;

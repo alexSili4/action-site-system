@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Section = styled.div`
   position: fixed;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.animatedModalWin};
   top: 0;
   left: 0;
   width: 100%;

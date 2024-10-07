@@ -3,7 +3,7 @@ import { IStyledProps } from './PromotionDetailsNavBar.types';
 
 export const Container = styled.div`
   position: fixed;
-  z-index: 1000;
+  z-index: ${({ theme }) => theme.zIndex.promotionNavBar};
   left: 50%;
   bottom: 16px;
   width: ${({ theme }) => theme.containerWidth.mobile}px;

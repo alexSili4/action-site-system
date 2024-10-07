@@ -3,7 +3,7 @@ import { IStyledProps } from './PromotionPrizesSliderPagination.types';
 
 export const List = styled.ul`
   position: absolute;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndex.promotionSliderPagination};
   bottom: 16px;
   left: 0;
   width: 100%;

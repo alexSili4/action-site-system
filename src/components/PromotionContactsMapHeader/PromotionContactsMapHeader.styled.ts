@@ -5,7 +5,7 @@ export const Container = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     position: absolute;
-    z-index: 1000;
+    z-index: ${({ theme }) => theme.zIndex.promotionMapHeader};
     top: 0;
     right: 0;
     width: 330px;

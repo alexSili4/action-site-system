@@ -52,7 +52,10 @@ const PromotionContactsMapHeader: FC<IProps> = ({
         <Title>Магазини в яких діє акція</Title>
         {shopsListBtnIcon}
       </ShopsListBtn>
-      <SmoothFadeInDropdownList isVisible={showShopsList} zIndex={1000}>
+      <SmoothFadeInDropdownList
+        isVisible={showShopsList}
+        zIndex={theme.zIndex.promotionShopsList}
+      >
         <PromotionContactsMapHeaderShopsList
           activeMarkerId={activeMarkerId}
           markers={markers}
