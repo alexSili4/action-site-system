@@ -4,4 +4,5 @@ export interface IProps {
   setActiveMarker: SetActiveMarkerFunc;
   activeMarkerId: ActiveMarkerId;
   markers: Shops;
+  isDesktop: boolean;
 }

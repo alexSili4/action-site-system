@@ -12,6 +12,7 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
   setActiveMarker,
   activeMarkerId,
   markers,
+  isDesktop,
 }) => {
   // TODO fix component and constants
   const tileLayerUrl = `https://tms{s}.visicom.ua/2.0.0/planet3/base/{z}/{x}/{y}.png?key=${
@@ -47,7 +48,7 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
         subdomains='123'
         tms
       />
-      <ZoomControl position='bottomright' />
+      <ZoomControl position={isDesktop ? 'bottomleft' : 'bottomright'} />
       <PromotionContactsVisicomMapController
         activeMarkerId={activeMarkerId}
         markers={markers}

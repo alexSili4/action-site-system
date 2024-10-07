@@ -11,6 +11,10 @@ export const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     height: 480px;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 445px;
+  }
 `;
 
 export const TitleWrap = styled.div`

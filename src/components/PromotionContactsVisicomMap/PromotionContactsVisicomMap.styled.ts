@@ -19,4 +19,8 @@ export const StyledMapContainer = styled(MapContainer)`
     transform-origin: bottom center;
     transform: scale(1.3);
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    height: 513px;
+  }
 `;

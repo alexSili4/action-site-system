@@ -6,23 +6,20 @@ import { theme } from '@/constants';
 import {
   ShopsListBtn,
   Container,
-  List,
-  ListItem,
-  ListWrap,
   Title,
 } from './PromotionContactsMapHeader. styled';
 import { makeBlur } from '@/utils';
-import { BtnClickEvent, InputChangeEvent } from '@/types/types';
-import PromotionContactsMapShop from '@/components/PromotionContactsMapShop';
-import { useMediaQuery } from '@/hooks';
+import { BtnClickEvent } from '@/types/types';
+import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
+import PromotionContactsMapHeaderShopsList from '@/components/PromotionContactsMapHeaderShopsList';
 
 const PromotionContactsMapHeader: FC<IProps> = ({
   activeMarkerId,
   markers,
   setActiveMarker,
+  isDesktop,
 }) => {
   const [showShopsList, setShowShopsList] = useState<boolean>(false);
-  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
 
   const toggleShowShopsList = () => {
     setShowShopsList((prevState) => !prevState);
@@ -40,6 +37,14 @@ const PromotionContactsMapHeader: FC<IProps> = ({
     <HiOutlineNewspaper size={theme.iconSizes.promotionContactsMapHeader} />
   );
 
+  const updateActiveMarker = (id: number) => {
+    setActiveMarker(id);
+
+    if (!isDesktop) {
+      toggleShowShopsList();
+    }
+  };
+
   // TODO fix shops list
   return (
     <Container>
@@ -47,39 +52,13 @@ const PromotionContactsMapHeader: FC<IProps> = ({
         <Title>Магазини в яких діє акція</Title>
         {shopsListBtnIcon}
       </ShopsListBtn>
-      {showShopsList && (
-        <ListWrap>
-          <List>
-            {markers.map(({ id, popupText }) => {
-              const checked = id === activeMarkerId;
-
-              const onPromotionContactsMapShopChange = (
-                e: InputChangeEvent
-              ) => {
-                makeBlur(e.currentTarget);
-
-                setActiveMarker(Number(e.currentTarget.value));
-
-                if (!isDesktop) {
-                  toggleShowShopsList();
-                }
-              };
-
-              return (
-                <ListItem key={id}>
-                  <PromotionContactsMapShop
-                    checked={checked}
-                    value={id}
-                    name={popupText}
-                    onChange={onPromotionContactsMapShopChange}
-                    id={String(id)}
-                  />
-                </ListItem>
-              );
-            })}
-          </List>
-        </ListWrap>
-      )}
+      <SmoothFadeInDropdownList isVisible={showShopsList} zIndex={1000}>
+        <PromotionContactsMapHeaderShopsList
+          activeMarkerId={activeMarkerId}
+          markers={markers}
+          setActiveMarker={updateActiveMarker}
+        />
+      </SmoothFadeInDropdownList>
     </Container>
   );
 };

@@ -2,6 +2,14 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   position: relative;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    width: 330px;
+  }
 `;
 
 export const ShopsListBtn = styled.button`
@@ -24,38 +32,8 @@ export const Title = styled.span`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
-`;
 
-export const ListWrap = styled.div`
-  position: absolute;
-  z-index: 1000;
-  top: 100%;
-  left: 0px;
-  width: 100%;
-  max-height: 320px;
-  background-color: #f4f6f9;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 3px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #f6f6f9;
-    border-radius: 100px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #a282f7;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-`;
-
-export const List = styled.ul``;
-
-export const ListItem = styled.li`
-  &:not(:last-of-type) > label {
-    border-bottom: 1px solid #e3e7ed;
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    font-size: 18px;
   }
 `;
