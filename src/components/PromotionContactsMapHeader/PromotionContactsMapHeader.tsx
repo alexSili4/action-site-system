@@ -72,6 +72,7 @@ const PromotionContactsMapHeader: FC<IProps> = ({
                     value={id}
                     name={popupText}
                     onChange={onPromotionContactsMapShopChange}
+                    id={String(id)}
                   />
                 </ListItem>
               );

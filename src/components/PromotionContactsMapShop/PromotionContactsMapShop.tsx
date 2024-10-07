@@ -14,9 +14,10 @@ const PromotionContactsMapShop: FC<IProps> = ({
   checked,
   value,
   name,
+  id,
 }) => {
   return (
-    <Container>
+    <Container id={id}>
       <TitleWrap>
         <Name>{name}</Name>
         <Address>address</Address>

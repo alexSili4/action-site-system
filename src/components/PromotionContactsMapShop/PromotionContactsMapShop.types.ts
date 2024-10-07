@@ -5,4 +5,5 @@ export interface IProps {
   checked: boolean;
   value: number;
   name: string;
+  id:string
 }
