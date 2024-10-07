@@ -9,3 +9,5 @@ export { default as translatedPromotionsCategoriesKeys } from './translatedPromo
 export { default as animations } from './animations';
 export { default as DateFormats } from './dateFormats';
 export { default as ClassNames } from './classNames';
+export { default as PromotionDetailsPageSections } from './promotionDetailsPageSections';
+export { default as Symbols } from './symbols';

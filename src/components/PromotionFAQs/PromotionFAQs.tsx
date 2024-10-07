@@ -13,7 +13,7 @@ import {
 import PromotionFAQ from '@/components/PromotionFAQ';
 import { FAQs } from '@/types/types';
 import { FaPhoneAlt } from 'react-icons/fa';
-import { theme } from '@/constants';
+import { PromotionDetailsPageSections, theme } from '@/constants';
 
 const PromotionFAQs: FC = () => {
   //  TODO delete FAQs
@@ -43,7 +43,7 @@ const PromotionFAQs: FC = () => {
   ];
 
   return (
-    <Container>
+    <Container id={PromotionDetailsPageSections.faqs}>
       <PromotionSectionTitle title='Питання та відповіді' />
       <ContentWrap>
         <List>

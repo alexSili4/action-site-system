@@ -7,13 +7,13 @@ import {
   ControlsWrap,
 } from './PromotionWinners.styled';
 import PromotionSectionTitle from '@/components/PromotionSectionTitle';
-import { PagePaths, theme } from '@/constants';
+import { PagePaths, PromotionDetailsPageSections, theme } from '@/constants';
 import RegisterCodeLink from '@/components/RegisterCodeLink';
 import PromotionPrizeDrawsDatePicker from '@/components/PromotionPrizeDrawsDatePicker';
 
 const PromotionWinners: FC = () => {
   return (
-    <Container>
+    <Container id={PromotionDetailsPageSections.winners}>
       <PromotionSectionTitle title='Переможці' />
       <ContentWrap>
         <ElementWrap>

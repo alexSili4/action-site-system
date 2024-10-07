@@ -37,7 +37,7 @@ const PromotionContactsMap: FC = () => {
 
   const setActiveMarker = (id: number) => {
     setActiveMarkerId(id);
-    smoothScroll(String(id));
+    smoothScroll({ id: String(id), isNearestBlock: true });
   };
 
   return (

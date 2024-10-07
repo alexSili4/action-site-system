@@ -1,7 +1,7 @@
 import { PagePaths, theme } from '@/constants';
 import { FC } from 'react';
-import { StyledLink } from './PromotionGoBackLink.styled';
-import { IProps } from './PromotionGoBackLink.types';
+import { StyledLink } from './PromotionDetailsGoBackLink.styled';
+import { IProps } from './PromotionDetailsGoBackLink.types';
 import { FaChevronLeft } from 'react-icons/fa';
 
 const PromotionGoBackLink: FC<IProps> = ({ from }) => {
