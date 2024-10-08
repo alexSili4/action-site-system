@@ -13,17 +13,9 @@ import {
 } from './PromotionConditionsSlider.styled';
 import { theme } from '@/constants';
 import { Autoplay } from 'swiper/modules';
+import { IProps } from './PromotionConditionsSlider.types';
 
-const PromotionConditionsSlider: FC = () => {
-  // TODO delete conditions
-  const conditions: { title: string }[] = [
-    { title: 'тут дуже довгий текст, а в інших слайдах його не буде' },
-    { title: 'тут інший текст' },
-    { title: 'тут інший текст2' },
-    { title: 'тут інший текст3' },
-    { title: 'тут інший текст4' },
-    { title: 'тут інший текст5' },
-  ];
+const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
   const sliderContainerRef = useRef<HTMLDivElement | null>(null);
 

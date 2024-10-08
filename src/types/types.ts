@@ -34,13 +34,6 @@ export interface IFormatDateProps {
 
 export type PageLocation = Location<any>;
 
-export interface IFAQ {
-  question: string;
-  answer: string;
-}
-
-export type FAQs = IFAQ[];
-
 export interface IPromotionPrizeDraws {
   from: string;
   to: string;

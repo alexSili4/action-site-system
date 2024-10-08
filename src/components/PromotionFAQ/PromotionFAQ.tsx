@@ -13,7 +13,7 @@ import {
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
 
-const PromotionFAQ: FC<IProps> = ({ faq: { answer, question } }) => {
+const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
   const answerRef = useRef<HTMLDivElement | null>(null);
   const scrollHeight = answerRef.current?.scrollHeight ?? 0;
@@ -32,7 +32,7 @@ const PromotionFAQ: FC<IProps> = ({ faq: { answer, question } }) => {
     <ListItem>
       <QuestionWrap>
         <QuestionBtn onClick={onQuestionBtnClick} showAnswer={showAnswer}>
-          <QuestionBtnTitle>{question}</QuestionBtnTitle>
+          <QuestionBtnTitle>{title}</QuestionBtnTitle>
           <FaChevronDown size={theme.iconSizes.faqBtn} />
         </QuestionBtn>
         <AnswerWrap
@@ -40,7 +40,7 @@ const PromotionFAQ: FC<IProps> = ({ faq: { answer, question } }) => {
           showAnswer={showAnswer}
           ref={answerRef}
         >
-          <Answer>{answer}</Answer>
+          <Answer>{text}</Answer>
         </AnswerWrap>
       </QuestionWrap>
     </ListItem>

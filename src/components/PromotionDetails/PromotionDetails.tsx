@@ -12,8 +12,9 @@ import PromotionWinners from '@/components/PromotionWinners';
 import PromotionContacts from '@/components/PromotionContacts';
 import PromotionBanner from '@/components/PromotionBanner';
 import PromotionDetailsSectionContainer from '@/components/PromotionDetailsSectionContainer';
+import { IProps } from './PromotionDetails.types';
 
-const PromotionDetails: FC = () => {
+const PromotionDetails: FC<IProps> = ({ faqs }) => {
   // TODO delete promotion
   const promotion: { id: number; date: string } = {
     date: '08.08.24 - 25.09.24',
@@ -47,7 +48,7 @@ const PromotionDetails: FC = () => {
       </PromotionDetailsSectionContainer>
       <PromotionDetailsSectionContainer>
         <PromotionPrizes />
-        <PromotionFAQs />
+        <PromotionFAQs faqs={faqs} />
         <PromotionWinners />
         <PromotionContacts />
       </PromotionDetailsSectionContainer>

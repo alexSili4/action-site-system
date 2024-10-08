@@ -1,4 +1,4 @@
-import { IFAQ } from '@/types/types';
+import { IFAQ } from '@/types/faqs.types';
 
 export interface IProps {
   faq: IFAQ;

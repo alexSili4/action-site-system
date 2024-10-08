@@ -6,6 +6,9 @@ import {
   OnDivClickFunc,
 } from './types';
 import { IPromotionDetailsState, Promotions } from './promotion.types';
+import { Conditions } from './condition.types';
+import { Prizes } from './prize.types';
+import { FAQs } from './faqs.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -35,4 +38,10 @@ export interface IUseLocationFilter {
 export interface IUsePromotionsList {
   promotions: Promotions;
   linkState: IPromotionDetailsState;
+}
+
+export interface IUsePromotionDetailsPage {
+  conditions: Conditions;
+  prizes: Prizes;
+  faqs: FAQs;
 }
