@@ -1,37 +1,46 @@
 import { FC } from 'react';
-import { Card, Container, List, ListItem } from './PromotionsList.styled';
+import { usePromotionsList } from '@/hooks';
+import { getPromotionDate, getPromotionBannerUrls } from '@/utils';
 import LinkWithQuery from '@/components/LinkWithQuery';
-import { useLocation } from 'react-router-dom';
-import { IProps } from './PromotionsList.types';
-import { IPromotionDetailsState } from '@/types/promotion.types';
 import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
+import PromotionName from '@/components/PromotionName';
+import { IProps } from './PromotionsList.types';
+import { Card, Container, List, ListItem } from './PromotionsList.styled';
 
 const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
-  // TODO delete promotions
-  const promotions: { id: number; date: string }[] = [
-    { date: '08.08.24 - 25.09.24', id: 1 },
-    { date: '08.08.24 - 25.09.24', id: 2 },
-    { date: '08.08.24 - 25.09.24', id: 3 },
-  ];
-  const location = useLocation();
-
-  const linkState: IPromotionDetailsState = {
-    from: location,
-    promotionCategory,
-  };
+  const { promotions, linkState } = usePromotionsList(promotionCategory);
 
   return (
     <Container>
       <List>
-        {promotions.map(({ id, date }) => (
-          <ListItem key={id}>
-            <LinkWithQuery to={`${id}`} state={linkState}>
-              <Card>
-                <PromotionPeriodLabel period={date} />
-              </Card>
-            </LinkWithQuery>
-          </ListItem>
-        ))}
+        {promotions.map(
+          ({
+            id,
+            name,
+            date_from: dateFrom,
+            date_to: dateTo,
+            main_banner_dt: mainBannerDt,
+            main_banner_mob: mainBannerMob,
+          }) => {
+            const date = getPromotionDate({ dateFrom, dateTo });
+            const { mainBannerDtUrl, mainBannerMobUrl } =
+              getPromotionBannerUrls({ mainBannerDt, mainBannerMob });
+
+            return (
+              <ListItem key={id}>
+                <LinkWithQuery to={`${id}`} state={linkState}>
+                  <Card
+                    mainBannerDt={mainBannerDtUrl}
+                    mainBannerMob={mainBannerMobUrl}
+                  >
+                    <PromotionPeriodLabel period={date} />
+                    <PromotionName name={name} />
+                  </Card>
+                </LinkWithQuery>
+              </ListItem>
+            );
+          }
+        )}
       </List>
     </Container>
   );

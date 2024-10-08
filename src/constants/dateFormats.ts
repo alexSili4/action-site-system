@@ -1,5 +1,5 @@
 const enum DateFormats {
-  promotionsDatePickerBtn = 'dd.MM.yy',
+  promotionDate = 'dd.MM.yy',
 }
 
 export default DateFormats;

@@ -39,7 +39,6 @@ export const Nav = styled.nav<IStyledProps>`
   }
 `;
 
-// TODO color in theme
 export const LogoLinkTitle = styled.span`
   color: #fd4c3c;
   font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};

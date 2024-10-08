@@ -8,7 +8,7 @@ import { theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 
 const PromotionContactsMap: FC = () => {
-  // TODO elete markers
+  // TODO delete markers
   const markers: Shops = [
     { id: 1, position: [50.4501, 30.5234], popupText: 'Київ' },
     { id: 2, position: [49.8383, 24.0232], popupText: 'Львів' },

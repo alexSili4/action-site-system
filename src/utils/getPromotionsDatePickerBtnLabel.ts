@@ -3,7 +3,7 @@ import { formatDate } from '@/utils';
 
 const getPromotionsDatePickerBtnLabel = (date: Date | null): string =>
   date
-    ? formatDate({ date, dateFormat: DateFormats.promotionsDatePickerBtn })
+    ? formatDate({ date, dateFormat: DateFormats.promotionDate })
     : 'Період дії';
 
 export default getPromotionsDatePickerBtnLabel;

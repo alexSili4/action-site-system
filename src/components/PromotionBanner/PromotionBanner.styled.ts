@@ -25,23 +25,8 @@ export const InfoWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)};
-  width: 100%;
-  max-width: 500px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(8)};
-  }
-`;
-
-export const Title = styled.p`
-  color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.1;
-  text-transform: uppercase;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 56px;
   }
 `;

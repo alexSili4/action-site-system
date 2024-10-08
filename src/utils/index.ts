@@ -7,3 +7,5 @@ export { default as smoothScroll } from './smoothScroll';
 export { default as getTranslatedPromotionDetailsPageSectionName } from './getTranslatedPromotionDetailsPageSectionName';
 export { default as getTargetLocation } from './getTargetLocation';
 export { default as getShowLocationsBtnTitle } from './getShowLocationsBtnTitle';
+export { default as getPromotionBannerUrls } from './getPromotionBannerUrls';
+export { default as getPromotionDate } from './getPromotionDate';

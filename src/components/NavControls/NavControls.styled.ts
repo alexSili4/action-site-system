@@ -51,7 +51,6 @@ export const RegisterCodeBtn = styled.button`
   }
 `;
 
-// TODO color in theme
 export const CabinetLink = styled(Link)`
   flex-shrink: 0;
   display: flex;

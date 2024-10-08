@@ -5,6 +5,7 @@ import {
   OnBtnClickFunc,
   OnDivClickFunc,
 } from './types';
+import { IPromotionDetailsState, Promotions } from './promotion.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -29,4 +30,9 @@ export interface IUseLocationFilter {
   toggleShowLocationList: Func;
   onShowListBtnClick: OnBtnClickFunc;
   onLocationLinkClick: OnAnchorClickFunc;
+}
+
+export interface IUsePromotionsList {
+  promotions: Promotions;
+  linkState: IPromotionDetailsState;
 }

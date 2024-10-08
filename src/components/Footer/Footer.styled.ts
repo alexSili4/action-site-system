@@ -16,7 +16,6 @@ export const StyledFooter = styled.footer<IStyledProps>`
   }
 `;
 
-// TODO color in theme
 export const Copyright = styled.p<IStyledProps>`
   margin-top: 16px;
   color: ${({ theme, isRootPage }) =>
