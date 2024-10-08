@@ -1,4 +1,4 @@
-import { TranslatedPromotionsSortTypesKeys } from '@/types/types';
+import { TranslatedPromotionsSortTypesKeys } from '@/types/promotion.types';
 
 const translatedPromotionsSortTypesKeys: TranslatedPromotionsSortTypesKeys = {
   new: 'Спочатку нові',

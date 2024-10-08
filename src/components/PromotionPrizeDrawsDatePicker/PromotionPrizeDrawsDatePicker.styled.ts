@@ -21,6 +21,7 @@ export const Title = styled.p`
 
 export const DatePickerWrap = styled.div`
   position: relative;
+  z-index: ${({ theme }) => theme.zIndex.promotionPrizeDrawsDatePicker};
 `;
 
 export const DatePickerBtn = styled.button<IStyledProps>`

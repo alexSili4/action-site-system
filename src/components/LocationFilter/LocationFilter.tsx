@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import {
   Container,
   ShowLocationsBtn,
@@ -7,53 +7,24 @@ import {
 } from './LocationFilter.styled';
 import { IProps } from './LocationFilter.types';
 import { FaChevronDown } from 'react-icons/fa';
-import { BtnClickEvent } from '@/types/types';
-import { makeBlur } from '@/utils';
-import { SearchParamsKeys, theme } from '@/constants';
+import { theme } from '@/constants';
 import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
 import LocationList from '@/components/LocationList';
 import LocationSearchField from '@/components/LocationSearchField';
-import { useSetSearchParams } from '@/hooks';
 import DropdownBackdrop from '@/components/DropdownBackdrop';
-import { useCitiesStore } from '@/store/store';
-import { selectGetCities } from '@/store/cities/selectors';
+import { useLocationFilter } from '@/hooks';
 
 const LocationFilter: FC<IProps> = ({ isRootPage }) => {
-  const getCities = useCitiesStore(selectGetCities);
-  const { updateSearchParams, searchParams } = useSetSearchParams();
-  const city = searchParams.get(SearchParamsKeys.search);
-  const [showLocationList, setShowLocationList] = useState<boolean>(false);
-  const [targetLocation, setTargetLocation] = useState<string | null>(() =>
-    city ? city : null
-  );
-  // TODO fix location name
-  const showLocationsBtnTitle = targetLocation
-    ? targetLocation
-    : 'Оберіть місто';
-
-  useEffect(() => {
-    getCities();
-  }, [getCities]);
-
-  const toggleShowLocationList = () => {
-    setShowLocationList((prevState) => !prevState);
-  };
-
-  const setLocation = (location: string) => {
-    setTargetLocation(location);
-
-    toggleShowLocationList();
-  };
-
-  const onShowListBtnClick = (e: BtnClickEvent) => {
-    makeBlur(e.currentTarget);
-
-    updateSearchParams({ key: SearchParamsKeys.search, value: '' });
-    toggleShowLocationList();
-  };
+  const {
+    onShowListBtnClick,
+    showLocationList,
+    isSelectedCity,
+    showLocationsBtnTitle,
+    onLocationLinkClick,
+    toggleShowLocationList,
+  } = useLocationFilter();
 
   return (
-    // TODO: відредагувати логіку появи тексту Міста на кнопці
     <>
       <Container isRootPage={isRootPage}>
         <ShowLocationsBtn
@@ -62,7 +33,7 @@ const LocationFilter: FC<IProps> = ({ isRootPage }) => {
           isRootPage={isRootPage}
           showLocationList={showLocationList}
         >
-          <ShowLocationsBtnTitle targetLocation={targetLocation}>
+          <ShowLocationsBtnTitle isSelectedCity={isSelectedCity}>
             {showLocationsBtnTitle}
           </ShowLocationsBtnTitle>
           <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
@@ -70,7 +41,7 @@ const LocationFilter: FC<IProps> = ({ isRootPage }) => {
         <SmoothFadeInDropdownList isVisible={showLocationList}>
           <LocationListContainer isRootPage={isRootPage}>
             <LocationSearchField />
-            <LocationList setLocation={setLocation} />
+            <LocationList onLocationLinkClick={onLocationLinkClick} />
           </LocationListContainer>
         </SmoothFadeInDropdownList>
       </Container>

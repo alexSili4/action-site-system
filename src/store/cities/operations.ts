@@ -1,5 +1,5 @@
 import citiesService from '@/services/cities.service';
-import operationWrapper from '@/store/cities/operationWrapper';
+import operationWrapper from './operationWrapper';
 import { Cities } from '@/types/city.types';
 import { IGetCitiesOperationProps } from '@/types/citiesStore.types';
 
@@ -11,6 +11,7 @@ const getCitiesOperation = async ({
     items: response,
     isLoaded: true,
   });
+
   return response;
 };
 

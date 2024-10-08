@@ -4,6 +4,7 @@ import { IoCalendarClearOutline, IoClose } from 'react-icons/io5';
 import { FaChevronDown } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import {
+  Container,
   DatePickerBtn,
   BtnLabel,
   DatePickerContainer,
@@ -53,25 +54,27 @@ const PromotionsDatePicker: FC = () => {
   return (
     <>
       {showDatePicker && <DropdownBackdrop onClick={toggleShowDatePicker} />}
-      <DatePickerBtn
-        onClick={onDatePickerBtnClick}
-        showDatePicker={showDatePicker}
-        isSelectedDate={isSelectedDate}
-      >
-        <IoCalendarClearOutline size={theme.iconSizes.datePickerBtnLabel} />
-        <BtnLabel showDatePicker={showDatePicker}>{btnLabel}</BtnLabel>
-        {datePickerBtnIcon}
-      </DatePickerBtn>
-      <SmoothFadeInDropdownList isVisible={showDatePicker}>
-        <DatePickerContainer>
-          <DatePicker
-            selected={date}
-            onChange={onDatePickerChange}
-            locale={uk}
-            inline
-          />
-        </DatePickerContainer>
-      </SmoothFadeInDropdownList>
+      <Container>
+        <DatePickerBtn
+          onClick={onDatePickerBtnClick}
+          showDatePicker={showDatePicker}
+          isSelectedDate={isSelectedDate}
+        >
+          <IoCalendarClearOutline size={theme.iconSizes.datePickerBtnLabel} />
+          <BtnLabel showDatePicker={showDatePicker}>{btnLabel}</BtnLabel>
+          {datePickerBtnIcon}
+        </DatePickerBtn>
+        <SmoothFadeInDropdownList isVisible={showDatePicker}>
+          <DatePickerContainer>
+            <DatePicker
+              selected={date}
+              onChange={onDatePickerChange}
+              locale={uk}
+              inline
+            />
+          </DatePickerContainer>
+        </SmoothFadeInDropdownList>
+      </Container>
     </>
   );
 };

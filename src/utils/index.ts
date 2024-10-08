@@ -5,3 +5,5 @@ export { default as formatDate } from './formatDate';
 export { default as getPromotionsDatePickerBtnLabel } from './getPromotionsDatePickerBtnLabel';
 export { default as smoothScroll } from './smoothScroll';
 export { default as getTranslatedPromotionDetailsPageSectionName } from './getTranslatedPromotionDetailsPageSectionName';
+export { default as getTargetLocation } from './getTargetLocation';
+export { default as getShowLocationsBtnTitle } from './getShowLocationsBtnTitle';

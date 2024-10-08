@@ -51,6 +51,8 @@ interface ITheme {
     dropdownBackdrop: number;
     selectCityDropdown: number;
     selectSortTypeDropdown: number;
+    promotionsDatePicker: number;
+    promotionPrizeDrawsDatePicker: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -111,6 +113,8 @@ const theme: ITheme = {
     dropdownBackdrop: 10000,
     selectCityDropdown: 10000,
     selectSortTypeDropdown: 10000,
+    promotionsDatePicker: 10000,
+    promotionPrizeDrawsDatePicker: 10000,
   },
   transitionDurationAndFunc: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,

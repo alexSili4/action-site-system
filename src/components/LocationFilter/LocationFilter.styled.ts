@@ -62,7 +62,7 @@ export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
 `;
 
 export const ShowLocationsBtnTitle = styled.span<IStyledShowLocationsBtnTitleProps>`
-  color: ${({ targetLocation }) => (targetLocation ? '#3F3D5C' : '#7e8494')};
+  color: ${({ isSelectedCity }) => (isSelectedCity ? '#3F3D5C' : '#7e8494')};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16px;
   font-weight: 400;

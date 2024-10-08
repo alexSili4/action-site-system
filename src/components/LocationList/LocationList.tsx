@@ -1,14 +1,13 @@
 import { FC, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { List, ListItem, LinkPart } from './LocationList.styled';
-import { IProps } from './LocationList.types';
-import { AnchorClickEvent } from '@/types/types';
 import { PagePaths, SearchParamsKeys } from '@/constants';
 import { useSetSearchParams } from '@/hooks';
 import { useCitiesStore } from '@/store/store';
 import { selectCities } from '@/store/cities/selectors';
+import { IProps } from './LocationList.types';
 
-const LocationList: FC<IProps> = ({ setLocation }) => {
+const LocationList: FC<IProps> = ({ onLocationLinkClick }) => {
   const cities = useCitiesStore(selectCities);
   const { searchParams } = useSetSearchParams();
   const search = searchParams.get(SearchParamsKeys.search) ?? '';
@@ -23,12 +22,7 @@ const LocationList: FC<IProps> = ({ setLocation }) => {
     [search, cities]
   );
 
-  const onLocationClick = (e: AnchorClickEvent) => {
-    setLocation(e.currentTarget.text);
-  };
-
   return (
-    // TODO: відредагувати логіку зміни локації
     <List>
       {filteredLocations.map(({ name, id }) => {
         const accentPart = name.slice(0, search.length);
@@ -38,7 +32,7 @@ const LocationList: FC<IProps> = ({ setLocation }) => {
 
         return (
           <ListItem key={id}>
-            <Link to={path} onClick={onLocationClick}>
+            <Link to={path} onClick={onLocationLinkClick}>
               <LinkPart isTitle>{accentPart}</LinkPart>
               <LinkPart isTitle={!accentPart}>{otherPart}</LinkPart>
             </Link>

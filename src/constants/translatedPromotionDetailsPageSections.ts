@@ -1,4 +1,4 @@
-import { TranslatedPromotionDetailsPageSections } from '@/types/types';
+import { TranslatedPromotionDetailsPageSections } from '@/types/promotion.types';
 
 const translatedPromotionDetailsPageSections: TranslatedPromotionDetailsPageSections =
   {

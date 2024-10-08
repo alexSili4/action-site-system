@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Container } from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import PromotionPageBreadcrumbs from '@/components/PromotionPageBreadcrumbs';
-import { PromotionDetailsState } from '@/types/types';
+import { PromotionDetailsState } from '@/types/promotion.types';
 import { useSetSearchParams } from '@/hooks';
 import { PromotionsCategoriesKeys, SearchParamsKeys } from '@/constants';
 import PromotionPrizes from '@/components/PromotionPrizes';

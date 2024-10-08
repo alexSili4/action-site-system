@@ -1,7 +1,7 @@
-import { SetLocationFunc } from '@/types/types';
+import { OnAnchorClickFunc } from '@/types/types';
 
 export interface IProps {
-  setLocation: SetLocationFunc;
+  onLocationLinkClick: OnAnchorClickFunc;
 }
 
 export interface IStyledProps {

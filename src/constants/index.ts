@@ -12,3 +12,4 @@ export { default as ClassNames } from './classNames';
 export { default as PromotionDetailsPageSections } from './promotionDetailsPageSections';
 export { default as Symbols } from './symbols';
 export { default as translatedPromotionDetailsPageSections } from './translatedPromotionDetailsPageSections';
+export { default as Messages } from './messages';

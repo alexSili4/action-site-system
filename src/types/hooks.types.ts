@@ -1,5 +1,10 @@
 import { SetURLSearchParams } from 'react-router-dom';
-import { onDivClickFunc } from './types';
+import {
+  Func,
+  OnAnchorClickFunc,
+  OnBtnClickFunc,
+  OnDivClickFunc,
+} from './types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -14,5 +19,14 @@ export interface IUseSetSearchParams {
 
 export interface IUseModalWin {
   modalRoot: Element | null;
-  hideModalWin: onDivClickFunc;
+  hideModalWin: OnDivClickFunc;
+}
+
+export interface IUseLocationFilter {
+  showLocationsBtnTitle: string;
+  isSelectedCity: boolean;
+  showLocationList: boolean;
+  toggleShowLocationList: Func;
+  onShowListBtnClick: OnBtnClickFunc;
+  onLocationLinkClick: OnAnchorClickFunc;
 }

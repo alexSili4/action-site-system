@@ -16,5 +16,5 @@ export interface IStyledLocationListProps {
 }
 
 export interface IStyledShowLocationsBtnTitleProps {
-  targetLocation: string | null;
+  isSelectedCity: boolean;
 }

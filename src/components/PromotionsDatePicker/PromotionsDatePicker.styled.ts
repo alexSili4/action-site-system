@@ -5,8 +5,13 @@ import {
 } from './PromotionsDatePicker.types';
 import 'react-datepicker/dist/react-datepicker.css';
 
-export const DatePickerBtn = styled.button<IStyledDatePickerBtn>`
+export const Container = styled.div`
   position: relative;
+  z-index: ${({ theme }) => theme.zIndex.promotionsDatePicker};
+  height: 100%;
+`;
+
+export const DatePickerBtn = styled.button<IStyledDatePickerBtn>`
   display: flex;
   align-items: center;
   justify-content: space-between;

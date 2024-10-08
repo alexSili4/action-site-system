@@ -1,8 +1,3 @@
-import {
-  PromotionDetailsPageSections,
-  PromotionsCategoriesKeys,
-  PromotionsSortTypesKeys,
-} from '@/constants';
 import { Location } from 'react-router-dom';
 import { ChangeEvent, MouseEvent } from 'react';
 
@@ -22,25 +17,15 @@ export type Func = () => void;
 
 export type InputChangeFunc = (e: InputChangeEvent) => void;
 
-export type SetLocationFunc = (data: string) => void;
-
 export type SetActiveMarkerFunc = (data: number) => void;
 
-export type onDivClickFunc = (e: DivClickEvent) => void;
+export type OnDivClickFunc = (e: DivClickEvent) => void;
+
+export type OnAnchorClickFunc = (e: AnchorClickEvent) => void;
+
+export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
 // other
-
-export type TranslatedPromotionsSortTypesKeys = {
-  [key in PromotionsSortTypesKeys]: string;
-};
-
-export type PromotionsSortTypesValues = PromotionsSortTypesKeys[];
-
-export type PromotionsCategoriesValues = PromotionsCategoriesKeys[];
-
-export type TranslatedPromotionsCategoriesKeys = {
-  [key in PromotionsCategoriesKeys]: string;
-};
 
 export interface IFormatDateProps {
   date: Date | string;
@@ -48,17 +33,6 @@ export interface IFormatDateProps {
 }
 
 export type PageLocation = Location<any>;
-
-export interface IPromotionDetailsState {
-  from: PageLocation;
-  promotionCategory: string;
-}
-
-export type PartialPromotionDetailsState = Partial<IPromotionDetailsState>;
-
-export type PromotionDetailsState = {
-  state: PartialPromotionDetailsState;
-};
 
 export interface IFAQ {
   question: string;
@@ -83,7 +57,3 @@ export interface IShop {
 }
 
 export type Shops = IShop[];
-
-export type TranslatedPromotionDetailsPageSections = {
-  [key in PromotionDetailsPageSections]: string;
-};

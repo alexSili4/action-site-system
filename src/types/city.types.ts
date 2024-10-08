@@ -6,3 +6,15 @@ export interface ICity {
 }
 
 export type Cities = ICity[];
+
+export interface IGetLocationInfo {
+  cities: Cities;
+  cityId: number;
+}
+
+export type GetTargetLocation = ICity | undefined;
+
+export interface IGetShowLocationsBtnTitle {
+  showLocationsBtnTitle: string;
+  isSelectedCity: boolean;
+}

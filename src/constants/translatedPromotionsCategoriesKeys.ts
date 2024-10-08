@@ -1,4 +1,4 @@
-import { TranslatedPromotionsCategoriesKeys } from '@/types/types';
+import { TranslatedPromotionsCategoriesKeys } from '@/types/promotion.types';
 
 const translatedPromotionsCategoriesKeys: TranslatedPromotionsCategoriesKeys = {
   active: 'Активні акції',

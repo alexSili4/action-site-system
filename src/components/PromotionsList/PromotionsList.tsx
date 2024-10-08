@@ -3,7 +3,7 @@ import { Card, Container, List, ListItem } from './PromotionsList.styled';
 import LinkWithQuery from '@/components/LinkWithQuery';
 import { useLocation } from 'react-router-dom';
 import { IProps } from './PromotionsList.types';
-import { IPromotionDetailsState } from '@/types/types';
+import { IPromotionDetailsState } from '@/types/promotion.types';
 import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
 
 const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
