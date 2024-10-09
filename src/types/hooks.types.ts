@@ -14,6 +14,7 @@ import { Conditions } from './condition.types';
 import { Prizes } from './prize.types';
 import { FAQs } from './faqs.types';
 import { Winners } from './winner.types';
+import { ControlPosition, DivIcon, LatLngBoundsExpression, LatLngExpression } from 'leaflet';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -53,3 +54,13 @@ export interface IUsePromotionDetailsPage {
 }
 
 export type UseTargetPromotion = IPromotion | undefined;
+
+export interface IUsePromotionContactsVisicomMap {
+  mapCenter: LatLngExpression;
+  ukraineBounds: LatLngBoundsExpression;
+  tileLayerUrl: string;
+  zoomControlPosition: ControlPosition;
+  tileLayerAttribution: string;
+  customActiveMarkerIcon: DivIcon;
+  customMarkerIcon: DivIcon;
+}

@@ -6,3 +6,4 @@ export { default as usePromotions } from './usePromotions';
 export { default as usePromotionsList } from './usePromotionsList';
 export { default as usePromotionDetailsPage } from './usePromotionDetailsPage';
 export { default as useTargetPromotion } from './useTargetPromotion';
+export { default as usePromotionContactsVisicomMap } from './usePromotionContactsVisicomMap';

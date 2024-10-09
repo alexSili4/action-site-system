@@ -1,45 +1,35 @@
 import { FC } from 'react';
 import { TileLayer, ZoomControl, Marker } from 'react-leaflet';
-import L, { LatLngExpression } from 'leaflet';
+import { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { IProps } from './PromotionContactsVisicomMap.types';
 import { StyledMapContainer } from './PromotionContactsVisicomMap.styled';
-import MarkerIcon from '@/icons/contacts-map/marker.svg?raw';
-import { ClassNames } from '@/constants';
 import PromotionContactsVisicomMapController from '@/components/PromotionContactsVisicomMapController';
+import { usePromotionContactsVisicomMap } from '@/hooks';
 
 const PromotionContactsVisicomMap: FC<IProps> = ({
   activeMarkerId,
   markers,
-  isDesktop,
   setActiveMarker,
 }) => {
-  // TODO fix component and constants
-  const tileLayerUrl = `https://tms{s}.visicom.ua/2.0.0/planet3/base/{z}/{x}/{y}.png?key=${
-    import.meta.env.VITE_VISICOM_API_KEY
-  }`;
-  const tileLayerAttribution =
-    "<a href='https://sun.agency' target='_blank' rel='noopener noreferrer'>Зроблено Сонцем ●</a>";
-
-  const customMarkerIcon = new L.DivIcon({
-    html: MarkerIcon,
-    iconSize: [24, 24],
-    iconAnchor: [12, 24],
-    className: ClassNames.markerWrap,
-  });
-
-  const customActiveMarkerIcon = new L.DivIcon({
-    html: MarkerIcon,
-    iconSize: [24, 24],
-    iconAnchor: [12, 24],
-    className: ClassNames.activeMarkerWrap,
-  });
+  const {
+    mapCenter,
+    ukraineBounds,
+    tileLayerUrl,
+    zoomControlPosition,
+    tileLayerAttribution,
+    customActiveMarkerIcon,
+    customMarkerIcon,
+  } = usePromotionContactsVisicomMap();
 
   return (
     <StyledMapContainer
-      center={[50.4501, 30.5234]}
+      center={mapCenter}
       zoom={10}
+      minZoom={5}
       zoomControl={false}
+      maxBounds={ukraineBounds}
+      maxBoundsViscosity={1.0}
     >
       <TileLayer
         url={tileLayerUrl}
@@ -48,13 +38,14 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
         subdomains='123'
         tms
       />
-      <ZoomControl position={isDesktop ? 'bottomleft' : 'bottomright'} />
+      <ZoomControl position={zoomControlPosition} />
       <PromotionContactsVisicomMapController
         activeMarkerId={activeMarkerId}
         markers={markers}
       />
       {markers.map(({ position, id }) => {
         const isActiveMarker = activeMarkerId === id;
+        const icon = isActiveMarker ? customActiveMarkerIcon : customMarkerIcon;
         const markerPosition: LatLngExpression = {
           lat: position[0],
           lng: position[1],
@@ -64,14 +55,16 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
           setActiveMarker(id);
         };
 
+        const eventHandlers = {
+          click: onMarkerClick,
+        };
+
         return (
           <Marker
-            icon={isActiveMarker ? customActiveMarkerIcon : customMarkerIcon}
+            icon={icon}
             key={id}
             position={markerPosition}
-            eventHandlers={{
-              click: onMarkerClick,
-            }}
+            eventHandlers={eventHandlers}
           ></Marker>
         );
       })}

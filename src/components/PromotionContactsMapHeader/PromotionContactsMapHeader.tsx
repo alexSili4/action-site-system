@@ -16,18 +16,17 @@ import {
 } from '@/types/types';
 import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
 import PromotionContactsMapHeaderShopsListContainer from '@/components/PromotionContactsMapHeaderShopsListContainer';
+import { useMediaQuery } from '@/hooks';
 
 const PromotionContactsMapHeader: FC<IProps> = ({
   activeMarkerId,
   markers,
   setActiveMarker,
-  isDesktop,
+  isNationalPromotion,
 }) => {
   const [showShopsList, setShowShopsList] = useState<boolean>(false);
-  // TODO delete isNationalPromotionTrue
-  const isNationalPromotionTrue = true;
-  // TODO delete isNationalPromotionTrue
-  const title = isNationalPromotionTrue
+  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const title = isNationalPromotion
     ? Messages.nationalPromotionMapTitle
     : Messages.otherPromotionMapTitle;
 
@@ -82,7 +81,7 @@ const PromotionContactsMapHeader: FC<IProps> = ({
           activeMarkerId={activeMarkerId}
           markers={markers}
           onInputChange={onPromotionContactsMapShopChange}
-          isNationalPromotion={isNationalPromotionTrue}
+          isNationalPromotion={isNationalPromotion}
           onLinkClick={onAllShopsLinkClick}
         />
       </SmoothFadeInDropdownList>

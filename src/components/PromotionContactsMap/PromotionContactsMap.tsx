@@ -4,8 +4,7 @@ import { ActiveMarkerId, Shops } from '@/types/types';
 import { Container } from './PromotionContactsMap.styled';
 import PromotionContactsMapHeader from '@/components/PromotionContactsMapHeader';
 import { smoothScroll } from '@/utils';
-import { theme } from '@/constants';
-import { useMediaQuery, useTargetPromotion } from '@/hooks';
+import { useTargetPromotion } from '@/hooks';
 
 const PromotionContactsMap: FC = () => {
   // TODO delete markers
@@ -33,9 +32,9 @@ const PromotionContactsMap: FC = () => {
   ];
 
   const [activeMarkerId, setActiveMarkerId] = useState<ActiveMarkerId>(null);
-  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
   const { coverage_type: coverageType } = useTargetPromotion() ?? {};
   const isNationalPromotion = coverageType === 'national';
+  const targetMarkers = isNationalPromotion ? [] : markers;
 
   const setActiveMarker = (id: number) => {
     setActiveMarkerId(id);
@@ -47,15 +46,13 @@ const PromotionContactsMap: FC = () => {
       <PromotionContactsMapHeader
         setActiveMarker={setActiveMarker}
         activeMarkerId={activeMarkerId}
-        markers={markers}
-        isDesktop={isDesktop}
+        markers={targetMarkers}
         isNationalPromotion={isNationalPromotion}
       />
       <PromotionContactsVisicomMap
         setActiveMarker={setActiveMarker}
         activeMarkerId={activeMarkerId}
-        markers={markers}
-        isDesktop={isDesktop}
+        markers={targetMarkers}
       />
     </Container>
   );
