@@ -5,7 +5,11 @@ import {
   OnBtnClickFunc,
   OnDivClickFunc,
 } from './types';
-import { IPromotionDetailsState, Promotions } from './promotion.types';
+import {
+  IPromotion,
+  IPromotionDetailsState,
+  Promotions,
+} from './promotion.types';
 import { Conditions } from './condition.types';
 import { Prizes } from './prize.types';
 import { FAQs } from './faqs.types';
@@ -45,3 +49,5 @@ export interface IUsePromotionDetailsPage {
   prizes: Prizes;
   faqs: FAQs;
 }
+
+export type UseTargetPromotion = IPromotion | undefined;

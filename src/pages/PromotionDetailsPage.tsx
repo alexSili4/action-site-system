@@ -12,7 +12,11 @@ const PromotionDetailsPage: FC = () => {
     <>
       <Section>
         <Container>
-          <PromotionDetails faqs={faqs} />
+          <PromotionDetails
+            faqs={faqs}
+            prizes={prizes}
+            conditions={conditions}
+          />
         </Container>
       </Section>
       <PromotionDetailsNavBar />

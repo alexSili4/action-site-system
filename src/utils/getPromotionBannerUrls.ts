@@ -4,20 +4,20 @@ import {
 } from '@/types/promotion.types';
 
 const getPromotionBannerUrls = ({
-  mainBannerDt,
-  mainBannerMob,
+  bannerDt,
+  bannerMob,
 }: IGetPromotionBannerUrlsProps): IGetPromotionBannerUrls => {
   const baseUrl = import.meta.env.VITE_APP_SERVER_URL;
 
-  const mainBannerDtPath = `${baseUrl}/images/${mainBannerDt}`;
-  const mainBannerMobPath = `${baseUrl}/images/${mainBannerMob}`;
+  const bannerDtPath = `${baseUrl}/images/${bannerDt}`;
+  const bannerMobPath = `${baseUrl}/images/${bannerMob}`;
 
-  const mainBannerDtUrl = mainBannerDt ? mainBannerDtPath : '';
-  const mainBannerMobUrl = mainBannerMob ? mainBannerMobPath : '';
+  const bannerDtUrl = bannerDt ? bannerDtPath : '';
+  const bannerMobUrl = bannerMob ? bannerMobPath : '';
 
   return {
-    mainBannerDtUrl,
-    mainBannerMobUrl,
+    bannerDtUrl,
+    bannerMobUrl,
   };
 };
 

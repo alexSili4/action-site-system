@@ -9,8 +9,9 @@ import {
 import PromotionPrizesSlider from '@/components/PromotionPrizesSlider';
 import PromotionSectionTitle from '@/components/PromotionSectionTitle';
 import { PromotionDetailsPageSections } from '@/constants';
+import { IProps } from './PromotionPrizes.types';
 
-const PromotionPrizes: FC = () => {
+const PromotionPrizes: FC<IProps> = ({ prizes }) => {
   return (
     <Container id={PromotionDetailsPageSections.prizes}>
       <PromotionSectionTitle title='Призи' />
@@ -19,19 +20,19 @@ const PromotionPrizes: FC = () => {
       </BannerWrap>
       <List>
         <ListItem>
-          <PromotionPrizesSlider />
+          <PromotionPrizesSlider prizes={prizes} />
         </ListItem>
         <ListItem>
-          <PromotionPrizesSlider />
+          <PromotionPrizesSlider prizes={prizes} />
         </ListItem>
         <ListItem>
-          <PromotionPrizesSlider />
+          <PromotionPrizesSlider prizes={prizes} />
         </ListItem>
         <ListItem>
-          <PromotionPrizesSlider />
+          <PromotionPrizesSlider prizes={prizes} />
         </ListItem>
         <ListItem>
-          <PromotionPrizesSlider />
+          <PromotionPrizesSlider prizes={prizes} />
         </ListItem>
       </List>
     </Container>

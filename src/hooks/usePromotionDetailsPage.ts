@@ -33,7 +33,6 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     const getPromotionPrizes = async (promotionId: string): Promise<void> => {
       try {
         const response = await promotionsService.getPrizes(promotionId);
-        console.log(response);
         setPrizes(response);
       } catch (error) {
         // TODO error handler

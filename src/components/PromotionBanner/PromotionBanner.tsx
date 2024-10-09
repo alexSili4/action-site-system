@@ -3,16 +3,24 @@ import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
 import PromotionDetailsGoBackLink from '@/components/PromotionDetailsGoBackLink';
 import { IProps } from './PromotionBanner.types';
 import { Container, InfoWrap } from './PromotionBanner.styled';
-import PromotionName from '../PromotionName';
+import PromotionName from '@/components/PromotionName';
 
-const PromotionBanner: FC<IProps> = ({ from, period }) => {
+const PromotionBanner: FC<IProps> = ({
+  from,
+  period,
+  name,
+  secondBannerDt,
+  secondBannerMob,
+}) => {
   return (
-    // TODO fix PromotionName
-    <Container>
+    <Container
+      secondBannerDt={secondBannerDt}
+      secondBannerMob={secondBannerMob}
+    >
       <PromotionDetailsGoBackLink from={from} />
       <InfoWrap>
         <PromotionPeriodLabel period={period} />
-        <PromotionName name={'дуже довга назва акції'} />
+        <PromotionName name={name} />
       </InfoWrap>
     </Container>
   );

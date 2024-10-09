@@ -11,17 +11,11 @@ import {
 import PromotionPrizesSliderControls from '@/components/PromotionPrizesSliderControls';
 import PromotionPrizesSliderPagination from '@/components/PromotionPrizesSliderPagination';
 import { Swiper as ISwiper } from 'swiper';
+import { IProps } from './PromotionPrizesSlider.types';
 
-const PromotionPrizesSlider: FC = () => {
-  // TODO delete prizes
-  const prizes: { title: string }[] = [
-    { title: 'Кавомашина PHILIPS 3шт' },
-    { title: 'Мультипіч PHILIPS 10шт' },
-    { title: 'Сертифікат на 200 грн в мережі магазинів Foxtrot' },
-    { title: 'Сертифікат на 200 грн в мережі магазинів Люксоптика' },
-    { title: 'Кухонна машина PHILIPS 5шт' },
-  ];
+const PromotionPrizesSlider: FC<IProps> = ({ prizes }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const isLoopMode = prizes.length > 1;
 
   const onSlideChange = (swiper: ISwiper) => {
     setActiveIndex(swiper.activeIndex);
@@ -33,15 +27,15 @@ const PromotionPrizesSlider: FC = () => {
       speed={800}
       spaceBetween={30}
       slidesPerView={1}
-      loop
+      loop={isLoopMode}
       grabCursor
     >
-      {prizes.map(({ title }) => (
-        <SwiperSlide key={title}>
+      {prizes.map(({ name }) => (
+        <SwiperSlide key={name}>
           <Card>
             <ImgWrap></ImgWrap>
             <TitleWrap>
-              <Title>{title}</Title>
+              <Title>{name}</Title>
             </TitleWrap>
           </Card>
         </SwiperSlide>

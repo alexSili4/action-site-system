@@ -5,9 +5,9 @@ import {
 } from '@/constants';
 import { PageLocation } from './types';
 
-export type MainBannerDT = string | null;
+export type BannerDt = string | null;
 
-export type MainBannerMob = string | null;
+export type BannerMob = string | null;
 
 export type DateFrom = number | null;
 
@@ -20,12 +20,12 @@ export interface IPromotion {
   date_from: DateFrom;
   date_to: DateTo;
   conditions_text: string;
-  main_banner_dt: MainBannerDT;
-  main_banner_mob: MainBannerMob;
-  second_banner_dt: string | null;
-  second_banner_mob: string | null;
+  main_banner_dt: BannerDt;
+  main_banner_mob: BannerMob;
+  second_banner_dt: BannerDt;
+  second_banner_mob: BannerMob;
   third_banner_mob: string | null;
-  third_banner_dt: string;
+  third_banner_dt: string | null;
   hot_line_phone: string;
   hot_line_email: string;
   hot_line_text: string;
@@ -59,13 +59,13 @@ export type PromotionDetailsState = {
 };
 
 export interface IGetPromotionBannerUrlsProps {
-  mainBannerDt: MainBannerDT;
-  mainBannerMob: MainBannerMob;
+  bannerDt: BannerDt;
+  bannerMob: BannerMob;
 }
 
 export interface IGetPromotionBannerUrls {
-  mainBannerDtUrl: string;
-  mainBannerMobUrl: string;
+  bannerDtUrl: string;
+  bannerMobUrl: string;
 }
 
 export interface IGetPromotionDateProps {

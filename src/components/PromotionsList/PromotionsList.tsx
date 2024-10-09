@@ -23,16 +23,15 @@ const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
             main_banner_mob: mainBannerMob,
           }) => {
             const date = getPromotionDate({ dateFrom, dateTo });
-            const { mainBannerDtUrl, mainBannerMobUrl } =
-              getPromotionBannerUrls({ mainBannerDt, mainBannerMob });
+            const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
+              bannerDt: mainBannerDt,
+              bannerMob: mainBannerMob,
+            });
 
             return (
               <ListItem key={id}>
                 <LinkWithQuery to={`${id}`} state={linkState}>
-                  <Card
-                    mainBannerDt={mainBannerDtUrl}
-                    mainBannerMob={mainBannerMobUrl}
-                  >
+                  <Card mainBannerDt={bannerDtUrl} mainBannerMob={bannerMobUrl}>
                     <PromotionPeriodLabel period={date} />
                     <PromotionName name={name} />
                   </Card>

@@ -18,6 +18,7 @@ import { IProps } from './PromotionConditionsSlider.types';
 const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
   const sliderContainerRef = useRef<HTMLDivElement | null>(null);
+  const isLoopMode = conditions.length > 1;
 
   useEffect(() => {
     const slideHeight = sliderContainerRef.current?.scrollHeight;
@@ -35,7 +36,7 @@ const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
         speed={2000}
         spaceBetween={16}
         slidesPerView={1.075}
-        loop
+        loop={isLoopMode}
         grabCursor
         breakpoints={{
           [theme.breakpoints.desktop]: { slidesPerView: 3.077 },

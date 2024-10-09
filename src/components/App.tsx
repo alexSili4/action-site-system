@@ -2,6 +2,7 @@ import { FC, lazy } from 'react';
 import { PagePaths } from '@/constants';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from '@/components/SharedLayout';
+import { usePromotions } from '@/hooks';
 
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const ServiceUnavailablePage = lazy(
@@ -14,6 +15,8 @@ const PromotionDetailsPage = lazy(() => import('@/pages/PromotionDetailsPage'));
 const RegisterCodePage = lazy(() => import('@/pages/RegisterCodePage'));
 
 const App: FC = () => {
+  usePromotions();
+
   return (
     <Routes>
       <Route path={PagePaths.root} element={<SharedLayout />}>
