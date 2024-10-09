@@ -6,7 +6,7 @@ import PromotionDetailsNavBar from '@/components/PromotionDetailsNavBar';
 import { usePromotionDetailsPage } from '@/hooks';
 
 const PromotionDetailsPage: FC = () => {
-  const { conditions, faqs, prizes } = usePromotionDetailsPage();
+  const { conditions, faqs, prizes, winners } = usePromotionDetailsPage();
 
   return (
     <>
@@ -16,6 +16,7 @@ const PromotionDetailsPage: FC = () => {
             faqs={faqs}
             prizes={prizes}
             conditions={conditions}
+            winners={winners}
           />
         </Container>
       </Section>

@@ -5,4 +5,5 @@ export interface IProps {
   activeMarkerId: ActiveMarkerId;
   markers: Shops;
   isDesktop: boolean;
+  isNationalPromotion: boolean;
 }

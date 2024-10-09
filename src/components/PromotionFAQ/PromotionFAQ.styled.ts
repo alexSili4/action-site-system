@@ -44,7 +44,7 @@ export const AnswerWrap = styled.div<IStyledAnswerWrapProps>`
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
-export const Answer = styled.p`
+export const Answer = styled.div`
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 18px;

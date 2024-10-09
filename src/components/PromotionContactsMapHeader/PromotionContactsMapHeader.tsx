@@ -2,16 +2,20 @@ import { FC, useState } from 'react';
 import { IProps } from './PromotionContactsMapHeader.types';
 import { HiOutlineNewspaper } from 'react-icons/hi2';
 import { CgClose } from 'react-icons/cg';
-import { theme } from '@/constants';
+import { Messages, theme } from '@/constants';
 import {
   ShopsListBtn,
   Container,
   Title,
 } from './PromotionContactsMapHeader.styled';
 import { makeBlur } from '@/utils';
-import { BtnClickEvent } from '@/types/types';
+import {
+  AnchorClickEvent,
+  BtnClickEvent,
+  InputChangeEvent,
+} from '@/types/types';
 import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
-import PromotionContactsMapHeaderShopsList from '@/components/PromotionContactsMapHeaderShopsList';
+import PromotionContactsMapHeaderShopsListContainer from '@/components/PromotionContactsMapHeaderShopsListContainer';
 
 const PromotionContactsMapHeader: FC<IProps> = ({
   activeMarkerId,
@@ -20,6 +24,12 @@ const PromotionContactsMapHeader: FC<IProps> = ({
   isDesktop,
 }) => {
   const [showShopsList, setShowShopsList] = useState<boolean>(false);
+  // TODO delete isNationalPromotionTrue
+  const isNationalPromotionTrue = true;
+  // TODO delete isNationalPromotionTrue
+  const title = isNationalPromotionTrue
+    ? Messages.nationalPromotionMapTitle
+    : Messages.otherPromotionMapTitle;
 
   const toggleShowShopsList = () => {
     setShowShopsList((prevState) => !prevState);
@@ -37,29 +47,43 @@ const PromotionContactsMapHeader: FC<IProps> = ({
     <HiOutlineNewspaper size={theme.iconSizes.promotionContactsMapHeader} />
   );
 
-  const updateActiveMarker = (id: number) => {
-    setActiveMarker(id);
-
+  const toggleShowShopsListOnMobile = () => {
     if (!isDesktop) {
       toggleShowShopsList();
     }
+  };
+
+  const onAllShopsLinkClick = (e: AnchorClickEvent) => {
+    makeBlur(e.currentTarget);
+
+    toggleShowShopsListOnMobile();
+  };
+
+  const onPromotionContactsMapShopChange = (e: InputChangeEvent) => {
+    makeBlur(e.currentTarget);
+
+    setActiveMarker(Number(e.currentTarget.value));
+
+    toggleShowShopsListOnMobile();
   };
 
   // TODO fix shops list
   return (
     <Container>
       <ShopsListBtn type='button' onClick={onShopsListBtnClick}>
-        <Title>Магазини в яких діє акція</Title>
+        <Title>{title}</Title>
         {shopsListBtnIcon}
       </ShopsListBtn>
       <SmoothFadeInDropdownList
         isVisible={showShopsList}
         zIndex={theme.zIndex.promotionShopsList}
       >
-        <PromotionContactsMapHeaderShopsList
+        <PromotionContactsMapHeaderShopsListContainer
           activeMarkerId={activeMarkerId}
           markers={markers}
-          setActiveMarker={updateActiveMarker}
+          onInputChange={onPromotionContactsMapShopChange}
+          isNationalPromotion={isNationalPromotionTrue}
+          onLinkClick={onAllShopsLinkClick}
         />
       </SmoothFadeInDropdownList>
     </Container>

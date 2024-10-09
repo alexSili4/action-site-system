@@ -9,10 +9,10 @@ import { ClassNames } from '@/constants';
 import PromotionContactsVisicomMapController from '@/components/PromotionContactsVisicomMapController';
 
 const PromotionContactsVisicomMap: FC<IProps> = ({
-  setActiveMarker,
   activeMarkerId,
   markers,
   isDesktop,
+  setActiveMarker,
 }) => {
   // TODO fix component and constants
   const tileLayerUrl = `https://tms{s}.visicom.ua/2.0.0/planet3/base/{z}/{x}/{y}.png?key=${

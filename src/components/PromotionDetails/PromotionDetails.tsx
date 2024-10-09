@@ -15,18 +15,29 @@ import PromotionDetailsSectionContainer from '@/components/PromotionDetailsSecti
 import { IProps } from './PromotionDetails.types';
 import { getPromotionBannerUrls, getPromotionDate } from '@/utils';
 
-const PromotionDetails: FC<IProps> = ({ faqs, prizes, conditions }) => {
-  const promotion = useTargetPromotion();
+const PromotionDetails: FC<IProps> = ({
+  faqs,
+  prizes,
+  conditions,
+  winners,
+}) => {
+  const {
+    name = '',
+    date_from: dateFrom = null,
+    date_to: dateTo = null,
+    second_banner_dt: secondBannerDt = '',
+    second_banner_mob: secondBannerMob = '',
+  } = useTargetPromotion() ?? {};
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
   const { state }: PromotionDetailsState = useLocation();
   const promotionDate = getPromotionDate({
-    dateFrom: promotion?.date_from ?? null,
-    dateTo: promotion?.date_to ?? null,
+    dateFrom,
+    dateTo,
   });
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
-    bannerDt: promotion?.second_banner_dt ?? '',
-    bannerMob: promotion?.second_banner_mob ?? '',
+    bannerDt: secondBannerDt,
+    bannerMob: secondBannerMob,
   });
 
   const promotionCategoryState = state?.promotionCategory;
@@ -41,29 +52,25 @@ const PromotionDetails: FC<IProps> = ({ faqs, prizes, conditions }) => {
   return (
     <Container>
       <PromotionDetailsSectionContainer>
-        {promotion && (
-          <PromotionPageBreadcrumbs
-            promotionCategory={targetPromotionCategory}
-            promotionTitle={promotion.name}
-          />
-        )}
-        {promotion && (
-          <PromotionBanner
-            from={from}
-            period={promotionDate}
-            name={promotion.name}
-            secondBannerDt={bannerDtUrl}
-            secondBannerMob={bannerMobUrl}
-          />
-        )}
+        <PromotionPageBreadcrumbs
+          promotionCategory={targetPromotionCategory}
+          promotionTitle={name}
+        />
+        <PromotionBanner
+          from={from}
+          period={promotionDate}
+          name={name}
+          secondBannerDt={bannerDtUrl}
+          secondBannerMob={bannerMobUrl}
+        />
       </PromotionDetailsSectionContainer>
       <PromotionDetailsSectionContainer isConditionsSection>
         <PromotionConditions conditions={conditions} />
       </PromotionDetailsSectionContainer>
       <PromotionDetailsSectionContainer>
         <PromotionPrizes prizes={prizes} />
-        <PromotionFAQs faqs={[{}]} />
-        <PromotionWinners />
+        <PromotionFAQs faqs={faqs} />
+        <PromotionWinners winners={winners} />
         <PromotionContacts />
       </PromotionDetailsSectionContainer>
     </Container>

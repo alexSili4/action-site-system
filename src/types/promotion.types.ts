@@ -13,6 +13,8 @@ export type DateFrom = number | null;
 
 export type DateTo = number | null;
 
+export type CoverageType = 'national' | 'base';
+
 export interface IPromotion {
   id: number;
   name: string;
@@ -29,6 +31,7 @@ export interface IPromotion {
   hot_line_phone: string;
   hot_line_email: string;
   hot_line_text: string;
+  coverage_type: CoverageType;
 }
 
 export type Promotions = IPromotion[];

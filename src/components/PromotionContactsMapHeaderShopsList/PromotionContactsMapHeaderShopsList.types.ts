@@ -1,7 +1,7 @@
-import { ActiveMarkerId, SetActiveMarkerFunc, Shops } from '@/types/types';
+import { ActiveMarkerId, InputChangeFunc, Shops } from '@/types/types';
 
 export interface IProps {
-  activeMarkerId: ActiveMarkerId;
+  onInputChange: InputChangeFunc;
   markers: Shops;
-  setActiveMarker: SetActiveMarkerFunc;
+  activeMarkerId: ActiveMarkerId;
 }

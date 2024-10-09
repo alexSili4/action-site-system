@@ -44,6 +44,7 @@ export const Header = styled.th`
   font-weight: 500;
   line-height: 1.4;
   text-align: left;
+  white-space: nowrap;
 
   &:not(:first-of-type) {
     padding-left: ${({ theme }) => theme.spacing(4)};

@@ -13,6 +13,7 @@ import {
 import { Conditions } from './condition.types';
 import { Prizes } from './prize.types';
 import { FAQs } from './faqs.types';
+import { Winners } from './winner.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -48,6 +49,7 @@ export interface IUsePromotionDetailsPage {
   conditions: Conditions;
   prizes: Prizes;
   faqs: FAQs;
+  winners: Winners;
 }
 
 export type UseTargetPromotion = IPromotion | undefined;

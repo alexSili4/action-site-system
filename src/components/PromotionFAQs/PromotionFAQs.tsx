@@ -14,8 +14,12 @@ import PromotionFAQ from '@/components/PromotionFAQ';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { PromotionDetailsPageSections, theme } from '@/constants';
 import { IProps } from './PromotionFAQs.types';
+import { useTargetPromotion } from '@/hooks';
 
 const PromotionFAQs: FC<IProps> = ({ faqs }) => {
+  const { hot_line_phone: hotLinePhone, hot_line_text: hotLineText } =
+    useTargetPromotion() ?? {};
+
   return (
     <Container id={PromotionDetailsPageSections.faqs}>
       <PromotionSectionTitle title='Питання та відповіді' />
@@ -26,16 +30,11 @@ const PromotionFAQs: FC<IProps> = ({ faqs }) => {
           ))}
         </List>
         <AdditionalIfoWrap>
-          <Title>
-            текст, який описує як отримати додаткову інформацію про
-            обслуговування на декілька рядків
-          </Title>
-          <WorkingHours>
-            а тут буде вказано графік роботи гарячої лінії
-          </WorkingHours>
-          <PhoneLink href='tel:+0000000000'>
+          <Title>{hotLineText}</Title>
+          <WorkingHours>Lorem ipsum dolor sit amet.</WorkingHours>
+          <PhoneLink href={`tel:${hotLinePhone}`}>
             <FaPhoneAlt size={theme.iconSizes.phoneLink} />
-            <PhoneLinkTitle>0000000000</PhoneLinkTitle>
+            <PhoneLinkTitle>{hotLinePhone}</PhoneLinkTitle>
           </PhoneLink>
         </AdditionalIfoWrap>
       </ContentWrap>

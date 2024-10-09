@@ -5,7 +5,7 @@ import { Container } from './PromotionContactsMap.styled';
 import PromotionContactsMapHeader from '@/components/PromotionContactsMapHeader';
 import { smoothScroll } from '@/utils';
 import { theme } from '@/constants';
-import { useMediaQuery } from '@/hooks';
+import { useMediaQuery, useTargetPromotion } from '@/hooks';
 
 const PromotionContactsMap: FC = () => {
   // TODO delete markers
@@ -34,6 +34,8 @@ const PromotionContactsMap: FC = () => {
 
   const [activeMarkerId, setActiveMarkerId] = useState<ActiveMarkerId>(null);
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const { coverage_type: coverageType } = useTargetPromotion() ?? {};
+  const isNationalPromotion = coverageType === 'national';
 
   const setActiveMarker = (id: number) => {
     setActiveMarkerId(id);
@@ -47,6 +49,7 @@ const PromotionContactsMap: FC = () => {
         activeMarkerId={activeMarkerId}
         markers={markers}
         isDesktop={isDesktop}
+        isNationalPromotion={isNationalPromotion}
       />
       <PromotionContactsVisicomMap
         setActiveMarker={setActiveMarker}

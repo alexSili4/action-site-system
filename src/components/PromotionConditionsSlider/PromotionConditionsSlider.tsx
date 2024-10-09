@@ -42,15 +42,15 @@ const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
           [theme.breakpoints.desktop]: { slidesPerView: 3.077 },
         }}
       >
-        {conditions.map(({ title }, index) => (
-          <SwiperSlide key={title}>
+        {conditions.map(({ title, id }) => (
+          <SwiperSlide key={id}>
             <Card>
               <TitleWrap>
                 <Title>{title}</Title>
               </TitleWrap>
               <Cover>
                 <StepLabelWrap>
-                  <StepLabel>{index + 1}</StepLabel>
+                  <StepLabel>0</StepLabel>
                 </StepLabelWrap>
               </Cover>
             </Card>
