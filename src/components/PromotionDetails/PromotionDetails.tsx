@@ -5,7 +5,7 @@ import PromotionPageBreadcrumbs from '@/components/PromotionPageBreadcrumbs';
 import { PromotionDetailsState } from '@/types/promotion.types';
 import { useSetSearchParams, useTargetPromotion } from '@/hooks';
 import { PromotionsCategoriesKeys, SearchParamsKeys } from '@/constants';
-import PromotionPrizes from '@/components/PromotionPrizes';
+import PromotionPrizesWheels from '@/components/PromotionPrizesWheels';
 import PromotionFAQs from '@/components/PromotionFAQs';
 import PromotionConditions from '@/components/PromotionConditions';
 import PromotionWinners from '@/components/PromotionWinners';
@@ -14,6 +14,7 @@ import PromotionBanner from '@/components/PromotionBanner';
 import PromotionDetailsSectionContainer from '@/components/PromotionDetailsSectionContainer';
 import { IProps } from './PromotionDetails.types';
 import { getPromotionBannerUrls, getPromotionDate } from '@/utils';
+import PromotionPrizesMain from '@/components/PromotionPrizesMain';
 
 const PromotionDetails: FC<IProps> = ({
   faqs,
@@ -68,7 +69,8 @@ const PromotionDetails: FC<IProps> = ({
         <PromotionConditions conditions={conditions} />
       </PromotionDetailsSectionContainer>
       <PromotionDetailsSectionContainer>
-        <PromotionPrizes prizes={prizes} />
+        <PromotionPrizesMain />
+        <PromotionPrizesWheels prizes={prizes} />
         <PromotionFAQs faqs={faqs} />
         <PromotionWinners winners={winners} />
         <PromotionContacts />

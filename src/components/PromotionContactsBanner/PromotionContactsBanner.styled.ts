@@ -30,11 +30,7 @@ export const Title = styled.p`
   line-height: 1.4;
 `;
 
-export const TitleImg = styled.img`
-  width: 50px;
-  height: 50px;
-  outline: 1px solid red;
-`;
+export const TitleImg = styled.img``;
 
 export const Links = styled.div`
   display: flex;

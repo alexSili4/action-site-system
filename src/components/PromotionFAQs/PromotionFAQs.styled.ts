@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  margin-top: ${({ theme }) => theme.spacing(26)};
-
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    margin-top: ${({ theme }) => theme.spacing(25)};
   }
 `;
 
@@ -52,17 +49,38 @@ export const WorkingHours = styled.p`
 `;
 
 export const PhoneLink = styled.a`
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: ${({ theme }) => theme.spacing(2)};
+  width: 100%;
+  border-radius: 8px;
+  background-color: #f4f6f9;
   margin-top: ${({ theme }) => theme.spacing(2)};
-  padding-left: ${({ theme }) => theme.spacing()};
-  color: #383e45;
+  padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(6)}`};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 206px;
+    padding: ${({ theme }) => theme.spacing(2)};
+  }
 `;
 
 export const PhoneLinkTitle = styled.span`
-  font-family: ${({ theme }) => theme.fontFamily.oswald};
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.56;
+  line-height: 1.4;
+`;
+
+export const PhoneLinkIconWrap = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+
+  & > svg {
+    color: #7e8494;
+  }
 `;

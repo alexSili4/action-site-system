@@ -9,6 +9,7 @@ import {
   QuestionBtnTitle,
   QuestionWrap,
   Answer,
+  IconWrap,
 } from './PromotionFAQ.styled';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
@@ -31,9 +32,11 @@ const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
   return (
     <ListItem>
       <QuestionWrap>
-        <QuestionBtn onClick={onQuestionBtnClick} showAnswer={showAnswer}>
+        <QuestionBtn onClick={onQuestionBtnClick}>
           <QuestionBtnTitle>{title}</QuestionBtnTitle>
-          <FaChevronDown size={theme.iconSizes.faqBtn} />
+          <IconWrap>
+            <FaChevronDown size={theme.iconSizes.faqBtn} />
+          </IconWrap>
         </QuestionBtn>
         <AnswerWrap
           scrollHeight={scrollHeight}

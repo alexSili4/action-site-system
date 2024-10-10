@@ -5,7 +5,5 @@ export interface IProps {
 }
 
 export interface IStyledProps {
-  marginTop?: string;
   isTable?: boolean;
-  isHiddenOnDesk?: boolean;
 }

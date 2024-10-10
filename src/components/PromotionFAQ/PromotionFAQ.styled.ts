@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import { IStyledAnswerWrapProps, IStyledProps } from './PromotionFAQ.types';
+import { IStyledProps } from './PromotionFAQ.types';
 
 export const ListItem = styled.li``;
 
 export const QuestionWrap = styled.div``;
 
-export const QuestionBtn = styled.button<IStyledProps>`
+export const QuestionBtn = styled.button`
   display: flex;
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(5)};
@@ -16,15 +16,9 @@ export const QuestionBtn = styled.button<IStyledProps>`
   padding-top: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ theme }) => theme.spacing(2)};
 
-  & > svg {
-    flex-shrink: 0;
-    color: #a282f7;
-    transform: rotate(${({ showAnswer }) => (showAnswer ? 180 : 0)}deg);
-    transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
-  }
-
-  &:is(:hover, :focus) > svg {
-    transform: rotate(${({ showAnswer }) => (showAnswer ? 0 : 180)}deg);
+  &:is(:hover, :focus) > span:last-of-type {
+    box-shadow: 1px 1px 0px 0px #7a4ebd,
+      inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   }
 `;
 
@@ -37,7 +31,31 @@ export const QuestionBtnTitle = styled.span`
   text-align: left;
 `;
 
-export const AnswerWrap = styled.div<IStyledAnswerWrapProps>`
+export const IconWrap = styled.span`
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0px 0px #7a4ebd,
+    inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
+  background-color: #9066cc;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+
+  & > svg {
+    flex-shrink: 0;
+    color: ${({ theme }) => theme.colors.white};
+  }
+`;
+
+export const AnswerWrap = styled.div<IStyledProps>`
   max-height: ${({ showAnswer, scrollHeight }) =>
     showAnswer ? `${scrollHeight}px` : '0px'};
   overflow-y: hidden;

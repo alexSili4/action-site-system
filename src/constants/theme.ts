@@ -27,7 +27,7 @@ interface ITheme {
     promotionPrizesSliderBtn: number;
     faqBtn: number;
     phoneLink: number;
-    regCodeLink: number;
+    resultsBtn: number;
     promotionContactsPhoneLink: number;
     promotionContactsMailLink: number;
     promotionContactsMapHeader: number;
@@ -86,9 +86,9 @@ const theme: ITheme = {
     datePickerBtnLabel: 20,
     goBackLink: 10,
     promotionPrizesSliderBtn: 10,
-    faqBtn: 12,
+    faqBtn: 14,
     phoneLink: 16,
-    regCodeLink: 16,
+    resultsBtn: 14,
     promotionContactsPhoneLink: 16,
     promotionContactsMailLink: 18,
     promotionContactsMapHeader: 20,

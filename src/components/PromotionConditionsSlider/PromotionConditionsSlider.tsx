@@ -14,6 +14,7 @@ import {
 import { theme } from '@/constants';
 import { Autoplay } from 'swiper/modules';
 import { IProps } from './PromotionConditionsSlider.types';
+import PromotionConditionsSliderAnimation from '@/components/PromotionConditionsSliderAnimation';
 
 const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
@@ -32,7 +33,7 @@ const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
     <Container ref={sliderContainerRef} slideHeight={slideHeight}>
       <Swiper
         modules={[Autoplay]}
-        autoplay={{ delay: 2000 }}
+        // autoplay={{ delay: 2000 }}
         speed={2000}
         spaceBetween={16}
         slidesPerView={1.075}
@@ -42,20 +43,32 @@ const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
           [theme.breakpoints.desktop]: { slidesPerView: 3.077 },
         }}
       >
-        {conditions.map(({ title, id }) => (
-          <SwiperSlide key={id}>
-            <Card>
-              <TitleWrap>
-                <Title>{title}</Title>
-              </TitleWrap>
-              <Cover>
-                <StepLabelWrap>
-                  <StepLabel>0</StepLabel>
-                </StepLabelWrap>
-              </Cover>
-            </Card>
-          </SwiperSlide>
-        ))}
+        {conditions.map(
+          (
+            { title, gift_num: giftNum, img_source_json: imgSourceJson },
+            index
+          ) => {
+            const animationData = JSON.parse(imgSourceJson);
+
+            return (
+              <SwiperSlide key={index}>
+                <Card>
+                  <TitleWrap>
+                    <Title>{title}</Title>
+                  </TitleWrap>
+                  <Cover>
+                    <PromotionConditionsSliderAnimation
+                      animationData={animationData}
+                    />
+                    <StepLabelWrap>
+                      <StepLabel>{giftNum}</StepLabel>
+                    </StepLabelWrap>
+                  </Cover>
+                </Card>
+              </SwiperSlide>
+            );
+          }
+        )}
       </Swiper>
     </Container>
   );

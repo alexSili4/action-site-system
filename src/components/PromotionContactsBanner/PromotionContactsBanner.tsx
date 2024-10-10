@@ -14,35 +14,44 @@ import {
   IconWrap,
 } from './PromotionContactsBanner.styled';
 import { theme } from '@/constants';
+import { useTargetPromotion } from '@/hooks';
+import { getFileUrl } from '@/utils';
 
 const PromotionContactsBanner: FC = () => {
+  const {
+    hot_line_phone: hotLinePhone,
+    hot_line_email: hotLineEmail,
+    logo,
+  } = useTargetPromotion() ?? {};
+  const logoUrl = getFileUrl(logo ?? '');
+
   return (
     <Container>
       <TitleWrap>
         <Title>Організатор акції</Title>
-        <TitleImg src='' alt='Логотип організатора акції' />
+        <TitleImg src={logoUrl} alt='Логотип організатора акції' />
       </TitleWrap>
       <Links>
         <LinkWrap>
           <Label>Гаряча лінія</Label>
-          <Link href='tel:+0000000000'>
+          <Link href={`tel:${hotLinePhone}`}>
             <IconWrap>
               <HiOutlinePhone
                 size={theme.iconSizes.promotionContactsPhoneLink}
               />
             </IconWrap>
-            <LinkTitle>0000000000</LinkTitle>
+            <LinkTitle>{hotLinePhone}</LinkTitle>
           </Link>
         </LinkWrap>
         <LinkWrap>
           <Label>Пошта</Label>
-          <Link href='mailto:someemail'>
+          <Link href={`mailto:${hotLineEmail}`}>
             <IconWrap>
               <MdOutlineMailOutline
                 size={theme.iconSizes.promotionContactsMailLink}
               />
             </IconWrap>
-            <LinkTitle>someemail</LinkTitle>
+            <LinkTitle>{hotLineEmail}</LinkTitle>
           </Link>
         </LinkWrap>
       </Links>

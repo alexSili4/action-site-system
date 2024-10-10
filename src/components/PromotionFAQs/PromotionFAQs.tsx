@@ -6,12 +6,13 @@ import {
   ContentWrap,
   List,
   PhoneLink,
+  PhoneLinkIconWrap,
   PhoneLinkTitle,
   Title,
   WorkingHours,
 } from './PromotionFAQs.styled';
 import PromotionFAQ from '@/components/PromotionFAQ';
-import { FaPhoneAlt } from 'react-icons/fa';
+import { LuPhone } from 'react-icons/lu';
 import { PromotionDetailsPageSections, theme } from '@/constants';
 import { IProps } from './PromotionFAQs.types';
 import { useTargetPromotion } from '@/hooks';
@@ -30,10 +31,15 @@ const PromotionFAQs: FC<IProps> = ({ faqs }) => {
           ))}
         </List>
         <AdditionalIfoWrap>
-          <Title>{hotLineText}</Title>
-          <WorkingHours>Lorem ipsum dolor sit amet.</WorkingHours>
+          <Title>
+            Потрібна додаткова інформація? Ви можете зв&#8217;язатися по
+            телефону звернувшись в Центр Обслуговування Кліентів
+          </Title>
+          <WorkingHours>{hotLineText}</WorkingHours>
           <PhoneLink href={`tel:${hotLinePhone}`}>
-            <FaPhoneAlt size={theme.iconSizes.phoneLink} />
+            <PhoneLinkIconWrap>
+              <LuPhone size={theme.iconSizes.phoneLink} />
+            </PhoneLinkIconWrap>
             <PhoneLinkTitle>{hotLinePhone}</PhoneLinkTitle>
           </PhoneLink>
         </AdditionalIfoWrap>
