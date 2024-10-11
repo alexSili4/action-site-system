@@ -3,22 +3,24 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {
+  Container,
   Card,
   Image,
   ImgWrap,
-  StatusLabel,
   Title,
   TitleWrap,
 } from './PromotionPrizeImgSlider.styled';
-import PromotionPrizeImgSliderControls from '@/components/PromotionPrizeImgSliderControls';
-import PromotionPrizeImgSliderPagination from '@/components/PromotionPrizeImgSliderPagination';
+// import PromotionPrizeImgSliderControls from '@/components/PromotionPrizeImgSliderControls';
+// import PromotionPrizeImgSliderPagination from '@/components/PromotionPrizeImgSliderPagination';
 import { Swiper as ISwiper } from 'swiper';
 import { IProps } from './PromotionPrizeImgSlider.types';
 import { getFileUrl } from '@/utils';
+import PromotionPrizeImgSliderStatusLabel from '@/components/PromotionPrizeImgSliderStatusLabel';
 
 const PromotionPrizeImgSlider: FC<IProps> = ({
   prize: {
     gift: { images, name },
+    gift_type: giftType,
   },
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -29,37 +31,39 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
   };
 
   return (
-    <Swiper
-      onSlideChange={onSlideChange}
-      speed={800}
-      spaceBetween={30}
-      slidesPerView={1}
-      loop={isLoopMode}
-      grabCursor
-    >
-      {images.map(({ image }, index) => {
-        const imageUrl = getFileUrl(image);
+    <Container>
+      <Swiper
+        onSlideChange={onSlideChange}
+        speed={800}
+        spaceBetween={30}
+        slidesPerView={1}
+        loop={isLoopMode}
+        grabCursor
+      >
+        {images.map(({ image }, index) => {
+          const imageUrl = getFileUrl(image);
 
-        return (
-          <SwiperSlide key={index}>
-            <StatusLabel></StatusLabel>
-            <Card>
-              <ImgWrap>
-                <Image src={imageUrl} alt={name} />
-              </ImgWrap>
-            </Card>
-          </SwiperSlide>
-        );
-      })}
-      <TitleWrap>
-        <Title>{name}</Title>
-      </TitleWrap>
-      <PromotionPrizeImgSliderControls />
-      <PromotionPrizeImgSliderPagination
-        images={images}
-        activeIndex={activeIndex}
-      />
-    </Swiper>
+          return (
+            <SwiperSlide key={index}>
+              <Card>
+                <ImgWrap>
+                  <Image src={imageUrl} alt={name} />
+                </ImgWrap>
+              </Card>
+            </SwiperSlide>
+          );
+        })}
+        <PromotionPrizeImgSliderStatusLabel giftType={giftType} />
+        <TitleWrap>
+          <Title>{name}</Title>
+        </TitleWrap>
+        {/* <PromotionPrizeImgSliderControls /> */}
+        {/* <PromotionPrizeImgSliderPagination
+          images={images}
+          activeIndex={activeIndex}
+        /> */}
+      </Swiper>
+    </Container>
   );
 };
 

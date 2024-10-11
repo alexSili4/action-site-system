@@ -5,7 +5,6 @@ export const Container = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 495px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) => theme.spacing(6)};
   padding-top: ${({ theme }) => theme.spacing(8)};
@@ -16,14 +15,27 @@ export const Container = styled.div<IStyledProps>`
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
-    margin-top: ${({ theme }) => theme.spacing(3)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    height: 600px;
+    gap: ${({ theme }) => theme.spacing(64)};
     padding: ${({ theme }) =>
       `${theme.spacing(12)} ${theme.spacing(14)} ${theme.spacing(18)}`};
     background-image: url(${({ secondBannerDt }) => secondBannerDt});
+  }
+`;
+
+export const ContentWrap = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(71)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0px;
   }
 `;
 

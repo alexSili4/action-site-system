@@ -1,25 +1,32 @@
 import styled from '@emotion/styled';
+import { IStyledProps } from './PromotionPrizesBanner.types';
 
-export const Container = styled.div`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-  }
-`;
+export const List = styled.ul``;
 
-export const BannerWrap = styled.div`
+export const ListItem = styled.li``;
+
+export const Container = styled.div<IStyledProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.spacing(5)};
   margin-top: ${({ theme }) => theme.spacing(8)};
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) =>
-    `${theme.spacing(23)} ${theme.spacing(5)} ${theme.spacing(64)}`};
+    `${theme.spacing(8)} ${theme.spacing(5)} ${theme.spacing(70)}`};
+  background-image: url(${({ imageUrl }) => imageUrl});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    margin-top: ${({ theme }) => theme.spacing(12)};
-    padding: ${({ theme }) =>
-      `${theme.spacing(60)} ${theme.spacing(10)} ${theme.spacing(12)}`};
+    gap: ${({ theme }) => theme.spacing(37)};
+    padding: ${({ theme }) => `${theme.spacing(12)} ${theme.spacing(10)}`};
   }
 `;
 
-export const BannerTitle = styled.p`
+export const Title = styled.p`
   width: 100%;
   max-width: 500px;
   color: ${({ theme }) => theme.colors.white};

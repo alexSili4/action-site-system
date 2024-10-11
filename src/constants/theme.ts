@@ -42,6 +42,7 @@ interface ITheme {
     desktop: number;
   };
   zIndex: {
+    prizeStatus: number;
     animatedModalWin: number;
     promotionMapHeader: number;
     promotionShopsList: number;
@@ -104,6 +105,7 @@ const theme: ITheme = {
   },
   // shadows: {  },
   zIndex: {
+    prizeStatus: 10,
     animatedModalWin: 10,
     promotionSliderControls: 10,
     promotionSliderPagination: 10,

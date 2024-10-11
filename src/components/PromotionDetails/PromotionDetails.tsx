@@ -5,7 +5,7 @@ import PromotionPageBreadcrumbs from '@/components/PromotionPageBreadcrumbs';
 import { PromotionDetailsState } from '@/types/promotion.types';
 import { useSetSearchParams, useTargetPromotion } from '@/hooks';
 import { PromotionsCategoriesKeys, SearchParamsKeys } from '@/constants';
-import PromotionPrizesWheels from '@/components/PromotionPrizesWheels';
+import PromotionPrizes from '@/components/PromotionPrizes';
 import PromotionFAQs from '@/components/PromotionFAQs';
 import PromotionConditions from '@/components/PromotionConditions';
 import PromotionWinners from '@/components/PromotionWinners';
@@ -13,8 +13,9 @@ import PromotionContacts from '@/components/PromotionContacts';
 import PromotionBanner from '@/components/PromotionBanner';
 import PromotionDetailsSectionContainer from '@/components/PromotionDetailsSectionContainer';
 import { IProps } from './PromotionDetails.types';
-import { getPromotionBannerUrls, getPromotionDate } from '@/utils';
-import PromotionPrizesMain from '@/components/PromotionPrizesMain';
+import { getFileUrl, getPromotionBannerUrls, getPromotionDate } from '@/utils';
+import PrizesWheelLogo from '@/components/PrizesWheelLogo';
+import PromotionPrizesBannerIcon from '@/components/PromotionPrizesBannerIcon';
 
 const PromotionDetails: FC<IProps> = ({
   faqs,
@@ -28,6 +29,8 @@ const PromotionDetails: FC<IProps> = ({
     date_to: dateTo = null,
     second_banner_dt: secondBannerDt = '',
     second_banner_mob: secondBannerMob = '',
+    logo = '',
+    action_type: actionType,
   } = useTargetPromotion() ?? {};
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
@@ -40,6 +43,8 @@ const PromotionDetails: FC<IProps> = ({
     bannerDt: secondBannerDt,
     bannerMob: secondBannerMob,
   });
+  const logoUrl = getFileUrl(logo ?? '');
+  const showWheelLogo = actionType === 1 || actionType === 3;
 
   const promotionCategoryState = state?.promotionCategory;
   const from = state?.from;
@@ -49,7 +54,6 @@ const PromotionDetails: FC<IProps> = ({
     promotionCategorySQ ??
     PromotionsCategoriesKeys.active;
 
-  // TODO: fix  promotionTitle
   return (
     <Container>
       <PromotionDetailsSectionContainer>
@@ -63,14 +67,26 @@ const PromotionDetails: FC<IProps> = ({
           name={name}
           secondBannerDt={bannerDtUrl}
           secondBannerMob={bannerMobUrl}
+          showWheelLogo={showWheelLogo}
         />
       </PromotionDetailsSectionContainer>
       <PromotionDetailsSectionContainer isConditionsSection>
         <PromotionConditions conditions={conditions} />
       </PromotionDetailsSectionContainer>
       <PromotionDetailsSectionContainer>
-        <PromotionPrizesMain />
-        <PromotionPrizesWheels prizes={prizes} />
+        <PromotionPrizes
+          logo={<PromotionPrizesBannerIcon src={logoUrl} />}
+          prizes={prizes}
+          title='Призи головного розіграшу'
+          description='Унікальний приз від головного партнера'
+          showRegCodeLink={false}
+        />
+        <PromotionPrizes
+          logo={<PrizesWheelLogo />}
+          prizes={prizes}
+          title='Призи «Колеса подарунків»'
+          description='Крутіть колесо та вигравайте подарунки'
+        />
         <PromotionFAQs faqs={faqs} />
         <PromotionWinners winners={winners} />
         <PromotionContacts />

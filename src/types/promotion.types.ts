@@ -15,6 +15,8 @@ export type DateTo = number | null;
 
 export type CoverageType = 'national' | 'base';
 
+export type ActionType = 1 | 2 | 3; // 1 - колесо 2 - розіграш 3 - колесо + розіграш
+
 export interface IPromotion {
   id: number;
   name: string;
@@ -32,6 +34,7 @@ export interface IPromotion {
   hot_line_email: string;
   hot_line_text: string;
   coverage_type: CoverageType;
+  action_type: ActionType;
 }
 
 export type Promotions = IPromotion[];

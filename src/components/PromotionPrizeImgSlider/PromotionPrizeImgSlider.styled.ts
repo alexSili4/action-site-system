@@ -1,49 +1,36 @@
 import styled from '@emotion/styled';
 
-export const Card = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: ${({ theme }) => theme.spacing(6)};
-  padding-top: ${({ theme }) => theme.spacing(22)};
+export const Container = styled.div`
   border-radius: 12px;
   background-color: #f4f6f9;
+  padding: ${({ theme }) => theme.spacing(6)};
 `;
 
-export const StatusLabel = styled.div`
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background-color: #9066cc;
-  background-image: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0) 100%
-  );
+export const Card = styled.div`
+  /* position: relative; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 40px;
-    right: 40px;
-  }
+  /* padding-top: ${({ theme }) => theme.spacing(22)}; */
+  background-color: green;
 `;
 
 export const ImgWrap = styled.div`
-  /* width: 200px; */
-  /* height: 200px; */
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  display: block;
+`;
 
 export const TitleWrap = styled.div`
   height: 52px;
-  margin-top: ${({ theme }) => theme.spacing(7)};
+  /* margin-top: ${({ theme }) => theme.spacing(7)}; */
+  background-color: blueviolet;
 `;
 
 export const Title = styled.p`

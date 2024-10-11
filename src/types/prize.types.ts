@@ -1,5 +1,7 @@
 export type ShowType = 'base' | 'big';
 
+export type GiftType = 'wheel' | 'present' | 'general';
+
 export interface IImage {
   image: string;
 }
@@ -22,6 +24,7 @@ export interface IPartner {
 }
 
 export interface IPrize {
+  gift_type: GiftType;
   show_type: ShowType;
   gift: IGift;
   partner: IPartner;

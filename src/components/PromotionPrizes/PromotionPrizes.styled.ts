@@ -6,25 +6,6 @@ export const Container = styled.div`
   }
 `;
 
-export const List = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
-  margin-top: ${({ theme }) => theme.spacing(4)};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: ${({ theme }) => theme.spacing(12)};
-  }
-`;
-
-export const ListItem = styled.li`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: calc((100% - ${({ theme }) => theme.spacing(4)} * 2) / 3);
-  }
-`;
-
 export const RegisterCodeLink = styled(Link)`
   display: block;
   width: 100%;

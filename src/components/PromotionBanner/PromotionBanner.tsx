@@ -2,8 +2,9 @@ import { FC } from 'react';
 import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
 import PromotionDetailsGoBackLink from '@/components/PromotionDetailsGoBackLink';
 import { IProps } from './PromotionBanner.types';
-import { Container, InfoWrap } from './PromotionBanner.styled';
+import { Container, InfoWrap, ContentWrap } from './PromotionBanner.styled';
 import PromotionName from '@/components/PromotionName';
+import PrizesWheelLogo from '@/components/PrizesWheelLogo';
 
 const PromotionBanner: FC<IProps> = ({
   from,
@@ -11,6 +12,7 @@ const PromotionBanner: FC<IProps> = ({
   name,
   secondBannerDt,
   secondBannerMob,
+  showWheelLogo,
 }) => {
   return (
     <Container
@@ -18,10 +20,13 @@ const PromotionBanner: FC<IProps> = ({
       secondBannerMob={secondBannerMob}
     >
       <PromotionDetailsGoBackLink from={from} />
-      <InfoWrap>
-        <PromotionPeriodLabel period={period} />
-        <PromotionName name={name} />
-      </InfoWrap>
+      <ContentWrap>
+        <InfoWrap>
+          <PromotionPeriodLabel period={period} />
+          <PromotionName name={name} />
+        </InfoWrap>
+        {showWheelLogo && <PrizesWheelLogo />}
+      </ContentWrap>
     </Container>
   );
 };
