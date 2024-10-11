@@ -15,8 +15,11 @@ interface ITheme {
     geologica: string;
     delaGothicOne: string;
     oswald: string;
+    myriadPro: string;
+    montserrat: string;
   };
   iconSizes: {
+    rulesLink: number;
     socialList: number;
     cabinet: number;
     showLocationsBtn: number;
@@ -77,8 +80,11 @@ const theme: ITheme = {
     geologica: 'Geologica',
     delaGothicOne: 'Dela Gothic One',
     oswald: 'Oswald',
+    myriadPro: 'Myriad Pro',
+    montserrat: 'Montserrat',
   },
   iconSizes: {
+    rulesLink: 14,
     socialList: 24,
     cabinet: 14,
     showLocationsBtn: 12,

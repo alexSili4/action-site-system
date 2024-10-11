@@ -32,9 +32,9 @@ export const Description = styled.p`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
   color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
+  font-family: ${({ theme }) => theme.fontFamily.montserrat};
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
@@ -53,9 +53,9 @@ export const Accent = styled.span<IStyledProps>`
   top: 50%;
   left: 50%;
   color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
+  font-family: ${({ theme }) => theme.fontFamily.montserrat};
   font-size: 36.23px;
-  font-weight: 400;
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   transform: translateX(-50%) translateY(-50%);
@@ -72,9 +72,9 @@ export const FirstAccentShadow = styled.span`
   top: 50%;
   left: 50%;
   color: rgba(251, 222, 254, 0.3);
-  font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
+  font-family: ${({ theme }) => theme.fontFamily.montserrat};
   font-size: 36.23px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
@@ -92,9 +92,9 @@ export const SecondAccentShadow = styled.span`
   top: 50%;
   left: 50%;
   color: rgba(163, 105, 228, 0.3);
-  font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
+  font-family: ${({ theme }) => theme.fontFamily.montserrat};
   font-size: 36.23px;
-  font-weight: 400;
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   transform: translateX(-50%) translateY(-50%) rotate(-1deg);
@@ -108,7 +108,7 @@ export const SecondAccentShadow = styled.span`
 export const Title = styled.h1`
   width: 316px;
   color: #3f3d5c;
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-family: ${({ theme }) => theme.fontFamily.myriadPro};
   font-size: 16px;
   font-weight: 400;
   text-align: center;

@@ -10,16 +10,26 @@ import {
   TitleWrap,
   StepLabelWrap,
   StepLabel,
+  RulesCard,
+  RulesLink,
+  RulesLinkTitle,
 } from './PromotionConditionsSlider.styled';
 import { theme } from '@/constants';
 import { Autoplay } from 'swiper/modules';
 import { IProps } from './PromotionConditionsSlider.types';
 import PromotionConditionsSliderAnimation from '@/components/PromotionConditionsSliderAnimation';
+import { useTargetPromotion } from '@/hooks';
+import { IoDocumentOutline } from 'react-icons/io5';
+import { getFileUrl } from '@/utils';
+import rulesCardBg from '@/images/conditions/rules-bg.jpg';
 
 const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
+  const { rules_pdf: rulesPdf = '' } = useTargetPromotion() ?? {};
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
   const sliderContainerRef = useRef<HTMLDivElement | null>(null);
-  const isLoopMode = conditions.length > 1;
+  const rulesPdfUrl = getFileUrl(rulesPdf);
+  const deskSlidesPerView = 3.077;
+  const isLoopMode = conditions.length > deskSlidesPerView;
 
   useEffect(() => {
     const slideHeight = sliderContainerRef.current?.scrollHeight;
@@ -33,14 +43,14 @@ const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
     <Container ref={sliderContainerRef} slideHeight={slideHeight}>
       <Swiper
         modules={[Autoplay]}
-        // autoplay={{ delay: 2000 }}
+        autoplay={{ delay: 2000 }}
         speed={2000}
         spaceBetween={16}
         slidesPerView={1.075}
         loop={isLoopMode}
         grabCursor
         breakpoints={{
-          [theme.breakpoints.desktop]: { slidesPerView: 3.077 },
+          [theme.breakpoints.desktop]: { slidesPerView: deskSlidesPerView },
         }}
       >
         {conditions.map(
@@ -69,6 +79,19 @@ const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
             );
           }
         )}
+        <SwiperSlide key={rulesPdfUrl}>
+          <RulesCard bgImgUrl={rulesCardBg}>
+            <RulesLink
+              href={rulesPdfUrl}
+              download
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <RulesLinkTitle>Правила акції</RulesLinkTitle>
+              <IoDocumentOutline size={theme.iconSizes.rulesLink} />
+            </RulesLink>
+          </RulesCard>
+        </SwiperSlide>
       </Swiper>
     </Container>
   );

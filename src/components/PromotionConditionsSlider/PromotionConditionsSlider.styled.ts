@@ -1,8 +1,11 @@
 import { ClassNames } from '@/constants';
 import styled from '@emotion/styled';
-import { IStyledProps } from './PromotionConditionsSlider.types';
+import {
+  IStyledRulesCard,
+  IStyledSliderProps,
+} from './PromotionConditionsSlider.types';
 
-export const Container = styled.div<IStyledProps>`
+export const Container = styled.div<IStyledSliderProps>`
   margin-top: ${({ theme }) => theme.spacing(8)};
 
   & .${ClassNames.swiperSlide} {
@@ -77,4 +80,48 @@ export const StepLabel = styled.p`
   font-size: 28px;
   font-weight: 800;
   line-height: 1.43;
+`;
+
+export const RulesCard = styled.div<IStyledRulesCard>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: ${({ theme }) => theme.spacing(6)};
+  border-radius: 12px;
+  background-image: url(${({ bgImgUrl }) => bgImgUrl});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+`;
+
+export const RulesLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing()};
+  width: 100%;
+  padding: ${({ theme }) => theme.spacing(5)};
+  border-radius: 16px;
+  box-shadow: 3px 3px 0px 0px #e8c47d;
+  background-color: #ffeecc;
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+
+  & > svg {
+    color: #3d3e46;
+  }
+
+  &:is(:hover, :focus) {
+    box-shadow: 1px 1px 0px 0px #e8c47d;
+  }
+`;
+
+export const RulesLinkTitle = styled.span`
+  color: #3d3e46;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
 `;

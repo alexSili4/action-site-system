@@ -4,7 +4,11 @@ import { useLocation } from 'react-router-dom';
 import PromotionPageBreadcrumbs from '@/components/PromotionPageBreadcrumbs';
 import { PromotionDetailsState } from '@/types/promotion.types';
 import { useSetSearchParams, useTargetPromotion } from '@/hooks';
-import { PromotionsCategoriesKeys, SearchParamsKeys } from '@/constants';
+import {
+  PromotionDetailsPageSections,
+  PromotionsCategoriesKeys,
+  SearchParamsKeys,
+} from '@/constants';
 import PromotionPrizes from '@/components/PromotionPrizes';
 import PromotionFAQs from '@/components/PromotionFAQs';
 import PromotionConditions from '@/components/PromotionConditions';
@@ -80,6 +84,7 @@ const PromotionDetails: FC<IProps> = ({
           title='Призи головного розіграшу'
           description='Унікальний приз від головного партнера'
           showRegCodeLink={false}
+          id={PromotionDetailsPageSections.prizes}
         />
         <PromotionPrizes
           logo={<PrizesWheelLogo />}

@@ -4,6 +4,10 @@ export interface IProps {
   conditions: Conditions;
 }
 
-export interface IStyledProps {
+export interface IStyledSliderProps {
   slideHeight: number | null;
+}
+
+export interface IStyledRulesCard {
+  bgImgUrl: string;
 }

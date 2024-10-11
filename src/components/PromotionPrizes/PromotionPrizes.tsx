@@ -12,6 +12,7 @@ const PromotionPrizes: FC<IProps> = ({
   description,
   logo,
   showRegCodeLink = true,
+  id,
 }) => {
   const bigPrizes = prizes.filter(
     ({ show_type: showType }) => showType === 'big'
@@ -20,15 +21,20 @@ const PromotionPrizes: FC<IProps> = ({
     ({ show_type: showType }) => showType === 'base'
   );
 
+  const showBigPrizesList = Boolean(bigPrizes.length);
+  const showBasePrizesList = Boolean(basePrizes.length);
+
   return (
-    <Container>
+    <Container id={id}>
       <PromotionSectionTitle title={title} />
-      <PromotionPrizesBanner
-        prizes={bigPrizes}
-        description={description}
-        logo={logo}
-      />
-      <PromotionPrizesList prizes={basePrizes} />
+      {showBigPrizesList && (
+        <PromotionPrizesBanner
+          prizes={bigPrizes}
+          description={description}
+          logo={logo}
+        />
+      )}
+      {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
       {showRegCodeLink && (
         <RegisterCodeLink to={PagePaths.code}>
           Зареєструвати код

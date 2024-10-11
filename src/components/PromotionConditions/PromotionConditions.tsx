@@ -6,10 +6,12 @@ import { PromotionDetailsPageSections } from '@/constants';
 import { IProps } from './PromotionConditions.types';
 
 const PromotionConditions: FC<IProps> = ({ conditions }) => {
+  const showSlider = Boolean(conditions.length);
+
   return (
     <Container id={PromotionDetailsPageSections.conditions}>
       <PromotionSectionTitle title='Умови участі' />
-      <PromotionConditionsSlider conditions={conditions} />
+      {showSlider && <PromotionConditionsSlider conditions={conditions} />}
     </Container>
   );
 };

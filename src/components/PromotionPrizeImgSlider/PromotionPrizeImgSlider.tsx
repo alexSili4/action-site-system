@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -29,6 +29,10 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
   const onSlideChange = (swiper: ISwiper) => {
     setActiveIndex(swiper.activeIndex);
   };
+
+  useEffect(() => {
+    console.log(activeIndex);
+  }, [activeIndex]);
 
   return (
     <Container>

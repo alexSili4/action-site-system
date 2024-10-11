@@ -35,6 +35,7 @@ export interface IPromotion {
   hot_line_text: string;
   coverage_type: CoverageType;
   action_type: ActionType;
+  rules_pdf: string;
 }
 
 export type Promotions = IPromotion[];

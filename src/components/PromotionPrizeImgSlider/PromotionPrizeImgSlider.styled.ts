@@ -11,9 +11,7 @@ export const Card = styled.div`
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: center; */
-
   /* padding-top: ${({ theme }) => theme.spacing(22)}; */
-  background-color: green;
 `;
 
 export const ImgWrap = styled.div`
@@ -30,7 +28,6 @@ export const Image = styled.img`
 export const TitleWrap = styled.div`
   height: 52px;
   /* margin-top: ${({ theme }) => theme.spacing(7)}; */
-  background-color: blueviolet;
 `;
 
 export const Title = styled.p`

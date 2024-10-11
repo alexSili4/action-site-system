@@ -15,6 +15,7 @@ export const Container = styled.div<IStyledProps>`
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    height: 495px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -28,14 +29,13 @@ export const Container = styled.div<IStyledProps>`
 export const ContentWrap = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(71)};
+  flex-grow: 1;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-end;
-    gap: 0px;
   }
 `;
 

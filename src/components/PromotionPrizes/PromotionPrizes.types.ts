@@ -1,3 +1,4 @@
+import { PromotionDetailsPageSections } from '@/constants';
 import { Prizes } from '@/types/prize.types';
 import { ReactNode } from 'react';
 
@@ -7,4 +8,5 @@ export interface IProps {
   description: string;
   logo: ReactNode;
   showRegCodeLink?: boolean;
+  id?: PromotionDetailsPageSections;
 }

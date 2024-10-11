@@ -27,4 +27,5 @@ export const Link = styled.a`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+  text-decoration: underline;
 `;
