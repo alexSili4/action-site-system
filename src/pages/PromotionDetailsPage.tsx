@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
-import PromotionDetails from '@/components/PromotionDetails';
-import PromotionDetailsNavBar from '@/components/PromotionDetailsNavBar';
+import {
+  PromotionDetails,
+  PromotionDetailsNavBar,
+} from '@/components/PromotionDetailsPage';
 import { usePromotionDetailsPage } from '@/hooks';
 
 const PromotionDetailsPage: FC = () => {
