@@ -1,1 +1,1 @@
-export { default } from './PromotionPrizesSliderControls';
+export { default } from './PromotionPrizeImgSliderControls';

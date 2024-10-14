@@ -27,6 +27,8 @@ export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
 // other
 
+export type Strings = string[];
+
 export interface IFormatDateProps {
   date: Date | string;
   dateFormat: string;

@@ -6,13 +6,13 @@ import {
   Header,
   Row,
   Table,
-  Container,
+  TableWrap,
 } from './PromotionWinnersTable.styled';
 import { IProps } from './PromotionWinnersTable.types';
 
 const PromotionWinnersTable: FC<IProps> = ({ winners }) => {
   return (
-    <Container>
+    <TableWrap>
       <Table>
         <Head>
           <Row>
@@ -33,7 +33,7 @@ const PromotionWinnersTable: FC<IProps> = ({ winners }) => {
           ))}
         </Body>
       </Table>
-    </Container>
+    </TableWrap>
   );
 };
 

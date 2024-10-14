@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -10,8 +10,8 @@ import {
   Title,
   TitleWrap,
 } from './PromotionPrizeImgSlider.styled';
-// import PromotionPrizeImgSliderControls from '@/components/PromotionPrizeImgSliderControls';
-// import PromotionPrizeImgSliderPagination from '@/components/PromotionPrizeImgSliderPagination';
+import PromotionPrizeImgSliderControls from '@/components/PromotionPrizeImgSliderControls';
+import PromotionPrizeImgSliderPagination from '@/components/PromotionPrizeImgSliderPagination';
 import { Swiper as ISwiper } from 'swiper';
 import { IProps } from './PromotionPrizeImgSlider.types';
 import { getFileUrl } from '@/utils';
@@ -24,15 +24,10 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
   },
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const isLoopMode = images.length > 1;
 
   const onSlideChange = (swiper: ISwiper) => {
     setActiveIndex(swiper.activeIndex);
   };
-
-  useEffect(() => {
-    console.log(activeIndex);
-  }, [activeIndex]);
 
   return (
     <Container>
@@ -41,7 +36,6 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
         speed={800}
         spaceBetween={30}
         slidesPerView={1}
-        loop={isLoopMode}
         grabCursor
       >
         {images.map(({ image }, index) => {
@@ -61,11 +55,11 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
         <TitleWrap>
           <Title>{name}</Title>
         </TitleWrap>
-        {/* <PromotionPrizeImgSliderControls /> */}
-        {/* <PromotionPrizeImgSliderPagination
+        <PromotionPrizeImgSliderControls />
+        <PromotionPrizeImgSliderPagination
           images={images}
           activeIndex={activeIndex}
-        /> */}
+        />
       </Swiper>
     </Container>
   );

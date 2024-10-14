@@ -1,6 +1,4 @@
 import { FC, useRef, useState } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
-import { theme } from '@/constants';
 import { IProps } from './PromotionFAQ.types';
 import {
   AnswerWrap,
@@ -9,10 +7,10 @@ import {
   QuestionBtnTitle,
   QuestionWrap,
   Answer,
-  IconWrap,
 } from './PromotionFAQ.styled';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
+import OpenContentBtnLabel from '@/components/OpenContentBtnLabel';
 
 const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
@@ -34,9 +32,7 @@ const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
       <QuestionWrap>
         <QuestionBtn onClick={onQuestionBtnClick}>
           <QuestionBtnTitle>{title}</QuestionBtnTitle>
-          <IconWrap>
-            <FaChevronDown size={theme.iconSizes.faqBtn} />
-          </IconWrap>
+          <OpenContentBtnLabel />
         </QuestionBtn>
         <AnswerWrap
           scrollHeight={scrollHeight}
