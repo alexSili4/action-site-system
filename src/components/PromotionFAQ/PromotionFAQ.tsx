@@ -32,7 +32,7 @@ const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
       <QuestionWrap>
         <QuestionBtn onClick={onQuestionBtnClick}>
           <QuestionBtnTitle>{title}</QuestionBtnTitle>
-          <OpenContentBtnLabel />
+          <OpenContentBtnLabel showContent={showAnswer} />
         </QuestionBtn>
         <AnswerWrap
           scrollHeight={scrollHeight}

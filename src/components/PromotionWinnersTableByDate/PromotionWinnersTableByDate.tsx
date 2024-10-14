@@ -7,9 +7,11 @@ import {
   Container,
   OpenContentBtn,
   OpenContentBtnTitle,
+  PromotionWinnersTableWrap,
   PromotionWinnersWrap,
   ResultsBtn,
   ResultsBtnTitle,
+  ResultsBtnWrap,
 } from './PromotionWinnersTableByDate.styled';
 import OpenContentBtnLabel from '@/components/OpenContentBtnLabel';
 import { theme } from '@/constants';
@@ -41,22 +43,36 @@ const PromotionWinnersTableByDate: FC<IProps> = ({ date, winners }) => {
     <Container>
       <OpenContentBtn type='button' onClick={onDateBtnClick}>
         <OpenContentBtnTitle>{date}</OpenContentBtnTitle>
-        <OpenContentBtnLabel />
+        <OpenContentBtnLabel showContent={showWinners} />
       </OpenContentBtn>
       <PromotionWinnersWrap
         scrollHeight={scrollHeight}
         showWinners={showWinners}
         ref={winnersRef}
       >
-        <PromotionElementWrap paddingTop={41} isTable>
-          <PromotionWinnersTable winners={winners} />
-        </PromotionElementWrap>
-        <PromotionElementWrap paddingTop={46} paddingBottom={24}>
-          <ResultsBtn onClick={onResultsBtnClick}>
-            <ResultsBtnTitle>Результати розіграшу</ResultsBtnTitle>
-            <IoDocumentOutline size={theme.iconSizes.resultsBtn} />
-          </ResultsBtn>
-        </PromotionElementWrap>
+        <PromotionWinnersTableWrap>
+          <PromotionElementWrap
+            paddingTopMobile={41}
+            paddingTopDesk={40}
+            paddingBottomDesk={40}
+            isTable
+          >
+            <PromotionWinnersTable winners={winners} />
+          </PromotionElementWrap>
+        </PromotionWinnersTableWrap>
+        <ResultsBtnWrap>
+          <PromotionElementWrap
+            paddingTopMobile={46}
+            paddingBottomMobile={24}
+            paddingTopDesk={40}
+            paddingBottomDesk={40}
+          >
+            <ResultsBtn onClick={onResultsBtnClick}>
+              <ResultsBtnTitle>Результати розіграшу</ResultsBtnTitle>
+              <IoDocumentOutline size={theme.iconSizes.resultsBtn} />
+            </ResultsBtn>
+          </PromotionElementWrap>
+        </ResultsBtnWrap>
       </PromotionWinnersWrap>
     </Container>
   );

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { IStyledProps } from './OpenContentBtnLabel.types';
 
-export const Container = styled.span`
+export const Container = styled.span<IStyledProps>`
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -21,5 +22,16 @@ export const Container = styled.span`
   & > svg {
     flex-shrink: 0;
     color: ${({ theme }) => theme.colors.white};
+    transform: rotate(${({ showContent }) => (showContent ? 180 : 0)}deg);
+    transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+  }
+
+  button:is(:hover, :focus) > & {
+    box-shadow: 1px 1px 0px 0px #7a4ebd,
+      inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
+  }
+
+  button:is(:hover, :focus) > & > svg {
+    transform: rotate(${({ showContent }) => (showContent ? 0 : 180)}deg);
   }
 `;

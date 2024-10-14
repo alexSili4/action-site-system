@@ -12,7 +12,23 @@ export const PromotionWinnersWrap = styled.div<IStyledProps>`
   overflow-y: hidden;
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc},
     margin-top ${({ theme }) => theme.transitionDurationAndFunc};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: ${({ theme }) => theme.spacing(24)};
+    padding-left: ${({ theme }) => theme.spacing(10)};
+    padding-right: ${({ theme }) => theme.spacing(10)};
+  }
 `;
+
+export const PromotionWinnersTableWrap = styled.div`
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-grow: 1;
+  }
+`;
+
+export const ResultsBtnWrap = styled.div``;
 
 export const OpenContentBtn = styled.button`
   display: flex;
@@ -25,9 +41,9 @@ export const OpenContentBtn = styled.button`
   padding-top: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ theme }) => theme.spacing(2)};
 
-  &:is(:hover, :focus) > span:last-of-type {
-    box-shadow: 1px 1px 0px 0px #7a4ebd,
-      inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 848px;
+    margin-left: auto;
   }
 `;
 

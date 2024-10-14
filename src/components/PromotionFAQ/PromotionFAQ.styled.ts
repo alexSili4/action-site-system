@@ -15,11 +15,6 @@ export const QuestionBtn = styled.button`
   padding: 0;
   padding-top: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ theme }) => theme.spacing(2)};
-
-  &:is(:hover, :focus) > span:last-of-type {
-    box-shadow: 1px 1px 0px 0px #7a4ebd,
-      inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
-  }
 `;
 
 export const QuestionBtnTitle = styled.span`

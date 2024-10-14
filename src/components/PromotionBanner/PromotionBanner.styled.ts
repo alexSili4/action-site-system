@@ -16,6 +16,7 @@ export const Container = styled.div<IStyledProps>`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     height: 495px;
+    margin-top: ${({ theme }) => theme.spacing(3)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

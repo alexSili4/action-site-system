@@ -74,10 +74,18 @@ const PromotionDetails: FC<IProps> = ({
           showWheelLogo={showWheelLogo}
         />
       </PromotionDetailsSectionContainer>
-      <PromotionDetailsSectionContainer isConditionsSection>
+      <PromotionDetailsSectionContainer
+        marginTopMobile={49}
+        marginTopDesk={80}
+        isConditionsSection
+      >
         <PromotionConditions conditions={conditions} />
       </PromotionDetailsSectionContainer>
-      <PromotionDetailsSectionContainer>
+      <PromotionDetailsSectionContainer
+        marginTopMobile={97}
+        marginTopDesk={80}
+        isPrizesSection
+      >
         <PromotionPrizes
           logo={<PromotionPrizesBannerIcon src={logoUrl} />}
           prizes={prizes}
