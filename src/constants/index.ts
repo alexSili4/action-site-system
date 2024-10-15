@@ -13,3 +13,4 @@ export { default as PromotionDetailsPageSections } from './promotionDetailsPageS
 export { default as Symbols } from './symbols';
 export { default as translatedPromotionDetailsPageSections } from './translatedPromotionDetailsPageSections';
 export { default as Messages } from './messages';
+export { default as RegPromotionCodeSteps } from './regPromotionCodeSteps';

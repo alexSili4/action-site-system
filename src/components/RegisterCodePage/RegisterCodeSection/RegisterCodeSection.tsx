@@ -4,16 +4,37 @@ import { Container, ContentWrap, Text } from './RegisterCodeSection.styled';
 import RegisterCodeBanner from '@RegisterCodePage/RegisterCodeBanner';
 import RegisterCodeForm from '@RegisterCodePage/RegisterCodeForm';
 import RegisterCodeStepsBar from '@RegisterCodePage/RegisterCodeStepsBar';
+import { IProps } from './RegisterCodeSection.types';
+import { getPromotionBannerUrls } from '@/utils';
 
-const RegisterCodeSection: FC = () => {
-  const { hot_line_phone: hotLinePhone } = useTargetPromotion() ?? {};
+const RegisterCodeSection: FC<IProps> = ({
+  steps,
+  currentStep,
+  incrementCurrentStep,
+}) => {
+  const {
+    hot_line_phone: hotLinePhone,
+    main_banner_dt: mainBannerDt = '',
+    main_banner_mob: mainBannerMob = '',
+  } = useTargetPromotion() ?? {};
+  const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
+    bannerDt: mainBannerDt,
+    bannerMob: mainBannerMob,
+  });
 
   return (
     <Container>
-      <RegisterCodeBanner />
+      <RegisterCodeBanner
+        bannerMobUrl={bannerMobUrl}
+        bannerDtUrl={bannerDtUrl}
+      />
       <ContentWrap>
-        <RegisterCodeStepsBar isHiddenOnMobile />
-        <RegisterCodeForm />
+        <RegisterCodeStepsBar
+          isHiddenOnMobile
+          steps={steps}
+          currentStep={currentStep}
+        />
+        <RegisterCodeForm incrementCurrentStep={incrementCurrentStep} />
         <Text>
           Якщо Вам не вдалося зареєструвати акційний код зверніться на гарячу
           лінію за телефоном {hotLinePhone} ({'???графік роботи???'})

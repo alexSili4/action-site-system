@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './NavControls.types';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.div<IStyledProps>`
   flex-grow: 1;
@@ -51,7 +50,7 @@ export const RegisterCodeBtn = styled.button`
   }
 `;
 
-export const CabinetLink = styled(Link)`
+export const CabinetLink = styled.a`
   flex-shrink: 0;
   display: flex;
   align-items: center;

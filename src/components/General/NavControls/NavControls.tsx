@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { CabinetLink, Container, RegisterCodeBtn } from './NavControls.styled';
-import { PagePaths, theme } from '@/constants';
+import { theme } from '@/constants';
 import { IProps } from './NavControls.types';
 import { PiUserBold } from 'react-icons/pi';
 import { BtnClickEvent } from '@/types/types';
@@ -11,6 +11,10 @@ const NavControls: FC<IProps> = ({
   setRegisterCodeModalWinState,
   isFake = false,
 }) => {
+  const cabinetLinkUrl = `${
+    import.meta.env.VITE_APP_SERVER_URL
+  }/oidcauth?authclient=oidc`;
+
   const onRegisterCodeBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
@@ -22,7 +26,7 @@ const NavControls: FC<IProps> = ({
       <RegisterCodeBtn type='button' onClick={onRegisterCodeBtnClick}>
         Зареєструвати код
       </RegisterCodeBtn>
-      <CabinetLink to={PagePaths.cabinet}>
+      <CabinetLink href={cabinetLinkUrl}>
         <PiUserBold size={theme.iconSizes.cabinet} />
       </CabinetLink>
     </Container>
