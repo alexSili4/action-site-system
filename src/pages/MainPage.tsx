@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Container from '@/components/Container';
+import { Container } from '@/components/General';
 import HeroSection from '@/components/HeroSection';
 import AppInfo from '@/components/AppInfo';
 

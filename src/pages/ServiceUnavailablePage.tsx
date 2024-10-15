@@ -1,6 +1,5 @@
-import Container from '@/components/Container';
-import ErrorSection from '@/components/ErrorSection';
-import ServiceUnavailableError from '@/components/ServiceUnavailableError';
+import { Container } from '@/components/General';
+import { ErrorSection, ServiceUnavailableError } from '@/components/ErrorPage';
 import { FC } from 'react';
 
 const ServiceUnavailablePage: FC = () => {

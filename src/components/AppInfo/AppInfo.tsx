@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import LocationFilter from '@/components/LocationFilter';
+import { LocationFilter } from '@/components/General';
 import {
   Accent,
   AccentWrap,

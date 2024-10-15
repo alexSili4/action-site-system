@@ -1,6 +1,5 @@
-import Container from '@/components/Container';
-import NotFoundError from '@/components/NotFoundError';
-import ErrorSection from '@/components/ErrorSection';
+import { Container } from '@/components/General';
+import { NotFoundError, ErrorSection } from '@/components/ErrorPage';
 import { FC } from 'react';
 
 const NotFoundPage: FC = () => (

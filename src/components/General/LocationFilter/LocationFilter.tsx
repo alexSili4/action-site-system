@@ -8,10 +8,12 @@ import {
 import { IProps } from './LocationFilter.types';
 import { FaChevronDown } from 'react-icons/fa';
 import { theme } from '@/constants';
-import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
-import LocationList from '@/components/LocationList';
-import LocationSearchField from '@/components/LocationSearchField';
-import DropdownBackdrop from '@/components/DropdownBackdrop';
+import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
+import {
+  LocationSearchField,
+  LocationList,
+  DropdownBackdrop,
+} from '@/components/General';
 import { useLocationFilter } from '@/hooks';
 
 const LocationFilter: FC<IProps> = ({ isRootPage }) => {

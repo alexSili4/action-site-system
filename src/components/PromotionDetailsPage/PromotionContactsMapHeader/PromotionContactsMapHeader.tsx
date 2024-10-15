@@ -14,7 +14,7 @@ import {
   BtnClickEvent,
   InputChangeEvent,
 } from '@/types/types';
-import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
+import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
 import { PromotionContactsMapHeaderShopsListContainer } from '@/components/PromotionDetailsPage';
 import { useMediaQuery } from '@/hooks';
 

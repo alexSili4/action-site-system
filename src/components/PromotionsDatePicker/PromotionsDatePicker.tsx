@@ -12,8 +12,8 @@ import {
 import { getPromotionsDatePickerBtnLabel, makeBlur } from '@/utils';
 import { BtnClickEvent, DatePickerEvent } from '@/types/types';
 import { theme } from '@/constants';
-import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
-import DropdownBackdrop from '@/components/DropdownBackdrop';
+import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
+import { DropdownBackdrop } from '@/components/General';
 
 const PromotionsDatePicker: FC = () => {
   const [date, setDate] = useState<Date | null>(null);

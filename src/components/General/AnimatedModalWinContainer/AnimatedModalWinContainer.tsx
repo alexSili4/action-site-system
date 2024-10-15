@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './AnimatedModalWinContainer.types';
 import { AnimatePresence } from 'framer-motion';
-import AnimatedModalWin from '@/components/AnimatedModalWin';
+import { AnimatedModalWin } from '@/components/General';
 
 const ModalWin: FC<IProps> = ({ setModalWinState, children, showModalWin }) => {
   return (

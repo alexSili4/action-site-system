@@ -10,8 +10,8 @@ import PromotionsSortTypesList from '@/components/PromotionsSortTypesList';
 import { useSetSearchParams } from '@/hooks';
 import { getTranslatedPromotionsSortType, makeBlur } from '@/utils';
 import { BtnClickEvent, InputChangeEvent } from '@/types/types';
-import SmoothFadeInDropdownList from '@/components/SmoothFadeInDropdownList';
-import DropdownBackdrop from '@/components/DropdownBackdrop';
+import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
+import { DropdownBackdrop } from '@/components/General';
 
 const PromotionsSortTypesContainer: FC = () => {
   const [showSortTypesList, setShowSortTypesList] = useState<boolean>(false);

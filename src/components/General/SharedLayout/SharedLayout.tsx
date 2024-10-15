@@ -1,13 +1,15 @@
 import { FC, Suspense, useState } from 'react';
 import { Content, Main } from './SharedLayout.styled';
 import { Outlet, useLocation } from 'react-router-dom';
-import Loader from '@/components/Loader';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import {
+  Loader,
+  Header,
+  Footer,
+  AppBackground,
+  AnimatedModalWinContainer,
+} from '@/components/General';
 import { PagePaths, theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
-import AppBackground from '@/components/AppBackground';
-import AnimatedModalWin from '@/components/AnimatedModalWinContainer';
 
 const SharedLayout: FC = () => {
   const [showRegisterCodeModalWin, setShowRegisterCodeModalWin] =
@@ -37,12 +39,12 @@ const SharedLayout: FC = () => {
         </Main>
         <Footer isRootPage={isRootPage} />
       </Content>
-      <AnimatedModalWin
+      <AnimatedModalWinContainer
         setModalWinState={setRegisterCodeModalWinState}
         showModalWin={showRegisterCodeModalWin}
       >
         <p>registerCode</p>
-      </AnimatedModalWin>
+      </AnimatedModalWinContainer>
     </>
   );
 };
