@@ -1,12 +1,11 @@
-import { useParams } from 'react-router-dom';
-import { PagePaths } from '@/constants';
 import { selectPromotions } from '@/store/promotions/selectors';
 import { usePromotionsStore } from '@/store/store';
 import { UseTargetPromotion } from '@/types/hooks.types';
+import usePromotionId from './usePromotionId';
 
 const useTargetPromotion = (): UseTargetPromotion => {
   const promotions = usePromotionsStore(selectPromotions);
-  const promotionId = useParams()[PagePaths.dynamicParam];
+  const promotionId = usePromotionId();
 
   const promotion = promotions.find(({ id }) => id === Number(promotionId));
 

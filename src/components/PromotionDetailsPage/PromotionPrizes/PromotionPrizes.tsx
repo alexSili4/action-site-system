@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import { Container, RegisterCodeLink } from './PromotionPrizes.styled';
 import { IProps } from './PromotionPrizes.types';
-import { PagePaths } from '@/constants';
+import { PagePaths, SearchParamsKeys } from '@/constants';
 import {
   PromotionPrizesBanner,
   PromotionSectionTitle,
   PromotionPrizesList,
 } from '@/components/PromotionDetailsPage';
+import { useCityId, usePromotionId } from '@/hooks';
 
 const PromotionPrizes: FC<IProps> = ({
   prizes,
@@ -16,6 +17,8 @@ const PromotionPrizes: FC<IProps> = ({
   showRegCodeLink = true,
   id,
 }) => {
+  const cityId = useCityId();
+  const promotionId = usePromotionId();
   const bigPrizes = prizes.filter(
     ({ show_type: showType }) => showType === 'big'
   );
@@ -25,6 +28,8 @@ const PromotionPrizes: FC<IProps> = ({
 
   const showBigPrizesList = Boolean(bigPrizes.length);
   const showBasePrizesList = Boolean(basePrizes.length);
+
+  const registerCodeLink = `${PagePaths.code}/${promotionId}?${SearchParamsKeys.cityId}=${cityId}`;
 
   return (
     <Container id={id}>
@@ -38,7 +43,7 @@ const PromotionPrizes: FC<IProps> = ({
       )}
       {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
       {showRegCodeLink && (
-        <RegisterCodeLink to={PagePaths.code}>
+        <RegisterCodeLink to={registerCodeLink}>
           Зареєструвати код
         </RegisterCodeLink>
       )}

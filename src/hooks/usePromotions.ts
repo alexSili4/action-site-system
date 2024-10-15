@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
-import { SearchParamsKeys } from '@/constants';
-import { useSetSearchParams } from '@/hooks';
 import { selectGetPromotions } from '@/store/promotions/selectors';
 import { usePromotionsStore } from '@/store/store';
+import useCityId from './useCityId';
 
 const usePromotionsPage = () => {
-  const { searchParams } = useSetSearchParams();
   const getPromotions = usePromotionsStore(selectGetPromotions);
-  const cityId = searchParams.get(SearchParamsKeys.cityId) ?? '';
+  const cityId = useCityId();
 
   useEffect(() => {
     if (!cityId) {

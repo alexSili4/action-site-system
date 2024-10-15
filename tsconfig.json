@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@RegisterCodePage/*": ["./src/components/RegisterCodePage/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

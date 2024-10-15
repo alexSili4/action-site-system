@@ -28,7 +28,10 @@ const App: FC = () => {
           path={`${PagePaths.promotions}/:${PagePaths.dynamicParam}`}
           element={<PromotionDetailsPage />}
         />
-        <Route path={PagePaths.code} element={<RegisterCodePage />} />
+        <Route
+          path={`${PagePaths.code}/:${PagePaths.dynamicParam}`}
+          element={<RegisterCodePage />}
+        />
         <Route
           path={PagePaths.serviceUnavailable}
           element={<ServiceUnavailablePage />}
