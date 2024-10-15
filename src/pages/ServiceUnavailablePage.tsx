@@ -1,4 +1,4 @@
-import { Container } from '@/components/General';
+import Container from '@GeneralComponents/Container';
 import { ErrorSection, ServiceUnavailableError } from '@/components/ErrorPage';
 import { FC } from 'react';
 

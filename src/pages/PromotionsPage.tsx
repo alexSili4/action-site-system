@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Promotions from '@/components/Promotions';
-import { Container, Section } from '@/components/General';
+import Container from '@GeneralComponents/Container';
+import Section from '@GeneralComponents/Section';
 
 const PromotionsPage: FC = () => {
   return (

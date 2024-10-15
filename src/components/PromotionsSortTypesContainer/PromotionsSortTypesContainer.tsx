@@ -11,7 +11,7 @@ import { useSetSearchParams } from '@/hooks';
 import { getTranslatedPromotionsSortType, makeBlur } from '@/utils';
 import { BtnClickEvent, InputChangeEvent } from '@/types/types';
 import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
-import { DropdownBackdrop } from '@/components/General';
+import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
 
 const PromotionsSortTypesContainer: FC = () => {
   const [showSortTypesList, setShowSortTypesList] = useState<boolean>(false);

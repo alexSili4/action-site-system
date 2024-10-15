@@ -1,9 +1,9 @@
 import { useTargetPromotion } from '@/hooks';
 import { FC } from 'react';
 import { Container, ContentWrap, Text } from './RegisterCodeSection.styled';
-import RegisterCodeBanner from '@RegisterCodePage/RegisterCodeBanner';
-import RegisterCodeForm from '@RegisterCodePage/RegisterCodeForm';
-import RegisterCodeStepsBar from '@RegisterCodePage/RegisterCodeStepsBar';
+import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
+import RegisterCodeForm from '@RegisterCodePageComponents/RegisterCodeForm';
+import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import { IProps } from './RegisterCodeSection.types';
 import { getPromotionBannerUrls } from '@/utils';
 

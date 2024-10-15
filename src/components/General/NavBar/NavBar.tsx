@@ -4,7 +4,8 @@ import { IProps } from './NavBar.types';
 import { PagePaths } from '@/constants';
 import { LogoLinkTitle, Nav } from './NavBar.styled';
 import { Link } from 'react-router-dom';
-import { NavControls, LocationFilter } from '@/components/General';
+import NavControls from '@GeneralComponents/NavControls';
+import LocationFilter from '@GeneralComponents/LocationFilter';
 
 const NavBar: FC<IProps> = ({
   isRootPage,

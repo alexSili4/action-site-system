@@ -1,13 +1,11 @@
 import { FC, Suspense, useState } from 'react';
 import { Content, Main } from './SharedLayout.styled';
 import { Outlet, useLocation } from 'react-router-dom';
-import {
-  Loader,
-  Header,
-  Footer,
-  AppBackground,
-  AnimatedModalWinContainer,
-} from '@/components/General';
+import Loader from '@GeneralComponents/Loader';
+import Header from '@GeneralComponents/Header';
+import Footer from '@GeneralComponents/Footer';
+import AppBackground from '@GeneralComponents/AppBackground';
+import AnimatedModalWinContainer from '@GeneralComponents/AnimatedModalWinContainer';
 import { PagePaths, theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 

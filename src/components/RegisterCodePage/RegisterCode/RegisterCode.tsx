@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import RegisterCodeStepsBar from '@RegisterCodePage/RegisterCodeStepsBar';
-import RegisterCodeSection from '@RegisterCodePage/RegisterCodeSection';
+import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
+import RegisterCodeSection from '@RegisterCodePageComponents/RegisterCodeSection';
 import { Container } from './RegisterCode.styled';
 import { RegPromotionCodeSteps } from '@/constants';
 import { getRegCodeSteps } from '@/utils';

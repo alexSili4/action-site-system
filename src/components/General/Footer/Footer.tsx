@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { StyledFooter, Copyright } from './Footer.styled';
-import { SocialLinksList } from '@/components/General';
+import SocialLinksList from '@GeneralComponents/SocialLinksList';
 import { IProps } from './Footer.types';
 
 const Footer: FC<IProps> = ({ isRootPage }) => {

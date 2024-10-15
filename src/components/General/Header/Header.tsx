@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { StyledHeader } from './Header.styled';
 import { IProps } from './Header.types';
-import { Container, NavBar } from '@/components/General';
+import Container from '@GeneralComponents/Container';
+import NavBar from '@GeneralComponents/NavBar';
 
 const Header: FC<IProps> = ({
   isRootPage,

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { SocialLink } from '@/components/General';
+import SocialLink from '@GeneralComponents/SocialLink';
 import { ExternalLinks, theme } from '@/constants';
 import { List, ListItem } from './SocialLinksList.styled';
 import { RiInstagramFill } from 'react-icons/ri';

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
+import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import { PromotionDetailsGoBackLink } from '@/components/PromotionDetailsPage';
 import { IProps } from './PromotionBanner.types';
 import { Container, InfoWrap, ContentWrap } from './PromotionBanner.styled';

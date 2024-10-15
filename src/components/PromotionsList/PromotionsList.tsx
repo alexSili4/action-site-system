@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { usePromotionsList } from '@/hooks';
 import { getPromotionDate, getPromotionBannerUrls } from '@/utils';
 import LinkWithQuery from '@/components/LinkWithQuery';
-import PromotionPeriodLabel from '@/components/PromotionPeriodLabel';
+import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import PromotionName from '@/components/PromotionName';
 import { IProps } from './PromotionsList.types';
 import { Card, Container, List, ListItem } from './PromotionsList.styled';

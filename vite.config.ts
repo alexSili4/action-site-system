@@ -8,7 +8,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
-      '@RegisterCodePage': '/src/components/RegisterCodePage',
+      '@RegisterCodePageComponents': '/src/components/RegisterCodePage',
+      '@GeneralComponents': '/src/components/General',
     },
   },
   build: {

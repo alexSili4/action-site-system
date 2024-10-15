@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@RegisterCodePage/*": ["./src/components/RegisterCodePage/*"]
+      "@RegisterCodePageComponents/*": ["./src/components/RegisterCodePage/*"],
+      "@GeneralComponents/*": ["./src/components/General/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,
