@@ -1,15 +1,20 @@
 import { FC } from 'react';
 import { IProps } from './RegisterCodeBanner.types';
-import { Container, BannerWrap } from './RegisterCodeBanner.styled';
+import { Container } from './RegisterCodeBanner.styled';
+import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
+import PromotionName from '@GeneralComponents/PromotionName';
 
-const RegisterCodeBanner: FC<IProps> = ({ bannerMobUrl, bannerDtUrl }) => {
+const RegisterCodeBanner: FC<IProps> = ({
+  bannerMobUrl,
+  bannerDtUrl,
+  name,
+  period,
+}) => {
   return (
-    <Container>
-      <BannerWrap
-        bannerMobUrl={bannerMobUrl}
-        bannerDtUrl={bannerDtUrl}
-      ></BannerWrap>
-    </Container>
+      <Container bannerMobUrl={bannerMobUrl} bannerDtUrl={bannerDtUrl}>
+        <PromotionPeriodLabel period={period} />
+        <PromotionName name={name} />
+      </Container>
   );
 };
 

@@ -6,6 +6,12 @@ import {
   OnDivClickFunc,
 } from './types';
 import {
+  ActionType,
+  BannerDt,
+  BannerMob,
+  CoverageType,
+  DateFrom,
+  DateTo,
   IPromotion,
   IPromotionDetailsState,
   Promotions,
@@ -14,7 +20,12 @@ import { Conditions } from './condition.types';
 import { Prizes } from './prize.types';
 import { FAQs } from './faqs.types';
 import { Winners } from './winner.types';
-import { ControlPosition, DivIcon, LatLngBoundsExpression, LatLngExpression } from 'leaflet';
+import {
+  ControlPosition,
+  DivIcon,
+  LatLngBoundsExpression,
+  LatLngExpression,
+} from 'leaflet';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -63,4 +74,21 @@ export interface IUsePromotionContactsVisicomMap {
   tileLayerAttribution: string;
   customActiveMarkerIcon: DivIcon;
   customMarkerIcon: DivIcon;
+}
+
+export interface IUseTargetPromotionData {
+  rulesPdf: string;
+  hotLinePhone: string | undefined;
+  hotLineEmail: string | undefined;
+  logo: string;
+  coverageType: CoverageType | undefined;
+  dateFrom: DateFrom;
+  dateTo: DateTo;
+  mainBannerMob: BannerMob;
+  mainBannerDt: BannerDt;
+  secondBannerMob: BannerMob;
+  secondBannerDt: BannerDt;
+  actionType: ActionType | undefined;
+  name: string;
+  hotLineText: string | undefined;
 }

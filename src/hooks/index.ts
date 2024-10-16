@@ -9,3 +9,4 @@ export { default as useTargetPromotion } from './useTargetPromotion';
 export { default as usePromotionContactsVisicomMap } from './usePromotionContactsVisicomMap';
 export { default as usePromotionId } from './usePromotionId';
 export { default as useCityId } from './useCityId';
+export { default as useTargetPromotionData } from './useTargetPromotionData';

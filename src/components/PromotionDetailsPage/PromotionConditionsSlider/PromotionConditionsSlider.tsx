@@ -18,13 +18,13 @@ import { theme } from '@/constants';
 import { Autoplay } from 'swiper/modules';
 import { IProps } from './PromotionConditionsSlider.types';
 import { PromotionConditionsSliderAnimation } from '@/components/PromotionDetailsPage';
-import { useTargetPromotion } from '@/hooks';
+import { useTargetPromotionData } from '@/hooks';
 import { IoDocumentOutline } from 'react-icons/io5';
 import { getFileUrl } from '@/utils';
 import rulesCardBg from '@/images/conditions/rules-bg.jpg';
 
 const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
-  const { rules_pdf: rulesPdf = '' } = useTargetPromotion() ?? {};
+  const { rulesPdf } = useTargetPromotionData();
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
   const sliderContainerRef = useRef<HTMLDivElement | null>(null);
   const rulesPdfUrl = getFileUrl(rulesPdf);

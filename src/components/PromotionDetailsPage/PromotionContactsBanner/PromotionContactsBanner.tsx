@@ -14,16 +14,12 @@ import {
   IconWrap,
 } from './PromotionContactsBanner.styled';
 import { theme } from '@/constants';
-import { useTargetPromotion } from '@/hooks';
+import { useTargetPromotionData } from '@/hooks';
 import { getFileUrl } from '@/utils';
 
 const PromotionContactsBanner: FC = () => {
-  const {
-    hot_line_phone: hotLinePhone,
-    hot_line_email: hotLineEmail,
-    logo,
-  } = useTargetPromotion() ?? {};
-  const logoUrl = getFileUrl(logo ?? '');
+  const { hotLinePhone, hotLineEmail, logo } = useTargetPromotionData();
+  const logoUrl = getFileUrl(logo);
 
   return (
     <Container>

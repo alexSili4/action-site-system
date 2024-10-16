@@ -6,7 +6,7 @@ import {
   PromotionContactsVisicomMap,
 } from '@/components/PromotionDetailsPage';
 import { smoothScroll } from '@/utils';
-import { useTargetPromotion } from '@/hooks';
+import { useTargetPromotionData } from '@/hooks';
 
 const PromotionContactsMap: FC = () => {
   // TODO delete markers
@@ -34,7 +34,7 @@ const PromotionContactsMap: FC = () => {
   ];
 
   const [activeMarkerId, setActiveMarkerId] = useState<ActiveMarkerId>(null);
-  const { coverage_type: coverageType } = useTargetPromotion() ?? {};
+  const { coverageType } = useTargetPromotionData();
   const isNationalPromotion = coverageType === 'national';
   const targetMarkers = isNationalPromotion ? [] : markers;
 

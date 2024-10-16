@@ -4,6 +4,7 @@ declare module '@emotion/react' {
 
 interface ITheme {
   colors: {
+    black: string;
     white: string;
     lightGrey: string;
   };
@@ -65,6 +66,7 @@ interface ITheme {
 
 const theme: ITheme = {
   colors: {
+    black: '#000000',
     white: '#ffffff',
     lightGrey: '#eeeeee',
   },

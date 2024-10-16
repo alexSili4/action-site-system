@@ -3,7 +3,7 @@ import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import { PromotionDetailsGoBackLink } from '@/components/PromotionDetailsPage';
 import { IProps } from './PromotionBanner.types';
 import { Container, InfoWrap, ContentWrap } from './PromotionBanner.styled';
-import PromotionName from '@/components/PromotionName';
+import PromotionName from '@GeneralComponents/PromotionName';
 import PrizesWheelLogo from '@/components/PrizesWheelLogo';
 
 const PromotionBanner: FC<IProps> = ({

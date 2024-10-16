@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Container } from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import { PromotionDetailsState } from '@/types/promotion.types';
-import { useSetSearchParams, useTargetPromotion } from '@/hooks';
+import { useSetSearchParams, useTargetPromotionData } from '@/hooks';
 import {
   PromotionDetailsPageSections,
   PromotionsCategoriesKeys,
@@ -30,14 +30,14 @@ const PromotionDetails: FC<IProps> = ({
   winners,
 }) => {
   const {
-    name = '',
-    date_from: dateFrom = null,
-    date_to: dateTo = null,
-    second_banner_dt: secondBannerDt = '',
-    second_banner_mob: secondBannerMob = '',
-    logo = '',
-    action_type: actionType,
-  } = useTargetPromotion() ?? {};
+    dateFrom,
+    dateTo,
+    secondBannerMob,
+    secondBannerDt,
+    logo,
+    actionType,
+    name,
+  } = useTargetPromotionData();
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
   const { state }: PromotionDetailsState = useLocation();

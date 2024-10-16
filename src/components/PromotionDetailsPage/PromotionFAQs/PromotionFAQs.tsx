@@ -17,11 +17,10 @@ import {
 import { LuPhone } from 'react-icons/lu';
 import { PromotionDetailsPageSections, theme } from '@/constants';
 import { IProps } from './PromotionFAQs.types';
-import { useTargetPromotion } from '@/hooks';
+import { useTargetPromotionData } from '@/hooks';
 
 const PromotionFAQs: FC<IProps> = ({ faqs }) => {
-  const { hot_line_phone: hotLinePhone, hot_line_text: hotLineText } =
-    useTargetPromotion() ?? {};
+  const { hotLinePhone, hotLineText } = useTargetPromotionData();
 
   return (
     <Container id={PromotionDetailsPageSections.faqs}>

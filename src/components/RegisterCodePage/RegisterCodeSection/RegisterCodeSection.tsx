@@ -1,25 +1,26 @@
-import { useTargetPromotion } from '@/hooks';
+import { useTargetPromotionData } from '@/hooks';
 import { FC } from 'react';
 import { Container, ContentWrap, Text } from './RegisterCodeSection.styled';
 import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeForm from '@RegisterCodePageComponents/RegisterCodeForm';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import { IProps } from './RegisterCodeSection.types';
-import { getPromotionBannerUrls } from '@/utils';
+import { getPromotionBannerUrls, getPromotionDate } from '@/utils';
 
 const RegisterCodeSection: FC<IProps> = ({
   steps,
   currentStep,
   incrementCurrentStep,
 }) => {
-  const {
-    hot_line_phone: hotLinePhone,
-    main_banner_dt: mainBannerDt = '',
-    main_banner_mob: mainBannerMob = '',
-  } = useTargetPromotion() ?? {};
+  const { hotLinePhone, mainBannerDt, mainBannerMob, name, dateFrom, dateTo } =
+    useTargetPromotionData();
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
     bannerDt: mainBannerDt,
     bannerMob: mainBannerMob,
+  });
+  const promotionDate = getPromotionDate({
+    dateFrom,
+    dateTo,
   });
 
   return (
@@ -27,6 +28,8 @@ const RegisterCodeSection: FC<IProps> = ({
       <RegisterCodeBanner
         bannerMobUrl={bannerMobUrl}
         bannerDtUrl={bannerDtUrl}
+        name={name}
+        period={promotionDate}
       />
       <ContentWrap>
         <RegisterCodeStepsBar
