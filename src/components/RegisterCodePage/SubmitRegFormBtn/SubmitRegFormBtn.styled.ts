@@ -21,9 +21,14 @@ export const StyledBtn = styled.button`
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc},
+    opacity ${({ theme }) => theme.transitionDurationAndFunc};
 
-  &:is(:hover, :focus) {
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &:not(:disabled):is(:hover, :focus, ) {
     box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
       1px 1px 0px 0px #7a4ebd;
   }
