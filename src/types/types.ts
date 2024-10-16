@@ -27,6 +27,8 @@ export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
 // other
 
+export type HTMLInputElements = HTMLInputElement[];
+
 export type Numbers = number[];
 
 export type Strings = string[];
@@ -54,3 +56,13 @@ export interface IShop {
 }
 
 export type Shops = IShop[];
+
+export interface IChangeFocusToNextRegCodeInputProps {
+  currentInput: HTMLInputElement;
+  isFullValue: boolean;
+}
+
+export interface IGetRegCodeInputProps {
+  inputFullLength: number;
+  isFullValue: boolean;
+}

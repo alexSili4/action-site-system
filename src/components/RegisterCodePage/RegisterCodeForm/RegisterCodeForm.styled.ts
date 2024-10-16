@@ -1,14 +1,16 @@
 import styled from '@emotion/styled';
+import { IStyledProps } from './RegisterCodeForm.types';
 
 export const Form = styled.form`
   margin-top: ${({ theme }) => theme.spacing(10)};
 `;
 
-export const InputWrap = styled.div`
+export const InputWrap = styled.div<IStyledProps>`
   position: relative;
   display: flex;
   border-radius: 8px;
-  outline: 5px solid rgba(193, 190, 255, 0.3);
+  outline: 5px solid
+    ${({ isError }) => (isError ? '#ffecec' : 'rgba(193, 190, 255, 0.3)')};
 `;
 
 export const LabelWrap = styled.div`
@@ -28,17 +30,27 @@ export const Label = styled.p`
   line-height: 1.4;
 `;
 
-export const InputDelimiterWrap = styled.div`
+export const InputDelimiterWrap = styled.div<IStyledProps>`
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid #e6e5f8;
-  border-right: 1px solid #e6e5f8;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: ${({ isError }) => (isError ? '#ffecec' : '#e6e5f8')};
 `;
 
 export const InputDelimiter = styled.div`
   width: 6px;
   height: 1px;
   background-color: ${({ theme }) => theme.colors.black};
+`;
+
+export const ErrorMessage = styled.p`
+  margin-top: ${({ theme }) => theme.spacing(3)};
+  color: #ff6363;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
 `;
