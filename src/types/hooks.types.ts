@@ -1,6 +1,7 @@
 import { SetURLSearchParams } from 'react-router-dom';
 import {
   Func,
+  InputChangeFunc,
   OnAnchorClickFunc,
   OnBtnClickFunc,
   OnDivClickFunc,
@@ -26,6 +27,14 @@ import {
   LatLngBoundsExpression,
   LatLngExpression,
 } from 'leaflet';
+import { IRegCodeFormData } from './regCode.types';
+import {
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from 'react-hook-form';
+import { RegisterCodeErr } from './code.types';
+import { RefObject } from 'react';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -91,4 +100,16 @@ export interface IUseTargetPromotionData {
   actionType: ActionType | undefined;
   name: string;
   hotLineText: string | undefined;
+}
+
+export interface IUseRegisterCodeForm {
+  handleFormSubmit: SubmitHandler<IRegCodeFormData>;
+  register: UseFormRegister<IRegCodeFormData>;
+  handleSubmit: UseFormHandleSubmit<IRegCodeFormData, undefined>;
+  inputWrapRef: RefObject<HTMLDivElement>;
+  isError: boolean;
+  onRegCodeInput: InputChangeFunc;
+  inputMaxLength: number;
+  error: RegisterCodeErr;
+  disabledSubmitRegFormBtn: boolean;
 }
