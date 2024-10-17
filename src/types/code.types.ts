@@ -24,3 +24,13 @@ export interface IGetCurrentInputIndex {
   currentInput: HTMLInputElement | EventTarget;
   regCodeInputs: HTMLInputElements;
 }
+
+// TODO fix type
+interface IWheelPrize {
+  id: number;
+  name: string;
+  icon: string;
+}
+
+// TODO fix type
+export type WheelPrizes = IWheelPrize[];
