@@ -42,8 +42,8 @@ export const CircleImg = styled.img`
 
 export const Wheel = styled.div<IStyledProps>`
   position: relative;
-  width: 271px;
-  height: 271px;
+  width: 273px;
+  height: 273px;
   border-radius: 50%;
   transform: rotate(${({ totalDegrees }) => totalDegrees}deg);
   transition: transform ${({ spinningMs }) => spinningMs}ms ease-in-out;
