@@ -1,8 +1,10 @@
-import { FC, lazy } from 'react';
+import { FC, lazy, useEffect } from 'react';
 import { PagePaths } from '@/constants';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from '@GeneralComponents/SharedLayout';
 import { usePromotions } from '@/hooks';
+import { useAuthStore } from '@/store/store';
+import { selectRefresh } from '@/store/auth/selectors';
 
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const ServiceUnavailablePage = lazy(
@@ -16,6 +18,11 @@ const RegisterCodePage = lazy(() => import('@/pages/RegisterCodePage'));
 
 const App: FC = () => {
   usePromotions();
+  const refresh = useAuthStore(selectRefresh);
+
+  useEffect(() => {
+    refresh();
+  }, [refresh]);
 
   return (
     <Routes>
