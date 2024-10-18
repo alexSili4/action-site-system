@@ -4,7 +4,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@RegisterCodePageComponents/*": ["./src/components/RegisterCodePage/*"],
-      "@GeneralComponents/*": ["./src/components/General/*"]
+      "@GeneralComponents/*": ["./src/components/General/*"],
+      "@CabinetPageComponents/*": ["./src/components/CabinetPage/*"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

@@ -10,6 +10,7 @@ export default defineConfig({
       '@': '/src',
       '@RegisterCodePageComponents': '/src/components/RegisterCodePage',
       '@GeneralComponents': '/src/components/General',
+      '@CabinetPageComponents': '/src/components/CabinetPage',
     },
   },
   build: {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IRegCodeFormData } from '@/types/regCode.types';
-import { GeneralSettings } from '@/constants';
+import { generalSettings } from '@/constants';
 import {
   HTMLInputElements,
   IChangeFocusToNextRegCodeInputProps,
@@ -27,7 +27,7 @@ const useRegisterCodeForm = (
   const promotionId = usePromotionId();
   const isError = Boolean(error);
 
-  const inputMaxLength = GeneralSettings.regCodeLength / 3;
+  const inputMaxLength = generalSettings.regCodeLength / 3;
 
   const disabledSubmitRegFormBtn = !isFullRegCode || isLoading;
 
@@ -60,7 +60,7 @@ const useRegisterCodeForm = (
 
         if (isValidationError) {
           setError(
-            targetError.errors.code.join(GeneralSettings.regCodeErrSeparator)
+            targetError.errors.code.join(generalSettings.regCodeErrSeparator)
           );
         }
       }
@@ -143,7 +143,7 @@ const useRegisterCodeForm = (
 
   const getRegCodeInputProps = (valueLength: number): IGetRegCodeInputProps => {
     const inputFullLength =
-      GeneralSettings.regCodeLength / regCodeInputs.length;
+      generalSettings.regCodeLength / regCodeInputs.length;
     const isFullValue = valueLength === inputFullLength;
 
     return { inputFullLength, isFullValue };

@@ -4,7 +4,7 @@ import { IProps } from './NavBar.types';
 import { PagePaths } from '@/constants';
 import { LogoLinkTitle, Nav } from './NavBar.styled';
 import { Link } from 'react-router-dom';
-import NavControls from '@GeneralComponents/NavControls';
+import NavBarControls from '@GeneralComponents/NavBarControls';
 import LocationFilter from '@GeneralComponents/LocationFilter';
 
 const NavBar: FC<IProps> = ({
@@ -21,13 +21,13 @@ const NavBar: FC<IProps> = ({
   return (
     <Nav isRootPage={isRootPage} isDesktop={isDesktop}>
       {showFakeNavControls && (
-        <NavControls
+        <NavBarControls
           isRootPage={isRootPage}
           setRegisterCodeModalWinState={setRegisterCodeModalWinState}
           isFake
         />
       )}
-      <NavControls
+      <NavBarControls
         isRootPage={isRootPage}
         setRegisterCodeModalWinState={setRegisterCodeModalWinState}
       />
