@@ -3,18 +3,23 @@ import { IProps } from './PrizeWheelSection.types';
 import {
   Wheel,
   Sector,
-  Button,
+  SpinWheelBtn,
   Container,
   Image,
+  WheelWrap,
+  CircleImg,
+  PointerImg,
 } from './PrizeWheelSection.styled';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
+import circle from '@/images/code/circle.png';
+import pointerUrl from '@/images/code/pointer.png';
 
 const PrizeWheelSection: FC<IProps> = ({ prizes, spinningMs, maxSpins }) => {
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
   const [totalDegrees, setTotalDegrees] = useState<number>(0);
 
-  const spinWheel = (prizeId: number) => {
+  const spinWheel = (prizeIdx: number) => {
     if (isSpinning) {
       return;
     }
@@ -22,7 +27,7 @@ const PrizeWheelSection: FC<IProps> = ({ prizes, spinningMs, maxSpins }) => {
     setIsSpinning(true);
 
     const degreesPerSector = 360 / prizes.length;
-    const baseRotation = degreesPerSector * prizeId;
+    const baseRotation = degreesPerSector * prizeIdx;
     const randomOffset = Math.random() * 30 - 15;
     const targetDegree = 360 - (baseRotation + randomOffset);
     const randomSpins = Math.floor(Math.random() * maxSpins) + maxSpins;
@@ -32,33 +37,38 @@ const PrizeWheelSection: FC<IProps> = ({ prizes, spinningMs, maxSpins }) => {
 
     setTimeout(() => {
       setIsSpinning(false);
-      alert(`Приз ${prizeId + 1}!`);
+      const prize = prizes.find((_, idx) => idx === prizeIdx);
+      alert(`Приз ${prize?.name}!`);
     }, spinningMs);
   };
 
   const onSpinWheelBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    const prizeId = Math.floor(Math.random() * prizes.length);
-    spinWheel(prizeId);
+    const prizeIdx = Math.floor(Math.random() * prizes.length);
+    spinWheel(prizeIdx);
   };
 
   return (
     <Container>
-      <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
-        {prizes.map(({ id, icon }, index, array) => {
-          const number = index + 1;
+      <WheelWrap>
+        <PointerImg src={pointerUrl} />
+        <CircleImg src={circle} />
+        <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
+          {prizes.map(({ id, icon }, index, array) => {
+            const number = index + 1;
 
-          return (
-            <Sector key={id} number={number} length={array.length}>
-              <Image src={icon} />
-            </Sector>
-          );
-        })}
-      </Wheel>
-      <Button type='button' onClick={onSpinWheelBtnClick}>
-        Spin
-      </Button>
+            return (
+              <Sector key={id} number={number} length={array.length}>
+                <Image src={icon} />
+              </Sector>
+            );
+          })}
+        </Wheel>
+      </WheelWrap>
+      <SpinWheelBtn type='button' onClick={onSpinWheelBtnClick}>
+        Крутити
+      </SpinWheelBtn>
     </Container>
   );
 };

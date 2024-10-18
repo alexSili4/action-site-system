@@ -21,16 +21,16 @@ import wog from '@/wog.svg';
 const RegisterCode: FC = () => {
   // TODO delete sectors
   const prizes: WheelPrizes = [
-    { id: 1, name: 'Приз 1', icon: rozetka },
-    { id: 2, name: 'Приз 2', icon: citrus },
-    { id: 3, name: 'Приз 3', icon: comfy },
-    { id: 4, name: 'Приз 4', icon: englishdom },
-    { id: 5, name: 'Приз 5', icon: foxtrot },
-    { id: 6, name: 'Приз 6', icon: wog },
-    { id: 7, name: 'Приз 7', icon: luxoptyka },
-    { id: 8, name: 'Приз 8', icon: podorozhnyk },
-    { id: 9, name: 'Приз 9', icon: morshynska },
-    { id: 10, name: 'Приз 10', icon: monobank },
+    { id: 2, name: 'citrus', icon: citrus },
+    { id: 1, name: 'rozetka', icon: rozetka },
+    { id: 5, name: 'foxtrot', icon: foxtrot },
+    { id: 3, name: 'comfy', icon: comfy },
+    { id: 4, name: 'englishdom', icon: englishdom },
+    { id: 7, name: 'luxoptyka', icon: luxoptyka },
+    { id: 6, name: 'wog', icon: wog },
+    { id: 8, name: 'podorozhnyk', icon: podorozhnyk },
+    { id: 10, name: 'monobank', icon: monobank },
+    { id: 9, name: 'morshynska', icon: morshynska },
   ];
   const [currentStep, setCurrentStep] = useState<number>(1);
   const steps = getRegCodeSteps(RegPromotionCodeSteps);

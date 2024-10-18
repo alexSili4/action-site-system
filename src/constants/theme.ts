@@ -46,6 +46,7 @@ interface ITheme {
     desktop: number;
   };
   zIndex: {
+    prizeWheelImg: number;
     prizeStatus: number;
     animatedModalWin: number;
     promotionMapHeader: number;
@@ -113,6 +114,7 @@ const theme: ITheme = {
   },
   // shadows: {  },
   zIndex: {
+    prizeWheelImg: 10,
     prizeStatus: 10,
     animatedModalWin: 10,
     promotionSliderControls: 10,

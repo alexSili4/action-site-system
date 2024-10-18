@@ -2,18 +2,49 @@ import styled from '@emotion/styled';
 import { IStyledProps, IStyledSectorProps } from './PrizeWheelSection.types';
 
 export const Container = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: ${({ theme }) => theme.spacing(6)};
+  padding-bottom: ${({ theme }) => theme.spacing(8)};
+`;
+
+export const WheelWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 306px;
+  height: 306px;
+
+  & > svg {
+  }
+`;
+
+export const PointerImg = styled.img`
+  position: absolute;
+  z-index: ${({ theme }) => theme.zIndex.prizeWheelImg + 1};
+  top: 0px;
+  left: 50%;
+  width: 30px;
+  height: 27px;
+  transform: translateX(-50%);
+`;
+
+export const CircleImg = styled.img`
+  position: absolute;
+  z-index: ${({ theme }) => theme.zIndex.prizeWheelImg};
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Wheel = styled.div<IStyledProps>`
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 8px solid #333;
   position: relative;
+  width: 271px;
+  height: 271px;
+  border-radius: 50%;
   transform: rotate(${({ totalDegrees }) => totalDegrees}deg);
   transition: transform ${({ spinningMs }) => spinningMs}ms ease-in-out;
   overflow: hidden;
@@ -54,13 +85,30 @@ export const Sector = styled.div<IStyledSectorProps>`
 
 export const Image = styled.img`
   position: absolute;
-  top: 30px;
+  top: 36px;
   transform: rotate(90deg);
 `;
 
-export const Button = styled.button`
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
+export const SpinWheelBtn = styled.button`
+  width: 100%;
+  margin-top: ${({ theme }) => theme.spacing(13)};
+  border: none;
+  border-radius: 16px;
+  padding: ${({ theme }) => theme.spacing(5)};
+  box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
+    3px 3px 0px 0px #cc3333;
+  background-color: #fd4b3c;
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   cursor: pointer;
+
+  &:is(:hover, :focus) {
+    box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
+      1px 1px 0px 0px #cc3333;
+  }
 `;
