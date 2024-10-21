@@ -8,13 +8,13 @@ import {
   QuestionWrap,
   Answer,
 } from './PromotionFAQ.styled';
-import { BtnClickEvent } from '@/types/types';
+import { BtnClickEvent, DivRef } from '@/types/types';
 import { makeBlur } from '@/utils';
 import OpenContentBtnLabel from '@/components/OpenContentBtnLabel';
 
 const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
-  const answerRef = useRef<HTMLDivElement | null>(null);
+  const answerRef = useRef<DivRef>(null);
   const scrollHeight = answerRef.current?.scrollHeight ?? 0;
 
   const toggleSetShowAnswer = () => {

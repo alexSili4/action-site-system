@@ -36,6 +36,7 @@ interface ITheme {
     promotionContactsMailLink: number;
     promotionContactsMapHeader: number;
     promotionContactsMapListClose: number;
+    userInfoBtn: number;
   };
   containerWidth: {
     desktop: number;
@@ -103,6 +104,7 @@ const theme: ITheme = {
     promotionContactsMailLink: 18,
     promotionContactsMapHeader: 20,
     promotionContactsMapListClose: 12,
+    userInfoBtn: 12,
   },
   containerWidth: {
     desktop: 1376,

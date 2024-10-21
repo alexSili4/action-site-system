@@ -22,11 +22,12 @@ import { useTargetPromotionData } from '@/hooks';
 import { IoDocumentOutline } from 'react-icons/io5';
 import { getFileUrl } from '@/utils';
 import rulesCardBg from '@/images/conditions/rules-bg.jpg';
+import { DivRef } from '@/types/types';
 
 const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
   const { rulesPdf } = useTargetPromotionData();
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
-  const sliderContainerRef = useRef<HTMLDivElement | null>(null);
+  const sliderContainerRef = useRef<DivRef>(null);
   const rulesPdfUrl = getFileUrl(rulesPdf);
   const deskSlidesPerView = 3.077;
   const isLoopMode = conditions.length > deskSlidesPerView;

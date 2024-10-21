@@ -27,6 +27,10 @@ export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
 // other
 
+export type ListRef = HTMLUListElement | null;
+
+export type DivRef = HTMLDivElement | null;
+
 export type HTMLInputElements = HTMLInputElement[];
 
 export type Numbers = number[];

@@ -1,5 +1,5 @@
 import { FC, useRef, useState } from 'react';
-import { BtnClickEvent } from '@/types/types';
+import { BtnClickEvent, DivRef } from '@/types/types';
 import { makeBlur } from '@/utils';
 import { IProps } from './PromotionWinnersTableByDate.types';
 import {
@@ -22,7 +22,7 @@ import {
 
 const PromotionWinnersTableByDate: FC<IProps> = ({ date, winners }) => {
   const [showWinners, setShowWinners] = useState<boolean>(false);
-  const winnersRef = useRef<HTMLDivElement | null>(null);
+  const winnersRef = useRef<DivRef>(null);
   const scrollHeight = winnersRef.current?.scrollHeight ?? 0;
 
   const toggleSetShowWinners = () => {

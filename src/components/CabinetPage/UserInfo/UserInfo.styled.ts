@@ -1,0 +1,88 @@
+import styled from '@emotion/styled';
+import {
+  IStyledProps,
+  IStyledInfoBtnProps,
+  IStyledInfoListWrapProps,
+} from './UserInfo.types';
+
+export const Container = styled.div`
+  padding-top: ${({ theme }) => theme.spacing(2)};
+  border-top: 1px solid #e3e7ed;
+`;
+
+export const InfoBtn = styled.button<IStyledInfoBtnProps>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: ${({ theme }) => `${theme.spacing(2)} 0px`};
+  border: none;
+  background-color: transparent;
+
+  & > svg {
+    color: #383e45;
+    transform: rotate(${({ showInfo }) => (showInfo ? 0 : 180)}deg);
+    transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+  }
+
+  &:is(:hover, :focus) svg {
+    transform: rotate(${({ showInfo }) => (showInfo ? 180 : 0)}deg);
+  }
+`;
+
+export const InfoBtnTitle = styled.span`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+`;
+
+export const InfoListWrap = styled.div<IStyledInfoListWrapProps>`
+  padding-top: ${({ theme, showInfo }) => showInfo && theme.spacing(8)};
+  transition: padding-top ${({ theme }) => theme.transitionDurationAndFunc};
+  overflow-y: hidden;
+`;
+
+export const InfoList = styled.ul<IStyledProps>`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(8)};
+  max-height: ${({ showInfo, scrollHeight }) =>
+    showInfo ? scrollHeight : 0}px;
+  transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
+`;
+
+export const ListItem = styled.li``;
+
+export const InfoWrap = styled.div`
+  position: relative;
+  padding: ${({ theme: { spacing } }) => `${spacing(3)} ${spacing(4)}`};
+  border: 1px solid #e3e7ed;
+  border-radius: 8px;
+`;
+
+export const TitleWrap = styled.div`
+  position: absolute;
+  top: -11px;
+  left: 10px;
+  padding-left: ${({ theme }) => theme.spacing()};
+  padding-right: ${({ theme }) => theme.spacing()};
+  background-color: ${({ theme }) => theme.colors.white};
+`;
+
+export const Title = styled.p`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
+
+export const Data = styled.p`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+`;

@@ -2,11 +2,12 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { IProps } from './PromotionConditionsSliderAnimation.types';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { Container } from './PromotionConditionsSliderAnimation.styled';
+import { DivRef } from '@/types/types';
 
 const PromotionConditionsSliderAnimation: FC<IProps> = ({ animationData }) => {
   const [scale, setScale] = useState<number>(0);
   const lottieRef = useRef<LottieRefCurrentProps | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<DivRef>(null);
 
   useEffect(() => {
     const containerWidth = containerRef.current?.scrollWidth ?? 0;
