@@ -1,19 +1,11 @@
 import { FC } from 'react';
-import CabinetPageBreadcrumbs from '@CabinetPageComponents/CabinetPageBreadcrumbs';
-import UserInfo from '@CabinetPageComponents/UserInfo';
-import { Container, ContentWrap } from './Cabinet.styled';
-import LogOutBtn from '@CabinetPageComponents/LogOutBtn';
-import CabinetHeader from '@CabinetPageComponents/CabinetHeader';
+import { Container } from './Cabinet.styled';
+import UserInfoContainer from '@CabinetPageComponents/UserInfoContainer';
 
 const Cabinet: FC = () => {
   return (
     <Container>
-      <CabinetPageBreadcrumbs />
-      <CabinetHeader />
-      <ContentWrap>
-        <UserInfo />
-        <LogOutBtn />
-      </ContentWrap>
+      <UserInfoContainer />
     </Container>
   );
 };
