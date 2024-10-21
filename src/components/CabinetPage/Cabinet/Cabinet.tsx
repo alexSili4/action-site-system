@@ -3,11 +3,13 @@ import CabinetPageBreadcrumbs from '@CabinetPageComponents/CabinetPageBreadcrumb
 import UserInfo from '@CabinetPageComponents/UserInfo';
 import { Container, ContentWrap } from './Cabinet.styled';
 import LogOutBtn from '@CabinetPageComponents/LogOutBtn';
+import CabinetHeader from '@CabinetPageComponents/CabinetHeader';
 
 const Cabinet: FC = () => {
   return (
     <Container>
       <CabinetPageBreadcrumbs />
+      <CabinetHeader />
       <ContentWrap>
         <UserInfo />
         <LogOutBtn />

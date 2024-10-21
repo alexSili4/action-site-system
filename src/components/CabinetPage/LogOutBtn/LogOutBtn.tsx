@@ -1,14 +1,16 @@
 import { FC } from 'react';
-import { Button } from './LogOutBtn.styled';
+import { Container, Button } from './LogOutBtn.styled';
 
 const LogOutBtn: FC = () => {
   // TODO add action
   const onLogOutBtnClick = () => {};
 
   return (
-    <Button type='button' onClick={onLogOutBtnClick}>
-      Вийти
-    </Button>
+    <Container>
+      <Button type='button' onClick={onLogOutBtnClick}>
+        Вийти
+      </Button>
+    </Container>
   );
 };
 
