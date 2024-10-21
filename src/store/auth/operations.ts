@@ -32,4 +32,26 @@ const refreshOperation = async ({
   }
 };
 
+const logOutOperation = async ({
+  set,
+}: IAuthOperationProps): Promise<undefined> => {
+  try {
+    set({ isLoading: true, error: initialState.error });
+
+    await authService.logout();
+
+    set(initialState);
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      set({ error: error.message });
+      throw new Error(error.response?.data.message);
+    }
+  } finally {
+    set({
+      isLoading: initialState.isLoading,
+    });
+  }
+};
+
 export const refresh = operationWrapper(refreshOperation);
+export const logout = operationWrapper(logOutOperation);

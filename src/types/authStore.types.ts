@@ -13,6 +13,7 @@ export interface IAuthInitialState {
 
 export interface IAuthState extends IAuthInitialState {
   refresh: () => Promise<Refresh | undefined>;
+  logout: () => Promise<undefined>;
 }
 
 export type SetAuthStateFunc = SetStateFunc<IAuthState>;

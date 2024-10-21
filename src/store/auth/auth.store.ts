@@ -6,17 +6,22 @@ import {
   Refresh,
   SetAuthStateFunc,
 } from '@/types/authStore.types';
-import { refresh } from './operations';
+import { refresh, logout } from './operations';
 
 const authSlice = (
   set: SetAuthStateFunc,
   get: GetAuthStateFunc
 ): IAuthState => ({
   ...initialState,
-  // TODO fix
   refresh: async (): Promise<Refresh | undefined> =>
     await refresh({
       set: setState({ set, name: 'refresh' }),
+      get,
+      data: undefined,
+    }),
+  logout: async (): Promise<undefined> =>
+    await logout({
+      set: setState({ set, name: 'logout' }),
       get,
       data: undefined,
     }),

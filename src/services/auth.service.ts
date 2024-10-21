@@ -15,6 +15,16 @@ class AuthService extends HttpService {
     );
     return response.data;
   }
+
+  async logout(): Promise<undefined> {
+    const response = await this.post<undefined, undefined>(
+      {
+        url: 'logout',
+      },
+      false
+    );
+    return response.data;
+  }
 }
 
 const authService = new AuthService();
