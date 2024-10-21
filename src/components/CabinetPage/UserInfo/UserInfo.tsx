@@ -51,8 +51,7 @@ const UserInfo: FC = () => {
               <TitleWrap>
                 <Title>Ім&#8217;я</Title>
               </TitleWrap>
-              {/* TODO fix */}
-              <Data>{name ?? 'Ім’я'}</Data>
+              <Data>{name}</Data>
             </InfoWrap>
           </ListItem>
           <ListItem>
@@ -60,8 +59,7 @@ const UserInfo: FC = () => {
               <TitleWrap>
                 <Title>Телефон</Title>
               </TitleWrap>
-              {/* TODO fix */}
-              <Data>{phone ?? 'Телефон'}</Data>
+              <Data>{phone}</Data>
             </InfoWrap>
           </ListItem>
           <ListItem>
@@ -69,8 +67,7 @@ const UserInfo: FC = () => {
               <TitleWrap>
                 <Title>Email</Title>
               </TitleWrap>
-              {/* TODO fix */}
-              <Data>{email ?? 'Email'}</Data>
+              <Data>{email}</Data>
             </InfoWrap>
           </ListItem>
         </InfoList>

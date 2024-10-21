@@ -57,7 +57,10 @@ export const ListItem = styled.li``;
 
 export const InfoWrap = styled.div`
   position: relative;
-  padding: ${({ theme: { spacing } }) => `${spacing(3)} ${spacing(4)}`};
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding-left: ${({ theme }) => theme.spacing(4)};
   border: 1px solid #e3e7ed;
   border-radius: 8px;
 `;
