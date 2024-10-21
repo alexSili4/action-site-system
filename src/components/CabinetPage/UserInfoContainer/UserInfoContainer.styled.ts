@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  width: 447px;
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
 
