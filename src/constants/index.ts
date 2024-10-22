@@ -16,3 +16,4 @@ export { default as Messages } from './messages';
 export { default as RegPromotionCodeSteps } from './regPromotionCodeSteps';
 export { default as generalSettings } from './generalSettings';
 export { default as StatisticsCategoriesKeys } from './statisticsCategoriesKeys';
+export { default as translatedStatisticsCategoriesKeys } from './translatedStatisticsCategoriesKeys';

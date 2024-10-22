@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  width: 447px;
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
 
@@ -13,6 +12,7 @@ export const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: flex;
     flex-direction: column;
+    width: 447px;
     border-radius: 16px;
     padding-bottom: ${({ theme }) => theme.spacing(8)};
   }

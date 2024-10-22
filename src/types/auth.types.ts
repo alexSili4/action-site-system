@@ -8,3 +8,7 @@ export interface IUser {
 }
 
 export type StatisticsCategoriesValues = StatisticsCategoriesKeys[];
+
+export type TranslatedStatisticsCategoriesKeys = {
+  [key in StatisticsCategoriesKeys]: string;
+};

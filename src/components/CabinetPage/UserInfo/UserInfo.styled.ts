@@ -83,7 +83,7 @@ export const InfoWrap = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     height: 56px;
-    padding-left: ${({ theme }) => theme.spacing(20)};
+    padding-left: ${({ theme }) => theme.spacing(5)};
   }
 `;
 
