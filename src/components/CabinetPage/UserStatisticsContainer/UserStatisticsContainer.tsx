@@ -9,6 +9,7 @@ import {
   StatisticsCategoriesKeys,
 } from '@/constants';
 import { makeBlur } from '@/utils';
+import StatisticsContent from '@CabinetPageComponents/StatisticsContent';
 
 const UserStatisticsContainer: FC = () => {
   const [showSortTypesList, setShowSortTypesList] = useState<boolean>(false);
@@ -19,6 +20,9 @@ const UserStatisticsContainer: FC = () => {
   const sortType =
     searchParams.get(SearchParamsKeys.sort) ?? StatisticsSortTypesKeys.asc;
   const isAscSortType = sortType === StatisticsSortTypesKeys.asc;
+  const isCodesCategory = statisticCategory === StatisticsCategoriesKeys.codes;
+  const isPrizesCategory =
+    statisticCategory === StatisticsCategoriesKeys.prizes;
 
   const categories = Object.values(StatisticsCategoriesKeys);
 
@@ -67,6 +71,10 @@ const UserStatisticsContainer: FC = () => {
         showSortTypesList={showSortTypesList}
         toggleShowSortTypesList={toggleShowSortTypesList}
         sortType={sortType}
+      />
+      <StatisticsContent
+        isCodesCategory={isCodesCategory}
+        isPrizesCategory={isPrizesCategory}
       />
     </Container>
   );
