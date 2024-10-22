@@ -8,6 +8,8 @@ const StatisticsFilter: FC<IProps> = ({
   categories,
   changeStatisticCategory,
   statisticCategory,
+  isAscSortType,
+  onSortBtnClick,
 }) => {
   return (
     <Container>
@@ -16,7 +18,10 @@ const StatisticsFilter: FC<IProps> = ({
         categories={categories}
         statisticCategory={statisticCategory}
       />
-      <CategoriesSortTypesContainer />
+      <CategoriesSortTypesContainer
+        isAscSortType={isAscSortType}
+        onSortBtnClick={onSortBtnClick}
+      />
     </Container>
   );
 };
