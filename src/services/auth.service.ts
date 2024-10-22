@@ -1,6 +1,6 @@
 import { Refresh } from '@/types/authStore.types';
 import HttpService from './http.service';
-import { ICsrf } from '@/types/types';
+import { ICsrfToken } from '@/types/types';
 
 class AuthService extends HttpService {
   constructor() {
@@ -17,8 +17,8 @@ class AuthService extends HttpService {
     return response.data;
   }
 
-  async logout(data: ICsrf): Promise<undefined> {
-    const response = await this.post<undefined, ICsrf>(
+  async logout(data: ICsrfToken): Promise<undefined> {
+    const response = await this.post<undefined, ICsrfToken>(
       {
         url: 'logout',
         data,

@@ -71,6 +71,6 @@ export interface IGetRegCodeInputProps {
   isFullValue: boolean;
 }
 
-export interface ICsrf {
-  _csrf: string;
+export interface ICsrfToken {
+  [key:string]: string;
 }

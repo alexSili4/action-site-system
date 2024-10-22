@@ -8,12 +8,13 @@ import { useCsrfToken } from '@/hooks';
 
 const LogOutBtn: FC = () => {
   const logout = useAuthStore(selectLogout);
-  const csrfToken = useCsrfToken();
+  const { name, token } = useCsrfToken();
 
   const onLogOutBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    logout({ _csrf: csrfToken });
+    const logoutData = { [name]: token };
+    logout(logoutData);
   };
 
   return (

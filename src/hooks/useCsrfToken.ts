@@ -1,10 +1,17 @@
-const useCsrfToken = (): string => {
-  const csrfToken =
+import { IUseCsrfToken } from '@/types/hooks.types';
+
+const useCsrfToken = (): IUseCsrfToken => {
+  const name =
+    document
+      .querySelector('meta[name="csrf-param"]')
+      ?.getAttribute('content') ?? '';
+
+  const token =
     document
       .querySelector('meta[name="csrf-token"]')
       ?.getAttribute('content') ?? '';
 
-  return csrfToken;
+  return { name, token };
 };
 
 export default useCsrfToken;

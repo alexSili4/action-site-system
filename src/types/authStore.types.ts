@@ -1,6 +1,6 @@
 import { IUser } from './auth.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
-import { ICsrf } from './types';
+import { ICsrfToken } from './types';
 
 export type Refresh = IUser | null;
 
@@ -14,7 +14,7 @@ export interface IAuthInitialState {
 
 export interface IAuthState extends IAuthInitialState {
   refresh: () => Promise<Refresh | undefined>;
-  logout: (data: ICsrf) => Promise<undefined>;
+  logout: (data: ICsrfToken) => Promise<undefined>;
 }
 
 export type SetAuthStateFunc = SetStateFunc<IAuthState>;
@@ -27,5 +27,5 @@ export interface IAuthOperationProps {
 
 export interface ILogoutOperationProps {
   set: SetAuthStateFunc;
-  data: ICsrf;
+  data: ICsrfToken;
 }

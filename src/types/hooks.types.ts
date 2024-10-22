@@ -113,3 +113,8 @@ export interface IUseRegisterCodeForm {
   error: RegisterCodeErr;
   disabledSubmitRegFormBtn: boolean;
 }
+
+export interface IUseCsrfToken {
+  name: string;
+  token: string;
+}

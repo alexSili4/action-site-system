@@ -7,7 +7,7 @@ import {
   SetAuthStateFunc,
 } from '@/types/authStore.types';
 import { refresh, logout } from './operations';
-import { ICsrf } from '@/types/types';
+import { ICsrfToken } from '@/types/types';
 
 const authSlice = (
   set: SetAuthStateFunc,
@@ -20,7 +20,7 @@ const authSlice = (
       get,
       data: undefined,
     }),
-  logout: async (data: ICsrf): Promise<undefined> =>
+  logout: async (data: ICsrfToken): Promise<undefined> =>
     await logout({
       set: setState({ set, name: 'logout' }),
       get,
