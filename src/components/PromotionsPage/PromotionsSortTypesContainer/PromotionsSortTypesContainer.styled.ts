@@ -3,7 +3,7 @@ import { IStyledProps } from './PromotionsSortTypesContainer.types';
 
 export const Container = styled.div`
   position: relative;
-  z-index: ${({ theme }) => theme.zIndex.selectSortTypeDropdown};
+  z-index: ${({ theme }) => theme.zIndex.selectPromotionsSortTypeDropdown};
   width: 173px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {

@@ -41,6 +41,7 @@ const UserStatisticsContainer: FC = () => {
     const { value, name: key } = e.currentTarget;
 
     updateSearchParams({ key, value });
+    toggleShowSortTypesList();
   };
 
   const toggleShowSortTypesList = () => {

@@ -58,9 +58,10 @@ interface ITheme {
     promotionSliderPagination: number;
     dropdownBackdrop: number;
     selectCityDropdown: number;
-    selectSortTypeDropdown: number;
+    selectPromotionsSortTypeDropdown: number;
     promotionsDatePicker: number;
     promotionPrizeDrawsDatePicker: number;
+    selectStatisticsSortTypeDropdown: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -128,7 +129,8 @@ const theme: ITheme = {
     promotionNavBar: 1000,
     dropdownBackdrop: 10000,
     selectCityDropdown: 10000,
-    selectSortTypeDropdown: 10000,
+    selectPromotionsSortTypeDropdown: 10000,
+    selectStatisticsSortTypeDropdown: 10000,
     promotionsDatePicker: 10000,
     promotionPrizeDrawsDatePicker: 10000,
   },
