@@ -12,7 +12,7 @@ import {
 import { getPromotionsDatePickerBtnLabel, makeBlur } from '@/utils';
 import { BtnClickEvent, DatePickerEvent } from '@/types/types';
 import { theme } from '@/constants';
-import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
+import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
 
 const PromotionsDatePicker: FC = () => {

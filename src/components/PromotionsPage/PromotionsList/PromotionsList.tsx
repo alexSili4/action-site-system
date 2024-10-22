@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { usePromotionsList } from '@/hooks';
 import { getPromotionDate, getPromotionBannerUrls } from '@/utils';
-import LinkWithQuery from '@/components/LinkWithQuery';
+import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
 import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import PromotionName from '@GeneralComponents/PromotionName';
 import { IProps } from './PromotionsList.types';

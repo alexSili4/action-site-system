@@ -8,20 +8,18 @@ import {
   PromotionsCategoriesKeys,
   SearchParamsKeys,
 } from '@/constants';
-import {
-  PromotionPrizes,
-  PromotionFAQs,
-  PromotionConditions,
-  PromotionWinners,
-  PromotionContacts,
-  PromotionBanner,
-  PromotionDetailsSectionContainer,
-  PromotionPrizesBannerIcon,
-  PromotionPageBreadcrumbs,
-} from '@/components/PromotionDetailsPage';
 import { IProps } from './PromotionDetails.types';
 import { getFileUrl, getPromotionBannerUrls, getPromotionDate } from '@/utils';
-import PrizesWheelLogo from '@/components/PrizesWheelLogo';
+import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
+import PromotionDetailsSectionContainer from '@PromotionDetailsPageComponents/PromotionDetailsSectionContainer';
+import PromotionPageBreadcrumbs from '../PromotionPageBreadcrumbs';
+import PromotionBanner from '@PromotionDetailsPageComponents/PromotionBanner';
+import PromotionConditions from '@PromotionDetailsPageComponents/PromotionConditions';
+import PromotionPrizes from '@PromotionDetailsPageComponents/PromotionPrizes';
+import PromotionPrizesBannerIcon from '@PromotionDetailsPageComponents/PromotionPrizesBannerIcon';
+import PromotionFAQs from '@PromotionDetailsPageComponents/PromotionFAQs';
+import PromotionWinners from '@PromotionDetailsPageComponents/PromotionWinners';
+import PromotionContacts from '@PromotionDetailsPageComponents/PromotionContacts';
 
 const PromotionDetails: FC<IProps> = ({
   faqs,

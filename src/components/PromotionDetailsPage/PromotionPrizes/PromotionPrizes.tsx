@@ -2,11 +2,9 @@ import { FC } from 'react';
 import { Container, RegisterCodeLink } from './PromotionPrizes.styled';
 import { IProps } from './PromotionPrizes.types';
 import { PagePaths, SearchParamsKeys } from '@/constants';
-import {
-  PromotionPrizesBanner,
-  PromotionSectionTitle,
-  PromotionPrizesList,
-} from '@/components/PromotionDetailsPage';
+import PromotionPrizesBanner from '@PromotionDetailsPageComponents/PromotionPrizesBanner';
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
+import PromotionPrizesList from '@PromotionDetailsPageComponents/PromotionPrizesList';
 import { useCityId, usePromotionId } from '@/hooks';
 
 const PromotionPrizes: FC<IProps> = ({

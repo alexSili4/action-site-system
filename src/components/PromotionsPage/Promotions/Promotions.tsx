@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import PromotionsFilter from '@/components/PromotionsFilter';
+import PromotionsFilter from '@PromotionsPageComponents/PromotionsFilter';
 import { PromotionsCategoriesKeys, SearchParamsKeys } from '@/constants';
-import PromotionsList from '@/components/PromotionsList';
+import PromotionsList from '@PromotionsPageComponents/PromotionsList';
 import { useSetSearchParams } from '@/hooks';
 import { InputChangeEvent } from '@/types/types';
 

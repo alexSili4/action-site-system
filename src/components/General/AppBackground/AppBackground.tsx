@@ -6,7 +6,7 @@ import TopLeftConfettiImg from '@/images/layout/top-left-confetti.png';
 import TopMiddleConfettiImg from '@/images/layout/top-middle-confetti.png';
 import TopRightConfettiImg from '@/images/layout/top-right-confetti.png';
 import MiddleLeftConfettiImg from '@/images/layout/middle-left-confetti.png';
-import { SmoothFadeInPositionedElement } from '@/components/AnimationBlocks';
+import SmoothFadeInPositionedElement from '@AnimationBlocks/SmoothFadeInPositionedElement';
 import { animations } from '@/constants';
 import {
   Background,

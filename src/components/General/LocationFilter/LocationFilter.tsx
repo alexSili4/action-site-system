@@ -8,7 +8,7 @@ import {
 import { IProps } from './LocationFilter.types';
 import { FaChevronDown } from 'react-icons/fa';
 import { theme } from '@/constants';
-import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
+import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import LocationSearchField from '@GeneralComponents/LocationSearchField';
 import LocationList from '@GeneralComponents/LocationList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';

@@ -4,7 +4,7 @@ import { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { IProps } from './PromotionContactsVisicomMap.types';
 import { StyledMapContainer } from './PromotionContactsVisicomMap.styled';
-import { PromotionContactsVisicomMapController } from '@/components/PromotionDetailsPage';
+import PromotionContactsVisicomMapController from '@PromotionDetailsPageComponents/PromotionContactsVisicomMapController';
 import { usePromotionContactsVisicomMap } from '@/hooks';
 
 const PromotionContactsVisicomMap: FC<IProps> = ({

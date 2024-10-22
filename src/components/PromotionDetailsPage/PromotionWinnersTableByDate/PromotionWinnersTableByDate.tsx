@@ -12,13 +12,11 @@ import {
   ResultsBtnTitle,
   ResultsBtnWrap,
 } from './PromotionWinnersTableByDate.styled';
-import OpenContentBtnLabel from '@/components/OpenContentBtnLabel';
+import OpenContentBtnLabel from '@PromotionDetailsPageComponents/OpenContentBtnLabel';
 import { theme } from '@/constants';
 import { IoDocumentOutline } from 'react-icons/io5';
-import {
-  PromotionElementWrap,
-  PromotionWinnersTable,
-} from '@/components/PromotionDetailsPage';
+import PromotionWinnersTable from '@PromotionDetailsPageComponents/PromotionWinnersTable';
+import PromotionElementWrap from '@PromotionDetailsPageComponents/PromotionElementWrap';
 
 const PromotionWinnersTableByDate: FC<IProps> = ({ date, winners }) => {
   const [showWinners, setShowWinners] = useState<boolean>(false);

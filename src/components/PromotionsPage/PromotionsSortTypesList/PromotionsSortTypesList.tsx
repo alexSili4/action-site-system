@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Container, List, ListItem } from './PromotionsSortTypesList.styled';
 import { IProps } from './PromotionsSortTypesList.types';
-import PromotionsSortType from '@/components/PromotionsSortType';
+import PromotionsSortType from '@PromotionsPageComponents/PromotionsSortType';
 import { getTranslatedPromotionsSortType } from '@/utils';
 
 const PromotionsSortTypesList: FC<IProps> = ({ types, sortType, onChange }) => {

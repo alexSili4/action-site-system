@@ -1,8 +1,6 @@
 import { FC } from 'react';
-import {
-  PromotionConditionsSlider,
-  PromotionSectionTitle,
-} from '@/components/PromotionDetailsPage';
+import PromotionConditionsSlider from '@PromotionDetailsPageComponents/PromotionConditionsSlider';
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import { Container } from './PromotionConditions.styled';
 import { PromotionDetailsPageSections } from '@/constants';
 import { IProps } from './PromotionConditions.types';

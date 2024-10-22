@@ -26,6 +26,14 @@ export const Container = styled.label`
   &:is(:hover, :focus, :has(input:checked)) > span {
     color: #2e305b;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding: ${({ theme: { spacing } }) => `${spacing(7)} ${spacing(10)}`};
+
+    &::after {
+      width: calc(100% - 13px * 2);
+    }
+  }
 `;
 
 export const Title = styled.span`

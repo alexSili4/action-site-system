@@ -1,10 +1,8 @@
 import { FC } from 'react';
 import { Container } from './PromotionContactsMapHeaderShopsListContainer.styled';
 import { IProps } from './PromotionContactsMapHeaderShopsListContainer.types';
-import {
-  PromotionContactsMapHeaderShopsList,
-  PromotionContactsMapHeaderFullShopsList,
-} from '@/components/PromotionDetailsPage';
+import PromotionContactsMapHeaderShopsList from '@PromotionDetailsPageComponents/PromotionContactsMapHeaderShopsList';
+import PromotionContactsMapHeaderFullShopsList from '@PromotionDetailsPageComponents/PromotionContactsMapHeaderFullShopsList';
 
 const PromotionContactsMapHeaderShopsListContainer: FC<IProps> = ({
   markers,

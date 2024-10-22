@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PromotionsCategory from '@/components/PromotionsCategory';
+import PromotionsCategory from '@PromotionsPageComponents/PromotionsCategory';
 import { List, ListItem } from './PromotionsCategories.styled';
 import { IProps } from './PromotionsCategories.types';
 import { getTranslatedPromotionsCategory } from '@/utils';

@@ -8,9 +8,14 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '@AnimationBlocks': '/src/components/AnimationBlocks',
       '@RegisterCodePageComponents': '/src/components/RegisterCodePage',
       '@GeneralComponents': '/src/components/General',
       '@CabinetPageComponents': '/src/components/CabinetPage',
+      '@PromotionsPageComponents': '/src/components/PromotionsPage',
+      '@MainPageComponents': '/src/components/MainPage',
+      '@PromotionDetailsPageComponents': '/src/components/PromotionDetailsPage',
+      '@ErrorPageComponents': '/src/components/ErrorPage',
     },
   },
   build: {

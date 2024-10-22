@@ -17,7 +17,7 @@ import {
 import { theme } from '@/constants';
 import { Autoplay } from 'swiper/modules';
 import { IProps } from './PromotionConditionsSlider.types';
-import { PromotionConditionsSliderAnimation } from '@/components/PromotionDetailsPage';
+import PromotionConditionsSliderAnimation from '@PromotionDetailsPageComponents/PromotionConditionsSliderAnimation';
 import { useTargetPromotionData } from '@/hooks';
 import { IoDocumentOutline } from 'react-icons/io5';
 import { getFileUrl } from '@/utils';

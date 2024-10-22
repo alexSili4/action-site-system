@@ -14,8 +14,8 @@ import {
   BtnClickEvent,
   InputChangeEvent,
 } from '@/types/types';
-import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
-import { PromotionContactsMapHeaderShopsListContainer } from '@/components/PromotionDetailsPage';
+import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
+import PromotionContactsMapHeaderShopsListContainer from '@PromotionDetailsPageComponents/PromotionContactsMapHeaderShopsListContainer';
 import { useMediaQuery } from '@/hooks';
 
 const PromotionContactsMapHeader: FC<IProps> = ({

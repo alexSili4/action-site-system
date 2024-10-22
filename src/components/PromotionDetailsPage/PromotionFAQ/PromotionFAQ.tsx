@@ -10,7 +10,7 @@ import {
 } from './PromotionFAQ.styled';
 import { BtnClickEvent, DivRef } from '@/types/types';
 import { makeBlur } from '@/utils';
-import OpenContentBtnLabel from '@/components/OpenContentBtnLabel';
+import OpenContentBtnLabel from '@PromotionDetailsPageComponents/OpenContentBtnLabel';
 
 const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { List, ListItem } from './PromotionContactsMapHeaderShopsList.styled';
-import { PromotionContactsMapShop } from '@/components/PromotionDetailsPage';
+import PromotionContactsMapShop from '@PromotionDetailsPageComponents/PromotionContactsMapShop';
 import { IProps } from './PromotionContactsMapHeaderShopsList.types';
 
 const PromotionContactsMapHeaderShopsList: FC<IProps> = ({

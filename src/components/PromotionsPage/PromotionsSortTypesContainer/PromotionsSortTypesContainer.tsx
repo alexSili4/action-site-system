@@ -6,11 +6,11 @@ import {
   ShowSortTypesBtn,
   BtnTitle,
 } from './PromotionsSortTypesContainer.styled';
-import PromotionsSortTypesList from '@/components/PromotionsSortTypesList';
+import PromotionsSortTypesList from '@PromotionsPageComponents/PromotionsSortTypesList';
 import { useSetSearchParams } from '@/hooks';
 import { getTranslatedPromotionsSortType, makeBlur } from '@/utils';
 import { BtnClickEvent, InputChangeEvent } from '@/types/types';
-import { SmoothFadeInDropdownList } from '@/components/AnimationBlocks';
+import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
 
 const PromotionsSortTypesContainer: FC = () => {

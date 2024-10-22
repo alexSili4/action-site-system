@@ -1,10 +1,8 @@
 import { FC, useState } from 'react';
 import { ActiveMarkerId, Shops } from '@/types/types';
 import { Container } from './PromotionContactsMap.styled';
-import {
-  PromotionContactsMapHeader,
-  PromotionContactsVisicomMap,
-} from '@/components/PromotionDetailsPage';
+import PromotionContactsMapHeader from '@PromotionDetailsPageComponents/PromotionContactsMapHeader';
+import PromotionContactsVisicomMap from '@PromotionDetailsPageComponents/PromotionContactsVisicomMap';
 import { smoothScroll } from '@/utils';
 import { useTargetPromotionData } from '@/hooks';
 

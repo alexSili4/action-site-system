@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Container } from './PromotionsFilter.styled';
-import PromotionsCategories from '@/components/PromotionsCategories';
+import PromotionsCategories from '@PromotionsPageComponents/PromotionsCategories';
 import { IProps } from './PromotionsFilter.types';
-import PromotionsSortTypesContainer from '@/components/PromotionsSortTypesContainer';
-import PromotionsControls from '@/components/PromotionsControls';
+import PromotionsSortTypesContainer from '@PromotionsPageComponents/PromotionsSortTypesContainer';
+import PromotionsControls from '@PromotionsPageComponents/PromotionsControls';
 
 const PromotionsFilter: FC<IProps> = ({
   changePromotionCategory,

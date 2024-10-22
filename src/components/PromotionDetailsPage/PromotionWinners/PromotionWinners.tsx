@@ -3,10 +3,8 @@ import { Container, ContentWrap } from './PromotionWinners.styled';
 import { PromotionDetailsPageSections } from '@/constants';
 import { IProps } from './PromotionWinners.types';
 import { Strings } from '@/types/types';
-import {
-  PromotionWinnersTableByDateList,
-  PromotionSectionTitle,
-} from '@/components/PromotionDetailsPage';
+import PromotionWinnersTableByDateList from '@PromotionDetailsPageComponents/PromotionWinnersTableByDateList';
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 
 const PromotionWinners: FC<IProps> = ({ winners }) => {
   // TODO delete dates

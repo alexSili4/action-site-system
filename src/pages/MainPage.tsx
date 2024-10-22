@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Container from '@GeneralComponents/Container';
-import HeroSection from '@/components/HeroSection';
-import AppInfo from '@/components/AppInfo';
+import HeroSection from '@MainPageComponents/HeroSection';
+import AppInfo from '@MainPageComponents/AppInfo';
 
 const NotFoundPage: FC = () => (
   <HeroSection>

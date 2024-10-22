@@ -1,9 +1,7 @@
 import { FC } from 'react';
-import {
-  PromotionSectionTitle,
-  PromotionContactsBanner,
-  PromotionContactsMap,
-} from '@/components/PromotionDetailsPage';
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
+import PromotionContactsBanner from '@PromotionDetailsPageComponents/PromotionContactsBanner';
+import PromotionContactsMap from '@PromotionDetailsPageComponents/PromotionContactsMap';
 import { Container, ContentWrap } from './PromotionContacts.styled';
 import { PromotionDetailsPageSections } from '@/constants';
 

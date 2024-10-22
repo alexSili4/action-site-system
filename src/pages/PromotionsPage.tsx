@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Promotions from '@/components/Promotions';
+import Promotions from '@PromotionsPageComponents/Promotions';
 import Container from '@GeneralComponents/Container';
 import Section from '@GeneralComponents/Section';
 

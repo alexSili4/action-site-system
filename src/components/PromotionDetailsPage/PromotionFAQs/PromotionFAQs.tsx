@@ -10,10 +10,8 @@ import {
   Title,
   WorkingHours,
 } from './PromotionFAQs.styled';
-import {
-  PromotionFAQ,
-  PromotionSectionTitle,
-} from '@/components/PromotionDetailsPage';
+import PromotionFAQ from '@PromotionDetailsPageComponents/PromotionFAQ';
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import { LuPhone } from 'react-icons/lu';
 import { PromotionDetailsPageSections, theme } from '@/constants';
 import { IProps } from './PromotionFAQs.types';

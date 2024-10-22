@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Container } from './StatisticsFilter.styled';
 import StatisticsCategories from '@CabinetPageComponents/StatisticsCategories';
 import { IProps } from './StatisticsFilter.types';
-import CategoriesSortTypesContainer from '@CabinetPageComponents/CategoriesSortTypesContainer';
+import StatisticsSortTypesContainer from '@CabinetPageComponents/StatisticsSortTypesContainer';
 
 const StatisticsFilter: FC<IProps> = ({
   categories,
@@ -18,7 +18,7 @@ const StatisticsFilter: FC<IProps> = ({
         categories={categories}
         statisticCategory={statisticCategory}
       />
-      <CategoriesSortTypesContainer
+      <StatisticsSortTypesContainer
         isAscSortType={isAscSortType}
         onSortBtnClick={onSortBtnClick}
       />

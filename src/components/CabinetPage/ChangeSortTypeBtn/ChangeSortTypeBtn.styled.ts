@@ -13,4 +13,8 @@ export const Button = styled.button`
   & > svg {
     color: #2e305b;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
+  }
 `;

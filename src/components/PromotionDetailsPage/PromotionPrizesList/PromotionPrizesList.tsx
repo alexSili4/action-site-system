@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './PromotionPrizesList.types';
 import { List, ListItem } from './PromotionPrizesList.styled';
-import { PromotionPrizeImgSlider } from '@/components/PromotionDetailsPage';
+import PromotionPrizeImgSlider from '@PromotionDetailsPageComponents/PromotionPrizeImgSlider';
 
 const PromotionPrizesList: FC<IProps> = ({ prizes }) => {
   return (
