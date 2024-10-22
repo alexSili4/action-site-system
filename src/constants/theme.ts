@@ -24,7 +24,7 @@ interface ITheme {
     socialList: number;
     cabinet: number;
     showLocationsBtn: number;
-    showSortTypesBtn: number;
+    showPromotionsSortTypesBtn: number;
     showDatePickerBtn: number;
     datePickerBtnLabel: number;
     goBackLink: number;
@@ -93,7 +93,7 @@ const theme: ITheme = {
     socialList: 24,
     cabinet: 14,
     showLocationsBtn: 12,
-    showSortTypesBtn: 12,
+    showPromotionsSortTypesBtn: 12,
     showDatePickerBtn: 12,
     datePickerBtnLabel: 20,
     goBackLink: 10,

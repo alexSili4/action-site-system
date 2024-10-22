@@ -35,7 +35,6 @@ const PromotionsSortTypesContainer: FC = () => {
     const { value, name: key } = e.currentTarget;
 
     updateSearchParams({ key, value });
-    toggleShowSortTypesList();
   };
 
   return (
@@ -50,7 +49,7 @@ const PromotionsSortTypesContainer: FC = () => {
           showSortTypesList={showSortTypesList}
         >
           <BtnTitle showSortTypesList={showSortTypesList}>{btnTitle}</BtnTitle>
-          <FaChevronDown size={theme.iconSizes.showSortTypesBtn} />
+          <FaChevronDown size={theme.iconSizes.showPromotionsSortTypesBtn} />
         </ShowSortTypesBtn>
         <SmoothFadeInDropdownList isVisible={showSortTypesList}>
           <PromotionsSortTypesList

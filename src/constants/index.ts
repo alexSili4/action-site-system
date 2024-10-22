@@ -17,4 +17,5 @@ export { default as RegPromotionCodeSteps } from './regPromotionCodeSteps';
 export { default as generalSettings } from './generalSettings';
 export { default as StatisticsCategoriesKeys } from './statisticsCategoriesKeys';
 export { default as translatedStatisticsCategoriesKeys } from './translatedStatisticsCategoriesKeys';
-export { default as SortTypes } from './sortTypes';
+export { default as StatisticsSortTypesKeys } from './statisticsSortTypesKeys';
+export { default as translatedStatisticsSortTypesKeys } from './translatedStatisticsSortTypesKeys';

@@ -13,3 +13,4 @@ export { default as getFileUrl } from './getFileUrl';
 export { default as getRegCodeSteps } from './getRegCodeSteps';
 export { default as getCurrentInputIndex } from './getCurrentInputIndex';
 export { default as getTranslatedStatisticsCategory } from './getTranslatedStatisticsCategory';
+export { default as getTranslatedStatisticsSortType } from './getTranslatedStatisticsSortType';

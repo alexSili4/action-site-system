@@ -7,6 +7,11 @@ import StatisticsSortTypesDropdown from '@CabinetPageComponents/StatisticsSortTy
 const StatisticsSortTypesContainer: FC<IProps> = ({
   isAscSortType,
   onSortBtnClick,
+  onSortTypeInputChange,
+  showSortTypesList,
+  toggleShowSortTypesList,
+  onShowSortTypesBtnClick,
+  sortType,
 }) => {
   return (
     <Container>
@@ -14,7 +19,13 @@ const StatisticsSortTypesContainer: FC<IProps> = ({
         isAscSortType={isAscSortType}
         onClick={onSortBtnClick}
       />
-      <StatisticsSortTypesDropdown />
+      <StatisticsSortTypesDropdown
+        onShowSortTypesBtnClick={onShowSortTypesBtnClick}
+        toggleShowSortTypesList={toggleShowSortTypesList}
+        showSortTypesList={showSortTypesList}
+        onSortTypeInputChange={onSortTypeInputChange}
+        sortType={sortType}
+      />
     </Container>
   );
 };

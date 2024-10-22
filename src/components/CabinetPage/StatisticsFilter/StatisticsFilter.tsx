@@ -10,6 +10,11 @@ const StatisticsFilter: FC<IProps> = ({
   statisticCategory,
   isAscSortType,
   onSortBtnClick,
+  onSortTypeInputChange,
+  showSortTypesList,
+  toggleShowSortTypesList,
+  onShowSortTypesBtnClick,
+  sortType,
 }) => {
   return (
     <Container>
@@ -21,6 +26,11 @@ const StatisticsFilter: FC<IProps> = ({
       <StatisticsSortTypesContainer
         isAscSortType={isAscSortType}
         onSortBtnClick={onSortBtnClick}
+        onSortTypeInputChange={onSortTypeInputChange}
+        showSortTypesList={showSortTypesList}
+        toggleShowSortTypesList={toggleShowSortTypesList}
+        onShowSortTypesBtnClick={onShowSortTypesBtnClick}
+        sortType={sortType}
       />
     </Container>
   );

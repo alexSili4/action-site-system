@@ -8,4 +8,5 @@ export const Backdrop = styled.div`
   width: 100%;
   height: 100%;
   background-color: pink;
+  opacity: 0.4;
 `;
