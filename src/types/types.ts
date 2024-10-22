@@ -70,3 +70,7 @@ export interface IGetRegCodeInputProps {
   inputFullLength: number;
   isFullValue: boolean;
 }
+
+export interface ICsrf {
+  _csrf: string;
+}

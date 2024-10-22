@@ -1,6 +1,10 @@
 import authService from '@/services/auth.service';
 import operationWrapper from './operationWrapper';
-import { IAuthOperationProps, Refresh } from '@/types/authStore.types';
+import {
+  IAuthOperationProps,
+  ILogoutOperationProps,
+  Refresh,
+} from '@/types/authStore.types';
 import { AxiosError } from 'axios';
 import initialState from './initialState';
 
@@ -34,11 +38,12 @@ const refreshOperation = async ({
 
 const logOutOperation = async ({
   set,
-}: IAuthOperationProps): Promise<undefined> => {
+  data,
+}: ILogoutOperationProps): Promise<undefined> => {
   try {
     set({ isLoading: true, error: initialState.error });
 
-    await authService.logout();
+    await authService.logout(data);
 
     set(initialState);
   } catch (error) {

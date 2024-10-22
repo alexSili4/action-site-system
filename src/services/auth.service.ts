@@ -1,5 +1,6 @@
 import { Refresh } from '@/types/authStore.types';
 import HttpService from './http.service';
+import { ICsrf } from '@/types/types';
 
 class AuthService extends HttpService {
   constructor() {
@@ -16,10 +17,11 @@ class AuthService extends HttpService {
     return response.data;
   }
 
-  async logout(): Promise<undefined> {
-    const response = await this.post<undefined, undefined>(
+  async logout(data: ICsrf): Promise<undefined> {
+    const response = await this.post<undefined, ICsrf>(
       {
         url: 'logout',
+        data,
       },
       false
     );

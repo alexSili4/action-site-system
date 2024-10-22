@@ -4,14 +4,16 @@ import { useAuthStore } from '@/store/store';
 import { selectLogout } from '@/store/auth/selectors';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
+import { useCsrfToken } from '@/hooks';
 
 const LogOutBtn: FC = () => {
   const logout = useAuthStore(selectLogout);
+  const csrfToken = useCsrfToken();
 
   const onLogOutBtnClick = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    logout();
+    logout({ _csrf: csrfToken });
   };
 
   return (
