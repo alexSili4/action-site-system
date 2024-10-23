@@ -26,7 +26,7 @@ class AuthService extends HttpService {
       },
       false
     );
-    return response.data;
+    return response;
   }
 }
 

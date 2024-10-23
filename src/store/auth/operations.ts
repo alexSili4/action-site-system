@@ -7,7 +7,6 @@ import {
 } from '@/types/authStore.types';
 import { AxiosError } from 'axios';
 import initialState from './initialState';
-import { redirectTo } from '@/utils';
 
 const refreshOperation = async ({
   set,
@@ -44,9 +43,7 @@ const logOutOperation = async ({
   try {
     set({ isLoading: true, error: initialState.error });
 
-    const response = await authService.logout(data);
-    const location = response.headers['location'];
-    redirectTo(location);
+    await authService.logout(data);
 
     set(initialState);
   } catch (error) {
