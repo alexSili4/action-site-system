@@ -15,7 +15,6 @@ import {
   RulesLinkTitle,
 } from './PromotionConditionsSlider.styled';
 import { theme } from '@/constants';
-import { Autoplay } from 'swiper/modules';
 import { IProps } from './PromotionConditionsSlider.types';
 import PromotionConditionsSliderAnimation from '@PromotionDetailsPageComponents/PromotionConditionsSliderAnimation';
 import { useTargetPromotionData } from '@/hooks';
@@ -43,8 +42,6 @@ const PromotionConditionsSlider: FC<IProps> = ({ conditions }) => {
   return (
     <Container ref={sliderContainerRef} slideHeight={slideHeight}>
       <Swiper
-        modules={[Autoplay]}
-        autoplay={{ delay: 2000 }}
         speed={2000}
         spaceBetween={16}
         slidesPerView={1.075}
