@@ -1,6 +1,7 @@
 import { Refresh } from '@/types/authStore.types';
 import HttpService from './http.service';
 import { ICsrfToken } from '@/types/types';
+import { AxiosResponse } from 'axios';
 
 class AuthService extends HttpService {
   constructor() {
@@ -17,8 +18,8 @@ class AuthService extends HttpService {
     return response.data;
   }
 
-  async logout(data: ICsrfToken): Promise<undefined> {
-    const response = await this.post<undefined, ICsrfToken>(
+  async logout(data: ICsrfToken): Promise<AxiosResponse> {
+    const response = await this.post<AxiosResponse, ICsrfToken>(
       {
         url: 'logout',
         data,
