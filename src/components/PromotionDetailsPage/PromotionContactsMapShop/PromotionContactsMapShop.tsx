@@ -13,15 +13,16 @@ const PromotionContactsMapShop: FC<IProps> = ({
   onChange,
   checked,
   value,
-  name,
   id,
+  workSchedule,
+  address,
 }) => {
   return (
     <Container id={id}>
       <TitleWrap>
-        <Name>{name}</Name>
-        <Address>address</Address>
-        <WorkSchedule>workSchedule</WorkSchedule>
+        <Name>АТБ-Маркет</Name>
+        <Address>{address}</Address>
+        <WorkSchedule>Режим роботи: {workSchedule}</WorkSchedule>
       </TitleWrap>
       <RadioBtn
         type='radio'

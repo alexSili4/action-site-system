@@ -12,3 +12,4 @@ export { default as useCityId } from './useCityId';
 export { default as useTargetPromotionData } from './useTargetPromotionData';
 export { default as useRegisterCodeForm } from './useRegisterCodeForm';
 export { default as useCsrfToken } from './useCsrfToken';
+export { default as useTargetCity } from './useTargetCity';

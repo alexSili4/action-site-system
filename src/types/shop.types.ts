@@ -19,3 +19,7 @@ export interface IShop {
 }
 
 export type Shops = IShop[];
+
+export type ActiveShopNum = number | null;
+
+export type SetActiveShopFunc = (data: number) => void;

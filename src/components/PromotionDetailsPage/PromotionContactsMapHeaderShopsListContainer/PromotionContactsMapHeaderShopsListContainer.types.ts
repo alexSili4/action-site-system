@@ -1,12 +1,8 @@
-import { Shops } from '@/types/shop.types';
-import {
-  ActiveMarkerId,
-  InputChangeFunc,
-  OnAnchorClickFunc,
-} from '@/types/types';
+import { ActiveShopNum, Shops } from '@/types/shop.types';
+import { InputChangeFunc, OnAnchorClickFunc } from '@/types/types';
 
 export interface IProps {
-  activeMarkerId: ActiveMarkerId;
+  activeShopNum: ActiveShopNum;
   shops: Shops;
   isNationalPromotion: boolean;
   onInputChange: InputChangeFunc;

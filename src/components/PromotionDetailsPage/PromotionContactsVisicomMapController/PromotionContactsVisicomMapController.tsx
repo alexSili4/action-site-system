@@ -3,17 +3,19 @@ import { IProps } from './PromotionContactsVisicomMapController.types';
 import { useMap } from 'react-leaflet';
 
 const PromotionContactsVisicomMapController: FC<IProps> = ({
-  activeMarkerId,
-  markers,
+  activeShopNum,
+  shops,
 }) => {
   const map = useMap();
-  const targetMarker = markers.find(({ id }) => id === activeMarkerId);
+  const targetMarker = shops.find(
+    ({ shop_num: shopNum }) => shopNum === activeShopNum
+  );
 
   useEffect(() => {
     if (targetMarker) {
       map.flyTo({
-        lat: targetMarker.position[0],
-        lng: targetMarker.position[1],
+        lat: Number(targetMarker.geo_lat),
+        lng: Number(targetMarker.geo_long),
       });
     }
   }, [map, targetMarker]);

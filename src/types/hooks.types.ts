@@ -102,6 +102,7 @@ export interface IUseTargetPromotionData {
   actionType: ActionType | undefined;
   name: string;
   hotLineText: string | undefined;
+  hotLineWorkHours: string;
 }
 
 export interface IUseRegisterCodeForm {

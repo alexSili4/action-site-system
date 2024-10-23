@@ -4,8 +4,11 @@ import MarkerIcon from '@/icons/contacts-map/marker.svg?raw';
 import { ClassNames } from '@/constants';
 import L, { LatLngBoundsExpression, LatLngExpression } from 'leaflet';
 import { IUsePromotionContactsVisicomMap } from '@/types/hooks.types';
+import useTargetCity from './useTargetCity';
+import { getTargetCityCenter } from '@/utils';
 
 const usePromotionContactsVisicomMap = (): IUsePromotionContactsVisicomMap => {
+  const targetCity = useTargetCity();
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
   const zoomControlPosition = isDesktop ? 'bottomleft' : 'bottomright';
   const tileLayerUrl = `https://tms{s}.visicom.ua/2.0.0/world,ua/base/{z}/{x}/{y}.png?key=${
@@ -14,7 +17,9 @@ const usePromotionContactsVisicomMap = (): IUsePromotionContactsVisicomMap => {
   const tileLayerAttribution =
     "<a href='https://sun.agency' target='_blank' rel='noopener noreferrer'>Зроблено Сонцем ●</a>";
 
-  const mapCenter: LatLngExpression = [50.4501, 30.5234];
+  const targetCityCenter = getTargetCityCenter(targetCity?.coordinates ?? '');
+  const defaultMapCenter: LatLngExpression = [50.4501, 30.5234];
+  const mapCenter = targetCity ? targetCityCenter : defaultMapCenter;
   const ukraineBounds: LatLngBoundsExpression = [
     [44.38, 22.14],
     [52.38, 40.23],

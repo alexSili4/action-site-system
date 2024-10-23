@@ -1,8 +1,7 @@
-import { Shops } from '@/types/shop.types';
-import { ActiveMarkerId, SetActiveMarkerFunc } from '@/types/types';
+import { ActiveShopNum, SetActiveShopFunc, Shops } from '@/types/shop.types';
 
 export interface IProps {
-  setActiveMarker: SetActiveMarkerFunc;
-  activeMarkerId: ActiveMarkerId;
+  setActiveShop: SetActiveShopFunc;
+  activeShopNum: ActiveShopNum;
   shops: Shops;
 }

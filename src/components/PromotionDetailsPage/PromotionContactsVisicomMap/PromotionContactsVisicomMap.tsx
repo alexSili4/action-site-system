@@ -8,9 +8,9 @@ import PromotionContactsVisicomMapController from '@PromotionDetailsPageComponen
 import { usePromotionContactsVisicomMap } from '@/hooks';
 
 const PromotionContactsVisicomMap: FC<IProps> = ({
-  activeMarkerId,
+  activeShopNum,
   shops,
-  setActiveMarker,
+  setActiveShop,
 }) => {
   const {
     mapCenter,
@@ -25,7 +25,7 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
   return (
     <StyledMapContainer
       center={mapCenter}
-      zoom={10}
+      zoom={12}
       minZoom={5}
       zoomControl={false}
       maxBounds={ukraineBounds}
@@ -34,40 +34,41 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
       <TileLayer
         url={tileLayerUrl}
         attribution={tileLayerAttribution}
-        maxZoom={18}
         subdomains='123'
         tms
       />
       <ZoomControl position={zoomControlPosition} />
       <PromotionContactsVisicomMapController
-        activeMarkerId={activeMarkerId}
+        activeShopNum={activeShopNum}
         shops={shops}
       />
-      {shops.map(({}) => {
-        const isActiveMarker = activeMarkerId === id;
-        const icon = isActiveMarker ? customActiveMarkerIcon : customMarkerIcon;
-        const markerPosition: LatLngExpression = {
-          lat: position[0],
-          lng: position[1],
-        };
+      {shops.map(
+        ({ shop_num: shopNum, geo_lat: geoLat, geo_long: geoLong }) => {
+          const isActiveShop = activeShopNum === shopNum;
+          const icon = isActiveShop ? customActiveMarkerIcon : customMarkerIcon;
+          const markerPosition: LatLngExpression = {
+            lat: Number(geoLat),
+            lng: Number(geoLong),
+          };
 
-        const onMarkerClick = () => {
-          setActiveMarker(id);
-        };
+          const onMarkerClick = () => {
+            setActiveShop(shopNum);
+          };
 
-        const eventHandlers = {
-          click: onMarkerClick,
-        };
+          const eventHandlers = {
+            click: onMarkerClick,
+          };
 
-        return (
-          <Marker
-            icon={icon}
-            key={id}
-            position={markerPosition}
-            eventHandlers={eventHandlers}
-          ></Marker>
-        );
-      })}
+          return (
+            <Marker
+              icon={icon}
+              key={shopNum}
+              position={markerPosition}
+              eventHandlers={eventHandlers}
+            ></Marker>
+          );
+        }
+      )}
     </StyledMapContainer>
   );
 };

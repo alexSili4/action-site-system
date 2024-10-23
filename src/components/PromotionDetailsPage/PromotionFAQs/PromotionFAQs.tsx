@@ -18,7 +18,8 @@ import { IProps } from './PromotionFAQs.types';
 import { useTargetPromotionData } from '@/hooks';
 
 const PromotionFAQs: FC<IProps> = ({ faqs }) => {
-  const { hotLinePhone, hotLineText } = useTargetPromotionData();
+  const { hotLinePhone, hotLineText, hotLineWorkHours } =
+    useTargetPromotionData();
 
   return (
     <Container id={PromotionDetailsPageSections.faqs}>
@@ -34,7 +35,9 @@ const PromotionFAQs: FC<IProps> = ({ faqs }) => {
             Потрібна додаткова інформація? Ви можете зв&#8217;язатися по
             телефону звернувшись в Центр Обслуговування Кліентів
           </Title>
-          <WorkingHours>{hotLineText}</WorkingHours>
+          <WorkingHours>
+            {hotLineText} {hotLineWorkHours}
+          </WorkingHours>
           <PhoneLink href={`tel:${hotLinePhone}`}>
             <PhoneLinkIconWrap>
               <LuPhone size={theme.iconSizes.phoneLink} />

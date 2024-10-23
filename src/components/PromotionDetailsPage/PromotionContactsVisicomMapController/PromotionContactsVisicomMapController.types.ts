@@ -1,7 +1,7 @@
 import { Shops } from '@/types/shop.types';
-import { ActiveMarkerId } from '@/types/types';
+import { ActiveShopNum } from '@/types/shop.types';
 
 export interface IProps {
-  activeMarkerId: ActiveMarkerId;
+  activeShopNum: ActiveShopNum;
   shops: Shops;
 }

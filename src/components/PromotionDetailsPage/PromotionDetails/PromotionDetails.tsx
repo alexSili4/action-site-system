@@ -25,7 +25,7 @@ const PromotionDetails: FC<IProps> = ({
   faqs,
   prizes,
   conditions,
-  winners,
+  winners,shops
 }) => {
   const {
     dateFrom,
@@ -102,7 +102,7 @@ const PromotionDetails: FC<IProps> = ({
         />
         <PromotionFAQs faqs={faqs} />
         <PromotionWinners winners={winners} />
-        <PromotionContacts />
+        <PromotionContacts shops={shops} />
       </PromotionDetailsSectionContainer>
     </Container>
   );

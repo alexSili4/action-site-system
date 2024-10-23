@@ -4,6 +4,7 @@ export interface IProps {
   onChange: InputChangeFunc;
   checked: boolean;
   value: number;
-  name: string;
-  id:string
+  id: string;
+  workSchedule: string;
+  address: string;
 }

@@ -5,11 +5,11 @@ import PromotionContactsMapHeaderShopsList from '@PromotionDetailsPageComponents
 import PromotionContactsMapHeaderFullShopsList from '@PromotionDetailsPageComponents/PromotionContactsMapHeaderFullShopsList';
 
 const PromotionContactsMapHeaderShopsListContainer: FC<IProps> = ({
-  markers,
-  activeMarkerId,
+  shops,
   isNationalPromotion,
   onInputChange,
   onLinkClick,
+  activeShopNum,
 }) => {
   return (
     <Container isNationalPromotion={isNationalPromotion}>
@@ -18,8 +18,8 @@ const PromotionContactsMapHeaderShopsListContainer: FC<IProps> = ({
       ) : (
         <PromotionContactsMapHeaderShopsList
           onInputChange={onInputChange}
-          activeMarkerId={activeMarkerId}
-          markers={markers}
+          activeShopNum={activeShopNum}
+          shops={shops}
         />
       )}
     </Container>

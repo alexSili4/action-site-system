@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { HiOutlinePhone } from 'react-icons/hi';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import {
@@ -18,8 +18,13 @@ import { useTargetPromotionData } from '@/hooks';
 import { getFileUrl } from '@/utils';
 
 const PromotionContactsBanner: FC = () => {
-  const { hotLinePhone, hotLineEmail, logo } = useTargetPromotionData();
+  const targetPromotionData = useTargetPromotionData();
+  const { hotLinePhone, hotLineEmail, logo } = targetPromotionData;
   const logoUrl = getFileUrl(logo);
+
+  useEffect(() => {
+    console.log(targetPromotionData);
+  }, [targetPromotionData]);
 
   return (
     <Container>

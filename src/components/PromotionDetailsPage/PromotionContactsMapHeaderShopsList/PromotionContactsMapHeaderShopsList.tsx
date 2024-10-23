@@ -4,23 +4,24 @@ import PromotionContactsMapShop from '@PromotionDetailsPageComponents/PromotionC
 import { IProps } from './PromotionContactsMapHeaderShopsList.types';
 
 const PromotionContactsMapHeaderShopsList: FC<IProps> = ({
-  markers,
+  shops,
   onInputChange,
-  activeMarkerId,
+  activeShopNum,
 }) => {
   return (
     <List>
-      {markers.map(({ id, popupText }) => {
-        const checked = id === activeMarkerId;
+      {shops.map(({ shop_num: shopNum, work_hours: workHours, street }) => {
+        const checked = shopNum === activeShopNum;
 
         return (
-          <ListItem key={id}>
+          <ListItem key={shopNum}>
             <PromotionContactsMapShop
               checked={checked}
-              value={id}
-              name={popupText}
+              value={shopNum}
               onChange={onInputChange}
-              id={String(id)}
+              id={String(shopNum)}
+              workSchedule={workHours}
+              address={street}
             />
           </ListItem>
         );

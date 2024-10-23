@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { ActiveMarkerId } from '@/types/types';
+import { ActiveShopNum } from '@/types/shop.types';
 import { Container } from './PromotionContactsMap.styled';
 import PromotionContactsMapHeader from '@PromotionDetailsPageComponents/PromotionContactsMapHeader';
 import PromotionContactsVisicomMap from '@PromotionDetailsPageComponents/PromotionContactsVisicomMap';
@@ -8,27 +8,27 @@ import { useTargetPromotionData } from '@/hooks';
 import { IProps } from './PromotionContactsMap.types';
 
 const PromotionContactsMap: FC<IProps> = ({ shops }) => {
-  const [activeMarkerId, setActiveMarkerId] = useState<ActiveMarkerId>(null);
+  const [activeShopNum, setActiveShopNum] = useState<ActiveShopNum>(null);
   const { coverageType } = useTargetPromotionData();
   const isNationalPromotion = coverageType === 'national';
   const targetShops = isNationalPromotion ? [] : shops;
 
-  const setActiveMarker = (id: number) => {
-    setActiveMarkerId(id);
+  const setActiveShop = (id: number) => {
+    setActiveShopNum(id);
     smoothScroll({ id: String(id), isNearestBlock: true });
   };
 
   return (
     <Container>
       <PromotionContactsMapHeader
-        setActiveMarker={setActiveMarker}
-        activeMarkerId={activeMarkerId}
+        setActiveShop={setActiveShop}
+        activeShopNum={activeShopNum}
         shops={targetShops}
         isNationalPromotion={isNationalPromotion}
       />
       <PromotionContactsVisicomMap
-        setActiveMarker={setActiveMarker}
-        activeMarkerId={activeMarkerId}
+        setActiveShop={setActiveShop}
+        activeShopNum={activeShopNum}
         shops={targetShops}
       />
     </Container>

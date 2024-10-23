@@ -17,8 +17,6 @@ export type Func = () => void;
 
 export type InputChangeFunc = (e: InputChangeEvent) => void;
 
-export type SetActiveMarkerFunc = (data: number) => void;
-
 export type OnDivClickFunc = (e: DivClickEvent) => void;
 
 export type OnAnchorClickFunc = (e: AnchorClickEvent) => void;
@@ -50,8 +48,6 @@ export interface IPromotionPrizeDraws {
 }
 
 export type PromotionPrizeDraws = IPromotionPrizeDraws[];
-
-export type ActiveMarkerId = number | null;
 
 export interface IChangeFocusToNextRegCodeInputProps {
   currentInput: HTMLInputElement;

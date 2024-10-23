@@ -3,6 +3,7 @@ export interface ICity {
   name: string;
   region_id: number;
   status: number;
+  coordinates: string;
 }
 
 export type Cities = ICity[];

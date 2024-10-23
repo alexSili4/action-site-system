@@ -12,8 +12,15 @@ const RegisterCodeSection: FC<IProps> = ({
   currentStep,
   incrementCurrentStep,
 }) => {
-  const { hotLinePhone, mainBannerDt, mainBannerMob, name, dateFrom, dateTo } =
-    useTargetPromotionData();
+  const {
+    hotLinePhone,
+    mainBannerDt,
+    mainBannerMob,
+    name,
+    dateFrom,
+    dateTo,
+    hotLineWorkHours,
+  } = useTargetPromotionData();
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
     bannerDt: mainBannerDt,
     bannerMob: mainBannerMob,
@@ -40,7 +47,7 @@ const RegisterCodeSection: FC<IProps> = ({
         <RegisterCodeForm incrementCurrentStep={incrementCurrentStep} />
         <Text>
           Якщо Вам не вдалося зареєструвати акційний код зверніться на гарячу
-          лінію за телефоном {hotLinePhone} ({'???графік роботи???'})
+          лінію за телефоном {hotLinePhone} ({hotLineWorkHours})
         </Text>
       </ContentWrap>
     </Container>

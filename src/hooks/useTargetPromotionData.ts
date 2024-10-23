@@ -19,6 +19,7 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     hot_line_email: hotLineEmail,
     coverage_type: coverageType,
     hot_line_text: hotLineText,
+    hot_line_work_hours: hotLineWorkHours,
   } = targetPromotion ?? {};
 
   return {
@@ -36,6 +37,7 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     actionType,
     name,
     hotLineText,
+    hotLineWorkHours: hotLineWorkHours ?? '',
   };
 };
 

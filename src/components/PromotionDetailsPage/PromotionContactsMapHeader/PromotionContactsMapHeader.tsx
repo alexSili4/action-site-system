@@ -19,10 +19,10 @@ import PromotionContactsMapHeaderShopsListContainer from '@PromotionDetailsPageC
 import { useMediaQuery } from '@/hooks';
 
 const PromotionContactsMapHeader: FC<IProps> = ({
-  activeMarkerId,
-  markers,
-  setActiveMarker,
+  activeShopNum,
+  setActiveShop,
   isNationalPromotion,
+  shops,
 }) => {
   const [showShopsList, setShowShopsList] = useState<boolean>(false);
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
@@ -61,12 +61,11 @@ const PromotionContactsMapHeader: FC<IProps> = ({
   const onPromotionContactsMapShopChange = (e: InputChangeEvent) => {
     makeBlur(e.currentTarget);
 
-    setActiveMarker(Number(e.currentTarget.value));
+    setActiveShop(Number(e.currentTarget.value));
 
     toggleShowShopsListOnMobile();
   };
 
-  // TODO fix shops list
   return (
     <Container>
       <ShopsListBtn type='button' onClick={onShopsListBtnClick}>
@@ -78,8 +77,8 @@ const PromotionContactsMapHeader: FC<IProps> = ({
         zIndex={theme.zIndex.promotionShopsList}
       >
         <PromotionContactsMapHeaderShopsListContainer
-          activeMarkerId={activeMarkerId}
-          markers={markers}
+          activeShopNum={activeShopNum}
+          shops={shops}
           onInputChange={onPromotionContactsMapShopChange}
           isNationalPromotion={isNationalPromotion}
           onLinkClick={onAllShopsLinkClick}
