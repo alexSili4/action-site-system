@@ -9,7 +9,7 @@ import { usePromotionContactsVisicomMap } from '@/hooks';
 
 const PromotionContactsVisicomMap: FC<IProps> = ({
   activeMarkerId,
-  markers,
+  shops,
   setActiveMarker,
 }) => {
   const {
@@ -41,9 +41,9 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
       <ZoomControl position={zoomControlPosition} />
       <PromotionContactsVisicomMapController
         activeMarkerId={activeMarkerId}
-        markers={markers}
+        shops={shops}
       />
-      {markers.map(({ position, id }) => {
+      {shops.map(({}) => {
         const isActiveMarker = activeMarkerId === id;
         const icon = isActiveMarker ? customActiveMarkerIcon : customMarkerIcon;
         const markerPosition: LatLngExpression = {

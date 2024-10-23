@@ -1,5 +1,5 @@
-import { Winners } from '@/types/winner.types';
+import { WinnersByDates } from '@/types/winner.types';
 
 export interface IProps {
-  winners: Winners;
+  winners: WinnersByDates;
 }

@@ -3,12 +3,12 @@ import { IProps } from './PromotionWinnersTableByDateList.types';
 import { List, ListItem } from './PromotionWinnersTableByDateList.styled';
 import PromotionWinnersTableByDate from '@PromotionDetailsPageComponents/PromotionWinnersTableByDate';
 
-const PromotionWinnersTableByDateList: FC<IProps> = ({ dates, winners }) => {
+const PromotionWinnersTableByDateList: FC<IProps> = ({ winners }) => {
   return (
     <List>
-      {dates.map((date, index) => (
+      {winners.map((data, index) => (
         <ListItem key={index}>
-          <PromotionWinnersTableByDate winners={winners} date={date} />
+          <PromotionWinnersTableByDate winners={data} />
         </ListItem>
       ))}
     </List>

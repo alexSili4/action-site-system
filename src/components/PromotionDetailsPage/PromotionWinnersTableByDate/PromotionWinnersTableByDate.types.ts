@@ -1,8 +1,7 @@
-import { Winners } from '@/types/winner.types';
+import { IWinnerByDate } from '@/types/winner.types';
 
 export interface IProps {
-  date: string;
-  winners: Winners;
+  winners: IWinnerByDate;
 }
 
 export interface IStyledProps {

@@ -18,10 +18,14 @@ import { IoDocumentOutline } from 'react-icons/io5';
 import PromotionWinnersTable from '@PromotionDetailsPageComponents/PromotionWinnersTable';
 import PromotionElementWrap from '@PromotionDetailsPageComponents/PromotionElementWrap';
 
-const PromotionWinnersTableByDate: FC<IProps> = ({ date, winners }) => {
+const PromotionWinnersTableByDate: FC<IProps> = ({
+  winners: { date_from: dateFrom, date_to: dateTo, winners },
+}) => {
   const [showWinners, setShowWinners] = useState<boolean>(false);
   const winnersRef = useRef<DivRef>(null);
   const scrollHeight = winnersRef.current?.scrollHeight ?? 0;
+  const isDateTo = dateTo && dateTo !== 'disabled';
+  const btnTitle = isDateTo ? `${dateFrom} - ${dateTo}` : dateFrom;
 
   const toggleSetShowWinners = () => {
     setShowWinners((prevState) => !prevState);
@@ -42,7 +46,7 @@ const PromotionWinnersTableByDate: FC<IProps> = ({ date, winners }) => {
   return (
     <Container>
       <OpenContentBtn type='button' onClick={onDateBtnClick}>
-        <OpenContentBtnTitle>{date}</OpenContentBtnTitle>
+        <OpenContentBtnTitle>{btnTitle}</OpenContentBtnTitle>
         <OpenContentBtnLabel showContent={showWinners} />
       </OpenContentBtn>
       <PromotionWinnersWrap

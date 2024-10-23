@@ -20,7 +20,7 @@ import {
 import { Conditions } from './condition.types';
 import { Prizes } from './prize.types';
 import { FAQs } from './faqs.types';
-import { Winners } from './winner.types';
+import { WinnersByDates } from './winner.types';
 import {
   ControlPosition,
   DivIcon,
@@ -35,6 +35,7 @@ import {
 } from 'react-hook-form';
 import { RegisterCodeErr } from './code.types';
 import { RefObject } from 'react';
+import { Shops } from './shop.types';
 
 export interface IUpdateSearchParamsProps {
   key: string;
@@ -70,7 +71,8 @@ export interface IUsePromotionDetailsPage {
   conditions: Conditions;
   prizes: Prizes;
   faqs: FAQs;
-  winners: Winners;
+  winners: WinnersByDates;
+  shops: Shops;
 }
 
 export type UseTargetPromotion = IPromotion | undefined;

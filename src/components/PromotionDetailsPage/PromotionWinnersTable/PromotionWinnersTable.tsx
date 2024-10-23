@@ -16,21 +16,28 @@ const PromotionWinnersTable: FC<IProps> = ({ winners }) => {
       <Table>
         <Head>
           <Row>
-            <Header>Імя</Header>
+            <Header>Ім`я</Header>
             <Header>Телефон</Header>
             <Header>Акційний код</Header>
             <Header>Подарунок</Header>
           </Row>
         </Head>
         <Body>
-          {winners.map(({ name, phone, code, gift_name: giftName, id }) => (
-            <Row key={id}>
-              <Data>{name}</Data>
-              <Data>{phone}</Data>
-              <Data>{code}</Data>
-              <Data>{giftName}</Data>
-            </Row>
-          ))}
+          {winners.map(
+            ({
+              client_name: clientName,
+              client_phone: clientPhone,
+              code,
+              gift_name: giftName,
+            }) => (
+              <Row key={code}>
+                <Data>{clientName}</Data>
+                <Data>{clientPhone}</Data>
+                <Data>{code}</Data>
+                <Data>{giftName}</Data>
+              </Row>
+            )
+          )}
         </Body>
       </Table>
     </TableWrap>

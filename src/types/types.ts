@@ -53,14 +53,6 @@ export type PromotionPrizeDraws = IPromotionPrizeDraws[];
 
 export type ActiveMarkerId = number | null;
 
-export interface IShop {
-  id: number;
-  position: [number, number];
-  popupText: string;
-}
-
-export type Shops = IShop[];
-
 export interface IChangeFocusToNextRegCodeInputProps {
   currentInput: HTMLInputElement;
   isFullValue: boolean;
@@ -72,5 +64,5 @@ export interface IGetRegCodeInputProps {
 }
 
 export interface ICsrfToken {
-  [key:string]: string;
+  [key: string]: string;
 }

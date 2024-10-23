@@ -4,13 +4,14 @@ import PromotionContactsBanner from '@PromotionDetailsPageComponents/PromotionCo
 import PromotionContactsMap from '@PromotionDetailsPageComponents/PromotionContactsMap';
 import { Container, ContentWrap } from './PromotionContacts.styled';
 import { PromotionDetailsPageSections } from '@/constants';
+import { IProps } from './PromotionContacts.types';
 
-const PromotionContacts: FC = () => {
+const PromotionContacts: FC<IProps> = ({ shops }) => {
   return (
     <Container id={PromotionDetailsPageSections.contacts}>
       <PromotionSectionTitle title='Контакти' />
       <ContentWrap>
-        <PromotionContactsMap />
+        <PromotionContactsMap shops={shops} />
         <PromotionContactsBanner />
       </ContentWrap>
     </Container>

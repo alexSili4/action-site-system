@@ -6,13 +6,15 @@ import { Conditions } from '@/types/condition.types';
 import { Prizes } from '@/types/prize.types';
 import { FAQs } from '@/types/faqs.types';
 import { IUsePromotionDetailsPage } from '@/types/hooks.types';
-import { Winners } from '@/types/winner.types';
+import { WinnersByDates } from '@/types/winner.types';
+import { Shops } from '@/types/shop.types';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
   const [prizes, setPrizes] = useState<Prizes>([]);
   const [faqs, setFaqs] = useState<FAQs>([]);
-  const [winners, setWinners] = useState<Winners>([]);
+  const [winners, setWinners] = useState<WinnersByDates>([]);
+  const [shops, setShops] = useState<Shops>([]);
 
   const promotionId = useParams()[PagePaths.dynamicParam] ?? '';
 
@@ -70,7 +72,20 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     getPromotionWinners(promotionId);
   }, [promotionId]);
 
-  return { conditions, prizes, faqs, winners };
+  useEffect(() => {
+    const getPromotionShops = async (promotionId: string): Promise<void> => {
+      try {
+        const response = await promotionsService.getShops(promotionId);
+        setShops(response);
+      } catch (error) {
+        // TODO error handler
+      }
+    };
+
+    getPromotionShops(promotionId);
+  }, [promotionId]);
+
+  return { conditions, prizes, faqs, winners, shops };
 };
 
 export default usePromotionDetailsPage;
