@@ -20,13 +20,13 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     coverage_type: coverageType,
     hot_line_text: hotLineText,
     hot_line_work_hours: hotLineWorkHours,
+    logo_partner: logoPartner,
   } = targetPromotion ?? {};
 
   return {
     rulesPdf,
     hotLinePhone,
     hotLineEmail,
-    logo: logo ?? '',
     coverageType,
     dateFrom,
     dateTo,
@@ -37,6 +37,8 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     actionType,
     name,
     hotLineText,
+    logoPartner: logoPartner ?? '',
+    logo: logo ?? '',
     hotLineWorkHours: hotLineWorkHours ?? '',
   };
 };

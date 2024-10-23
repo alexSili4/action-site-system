@@ -37,6 +37,7 @@ export interface IPromotion {
   coverage_type: CoverageType;
   action_type: ActionType;
   rules_pdf: string;
+  logo_partner: string;
 }
 
 export type Promotions = IPromotion[];
