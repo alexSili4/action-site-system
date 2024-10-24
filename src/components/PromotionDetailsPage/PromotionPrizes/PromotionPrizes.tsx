@@ -32,13 +32,13 @@ const PromotionPrizes: FC<IProps> = ({
   return (
     <Container id={id}>
       <PromotionSectionTitle title={title} />
-      {/* {showBigPrizesList && (
+      {showBigPrizesList && (
         <PromotionPrizesBanner
           prizes={bigPrizes}
           description={description}
           logo={logo}
         />
-      )} */}
+      )}
       {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
       {showRegCodeLink && (
         <RegisterCodeLink to={registerCodeLink}>

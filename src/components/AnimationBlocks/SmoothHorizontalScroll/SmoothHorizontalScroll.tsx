@@ -1,25 +1,35 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useLayoutEffect, useRef } from 'react';
 import { Container, ContentWrap } from './SmoothHorizontalScroll.styled';
 import { IProps } from './SmoothHorizontalScroll.types';
-import { DivRef } from '@/types/types';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SmoothHorizontalScroll: FC<IProps> = ({ children }) => {
-  const [horizontalTranslate, setHorizontalTranslate] = useState<number>(0);
-  const container = useRef<DivRef>(null);
-  const content = useRef<DivRef>(null);
+  const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const contentWidth = content.current?.scrollWidth;
-    const containerWidth = container.current?.clientWidth;
+  useLayoutEffect(() => {
+    const element = sectionRef.current;
 
-    if (contentWidth && containerWidth) {
-      setHorizontalTranslate(contentWidth - containerWidth);
-    }
+    gsap.fromTo(
+      element,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: 'top center',
+          end: 'bottom',
+          scrub: true,
+        },
+      }
+    );
   }, []);
 
   return (
-    <Container ref={container}>
-      <ContentWrap ref={content}>{children}</ContentWrap>
+    <Container>
+      <ContentWrap ref={sectionRef}>{children}</ContentWrap>
     </Container>
   );
 };

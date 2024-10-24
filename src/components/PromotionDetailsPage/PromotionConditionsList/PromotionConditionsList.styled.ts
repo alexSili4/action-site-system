@@ -1,15 +1,8 @@
 import styled from '@emotion/styled';
-import { IStyledRulesCard } from './PromotionConditionsList.types';
-
-export const Container = styled.div`
-  margin-top: ${({ theme }) => theme.spacing(8)};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    margin-top: ${({ theme }) => theme.spacing(14)};
-  }
-`;
+import { IStyledProps } from './PromotionConditionsList.types';
 
 export const List = styled.ul`
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   gap: ${({ theme }) => theme.spacing(4)};
@@ -24,7 +17,7 @@ export const ListItem = styled.li`
     }
   }
 
-  &:first-of-type > div {
+  /* &:first-of-type > div {
     margin-left: ${({ theme }) => theme.spacing(4)};
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -38,7 +31,7 @@ export const ListItem = styled.li`
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
       margin-right: ${({ theme }) => theme.spacing(8)};
     }
-  }
+  } */
 `;
 
 export const Card = styled.div`
@@ -105,7 +98,7 @@ export const StepLabel = styled.p`
   line-height: 1.43;
 `;
 
-export const RulesCard = styled.div<IStyledRulesCard>`
+export const RulesCard = styled.div<IStyledProps>`
   display: flex;
   align-items: center;
   justify-content: center;

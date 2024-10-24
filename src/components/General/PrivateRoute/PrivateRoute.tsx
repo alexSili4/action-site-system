@@ -12,7 +12,11 @@ const PrivateRoute: FC<IProps> = ({ element }) => {
   const shouldRedirect = !isLoggedIn && !isRefreshing;
   const redirectUrl = `${generalSettings.authLink}&redirectUrl=${pathname}`;
 
-  return shouldRedirect ? (window.location.href = redirectUrl) : element;
+  if (shouldRedirect) {
+    window.location.href = redirectUrl;
+  }
+
+  return shouldRedirect ? null : element;
 };
 
 export default PrivateRoute;
