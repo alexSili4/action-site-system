@@ -121,7 +121,6 @@ const theme: ITheme = {
   zIndex: {
     prizeWheelImg: 10,
     prizeStatus: 10,
-    animatedModalWin: 10,
     promotionSliderControls: 10,
     promotionSliderPagination: 10,
     promotionMapHeader: 1000,
@@ -133,6 +132,7 @@ const theme: ITheme = {
     selectStatisticsSortTypeDropdown: 10000,
     promotionsDatePicker: 10000,
     promotionPrizeDrawsDatePicker: 10000,
+    animatedModalWin: 100000,
   },
   transitionDurationAndFunc: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,
