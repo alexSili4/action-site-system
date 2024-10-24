@@ -1,17 +1,18 @@
 import { FC } from 'react';
-import PromotionConditionsSlider from '@PromotionDetailsPageComponents/PromotionConditionsSlider';
+import PromotionConditionsList from '@PromotionDetailsPageComponents/PromotionConditionsList';
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import { Container } from './PromotionConditions.styled';
 import { PromotionDetailsPageSections } from '@/constants';
 import { IProps } from './PromotionConditions.types';
+import SmoothHorizontalScroll from '@AnimationBlocks/SmoothHorizontalScroll';
 
 const PromotionConditions: FC<IProps> = ({ conditions }) => {
-  const showSlider = Boolean(conditions.length);
-
   return (
     <Container id={PromotionDetailsPageSections.conditions}>
       <PromotionSectionTitle title='Умови участі' />
-      {showSlider && <PromotionConditionsSlider conditions={conditions} />}
+      <SmoothHorizontalScroll>
+        <PromotionConditionsList conditions={conditions} />
+      </SmoothHorizontalScroll>
     </Container>
   );
 };

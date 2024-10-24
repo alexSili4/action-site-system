@@ -25,7 +25,8 @@ const PromotionDetails: FC<IProps> = ({
   faqs,
   prizes,
   conditions,
-  winners,shops
+  winners,
+  shops,
 }) => {
   const {
     dateFrom,
@@ -74,13 +75,7 @@ const PromotionDetails: FC<IProps> = ({
           showWheelLogo={showWheelLogo}
         />
       </PromotionDetailsSectionContainer>
-      <PromotionDetailsSectionContainer
-        marginTopMobile={49}
-        marginTopDesk={80}
-        isConditionsSection
-      >
-        <PromotionConditions conditions={conditions} />
-      </PromotionDetailsSectionContainer>
+      <PromotionConditions conditions={conditions} />
       <PromotionDetailsSectionContainer
         marginTopMobile={97}
         marginTopDesk={80}

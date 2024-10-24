@@ -1,19 +1,43 @@
-import { ClassNames } from '@/constants';
 import styled from '@emotion/styled';
-import {
-  IStyledRulesCard,
-  IStyledSliderProps,
-} from './PromotionConditionsSlider.types';
+import { IStyledRulesCard } from './PromotionConditionsList.types';
 
-export const Container = styled.div<IStyledSliderProps>`
+export const Container = styled.div`
   margin-top: ${({ theme }) => theme.spacing(8)};
-
-  & .${ClassNames.swiperSlide} {
-    height: ${({ slideHeight }) => slideHeight && slideHeight}px;
-  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     margin-top: ${({ theme }) => theme.spacing(14)};
+  }
+`;
+
+export const List = styled.ul`
+  display: flex;
+  flex-wrap: nowrap;
+  gap: ${({ theme }) => theme.spacing(4)};
+`;
+
+export const ListItem = styled.li`
+  & > div {
+    width: 335px;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+      width: 426px;
+    }
+  }
+
+  &:first-of-type > div {
+    margin-left: ${({ theme }) => theme.spacing(4)};
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+      margin-left: ${({ theme }) => theme.spacing(8)};
+    }
+  }
+
+  &:last-of-type > div {
+    margin-right: ${({ theme }) => theme.spacing(4)};
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+      margin-right: ${({ theme }) => theme.spacing(8)};
+    }
   }
 `;
 
@@ -28,11 +52,10 @@ export const Card = styled.div`
 
 export const TitleWrap = styled.div`
   flex-grow: 1;
-  padding: ${({ theme }) =>
-    `${theme.spacing(10)} ${theme.spacing(6)} ${theme.spacing(12)}`};
+  padding: ${({ theme: { spacing } }) => `${spacing(10)} ${spacing(6)}`};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    padding: ${({ theme }) => theme.spacing(10)};
+    padding: ${({ theme: { spacing } }) => `${spacing(10)} ${spacing(8)}`};
   }
 `;
 
@@ -49,8 +72,8 @@ export const Title = styled.p`
 `;
 
 export const Cover = styled.div`
-  position: relative;
   flex-shrink: 0;
+  position: relative;
   height: 198px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 `;

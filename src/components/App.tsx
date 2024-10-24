@@ -47,7 +47,7 @@ const App: FC = () => {
           />
           <Route
             path={`${PagePaths.code}/:${PagePaths.dynamicParam}`}
-            element={<RegisterCodePage />}
+            element={<PrivateRoute element={<RegisterCodePage />} />}
           />
           <Route
             path={PagePaths.serviceUnavailable}

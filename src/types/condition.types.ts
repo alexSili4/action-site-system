@@ -1,5 +1,4 @@
 export interface ICondition {
-  id: number;
   group_alias: string;
   title: string;
   action_id: number;
@@ -8,8 +7,7 @@ export interface ICondition {
   gift_num: string;
   text: string;
   status: number;
-  // TODO img_source_json: string|null;
-  img_source_json: string;
+  img_source_json: string | null;
 }
 
 export type Conditions = ICondition[];

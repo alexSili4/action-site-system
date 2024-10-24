@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './PromotionConditionsSliderAnimation.types';
+import { IStyledProps } from './PromotionConditionsListAnimation.types';
 
 export const Container = styled.div<IStyledProps>`
   position: relative;

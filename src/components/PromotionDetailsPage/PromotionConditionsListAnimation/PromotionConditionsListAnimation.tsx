@@ -1,10 +1,10 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { IProps } from './PromotionConditionsSliderAnimation.types';
+import { IProps } from './PromotionConditionsListAnimation.types';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
-import { Container } from './PromotionConditionsSliderAnimation.styled';
+import { Container } from './PromotionConditionsListAnimation.styled';
 import { DivRef } from '@/types/types';
 
-const PromotionConditionsSliderAnimation: FC<IProps> = ({ animationData }) => {
+const PromotionConditionsListAnimation: FC<IProps> = ({ animationData }) => {
   const [scale, setScale] = useState<number>(0);
   const lottieRef = useRef<LottieRefCurrentProps | null>(null);
   const containerRef = useRef<DivRef>(null);
@@ -53,4 +53,4 @@ const PromotionConditionsSliderAnimation: FC<IProps> = ({ animationData }) => {
   );
 };
 
-export default PromotionConditionsSliderAnimation;
+export default PromotionConditionsListAnimation;
