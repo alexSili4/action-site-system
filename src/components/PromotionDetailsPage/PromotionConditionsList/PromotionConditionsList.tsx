@@ -20,12 +20,12 @@ import {
 import { IProps } from './PromotionConditionsList.types';
 import PromotionConditionsListAnimation from '@PromotionDetailsPageComponents/PromotionConditionsListAnimation';
 
-const PromotionConditionsList: FC<IProps> = ({ conditions }) => {
+const PromotionConditionsList: FC<IProps> = (({ conditions, listRef }) => {
   const { rulesPdf } = useTargetPromotionData();
   const rulesPdfUrl = getFileUrl(rulesPdf);
 
   return (
-    <List>
+    <List ref={listRef}>
       {conditions.map(
         ({ title, gift_num: giftNum, img_source_json: imgSourceJson }, idx) => {
           const animationData = imgSourceJson && JSON.parse(imgSourceJson);
@@ -129,6 +129,6 @@ const PromotionConditionsList: FC<IProps> = ({ conditions }) => {
       </ListItem> */}
     </List>
   );
-};
+});
 
 export default PromotionConditionsList;

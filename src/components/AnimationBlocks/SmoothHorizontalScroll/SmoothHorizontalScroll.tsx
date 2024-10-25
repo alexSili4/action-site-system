@@ -1,37 +1,46 @@
-import { FC, useLayoutEffect, useRef } from 'react';
-import { Container, ContentWrap } from './SmoothHorizontalScroll.styled';
+import { FC, useEffect, useRef } from 'react';
 import { IProps } from './SmoothHorizontalScroll.types';
-import { gsap } from 'gsap';
+import { Container, ContentWrap } from './SmoothHorizontalScroll.styled';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DivRef } from '@/types/types';
+import { useMediaQuery } from '@/hooks';
+import { theme } from '@/constants';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SmoothHorizontalScroll: FC<IProps> = ({ children }) => {
-  const contentRef = useRef<DivRef>(null);
+const SmoothHorizontalScroll: FC<IProps> = ({
+  children,
+  deskContentWidth,
+  mobileContentWidth,
+}) => {
+  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const sectionRef = useRef<DivRef>(null);
 
-  useLayoutEffect(() => {
-    const content = contentRef.current;
+  useEffect(() => {
+    const element = sectionRef.current;
 
     gsap.fromTo(
-      content,
-      { translateX: 0 },
+      element,
+      { x: 0 },
       {
-        translateX: '-90%',
+        x: -(isDesktop ? deskContentWidth : mobileContentWidth),
         scrollTrigger: {
-          trigger: content,
-          start: 'top-=50px center',
-          end: 'bottom-=200px',
+          trigger: element,
+          start: 'top center',
+          end: 'bottom',
           scrub: true,
-          markers: true,
+          // pin: true,
+          // pinSpacing: false,
+          toggleActions: 'play none none reverse',
         },
       }
     );
-  }, []);
+  }, [deskContentWidth, isDesktop, mobileContentWidth]);
 
   return (
     <Container>
-      <ContentWrap ref={contentRef}>{children}</ContentWrap>
+      <ContentWrap ref={sectionRef}>{children}</ContentWrap>
     </Container>
   );
 };
