@@ -3,25 +3,27 @@ import { Container, ContentWrap } from './SmoothHorizontalScroll.styled';
 import { IProps } from './SmoothHorizontalScroll.types';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { DivRef } from '@/types/types';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SmoothHorizontalScroll: FC<IProps> = ({ children }) => {
-  const sectionRef = useRef(null);
+  const contentRef = useRef<DivRef>(null);
 
   useLayoutEffect(() => {
-    const element = sectionRef.current;
+    const content = contentRef.current;
 
     gsap.fromTo(
-      element,
-      { opacity: 0 },
+      content,
+      { translateX: 0 },
       {
-        opacity: 1,
+        translateX: '-90%',
         scrollTrigger: {
-          trigger: element,
-          start: 'top center',
-          end: 'bottom',
+          trigger: content,
+          start: 'top-=50px center',
+          end: 'bottom-=200px',
           scrub: true,
+          markers: true,
         },
       }
     );
@@ -29,7 +31,7 @@ const SmoothHorizontalScroll: FC<IProps> = ({ children }) => {
 
   return (
     <Container>
-      <ContentWrap ref={sectionRef}>{children}</ContentWrap>
+      <ContentWrap ref={contentRef}>{children}</ContentWrap>
     </Container>
   );
 };

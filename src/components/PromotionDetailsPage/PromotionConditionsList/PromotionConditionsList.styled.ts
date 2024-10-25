@@ -17,7 +17,7 @@ export const ListItem = styled.li`
     }
   }
 
-  /* &:first-of-type > div {
+  &:first-of-type > div {
     margin-left: ${({ theme }) => theme.spacing(4)};
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -31,7 +31,7 @@ export const ListItem = styled.li`
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
       margin-right: ${({ theme }) => theme.spacing(8)};
     }
-  } */
+  }
 `;
 
 export const Card = styled.div`
