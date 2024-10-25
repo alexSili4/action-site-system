@@ -1,5 +1,3 @@
-export type DateTo = 'disabled' | '';
-
 export interface IWinner {
   client_name: string;
   client_phone: number;
@@ -10,8 +8,7 @@ export interface IWinner {
 export type Winners = IWinner[];
 
 export interface IWinnerByDate {
-  date_from: string;
-  date_to: DateTo;
+  date: string;
   winners: Winners;
 }
 

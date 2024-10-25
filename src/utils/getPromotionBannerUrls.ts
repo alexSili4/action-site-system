@@ -9,8 +9,8 @@ const getPromotionBannerUrls = ({
 }: IGetPromotionBannerUrlsProps): IGetPromotionBannerUrls => {
   const baseUrl = import.meta.env.VITE_APP_SERVER_URL;
 
-  const bannerDtPath = `${baseUrl}/images/${bannerDt}`;
-  const bannerMobPath = `${baseUrl}/images/${bannerMob}`;
+  const bannerDtPath = `${baseUrl}/img/${bannerDt}`;
+  const bannerMobPath = `${baseUrl}/img/${bannerMob}`;
 
   const bannerDtUrl = bannerDt ? bannerDtPath : '';
   const bannerMobUrl = bannerMob ? bannerMobPath : '';

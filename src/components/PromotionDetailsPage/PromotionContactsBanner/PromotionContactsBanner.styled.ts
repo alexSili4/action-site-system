@@ -1,12 +1,17 @@
 import styled from '@emotion/styled';
+import { IStyledProps } from './PromotionContactsBanner.types';
 
-export const Container = styled.div`
+export const Container = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) => `${theme.spacing(10)} ${theme.spacing(5)}`};
+  background-image: url(${({ secondBannerMob }) => secondBannerMob});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     height: 480px;
@@ -14,6 +19,7 @@ export const Container = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 445px;
+    background-image: url(${({ secondBannerDt }) => secondBannerDt});
   }
 `;
 

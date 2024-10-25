@@ -15,14 +15,24 @@ import {
 } from './PromotionContactsBanner.styled';
 import { theme } from '@/constants';
 import { useTargetPromotionData } from '@/hooks';
-import { getFileUrl } from '@/utils';
+import { getFileUrl, getPromotionBannerUrls } from '@/utils';
 
 const PromotionContactsBanner: FC = () => {
-  const { hotLinePhone, hotLineEmail, logoPartner } = useTargetPromotionData();
+  const {
+    hotLinePhone,
+    hotLineEmail,
+    logoPartner,
+    secondBannerDt,
+    secondBannerMob,
+  } = useTargetPromotionData();
   const logoPartnerUrl = getFileUrl(logoPartner);
+  const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
+    bannerDt: secondBannerDt,
+    bannerMob: secondBannerMob,
+  });
 
   return (
-    <Container>
+    <Container secondBannerDt={bannerDtUrl} secondBannerMob={bannerMobUrl}>
       <TitleWrap>
         <Title>Організатор акції</Title>
         <TitleImg src={logoPartnerUrl} alt='Логотип організатора акції' />
