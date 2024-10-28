@@ -1,42 +1,34 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC,  useLayoutEffect, useRef } from 'react';
 import { IProps } from './SmoothHorizontalScroll.types';
 import { Container, ContentWrap } from './SmoothHorizontalScroll.styled';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DivRef } from '@/types/types';
-import { useMediaQuery } from '@/hooks';
-import { theme } from '@/constants';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const SmoothHorizontalScroll: FC<IProps> = ({
-  children,
-  deskContentWidth,
-  mobileContentWidth,
-}) => {
-  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+const SmoothHorizontalScroll: FC<IProps> = ({ children, contentWidth }) => {
   const sectionRef = useRef<DivRef>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const element = sectionRef.current;
 
     gsap.fromTo(
       element,
       { x: 0 },
       {
-        x: -(isDesktop ? deskContentWidth : mobileContentWidth),
+        x: -contentWidth,
         scrollTrigger: {
           trigger: element,
           start: 'top center',
-          end: 'bottom',
+          end: 'top',
           scrub: true,
           // pin: true,
           // pinSpacing: false,
-          toggleActions: 'play none none reverse',
         },
       }
     );
-  }, [deskContentWidth, isDesktop, mobileContentWidth]);
+  }, [contentWidth]);
 
   return (
     <Container>

@@ -6,13 +6,13 @@ import SmoothHorizontalScroll from '@AnimationBlocks/SmoothHorizontalScroll';
 
 const PromotionConditionsListContainer: FC<IProps> = ({ conditions }) => {
   const listRef = useRef<HTMLUListElement>(null);
-  const mobileContentWidth = listRef?.current
-    ? listRef?.current?.scrollWidth
-    : 0;
+  const listContentWidth = listRef?.current ? listRef?.current?.scrollWidth : 0;
+  const width = listRef?.current ? listRef?.current?.clientWidth : 0;
+  const contentWidth = listContentWidth - width;
 
   return (
     <Container>
-      <SmoothHorizontalScroll mobileContentWidth={mobileContentWidth}>
+      <SmoothHorizontalScroll contentWidth={contentWidth}>
         <PromotionConditionsList conditions={conditions} listRef={listRef} />
       </SmoothHorizontalScroll>
     </Container>
