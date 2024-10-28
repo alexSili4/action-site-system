@@ -31,10 +31,30 @@ class PromotionsService extends HttpService {
     return response.data;
   }
 
-  async getPrizes(actionId: string): Promise<Prizes> {
+  async getGeneralPrizes(actionId: string): Promise<Prizes> {
     const response = await this.get<Prizes>(
       {
-        url: `promotions/gifts?action_id=${actionId}`,
+        url: `promotions/gifts?action_id=${actionId}&gift_type=general`,
+      },
+      false
+    );
+    return response.data;
+  }
+
+  async getWheelPrizes(actionId: string): Promise<Prizes> {
+    const response = await this.get<Prizes>(
+      {
+        url: `promotions/gifts?action_id=${actionId}&gift_type=wheel`,
+      },
+      false
+    );
+    return response.data;
+  }
+
+  async getPresentPrizes(actionId: string): Promise<Prizes> {
+    const response = await this.get<Prizes>(
+      {
+        url: `promotions/gifts?action_id=${actionId}&gift_type=present`,
       },
       false
     );

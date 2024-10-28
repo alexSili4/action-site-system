@@ -69,7 +69,8 @@ export interface IUsePromotionsList {
 
 export interface IUsePromotionDetailsPage {
   conditions: Conditions;
-  prizes: Prizes;
+  otherPrizes: Prizes;
+  wheelPrizes: Prizes;
   faqs: FAQs;
   winners: WinnersByDates;
   shops: Shops;

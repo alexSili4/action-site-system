@@ -9,9 +9,9 @@ export const Container = styled.div`
 
 export const Title = styled.p`
   color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
+  font-family: ${({ theme }) => theme.fontFamily.montserrat};
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: -2.31px;
   text-align: center;

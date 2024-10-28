@@ -6,7 +6,8 @@ import { WinnersByDates } from '@/types/winner.types';
 
 export interface IProps {
   faqs: FAQs;
-  prizes: Prizes;
+  otherPrizes: Prizes;
+  wheelPrizes: Prizes;
   conditions: Conditions;
   winners: WinnersByDates;
   shops: Shops;

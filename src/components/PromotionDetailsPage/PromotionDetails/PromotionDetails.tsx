@@ -23,7 +23,8 @@ import PromotionContacts from '@PromotionDetailsPageComponents/PromotionContacts
 
 const PromotionDetails: FC<IProps> = ({
   faqs,
-  prizes,
+  otherPrizes,
+  wheelPrizes,
   conditions,
   winners,
   shops,
@@ -78,7 +79,7 @@ const PromotionDetails: FC<IProps> = ({
       <PromotionConditions conditions={conditions} />
       <PromotionPrizes
         logo={<PromotionPrizesBannerIcon src={logoUrl} />}
-        prizes={prizes}
+        prizes={otherPrizes}
         title='Призи головного розіграшу'
         description='Унікальний приз від головного партнера'
         showRegCodeLink={false}
@@ -86,7 +87,7 @@ const PromotionDetails: FC<IProps> = ({
       />
       <PromotionPrizes
         logo={<PrizesWheelLogo />}
-        prizes={prizes}
+        prizes={wheelPrizes}
         title='Призи «Колеса подарунків»'
         description='Крутіть колесо та вигравайте подарунки'
       />

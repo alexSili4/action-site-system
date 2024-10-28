@@ -11,7 +11,8 @@ import { Shops } from '@/types/shop.types';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
-  const [prizes, setPrizes] = useState<Prizes>([]);
+  const [otherPrizes, setOtherPrizes] = useState<Prizes>([]);
+  const [wheelPrizes, setWheelPrizes] = useState<Prizes>([]);
   const [faqs, setFaqs] = useState<FAQs>([]);
   const [winners, setWinners] = useState<WinnersByDates>([]);
   const [shops, setShops] = useState<Shops>([]);
@@ -34,16 +35,36 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   }, [promotionId]);
 
   useEffect(() => {
-    const getPromotionPrizes = async (promotionId: string): Promise<void> => {
+    const getPromotionWheelPrizes = async (
+      promotionId: string
+    ): Promise<void> => {
       try {
-        const response = await promotionsService.getPrizes(promotionId);
-        setPrizes(response);
+        const response = await promotionsService.getWheelPrizes(promotionId);
+        setWheelPrizes(response);
       } catch (error) {
         // TODO error handler
       }
     };
 
-    getPromotionPrizes(promotionId);
+    getPromotionWheelPrizes(promotionId);
+  }, [promotionId]);
+
+  useEffect(() => {
+    const getPromotionOtherPrizes = async (
+      promotionId: string
+    ): Promise<void> => {
+      try {
+        const generalPrizes = promotionsService.getGeneralPrizes(promotionId);
+        const presentPrizes = promotionsService.getPresentPrizes(promotionId);
+        const response = await Promise.all([generalPrizes, presentPrizes]);
+        const data = response.flat();
+        setOtherPrizes(data);
+      } catch (error) {
+        // TODO error handler
+      }
+    };
+
+    getPromotionOtherPrizes(promotionId);
   }, [promotionId]);
 
   useEffect(() => {
@@ -85,7 +106,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     getPromotionShops(promotionId);
   }, [promotionId]);
 
-  return { conditions, prizes, faqs, winners, shops };
+  return { conditions, otherPrizes, wheelPrizes, faqs, winners, shops };
 };
 
 export default usePromotionDetailsPage;

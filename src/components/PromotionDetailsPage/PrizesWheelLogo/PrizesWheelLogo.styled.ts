@@ -19,6 +19,12 @@ export const Container = styled.div`
     height: 25px;
     fill: ${({ theme }) => theme.colors.white};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    & {
+      align-self: center;
+    }
+  }
 `;
 
 export const Text = styled.p`

@@ -13,6 +13,7 @@ import {
   geologicaMedium,
   myriadProRegular,
   montserratBold,
+  montserratBlack,
 } from '@/fonts';
 
 const GlobalStyles: FC = () => (
@@ -72,6 +73,13 @@ const GlobalStyles: FC = () => (
         src: local(${theme.fontFamily.oswald}),
           url(${oswaldMedium}) format('truetype');
         font-weight: 700;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.montserrat};
+        src: local(${theme.fontFamily.montserrat}),
+          url(${montserratBlack}) format('truetype');
+        font-weight: 900;
       }
 
       @font-face {

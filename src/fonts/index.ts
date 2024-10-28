@@ -7,4 +7,5 @@ export { default as oswaldMedium } from './oswald/Oswald-Medium.ttf';
 export { default as geologicaExtraBold } from './geologica/Geologica-ExtraBold.ttf';
 export { default as geologicaMedium } from './geologica/Geologica-Medium.ttf';
 export { default as montserratBold } from './montserrat/Montserrat-Bold.ttf';
+export { default as montserratBlack } from './montserrat/Montserrat-Black.ttf';
 export { default as myriadProRegular } from './myriadPro/MYRIADPRO-REGULAR.otf';
