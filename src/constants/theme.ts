@@ -38,6 +38,7 @@ interface ITheme {
     promotionContactsMapListClose: number;
     userInfoBtn: number;
     statisticsSortBtn: number;
+    cabinetSectionLink: number;
   };
   containerWidth: {
     desktop: number;
@@ -108,6 +109,7 @@ const theme: ITheme = {
     promotionContactsMapListClose: 12,
     userInfoBtn: 12,
     statisticsSortBtn: 20,
+    cabinetSectionLink: 8,
   },
   containerWidth: {
     desktop: 1376,

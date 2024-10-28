@@ -1,0 +1,19 @@
+import { ActionType } from './promotion.types';
+
+export interface IUserCode {
+  code: string;
+  code_status: 0 | 1;
+  code_created_at: number;
+  action_id: number;
+  action_name: string;
+  action_type: ActionType;
+  action_date_from: number;
+  action_date_to: number;
+  present_gift_id: number;
+  present_gift_name: string;
+  wheel_is_used: string;
+  wheel_certificate_code: null;
+  wheel_gift_name: null;
+}
+
+export type UserCodes = IUserCode[];
