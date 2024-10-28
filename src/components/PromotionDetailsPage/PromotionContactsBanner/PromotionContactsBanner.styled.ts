@@ -26,15 +26,19 @@ export const Container = styled.div<IStyledProps>`
 export const TitleWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: ${({ theme }) => theme.spacing(3)};
 `;
 
 export const Title = styled.p`
+  flex-shrink: 0;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 18px;
   font-weight: 400;
   line-height: 1.4;
 `;
+
+export const TitleImgWrap = styled.div``;
 
 export const TitleImg = styled.img``;
 

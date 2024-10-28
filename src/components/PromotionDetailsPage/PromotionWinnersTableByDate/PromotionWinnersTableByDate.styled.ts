@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './PromotionWinnersTableByDate.types';
+import {
+  IStyledOpenContentBtnTitleProps,
+  IStyledProps,
+} from './PromotionWinnersTableByDate.types';
 
 export const Container = styled.div``;
 
@@ -47,8 +50,8 @@ export const OpenContentBtn = styled.button`
   }
 `;
 
-export const OpenContentBtnTitle = styled.span`
-  color: #383e45;
+export const OpenContentBtnTitle = styled.span<IStyledOpenContentBtnTitleProps>`
+  color: ${({ disabled }) => (disabled ? '#7E8494' : '#383e45')};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 18px;
   font-weight: 500;

@@ -1,5 +1,9 @@
 import { FC } from 'react';
-import { Container, RegisterCodeLink } from './PromotionPrizes.styled';
+import {
+  Container,
+  RegisterCodeLink,
+  ContentWrap,
+} from './PromotionPrizes.styled';
 import { IProps } from './PromotionPrizes.types';
 import { PagePaths, SearchParamsKeys } from '@/constants';
 import PromotionPrizesBanner from '@PromotionDetailsPageComponents/PromotionPrizesBanner';
@@ -32,19 +36,21 @@ const PromotionPrizes: FC<IProps> = ({
   return (
     <Container id={id}>
       <PromotionSectionTitle title={title} />
-      {showBigPrizesList && (
-        <PromotionPrizesBanner
-          prizes={bigPrizes}
-          description={description}
-          logo={logo}
-        />
-      )}
-      {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
-      {showRegCodeLink && (
-        <RegisterCodeLink to={registerCodeLink}>
-          Зареєструвати код
-        </RegisterCodeLink>
-      )}
+      <ContentWrap>
+        {showBigPrizesList && (
+          <PromotionPrizesBanner
+            prizes={bigPrizes}
+            description={description}
+            logo={logo}
+          />
+        )}
+        {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
+        {showRegCodeLink && (
+          <RegisterCodeLink to={registerCodeLink}>
+            Зареєструвати код
+          </RegisterCodeLink>
+        )}
+      </ContentWrap>
     </Container>
   );
 };

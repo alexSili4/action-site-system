@@ -27,10 +27,15 @@ export const QuestionBtnTitle = styled.span`
 `;
 
 export const AnswerWrap = styled.div<IStyledProps>`
+  width: 259px;
   max-height: ${({ showAnswer, scrollHeight }) =>
     showAnswer ? `${scrollHeight}px` : '0px'};
   overflow-y: hidden;
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 816px;
+  }
 `;
 
 export const Answer = styled.div`

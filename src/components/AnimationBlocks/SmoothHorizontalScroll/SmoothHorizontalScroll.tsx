@@ -1,4 +1,4 @@
-import { FC,  useLayoutEffect, useRef } from 'react';
+import { FC, useLayoutEffect, useRef } from 'react';
 import { IProps } from './SmoothHorizontalScroll.types';
 import { Container, ContentWrap } from './SmoothHorizontalScroll.styled';
 import gsap from 'gsap';

@@ -10,7 +10,6 @@ export const Container = styled.div<IStyledProps>`
   flex-direction: column;
   align-items: flex-start;
   gap: ${({ theme }) => theme.spacing(5)};
-  margin-top: ${({ theme }) => theme.spacing(8)};
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) =>

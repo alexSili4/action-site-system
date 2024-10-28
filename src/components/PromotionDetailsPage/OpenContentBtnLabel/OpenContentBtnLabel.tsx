@@ -4,9 +4,9 @@ import { theme } from '@/constants';
 import { Container } from './OpenContentBtnLabel.styled';
 import { IProps } from './OpenContentBtnLabel.types';
 
-const OpenContentBtnLabel: FC<IProps> = ({ showContent }) => {
+const OpenContentBtnLabel: FC<IProps> = ({ showContent, disabled = false }) => {
   return (
-    <Container showContent={showContent}>
+    <Container showContent={showContent} disabled={disabled}>
       <FaChevronDown size={theme.iconSizes.faqBtn} />
     </Container>
   );

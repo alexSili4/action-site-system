@@ -24,6 +24,7 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
   },
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const isManyImages = images.length > 1;
 
   const onSlideChange = (swiper: ISwiper) => {
     setActiveIndex(swiper.activeIndex);
@@ -56,10 +57,12 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
           <Title>{name}</Title>
         </TitleWrap>
         <PromotionPrizeImgSliderControls />
-        <PromotionPrizeImgSliderPagination
-          images={images}
-          activeIndex={activeIndex}
-        />
+        {isManyImages && (
+          <PromotionPrizeImgSliderPagination
+            images={images}
+            activeIndex={activeIndex}
+          />
+        )}
       </Swiper>
     </Container>
   );

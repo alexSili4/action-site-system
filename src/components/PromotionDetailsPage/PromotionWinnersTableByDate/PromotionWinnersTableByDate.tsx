@@ -24,6 +24,7 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
   const [showWinners, setShowWinners] = useState<boolean>(false);
   const winnersRef = useRef<DivRef>(null);
   const scrollHeight = winnersRef.current?.scrollHeight ?? 0;
+  const isEmptyWinnersList = !winners.length;
 
   const toggleSetShowWinners = () => {
     setShowWinners((prevState) => !prevState);
@@ -43,9 +44,18 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
 
   return (
     <Container>
-      <OpenContentBtn type='button' onClick={onDateBtnClick}>
-        <OpenContentBtnTitle>{date}</OpenContentBtnTitle>
-        <OpenContentBtnLabel showContent={showWinners} />
+      <OpenContentBtn
+        type='button'
+        onClick={onDateBtnClick}
+        disabled={isEmptyWinnersList}
+      >
+        <OpenContentBtnTitle disabled={isEmptyWinnersList}>
+          {date}
+        </OpenContentBtnTitle>
+        <OpenContentBtnLabel
+          showContent={showWinners}
+          disabled={isEmptyWinnersList}
+        />
       </OpenContentBtn>
       <PromotionWinnersWrap
         scrollHeight={scrollHeight}

@@ -8,3 +8,7 @@ export interface IStyledProps {
   showWinners: boolean;
   scrollHeight: number;
 }
+
+export interface IStyledOpenContentBtnTitleProps {
+  disabled: boolean;
+}

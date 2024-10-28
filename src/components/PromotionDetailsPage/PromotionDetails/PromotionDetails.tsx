@@ -76,29 +76,23 @@ const PromotionDetails: FC<IProps> = ({
         />
       </PromotionDetailsSectionContainer>
       <PromotionConditions conditions={conditions} />
-      <PromotionDetailsSectionContainer
-        marginTopMobile={97}
-        marginTopDesk={80}
-        isPrizesSection
-      >
-        <PromotionPrizes
-          logo={<PromotionPrizesBannerIcon src={logoUrl} />}
-          prizes={prizes}
-          title='Призи головного розіграшу'
-          description='Унікальний приз від головного партнера'
-          showRegCodeLink={false}
-          id={PromotionDetailsPageSections.prizes}
-        />
-        <PromotionPrizes
-          logo={<PrizesWheelLogo />}
-          prizes={prizes}
-          title='Призи «Колеса подарунків»'
-          description='Крутіть колесо та вигравайте подарунки'
-        />
-        <PromotionFAQs faqs={faqs} />
-        <PromotionWinners winners={winners} />
-        <PromotionContacts shops={shops} />
-      </PromotionDetailsSectionContainer>
+      <PromotionPrizes
+        logo={<PromotionPrizesBannerIcon src={logoUrl} />}
+        prizes={prizes}
+        title='Призи головного розіграшу'
+        description='Унікальний приз від головного партнера'
+        showRegCodeLink={false}
+        id={PromotionDetailsPageSections.prizes}
+      />
+      <PromotionPrizes
+        logo={<PrizesWheelLogo />}
+        prizes={prizes}
+        title='Призи «Колеса подарунків»'
+        description='Крутіть колесо та вигравайте подарунки'
+      />
+      <PromotionFAQs faqs={faqs} />
+      <PromotionWinners winners={winners} />
+      <PromotionContacts shops={shops} />
     </Container>
   );
 };

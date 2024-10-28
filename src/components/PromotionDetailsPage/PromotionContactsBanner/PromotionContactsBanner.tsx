@@ -12,6 +12,7 @@ import {
   TitleWrap,
   LinkTitle,
   IconWrap,
+  TitleImgWrap,
 } from './PromotionContactsBanner.styled';
 import { theme } from '@/constants';
 import { useTargetPromotionData } from '@/hooks';
@@ -35,7 +36,9 @@ const PromotionContactsBanner: FC = () => {
     <Container secondBannerDt={bannerDtUrl} secondBannerMob={bannerMobUrl}>
       <TitleWrap>
         <Title>Організатор акції</Title>
-        <TitleImg src={logoPartnerUrl} alt='Логотип організатора акції' />
+        <TitleImgWrap>
+          <TitleImg src={logoPartnerUrl} alt='Логотип організатора акції' />
+        </TitleImgWrap>
       </TitleWrap>
       <Links>
         <LinkWrap>
