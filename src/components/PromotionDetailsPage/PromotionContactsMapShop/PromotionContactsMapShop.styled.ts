@@ -30,6 +30,15 @@ export const Name = styled.span`
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
+export const Location = styled.span`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+`;
+
 export const Address = styled.span`
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};

@@ -7,6 +7,7 @@ import {
   TitleWrap,
   WorkSchedule,
   RadioBtn,
+  Location,
 } from './PromotionContactsMapShop.styled';
 
 const PromotionContactsMapShop: FC<IProps> = ({
@@ -16,11 +17,13 @@ const PromotionContactsMapShop: FC<IProps> = ({
   id,
   workSchedule,
   address,
+  location,
 }) => {
   return (
     <Container id={id}>
       <TitleWrap>
         <Name>АТБ-Маркет</Name>
+        <Location>м. {location}</Location>
         <Address>{address}</Address>
         <WorkSchedule>Режим роботи: {workSchedule}</WorkSchedule>
       </TitleWrap>

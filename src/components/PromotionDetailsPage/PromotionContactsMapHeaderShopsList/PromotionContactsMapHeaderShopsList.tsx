@@ -10,22 +10,30 @@ const PromotionContactsMapHeaderShopsList: FC<IProps> = ({
 }) => {
   return (
     <List>
-      {shops.map(({ shop_num: shopNum, work_hours: workHours, street }) => {
-        const checked = shopNum === activeShopNum;
+      {shops.map(
+        ({
+          shop_num: shopNum,
+          work_hours: workHours,
+          street,
+          city: { name: cityName },
+        }) => {
+          const checked = shopNum === activeShopNum;
 
-        return (
-          <ListItem key={shopNum}>
-            <PromotionContactsMapShop
-              checked={checked}
-              value={shopNum}
-              onChange={onInputChange}
-              id={String(shopNum)}
-              workSchedule={workHours}
-              address={street}
-            />
-          </ListItem>
-        );
-      })}
+          return (
+            <ListItem key={shopNum}>
+              <PromotionContactsMapShop
+                checked={checked}
+                value={shopNum}
+                onChange={onInputChange}
+                id={String(shopNum)}
+                workSchedule={workHours}
+                address={street}
+                location={cityName}
+              />
+            </ListItem>
+          );
+        }
+      )}
     </List>
   );
 };

@@ -7,4 +7,5 @@ export interface IProps {
   id: string;
   workSchedule: string;
   address: string;
+  location: string;
 }
