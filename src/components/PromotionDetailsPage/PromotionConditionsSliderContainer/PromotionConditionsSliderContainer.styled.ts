@@ -27,6 +27,10 @@ export const Container = styled.div<IStyledContainerProps>`
       padding-right: ${({ paddingSideDesk }) =>
         paddingSideDesk ? paddingSideDesk : '0px'};
     }
+
+    & > div {
+      height: ${({ slideHeight }) => slideHeight && slideHeight}px;
+    }
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -72,6 +76,11 @@ export const Cover = styled.div`
   background-color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
+export const Image = styled.img`
+  object-fit: cover;
+  height: 100%;
+`;
+
 export const StepLabelWrap = styled.div`
   position: absolute;
   top: -26px;
@@ -103,7 +112,6 @@ export const RulesCard = styled.div<IStyledRulesCardProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   padding: ${({ theme }) => theme.spacing(6)};
   border-radius: 12px;
   background-image: url(${({ bgImgUrl }) => bgImgUrl});

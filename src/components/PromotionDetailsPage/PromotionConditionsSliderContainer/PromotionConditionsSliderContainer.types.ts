@@ -7,7 +7,7 @@ export interface IProps {
 export interface IStyledContainerProps {
   paddingSideMobile: string;
   paddingSideDesk: string;
-  slideHeight: number;
+  slideHeight: number | null;
 }
 
 export interface IStyledRulesCardProps {

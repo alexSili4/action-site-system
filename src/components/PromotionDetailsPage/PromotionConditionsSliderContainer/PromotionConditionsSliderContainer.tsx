@@ -10,6 +10,7 @@ import {
   Cover,
   StepLabelWrap,
   StepLabel,
+  Image,
 } from './PromotionConditionsSliderContainer.styled';
 import { theme } from '@/constants';
 import { IProps } from './PromotionConditionsSliderContainer.types';
@@ -30,10 +31,9 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
 
   useEffect(() => {
     console.log(sliderContainerHeight);
-
-    // if (sliderContainerHeight) {
-    //   setSlideHeight(sliderContainerHeight);
-    // }
+    if (sliderContainerHeight) {
+      setSlideHeight(sliderContainerHeight);
+    }
   }, [sliderContainerHeight]);
 
   return (
@@ -41,18 +41,28 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
       paddingSideMobile={theme.spacing(4)}
       paddingSideDesk={theme.spacing(8)}
       ref={sliderContainerRef}
-      slideHeight={sliderContainerHeight ?? 0}
+      slideHeight={slideHeight}
     >
       <Swiper
-        // slidesPerView={3}
+        slidesPerView={1.075}
         grabCursor={true}
+        breakpoints={{
+          [theme.breakpoints.desktop]: { slidesPerView: 3.077 },
+        }}
       >
         {conditions.map(
           (
-            { title, gift_num: giftNum, img_source_json: imgSourceJson },
+            {
+              title,
+              gift_num: giftNum,
+              img_source_json: imgSourceJson,
+              main_img: mainImg,
+            },
             idx
           ) => {
             const animationData = imgSourceJson && JSON.parse(imgSourceJson);
+            const isAnimation = Boolean(imgSourceJson);
+            const mainImgUrl = getFileUrl(mainImg);
 
             return (
               <SwiperSlide key={idx}>
@@ -61,9 +71,13 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
                     <Title>{title}</Title>
                   </TitleWrap>
                   <Cover>
-                    <PromotionConditionsListAnimation
-                      animationData={animationData}
-                    />
+                    {isAnimation ? (
+                      <PromotionConditionsListAnimation
+                        animationData={animationData}
+                      />
+                    ) : (
+                      <Image src={mainImgUrl} />
+                    )}
                     <StepLabelWrap>
                       <StepLabel>{giftNum}</StepLabel>
                     </StepLabelWrap>
@@ -73,19 +87,21 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
             );
           }
         )}
-        <SwiperSlide>
-          <RulesCard bgImgUrl={rulesCardBg}>
-            <RulesLink
-              href={rulesPdfUrl}
-              download
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <RulesLinkTitle>Правила акції</RulesLinkTitle>
-              <IoDocumentOutline size={theme.iconSizes.rulesLink} />
-            </RulesLink>
-          </RulesCard>
-        </SwiperSlide>
+        {slideHeight && (
+          <SwiperSlide key={rulesPdfUrl}>
+            <RulesCard bgImgUrl={rulesCardBg}>
+              <RulesLink
+                href={rulesPdfUrl}
+                download
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <RulesLinkTitle>Правила акції</RulesLinkTitle>
+                <IoDocumentOutline size={theme.iconSizes.rulesLink} />
+              </RulesLink>
+            </RulesCard>
+          </SwiperSlide>
+        )}
       </Swiper>
     </Container>
   );
