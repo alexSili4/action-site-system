@@ -6,7 +6,7 @@ export const Container = styled.div`
   z-index: ${({ theme }) => theme.zIndex.promotionNavBar};
   left: 50%;
   bottom: 16px;
-  width: ${({ theme }) => theme.containerWidth.mobile}px;
+  width: calc(100% - ${({ theme }) => theme.spacing(4 * 2)});
   border-radius: 16px;
   background-color: #9066cc;
   background-image: linear-gradient(

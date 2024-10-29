@@ -6,6 +6,7 @@ import {
 } from './PromotionConditionsSliderContainer.types';
 
 export const Container = styled.div<IStyledContainerProps>`
+  position: relative;
   margin-top: ${({ theme }) => theme.spacing(8)};
 
   & .${ClassNames.swiperSlide} {
