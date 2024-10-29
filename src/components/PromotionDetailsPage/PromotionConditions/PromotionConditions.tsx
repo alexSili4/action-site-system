@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PromotionConditionsListContainer from '@PromotionDetailsPageComponents/PromotionConditionsListContainer';
+import PromotionConditionsSliderContainer from '@PromotionDetailsPageComponents/PromotionConditionsSliderContainer';
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import { Container } from './PromotionConditions.styled';
 import { PromotionDetailsPageSections } from '@/constants';
@@ -9,7 +9,7 @@ const PromotionConditions: FC<IProps> = ({ conditions }) => {
   return (
     <Container id={PromotionDetailsPageSections.conditions}>
       <PromotionSectionTitle title='Умови участі' />
-      <PromotionConditionsListContainer conditions={conditions} />
+      <PromotionConditionsSliderContainer conditions={conditions} />
     </Container>
   );
 };

@@ -16,7 +16,7 @@ const UserStatisticsContainer: FC = () => {
   const { searchParams, updateSearchParams } = useSetSearchParams();
   const statisticCategory =
     searchParams.get(SearchParamsKeys.category) ??
-    StatisticsCategoriesKeys.prizes;
+    StatisticsCategoriesKeys.codes;
   const sortType =
     searchParams.get(SearchParamsKeys.sort) ?? StatisticsSortTypesKeys.asc;
   const isAscSortType = sortType === StatisticsSortTypesKeys.asc;

@@ -9,7 +9,7 @@ const Promotions: FC = () => {
   const { searchParams, updateSearchParams } = useSetSearchParams();
   const promotionCategory =
     searchParams.get(SearchParamsKeys.category) ??
-    PromotionsCategoriesKeys.previous;
+    PromotionsCategoriesKeys.active;
 
   const categories = Object.values(PromotionsCategoriesKeys);
 

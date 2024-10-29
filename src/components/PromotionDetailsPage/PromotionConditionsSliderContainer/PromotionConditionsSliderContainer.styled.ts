@@ -1,40 +1,41 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './PromotionConditionsList.types';
+import { ClassNames } from '@/constants';
+import {
+  IStyledContainerProps,
+  IStyledRulesCardProps,
+} from './PromotionConditionsSliderContainer.types';
 
-export const List = styled.ul`
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: ${({ theme }) => theme.spacing(4)};
-`;
+export const Container = styled.div<IStyledContainerProps>`
+  margin-top: ${({ theme }) => theme.spacing(8)};
 
-export const ListItem = styled.li`
-  & > div {
-    width: 335px;
+  & .${ClassNames.swiperSlide} {
+    height: ${({ slideHeight }) => slideHeight && slideHeight}px;
+    padding-left: ${({ paddingSideMobile }) =>
+      paddingSideMobile ? paddingSideMobile : '0px'};
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-      width: 426px;
+      padding-left: ${({ paddingSideDesk }) =>
+        paddingSideDesk ? paddingSideDesk : '0px'};
     }
   }
 
-  &:first-of-type > div {
-    margin-left: ${({ theme }) => theme.spacing(4)};
+  & .${ClassNames.swiperSlide}:last-of-type {
+    padding-right: ${({ paddingSideMobile }) =>
+      paddingSideMobile ? paddingSideMobile : '0px'};
 
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-      margin-left: ${({ theme }) => theme.spacing(8)};
+      padding-right: ${({ paddingSideDesk }) =>
+        paddingSideDesk ? paddingSideDesk : '0px'};
     }
   }
 
-  &:last-of-type > div {
-    margin-right: ${({ theme }) => theme.spacing(4)};
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-      margin-right: ${({ theme }) => theme.spacing(8)};
-    }
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    margin-top: ${({ theme }) => theme.spacing(14)};
   }
 `;
 
 export const Card = styled.div`
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -98,7 +99,7 @@ export const StepLabel = styled.p`
   line-height: 1.43;
 `;
 
-export const RulesCard = styled.div<IStyledProps>`
+export const RulesCard = styled.div<IStyledRulesCardProps>`
   display: flex;
   align-items: center;
   justify-content: center;

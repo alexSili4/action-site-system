@@ -6,7 +6,7 @@ export interface IImage {
   image: string;
 }
 
-export type Images = IImage[];
+export type Images = IImage[] | undefined[];
 
 export interface IGift {
   name: string;

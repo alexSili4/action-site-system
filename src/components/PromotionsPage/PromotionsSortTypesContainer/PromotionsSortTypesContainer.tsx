@@ -17,7 +17,7 @@ const PromotionsSortTypesContainer: FC = () => {
   const [showSortTypesList, setShowSortTypesList] = useState<boolean>(false);
   const { searchParams, updateSearchParams } = useSetSearchParams();
   const sortType =
-    searchParams.get(SearchParamsKeys.sort) ?? PromotionsSortTypesKeys.active;
+    searchParams.get(SearchParamsKeys.sort) ?? PromotionsSortTypesKeys.new;
   const sortTypes = Object.values(PromotionsSortTypesKeys);
   const btnTitle = getTranslatedPromotionsSortType(sortType);
 

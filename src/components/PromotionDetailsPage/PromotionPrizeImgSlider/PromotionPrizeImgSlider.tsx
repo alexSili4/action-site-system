@@ -39,7 +39,8 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
         slidesPerView={1}
         grabCursor
       >
-        {images.map(({ image }, index) => {
+        {images.map((item, index) => {
+          const { image = '' } = item ?? {};
           const imageUrl = getFileUrl(image);
 
           return (

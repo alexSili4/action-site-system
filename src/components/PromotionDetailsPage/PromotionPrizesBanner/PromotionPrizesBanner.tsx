@@ -12,7 +12,7 @@ const PromotionPrizesBanner: FC<IProps> = ({ prizes, description, logo }) => {
   return (
     <List>
       {prizes.map(({ gift: { images } }, index) => {
-        const { image } = images[0];
+        const { image = '' } = images[0] || {};
         const imageUrl = getFileUrl(image);
 
         return (
