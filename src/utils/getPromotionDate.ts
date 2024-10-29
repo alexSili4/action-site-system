@@ -13,13 +13,13 @@ const getPromotionDate = ({
     promotionDateFrom &&
     formatDate({
       date: promotionDateFrom,
-      dateFormat: DateFormats.promotionDate,
+      dateFormat: DateFormats.generalDate,
     });
   const dateToValue =
     promotionDateTo &&
     formatDate({
       date: promotionDateTo,
-      dateFormat: DateFormats.promotionDate,
+      dateFormat: DateFormats.generalDate,
     });
 
   const date = `${dateFromValue} - ${dateToValue}`;

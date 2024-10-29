@@ -39,6 +39,8 @@ interface ITheme {
     userInfoBtn: number;
     statisticsSortBtn: number;
     cabinetSectionLink: number;
+    certificateStatus: number;
+    cabinetCodeLink: number;
   };
   containerWidth: {
     desktop: number;
@@ -91,25 +93,27 @@ const theme: ITheme = {
     montserrat: 'Montserrat',
   },
   iconSizes: {
-    rulesLink: 14,
-    socialList: 24,
-    cabinet: 14,
+    cabinetCodeLink: 8,
+    cabinetSectionLink: 8,
+    goBackLink: 10,
+    promotionPrizesSliderBtn: 10,
+    userInfoBtn: 12,
     showLocationsBtn: 12,
     showPromotionsSortTypesBtn: 12,
     showDatePickerBtn: 12,
-    datePickerBtnLabel: 20,
-    goBackLink: 10,
-    promotionPrizesSliderBtn: 10,
+    promotionContactsMapListClose: 12,
     faqBtn: 14,
-    phoneLink: 16,
+    cabinet: 14,
+    rulesLink: 14,
     resultsBtn: 14,
+    phoneLink: 16,
+    certificateStatus: 16,
     promotionContactsPhoneLink: 16,
     promotionContactsMailLink: 18,
-    promotionContactsMapHeader: 20,
-    promotionContactsMapListClose: 12,
-    userInfoBtn: 12,
     statisticsSortBtn: 20,
-    cabinetSectionLink: 8,
+    datePickerBtnLabel: 20,
+    promotionContactsMapHeader: 20,
+    socialList: 24,
   },
   containerWidth: {
     desktop: 1376,

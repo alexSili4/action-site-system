@@ -36,7 +36,7 @@ export type Numbers = number[];
 export type Strings = string[];
 
 export interface IFormatDateProps {
-  date: Date | string;
+  date: Date | string | number;
   dateFormat: string;
 }
 

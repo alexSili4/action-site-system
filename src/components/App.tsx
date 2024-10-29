@@ -15,6 +15,7 @@ const CabinetPage = lazy(() => import('@/pages/CabinetPage'));
 const PromotionsPage = lazy(() => import('@/pages/PromotionsPage'));
 const PromotionDetailsPage = lazy(() => import('@/pages/PromotionDetailsPage'));
 const RegisterCodePage = lazy(() => import('@/pages/RegisterCodePage'));
+const UserCertificatePage = lazy(() => import('@/pages/UserCertificatePage'));
 const PrivateRoute = lazy(() => import('@GeneralComponents/PrivateRoute'));
 
 const App: FC = () => {
@@ -39,6 +40,10 @@ const App: FC = () => {
           <Route
             path={PagePaths.cabinet}
             element={<PrivateRoute element={<CabinetPage />} />}
+          />
+          <Route
+            path={`${PagePaths.cabinet}/:${PagePaths.dynamicCode}`}
+            element={<PrivateRoute element={<UserCertificatePage />} />}
           />
           <Route path={PagePaths.promotions} element={<PromotionsPage />} />
           <Route

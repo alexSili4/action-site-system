@@ -1,47 +1,71 @@
 import { FC } from 'react';
 import CouponIcon from '@/icons/cabinet/coupon.svg?react';
-import GiftIcon from '@/icons/cabinet/gift.svg?react';
+import PrizeIcon from '@/icons/cabinet/prize.svg?react';
 import { FaChevronRight } from 'react-icons/fa';
-import { theme } from '@/constants';
-import SuccessStatusLabel from '@GeneralComponents/SuccessStatusLabel';
-import InfoStatusLabel from '@GeneralComponents/InfoStatusLabel';
-import ErrorStatusLabel from '@GeneralComponents/ErrorStatusLabel';
+import { PagePaths, theme } from '@/constants';
+import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
+import {
+  CertificateImg,
+  Code,
+  Container,
+  ContentWrap,
+  Date,
+  Header,
+  LinksWrap,
+  Message,
+  MessagesContainer,
+  MessageWrap,
+  StyledLinkTitle,
+  CodeWrap,
+} from './StatisticsCode.styled';
+import { Link } from 'react-router-dom';
+import { IProps } from './StatisticsCode.types';
 
-const StatisticsCode: FC = ({
+const StatisticsCode: FC<IProps> = ({
   certificateImg,
   isSuccessStatus,
-  isInfoStatus,
   isErrorStatus,
+  code,
+  codeCreatedAt,
 }) => {
   return (
     <Container>
-      <Header>
-        <Code>ZU2L-MFSZ-YWE3</Code>
-        <Date>Активований: 07.10.24</Date>
-      </Header>
+      <Link to={code}>
+        <Header>
+          <CodeWrap>
+            <Code>{code}</Code>
+            <Date>Активований: {codeCreatedAt}</Date>
+          </CodeWrap>
+          <FaChevronRight size={theme.iconSizes.cabinetCodeLink} />
+        </Header>
+      </Link>
       <ContentWrap>
         <LinksWrap>
-          <StyledLink>
+          <Link to={PagePaths.userCode}>
             <CouponIcon />
             <StyledLinkTitle>Виграний Сертифікат</StyledLinkTitle>
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
-          </StyledLink>
-          <StyledLink>
-            <GiftIcon />
+          </Link>
+          <Link to={PagePaths.userPrize}>
+            <PrizeIcon />
             <StyledLinkTitle>Виграний Подарунок</StyledLinkTitle>
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
-          </StyledLink>
+          </Link>
         </LinksWrap>
-        <CertificateImg src={certificateImg} />
+        <CertificateImg src={certificateImg} alt='Зображення сертифіката' />
       </ContentWrap>
-      <Messages>
+      <MessagesContainer>
         <MessageWrap>
-          {isSuccessStatus && <SuccessStatusLabel />}
-          {isInfoStatus && <InfoStatusLabel />}
-          {isErrorStatus && <ErrorStatusLabel />}
-          <Message>Сертифікат надіслано на ваш email</Message>
+          <CertificateStatusLabel
+            isErrorStatus={isErrorStatus}
+            isSuccessStatus={isSuccessStatus}
+          />
+          <Message>
+            Сертифікат надіслано на ваш email, а тут інший текст, для більшого
+            простору
+          </Message>
         </MessageWrap>
-      </Messages>
+      </MessagesContainer>
     </Container>
   );
 };

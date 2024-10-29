@@ -1,5 +1,5 @@
 const enum DateFormats {
-  promotionDate = 'dd.MM.yy',
+  generalDate = 'dd.MM.yy',
 }
 
 export default DateFormats;
