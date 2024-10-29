@@ -5,6 +5,7 @@ const enum SearchParamsKeys {
   cityId = 'city-id',
   from = 'from',
   to = 'to',
+  page = 'page',
 }
 
 export default SearchParamsKeys;

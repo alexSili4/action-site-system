@@ -15,3 +15,6 @@ export { default as getCurrentInputIndex } from './getCurrentInputIndex';
 export { default as getTranslatedStatisticsCategory } from './getTranslatedStatisticsCategory';
 export { default as getTranslatedStatisticsSortType } from './getTranslatedStatisticsSortType';
 export { default as getTargetCityCenter } from './getTargetCityCenter';
+export { default as getPaginationBarSettings } from './getPaginationBarSettings';
+export { default as getPageNumbers } from './getPageNumbers';
+export { default as setBtnDisplayProp } from './setBtnDisplayProp';

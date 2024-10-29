@@ -25,6 +25,11 @@ export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
 // other
 
+export interface IOnPageBtnClickProps {
+  e: BtnClickEvent;
+  page: number;
+}
+
 export type ListRef = HTMLUListElement | null;
 
 export type DivRef = HTMLDivElement | null;
@@ -61,4 +66,29 @@ export interface IGetRegCodeInputProps {
 
 export interface ICsrfToken {
   [key: string]: string;
+}
+
+export interface IGetPaginationBarSettingsProps {
+  pageNumbers: number[];
+  currentPage: number;
+  step: number;
+}
+
+export interface IGetPaginationBarSettings {
+  isValidPage: boolean;
+  firstPage: number;
+  lastPage: number;
+  isBackNavBtnDisable: boolean;
+  isNextNavBtnDisable: boolean;
+  isShowNextTemplateBtn: boolean;
+  isShowLastPageBtn: boolean;
+  isShowFirstPageBtn: boolean;
+  isShowPrevTemplateBtn: boolean;
+  isLastPage: boolean;
+}
+
+export interface ISetBtnDisplayProps {
+  currentPage?: number;
+  page?: number;
+  step?: number;
 }

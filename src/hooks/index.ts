@@ -13,3 +13,4 @@ export { default as useTargetPromotionData } from './useTargetPromotionData';
 export { default as useRegisterCodeForm } from './useRegisterCodeForm';
 export { default as useCsrfToken } from './useCsrfToken';
 export { default as useTargetCity } from './useTargetCity';
+export { default as usePaginationBar } from './usePaginationBar';

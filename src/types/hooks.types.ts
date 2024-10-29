@@ -2,6 +2,7 @@ import { SetURLSearchParams } from 'react-router-dom';
 import {
   Func,
   InputChangeFunc,
+  IOnPageBtnClickProps,
   OnAnchorClickFunc,
   OnBtnClickFunc,
   OnDivClickFunc,
@@ -36,6 +37,35 @@ import {
 import { RegisterCodeErr } from './code.types';
 import { RefObject } from 'react';
 import { Shops } from './shop.types';
+
+export type SetPageFunc = (data: IOnPageBtnClickProps) => void;
+
+export interface IUsePaginationBarProps {
+  totalCount: number;
+  group: number;
+  step?: number;
+}
+
+export interface IUsePaginationBar {
+  isBackNavBtnDisable: boolean;
+  isShowFirstPageBtn: boolean;
+  isShowPrevTemplateBtn: boolean;
+  isValidPage: boolean;
+  isShowNextTemplateBtn: boolean;
+  isNextNavBtnDisable: boolean;
+  isShowLastPageBtn: boolean;
+  isLastPage: boolean;
+  firstPage: number;
+  pageNumbers: number[];
+  currentPage: number;
+  lastPage: number;
+  step: number;
+  onPrevPageBtnClick: OnBtnClickFunc;
+  onFirstPageBtnClick: OnBtnClickFunc;
+  setPage: SetPageFunc;
+  onLastPageBtnClick: OnBtnClickFunc;
+  onNextPageBtnClick: OnBtnClickFunc;
+}
 
 export interface IUpdateSearchParamsProps {
   key: string;

@@ -7,11 +7,15 @@ export const Container = styled.div`
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing(4)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    border-radius: 10px;
+    padding: ${({ theme: { spacing } }) => `${spacing(7)} ${spacing(8)}`};
+  }
 `;
 
 export const Header = styled.span`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-radius: 12px;
   background-color: #f4f6f9;
@@ -20,12 +24,30 @@ export const Header = styled.span`
   & > svg {
     color: #7e8494;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    justify-content: space-between;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(4)};
+    border-radius: 100px;
+  }
 `;
 
 export const CodeWrap = styled.span`
   display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(2)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const Code = styled.span`
@@ -59,6 +81,7 @@ export const LinksWrap = styled.div`
     display: flex;
     align-items: center;
     gap: ${({ theme }) => theme.spacing(2)};
+    color: #7e8494;
 
     & > svg {
       &:first-of-type {
@@ -70,7 +93,6 @@ export const LinksWrap = styled.div`
 `;
 
 export const StyledLinkTitle = styled.span`
-  color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 12px;
   font-weight: 400;
