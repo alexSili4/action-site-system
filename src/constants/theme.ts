@@ -41,6 +41,7 @@ interface ITheme {
     cabinetSectionLink: number;
     certificateStatus: number;
     cabinetCodeLink: number;
+    cabinetPaginationBtn: number;
   };
   containerWidth: {
     desktop: number;
@@ -106,6 +107,7 @@ const theme: ITheme = {
     cabinet: 14,
     rulesLink: 14,
     resultsBtn: 14,
+    cabinetPaginationBtn: 14,
     phoneLink: 16,
     certificateStatus: 16,
     promotionContactsPhoneLink: 16,

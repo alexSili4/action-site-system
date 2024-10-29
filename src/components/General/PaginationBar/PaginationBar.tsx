@@ -3,6 +3,8 @@ import { FC } from 'react';
 import PaginationBarBtn from '@GeneralComponents/PaginationBarBtn';
 import { Button, Item, List, TemplateItem } from './PaginationBar.styled';
 import { IProps } from './PaginationBar.types';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { theme } from '@/constants';
 
 const PaginationBar: FC<IProps> = ({ totalCount, group }) => {
   const {
@@ -29,7 +31,7 @@ const PaginationBar: FC<IProps> = ({ totalCount, group }) => {
     <List>
       <Item>
         <Button disabled={isBackNavBtnDisable} onClick={onPrevPageBtnClick}>
-          {'Попередня'}
+          <FaChevronLeft size={theme.iconSizes.cabinetPaginationBtn} />
         </Button>
       </Item>
       {isShowFirstPageBtn && (
@@ -64,7 +66,7 @@ const PaginationBar: FC<IProps> = ({ totalCount, group }) => {
       )}
       <Item>
         <Button disabled={isNextNavBtnDisable} onClick={onNextPageBtnClick}>
-          {'Наступна'}
+          <FaChevronRight size={theme.iconSizes.cabinetPaginationBtn} />
         </Button>
       </Item>
     </List>
