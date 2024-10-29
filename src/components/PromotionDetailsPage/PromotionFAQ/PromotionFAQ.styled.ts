@@ -34,7 +34,7 @@ export const AnswerWrap = styled.div<IStyledProps>`
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 816px;
+    width: 750px;
   }
 `;
 

@@ -16,6 +16,7 @@ export interface IGift {
   price: number | null;
   discount: number | null;
   images: Images;
+  banner: string | null;
 }
 
 export interface IPartner {
