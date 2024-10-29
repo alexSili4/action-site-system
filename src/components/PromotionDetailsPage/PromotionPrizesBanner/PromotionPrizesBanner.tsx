@@ -11,9 +11,9 @@ import { getFileUrl } from '@/utils';
 const PromotionPrizesBanner: FC<IProps> = ({ prizes, description, logo }) => {
   return (
     <List>
-      {prizes.map(({ gift: { images } }, index) => {
+      {prizes.map(({ gift: { images, banner } }, index) => {
         const { image = '' } = images[0] || {};
-        const imageUrl = getFileUrl(image);
+        const imageUrl = getFileUrl(banner ?? image);
 
         return (
           <ListItem key={index}>
