@@ -21,25 +21,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import PromotionConditionsListAnimation from '@PromotionDetailsPageComponents/PromotionConditionsListAnimation';
 import rulesCardBg from '@/images/conditions/rules-bg.jpg';
 import { IoDocumentOutline } from 'react-icons/io5';
-// import { Swiper as ISwiper } from 'swiper';
+import { Swiper as ISwiper } from 'swiper';
 import PromotionConditionsSliderControls from '@PromotionDetailsPageComponents/PromotionConditionsSliderControls';
+import PromotionConditionsSliderPagination from '@PromotionDetailsPageComponents/PromotionConditionsSliderPagination';
 
 const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
-  // const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
   const sliderContainerRef = useRef<DivRef>(null);
+  const shouldChangeHeight = useRef(true);
   const { rulesPdf } = useTargetPromotionData();
   const rulesPdfUrl = getFileUrl(rulesPdf);
   const sliderContainerHeight = sliderContainerRef.current?.scrollHeight;
-  // const isManyConditions = conditions.length > 1;
+  const isManyConditions = conditions.length > 1;
 
-  // const onSlideChange = (swiper: ISwiper) => {
-  //   setActiveIndex(swiper.activeIndex);
-  // };
+  const onSlideChange = (swiper: ISwiper) => {
+    setActiveIndex(swiper.activeIndex);
+  };
 
   useEffect(() => {
-    if (sliderContainerHeight) {
+    const shouldChangeSliderContainerHeight =
+      sliderContainerHeight && shouldChangeHeight.current;
+
+    if (shouldChangeSliderContainerHeight) {
       setSlideHeight(sliderContainerHeight);
+      shouldChangeHeight.current = false;
     }
   }, [sliderContainerHeight]);
 
@@ -51,7 +57,7 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
       slideHeight={slideHeight}
     >
       <Swiper
-        // onSlideChange={onSlideChange}
+        onSlideChange={onSlideChange}
         slidesPerView={1.075}
         grabCursor={true}
         breakpoints={{
@@ -111,12 +117,12 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
           </SwiperSlide>
         )}
         {slideHeight && <PromotionConditionsSliderControls />}
-        {/* {isManyConditions && (
+        {isManyConditions && (
           <PromotionConditionsSliderPagination
-            conditions={conditions}
+            conditions={[...conditions, {}]}
             activeIndex={activeIndex}
           />
-        )} */}
+        )}
       </Swiper>
     </Container>
   );

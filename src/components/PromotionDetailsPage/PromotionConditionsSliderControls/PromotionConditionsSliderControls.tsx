@@ -6,15 +6,21 @@ import {
   SliderBtn,
 } from './PromotionConditionsSliderControls.styled';
 import { theme } from '@/constants';
+import { BtnClickEvent } from '@/types/types';
+import { makeBlur } from '@/utils';
 
 const PromotionConditionsSliderControls: FC = () => {
   const swiper = useSwiper();
 
-  const onNextBtnClick = () => {
+  const onNextBtnClick = (e: BtnClickEvent) => {
+    makeBlur(e.currentTarget);
+
     swiper.slideNext();
   };
 
-  const onPrevBtnClick = () => {
+  const onPrevBtnClick = (e: BtnClickEvent) => {
+    makeBlur(e.currentTarget);
+
     swiper.slidePrev();
   };
 

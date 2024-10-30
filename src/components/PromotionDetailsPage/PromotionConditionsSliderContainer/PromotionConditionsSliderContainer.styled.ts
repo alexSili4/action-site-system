@@ -9,6 +9,10 @@ export const Container = styled.div<IStyledContainerProps>`
   position: relative;
   margin-top: ${({ theme }) => theme.spacing(8)};
 
+  & > .${ClassNames.swiper} {
+    overflow: visible;
+  }
+
   & .${ClassNames.swiperSlide} {
     height: ${({ slideHeight }) => slideHeight && slideHeight}px;
     padding-left: ${({ paddingSideMobile }) =>

@@ -4,13 +4,19 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding-left: ${({ theme }) => theme.spacing(4)};
-  padding-right: ${({ theme }) => theme.spacing(4)};
-  margin-top: ${({ theme }) => theme.spacing(9)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    width: 100%;
+    margin-top: ${({ theme }) => theme.spacing(9)};
+    padding-left: ${({ theme }) => theme.spacing(4)};
+    padding-right: ${({ theme }) => theme.spacing(4)};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    display: none;
+    position: absolute;
+    top: -101px;
+    right: 32px;
+    gap: ${({ theme }) => theme.spacing(2)};
   }
 `;
 

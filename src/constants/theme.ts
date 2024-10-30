@@ -67,6 +67,7 @@ interface ITheme {
     promotionsDatePicker: number;
     promotionPrizeDrawsDatePicker: number;
     selectStatisticsSortTypeDropdown: number;
+    conditionsSliderPagination: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -133,6 +134,7 @@ const theme: ITheme = {
     prizeStatus: 10,
     promotionSliderControls: 10,
     promotionSliderPagination: 10,
+    conditionsSliderPagination: 10,
     promotionMapHeader: 1000,
     promotionShopsList: 1000,
     promotionNavBar: 1000,
