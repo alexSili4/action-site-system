@@ -19,6 +19,7 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     hot_line_email: hotLineEmail,
     coverage_type: coverageType,
     hot_line_text: hotLineText,
+    hot_line_text_2: hotLineOtherText,
     hot_line_work_hours: hotLineWorkHours,
     logo_partner: logoPartner,
   } = targetPromotion ?? {};
@@ -40,6 +41,7 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     logoPartner: logoPartner ?? '',
     logo: logo ?? '',
     hotLineWorkHours: hotLineWorkHours ?? '',
+    hotLineOtherText,
   };
 };
 

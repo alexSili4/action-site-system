@@ -129,6 +129,7 @@ export interface IUseTargetPromotionData {
   hotLineText: string | undefined;
   hotLineWorkHours: string;
   logoPartner: string;
+  hotLineOtherText: string | undefined;
 }
 
 export interface IUseRegisterCodeForm {

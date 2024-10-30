@@ -33,6 +33,7 @@ export interface IPromotion {
   hot_line_phone: string;
   hot_line_email: string;
   hot_line_text: string;
+  hot_line_text_2: string;
   hot_line_work_hours: string;
   coverage_type: CoverageType;
   action_type: ActionType;
