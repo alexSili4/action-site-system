@@ -1,10 +1,7 @@
 import { FC } from 'react';
-import {
-  Button,
-  Item,
-} from '@GeneralComponents/PaginationBar/PaginationBar.styled';
 import { BtnClickEvent } from '@/types/types';
 import { IProps } from './PaginationBarBtn.types';
+import { Button, Item } from './PaginationBarBtn.styled';
 
 const PaginationBarBtn: FC<IProps> = ({
   number,

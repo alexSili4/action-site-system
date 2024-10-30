@@ -76,13 +76,9 @@ export interface IGetPaginationBarSettingsProps {
 
 export interface IGetPaginationBarSettings {
   isValidPage: boolean;
-  firstPage: number;
-  lastPage: number;
   isBackNavBtnDisable: boolean;
   isNextNavBtnDisable: boolean;
   isShowNextTemplateBtn: boolean;
-  isShowLastPageBtn: boolean;
-  isShowFirstPageBtn: boolean;
   isShowPrevTemplateBtn: boolean;
   isLastPage: boolean;
 }
@@ -90,5 +86,5 @@ export interface IGetPaginationBarSettings {
 export interface ISetBtnDisplayProps {
   currentPage?: number;
   page?: number;
-  step?: number;
+  step: number;
 }

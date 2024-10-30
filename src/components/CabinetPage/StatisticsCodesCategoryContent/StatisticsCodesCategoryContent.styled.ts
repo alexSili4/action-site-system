@@ -1,5 +1,15 @@
 import styled from '@emotion/styled';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(7)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(8)};
+  }
+`;
+
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;

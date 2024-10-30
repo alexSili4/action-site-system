@@ -1,49 +1,29 @@
-import { setBtnDisplayProp } from '@/utils';
 import styled from '@emotion/styled';
-import { IStyledProps } from './PaginationBar.types';
-import { IStyledButtonProps } from '@GeneralComponents/PaginationBarBtn/PaginationBarBtn.types';
+
+export const Container = styled.div`
+  display: flex;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    justify-content: space-between;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    justify-content: center;
+    gap: ${({ theme }) => theme.spacing(7)};
+  }
+`;
 
 export const List = styled.ul`
   display: flex;
-  margin-left: auto;
-`;
-
-export const Item = styled.li<IStyledProps>`
-  display: ${({ currentPage, page, step }) =>
-    setBtnDisplayProp({ currentPage, page, step })};
-
-  &:first-of-type button {
-  }
-
-  &:last-of-type button {
-  }
+  gap: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const TemplateItem = styled.li`
-  & button {
+  & > button {
     cursor: auto;
 
     &:is(:hover, :focus) {
-      box-shadow: none;
+      color: none;
     }
-  }
-`;
-
-export const Button = styled.button<IStyledButtonProps>`
-  min-width: 30px;
-  padding: ${({ theme }): string => theme.spacing(2)};
-  background-color: ${({ isActivePageBtn }) => (isActivePageBtn ? '' : '')};
-  border: none;
-  border-color: transparent;
-  color: ${({ isActivePageBtn }) => (isActivePageBtn ? '' : '')};
-  font-family: ${() => ''};
-  font-size: ${() => ''}px;
-  font-weight: ${() => ''};
-  transition: box-shadow
-    ${({ theme }): string => theme.transitionDurationAndFunc};
-
-  &:is(:hover, :focus, :active) {
-    outline: none;
-    box-shadow: ${(): string => ''};
   }
 `;

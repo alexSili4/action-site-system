@@ -7,11 +7,11 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
-  /* position: relative; */
+  position: relative;
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: center; */
-  /* padding-top: ${({ theme }) => theme.spacing(22)}; */
+  padding-top: ${({ theme }) => theme.spacing(16)};
 `;
 
 export const ImgWrap = styled.div`
@@ -37,4 +37,16 @@ export const Title = styled.p`
   font-weight: 400;
   line-height: 1.4;
   text-align: center;
+`;
+
+export const PartnerLogo = styled.img`
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 120px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: 16px;
+    left: 16px;
+  }
 `;

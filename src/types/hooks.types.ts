@@ -48,22 +48,16 @@ export interface IUsePaginationBarProps {
 
 export interface IUsePaginationBar {
   isBackNavBtnDisable: boolean;
-  isShowFirstPageBtn: boolean;
   isShowPrevTemplateBtn: boolean;
   isValidPage: boolean;
   isShowNextTemplateBtn: boolean;
   isNextNavBtnDisable: boolean;
-  isShowLastPageBtn: boolean;
   isLastPage: boolean;
-  firstPage: number;
   pageNumbers: number[];
   currentPage: number;
-  lastPage: number;
   step: number;
   onPrevPageBtnClick: OnBtnClickFunc;
-  onFirstPageBtnClick: OnBtnClickFunc;
   setPage: SetPageFunc;
-  onLastPageBtnClick: OnBtnClickFunc;
   onNextPageBtnClick: OnBtnClickFunc;
 }
 

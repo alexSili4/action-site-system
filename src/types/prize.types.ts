@@ -28,7 +28,7 @@ export interface IPrize {
   gift_type: GiftType;
   show_type: ShowType;
   gift: IGift;
-  partner: IPartner;
+  partner: IPartner | null;
 }
 
 export type Prizes = IPrize[];

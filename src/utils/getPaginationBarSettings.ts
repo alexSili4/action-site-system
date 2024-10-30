@@ -16,21 +16,15 @@ const getPaginationBarSettings = ({
   const isBackNavBtnDisable = !isValidPage || isFirstPage;
   const isNextNavBtnDisable = !isValidPage || isLastPage;
   const isShowPrevTemplateBtn =
-    isValidPage && currentPage - step - 1 > firstPage;
+    isValidPage && currentPage - step - 1 >= firstPage;
   const isShowNextTemplateBtn =
-    isValidPage && currentPage + step + 1 < lastPage;
-  const isShowFirstPageBtn = isValidPage && currentPage - step > firstPage;
-  const isShowLastPageBtn = isValidPage && currentPage + step < lastPage;
+    isValidPage && currentPage + step + 1 <= lastPage;
 
   return {
     isValidPage,
-    firstPage,
-    lastPage,
     isBackNavBtnDisable,
     isNextNavBtnDisable,
     isShowNextTemplateBtn,
-    isShowLastPageBtn,
-    isShowFirstPageBtn,
     isShowPrevTemplateBtn,
     isLastPage,
   };

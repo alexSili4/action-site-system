@@ -14,13 +14,9 @@ const usePaginationBar = ({
   const pageNumbers = getPageNumbers(pageQuantity);
   const currentPage = Number(searchParams.get(SearchParamsKeys.page) ?? 1);
   const {
-    firstPage,
-    lastPage,
     isBackNavBtnDisable,
     isNextNavBtnDisable,
     isShowNextTemplateBtn,
-    isShowLastPageBtn,
-    isShowFirstPageBtn,
     isShowPrevTemplateBtn,
     isValidPage,
     isLastPage,
@@ -43,29 +39,15 @@ const usePaginationBar = ({
     setPage({ e, page: currentPage + 1 });
   };
 
-  const onFirstPageBtnClick = (e: BtnClickEvent): void => {
-    setPage({ e, page: firstPage });
-  };
-
-  const onLastPageBtnClick = (e: BtnClickEvent): void => {
-    setPage({ e, page: lastPage });
-  };
-
   return {
     isBackNavBtnDisable,
     onPrevPageBtnClick,
-    isShowFirstPageBtn,
-    firstPage,
-    onFirstPageBtnClick,
     isShowPrevTemplateBtn,
     isValidPage,
     pageNumbers,
     currentPage,
     setPage,
     isShowNextTemplateBtn,
-    isShowLastPageBtn,
-    onLastPageBtnClick,
-    lastPage,
     isNextNavBtnDisable,
     onNextPageBtnClick,
     step,

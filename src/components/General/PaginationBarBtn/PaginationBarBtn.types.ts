@@ -9,4 +9,11 @@ export interface IProps {
 
 export interface IStyledButtonProps {
   isActivePageBtn?: boolean;
+  isNavBtn?: boolean;
+}
+
+export interface IStyledItemProps {
+  currentPage?: number;
+  page?: number;
+  step?: number;
 }

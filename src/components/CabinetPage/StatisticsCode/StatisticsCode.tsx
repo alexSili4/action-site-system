@@ -5,7 +5,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import { PagePaths, theme } from '@/constants';
 import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
 import {
-  CertificateImg,
+  CertificateWrap,
   Code,
   Container,
   ContentWrap,
@@ -20,9 +20,9 @@ import {
 } from './StatisticsCode.styled';
 import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
+import certificateImg from '@/icons/cabinet/certificate.svg';
 
 const StatisticsCode: FC<IProps> = ({
-  certificateImg,
   isSuccessStatus,
   isErrorStatus,
   code,
@@ -52,7 +52,10 @@ const StatisticsCode: FC<IProps> = ({
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
           </Link>
         </LinksWrap>
-        <CertificateImg src={certificateImg} alt='Зображення сертифіката' />
+        <CertificateWrap certificateImg={certificateImg}>
+          <p>logo</p>
+          <p>code</p>
+        </CertificateWrap>
       </ContentWrap>
       <MessagesContainer>
         <MessageWrap>
