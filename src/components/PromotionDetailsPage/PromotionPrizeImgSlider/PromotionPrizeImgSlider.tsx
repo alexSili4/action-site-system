@@ -62,7 +62,7 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
         <TitleWrap>
           <Title>{name}</Title>
         </TitleWrap>
-        <PromotionPrizeImgSliderControls />
+        {isManyImages && <PromotionPrizeImgSliderControls />}
         {isManyImages && (
           <PromotionPrizeImgSliderPagination
             images={images}

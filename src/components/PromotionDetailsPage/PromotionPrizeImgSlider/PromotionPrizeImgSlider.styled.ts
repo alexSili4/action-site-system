@@ -3,15 +3,13 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   border-radius: 12px;
   background-color: #f4f6f9;
-  padding: ${({ theme }) => theme.spacing(6)};
 `;
 
 export const Card = styled.div`
-  position: relative;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  padding-top: ${({ theme }) => theme.spacing(16)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: ${({ theme }) => theme.spacing(15)};
 `;
 
 export const ImgWrap = styled.div`
@@ -27,7 +25,7 @@ export const Image = styled.img`
 
 export const TitleWrap = styled.div`
   height: 52px;
-  /* margin-top: ${({ theme }) => theme.spacing(7)}; */
+  margin-bottom: ${({ theme }) => theme.spacing(6)};
 `;
 
 export const Title = styled.p`
@@ -41,12 +39,11 @@ export const Title = styled.p`
 
 export const PartnerLogo = styled.img`
   position: absolute;
-  top: -8px;
-  left: -8px;
-  width: 120px;
+  top: 16px;
+  left: 16px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 16px;
-    left: 16px;
+    top: 40px;
+    left: 40px;
   }
 `;

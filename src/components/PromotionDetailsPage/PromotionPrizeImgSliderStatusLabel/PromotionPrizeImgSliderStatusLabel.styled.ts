@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 export const StatusLabel = styled.div`
   position: absolute;
   z-index: ${({ theme }) => theme.zIndex.prizeStatus};
-  top: -8px;
-  right: -8px;
+  top: 16px;
+  right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@ export const StatusLabel = styled.div`
   );
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: 16px;
-    right: 16px;
+    top: 40px;
+    right: 40px;
   }
 `;
