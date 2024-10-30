@@ -17,6 +17,7 @@ import {
   MessageWrap,
   StyledLinkTitle,
   CodeWrap,
+  CertificateCode,
 } from './StatisticsCode.styled';
 import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
@@ -54,7 +55,7 @@ const StatisticsCode: FC<IProps> = ({
         </LinksWrap>
         <CertificateWrap certificateImg={certificateImg}>
           <p>logo</p>
-          <p>code</p>
+          <CertificateCode>{code}</CertificateCode>
         </CertificateWrap>
       </ContentWrap>
       <MessagesContainer>

@@ -115,6 +115,14 @@ export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
   border-bottom-right-radius: 5px;
 `;
 
+export const CertificateCode = styled.p`
+  color: #7e8494;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 8.34px;
+  font-weight: 900;
+  line-height: 1.4;
+`;
+
 export const MessagesContainer = styled.div`
   display: flex;
   flex-direction: column;
