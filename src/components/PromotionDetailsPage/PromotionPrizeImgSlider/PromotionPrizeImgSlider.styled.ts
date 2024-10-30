@@ -41,6 +41,7 @@ export const PartnerLogo = styled.img`
   position: absolute;
   top: 16px;
   left: 16px;
+  max-width: 120px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 40px;

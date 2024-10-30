@@ -47,7 +47,7 @@ export const Title = styled.p`
 `;
 
 export const WorkingHours = styled.p`
-  margin-top: ${({ theme }) => theme.spacing(5)};
+  margin-top: ${({ theme }) => theme.spacing(2)};
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
@@ -63,7 +63,7 @@ export const PhoneLink = styled.a`
   width: 100%;
   border-radius: 8px;
   background-color: #f4f6f9;
-  margin-top: ${({ theme }) => theme.spacing(2)};
+  margin-top: ${({ theme }) => theme.spacing(5)};
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(6)}`};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

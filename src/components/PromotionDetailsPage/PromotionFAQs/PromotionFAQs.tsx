@@ -35,15 +35,15 @@ const PromotionFAQs: FC<IProps> = ({ faqs }) => {
             Потрібна додаткова інформація? Ви можете зв&#8217;язатися по
             телефону звернувшись в Центр Обслуговування Кліентів
           </Title>
-          <WorkingHours>
-            {hotLineText} {hotLineWorkHours}
-          </WorkingHours>
           <PhoneLink href={`tel:${hotLinePhone}`}>
             <PhoneLinkIconWrap>
               <LuPhone size={theme.iconSizes.phoneLink} />
             </PhoneLinkIconWrap>
             <PhoneLinkTitle>{hotLinePhone}</PhoneLinkTitle>
           </PhoneLink>
+          <WorkingHours>
+            {hotLineText} {hotLineWorkHours}
+          </WorkingHours>
         </AdditionalIfoWrap>
       </ContentWrap>
     </Container>
