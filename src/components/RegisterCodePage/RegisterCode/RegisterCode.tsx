@@ -21,16 +21,16 @@ import wog from '@/wog.svg';
 const RegisterCode: FC = () => {
   // TODO delete sectors
   const prizes: WheelPrizes = [
-    { id: 2, name: 'citrus', icon: citrus },
-    { id: 1, name: 'rozetka', icon: rozetka },
-    { id: 5, name: 'foxtrot', icon: foxtrot },
-    { id: 3, name: 'comfy', icon: comfy },
-    { id: 4, name: 'englishdom', icon: englishdom },
-    { id: 7, name: 'luxoptyka', icon: luxoptyka },
-    { id: 6, name: 'wog', icon: wog },
-    { id: 8, name: 'podorozhnyk', icon: podorozhnyk },
-    { id: 10, name: 'monobank', icon: monobank },
-    { id: 9, name: 'morshynska', icon: morshynska },
+    { id: 2, name: 'citrus', icon: citrus, prize: '10%' },
+    { id: 1, name: 'rozetka', icon: rozetka, prize: '100₴' },
+    { id: 5, name: 'foxtrot', icon: foxtrot, prize: '200₴' },
+    { id: 3, name: 'comfy', icon: comfy, prize: '300₴' },
+    { id: 4, name: 'englishdom', icon: englishdom, prize: '400₴' },
+    { id: 7, name: 'luxoptyka', icon: luxoptyka, prize: '500₴' },
+    { id: 6, name: 'wog', icon: wog, prize: '600₴' },
+    { id: 8, name: 'podorozhnyk', icon: podorozhnyk, prize: '700₴' },
+    { id: 10, name: 'monobank', icon: monobank, prize: '800₴' },
+    { id: 9, name: 'morshynska', icon: morshynska, prize: '900₴' },
   ];
   const [currentStep, setCurrentStep] = useState<number>(2);
   const steps = getRegCodeSteps(RegPromotionCodeSteps);

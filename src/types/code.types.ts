@@ -30,6 +30,7 @@ export interface IWheelPrize {
   id: number;
   name: string;
   icon: string;
+  prize: string;
 }
 
 // TODO fix type

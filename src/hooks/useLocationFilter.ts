@@ -8,23 +8,21 @@ import { AnchorClickEvent, BtnClickEvent } from '@/types/types';
 import { IUseLocationFilter } from '@/types/hooks.types';
 
 const useLocationFilter = (): IUseLocationFilter => {
-  // store
   const getCities = useCitiesStore(selectGetCities);
   const cities = useCitiesStore(selectCities);
-  // search params
   const { updateSearchParams, searchParams } = useSetSearchParams();
   const cityId = searchParams.get(SearchParamsKeys.cityId) ?? '';
-  // state
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
-  // other
   const { showLocationsBtnTitle, isSelectedCity } = getShowLocationsBtnTitle({
     cities,
     cityId: Number(cityId),
   });
 
   useEffect(() => {
-    getCities();
-  }, [getCities]);
+    if (!cities.length) {
+      getCities();
+    }
+  }, [cities, getCities]);
 
   const toggleShowLocationList = () => {
     setShowLocationList((prevState) => !prevState);

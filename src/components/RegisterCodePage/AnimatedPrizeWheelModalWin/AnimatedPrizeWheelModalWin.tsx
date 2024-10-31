@@ -12,13 +12,15 @@ import {
   NextStepBtn,
   PrizeImg,
   Container,
+  FireworksImg,
 } from './AnimatedPrizeWheelModalWin.styled';
 import { IProps } from './AnimatedPrizeWheelModalWin.types';
-import prize from '@/images/code/prize.png';
+import prizeImg from '@/images/code/prize.png';
+import fireworksImg from '@/images/code/fireworks.png';
 
 const AnimatedPrizeWheelModalWin: FC<IProps> = ({
   moveToNextStep,
-  targetPrize: { icon },
+  targetPrize: { icon, prize },
 }) => {
   const { hideModalWin } = useModalWin(moveToNextStep);
 
@@ -26,11 +28,12 @@ const AnimatedPrizeWheelModalWin: FC<IProps> = ({
     <BackdropWrap>
       <Backdrop onClick={hideModalWin}>
         <Container>
-          <PrizeImg src={prize} />
+          <FireworksImg src={fireworksImg} />
+          <PrizeImg src={prizeImg} />
           <ContentWrap>
             <CertificateWrap>
               <Title>сертифікат</Title>
-              <Prize>900₴</Prize>
+              <Prize>{prize}</Prize>
               <PartnerLogoWrap>
                 <PartnerLogo src={icon} />
               </PartnerLogoWrap>
