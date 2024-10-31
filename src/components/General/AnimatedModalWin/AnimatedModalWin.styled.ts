@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Section = styled.div`
+export const BackdropWrap = styled.div`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndex.animatedModalWin};
   top: 0;

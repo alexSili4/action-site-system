@@ -26,7 +26,7 @@ export interface IGetCurrentInputIndex {
 }
 
 // TODO fix type
-interface IWheelPrize {
+export interface IWheelPrize {
   id: number;
   name: string;
   icon: string;

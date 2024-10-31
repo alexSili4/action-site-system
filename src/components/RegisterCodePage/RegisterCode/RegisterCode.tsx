@@ -32,7 +32,7 @@ const RegisterCode: FC = () => {
     { id: 10, name: 'monobank', icon: monobank },
     { id: 9, name: 'morshynska', icon: morshynska },
   ];
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(2);
   const steps = getRegCodeSteps(RegPromotionCodeSteps);
   const isFirstStep = currentStep === 1;
   const isSecondStep = currentStep === 2;
@@ -59,7 +59,12 @@ const RegisterCode: FC = () => {
         />
       )}
       {isSecondStep && (
-        <PrizeWheelSection prizes={prizes} spinningMs={8000} maxSpins={5} />
+        <PrizeWheelSection
+          prizes={prizes}
+          spinningMs={8000}
+          maxSpins={5}
+          moveToNextStep={incrementCurrentStep}
+        />
       )}
     </Container>
   );

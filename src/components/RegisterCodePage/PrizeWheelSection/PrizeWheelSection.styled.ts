@@ -3,10 +3,18 @@ import { IStyledProps, IStyledSectorProps } from './PrizeWheelSection.types';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: ${({ theme }) => theme.spacing(6)};
-  padding-bottom: ${({ theme }) => theme.spacing(8)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    flex-direction: column;
+    align-items: center;
+    padding-top: ${({ theme }) => theme.spacing(6)};
+    padding-bottom: ${({ theme }) => theme.spacing(8)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    position: relative;
+    justify-content: center;
+  }
 `;
 
 export const WheelWrap = styled.div`
@@ -17,7 +25,9 @@ export const WheelWrap = styled.div`
   width: 306px;
   height: 306px;
 
-  & > svg {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 650px;
+    height: 650px;
   }
 `;
 
@@ -29,6 +39,11 @@ export const PointerImg = styled.img`
   width: 30px;
   height: 27px;
   transform: translateX(-50%);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 64px;
+    height: 56px;
+  }
 `;
 
 export const CircleImg = styled.img`
@@ -48,6 +63,11 @@ export const Wheel = styled.div<IStyledProps>`
   transform: rotate(${({ totalDegrees }) => totalDegrees}deg);
   transition: transform ${({ spinningMs }) => spinningMs}ms ease-in-out;
   overflow: hidden;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 579px;
+    height: 579px;
+  }
 `;
 
 export const Sector = styled.div<IStyledSectorProps>`
@@ -91,7 +111,6 @@ export const Image = styled.img`
 
 export const SpinWheelBtn = styled.button`
   width: 100%;
-  margin-top: ${({ theme }) => theme.spacing(13)};
   border: none;
   border-radius: 16px;
   padding: ${({ theme }) => theme.spacing(5)};
@@ -107,8 +126,21 @@ export const SpinWheelBtn = styled.button`
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
   cursor: pointer;
 
-  &:is(:hover, :focus) {
+  &:not(:disabled):is(:hover, :focus) {
     box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
       1px 1px 0px 0px #cc3333;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    margin-top: ${({ theme }) => theme.spacing(13)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: ${({ theme }) => theme.zIndex.spinWheelBtn};
+    width: 202px;
+    transform: translateX(-50%) translateY(-50%);
   }
 `;

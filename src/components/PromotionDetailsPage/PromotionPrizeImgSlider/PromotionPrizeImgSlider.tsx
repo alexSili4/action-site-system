@@ -10,6 +10,7 @@ import {
   Title,
   TitleWrap,
   PartnerLogo,
+  LabelsWrap,
 } from './PromotionPrizeImgSlider.styled';
 import { Swiper as ISwiper } from 'swiper';
 import { IProps } from './PromotionPrizeImgSlider.types';
@@ -57,8 +58,10 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
             </SwiperSlide>
           );
         })}
-        {partnerLogo && <PartnerLogo src={partnerLogoUrl} />}
-        <PromotionPrizeImgSliderStatusLabel giftType={giftType} />
+        <LabelsWrap>
+          {partnerLogo && <PartnerLogo src={partnerLogoUrl} />}
+          <PromotionPrizeImgSliderStatusLabel giftType={giftType} />
+        </LabelsWrap>
         <TitleWrap>
           <Title>{name}</Title>
         </TitleWrap>

@@ -68,6 +68,8 @@ interface ITheme {
     promotionPrizeDrawsDatePicker: number;
     selectStatisticsSortTypeDropdown: number;
     conditionsSliderPagination: number;
+    spinWheelBtn: number;
+    animatedPrizeWheelModalWin: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -132,6 +134,7 @@ const theme: ITheme = {
   zIndex: {
     prizeWheelImg: 10,
     prizeStatus: 10,
+    spinWheelBtn: 10,
     promotionSliderControls: 10,
     promotionSliderPagination: 10,
     conditionsSliderPagination: 10,
@@ -145,6 +148,7 @@ const theme: ITheme = {
     promotionsDatePicker: 10000,
     promotionPrizeDrawsDatePicker: 10000,
     animatedModalWin: 100000,
+    animatedPrizeWheelModalWin: 100000,
   },
   transitionDurationAndFunc: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,

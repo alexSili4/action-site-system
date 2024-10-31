@@ -14,6 +14,7 @@ import {
   myriadProRegular,
   montserratBold,
   montserratBlack,
+  montserratExtraBold,
 } from '@/fonts';
 
 const GlobalStyles: FC = () => (
@@ -80,6 +81,13 @@ const GlobalStyles: FC = () => (
         src: local(${theme.fontFamily.montserrat}),
           url(${montserratBlack}) format('truetype');
         font-weight: 900;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.montserrat};
+        src: local(${theme.fontFamily.montserrat}),
+          url(${montserratExtraBold}) format('truetype');
+        font-weight: 800;
       }
 
       @font-face {

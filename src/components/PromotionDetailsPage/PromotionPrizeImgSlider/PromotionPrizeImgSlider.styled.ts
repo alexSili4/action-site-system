@@ -37,14 +37,26 @@ export const Title = styled.p`
   text-align: center;
 `;
 
-export const PartnerLogo = styled.img`
+export const LabelsWrap = styled.div`
   position: absolute;
+  z-index: ${({ theme }) => theme.zIndex.prizeStatus};
   top: 16px;
-  left: 16px;
-  max-width: 120px;
+  left: 50%;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 16px * 2);
+  transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 40px;
-    left: 40px;
+    width: calc(100% - 40px * 2);
   }
+`;
+
+export const PartnerLogo = styled.img`
+  position: absolute;
+  left: 0;
+  top: 50%;
+  max-width: 120px;
+  transform: translateY(-50%);
 `;

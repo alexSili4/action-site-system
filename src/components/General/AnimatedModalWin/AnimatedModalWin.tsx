@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   Backdrop,
   Container,
-  Section,
+  BackdropWrap,
   CloseBtn,
 } from './AnimatedModalWin.styled';
 import { useModalWin } from '@/hooks';
@@ -19,7 +19,7 @@ const AnimatedModalWin: FC<IProps> = ({ children, setModalWinState }) => {
       animate={{ opacity: 1, transition: { duration: 0.3 } }}
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
     >
-      <Section>
+      <BackdropWrap>
         <Backdrop onClick={hideModalWin}>
           <motion.div
             initial={{ opacity: 0, y: 200 }}
@@ -34,7 +34,7 @@ const AnimatedModalWin: FC<IProps> = ({ children, setModalWinState }) => {
             </Container>
           </motion.div>
         </Backdrop>
-      </Section>
+      </BackdropWrap>
     </motion.div>
   );
 };
