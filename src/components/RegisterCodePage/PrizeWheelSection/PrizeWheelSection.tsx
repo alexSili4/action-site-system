@@ -91,8 +91,7 @@ const PrizeWheelSection: FC<IProps> = ({
       </Container>
       {targetPrize && (
         <AnimatedPrizeWheelModalWinContainer
-          // showModalWin={isWheelSpun}
-          showModalWin={true}
+          showModalWin={isWheelSpun}
           moveToNextStep={moveToNextStep}
           targetPrize={targetPrize}
         />
