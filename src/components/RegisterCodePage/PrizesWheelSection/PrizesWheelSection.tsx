@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { IProps } from './PrizeWheelSection.types';
+import { IProps } from './PrizesWheelSection.types';
 import {
   Wheel,
   Sector,
@@ -9,14 +9,14 @@ import {
   WheelWrap,
   CircleImg,
   PointerImg,
-} from './PrizeWheelSection.styled';
+} from './PrizesWheelSection.styled';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
 import circle from '@/images/code/circle.png';
 import pointer from '@/images/code/pointer.png';
 import AnimatedPrizeWheelModalWinContainer from '@RegisterCodePageComponents/AnimatedPrizeWheelModalWinContainer';
 
-const PrizeWheelSection: FC<IProps> = ({
+const PrizesWheelSection: FC<IProps> = ({
   prizes,
   spinningMs,
   maxSpins,
@@ -91,7 +91,8 @@ const PrizeWheelSection: FC<IProps> = ({
       </Container>
       {targetPrize && (
         <AnimatedPrizeWheelModalWinContainer
-          showModalWin={isWheelSpun}
+          // showModalWin={isWheelSpun}
+          showModalWin
           moveToNextStep={moveToNextStep}
           targetPrize={targetPrize}
         />
@@ -100,4 +101,4 @@ const PrizeWheelSection: FC<IProps> = ({
   );
 };
 
-export default PrizeWheelSection;
+export default PrizesWheelSection;

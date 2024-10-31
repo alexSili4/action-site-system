@@ -7,7 +7,7 @@ const RegisterCodePage: FC = () => {
   return (
     <Section>
       <Container>
-        <RegisterCode />
+        <RegisterCode shouldShowPrizesWheel={true} />
       </Container>
     </Section>
   );

@@ -35,3 +35,8 @@ export interface IWheelPrize {
 
 // TODO fix type
 export type WheelPrizes = IWheelPrize[];
+
+export interface IGetRegCodeSteps {
+  stepsSequence: IStepsSequence;
+  shouldShowPrizesWheel: boolean;
+}
