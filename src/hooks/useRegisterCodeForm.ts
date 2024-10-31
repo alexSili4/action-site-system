@@ -10,7 +10,7 @@ import {
   Func,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import { usePromotionId } from '@/hooks';
+import { useCsrfToken, usePromotionId } from '@/hooks';
 import { IRegisterCodeRes, RegisterCodeErr } from '@/types/code.types';
 import { getCurrentInputIndex } from '@/utils';
 import { IUseRegisterCodeForm } from '@/types/hooks.types';
@@ -25,6 +25,7 @@ const useRegisterCodeForm = (
   const inputWrapRef = useRef<HTMLDivElement>(null);
   const { register, handleSubmit } = useForm<IRegCodeFormData>();
   const promotionId = usePromotionId();
+  const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
   const isError = Boolean(error);
 
   const inputMaxLength = generalSettings.regCodeLength / 3;
@@ -36,14 +37,21 @@ const useRegisterCodeForm = (
     setIsLoading(true);
   };
 
-  const handleFormSubmit: SubmitHandler<IRegCodeFormData> = async (data) => {
-    const code = Object.values(data).join('');
-
+  const registerCode = async ({
+    code,
+    csrfTokenName,
+    csrfToken,
+  }: {
+    code: string;
+    csrfTokenName: string;
+    csrfToken: string;
+  }) => {
     try {
       startRegisterCode();
       const response = await codesService.register({
         code,
         action_id: Number(promotionId),
+        [csrfTokenName]: csrfToken,
       });
 
       const isError = response.result !== 'ok';
@@ -67,6 +75,11 @@ const useRegisterCodeForm = (
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleFormSubmit: SubmitHandler<IRegCodeFormData> = async (data) => {
+    const code = Object.values(data).join('');
+    registerCode({ code, csrfToken, csrfTokenName });
   };
 
   useEffect(() => {
