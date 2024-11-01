@@ -94,6 +94,18 @@ const moveDownUp = keyframes`
   }
 `;
 
+const smoothPrizeImgRotate = keyframes`
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(10deg);
+  }
+`;
+
 const animations = {
   textGlitch,
   firstAccentShadowGlitch,
@@ -101,6 +113,7 @@ const animations = {
   wheelRotate,
   moveUpDown,
   moveDownUp,
+  smoothPrizeImgRotate,
 };
 
 export default animations;

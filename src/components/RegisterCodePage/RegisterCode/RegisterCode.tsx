@@ -5,7 +5,7 @@ import { Container } from './RegisterCode.styled';
 import { RegPromotionCodeSteps } from '@/constants';
 import { getRegCodeSteps } from '@/utils';
 import PrizesWheelSection from '@RegisterCodePageComponents/PrizesWheelSection';
-import ConfirmEmailSection from '@RegisterCodePageComponents/ConfirmEmailSection';
+import RegisterUserSection from '@RegisterCodePageComponents/RegisterUserSection';
 import { WheelPrizes } from '@/types/code.types';
 // TODO delete icons
 import rozetka from '@/rozetka.svg';
@@ -79,7 +79,7 @@ const RegisterCode: FC<IProps> = ({ shouldShowPrizesWheel }) => {
           moveToNextStep={incrementCurrentStep}
         />
       )}
-      {isConfirmEmailStep && <ConfirmEmailSection />}
+      {isConfirmEmailStep && <RegisterUserSection />}
     </Container>
   );
 };

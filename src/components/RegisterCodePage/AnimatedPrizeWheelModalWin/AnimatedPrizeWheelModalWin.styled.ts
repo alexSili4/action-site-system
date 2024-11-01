@@ -1,8 +1,13 @@
+import { animations } from '@/constants';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
+
+export const AnimatedBackdropContainer = styled(motion.div)`
+  z-index: ${({ theme }) => theme.zIndex.animatedPrizeWheelModalWin};
+`;
 
 export const BackdropWrap = styled.div`
   position: fixed;
-  z-index: ${({ theme }) => theme.zIndex.animatedPrizeWheelModalWin};
   top: 0;
   left: 0;
   width: 100%;
@@ -34,7 +39,10 @@ export const Container = styled.div`
   }
 `;
 
+export const AnimatedContentContainer = styled(motion.div)``;
+
 export const ContentWrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +67,8 @@ export const PrizeImg = styled.img`
   top: -72px;
   left: 50%;
   width: 160px;
-  transform: translateX(-50%);
+  animation: ${animations.smoothPrizeImgRotate} 10000ms linear infinite
+    alternate;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: -90px;
