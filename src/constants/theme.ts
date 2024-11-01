@@ -70,6 +70,7 @@ interface ITheme {
     conditionsSliderPagination: number;
     spinWheelBtn: number;
     animatedPrizeWheelModalWin: number;
+    animatedPrizeImg: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -149,6 +150,7 @@ const theme: ITheme = {
     promotionPrizeDrawsDatePicker: 10000,
     animatedModalWin: 100000,
     animatedPrizeWheelModalWin: 100000,
+    animatedPrizeImg: 100000,
   },
   transitionDurationAndFunc: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => `${value * 4}px`,

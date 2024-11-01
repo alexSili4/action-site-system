@@ -62,16 +62,23 @@ export const ContentWrap = styled.div`
   }
 `;
 
-export const PrizeImg = styled.img`
+export const AnimatedPrizeImgContainer = styled(motion.div)`
   position: absolute;
   top: -72px;
   left: 50%;
+  z-index: ${({ theme }) => theme.zIndex.animatedPrizeImg};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: -90px;
+  }
+`;
+
+export const PrizeImg = styled.img`
   width: 160px;
   animation: ${animations.smoothPrizeImgRotate} 10000ms linear infinite
     alternate;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    top: -90px;
     width: 190px;
   }
 `;

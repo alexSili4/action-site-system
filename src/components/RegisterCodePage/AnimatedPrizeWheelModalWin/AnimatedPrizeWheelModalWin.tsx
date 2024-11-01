@@ -15,6 +15,7 @@ import {
   FireworksImg,
   AnimatedBackdropContainer,
   AnimatedContentContainer,
+  AnimatedPrizeImgContainer,
 } from './AnimatedPrizeWheelModalWin.styled';
 import { IProps } from './AnimatedPrizeWheelModalWin.types';
 import prizeImg from '@/images/code/prize.png';
@@ -43,8 +44,8 @@ const AnimatedPrizeWheelModalWin: FC<IProps> = ({
                 transition: {
                   duration: animationDuration,
                   type: 'spring',
-                  stiffness: 200,
-                  damping: 7,
+                  stiffness: 100,
+                  damping: 10,
                 },
               }}
               exit={{
@@ -68,7 +69,23 @@ const AnimatedPrizeWheelModalWin: FC<IProps> = ({
                 </NextStepBtn>
               </ContentWrap>
             </AnimatedContentContainer>
-            <PrizeImg src={prizeImg} />
+            <AnimatedPrizeImgContainer
+              style={{
+                transformOrigin: '50% 0%',
+                translateX: '-50%',
+              }}
+              initial={{ scale: 0 }}
+              animate={{
+                scale: 1,
+                transition: { duration: animationDuration },
+              }}
+              exit={{
+                scale: 0,
+                transition: { duration: animationDuration },
+              }}
+            >
+              <PrizeImg src={prizeImg} />
+            </AnimatedPrizeImgContainer>
           </Container>
         </Backdrop>
       </BackdropWrap>
