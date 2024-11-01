@@ -3,6 +3,7 @@ export interface IProps {
   bannerDtUrl: string;
   period: string;
   name: string;
+  logoPartner: string;
 }
 
 export interface IStyledProps {

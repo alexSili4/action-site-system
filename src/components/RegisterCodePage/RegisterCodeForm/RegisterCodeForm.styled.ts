@@ -3,6 +3,15 @@ import { IStyledProps } from './RegisterCodeForm.types';
 
 export const Form = styled.form`
   margin-top: ${({ theme }) => theme.spacing(10)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 447px;
+    margin-top: ${({ theme }) => theme.spacing(32)};
+  }
+`;
+
+export const Content = styled.div`
+  position: relative;
 `;
 
 export const InputWrap = styled.div<IStyledProps>`
@@ -20,6 +29,11 @@ export const LabelWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   padding-left: ${({ theme }) => theme.spacing(2)};
   padding-right: ${({ theme }) => theme.spacing(2)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    left: 17px;
+    bottom: calc(100% - 3px);
+  }
 `;
 
 export const Label = styled.p`
@@ -28,6 +42,10 @@ export const Label = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    font-size: 14px;
+  }
 `;
 
 export const InputDelimiterWrap = styled.div<IStyledProps>`
@@ -47,10 +65,19 @@ export const InputDelimiter = styled.div`
 `;
 
 export const ErrorMessage = styled.p`
-  margin-top: ${({ theme }) => theme.spacing(3)};
   color: #ff6363;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    margin-top: ${({ theme }) => theme.spacing(3)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+  }
 `;

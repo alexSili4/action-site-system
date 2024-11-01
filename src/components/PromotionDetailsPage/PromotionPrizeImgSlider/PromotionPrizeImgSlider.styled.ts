@@ -53,7 +53,7 @@ export const LabelsWrap = styled.div`
   }
 `;
 
-export const PartnerLogo = styled.img`
+export const LogoPartner = styled.img`
   position: absolute;
   left: 0;
   top: 50%;

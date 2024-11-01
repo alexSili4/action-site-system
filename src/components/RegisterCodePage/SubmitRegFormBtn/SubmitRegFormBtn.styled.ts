@@ -32,4 +32,9 @@ export const StyledBtn = styled.button`
     box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
       1px 1px 0px 0px #7a4ebd;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    margin-top: ${({ theme }) => theme.spacing(12)};
+    padding: ${({ theme }) => theme.spacing(6)};
+  }
 `;

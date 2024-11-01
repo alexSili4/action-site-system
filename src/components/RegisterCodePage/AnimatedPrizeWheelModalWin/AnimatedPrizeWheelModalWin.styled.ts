@@ -145,7 +145,7 @@ export const Prize = styled.p`
   }
 `;
 
-export const PartnerLogoWrap = styled.div`
+export const LogoPartnerWrap = styled.div`
   position: absolute;
   bottom: 14px;
   left: 50%;
@@ -160,7 +160,7 @@ export const PartnerLogoWrap = styled.div`
   }
 `;
 
-export const PartnerLogo = styled.img`
+export const LogoPartner = styled.img`
   max-width: 120px;
 `;
 

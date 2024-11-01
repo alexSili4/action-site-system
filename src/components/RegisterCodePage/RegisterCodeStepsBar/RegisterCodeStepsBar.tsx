@@ -7,6 +7,7 @@ import {
   ProgressList,
   Step,
   Title,
+  ProgressListWrap,
 } from './RegisterCodeStepsBar.styled';
 import { IProps } from './RegisterCodeStepsBar.types';
 
@@ -21,18 +22,20 @@ const RegisterCodeStepsBar: FC<IProps> = ({
   return (
     <Container isHiddenOnMobile={isHiddenOnMobile}>
       <Title>Реєстрація акційного коду</Title>
-      <Step>
-        Крок {currentStep} із {lastStep}
-      </Step>
-      <ProgressList>
-        {steps.map((step) => (
-          <ListItem key={step} stepsCount={steps.length}>
-            <Progress>
-              <Completed currentStep={currentStep}></Completed>
-            </Progress>
-          </ListItem>
-        ))}
-      </ProgressList>
+      <ProgressListWrap>
+        <Step>
+          Крок {currentStep} із {lastStep}
+        </Step>
+        <ProgressList>
+          {steps.map((step) => (
+            <ListItem key={step} stepsCount={steps.length}>
+              <Progress>
+                <Completed currentStep={currentStep}></Completed>
+              </Progress>
+            </ListItem>
+          ))}
+        </ProgressList>
+      </ProgressListWrap>
     </Container>
   );
 };

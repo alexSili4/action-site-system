@@ -18,9 +18,11 @@ import monobank from '@/monobank.svg';
 import morshynska from '@/morshynska.svg';
 import podorozhnyk from '@/podorozhnyk.svg';
 import wog from '@/wog.svg';
-import { IProps } from './RegisterCode.types';
+import { useTargetPromotionData } from '@/hooks';
 
-const RegisterCode: FC<IProps> = ({ shouldShowPrizesWheel }) => {
+const RegisterCode: FC = () => {
+  const { actionType } = useTargetPromotionData();
+  const shouldShowPrizesWheel = actionType === 1 || actionType === 3;
   // TODO delete sectors
   const prizes: WheelPrizes = [
     { id: 2, name: 'citrus', icon: citrus, prize: '10%' },
@@ -34,7 +36,7 @@ const RegisterCode: FC<IProps> = ({ shouldShowPrizesWheel }) => {
     { id: 10, name: 'monobank', icon: monobank, prize: '800₴' },
     { id: 9, name: 'morshynska', icon: morshynska, prize: '900₴' },
   ];
-  const [currentStep, setCurrentStep] = useState<number>(2);
+  const [currentStep, setCurrentStep] = useState<number>(1);
   const steps = getRegCodeSteps({
     stepsSequence: RegPromotionCodeSteps,
     shouldShowPrizesWheel,

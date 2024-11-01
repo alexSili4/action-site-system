@@ -9,10 +9,10 @@ import { theme } from '@/constants';
 export const Container = styled.div<IContainerStyledProps>`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing()};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: ${({ isHiddenOnMobile }) => isHiddenOnMobile && 'none'};
+    gap: ${({ theme }) => theme.spacing()};
     padding: ${({ theme }) => theme.spacing(4)};
     border-radius: 16px;
     background-color: ${({ theme }) => theme.colors.white};
@@ -20,6 +20,7 @@ export const Container = styled.div<IContainerStyledProps>`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: ${({ isHiddenOnMobile }) => !isHiddenOnMobile && 'none'};
+    width: 100%;
   }
 `;
 
@@ -29,6 +30,16 @@ export const Title = styled.p`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    font-size: 18px;
+  }
+`;
+
+export const ProgressListWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing()};
 `;
 
 export const Step = styled.p`
@@ -37,6 +48,10 @@ export const Step = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    text-align: right;
+  }
 `;
 
 const progressListGap = theme.spacing(2);

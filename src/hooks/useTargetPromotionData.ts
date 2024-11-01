@@ -20,8 +20,10 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     coverage_type: coverageType,
     hot_line_text: hotLineText,
     hot_line_text_2: hotLineOtherText,
-    hot_line_work_hours: hotLineWorkHours,
-    logo_partner: logoPartner,
+    hot_line_work_hours: hotLineWorkHours = '',
+    third_banner_dt: thirdBannerDt = '',
+    third_banner_mob: thirdBannerMob = '',
+    logo_partner: logoPartner = '',
   } = targetPromotion ?? {};
 
   return {
@@ -38,10 +40,12 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     actionType,
     name,
     hotLineText,
-    logoPartner: logoPartner ?? '',
+    logoPartner,
     logo: logo ?? '',
-    hotLineWorkHours: hotLineWorkHours ?? '',
+    hotLineWorkHours,
     hotLineOtherText,
+    thirdBannerDt,
+    thirdBannerMob,
   };
 };
 

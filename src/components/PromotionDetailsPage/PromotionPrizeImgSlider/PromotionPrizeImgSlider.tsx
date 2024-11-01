@@ -9,7 +9,7 @@ import {
   ImgWrap,
   Title,
   TitleWrap,
-  PartnerLogo,
+  LogoPartner,
   LabelsWrap,
 } from './PromotionPrizeImgSlider.styled';
 import { Swiper as ISwiper } from 'swiper';
@@ -28,8 +28,8 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const isManyImages = images.length > 1;
-  const { logo: partnerLogo = '' } = partner ?? {};
-  const partnerLogoUrl = getFileUrl(partnerLogo);
+  const { logo: logoPartner = '' } = partner ?? {};
+  const logoPartnerUrl = getFileUrl(logoPartner);
 
   const onSlideChange = (swiper: ISwiper) => {
     setActiveIndex(swiper.activeIndex);
@@ -59,7 +59,7 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
           );
         })}
         <LabelsWrap>
-          {partnerLogo && <PartnerLogo src={partnerLogoUrl} />}
+          {logoPartner && <LogoPartner src={logoPartnerUrl} />}
           <PromotionPrizeImgSliderStatusLabel giftType={giftType} />
         </LabelsWrap>
         <TitleWrap>

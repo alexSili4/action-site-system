@@ -124,6 +124,8 @@ export interface IUseTargetPromotionData {
   mainBannerDt: BannerDt;
   secondBannerMob: BannerMob;
   secondBannerDt: BannerDt;
+  thirdBannerDt: BannerDt;
+  thirdBannerMob: BannerDt;
   actionType: ActionType | undefined;
   name: string;
   hotLineText: string | undefined;
