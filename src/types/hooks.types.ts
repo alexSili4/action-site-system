@@ -28,7 +28,7 @@ import {
   LatLngBoundsExpression,
   LatLngExpression,
 } from 'leaflet';
-import { IRegCodeFormData } from './regCode.types';
+import { IRegCodeFormData, IRegUserFormData } from './regCode.types';
 import {
   SubmitHandler,
   UseFormHandleSubmit,
@@ -149,4 +149,18 @@ export interface IUseRegisterCodeForm {
 export interface IUseCsrfToken {
   name: string;
   token: string;
+}
+
+export interface IUseRegisterCodeBanner {
+  bannerMobUrl: string;
+  bannerDtUrl: string;
+  promotionDate: string;
+  name: string;
+  logoPartnerUrl: string;
+}
+
+export interface IUseRegisterUserForm {
+  handleFormSubmit: SubmitHandler<IRegUserFormData>;
+  register: UseFormRegister<IRegUserFormData>;
+  handleSubmit: UseFormHandleSubmit<IRegUserFormData, undefined>;
 }

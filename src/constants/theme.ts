@@ -43,6 +43,7 @@ interface ITheme {
     cabinetCodeLink: number;
     cabinetPaginationBtn: number;
     conditionsSliderBtn: number;
+    registerUserFormCheckbox: number;
   };
   containerWidth: {
     desktop: number;
@@ -99,6 +100,7 @@ const theme: ITheme = {
     montserrat: 'Montserrat',
   },
   iconSizes: {
+    registerUserFormCheckbox: 8,
     cabinetCodeLink: 8,
     cabinetSectionLink: 8,
     goBackLink: 10,

@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import { uk } from 'date-fns/locale';
 import { IoCalendarClearOutline, IoClose } from 'react-icons/io5';
-import { FaChevronDown } from 'react-icons/fa';
 import DatePicker from 'react-datepicker';
 import {
   Container,
@@ -14,6 +13,7 @@ import { BtnClickEvent, DatePickerEvent } from '@/types/types';
 import { theme } from '@/constants';
 import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
+import { FaChevronDown } from 'react-icons/fa';
 
 const PromotionsDatePicker: FC = () => {
   const [date, setDate] = useState<Date | null>(null);

@@ -36,7 +36,7 @@ const RegisterCode: FC = () => {
     { id: 10, name: 'monobank', icon: monobank, prize: '800₴' },
     { id: 9, name: 'morshynska', icon: morshynska, prize: '900₴' },
   ];
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(2);
   const steps = getRegCodeSteps({
     stepsSequence: RegPromotionCodeSteps,
     shouldShowPrizesWheel,
@@ -81,7 +81,9 @@ const RegisterCode: FC = () => {
           moveToNextStep={incrementCurrentStep}
         />
       )}
-      {isConfirmEmailStep && <RegisterUserSection />}
+      {isConfirmEmailStep && (
+        <RegisterUserSection steps={steps} currentStep={currentStep} />
+      )}
     </Container>
   );
 };

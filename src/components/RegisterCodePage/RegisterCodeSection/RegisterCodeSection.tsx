@@ -5,43 +5,18 @@ import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeForm from '@RegisterCodePageComponents/RegisterCodeForm';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import { IProps } from './RegisterCodeSection.types';
-import { getFileUrl, getPromotionBannerUrls, getPromotionDate } from '@/utils';
 
 const RegisterCodeSection: FC<IProps> = ({
   steps,
   currentStep,
   incrementCurrentStep,
 }) => {
-  const {
-    hotLinePhone,
-    name,
-    dateFrom,
-    dateTo,
-    hotLineWorkHours,
-    logoPartner,
-    thirdBannerDt,
-    thirdBannerMob,
-  } = useTargetPromotionData();
+  const { hotLinePhone, hotLineWorkHours } = useTargetPromotionData();
   // TODO fix
-  const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
-    bannerDt: thirdBannerDt,
-    bannerMob: thirdBannerMob,
-  });
-  const promotionDate = getPromotionDate({
-    dateFrom,
-    dateTo,
-  });
-  const logoPartnerUrl = getFileUrl(logoPartner);
 
   return (
     <Container>
-      <RegisterCodeBanner
-        bannerMobUrl={bannerMobUrl}
-        bannerDtUrl={bannerDtUrl}
-        name={name}
-        period={promotionDate}
-        logoPartner={logoPartnerUrl}
-      />
+      <RegisterCodeBanner />
       <ContentWrap>
         <RegisterCodeStepsBar
           isHiddenOnMobile

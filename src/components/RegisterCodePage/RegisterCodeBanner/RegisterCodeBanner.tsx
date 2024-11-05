@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { IProps } from './RegisterCodeBanner.types';
 import {
   Container,
   Banner,
@@ -8,22 +7,20 @@ import {
   PromotionName,
 } from './RegisterCodeBanner.styled';
 import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
+import { useRegisterCodeBanner } from '@/hooks';
 
-const RegisterCodeBanner: FC<IProps> = ({
-  bannerMobUrl,
-  bannerDtUrl,
-  name,
-  period,
-  logoPartner,
-}) => {
+const RegisterCodeBanner: FC = () => {
+  const { bannerMobUrl, bannerDtUrl, promotionDate, name, logoPartnerUrl } =
+    useRegisterCodeBanner();
+
   return (
     <Container>
       <Banner bannerMobUrl={bannerMobUrl} bannerDtUrl={bannerDtUrl}>
         <BannerTitleWrap>
-          <PromotionPeriodLabel period={period} />
+          <PromotionPeriodLabel period={promotionDate} />
           <PromotionName>{name}</PromotionName>
         </BannerTitleWrap>
-        <LogoPartner src={logoPartner} />
+        <LogoPartner src={logoPartnerUrl} />
       </Banner>
     </Container>
   );

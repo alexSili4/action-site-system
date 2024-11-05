@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import { IProps } from './PromotionContactsMapHeader.types';
 import { HiOutlineNewspaper } from 'react-icons/hi2';
-import { CgClose } from 'react-icons/cg';
 import { Messages, theme } from '@/constants';
 import {
   ShopsListBtn,
@@ -17,6 +16,7 @@ import {
 import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import PromotionContactsMapHeaderShopsListContainer from '@PromotionDetailsPageComponents/PromotionContactsMapHeaderShopsListContainer';
 import { useMediaQuery } from '@/hooks';
+import { CgClose } from 'react-icons/cg';
 
 const PromotionContactsMapHeader: FC<IProps> = ({
   activeShopNum,
