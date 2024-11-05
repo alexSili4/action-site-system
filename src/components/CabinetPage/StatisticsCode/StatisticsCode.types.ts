@@ -4,7 +4,3 @@ export interface IProps {
   isSuccessStatus: boolean;
   isErrorStatus: boolean;
 }
-
-export interface IStyledCertificateWrapProps {
-  certificateImg: string;
-}

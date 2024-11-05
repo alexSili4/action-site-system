@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IStyledCertificateWrapProps } from './StatisticsCode.types';
+import certificateImg from '@/images/cabinet/certificate.png';
 
 export const Container = styled.div`
   display: flex;
@@ -100,7 +100,7 @@ export const StyledLinkTitle = styled.span`
   line-height: 1.4;
 `;
 
-export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
+export const CertificateWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,7 +108,7 @@ export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
   gap: ${({ theme }) => theme.spacing()};
   width: 94px;
   height: 55px;
-  background-image: url(${({ certificateImg }) => certificateImg});
+  background-image: url(${certificateImg});
   background-position: center center;
   background-size: cover;
   border-top-right-radius: 5px;

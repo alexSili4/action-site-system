@@ -21,7 +21,6 @@ import {
 } from './StatisticsCode.styled';
 import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
-import certificateImg from '@/icons/cabinet/certificate.svg';
 
 const StatisticsCode: FC<IProps> = ({
   isSuccessStatus,
@@ -53,7 +52,7 @@ const StatisticsCode: FC<IProps> = ({
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
           </Link>
         </LinksWrap>
-        <CertificateWrap certificateImg={certificateImg}>
+        <CertificateWrap>
           <p>logo</p>
           <CertificateCode>{code}</CertificateCode>
         </CertificateWrap>

@@ -13,6 +13,7 @@ import PaginationBar from '@GeneralComponents/PaginationBar';
 
 const StatisticsCodesCategoryContent: FC = () => {
   const userCodes = useUserCodesStore(selectUserCodes);
+  const shouldShowPaginationBar = Boolean(userCodes.length);
 
   return (
     <Container>
@@ -41,7 +42,7 @@ const StatisticsCodesCategoryContent: FC = () => {
         })}
       </List>
       {/* TODO fix */}
-      {userCodes.length && (
+      {shouldShowPaginationBar && (
         <PaginationBar group={userCodes.length} totalCount={40} />
       )}
     </Container>
