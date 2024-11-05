@@ -5,11 +5,11 @@ import {
   ContentWrap,
 } from './PromotionPrizes.styled';
 import { IProps } from './PromotionPrizes.types';
-import { PagePaths, SearchParamsKeys } from '@/constants';
+
 import PromotionPrizesBanner from '@PromotionDetailsPageComponents/PromotionPrizesBanner';
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import PromotionPrizesList from '@PromotionDetailsPageComponents/PromotionPrizesList';
-import { useCityId, usePromotionId } from '@/hooks';
+import { useRegisterCodeLink } from '@/hooks';
 
 const PromotionPrizes: FC<IProps> = ({
   prizes,
@@ -19,8 +19,6 @@ const PromotionPrizes: FC<IProps> = ({
   showRegCodeLink = true,
   id,
 }) => {
-  const cityId = useCityId();
-  const promotionId = usePromotionId();
   const bigPrizes = prizes.filter(
     ({ show_type: showType }) => showType === 'big'
   );
@@ -30,8 +28,7 @@ const PromotionPrizes: FC<IProps> = ({
 
   const showBigPrizesList = Boolean(bigPrizes.length);
   const showBasePrizesList = Boolean(basePrizes.length);
-
-  const registerCodeLink = `${PagePaths.code}/${promotionId}?${SearchParamsKeys.cityId}=${cityId}`;
+  const registerCodeLink = useRegisterCodeLink();
 
   return (
     <Container id={id}>

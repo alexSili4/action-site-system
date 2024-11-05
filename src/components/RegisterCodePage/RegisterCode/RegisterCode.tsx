@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import RegisterCodeSection from '@RegisterCodePageComponents/RegisterCodeSection';
-import { Container } from './RegisterCode.styled';
+import { Content } from './RegisterCode.styled';
 import { RegPromotionCodeSteps } from '@/constants';
 import { getRegCodeSteps } from '@/utils';
 import PrizesWheelSection from '@RegisterCodePageComponents/PrizesWheelSection';
@@ -19,6 +19,7 @@ import morshynska from '@/morshynska.svg';
 import podorozhnyk from '@/podorozhnyk.svg';
 import wog from '@/wog.svg';
 import { useTargetPromotionData } from '@/hooks';
+import Container from '@GeneralComponents/Container';
 
 const RegisterCode: FC = () => {
   const { actionType } = useTargetPromotionData();
@@ -36,7 +37,7 @@ const RegisterCode: FC = () => {
     { id: 10, name: 'monobank', icon: monobank, prize: '800₴' },
     { id: 9, name: 'morshynska', icon: morshynska, prize: '900₴' },
   ];
-  const [currentStep, setCurrentStep] = useState<number>(2);
+  const [currentStep, setCurrentStep] = useState<number>(3);
   const steps = getRegCodeSteps({
     stepsSequence: RegPromotionCodeSteps,
     shouldShowPrizesWheel,
@@ -58,20 +59,24 @@ const RegisterCode: FC = () => {
   };
 
   return (
-    <Container>
+    <Content>
       {!isPrizesWheelStep && (
-        <RegisterCodeStepsBar
-          isHiddenOnMobile={false}
-          steps={steps}
-          currentStep={currentStep}
-        />
+        <Container>
+          <RegisterCodeStepsBar
+            isHiddenOnMobile={false}
+            steps={steps}
+            currentStep={currentStep}
+          />
+        </Container>
       )}
       {isRegisterCodeStep && (
-        <RegisterCodeSection
-          steps={steps}
-          currentStep={currentStep}
-          incrementCurrentStep={incrementCurrentStep}
-        />
+        <Container>
+          <RegisterCodeSection
+            steps={steps}
+            currentStep={currentStep}
+            incrementCurrentStep={incrementCurrentStep}
+          />
+        </Container>
       )}
       {isPrizesWheelStep && (
         <PrizesWheelSection
@@ -82,9 +87,11 @@ const RegisterCode: FC = () => {
         />
       )}
       {isConfirmEmailStep && (
-        <RegisterUserSection steps={steps} currentStep={currentStep} />
+        <Container>
+          <RegisterUserSection steps={steps} currentStep={currentStep} />
+        </Container>
       )}
-    </Container>
+    </Content>
   );
 };
 

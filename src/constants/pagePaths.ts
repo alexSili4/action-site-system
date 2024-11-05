@@ -8,6 +8,7 @@ const enum PagePaths {
   code = '/code',
   userCode = `${cabinet}/code`,
   userPrize = `${cabinet}/prize`,
+  promotionDetailsPageExample = `${PagePaths.promotions}/`,
 }
 
 export default PagePaths;

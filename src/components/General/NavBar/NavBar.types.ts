@@ -1,9 +1,10 @@
-import { Func } from '@/types/types';
+import { OnBtnClickFunc } from '@/types/types';
 
 export interface IProps {
   isRootPage: boolean;
   isDesktop: boolean;
-  setRegisterCodeModalWinState: Func;
+  isPromotionDetailsPage: boolean;
+  onRegisterCodeBtnClick: OnBtnClickFunc;
 }
 
 export interface IStyledProps {

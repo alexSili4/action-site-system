@@ -24,7 +24,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
     onRegCodeInput,
     inputMaxLength,
     error,
-    disabledSubmitRegFormBtn,
+    disabledBtn,
   } = useRegisterCodeForm(incrementCurrentStep);
 
   return (
@@ -75,7 +75,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
       </Content>
       <SubmitRegFormBtn
         title='Підтвердити і крутити Колесо подарунків'
-        disabled={disabledSubmitRegFormBtn}
+        disabled={disabledBtn}
       />
     </Form>
   );

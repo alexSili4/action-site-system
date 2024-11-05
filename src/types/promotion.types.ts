@@ -39,6 +39,7 @@ export interface IPromotion {
   action_type: ActionType;
   rules_pdf: string;
   logo_partner: string;
+  legal_text: string;
 }
 
 export type Promotions = IPromotion[];

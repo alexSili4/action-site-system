@@ -30,7 +30,7 @@ const useRegisterCodeForm = (
 
   const inputMaxLength = generalSettings.regCodeLength / 3;
 
-  const disabledSubmitRegFormBtn = !isFullRegCode || isLoading;
+  const disabledBtn = !isFullRegCode || isLoading;
 
   const startRegisterCode = () => {
     setError(null);
@@ -179,7 +179,7 @@ const useRegisterCodeForm = (
     onRegCodeInput,
     inputMaxLength,
     error,
-    disabledSubmitRegFormBtn,
+    disabledBtn,
   };
 };
 

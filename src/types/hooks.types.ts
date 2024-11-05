@@ -132,6 +132,7 @@ export interface IUseTargetPromotionData {
   hotLineWorkHours: string;
   logoPartner: string;
   hotLineOtherText: string | undefined;
+  legalText: string;
 }
 
 export interface IUseRegisterCodeForm {
@@ -143,7 +144,7 @@ export interface IUseRegisterCodeForm {
   onRegCodeInput: InputChangeFunc;
   inputMaxLength: number;
   error: RegisterCodeErr;
-  disabledSubmitRegFormBtn: boolean;
+  disabledBtn: boolean;
 }
 
 export interface IUseCsrfToken {
@@ -157,10 +158,12 @@ export interface IUseRegisterCodeBanner {
   promotionDate: string;
   name: string;
   logoPartnerUrl: string;
+  logoUrl: string;
 }
 
 export interface IUseRegisterUserForm {
   handleFormSubmit: SubmitHandler<IRegUserFormData>;
   register: UseFormRegister<IRegUserFormData>;
   handleSubmit: UseFormHandleSubmit<IRegUserFormData, undefined>;
+  disabledBtn: boolean;
 }

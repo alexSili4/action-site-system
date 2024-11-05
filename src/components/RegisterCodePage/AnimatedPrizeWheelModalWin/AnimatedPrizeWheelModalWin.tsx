@@ -21,6 +21,7 @@ import { IProps } from './AnimatedPrizeWheelModalWin.types';
 import prizeImg from '@/images/code/prize.png';
 import fireworksImg from '@/images/code/fireworks.png';
 import ConfettiAnimation from '@GeneralComponents/ConfettiAnimation';
+import fanfare from '@/audio/fanfare.mp3';
 
 const AnimatedPrizeWheelModalWin: FC<IProps> = ({
   moveToNextStep,
@@ -93,6 +94,7 @@ const AnimatedPrizeWheelModalWin: FC<IProps> = ({
         </BackdropWrap>
       </AnimatedBackdropContainer>
       <ConfettiAnimation />
+      <audio src={fanfare} autoPlay hidden />
     </>
   );
 };

@@ -12,9 +12,11 @@ import {
 } from './RegisterUserForm.styled';
 import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterUserCheckbox';
 import { useRegisterUserForm } from '@/hooks';
+import SubmitRegFormBtn from '../SubmitRegFormBtn';
 
 const RegisterUserForm: FC = () => {
-  const { handleFormSubmit, register, handleSubmit } = useRegisterUserForm();
+  const { handleFormSubmit, register, handleSubmit, disabledBtn } =
+    useRegisterUserForm();
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -35,12 +37,23 @@ const RegisterUserForm: FC = () => {
           <CertificateInfo>
             Сертифікат зберігатиметься в вашому кабінеті.
           </CertificateInfo>
-          {/* Отримати сертифікат також на email */}
+          <RegisterUserCheckbox>
+            <RegisterUserCheckboxTitle>
+              Отримати сертифікат також на email
+            </RegisterUserCheckboxTitle>
+          </RegisterUserCheckbox>
         </CertificateInfoWrap>
         <RegisterUserCheckbox>
-          <RegisterUserCheckboxTitle>{/*  */}</RegisterUserCheckboxTitle>
+          <RegisterUserCheckboxTitle>
+            Погоджуюсь з{' '}
+            <a href='' target='_blank' rel='noopener noreferrer nofollow'>
+              умовами участі
+            </a>{' '}
+            в акції
+          </RegisterUserCheckboxTitle>
         </RegisterUserCheckbox>
       </Content>
+      <SubmitRegFormBtn title='Зареєструвати' disabled={disabledBtn} />
     </Form>
   );
 };

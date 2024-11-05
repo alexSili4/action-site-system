@@ -25,6 +25,15 @@ export const Copyright = styled.p<IStyledProps>`
   font-weight: 400;
 `;
 
+export const SunLink = styled.a<IStyledProps>`
+  margin-top: ${({ theme }) => theme.spacing(2)};
+  color: ${({ theme, isRootPage }) =>
+    isRootPage ? '#3F3D5C' : theme.colors.white};
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 12px;
+  font-weight: 400;
+`;
+
 export const LegalInfoWrap = styled.div`
   width: 100%;
   margin-top: ${({ theme }) => theme.spacing(8)};
@@ -38,7 +47,7 @@ export const LegalInfoWrap = styled.div`
   }
 `;
 
-export const LegalInfo = styled.p`
+export const LegalInfo = styled.div`
   width: ${({ theme }) => theme.containerWidth.mobile}px;
   margin-left: auto;
   margin-right: auto;

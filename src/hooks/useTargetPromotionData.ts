@@ -24,6 +24,7 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     third_banner_dt: thirdBannerDt = '',
     third_banner_mob: thirdBannerMob = '',
     logo_partner: logoPartner = '',
+    legal_text: legalText = '',
   } = targetPromotion ?? {};
 
   return {
@@ -46,6 +47,7 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     hotLineOtherText,
     thirdBannerDt,
     thirdBannerMob,
+    legalText,
   };
 };
 

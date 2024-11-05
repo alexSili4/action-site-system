@@ -5,9 +5,10 @@ import Container from '@GeneralComponents/Container';
 import NavBar from '@GeneralComponents/NavBar';
 
 const Header: FC<IProps> = ({
+  isPromotionDetailsPage,
   isRootPage,
   isDesktop,
-  setRegisterCodeModalWinState,
+  onRegisterCodeBtnClick,
 }) => {
   return (
     <StyledHeader>
@@ -15,7 +16,8 @@ const Header: FC<IProps> = ({
         <NavBar
           isRootPage={isRootPage}
           isDesktop={isDesktop}
-          setRegisterCodeModalWinState={setRegisterCodeModalWinState}
+          isPromotionDetailsPage={isPromotionDetailsPage}
+          onRegisterCodeBtnClick={onRegisterCodeBtnClick}
         />
       </Container>
     </StyledHeader>

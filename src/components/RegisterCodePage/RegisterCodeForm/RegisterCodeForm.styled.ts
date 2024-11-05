@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 import { IStyledProps } from './RegisterCodeForm.types';
 
 export const Form = styled.form`
-  margin-top: ${({ theme }) => theme.spacing(10)};
-
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 447px;
     margin-top: ${({ theme }) => theme.spacing(32)};

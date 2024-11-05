@@ -1,25 +1,24 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import {
   StyledFooter,
   Copyright,
   LegalInfo,
   LegalInfoWrap,
+  SunLink,
 } from './Footer.styled';
 import SocialLinksList from '@GeneralComponents/SocialLinksList';
 import { IProps } from './Footer.types';
 import { useLocation } from 'react-router-dom';
 import { PagePaths } from '@/constants';
+import { useTargetPromotionData } from '@/hooks';
 
 const Footer: FC<IProps> = ({ isRootPage }) => {
   const { pathname } = useLocation();
+  const { legalText } = useTargetPromotionData();
   const isPromotionDetailsPage = pathname.startsWith(
-    `${PagePaths.promotions}/`
+    PagePaths.promotionDetailsPageExample
   );
   const shouldShowLegalInfo = isPromotionDetailsPage;
-
-  useEffect(() => {
-    console.log(pathname);
-  }, [pathname]);
 
   return (
     <StyledFooter
@@ -30,33 +29,17 @@ const Footer: FC<IProps> = ({ isRootPage }) => {
       <Copyright isRootPage={isRootPage}>
         © 2010-2024 ТОВ "АТБ-Маркет". Всі права захищено.
       </Copyright>
+      <SunLink
+        href='https://sun.agency/'
+        target='_blank'
+        rel='noopener noreferrer nofollow'
+        isRootPage={isRootPage}
+      >
+        Зроблено Сонцем ●
+      </SunLink>
       {shouldShowLegalInfo && (
         <LegalInfoWrap>
-          <LegalInfo>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-          </LegalInfo>
+          <LegalInfo dangerouslySetInnerHTML={{ __html: legalText }} />
         </LegalInfoWrap>
       )}
     </StyledFooter>

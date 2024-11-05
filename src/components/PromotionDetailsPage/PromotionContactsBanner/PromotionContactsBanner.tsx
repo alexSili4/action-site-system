@@ -19,14 +19,9 @@ import { useTargetPromotionData } from '@/hooks';
 import { getFileUrl, getPromotionBannerUrls } from '@/utils';
 
 const PromotionContactsBanner: FC = () => {
-  const {
-    hotLinePhone,
-    hotLineEmail,
-    logoPartner,
-    secondBannerDt,
-    secondBannerMob,
-  } = useTargetPromotionData();
-  const logoPartnerUrl = getFileUrl(logoPartner);
+  const { hotLinePhone, hotLineEmail, logo, secondBannerDt, secondBannerMob } =
+    useTargetPromotionData();
+  const logoUrl = getFileUrl(logo);
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
     bannerDt: secondBannerDt,
     bannerMob: secondBannerMob,
@@ -37,7 +32,7 @@ const PromotionContactsBanner: FC = () => {
       <TitleWrap>
         <Title>Організатор акції</Title>
         <TitleImgWrap>
-          <TitleImg src={logoPartnerUrl} alt='Логотип організатора акції' />
+          <TitleImg src={logoUrl} alt='Логотип організатора акції' />
         </TitleImgWrap>
       </TitleWrap>
       <Links>

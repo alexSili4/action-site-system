@@ -10,7 +10,8 @@ import LocationFilter from '@GeneralComponents/LocationFilter';
 const NavBar: FC<IProps> = ({
   isRootPage,
   isDesktop,
-  setRegisterCodeModalWinState,
+  isPromotionDetailsPage,
+  onRegisterCodeBtnClick,
 }) => {
   const showShortLogoLinkTitle = !isRootPage && !isDesktop;
   const showFakeNavControls = isRootPage && isDesktop;
@@ -23,13 +24,15 @@ const NavBar: FC<IProps> = ({
       {showFakeNavControls && (
         <NavBarControls
           isRootPage={isRootPage}
-          setRegisterCodeModalWinState={setRegisterCodeModalWinState}
+          isPromotionDetailsPage={isPromotionDetailsPage}
+          onRegisterCodeBtnClick={onRegisterCodeBtnClick}
           isFake
         />
       )}
       <NavBarControls
         isRootPage={isRootPage}
-        setRegisterCodeModalWinState={setRegisterCodeModalWinState}
+        isPromotionDetailsPage={isPromotionDetailsPage}
+        onRegisterCodeBtnClick={onRegisterCodeBtnClick}
       />
       <Link to={PagePaths.root}>
         <AtbLogo />

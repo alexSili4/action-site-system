@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(10)};
+
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    flex-direction: column;
     border-radius: 24px;
     background-color: ${({ theme }) => theme.colors.white};
     padding: ${({ theme: { spacing } }) =>
@@ -9,7 +13,6 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    display: flex;
     gap: ${({ theme }) => theme.spacing(4)};
   }
 `;

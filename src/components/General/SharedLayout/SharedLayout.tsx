@@ -8,6 +8,8 @@ import AppBackground from '@GeneralComponents/AppBackground';
 import AnimatedModalWinContainer from '@GeneralComponents/AnimatedModalWinContainer';
 import { PagePaths, theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
+import { makeBlur } from '@/utils';
+import { BtnClickEvent } from '@/types/types';
 
 const SharedLayout: FC = () => {
   const [showRegisterCodeModalWin, setShowRegisterCodeModalWin] =
@@ -16,9 +18,18 @@ const SharedLayout: FC = () => {
   const { pathname } = useLocation();
 
   const isRootPage = pathname === PagePaths.root;
+  const isPromotionDetailsPage = pathname.startsWith(
+    PagePaths.promotionDetailsPageExample
+  );
 
   const setRegisterCodeModalWinState = () => {
     setShowRegisterCodeModalWin((prevState) => !prevState);
+  };
+
+  const onRegisterCodeBtnClick = (e: BtnClickEvent) => {
+    makeBlur(e.currentTarget);
+
+    setRegisterCodeModalWinState();
   };
 
   return (
@@ -27,8 +38,9 @@ const SharedLayout: FC = () => {
       <Content>
         <Header
           isRootPage={isRootPage}
+          isPromotionDetailsPage={isPromotionDetailsPage}
           isDesktop={isDesktop}
-          setRegisterCodeModalWinState={setRegisterCodeModalWinState}
+          onRegisterCodeBtnClick={onRegisterCodeBtnClick}
         />
         <Main>
           <Suspense fallback={<Loader />}>

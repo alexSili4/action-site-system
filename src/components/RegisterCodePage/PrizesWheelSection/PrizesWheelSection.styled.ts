@@ -2,13 +2,29 @@ import styled from '@emotion/styled';
 import { IStyledProps, IStyledSectorProps } from './PrizesWheelSection.types';
 
 export const Container = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: ${({ theme: { padding } }) => padding.container}px;
+  padding-right: ${({ theme: { padding } }) => padding.container}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: ${({ theme: { containerWidth, padding } }) =>
+      containerWidth.desktop + padding.container * 2}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+export const Content = styled.div`
+  flex-grow: 1;
   display: flex;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding-top: ${({ theme }) => theme.spacing(6)};
-    padding-bottom: ${({ theme }) => theme.spacing(8)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -22,12 +38,11 @@ export const WheelWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 306px;
-  height: 306px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 650px;
-    height: 650px;
   }
 `;
 
@@ -36,8 +51,8 @@ export const PointerImg = styled.img`
   z-index: ${({ theme }) => theme.zIndex.prizeWheelImg + 1};
   top: 0px;
   left: 50%;
-  width: 30px;
-  height: 27px;
+  width: 12%;
+  height: auto;
   transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -57,8 +72,8 @@ export const CircleImg = styled.img`
 
 export const Wheel = styled.div<IStyledProps>`
   position: relative;
-  width: 273px;
-  height: 273px;
+  width: calc(100% - 33px);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   transform: rotate(${({ totalDegrees }) => totalDegrees}deg);
   transition: transform ${({ spinningMs }) => spinningMs}ms ease-in-out;
@@ -105,7 +120,8 @@ export const Sector = styled.div<IStyledSectorProps>`
 
 export const Image = styled.img`
   position: absolute;
-  top: 36px;
+  top: 15%;
+  width: 20%;
   transform: rotate(90deg);
 `;
 

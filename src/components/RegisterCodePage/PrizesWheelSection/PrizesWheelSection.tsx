@@ -4,11 +4,12 @@ import {
   Wheel,
   Sector,
   SpinWheelBtn,
-  Container,
+  Content,
   Image,
   WheelWrap,
   CircleImg,
   PointerImg,
+  Container,
 } from './PrizesWheelSection.styled';
 import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
@@ -66,28 +67,30 @@ const PrizesWheelSection: FC<IProps> = ({
   return (
     <>
       <Container>
-        <WheelWrap>
-          <PointerImg src={pointer} />
-          <CircleImg src={circle} />
-          <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
-            {prizes.map(({ id, icon }, index, array) => {
-              const number = index + 1;
+        <Content>
+          <WheelWrap>
+            <PointerImg src={pointer} />
+            <CircleImg src={circle} />
+            <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
+              {prizes.map(({ id, icon }, index, array) => {
+                const number = index + 1;
 
-              return (
-                <Sector key={id} number={number} length={array.length}>
-                  <Image src={icon} />
-                </Sector>
-              );
-            })}
-          </Wheel>
-        </WheelWrap>
-        <SpinWheelBtn
-          type='button'
-          onClick={onSpinWheelBtnClick}
-          disabled={isWheelSpun}
-        >
-          Крутити
-        </SpinWheelBtn>
+                return (
+                  <Sector key={id} number={number} length={array.length}>
+                    <Image src={icon} />
+                  </Sector>
+                );
+              })}
+            </Wheel>
+          </WheelWrap>
+          <SpinWheelBtn
+            type='button'
+            onClick={onSpinWheelBtnClick}
+            disabled={isWheelSpun}
+          >
+            Крутити
+          </SpinWheelBtn>
+        </Content>
       </Container>
       {targetPrize && (
         <AnimatedPrizeWheelModalWinContainer

@@ -34,9 +34,9 @@ const PromotionDetails: FC<IProps> = ({
     dateTo,
     secondBannerMob,
     secondBannerDt,
-    logo,
     actionType,
     name,
+    logoPartner,
   } = useTargetPromotionData();
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
@@ -49,7 +49,7 @@ const PromotionDetails: FC<IProps> = ({
     bannerDt: secondBannerDt,
     bannerMob: secondBannerMob,
   });
-  const logoUrl = getFileUrl(logo ?? '');
+  const logoPartnerUrl = getFileUrl(logoPartner);
   const showWheelLogo = actionType === 1 || actionType === 3;
 
   const promotionCategoryState = state?.promotionCategory;
@@ -78,7 +78,7 @@ const PromotionDetails: FC<IProps> = ({
       </PromotionDetailsSectionContainer>
       <PromotionConditions conditions={conditions} />
       <PromotionPrizes
-        logo={<PromotionPrizesBannerIcon src={logoUrl} />}
+        logo={<PromotionPrizesBannerIcon src={logoPartnerUrl} />}
         prizes={otherPrizes}
         title='Призи головного розіграшу'
         description='Унікальний приз від головного партнера'

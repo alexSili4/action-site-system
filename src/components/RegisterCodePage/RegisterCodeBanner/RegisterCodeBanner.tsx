@@ -10,7 +10,7 @@ import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import { useRegisterCodeBanner } from '@/hooks';
 
 const RegisterCodeBanner: FC = () => {
-  const { bannerMobUrl, bannerDtUrl, promotionDate, name, logoPartnerUrl } =
+  const { bannerMobUrl, bannerDtUrl, promotionDate, name, logoUrl } =
     useRegisterCodeBanner();
 
   return (
@@ -20,7 +20,7 @@ const RegisterCodeBanner: FC = () => {
           <PromotionPeriodLabel period={promotionDate} />
           <PromotionName>{name}</PromotionName>
         </BannerTitleWrap>
-        <LogoPartner src={logoPartnerUrl} />
+        <LogoPartner src={logoUrl} />
       </Banner>
     </Container>
   );

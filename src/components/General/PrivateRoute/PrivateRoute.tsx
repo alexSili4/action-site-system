@@ -8,9 +8,9 @@ import { generalSettings } from '@/constants';
 const PrivateRoute: FC<IProps> = ({ element }) => {
   const isLoggedIn = useAuthStore(selectIsLoggedIn);
   const isRefreshing = useAuthStore(selectIsRefreshing);
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const shouldRedirect = !isLoggedIn && !isRefreshing;
-  const redirectUrl = `${generalSettings.authLink}&redirectUrl=${pathname}`;
+  const redirectUrl = `${generalSettings.authLink}&redirectUrl=${pathname}${search}`;
 
   if (shouldRedirect) {
     window.location.href = redirectUrl;
