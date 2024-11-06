@@ -7,6 +7,8 @@ export const Form = styled.form`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(4)};
+    width: 447px;
+    margin-top: ${({ theme }) => theme.spacing(32)};
   }
 `;
 
@@ -14,6 +16,10 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(10)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(8)};
+  }
 `;
 
 export const InputWrap = styled.label`
@@ -27,6 +33,10 @@ export const LabelWrap = styled.span`
   background-color: ${({ theme }) => theme.colors.white};
   padding-left: ${({ theme }) => theme.spacing()};
   padding-right: ${({ theme }) => theme.spacing()};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    left: 17px;
+  }
 `;
 
 export const Label = styled.span`
@@ -53,6 +63,11 @@ export const Input = styled.input`
 
   &::placeholder {
     color: #7e8494;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    height: 56px;
+    font-size: 16px;
   }
 `;
 

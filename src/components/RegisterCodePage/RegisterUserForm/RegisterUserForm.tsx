@@ -15,11 +15,12 @@ import {
 import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterUserCheckbox';
 import { useRegisterUserForm, useTargetPromotionData } from '@/hooks';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
+import { IProps } from './RegisterUserForm.types';
 
-const RegisterUserForm: FC = () => {
+const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
   const { rulesPdf } = useTargetPromotionData();
   const { handleFormSubmit, register, handleSubmit, disabledBtn } =
-    useRegisterUserForm();
+    useRegisterUserForm(setShowSuccessMsgState);
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
