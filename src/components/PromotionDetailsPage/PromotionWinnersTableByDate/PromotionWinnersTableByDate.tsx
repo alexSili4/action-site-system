@@ -1,6 +1,6 @@
 import { FC, useRef, useState } from 'react';
 import { BtnClickEvent, DivRef } from '@/types/types';
-import { makeBlur } from '@/utils';
+import { formatDate, makeBlur } from '@/utils';
 import { IProps } from './PromotionWinnersTableByDate.types';
 import {
   Container,
@@ -13,7 +13,7 @@ import {
   ResultsBtnWrap,
 } from './PromotionWinnersTableByDate.styled';
 import OpenContentBtnLabel from '@PromotionDetailsPageComponents/OpenContentBtnLabel';
-import { theme } from '@/constants';
+import { DateFormats, theme } from '@/constants';
 import { IoDocumentOutline } from 'react-icons/io5';
 import PromotionWinnersTable from '@PromotionDetailsPageComponents/PromotionWinnersTable';
 import PromotionElementWrap from '@PromotionDetailsPageComponents/PromotionElementWrap';
@@ -25,6 +25,7 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
   const winnersRef = useRef<DivRef>(null);
   const scrollHeight = winnersRef.current?.scrollHeight ?? 0;
   const isEmptyWinnersList = !winners.length;
+  const btnTitle = formatDate({ date, dateFormat: DateFormats.winnersDate });
 
   const toggleSetShowWinners = () => {
     setShowWinners((prevState) => !prevState);
@@ -50,7 +51,7 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
         disabled={isEmptyWinnersList}
       >
         <OpenContentBtnTitle disabled={isEmptyWinnersList}>
-          {date}
+          {btnTitle}
         </OpenContentBtnTitle>
         <OpenContentBtnLabel
           showContent={showWinners}

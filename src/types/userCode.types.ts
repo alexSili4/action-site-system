@@ -2,7 +2,7 @@ import { ActionType } from './promotion.types';
 
 export interface IUserCode {
   code: string;
-  code_status: 0 | 1;
+  code_status: 0 | 1 | 2; // 0 - pending, 1 - success, 2 - error
   code_created_at: number;
   action_id: number;
   action_name: string;
@@ -17,3 +17,8 @@ export interface IUserCode {
 }
 
 export type UserCodes = IUserCode[];
+
+export interface IGetUserCodeMessage {
+  isSuccessStatus: boolean;
+  isErrorStatus: boolean;
+}

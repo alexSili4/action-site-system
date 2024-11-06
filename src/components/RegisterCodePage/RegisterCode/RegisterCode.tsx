@@ -37,7 +37,7 @@ const RegisterCode: FC = () => {
     { id: 10, name: 'monobank', icon: monobank, prize: '800₴' },
     { id: 9, name: 'morshynska', icon: morshynska, prize: '900₴' },
   ];
-  const [currentStep, setCurrentStep] = useState<number>(3);
+  const [currentStep, setCurrentStep] = useState<number>(1);
   const steps = getRegCodeSteps({
     stepsSequence: RegPromotionCodeSteps,
     shouldShowPrizesWheel,

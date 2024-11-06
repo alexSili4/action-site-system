@@ -112,3 +112,18 @@ export const CabinetLink = styled(Link)`
     margin-top: ${({ theme }) => theme.spacing(5)};
   }
 `;
+
+export const Text = styled.p`
+  margin-top: ${({ theme }) => theme.spacing(8)};
+  color: #7e8494;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 439px;
+    margin-top: ${({ theme }) => theme.spacing(40)};
+  }
+`;

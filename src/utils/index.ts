@@ -18,3 +18,4 @@ export { default as getTargetCityCenter } from './getTargetCityCenter';
 export { default as getPaginationBarSettings } from './getPaginationBarSettings';
 export { default as getPageNumbers } from './getPageNumbers';
 export { default as setBtnDisplayProp } from './setBtnDisplayProp';
+export { default as getUserCodeMessage } from './getUserCodeMessage';

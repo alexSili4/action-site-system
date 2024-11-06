@@ -21,6 +21,7 @@ import {
 } from './StatisticsCode.styled';
 import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
+import { getUserCodeMessage } from '@/utils';
 
 const StatisticsCode: FC<IProps> = ({
   isSuccessStatus,
@@ -28,6 +29,11 @@ const StatisticsCode: FC<IProps> = ({
   code,
   codeCreatedAt,
 }) => {
+  const userCodeMessage = getUserCodeMessage({
+    isErrorStatus,
+    isSuccessStatus,
+  });
+
   return (
     <Container>
       <Link to={code}>
@@ -63,10 +69,7 @@ const StatisticsCode: FC<IProps> = ({
             isErrorStatus={isErrorStatus}
             isSuccessStatus={isSuccessStatus}
           />
-          <Message>
-            Сертифікат надіслано на ваш email, а тут інший текст, для більшого
-            простору
-          </Message>
+          <Message>{userCodeMessage}</Message>
         </MessageWrap>
       </MessagesContainer>
     </Container>

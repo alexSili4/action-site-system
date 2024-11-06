@@ -12,7 +12,7 @@ import { IProps } from './PromotionDetails.types';
 import { getFileUrl, getPromotionBannerUrls, getPromotionDate } from '@/utils';
 import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
 import PromotionDetailsSectionContainer from '@PromotionDetailsPageComponents/PromotionDetailsSectionContainer';
-import PromotionPageBreadcrumbs from '../PromotionPageBreadcrumbs';
+import PromotionPageBreadcrumbs from '@PromotionDetailsPageComponents/PromotionPageBreadcrumbs';
 import PromotionBanner from '@PromotionDetailsPageComponents/PromotionBanner';
 import PromotionConditions from '@PromotionDetailsPageComponents/PromotionConditions';
 import PromotionPrizes from '@PromotionDetailsPageComponents/PromotionPrizes';

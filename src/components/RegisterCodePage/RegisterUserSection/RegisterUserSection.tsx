@@ -9,14 +9,17 @@ import {
   SuccessRegisterUserMsg,
   SuccessRegisterUserMsgContainer,
   CabinetLink,
+  Text,
 } from './RegisterUserSection.styled';
 import { IProps } from './RegisterUserSection.types';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import RegisterUserForm from '@RegisterCodePageComponents/RegisterUserForm';
 import { PagePaths } from '@/constants';
+import { useTargetPromotionData } from '@/hooks';
 
 const RegisterUserSection: FC<IProps> = ({ steps, currentStep }) => {
-  const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(true);
+  const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
+  const { hotLinePhone, hotLineWorkHours } = useTargetPromotionData();
 
   const setShowSuccessMsgState = () => {
     setShowSuccessMsg(true);
@@ -39,6 +42,10 @@ const RegisterUserSection: FC<IProps> = ({ steps, currentStep }) => {
               </SuccessRegisterUserMsg>
             </SuccessRegisterUserMsgWrap>
             <CabinetLink to={PagePaths.cabinet}>Особистий кабінет</CabinetLink>
+            <Text>
+              Якщо Вам не вдалося зареєструвати акційний код зверніться на
+              гарячу лінію за телефоном {hotLinePhone} ({hotLineWorkHours})
+            </Text>
           </SuccessRegisterUserMsgContainer>
         ) : (
           <RegisterUserFormWrap>

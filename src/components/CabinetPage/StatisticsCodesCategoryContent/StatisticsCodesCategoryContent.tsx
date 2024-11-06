@@ -18,28 +18,31 @@ const StatisticsCodesCategoryContent: FC = () => {
   return (
     <Container>
       <List>
-        {userCodes.map(({ code, code_created_at: codeCreatedAt }) => {
-          // TODO fix statuses
-          const isErrorStatus = false;
-          // const isErrorStatus = true;
-          // const isSuccessStatus = false;
-          const isSuccessStatus = true;
-          const codeCreatedAtDate = formatDate({
-            date: codeCreatedAt * 1000,
-            dateFormat: DateFormats.generalDate,
-          });
+        {userCodes.map(
+          ({
+            code,
+            code_created_at: codeCreatedAt,
+            code_status: codeStatus,
+          }) => {
+            const isErrorStatus = codeStatus === 2;
+            const isSuccessStatus = codeStatus === 1;
+            const codeCreatedAtDate = formatDate({
+              date: codeCreatedAt * 1000,
+              dateFormat: DateFormats.generalDate,
+            });
 
-          return (
-            <ListItem key={code}>
-              <StatisticsCode
-                code={code}
-                codeCreatedAt={codeCreatedAtDate}
-                isErrorStatus={isErrorStatus}
-                isSuccessStatus={isSuccessStatus}
-              />
-            </ListItem>
-          );
-        })}
+            return (
+              <ListItem key={code}>
+                <StatisticsCode
+                  code={code}
+                  codeCreatedAt={codeCreatedAtDate}
+                  isErrorStatus={isErrorStatus}
+                  isSuccessStatus={isSuccessStatus}
+                />
+              </ListItem>
+            );
+          }
+        )}
       </List>
       {/* TODO fix */}
       {shouldShowPaginationBar && (
