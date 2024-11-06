@@ -1,5 +1,6 @@
 import { IUseTargetPromotionData } from '@/types/hooks.types';
 import useTargetPromotion from './useTargetPromotion';
+import { getFileUrl } from '@/utils';
 
 const useTargetPromotionData = (): IUseTargetPromotionData => {
   const targetPromotion = useTargetPromotion();
@@ -27,8 +28,10 @@ const useTargetPromotionData = (): IUseTargetPromotionData => {
     legal_text: legalText = '',
   } = targetPromotion ?? {};
 
+  const rulesPdfUrl = getFileUrl(rulesPdf);
+
   return {
-    rulesPdf,
+    rulesPdf: rulesPdfUrl,
     hotLinePhone,
     hotLineEmail,
     coverageType,

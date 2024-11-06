@@ -31,7 +31,6 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
   const sliderContainerRef = useRef<DivRef>(null);
   const shouldChangeHeight = useRef(true);
   const { rulesPdf } = useTargetPromotionData();
-  const rulesPdfUrl = getFileUrl(rulesPdf);
   const sliderContainerHeight = sliderContainerRef.current?.scrollHeight;
   const isManyConditions = conditions.length > 1;
 
@@ -102,13 +101,13 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
           }
         )}
         {slideHeight && (
-          <SwiperSlide key={rulesPdfUrl}>
+          <SwiperSlide key={rulesPdf}>
             <RulesCard bgImgUrl={rulesCardBg}>
               <RulesLink
-                href={rulesPdfUrl}
-                download
+                href={rulesPdf}
+                download='rules'
                 target='_blank'
-                rel='noopener noreferrer'
+                rel='noopener noreferrer nofollow'
               >
                 <RulesLinkTitle>Правила акції</RulesLinkTitle>
                 <IoDocumentOutline size={theme.iconSizes.rulesLink} />

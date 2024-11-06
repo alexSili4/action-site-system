@@ -47,8 +47,8 @@ export const ContentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(25)};
-  padding: ${({ theme: { spacing } }) =>
-    `${spacing(37)} ${spacing(5)} ${spacing(10)}`};
+  padding-top: ${({ theme }) => theme.spacing(37)};
+  padding-bottom: ${({ theme }) => theme.spacing(10)};
   border-bottom: 3px solid rgba(255, 255, 255, 0.3);
   border-right: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
@@ -57,8 +57,7 @@ export const ContentWrap = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(22)};
-    padding: ${({ theme: { spacing } }) =>
-      `${spacing(32)} ${spacing(25)} ${spacing(10)}`};
+    padding-top: ${({ theme }) => theme.spacing(32)};
   }
 `;
 
@@ -103,17 +102,19 @@ export const CertificateWrap = styled.div`
   flex-direction: column;
   align-items: center;
   gap: ${({ theme }) => theme.spacing()};
+  width: 290px;
   border: 3.95px solid rgba(255, 255, 255, 0.2);
   border-radius: 15.82px;
   background-color: #7a4ebd;
-  padding: ${({ theme: { spacing } }) =>
-    `${spacing(4)} ${spacing(16)} ${spacing(7)}`};
+  padding-top: ${({ theme }) => theme.spacing(4)};
+  padding-bottom: ${({ theme }) => theme.spacing(7)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 367px;
     border: 5px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    padding: ${({ theme: { spacing } }) =>
-      `${spacing(5)} ${spacing(10)} ${spacing(9)}`};
+    padding-top: ${({ theme }) => theme.spacing(5)};
+    padding-bottom: ${({ theme }) => theme.spacing(9)};
   }
 `;
 
@@ -165,7 +166,7 @@ export const LogoPartner = styled.img`
 `;
 
 export const NextStepBtn = styled.button`
-  width: 100%;
+  width: 290px;
   padding: ${({ theme }) => theme.spacing(5)};
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);

@@ -51,6 +51,8 @@ const PromotionDetails: FC<IProps> = ({
   });
   const logoPartnerUrl = getFileUrl(logoPartner);
   const showWheelLogo = actionType === 1 || actionType === 3;
+  const shouldShowWinnersSection =
+    Array.isArray(winners) && Boolean(winners.length);
 
   const promotionCategoryState = state?.promotionCategory;
   const from = state?.from;
@@ -92,7 +94,7 @@ const PromotionDetails: FC<IProps> = ({
         description='Крутіть колесо та вигравайте подарунки'
       />
       <PromotionFAQs faqs={faqs} />
-      <PromotionWinners winners={winners} />
+      {shouldShowWinnersSection && <PromotionWinners winners={winners} />}
       <PromotionContacts shops={shops} />
     </Container>
   );

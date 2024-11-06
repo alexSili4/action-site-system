@@ -7,7 +7,5 @@ export interface IRegCodeFormData {
 export interface IRegUserFormData {
   name: string;
   sendCertificate: boolean;
-  email: string;
-  confirmEmailCode: string;
   acceptedTerms: boolean;
 }

@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const StyledBtn = styled.button`
   width: 100%;
-  margin-top: ${({ theme }) => theme.spacing(6)};
   padding: ${({ theme }) => theme.spacing(4)};
   border: none;
   border-radius: 16px;
@@ -34,7 +33,6 @@ export const StyledBtn = styled.button`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    margin-top: ${({ theme }) => theme.spacing(12)};
     padding: ${({ theme }) => theme.spacing(6)};
   }
 `;

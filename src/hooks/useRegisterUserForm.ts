@@ -5,8 +5,9 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 const useRegisterUserForm = (): IUseRegisterUserForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { register, handleSubmit } = useForm<IRegUserFormData>();
-  const disabledBtn = isLoading;
+  const { register, handleSubmit, watch } = useForm<IRegUserFormData>();
+  const nameLength = watch('name')?.length;
+  const disabledBtn = isLoading && Boolean(nameLength);
 
   const handleFormSubmit: SubmitHandler<IRegUserFormData> = async (data) => {
     setIsLoading(true);

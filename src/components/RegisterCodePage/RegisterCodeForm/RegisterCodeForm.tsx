@@ -10,7 +10,7 @@ import {
   InputDelimiter,
   ErrorMessage,
 } from './RegisterCodeForm.styled';
-import Input from '@RegisterCodePageComponents/Input';
+import CodePartInput from '@RegisterCodePageComponents/CodePartInput';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import { useRegisterCodeForm } from '@/hooks';
 
@@ -34,7 +34,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
           <LabelWrap>
             <Label>Код з чеку</Label>
           </LabelWrap>
-          <Input
+          <CodePartInput
             onChange={onRegCodeInput}
             maxLength={inputMaxLength}
             settings={{
@@ -47,7 +47,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
           <InputDelimiterWrap isError={isError}>
             <InputDelimiter />
           </InputDelimiterWrap>
-          <Input
+          <CodePartInput
             onChange={onRegCodeInput}
             maxLength={inputMaxLength}
             settings={{
@@ -60,7 +60,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
           <InputDelimiterWrap isError={isError}>
             <InputDelimiter />
           </InputDelimiterWrap>
-          <Input
+          <CodePartInput
             onChange={onRegCodeInput}
             maxLength={inputMaxLength}
             settings={{

@@ -4,17 +4,20 @@ import {
   CertificateInfoWrap,
   Content,
   Form,
-  Input,
   InputWrap,
   Label,
   LabelWrap,
   RegisterUserCheckboxTitle,
+  RegisterUserCheckboxLink,
+  AcceptedTermsWrap,
+  Input,
 } from './RegisterUserForm.styled';
 import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterUserCheckbox';
-import { useRegisterUserForm } from '@/hooks';
-import SubmitRegFormBtn from '../SubmitRegFormBtn';
+import { useRegisterUserForm, useTargetPromotionData } from '@/hooks';
+import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 
 const RegisterUserForm: FC = () => {
+  const { rulesPdf } = useTargetPromotionData();
   const { handleFormSubmit, register, handleSubmit, disabledBtn } =
     useRegisterUserForm();
 
@@ -37,21 +40,36 @@ const RegisterUserForm: FC = () => {
           <CertificateInfo>
             Сертифікат зберігатиметься в вашому кабінеті.
           </CertificateInfo>
-          <RegisterUserCheckbox>
+          <RegisterUserCheckbox
+            settings={{
+              ...register('sendCertificate'),
+            }}
+          >
             <RegisterUserCheckboxTitle>
               Отримати сертифікат також на email
             </RegisterUserCheckboxTitle>
           </RegisterUserCheckbox>
         </CertificateInfoWrap>
-        <RegisterUserCheckbox>
-          <RegisterUserCheckboxTitle>
-            Погоджуюсь з{' '}
-            <a href='' target='_blank' rel='noopener noreferrer nofollow'>
-              умовами участі
-            </a>{' '}
-            в акції
-          </RegisterUserCheckboxTitle>
-        </RegisterUserCheckbox>
+        <AcceptedTermsWrap>
+          <RegisterUserCheckbox
+            settings={{
+              ...register('acceptedTerms'),
+            }}
+          >
+            <RegisterUserCheckboxTitle>
+              Погоджуюсь з{' '}
+              <RegisterUserCheckboxLink
+                href={rulesPdf}
+                download='rules'
+                target='_blank'
+                rel='noopener noreferrer nofollow'
+              >
+                умовами участі
+              </RegisterUserCheckboxLink>{' '}
+              в акції
+            </RegisterUserCheckboxTitle>
+          </RegisterUserCheckbox>
+        </AcceptedTermsWrap>
       </Content>
       <SubmitRegFormBtn title='Зареєструвати' disabled={disabledBtn} />
     </Form>

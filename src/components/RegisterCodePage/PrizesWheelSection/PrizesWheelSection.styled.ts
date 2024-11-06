@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { IStyledProps, IStyledSectorProps } from './PrizesWheelSection.types';
 
 export const Container = styled.div`
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   padding-left: ${({ theme: { padding } }) => padding.container}px;
@@ -36,10 +35,11 @@ export const Content = styled.div`
 export const WheelWrap = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 650px;
@@ -48,7 +48,6 @@ export const WheelWrap = styled.div`
 
 export const PointerImg = styled.img`
   position: absolute;
-  z-index: ${({ theme }) => theme.zIndex.prizeWheelImg + 1};
   top: 0px;
   left: 50%;
   width: 12%;
@@ -62,16 +61,13 @@ export const PointerImg = styled.img`
 `;
 
 export const CircleImg = styled.img`
-  position: absolute;
-  z-index: ${({ theme }) => theme.zIndex.prizeWheelImg};
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
 `;
 
 export const Wheel = styled.div<IStyledProps>`
-  position: relative;
+  position: absolute;
   width: calc(100% - 33px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -81,7 +77,6 @@ export const Wheel = styled.div<IStyledProps>`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 579px;
-    height: 579px;
   }
 `;
 

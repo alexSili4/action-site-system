@@ -69,8 +69,6 @@ const PrizesWheelSection: FC<IProps> = ({
       <Container>
         <Content>
           <WheelWrap>
-            <PointerImg src={pointer} />
-            <CircleImg src={circle} />
             <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
               {prizes.map(({ id, icon }, index, array) => {
                 const number = index + 1;
@@ -82,6 +80,8 @@ const PrizesWheelSection: FC<IProps> = ({
                 );
               })}
             </Wheel>
+            <CircleImg src={circle} />
+            <PointerImg src={pointer} />
           </WheelWrap>
           <SpinWheelBtn
             type='button'

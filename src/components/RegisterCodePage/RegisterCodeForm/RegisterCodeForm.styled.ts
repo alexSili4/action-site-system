@@ -2,7 +2,12 @@ import styled from '@emotion/styled';
 import { IStyledProps } from './RegisterCodeForm.types';
 
 export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)};
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(12)};
     width: 447px;
     margin-top: ${({ theme }) => theme.spacing(32)};
   }

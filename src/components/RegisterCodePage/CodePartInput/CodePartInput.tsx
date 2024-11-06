@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { IProps } from './Input.types';
-import { StyledInput } from './Input.styled';
+import { IProps } from './CodePartInput.types';
+import { StyledInput } from './CodePartInput.styled';
 
-const Input: FC<IProps> = ({
+const CodePartInput: FC<IProps> = ({
   settings,
   defaultValue = '',
   maxLength,
@@ -19,4 +19,4 @@ const Input: FC<IProps> = ({
   );
 };
 
-export default Input;
+export default CodePartInput;
