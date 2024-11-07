@@ -12,7 +12,9 @@ const useCabinetPage = () => {
   const { searchParams } = useSetSearchParams();
   const page = searchParams.get(SearchParamsKeys.page) ?? '1';
   const sort = searchParams.get(SearchParamsKeys.sort) ?? '';
-  const category = searchParams.get(SearchParamsKeys.category);
+  const category =
+    searchParams.get(SearchParamsKeys.category) ??
+    StatisticsCategoriesKeys.codes;
 
   const isCodesStatisticsCategory = category === StatisticsCategoriesKeys.codes;
   const isPrizesStatisticsCategory =
