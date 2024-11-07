@@ -6,14 +6,17 @@ import {
 } from './StatisticsCodesCategoryContent.styled';
 import StatisticsCode from '@CabinetPageComponents/StatisticsCode';
 import { useUserCodesStore } from '@/store/store';
-import { selectUserCodes } from '@/store/userCodes/selectors';
-import { formatDate } from '@/utils';
+import { selectUserCodes, selectTotalPages } from '@/store/userCodes/selectors';
+import { formatDate, getFileUrl } from '@/utils';
 import { DateFormats } from '@/constants';
 import PaginationBar from '@GeneralComponents/PaginationBar';
 
 const StatisticsCodesCategoryContent: FC = () => {
   const userCodes = useUserCodesStore(selectUserCodes);
-  const shouldShowPaginationBar = Boolean(userCodes.length);
+  const totalPages = useUserCodesStore(selectTotalPages);
+  const isManyPages = totalPages > 1;
+  const isCodesLength = Boolean(userCodes.length);
+  const shouldShowPaginationBar = isCodesLength && isManyPages;
 
   return (
     <Container>
@@ -23,7 +26,9 @@ const StatisticsCodesCategoryContent: FC = () => {
             code,
             code_created_at: codeCreatedAt,
             code_status: codeStatus,
+            present_gift_partner_logo: partnerLogo,
           }) => {
+            const partnerLogoUrl = getFileUrl(partnerLogo ?? '');
             const isErrorStatus = codeStatus === 2;
             const isSuccessStatus = codeStatus === 1;
             const codeCreatedAtDate = formatDate({
@@ -38,16 +43,14 @@ const StatisticsCodesCategoryContent: FC = () => {
                   codeCreatedAt={codeCreatedAtDate}
                   isErrorStatus={isErrorStatus}
                   isSuccessStatus={isSuccessStatus}
+                  partnerLogo={partnerLogoUrl}
                 />
               </ListItem>
             );
           }
         )}
       </List>
-      {/* TODO fix */}
-      {shouldShowPaginationBar && (
-        <PaginationBar group={userCodes.length} totalCount={40} />
-      )}
+      {shouldShowPaginationBar && <PaginationBar totalPages={totalPages} />}
     </Container>
   );
 };

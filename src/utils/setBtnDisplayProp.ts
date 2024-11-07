@@ -6,7 +6,6 @@ const setBtnDisplayProp = ({
   page,
   step,
 }: ISetBtnDisplayProps): string | undefined => {
-  console.log(step);
   if (!currentPage || !page) {
     return;
   }

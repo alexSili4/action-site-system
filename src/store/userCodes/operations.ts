@@ -5,14 +5,16 @@ import { IGetUserCodesOperationProps } from '@/types/userCodesState.types';
 
 const getUserCodesOperation = async ({
   set,
+  data,
 }: IGetUserCodesOperationProps): Promise<UserCodes | undefined> => {
-  const response = await cabinetService.getClientCodes();
+  const { data: items, totalPages } = await cabinetService.getClientCodes(data);
   set({
-    items: response,
+    items,
     isLoaded: true,
+    totalPages,
   });
 
-  return response;
+  return items;
 };
 
 export const getUserCodes = operationWrapper(getUserCodesOperation);

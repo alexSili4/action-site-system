@@ -1,5 +1,4 @@
 export interface IProps {
-  totalCount: number;
-  group: number;
+  totalPages: number;
   step?: number;
 }

@@ -11,6 +11,8 @@ export const Container = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     border-radius: 16px;
   }
 `;

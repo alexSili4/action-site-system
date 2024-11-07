@@ -5,13 +5,11 @@ import { BtnClickEvent, IOnPageBtnClickProps } from '@/types/types';
 import { IUsePaginationBar, IUsePaginationBarProps } from '@/types/hooks.types';
 
 const usePaginationBar = ({
-  totalCount,
+  totalPages,
   step = 1,
-  group,
 }: IUsePaginationBarProps): IUsePaginationBar => {
   const { updateSearchParams, searchParams } = useSetSearchParams();
-  const pageQuantity = Math.ceil(totalCount / group);
-  const pageNumbers = getPageNumbers(pageQuantity);
+  const pageNumbers = getPageNumbers(totalPages);
   const currentPage = Number(searchParams.get(SearchParamsKeys.page) ?? 1);
   const {
     isBackNavBtnDisable,

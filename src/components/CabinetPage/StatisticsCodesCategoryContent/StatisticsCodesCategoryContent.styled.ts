@@ -3,7 +3,9 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(7)};
+  height: 100%;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(8)};

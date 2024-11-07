@@ -13,11 +13,11 @@ const userCodesSlice = (
   get: GetUserCodesStateFunc
 ): IUserCodesState => ({
   ...initialState,
-  getUserCodes: async (): Promise<UserCodes | undefined> =>
+  getUserCodes: async (data: number): Promise<UserCodes | undefined> =>
     await getUserCodes({
       set: setState({ set, name: 'getUserCodes' }),
       get,
-      data: undefined,
+      data,
     }),
 });
 

@@ -14,6 +14,7 @@ export interface IUserCode {
   wheel_is_used: string;
   wheel_certificate_code: null;
   wheel_gift_name: null;
+  present_gift_partner_logo: null | string;
 }
 
 export type UserCodes = IUserCode[];
@@ -21,4 +22,9 @@ export type UserCodes = IUserCode[];
 export interface IGetUserCodeMessage {
   isSuccessStatus: boolean;
   isErrorStatus: boolean;
+}
+
+export interface IGetClientCodes {
+  data: UserCodes;
+  totalPages: number;
 }

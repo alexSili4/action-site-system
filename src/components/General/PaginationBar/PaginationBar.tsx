@@ -7,7 +7,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { theme } from '@/constants';
 import { Button } from '@GeneralComponents/PaginationBarBtn/PaginationBarBtn.styled';
 
-const PaginationBar: FC<IProps> = ({ totalCount, group }) => {
+const PaginationBar: FC<IProps> = ({ totalPages }) => {
   const {
     isBackNavBtnDisable,
     onPrevPageBtnClick,
@@ -20,7 +20,7 @@ const PaginationBar: FC<IProps> = ({ totalCount, group }) => {
     isNextNavBtnDisable,
     onNextPageBtnClick,
     step,
-  } = usePaginationBar({ totalCount, group });
+  } = usePaginationBar({ totalPages });
 
   return (
     <Container>

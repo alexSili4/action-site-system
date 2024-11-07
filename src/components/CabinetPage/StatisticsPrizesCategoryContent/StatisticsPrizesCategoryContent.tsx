@@ -10,6 +10,7 @@ import StatisticsPrize from '@CabinetPageComponents/StatisticsPrize';
 const StatisticsPrizesCategoryContent: FC = () => {
   // TODO fix
   const userPrizes = [{}, {}, {}];
+  const totalPages = 10;
   const shouldShowPaginationBar = Boolean(userPrizes.length);
 
   return (
@@ -21,9 +22,7 @@ const StatisticsPrizesCategoryContent: FC = () => {
           </ListItem>
         ))}
       </List>
-      {shouldShowPaginationBar && (
-        <PaginationBar group={userPrizes.length} totalCount={40} />
-      )}
+      {shouldShowPaginationBar && <PaginationBar totalPages={totalPages} />}
     </Container>
   );
 };

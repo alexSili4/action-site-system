@@ -6,6 +6,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-grow: 1;
     padding: ${({ theme }) => theme.spacing(5)};
   }
 `;

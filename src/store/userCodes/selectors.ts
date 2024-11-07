@@ -4,6 +4,8 @@ export const selectIsLoading = (state: IUserCodesState) => state.isLoading;
 
 export const selectUserCodes = (state: IUserCodesState) => state.items;
 
+export const selectTotalPages = (state: IUserCodesState) => state.totalPages;
+
 export const selectIsLoaded = (state: IUserCodesState) => state.isLoaded;
 
 export const selectError = (state: IUserCodesState) => state.error;

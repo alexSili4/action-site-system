@@ -41,8 +41,7 @@ import { Shops } from './shop.types';
 export type SetPageFunc = (data: IOnPageBtnClickProps) => void;
 
 export interface IUsePaginationBarProps {
-  totalCount: number;
-  group: number;
+  totalPages: number;
   step?: number;
 }
 

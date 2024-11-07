@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
+  height: 100%;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing(4)};
@@ -101,6 +102,8 @@ export const StyledLinkTitle = styled.span`
 `;
 
 export const CertificateWrap = styled.div`
+  flex-grow: 0;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,6 +116,10 @@ export const CertificateWrap = styled.div`
   background-size: cover;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+`;
+
+export const PartnerImg = styled.img`
+  max-height: 39px;
 `;
 
 export const CertificateCode = styled.p`

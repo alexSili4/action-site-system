@@ -18,6 +18,7 @@ import {
   StyledLinkTitle,
   CodeWrap,
   CertificateCode,
+  PartnerImg,
 } from './StatisticsCode.styled';
 import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
@@ -28,6 +29,7 @@ const StatisticsCode: FC<IProps> = ({
   isErrorStatus,
   code,
   codeCreatedAt,
+  partnerLogo,
 }) => {
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
@@ -59,7 +61,7 @@ const StatisticsCode: FC<IProps> = ({
           </Link>
         </LinksWrap>
         <CertificateWrap>
-          <p>logo</p>
+          <PartnerImg src={partnerLogo} />
           <CertificateCode>{code}</CertificateCode>
         </CertificateWrap>
       </ContentWrap>
