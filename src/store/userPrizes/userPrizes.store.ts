@@ -3,6 +3,7 @@ import initialState from './initialState';
 import { getUserPrizes } from './operations';
 import {
   GetUserPrizesStateFunc,
+  IGetUserPrizesOperationData,
   IUserPrizesState,
   SetUserPrizesStateFunc,
 } from '@/types/userPrizesState.types';
@@ -13,7 +14,9 @@ const userPrizesSlice = (
   get: GetUserPrizesStateFunc
 ): IUserPrizesState => ({
   ...initialState,
-  getUserPrizes: async (data: number): Promise<UserPrizes | undefined> =>
+  getUserPrizes: async (
+    data: IGetUserPrizesOperationData
+  ): Promise<UserPrizes | undefined> =>
     await getUserPrizes({
       set: setState({ set, name: 'getUserPrizes' }),
       get,

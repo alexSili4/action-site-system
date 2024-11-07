@@ -11,6 +11,7 @@ const useCabinetPage = () => {
 
   const { searchParams } = useSetSearchParams();
   const page = searchParams.get(SearchParamsKeys.page) ?? '1';
+  const sort = searchParams.get(SearchParamsKeys.sort) ?? '';
   const category = searchParams.get(SearchParamsKeys.category);
 
   const isCodesStatisticsCategory = category === StatisticsCategoriesKeys.codes;
@@ -25,20 +26,16 @@ const useCabinetPage = () => {
       return;
     }
 
-    const pageNumber = Number(page);
-
-    getUserCodes(pageNumber);
-  }, [getUserCodes, shouldGetUserCodes, page]);
+    getUserCodes({ page: Number(page), sort });
+  }, [getUserCodes, shouldGetUserCodes, page, sort]);
 
   useEffect(() => {
     if (!shouldGetUserPrizes) {
       return;
     }
 
-    const pageNumber = Number(page);
-
-    getUserPrizes(pageNumber);
-  }, [getUserPrizes, page, shouldGetUserPrizes]);
+    getUserPrizes({ page: Number(page), sort });
+  }, [getUserPrizes, page, sort, shouldGetUserPrizes]);
 };
 
 export default useCabinetPage;

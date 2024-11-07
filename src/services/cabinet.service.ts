@@ -10,6 +10,7 @@ import {
   IGetClientPrizes,
   IGetClientPrizesProps,
 } from '@/types/userPrize.types';
+import { getSortType } from '@/utils';
 
 class CabinetService extends HttpService {
   constructor() {
@@ -20,10 +21,12 @@ class CabinetService extends HttpService {
     page,
     sort,
   }: IGetClientCodesProps): Promise<IGetClientCodes> {
+    const sortType = getSortType(sort);
+
     const { data, headers } = await this.get<UserCodes>(
       {
         // TODO fix
-        url: `client/my-codes?page=${page}&per-page=4&sort=${sort}`,
+        url: `client/my-codes?page=${page}&per-page=4&sort=${sortType}`,
       },
       false
     );
@@ -37,10 +40,12 @@ class CabinetService extends HttpService {
     page,
     sort,
   }: IGetClientPrizesProps): Promise<IGetClientPrizes> {
+    const sortType = getSortType(sort);
+
     const { data, headers } = await this.get<UserPrizes>(
       {
         // TODO fix
-        url: `client/my-gifts?page=${page}&per-page=4&sort=${sort}`,
+        url: `client/my-gifts?page=${page}&per-page=4&sort=${sortType}`,
       },
       false
     );

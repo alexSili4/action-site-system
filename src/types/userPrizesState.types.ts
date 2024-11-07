@@ -10,14 +10,21 @@ export interface IUserPrizesInitialState {
 }
 
 export interface IUserPrizesState extends IUserPrizesInitialState {
-  getUserPrizes: (data: number) => Promise<UserPrizes | undefined>;
+  getUserPrizes: (
+    data: IGetUserPrizesOperationData
+  ) => Promise<UserPrizes | undefined>;
 }
 
 export type GetUserPrizesStateFunc = GetStateFunc<IUserPrizesState>;
 
 export type SetUserPrizesStateFunc = SetStateFunc<IUserPrizesState>;
 
+export interface IGetUserPrizesOperationData {
+  page: number;
+  sort: string;
+}
+
 export interface IGetUserPrizesOperationProps {
   set: SetUserPrizesStateFunc;
-  data: number;
+  data: IGetUserPrizesOperationData;
 }
