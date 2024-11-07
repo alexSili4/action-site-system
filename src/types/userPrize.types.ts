@@ -10,11 +10,17 @@ export interface IUserPrize {
   action_date_from: number;
   action_date_to: number;
   gift_name: string;
-  gift_price: null;
+  gift_price: null | number;
   gift_discount: null;
   partner_name: string;
   payment_logo: string;
   gift_images: Strings;
+  certificate_code: 'sadsdsgfg';
+  entity_type: string;
+  gift_get_conditions: string;
+  gift_use_conditions: string;
+  partner_logo: string;
+  win_time: number;
 }
 
 export type UserPrizes = IUserPrize[];

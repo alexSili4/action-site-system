@@ -14,7 +14,7 @@ export const Button = styled.button`
     color: #2e305b;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: none;
   }
 `;

@@ -6,8 +6,9 @@ const enum PagePaths {
   promotions = '/promotions',
   serviceUnavailable = '/service-unavailable',
   code = '/code',
-  userCode = `${cabinet}/code`,
+  userCertificate = `${cabinet}/certificate`,
   userPrize = `${cabinet}/prize`,
+  userCode = `${cabinet}/code`,
   promotionDetailsPageExample = `${PagePaths.promotions}/`,
 }
 

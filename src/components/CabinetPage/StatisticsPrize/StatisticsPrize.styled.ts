@@ -8,18 +8,28 @@ export const Container = styled.div`
   padding: ${({ theme }) => theme.spacing(4)};
   border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.white};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding: ${({ theme: { spacing } }) => `${spacing(6)} ${spacing(8)}`};
+  }
 `;
 
 export const PrizeInfoWrap = styled.div`
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    align-items: center;
+  }
 `;
 
 export const PrizeInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(2)};
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: flex;
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
 `;
 
 export const Name = styled.p`
@@ -31,12 +41,19 @@ export const Name = styled.p`
 `;
 
 export const Code = styled.p`
-  width: 180px;
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 12px;
   font-weight: 400;
   line-height: 1.2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    width: 180px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    margin-top: ${({ theme }) => theme.spacing(4)};
+  }
 `;
 
 export const Date = styled.p`
@@ -45,11 +62,23 @@ export const Date = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.2;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    margin-top: ${({ theme }) => theme.spacing(2)};
+  }
+`;
+
+export const Accent = styled.span`
+  font-weight: 500;
+`;
+
+export const PrizeImgWrap = styled.div`
+  flex-shrink: 0;
+  padding: ${({ theme: { spacing } }) => `${spacing(2)} ${spacing(4)}`};
 `;
 
 export const PrizeImg = styled.img`
-  flex-shrink: 0;
-  width: 90px;
+  width: 74px;
   aspect-ratio: 1 / 1;
 `;
 

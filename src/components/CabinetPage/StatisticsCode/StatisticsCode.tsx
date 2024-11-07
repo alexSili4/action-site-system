@@ -38,7 +38,7 @@ const StatisticsCode: FC<IProps> = ({
 
   return (
     <Container>
-      <Link to={code}>
+      <Link to={PagePaths.userCode}>
         <Header>
           <CodeWrap>
             <Code>{code}</Code>
@@ -49,7 +49,7 @@ const StatisticsCode: FC<IProps> = ({
       </Link>
       <ContentWrap>
         <LinksWrap>
-          <Link to={PagePaths.userCode}>
+          <Link to={PagePaths.userCertificate}>
             <CouponIcon />
             <StyledLinkTitle>Виграний Сертифікат</StyledLinkTitle>
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
