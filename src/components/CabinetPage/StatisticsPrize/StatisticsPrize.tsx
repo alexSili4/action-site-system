@@ -10,25 +10,26 @@ import {
   Text,
   Title,
 } from './StatisticsPrize.styled';
+import { IProps } from './StatisticsPrize.types';
 
-const StatisticsPrize: FC = () => {
+const StatisticsPrize: FC<IProps> = ({ name, code, prizeImg }) => {
   return (
     // TODO fix
     <Container>
       <PrizeInfoWrap>
         <PrizeInfoWrap>
-          <Name>Кухонна машина TEFAL QB813D38</Name>
-          <Code>Акційний код: WZYW26UCER4M</Code>
-          <Date>Дата розіграшу: 07.10.24</Date>
+          <Name>{name}</Name>
+          <Code>Акційний код: {code}</Code>
+          <Date>Дата розіграшу: !!.!!.!!</Date>
         </PrizeInfoWrap>
-        <PrizeImg src='' alt='' />
+        <PrizeImg src={prizeImg} alt='' />
       </PrizeInfoWrap>
       <Description>
         <Title>Як отримати</Title>
         <Text>
-          Наш менеджер зв'яжеться з вами по телефону для уточнення деталей. Ви
+          !!Наш менеджер зв'яжеться з вами по телефону для уточнення деталей. Ви
           можете забрати свій приз у відділення Rozetka або скористатися
-          доставкою поштовою службою.
+          доставкою поштовою службою.!!
         </Text>
       </Description>
     </Container>

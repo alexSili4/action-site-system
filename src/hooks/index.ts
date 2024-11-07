@@ -17,3 +17,4 @@ export { default as usePaginationBar } from './usePaginationBar';
 export { default as useRegisterCodeBanner } from './useRegisterCodeBanner';
 export { default as useRegisterUserForm } from './useRegisterUserForm';
 export { default as useRegisterCodeLink } from './useRegisterCodeLink';
+export { default as useCabinetPage } from './useCabinetPage';
