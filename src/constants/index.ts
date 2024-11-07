@@ -20,3 +20,4 @@ export { default as translatedStatisticsCategoriesKeys } from './translatedStati
 export { default as StatisticsSortTypesKeys } from './statisticsSortTypesKeys';
 export { default as translatedStatisticsSortTypesKeys } from './translatedStatisticsSortTypesKeys';
 export { default as DisplayProp } from './displayProp';
+export { default as Headers } from './headers';

@@ -7,6 +7,7 @@ import {
   Name,
   PrizeImg,
   PrizeInfoWrap,
+  PrizeInfo,
   Text,
   Title,
 } from './StatisticsPrize.styled';
@@ -14,23 +15,18 @@ import { IProps } from './StatisticsPrize.types';
 
 const StatisticsPrize: FC<IProps> = ({ name, code, prizeImg }) => {
   return (
-    // TODO fix
     <Container>
       <PrizeInfoWrap>
-        <PrizeInfoWrap>
+        <PrizeInfo>
           <Name>{name}</Name>
           <Code>Акційний код: {code}</Code>
           <Date>Дата розіграшу: !!.!!.!!</Date>
-        </PrizeInfoWrap>
+        </PrizeInfo>
         <PrizeImg src={prizeImg} alt='' />
       </PrizeInfoWrap>
       <Description>
         <Title>Як отримати</Title>
-        <Text>
-          !!Наш менеджер зв'яжеться з вами по телефону для уточнення деталей. Ви
-          можете забрати свій приз у відділення Rozetka або скористатися
-          доставкою поштовою службою.!!
-        </Text>
+        <Text>!!</Text>
       </Description>
     </Container>
   );
