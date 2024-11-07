@@ -1,6 +1,6 @@
 enum StatisticsSortTypesKeys {
-  asc = 'asc',
-  desc = 'desc',
+  asc = '-created',
+  desc = 'created',
 }
 
 export default StatisticsSortTypesKeys;

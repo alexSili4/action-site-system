@@ -30,6 +30,8 @@ const UserStatisticsContainer: FC = () => {
     const { name: key, value } = e.currentTarget;
 
     updateSearchParams({ key, value });
+    updateSearchParams({ key: SearchParamsKeys.page, value: '' });
+    updateSearchParams({ key: SearchParamsKeys.sort, value: '' });
   };
 
   const onSortBtnClick = (e: BtnClickEvent) => {

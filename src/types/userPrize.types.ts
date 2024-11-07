@@ -19,6 +19,11 @@ export interface IUserPrize {
 
 export type UserPrizes = IUserPrize[];
 
+export interface IGetClientPrizesProps {
+  page: number;
+  sort: string;
+}
+
 export interface IGetClientPrizes {
   data: UserPrizes;
   totalPages: number;

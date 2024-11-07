@@ -1,18 +1,29 @@
 import { Headers } from '@/constants';
 import HttpService from './http.service';
-import { UserCodes, IGetClientCodes } from '@/types/userCode.types';
-import { UserPrizes, IGetClientPrizes } from '@/types/userPrize.types';
+import {
+  UserCodes,
+  IGetClientCodes,
+  IGetClientCodesProps,
+} from '@/types/userCode.types';
+import {
+  UserPrizes,
+  IGetClientPrizes,
+  IGetClientPrizesProps,
+} from '@/types/userPrize.types';
 
 class CabinetService extends HttpService {
   constructor() {
     super();
   }
 
-  async getClientCodes(page: number): Promise<IGetClientCodes> {
+  async getClientCodes({
+    page,
+    sort,
+  }: IGetClientCodesProps): Promise<IGetClientCodes> {
     const { data, headers } = await this.get<UserCodes>(
       {
         // TODO fix
-        url: `client/my-codes?page=${page}&per-page=1`,
+        url: `client/my-codes?page=${page}&per-page=4&sort=${sort}`,
       },
       false
     );
@@ -22,11 +33,14 @@ class CabinetService extends HttpService {
     return { data, totalPages };
   }
 
-  async getClientPrizes(page: number): Promise<IGetClientPrizes> {
+  async getClientPrizes({
+    page,
+    sort,
+  }: IGetClientPrizesProps): Promise<IGetClientPrizes> {
     const { data, headers } = await this.get<UserPrizes>(
       {
         // TODO fix
-        url: `client/my-gifts?page=${page}&per-page=1`,
+        url: `client/my-gifts?page=${page}&per-page=4&sort=${sort}`,
       },
       false
     );

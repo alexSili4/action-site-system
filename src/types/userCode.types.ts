@@ -24,6 +24,11 @@ export interface IGetUserCodeMessage {
   isErrorStatus: boolean;
 }
 
+export interface IGetClientCodesProps {
+  page: number;
+  sort: string;
+}
+
 export interface IGetClientCodes {
   data: UserCodes;
   totalPages: number;
