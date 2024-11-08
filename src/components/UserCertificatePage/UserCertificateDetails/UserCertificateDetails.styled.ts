@@ -8,38 +8,121 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const TitleWrap = styled.div``;
+export const TitleWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+`;
 
-export const Title = styled.p``;
+export const Title = styled.p`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
 
-export const PartnerLogo = styled.img``;
+export const PartnerLogo = styled.img`
+  max-width: 200px;
+`;
 
-export const DetailsWrap = styled.div``;
+export const DetailsWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)};
+  margin-top: ${({ theme }) => theme.spacing(6)};
+`;
 
-export const PromotionWrap = styled.div``;
+export const DescriptionWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
-export const StyledLink = styled(Link)``;
+export const Subtitle = styled.p`
+  color: #7e8494;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
 
-export const ExpirationDateWrap = styled.div``;
+export const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(2)};
 
-export const Subtitle = styled.p``;
+  & > svg {
+    width: 10px;
+    aspect-ratio: 1 / 1;
+  }
+`;
 
-export const Info = styled.p``;
+export const Info = styled.p`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
 
-export const PartnerWrap = styled.div``;
+export const ConditionsWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+  margin-top: ${({ theme }) => theme.spacing(8)};
+`;
 
-export const PromotionCodeWrap = styled.div``;
+export const ConditionsTitle = styled.p`
+  color: #7e8494;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
 
-export const ConditionsWrap = styled.div``;
+export const ConditionsInfo = styled.p`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
 
-export const ConditionsTitle = styled.p``;
+export const HotlineInfoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+  margin-top: ${({ theme }) => theme.spacing(4)};
+`;
 
-export const ConditionsInfo = styled.p``;
+export const HotlineInfo = styled.p`
+  color: #7e8494;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
 
-export const HotlineInfoWrap = styled.div``;
+export const HotlinePhone = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing(2)};
+  border-radius: 8px;
+  background-color: #f4f6f9;
+  padding-top: ${({ theme }) => theme.spacing(2)};
+  padding-bottom: ${({ theme }) => theme.spacing(2)};
 
-export const HotlineInfo = styled.p``;
+  & > svg {
+    color: #7e8494;
+  }
+`;
 
-export const HotlinePhone = styled.a``;
-
-export const HotlinePhoneNumber = styled.span``;
+export const HotlinePhoneNumber = styled.span`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+`;
