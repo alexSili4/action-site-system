@@ -1,5 +1,6 @@
 import barcode from '@/images/userCertificate/barcode.png';
 import styled from '@emotion/styled';
+import decorativeElement from '@/images/userCertificate/decorativeElement.png';
 
 export const Container = styled.div`
   display: flex;
@@ -14,9 +15,13 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(42)};
-  background-color: blue;
   padding: ${({ theme: { spacing } }) =>
     `${spacing(9)} ${spacing(5)} ${spacing(4)}`};
+  background-color: blue;
+  background-image: url(${decorativeElement});
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 export const BarcodeWrap = styled.div`

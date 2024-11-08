@@ -45,6 +45,8 @@ interface ITheme {
     conditionsSliderBtn: number;
     registerUserFormCheckbox: number;
     cabinetDownloadCertificateLink: number;
+    userCertificateDetailsNav: number;
+    userCertificateHotlinePhone: number;
   };
   containerWidth: {
     desktop: number;
@@ -125,6 +127,8 @@ const theme: ITheme = {
     socialList: 24,
     conditionsSliderBtn: 18,
     cabinetDownloadCertificateLink: 12,
+    userCertificateDetailsNav: 10,
+    userCertificateHotlinePhone: 14,
   },
   containerWidth: {
     desktop: 1376,
