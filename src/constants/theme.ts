@@ -44,6 +44,7 @@ interface ITheme {
     cabinetPaginationBtn: number;
     conditionsSliderBtn: number;
     registerUserFormCheckbox: number;
+    cabinetDownloadCertificateLink: number;
   };
   containerWidth: {
     desktop: number;
@@ -123,6 +124,7 @@ const theme: ITheme = {
     promotionContactsMapHeader: 20,
     socialList: 24,
     conditionsSliderBtn: 18,
+    cabinetDownloadCertificateLink: 12,
   },
   containerWidth: {
     desktop: 1376,

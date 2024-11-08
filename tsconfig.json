@@ -10,6 +10,9 @@
       "@MainPageComponents/*": ["./src/components/MainPage/*"],
       "@ErrorPageComponents/*": ["./src/components/ErrorPage/*"],
       "@PromotionsPageComponents/*": ["./src/components/PromotionsPage/*"],
+      "@UserCertificatePageComponents/*": [
+        "./src/components/UserCertificatePage/*"
+      ],
       "@PromotionDetailsPageComponents/*": [
         "./src/components/PromotionDetailsPage/*"
       ]

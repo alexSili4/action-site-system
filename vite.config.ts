@@ -16,6 +16,7 @@ export default defineConfig({
       '@MainPageComponents': '/src/components/MainPage',
       '@PromotionDetailsPageComponents': '/src/components/PromotionDetailsPage',
       '@ErrorPageComponents': '/src/components/ErrorPage',
+      '@UserCertificatePageComponents': '/src/components/UserCertificatePage',
     },
   },
   build: {

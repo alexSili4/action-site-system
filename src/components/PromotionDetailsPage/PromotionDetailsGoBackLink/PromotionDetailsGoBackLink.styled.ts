@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
