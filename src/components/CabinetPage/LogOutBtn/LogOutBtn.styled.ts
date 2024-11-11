@@ -23,8 +23,9 @@ export const Button = styled.button`
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
-  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc},
-    color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: background-color
+      ${({ theme }) => theme.transitionDurationAndFunc.other},
+    color ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {
     background-color: #9066cc;

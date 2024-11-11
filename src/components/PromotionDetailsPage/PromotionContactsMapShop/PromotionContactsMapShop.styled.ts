@@ -3,7 +3,8 @@ import styled from '@emotion/styled';
 export const Container = styled.label`
   display: block;
   padding: ${({ theme }) => theme.spacing(6)};
-  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: background-color
+    ${({ theme }) => theme.transitionDurationAndFunc.other};
   cursor: pointer;
 
   &:is(:hover, :focus, :has(input:checked)) {
@@ -27,7 +28,7 @@ export const Name = styled.span`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const Location = styled.span`
@@ -36,7 +37,7 @@ export const Location = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const Address = styled.span`
@@ -45,7 +46,7 @@ export const Address = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const WorkSchedule = styled.span`
@@ -54,7 +55,7 @@ export const WorkSchedule = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const RadioBtn = styled.input`

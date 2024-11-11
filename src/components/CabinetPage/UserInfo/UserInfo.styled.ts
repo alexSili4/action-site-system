@@ -28,7 +28,8 @@ export const InfoBtn = styled.button<IStyledInfoBtnProps>`
   & > svg {
     color: #383e45;
     transform: rotate(${({ showInfo }) => (showInfo ? 0 : 180)}deg);
-    transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: transform
+      ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
   &:is(:hover, :focus) svg {
@@ -53,7 +54,8 @@ export const InfoBtnTitle = styled.span`
 export const InfoListWrap = styled.div<IStyledInfoListWrapProps>`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     padding-top: ${({ theme, showInfo }) => showInfo && theme.spacing(8)};
-    transition: padding-top ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: padding-top
+      ${({ theme }) => theme.transitionDurationAndFunc.other};
     overflow-y: hidden;
   }
 `;
@@ -66,7 +68,8 @@ export const InfoList = styled.ul<IStyledProps>`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     max-height: ${({ showInfo, scrollHeight }) =>
       showInfo ? scrollHeight : 0}px;
-    transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: max-height
+      ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 `;
 

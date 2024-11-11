@@ -18,13 +18,14 @@ export const Container = styled.span<IStyledProps>`
     rgba(255, 255, 255, 0) 100%
   );
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   & > svg {
     flex-shrink: 0;
     color: ${({ theme }) => theme.colors.white};
     transform: rotate(${({ showContent }) => (showContent ? 180 : 0)}deg);
-    transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: transform
+      ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
   button:not(:disabled):is(:hover, :focus) > & {

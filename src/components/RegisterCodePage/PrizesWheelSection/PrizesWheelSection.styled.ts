@@ -134,7 +134,7 @@ export const SpinWheelBtn = styled.button`
   font-weight: 500;
   line-height: 100%;
   text-transform: uppercase;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
   cursor: pointer;
 
   &:not(:disabled):is(:hover, :focus) {

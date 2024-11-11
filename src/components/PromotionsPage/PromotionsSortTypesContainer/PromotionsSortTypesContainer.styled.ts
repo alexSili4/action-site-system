@@ -29,8 +29,9 @@ export const ShowSortTypesBtn = styled.button<IStyledProps>`
     transform: rotate(
       ${({ showSortTypesList }) => (showSortTypesList ? 180 : 0)}deg
     );
-    transition: transform ${({ theme }) => theme.transitionDurationAndFunc},
-      color ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: transform
+        ${({ theme }) => theme.transitionDurationAndFunc.other},
+      color ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
   &:is(:hover, :focus) > svg {
@@ -48,5 +49,5 @@ export const BtnTitle = styled.span<IStyledProps>`
   font-weight: 400;
   line-height: 1.4;
   text-align: left;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;

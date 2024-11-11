@@ -49,7 +49,7 @@ export const ListItem = styled.li<IStyledProps>`
         isActive ? theme.colors.white : 'transparent'};
       border-radius: 50%;
       transition: background-color
-        ${({ theme }) => theme.transitionDurationAndFunc};
+        ${({ theme }) => theme.transitionDurationAndFunc.other};
     }
 
     &:is(:hover, :focus)::after {

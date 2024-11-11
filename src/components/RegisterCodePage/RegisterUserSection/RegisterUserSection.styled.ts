@@ -99,7 +99,7 @@ export const CabinetLink = styled(Link)`
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {
     box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),

@@ -11,7 +11,7 @@ export const StyledLink = styled.span`
   background-color: #ffeecc;
   box-shadow: 3px 3px 0px 0px #e8c47d,
     inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   & > svg {
     color: #3d3e46;

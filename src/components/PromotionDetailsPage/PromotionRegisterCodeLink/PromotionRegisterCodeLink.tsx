@@ -3,11 +3,13 @@ import { StyledLink } from './PromotionRegisterCodeLink.styled';
 import { useRegisterCodeLink } from '@/hooks';
 import { IProps } from './PromotionRegisterCodeLink.types';
 
-const PromotionRegisterCodeLink: FC<IProps> = ({ margin = true }) => {
+const PromotionRegisterCodeLink: FC<IProps> = ({
+  shouldShowTopMargin = true,
+}) => {
   const registerCodeLink = useRegisterCodeLink();
 
   return (
-    <StyledLink to={registerCodeLink} margin={margin}>
+    <StyledLink to={registerCodeLink} shouldShowTopMargin={shouldShowTopMargin}>
       Зареєструвати код
     </StyledLink>
   );

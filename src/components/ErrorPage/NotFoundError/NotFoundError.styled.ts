@@ -111,7 +111,7 @@ export const StyledLink = styled(Link)`
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {
     box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),

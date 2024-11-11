@@ -37,7 +37,7 @@ export const SliderBtn = styled.button`
     rgba(255, 255, 255, 0) 100%
   );
   background-color: #9066cc;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {
     box-shadow: 1px 1px 0px 0px #7a4ebd,

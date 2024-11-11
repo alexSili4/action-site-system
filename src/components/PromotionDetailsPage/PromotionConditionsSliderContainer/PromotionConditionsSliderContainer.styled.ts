@@ -136,7 +136,7 @@ export const RulesLink = styled.a`
   border-radius: 16px;
   box-shadow: 3px 3px 0px 0px #e8c47d;
   background-color: #ffeecc;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   & > svg {
     color: #3d3e46;

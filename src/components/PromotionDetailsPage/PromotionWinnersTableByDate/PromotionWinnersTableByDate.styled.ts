@@ -13,8 +13,8 @@ export const PromotionWinnersWrap = styled.div<IStyledProps>`
   margin-top: ${({ theme, showWinners }) => showWinners && theme.spacing(5)};
   background-color: #f4f6f9;
   overflow-y: hidden;
-  transition: max-height ${({ theme }) => theme.transitionDurationAndFunc},
-    margin-top ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: max-height ${({ theme }) => theme.transitionDurationAndFunc.other},
+    margin-top ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: flex;
@@ -82,7 +82,7 @@ export const ResultsBtn = styled.button`
   font-weight: 500;
   line-height: 100%;
   text-transform: uppercase;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {
     box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),

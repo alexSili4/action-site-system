@@ -11,7 +11,8 @@ export const StyledLink = styled(Link)<IStyledProps>`
   background-color: #ffeecc;
   margin-left: auto;
   margin-right: auto;
-  margin-top: ${({ theme, margin }) => margin && theme.spacing(8)};
+  margin-top: ${({ theme, shouldShowTopMargin }) =>
+    shouldShowTopMargin && theme.spacing(8)};
   padding: ${({ theme }) => theme.spacing(5)};
   box-shadow: 3px 3px 0px 0px #e8c47d,
     inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
@@ -22,7 +23,7 @@ export const StyledLink = styled(Link)<IStyledProps>`
   line-height: 100%;
   text-align: center;
   text-transform: uppercase;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {
     box-shadow: 2px 2px 0px 0px #e8c47d,

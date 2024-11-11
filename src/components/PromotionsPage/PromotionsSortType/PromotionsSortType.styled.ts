@@ -16,7 +16,7 @@ export const TitleWrap = styled.span`
     `${theme.spacing(2)} ${theme.spacing(3)} ${theme.spacing(
       2
     )} ${theme.spacing(4)}`};
-  transition: ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const Title = styled.span`

@@ -42,6 +42,6 @@ export const CloseBtn = styled.button`
   & svg {
     display: block;
     color: #121417;
-    transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 `;

@@ -1,7 +1,7 @@
 export interface IProps {
-  margin?: boolean;
+  shouldShowTopMargin?: boolean;
 }
 
 export interface IStyledProps {
-  margin: boolean;
+  shouldShowTopMargin: boolean;
 }

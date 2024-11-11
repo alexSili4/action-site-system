@@ -21,11 +21,12 @@ export const CustomCheckbox = styled.span`
   border-radius: 2px;
   border: 1px solid #a282f7;
   background-color: transparent;
-  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: background-color
+    ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   & > svg {
     color: transparent;
-    transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
   *:has(input:checked) > &,

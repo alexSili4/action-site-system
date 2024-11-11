@@ -26,8 +26,8 @@ export const Button = styled.button<IStyledButtonProps>`
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc},
-    box-shadow ${({ theme }): string => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other},
+    box-shadow ${({ theme }): string => theme.transitionDurationAndFunc.other};
 
   &:not(:disabled):is(:hover, :focus) {
     color: ${({ isNavBtn }) => !isNavBtn && '#383e45'};

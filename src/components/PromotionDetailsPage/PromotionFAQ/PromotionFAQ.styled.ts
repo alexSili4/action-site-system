@@ -37,7 +37,7 @@ export const AnswerWrap = styled.div<IStyledProps>`
   max-height: ${({ showAnswer, scrollHeight }) =>
     showAnswer ? `${scrollHeight}px` : '0px'};
   overflow-y: hidden;
-  transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: max-height ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     width: 259px;

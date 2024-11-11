@@ -14,7 +14,7 @@ export const Container = styled.label`
     height: 4px;
     background-color: transparent;
     transition: background-color
-      ${({ theme }) => theme.transitionDurationAndFunc};
+      ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
   &:is(:hover, :focus, :has(input:checked))::after {
@@ -43,7 +43,7 @@ export const Title = styled.span`
   font-size: 16px;
   font-weight: 400;
   text-align: center;
-  transition: ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 18px;

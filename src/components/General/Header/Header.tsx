@@ -14,7 +14,10 @@ const Header: FC<IProps> = ({
   const isScrollingDown = useIsScrollingDown();
 
   return (
-    <StyledHeader isPromotionDetailsPage={isPromotionDetailsPage}>
+    <StyledHeader
+      isPromotionDetailsPage={isPromotionDetailsPage}
+      isScrollingDown={isScrollingDown}
+    >
       <Container>
         <NavBar
           isRootPage={isRootPage}

@@ -25,8 +25,9 @@ export const DatePickerBtn = styled.button<IStyledDatePickerBtn>`
 
   & > svg {
     color: ${({ showDatePicker }) => (showDatePicker ? '#383e45' : '#7e8494')};
-    transition: transform ${({ theme }) => theme.transitionDurationAndFunc},
-      color ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: transform
+        ${({ theme }) => theme.transitionDurationAndFunc.other},
+      color ${({ theme }) => theme.transitionDurationAndFunc.other};
 
     &:first-of-type {
       color: ${({ showDatePicker }) =>
@@ -52,7 +53,7 @@ export const BtnLabel = styled.span<IStyledProps>`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const DatePickerContainer = styled.div`

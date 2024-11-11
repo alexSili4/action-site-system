@@ -27,7 +27,8 @@ export const Button = styled.button<IStyledProps>`
   padding: 0;
   background-color: ${({ isActiveBtn }) =>
     isActiveBtn ? '#9e7ad3' : 'transparent'};
-  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: background-color
+    ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {
     background-color: #9e7ad3;

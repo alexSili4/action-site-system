@@ -16,7 +16,7 @@ export const Container = styled.label`
     background-color: transparent;
     transform: translateX(-50%);
     transition: background-color
-      ${({ theme }) => theme.transitionDurationAndFunc};
+      ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
   &:is(:hover, :focus, :has(input:checked))::after {
@@ -42,7 +42,7 @@ export const Title = styled.span`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
-  transition: ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const RadioBtn = styled.input`

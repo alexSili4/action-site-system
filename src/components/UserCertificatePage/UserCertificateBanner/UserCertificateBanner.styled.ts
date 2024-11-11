@@ -114,7 +114,7 @@ export const DownloadLink = styled.a`
     rgba(255, 255, 255, 0) 100%
   );
   background-color: #9066cc;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     height: 54px;

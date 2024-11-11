@@ -76,7 +76,10 @@ interface ITheme {
     animatedPrizeImg: number;
     header: number;
   };
-  transitionDurationAndFunc: string;
+  transitionDurationAndFunc: {
+    header: string;
+    other: string;
+  };
   spacing: (value?: number) => string;
   trimText: string;
 }
@@ -160,7 +163,10 @@ const theme: ITheme = {
     animatedPrizeWheelModalWin: 100000,
     animatedPrizeImg: 100000,
   },
-  transitionDurationAndFunc: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
+  transitionDurationAndFunc: {
+    header: '600ms cubic-bezier(0.4, 0, 0.2, 1)',
+    other: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
+  },
   spacing: (value = 1) => `${value * 4}px`,
   trimText:
     'word-wrap: break-word; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;',

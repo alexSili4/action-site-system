@@ -41,7 +41,8 @@ export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
     transform: rotate(
       ${({ showLocationList }) => (showLocationList ? 180 : 0)}deg
     );
-    transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+    transition: transform
+      ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
   &:is(:hover, :focus) > svg {
@@ -67,7 +68,7 @@ export const ShowLocationsBtnTitle = styled.span<IStyledShowLocationsBtnTitlePro
   font-size: 16px;
   font-weight: 400;
   text-align: center;
-  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
 export const LocationListContainer = styled.div<IStyledLocationListProps>`

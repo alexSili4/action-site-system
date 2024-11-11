@@ -20,8 +20,8 @@ export const StyledBtn = styled.button`
   line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc},
-    opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other},
+    opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:disabled {
     opacity: 0.4;
