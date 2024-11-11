@@ -19,16 +19,17 @@ export const ListItem = styled.li``;
 
 export const Button = styled.button<IStyledProps>`
   display: block;
-  width: 8px;
-  height: 8px;
-  border: none;
+  width: 11px;
+  height: 11px;
+  border: 1px solid;
+  border-color: #9e7ad3;
   border-radius: 50%;
   padding: 0;
-  background-color: #7e8494;
-  opacity: ${({ isActiveBtn }) => (isActiveBtn ? 1 : 0.3)};
-  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  background-color: ${({ isActiveBtn }) =>
+    isActiveBtn ? '#9e7ad3' : 'transparent'};
+  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc};
 
   &:is(:hover, :focus) {
-    opacity: 1;
+    background-color: #9e7ad3;
   }
 `;
