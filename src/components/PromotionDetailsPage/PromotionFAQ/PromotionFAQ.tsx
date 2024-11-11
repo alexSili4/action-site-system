@@ -3,6 +3,7 @@ import { IProps } from './PromotionFAQ.types';
 import {
   AnswerWrap,
   ListItem,
+  QuestionBtnWrap,
   QuestionBtn,
   QuestionBtnTitle,
   QuestionWrap,
@@ -30,10 +31,12 @@ const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
   return (
     <ListItem>
       <QuestionWrap>
-        <QuestionBtn onClick={onQuestionBtnClick}>
-          <QuestionBtnTitle>{title}</QuestionBtnTitle>
-          <OpenContentBtnLabel showContent={showAnswer} />
-        </QuestionBtn>
+        <QuestionBtnWrap>
+          <QuestionBtn onClick={onQuestionBtnClick}>
+            <QuestionBtnTitle>{title}</QuestionBtnTitle>
+            <OpenContentBtnLabel showContent={showAnswer} />
+          </QuestionBtn>
+        </QuestionBtnWrap>
         <AnswerWrap
           scrollHeight={scrollHeight}
           showAnswer={showAnswer}

@@ -5,6 +5,11 @@ export const ListItem = styled.li``;
 
 export const QuestionWrap = styled.div``;
 
+export const QuestionBtnWrap = styled.div`
+  padding-left: ${({ theme }) => theme.spacing(23)};
+  padding-right: ${({ theme }) => theme.spacing(23)};
+`;
+
 export const QuestionBtn = styled.button`
   display: flex;
   justify-content: space-between;
@@ -34,10 +39,6 @@ export const AnswerWrap = styled.div<IStyledProps>`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     width: 259px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    padding-right: ${({ theme }) => theme.spacing(10)};
   }
 `;
 
