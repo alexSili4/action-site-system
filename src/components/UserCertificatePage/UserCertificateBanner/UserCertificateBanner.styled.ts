@@ -6,17 +6,16 @@ export const Container = styled.div`
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    gap: ${({ theme }) => theme.spacing(4)};
     padding: ${({ theme }) => theme.spacing(4)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(8)};
     width: 447px;
     border-radius: 16px;
   }

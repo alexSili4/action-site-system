@@ -12,12 +12,13 @@ import {
 import CabinetPageBreadcrumbs from '@GeneralComponents/CabinetPageBreadcrumbs';
 import { RiDownloadLine } from 'react-icons/ri';
 import { theme } from '@/constants';
+import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserCertificateBanner: FC = () => {
   return (
     <Container>
       <CabinetPageBreadcrumbs addPageTitle='Сертифікат' />
-      {/* TODO GoBackLink */}
+      <CabinetGoBackLink />
       <Content>
         <BarcodeWrap>
           <Barcode>

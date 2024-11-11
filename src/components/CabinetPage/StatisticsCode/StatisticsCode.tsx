@@ -20,7 +20,7 @@ import {
   CertificateCode,
   PartnerImg,
 } from './StatisticsCode.styled';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
 import { getUserCodeMessage } from '@/utils';
 
@@ -35,6 +35,8 @@ const StatisticsCode: FC<IProps> = ({
     isErrorStatus,
     isSuccessStatus,
   });
+  const location = useLocation();
+  const userCertificateLinkState = { from: location };
 
   return (
     <Container>
@@ -49,7 +51,7 @@ const StatisticsCode: FC<IProps> = ({
       </Link>
       <ContentWrap>
         <LinksWrap>
-          <Link to={PagePaths.userCertificate}>
+          <Link to={PagePaths.userCertificate} state={userCertificateLinkState}>
             <CouponIcon />
             <StyledLinkTitle>Виграний Сертифікат</StyledLinkTitle>
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
