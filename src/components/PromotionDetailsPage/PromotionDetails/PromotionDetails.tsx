@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Container } from './PromotionDetails.styled';
+import { Container, Content } from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import { PromotionDetailsState } from '@/types/promotion.types';
 import { useSetSearchParams, useTargetPromotionData } from '@/hooks';
@@ -64,38 +64,40 @@ const PromotionDetails: FC<IProps> = ({
 
   return (
     <Container>
-      <PromotionDetailsSectionContainer>
-        <PromotionPageBreadcrumbs
-          promotionCategory={targetPromotionCategory}
-          promotionTitle={name}
+      <Content>
+        <PromotionDetailsSectionContainer>
+          <PromotionPageBreadcrumbs
+            promotionCategory={targetPromotionCategory}
+            promotionTitle={name}
+          />
+          <PromotionBanner
+            from={from}
+            period={promotionDate}
+            name={name}
+            secondBannerDt={bannerDtUrl}
+            secondBannerMob={bannerMobUrl}
+            showWheelLogo={showWheelLogo}
+          />
+        </PromotionDetailsSectionContainer>
+        <PromotionConditions conditions={conditions} />
+        <PromotionPrizes
+          logo={<PromotionPrizesBannerIcon src={logoPartnerUrl} />}
+          prizes={otherPrizes}
+          title='Призи головного розіграшу'
+          description='Унікальний приз від головного партнера'
+          showRegCodeLink={false}
+          id={PromotionDetailsPageSections.prizes}
         />
-        <PromotionBanner
-          from={from}
-          period={promotionDate}
-          name={name}
-          secondBannerDt={bannerDtUrl}
-          secondBannerMob={bannerMobUrl}
-          showWheelLogo={showWheelLogo}
+        <PromotionPrizes
+          logo={<PrizesWheelLogo />}
+          prizes={wheelPrizes}
+          title='Призи «Колеса подарунків»'
+          description='Крутіть колесо та вигравайте подарунки'
         />
-      </PromotionDetailsSectionContainer>
-      <PromotionConditions conditions={conditions} />
-      <PromotionPrizes
-        logo={<PromotionPrizesBannerIcon src={logoPartnerUrl} />}
-        prizes={otherPrizes}
-        title='Призи головного розіграшу'
-        description='Унікальний приз від головного партнера'
-        showRegCodeLink={false}
-        id={PromotionDetailsPageSections.prizes}
-      />
-      <PromotionPrizes
-        logo={<PrizesWheelLogo />}
-        prizes={wheelPrizes}
-        title='Призи «Колеса подарунків»'
-        description='Крутіть колесо та вигравайте подарунки'
-      />
-      <PromotionFAQs faqs={faqs} />
-      {shouldShowWinnersSection && <PromotionWinners winners={winners} />}
-      <PromotionContacts shops={shops} />
+        <PromotionFAQs faqs={faqs} />
+        {shouldShowWinnersSection && <PromotionWinners winners={winners} />}
+        <PromotionContacts shops={shops} />
+      </Content>
     </Container>
   );
 };

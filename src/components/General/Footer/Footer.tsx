@@ -8,16 +8,11 @@ import {
 } from './Footer.styled';
 import SocialLinksList from '@GeneralComponents/SocialLinksList';
 import { IProps } from './Footer.types';
-import { useLocation } from 'react-router-dom';
-import { PagePaths } from '@/constants';
-import { useTargetPromotionData } from '@/hooks';
+import { useTargetPromotionData, useIsPromotionDetailsPage } from '@/hooks';
 
 const Footer: FC<IProps> = ({ isRootPage }) => {
-  const { pathname } = useLocation();
   const { legalText } = useTargetPromotionData();
-  const isPromotionDetailsPage = pathname.startsWith(
-    PagePaths.promotionDetailsPageExample
-  );
+  const isPromotionDetailsPage = useIsPromotionDetailsPage();
   const shouldShowLegalInfo = isPromotionDetailsPage;
 
   return (

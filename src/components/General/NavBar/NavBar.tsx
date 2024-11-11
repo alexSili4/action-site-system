@@ -18,6 +18,7 @@ const NavBar: FC<IProps> = ({
   const logoLinkTitle = showShortLogoLinkTitle
     ? 'Акції'
     : 'Акції з подарунками';
+  const showLocationFilter = !isPromotionDetailsPage && !isRootPage;
 
   return (
     <Nav isRootPage={isRootPage} isDesktop={isDesktop}>
@@ -38,7 +39,7 @@ const NavBar: FC<IProps> = ({
         <AtbLogo />
         <LogoLinkTitle>{logoLinkTitle}</LogoLinkTitle>
       </Link>
-      {!isRootPage && <LocationFilter isRootPage={isRootPage} />}
+      {showLocationFilter && <LocationFilter isRootPage={isRootPage} />}
     </Nav>
   );
 };

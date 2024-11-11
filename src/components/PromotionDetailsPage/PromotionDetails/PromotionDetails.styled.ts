@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
+  padding-top: ${({ theme }) => theme.spacing(39)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding-top: ${({ theme }) => theme.spacing(25)};
+  }
+`;
+
+export const Content = styled.div`
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
   padding-top: ${({ theme }) => theme.spacing(4)};

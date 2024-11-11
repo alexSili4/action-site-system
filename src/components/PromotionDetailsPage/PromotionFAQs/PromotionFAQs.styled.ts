@@ -45,7 +45,7 @@ export const AdditionalIfoText = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     margin-top: ${({ theme }) => theme.spacing(2)};
   }
 `;

@@ -11,7 +11,7 @@ export const StyledLink = styled(Link)<IStyledProps>`
   background-color: #ffeecc;
   margin-left: auto;
   margin-right: auto;
-  margin-top: ${({ theme, topMargin }) => topMargin && theme.spacing(8)};
+  margin-top: ${({ theme, margin }) => margin && theme.spacing(8)};
   padding: ${({ theme }) => theme.spacing(5)};
   box-shadow: 3px 3px 0px 0px #e8c47d,
     inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);

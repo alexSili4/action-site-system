@@ -18,9 +18,6 @@ const SharedLayout: FC = () => {
   const { pathname } = useLocation();
 
   const isRootPage = pathname === PagePaths.root;
-  const isPromotionDetailsPage = pathname.startsWith(
-    PagePaths.promotionDetailsPageExample
-  );
 
   const setRegisterCodeModalWinState = () => {
     setShowRegisterCodeModalWin((prevState) => !prevState);
@@ -38,7 +35,6 @@ const SharedLayout: FC = () => {
       <Content>
         <Header
           isRootPage={isRootPage}
-          isPromotionDetailsPage={isPromotionDetailsPage}
           isDesktop={isDesktop}
           onRegisterCodeBtnClick={onRegisterCodeBtnClick}
         />

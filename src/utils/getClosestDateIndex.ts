@@ -3,7 +3,7 @@ import { closestTo } from 'date-fns';
 import formatDate from './formatDate';
 import { DateFormats } from '@/constants';
 
-const getClosestDateIndex = (winners: WinnersByDates) => {
+const getClosestDateIndex = (winners: WinnersByDates): number => {
   const allDates = winners.map(({ date }) => date);
   const closestDate = closestTo(new Date(), allDates) ?? new Date();
   const closestDateIndex = winners.findIndex(

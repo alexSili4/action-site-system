@@ -19,3 +19,5 @@ export { default as useRegisterUserForm } from './useRegisterUserForm';
 export { default as useRegisterCodeLink } from './useRegisterCodeLink';
 export { default as useCabinetPage } from './useCabinetPage';
 export { default as useFromLocation } from './useFromLocation';
+export { default as useIsPromotionDetailsPage } from './useIsPromotionDetailsPage';
+export { default as useIsScrollingDown } from './useIsScrollingDown';

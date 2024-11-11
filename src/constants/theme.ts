@@ -74,6 +74,7 @@ interface ITheme {
     spinWheelBtn: number;
     animatedPrizeWheelModalWin: number;
     animatedPrizeImg: number;
+    header: number;
   };
   transitionDurationAndFunc: string;
   spacing: (value?: number) => string;
@@ -148,6 +149,7 @@ const theme: ITheme = {
     promotionMapHeader: 1000,
     promotionShopsList: 1000,
     promotionNavBar: 1000,
+    header: 10000,
     dropdownBackdrop: 10000,
     selectCityDropdown: 10000,
     selectPromotionsSortTypeDropdown: 10000,

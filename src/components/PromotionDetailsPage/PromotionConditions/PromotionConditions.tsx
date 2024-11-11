@@ -15,7 +15,7 @@ const PromotionConditions: FC<IProps> = ({ conditions }) => {
       <PromotionSectionTitle title='Умови участі' />
       <PromotionConditionsSliderContainer conditions={conditions} />
       <PromotionRegisterCodeLinkContainer>
-        <PromotionRegisterCodeLink topMargin={false} />
+        <PromotionRegisterCodeLink margin={false} />
       </PromotionRegisterCodeLinkContainer>
     </Container>
   );
