@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import certificateImg from '@/images/cabinet/certificate.png';
+import { IStyledCertificateWrapProps } from './StatisticsCode.types';
 
 export const Container = styled.div`
   display: flex;
@@ -101,7 +102,7 @@ export const StyledLinkTitle = styled.span`
   line-height: 1.4;
 `;
 
-export const CertificateWrap = styled.div`
+export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
   flex-grow: 0;
   flex-shrink: 0;
   display: flex;
@@ -111,23 +112,13 @@ export const CertificateWrap = styled.div`
   gap: ${({ theme }) => theme.spacing()};
   width: 94px;
   height: 55px;
-  background-image: url(${certificateImg});
+  background-image: url(${({ partnerLogo }) => partnerLogo}),
+    url(${certificateImg});
   background-position: center center;
-  background-size: cover;
+  background-size: contain, cover;
+  background-repeat: no-repeat;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-`;
-
-export const PartnerImg = styled.img`
-  max-height: 39px;
-`;
-
-export const CertificateCode = styled.p`
-  color: #7e8494;
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 8.34px;
-  font-weight: 900;
-  line-height: 1.4;
 `;
 
 export const MessagesContainer = styled.div`

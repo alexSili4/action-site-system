@@ -1,17 +1,17 @@
 import { FC } from 'react';
-import { StyledLink } from './PromotionRegisterCodeLink.styled';
+import { Container, StyledLink } from './PromotionRegisterCodeLink.styled';
 import { useRegisterCodeLink } from '@/hooks';
 import { IProps } from './PromotionRegisterCodeLink.types';
 
 const PromotionRegisterCodeLink: FC<IProps> = ({
-  shouldShowTopMargin = true,
+  shouldShowTopSpacing = true,
 }) => {
   const registerCodeLink = useRegisterCodeLink();
 
   return (
-    <StyledLink to={registerCodeLink} shouldShowTopMargin={shouldShowTopMargin}>
-      Зареєструвати код
-    </StyledLink>
+    <Container shouldShowTopSpacing={shouldShowTopSpacing}>
+      <StyledLink to={registerCodeLink}>Зареєструвати код</StyledLink>
+    </Container>
   );
 };
 

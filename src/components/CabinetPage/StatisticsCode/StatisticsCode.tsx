@@ -17,8 +17,6 @@ import {
   MessageWrap,
   StyledLinkTitle,
   CodeWrap,
-  CertificateCode,
-  PartnerImg,
 } from './StatisticsCode.styled';
 import { Link, useLocation } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
@@ -62,10 +60,7 @@ const StatisticsCode: FC<IProps> = ({
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
           </Link>
         </LinksWrap>
-        <CertificateWrap>
-          <PartnerImg src={partnerLogo} />
-          <CertificateCode>{code}</CertificateCode>
-        </CertificateWrap>
+        <CertificateWrap partnerLogo={partnerLogo}></CertificateWrap>
       </ContentWrap>
       <MessagesContainer>
         <MessageWrap>
