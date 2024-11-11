@@ -7,18 +7,15 @@ import {
   InputWrap,
   Label,
   LabelWrap,
-  RegisterUserCheckboxTitle,
-  RegisterUserCheckboxLink,
-  AcceptedTermsWrap,
   Input,
+  RegisterUserCheckboxTitle,
 } from './RegisterUserForm.styled';
-import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterUserCheckbox';
-import { useRegisterUserForm, useTargetPromotionData } from '@/hooks';
+import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
+import { useRegisterUserForm } from '@/hooks';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import { IProps } from './RegisterUserForm.types';
 
 const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
-  const { rulesPdf } = useTargetPromotionData();
   const { handleFormSubmit, register, handleSubmit, disabledBtn } =
     useRegisterUserForm(setShowSuccessMsgState);
 
@@ -51,26 +48,6 @@ const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
             </RegisterUserCheckboxTitle>
           </RegisterUserCheckbox>
         </CertificateInfoWrap>
-        <AcceptedTermsWrap>
-          <RegisterUserCheckbox
-            settings={{
-              ...register('acceptedTerms'),
-            }}
-          >
-            <RegisterUserCheckboxTitle>
-              Погоджуюсь з{' '}
-              <RegisterUserCheckboxLink
-                href={rulesPdf}
-                download='rules'
-                target='_blank'
-                rel='noopener noreferrer nofollow'
-              >
-                умовами участі
-              </RegisterUserCheckboxLink>{' '}
-              в акції
-            </RegisterUserCheckboxTitle>
-          </RegisterUserCheckbox>
-        </AcceptedTermsWrap>
       </Content>
       <SubmitRegFormBtn title='Зареєструвати' disabled={disabledBtn} />
     </Form>

@@ -1,14 +1,14 @@
 import { theme } from '@/constants';
 import { FC } from 'react';
 import { FaCheck } from 'react-icons/fa';
-import { IProps } from './RegisterUserCheckbox.types';
+import { IProps } from './RegisterFormCheckbox.types';
 import {
   BasicCheckbox,
   Container,
   CustomCheckbox,
-} from './RegisterUserCheckbox.styled';
+} from './RegisterFormCheckbox.styled';
 
-const RegisterUserCheckbox: FC<IProps> = ({ children, settings }) => {
+const RegisterFormCheckbox: FC<IProps> = ({ children, settings }) => {
   return (
     <Container>
       <BasicCheckbox type='checkbox' {...settings} />
@@ -20,4 +20,4 @@ const RegisterUserCheckbox: FC<IProps> = ({ children, settings }) => {
   );
 };
 
-export default RegisterUserCheckbox;
+export default RegisterFormCheckbox;

@@ -85,16 +85,10 @@ export const CertificateInfo = styled.p`
   line-height: 1.4;
 `;
 
-export const AcceptedTermsWrap = styled.div``;
-
 export const RegisterUserCheckboxTitle = styled.span`
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
-`;
-
-export const RegisterUserCheckboxLink = styled.a`
-  color: #a282f7;
 `;

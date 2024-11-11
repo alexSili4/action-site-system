@@ -15,10 +15,20 @@ export const Form = styled.form`
 
 export const Content = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(3)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(8)};
+  }
+`;
+
+export const CodeInputWrap = styled.div`
+  position: relative;
 `;
 
 export const InputWrap = styled.div<IStyledProps>`
-  position: relative;
   display: flex;
   border-radius: 8px;
   outline: 5px solid
@@ -83,4 +93,18 @@ export const ErrorMessage = styled.p`
     top: calc(100% + 12px);
     left: 0;
   }
+`;
+
+export const AcceptedTermsWrap = styled.div``;
+
+export const RegisterFormCheckboxTitle = styled.span`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
+
+export const RegisterFormCheckboxLink = styled.a`
+  color: #a282f7;
 `;

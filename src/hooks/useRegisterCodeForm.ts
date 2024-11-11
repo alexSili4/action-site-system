@@ -10,7 +10,7 @@ import {
   Func,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import { useCsrfToken, usePromotionId } from '@/hooks';
+import { useCsrfToken, usePromotionId, useTargetPromotionData } from '@/hooks';
 import { IRegisterCodeRes, RegisterCodeErr } from '@/types/code.types';
 import { getCurrentInputIndex } from '@/utils';
 import { IUseRegisterCodeForm } from '@/types/hooks.types';
@@ -23,14 +23,16 @@ const useRegisterCodeForm = (
   const [isFullRegCode, setIsFullRegCode] = useState<boolean>(false);
   const [regCodeInputs, setRegCodeInputs] = useState<HTMLInputElements>([]);
   const inputWrapRef = useRef<HTMLDivElement>(null);
-  const { register, handleSubmit } = useForm<IRegCodeFormData>();
+  const { register, handleSubmit, watch } = useForm<IRegCodeFormData>();
   const promotionId = usePromotionId();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
+  const { rulesPdf } = useTargetPromotionData();
   const isError = Boolean(error);
+  const acceptedTerms = watch('acceptedTerms');
 
   const inputMaxLength = generalSettings.regCodeLength / 3;
 
-  const disabledBtn = !isFullRegCode || isLoading;
+  const disabledBtn = !acceptedTerms || !isFullRegCode || isLoading;
 
   const startRegisterCode = () => {
     setError(null);
@@ -180,6 +182,7 @@ const useRegisterCodeForm = (
     inputMaxLength,
     error,
     disabledBtn,
+    rulesPdf,
   };
 };
 

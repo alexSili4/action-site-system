@@ -144,6 +144,7 @@ export interface IUseRegisterCodeForm {
   inputMaxLength: number;
   error: RegisterCodeErr;
   disabledBtn: boolean;
+  rulesPdf: string;
 }
 
 export interface IUseCsrfToken {

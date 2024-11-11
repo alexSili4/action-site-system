@@ -9,10 +9,15 @@ import {
   InputDelimiterWrap,
   InputDelimiter,
   ErrorMessage,
+  RegisterFormCheckboxTitle,
+  RegisterFormCheckboxLink,
+  AcceptedTermsWrap,
+  CodeInputWrap,
 } from './RegisterCodeForm.styled';
 import CodePartInput from '@RegisterCodePageComponents/CodePartInput';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import { useRegisterCodeForm } from '@/hooks';
+import RegisterFormCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
 
 const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
   const {
@@ -25,53 +30,76 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
     inputMaxLength,
     error,
     disabledBtn,
+    rulesPdf,
   } = useRegisterCodeForm(incrementCurrentStep);
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
       <Content>
-        <InputWrap ref={inputWrapRef} isError={isError}>
-          <LabelWrap>
-            <Label>Код з чеку</Label>
-          </LabelWrap>
-          <CodePartInput
-            onChange={onRegCodeInput}
-            maxLength={inputMaxLength}
+        <CodeInputWrap>
+          <InputWrap ref={inputWrapRef} isError={isError}>
+            <LabelWrap>
+              <Label>Код з чеку</Label>
+            </LabelWrap>
+            <CodePartInput
+              onChange={onRegCodeInput}
+              maxLength={inputMaxLength}
+              settings={{
+                ...register('codePart1', {
+                  required: true,
+                  maxLength: inputMaxLength,
+                }),
+              }}
+            />
+            <InputDelimiterWrap isError={isError}>
+              <InputDelimiter />
+            </InputDelimiterWrap>
+            <CodePartInput
+              onChange={onRegCodeInput}
+              maxLength={inputMaxLength}
+              settings={{
+                ...register('codePart2', {
+                  required: true,
+                  maxLength: inputMaxLength,
+                }),
+              }}
+            />
+            <InputDelimiterWrap isError={isError}>
+              <InputDelimiter />
+            </InputDelimiterWrap>
+            <CodePartInput
+              onChange={onRegCodeInput}
+              maxLength={inputMaxLength}
+              settings={{
+                ...register('codePart3', {
+                  required: true,
+                  maxLength: inputMaxLength,
+                }),
+              }}
+            />
+          </InputWrap>
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+        </CodeInputWrap>
+        <AcceptedTermsWrap>
+          <RegisterFormCheckbox
             settings={{
-              ...register('codePart1', {
-                required: true,
-                maxLength: inputMaxLength,
-              }),
+              ...register('acceptedTerms'),
             }}
-          />
-          <InputDelimiterWrap isError={isError}>
-            <InputDelimiter />
-          </InputDelimiterWrap>
-          <CodePartInput
-            onChange={onRegCodeInput}
-            maxLength={inputMaxLength}
-            settings={{
-              ...register('codePart2', {
-                required: true,
-                maxLength: inputMaxLength,
-              }),
-            }}
-          />
-          <InputDelimiterWrap isError={isError}>
-            <InputDelimiter />
-          </InputDelimiterWrap>
-          <CodePartInput
-            onChange={onRegCodeInput}
-            maxLength={inputMaxLength}
-            settings={{
-              ...register('codePart3', {
-                required: true,
-                maxLength: inputMaxLength,
-              }),
-            }}
-          />
-        </InputWrap>
-        {error && <ErrorMessage>{error}</ErrorMessage>}
+          >
+            <RegisterFormCheckboxTitle>
+              Погоджуюсь з{' '}
+              <RegisterFormCheckboxLink
+                href={rulesPdf}
+                download='rules'
+                target='_blank'
+                rel='noopener noreferrer nofollow'
+              >
+                умовами участі
+              </RegisterFormCheckboxLink>{' '}
+              в акції
+            </RegisterFormCheckboxTitle>
+          </RegisterFormCheckbox>
+        </AcceptedTermsWrap>
       </Content>
       <SubmitRegFormBtn
         title='Підтвердити і крутити Колесо подарунків'
