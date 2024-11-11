@@ -1,15 +1,11 @@
 import { FC } from 'react';
-import {
-  Container,
-  RegisterCodeLink,
-  ContentWrap,
-} from './PromotionPrizes.styled';
+import { Container, ContentWrap } from './PromotionPrizes.styled';
 import { IProps } from './PromotionPrizes.types';
 
 import PromotionPrizesBanner from '@PromotionDetailsPageComponents/PromotionPrizesBanner';
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import PromotionPrizesList from '@PromotionDetailsPageComponents/PromotionPrizesList';
-import { useRegisterCodeLink } from '@/hooks';
+import PromotionRegisterCodeLink from '@PromotionDetailsPageComponents/PromotionRegisterCodeLink';
 
 const PromotionPrizes: FC<IProps> = ({
   prizes,
@@ -28,7 +24,6 @@ const PromotionPrizes: FC<IProps> = ({
 
   const showBigPrizesList = Boolean(bigPrizes.length);
   const showBasePrizesList = Boolean(basePrizes.length);
-  const registerCodeLink = useRegisterCodeLink();
 
   return (
     <Container id={id}>
@@ -42,11 +37,7 @@ const PromotionPrizes: FC<IProps> = ({
           />
         )}
         {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
-        {showRegCodeLink && (
-          <RegisterCodeLink to={registerCodeLink}>
-            Зареєструвати код
-          </RegisterCodeLink>
-        )}
+        {showRegCodeLink && <PromotionRegisterCodeLink />}
       </ContentWrap>
     </Container>
   );

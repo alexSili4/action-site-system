@@ -45,8 +45,9 @@ export const OpenContentBtn = styled.button`
   padding-bottom: ${({ theme }) => theme.spacing(2)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 848px;
+    width: 650px;
     margin-left: auto;
+    margin-right: auto;
   }
 `;
 

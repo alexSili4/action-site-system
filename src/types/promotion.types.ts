@@ -83,3 +83,5 @@ export interface IGetPromotionDateProps {
   dateFrom: DateFrom;
   dateTo: DateTo;
 }
+
+export type SetActiveIndexByIndexFunc = (data: number) => void;

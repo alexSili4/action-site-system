@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import {
   Button,
   List,
@@ -12,8 +12,13 @@ import { useSwiper } from 'swiper/react';
 const PromotionConditionsSliderPagination: FC<IProps> = ({
   conditions,
   activeIndex,
+  setActiveIndexByIndex,
 }) => {
   const swiper = useSwiper();
+
+  useEffect(() => {
+    swiper.slideTo(activeIndex);
+  }, [activeIndex, swiper]);
 
   return (
     <List>
@@ -23,7 +28,7 @@ const PromotionConditionsSliderPagination: FC<IProps> = ({
         const onClick = (e: BtnClickEvent) => {
           makeBlur(e.currentTarget);
 
-          swiper.slideTo(index);
+          setActiveIndexByIndex(index);
         };
 
         return (

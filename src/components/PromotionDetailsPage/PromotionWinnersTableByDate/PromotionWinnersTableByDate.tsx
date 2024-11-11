@@ -20,8 +20,9 @@ import PromotionElementWrap from '@PromotionDetailsPageComponents/PromotionEleme
 
 const PromotionWinnersTableByDate: FC<IProps> = ({
   winners: { date, winners },
+  isOpenSection,
 }) => {
-  const [showWinners, setShowWinners] = useState<boolean>(false);
+  const [showWinners, setShowWinners] = useState<boolean>(() => isOpenSection);
   const winnersRef = useRef<DivRef>(null);
   const scrollHeight = winnersRef.current?.scrollHeight ?? 0;
   const isEmptyWinnersList = !winners.length;

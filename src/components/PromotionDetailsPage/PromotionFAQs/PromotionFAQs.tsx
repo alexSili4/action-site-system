@@ -7,8 +7,7 @@ import {
   PhoneLink,
   PhoneLinkIconWrap,
   PhoneLinkTitle,
-  Title,
-  WorkingHours,
+  AdditionalIfoText,
 } from './PromotionFAQs.styled';
 import PromotionFAQ from '@PromotionDetailsPageComponents/PromotionFAQ';
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
@@ -31,16 +30,16 @@ const PromotionFAQs: FC<IProps> = ({ faqs }) => {
           ))}
         </List>
         <AdditionalIfoWrap>
-          <Title>{hotLineOtherText}</Title>
+          <AdditionalIfoText>{hotLineOtherText}</AdditionalIfoText>
           <PhoneLink href={`tel:${hotLinePhone}`}>
             <PhoneLinkIconWrap>
               <LuPhone size={theme.iconSizes.phoneLink} />
             </PhoneLinkIconWrap>
             <PhoneLinkTitle>{hotLinePhone}</PhoneLinkTitle>
           </PhoneLink>
-          <WorkingHours>
+          <AdditionalIfoText>
             {hotLineText} {hotLineWorkHours}
-          </WorkingHours>
+          </AdditionalIfoText>
         </AdditionalIfoWrap>
       </ContentWrap>
     </Container>

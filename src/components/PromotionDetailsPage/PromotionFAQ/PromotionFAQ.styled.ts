@@ -20,21 +20,24 @@ export const QuestionBtn = styled.button`
 export const QuestionBtnTitle = styled.span`
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.4;
   text-align: left;
 `;
 
 export const AnswerWrap = styled.div<IStyledProps>`
-  width: 259px;
   max-height: ${({ showAnswer, scrollHeight }) =>
     showAnswer ? `${scrollHeight}px` : '0px'};
   overflow-y: hidden;
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    width: 259px;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 750px;
+    padding-right: ${({ theme }) => theme.spacing(10)};
   }
 `;
 

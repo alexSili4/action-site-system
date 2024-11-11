@@ -21,3 +21,4 @@ export { default as setBtnDisplayProp } from './setBtnDisplayProp';
 export { default as getUserCodeMessage } from './getUserCodeMessage';
 export { default as getIsCreatedSortType } from './getIsCreatedSortType';
 export { default as getSortType } from './getSortType';
+export { default as getClosestDateIndex } from './getClosestDateIndex';

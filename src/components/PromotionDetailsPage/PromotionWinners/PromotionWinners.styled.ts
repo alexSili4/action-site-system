@@ -16,7 +16,6 @@ export const ContentWrap = styled.div`
   margin-top: ${({ theme }) => theme.spacing(8)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    margin-right: ${({ theme }) => theme.spacing(5)};
     margin-top: ${({ theme }) => theme.spacing(14)};
   }
 `;

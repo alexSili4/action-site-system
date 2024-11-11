@@ -16,10 +16,10 @@ export const ContentWrap = styled.div`
   margin-top: ${({ theme }) => theme.spacing(8)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 848px;
-    margin-left: auto;
-    margin-right: ${({ theme }) => theme.spacing(5)};
+    width: 600px;
     margin-top: ${({ theme }) => theme.spacing(14)};
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
@@ -38,21 +38,16 @@ export const AdditionalIfoWrap = styled.div`
   }
 `;
 
-export const Title = styled.p`
+export const AdditionalIfoText = styled.p`
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 18px;
   font-weight: 400;
   line-height: 1.4;
-`;
 
-export const WorkingHours = styled.p`
-  margin-top: ${({ theme }) => theme.spacing(2)};
-  color: #383e45;
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.4;
+  &:not(:first-child) {
+    margin-top: ${({ theme }) => theme.spacing(2)};
+  }
 `;
 
 export const PhoneLink = styled.a`

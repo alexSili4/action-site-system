@@ -1,15 +1,22 @@
 import { FC } from 'react';
 import PromotionConditionsSliderContainer from '@PromotionDetailsPageComponents/PromotionConditionsSliderContainer';
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
-import { Container } from './PromotionConditions.styled';
+import {
+  Container,
+  PromotionRegisterCodeLinkContainer,
+} from './PromotionConditions.styled';
 import { PromotionDetailsPageSections } from '@/constants';
 import { IProps } from './PromotionConditions.types';
+import PromotionRegisterCodeLink from '@PromotionDetailsPageComponents/PromotionRegisterCodeLink';
 
 const PromotionConditions: FC<IProps> = ({ conditions }) => {
   return (
     <Container id={PromotionDetailsPageSections.conditions}>
       <PromotionSectionTitle title='Умови участі' />
       <PromotionConditionsSliderContainer conditions={conditions} />
+      <PromotionRegisterCodeLinkContainer>
+        <PromotionRegisterCodeLink topMargin={false} />
+      </PromotionRegisterCodeLinkContainer>
     </Container>
   );
 };

@@ -2,10 +2,6 @@ import styled from '@emotion/styled';
 import { IStyledProps } from './PromotionConditionsSliderPagination.types';
 
 export const List = styled.ul`
-  position: absolute;
-  z-index: ${({ theme }) => theme.zIndex.conditionsSliderPagination};
-  bottom: 16px;
-  left: 0;
   width: 100%;
   height: 11px;
   display: flex;
@@ -15,8 +11,15 @@ export const List = styled.ul`
   gap: ${({ theme }) => theme.spacing(2)};
   pointer-events: none;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    position: absolute;
+    z-index: ${({ theme }) => theme.zIndex.conditionsSliderPagination};
+    bottom: 16px;
+    left: 0;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    display: none;
+    margin-top: ${({ theme }) => theme.spacing(9)};
   }
 `;
 

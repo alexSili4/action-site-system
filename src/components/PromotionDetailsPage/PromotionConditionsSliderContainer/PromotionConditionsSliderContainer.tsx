@@ -38,6 +38,10 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
     setActiveIndex(swiper.activeIndex);
   };
 
+  const setActiveIndexByIndex = (index: number) => {
+    setActiveIndex(index);
+  };
+
   useEffect(() => {
     const shouldChangeSliderContainerHeight =
       sliderContainerHeight && shouldChangeHeight.current;
@@ -118,6 +122,7 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
         {slideHeight && <PromotionConditionsSliderControls />}
         {isManyConditions && (
           <PromotionConditionsSliderPagination
+            setActiveIndexByIndex={setActiveIndexByIndex}
             conditions={[...conditions, {}]}
             activeIndex={activeIndex}
           />
