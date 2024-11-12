@@ -6,12 +6,25 @@ export const Container = styled.div`
     `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding: ${({ theme: { spacing } }) =>
+      `${spacing(10)} ${spacing(14)} ${spacing(15)}`};
+    border-radius: 16px;
+  }
 `;
 
 export const TitleWrap = styled.div`
   display: flex;
-  flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    justify-content: space-between;
+  }
 `;
 
 export const Title = styled.p`
@@ -20,6 +33,12 @@ export const Title = styled.p`
   font-size: 18px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
 `;
 
 export const PartnerLogo = styled.img`
@@ -28,15 +47,31 @@ export const PartnerLogo = styled.img`
 
 export const DetailsWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
   margin-top: ${({ theme }) => theme.spacing(6)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    justify-content: space-between;
+    margin-top: ${({ theme }) => theme.spacing(25)};
+  }
 `;
 
 export const DescriptionWrap = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -45,6 +80,9 @@ export const Subtitle = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -71,6 +109,10 @@ export const ConditionsWrap = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
   margin-top: ${({ theme }) => theme.spacing(8)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    margin-top: ${({ theme }) => theme.spacing(19)};
+  }
 `;
 
 export const ConditionsTitle = styled.p`
@@ -91,9 +133,19 @@ export const ConditionsInfo = styled.p`
 
 export const HotlineInfoWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(2)};
   margin-top: ${({ theme }) => theme.spacing(4)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: ${({ theme }) => theme.spacing(5)};
+    margin-top: ${({ theme }) => theme.spacing(9)};
+  }
 `;
 
 export const HotlineInfo = styled.p`
@@ -105,6 +157,7 @@ export const HotlineInfo = styled.p`
 `;
 
 export const HotlinePhone = styled.a`
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,6 +170,10 @@ export const HotlinePhone = styled.a`
   & > svg {
     color: #7e8494;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding: ${({ theme: { spacing } }) => `${spacing(3)} ${spacing(6)}`};
+  }
 `;
 
 export const HotlinePhoneNumber = styled.span`
@@ -125,4 +182,8 @@ export const HotlinePhoneNumber = styled.span`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    font-size: 18px;
+  }
 `;
