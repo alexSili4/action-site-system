@@ -56,6 +56,7 @@ export const DetailsWrap = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
+    align-items: flex-end;
     margin-top: ${({ theme }) => theme.spacing(25)};
   }
 `;
@@ -185,5 +186,15 @@ export const HotlinePhoneNumber = styled.span`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 18px;
+  }
+`;
+
+export const DetailsDelimiter = styled.div`
+  width: 2px;
+  height: 34px;
+  background-color: #e3e7ed;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
   }
 `;

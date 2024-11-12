@@ -18,6 +18,7 @@ import {
   Title,
   TitleWrap,
   HotlineInfoWrap,
+  DetailsDelimiter,
 } from './UserCertificateDetails.styled';
 import { HiOutlinePhone } from 'react-icons/hi';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
@@ -37,14 +38,17 @@ const UserCertificateDetails: FC = () => {
             <NavArrow />
           </StyledLink>
         </DescriptionWrap>
+        <DetailsDelimiter></DetailsDelimiter>
         <DescriptionWrap>
           <Subtitle>Сертифікат дійсний до:</Subtitle>
           <Info>28.12.2024</Info>
         </DescriptionWrap>
+        <DetailsDelimiter></DetailsDelimiter>
         <DescriptionWrap>
           <Subtitle>Партнер:</Subtitle>
           <Info>Comfy</Info>
         </DescriptionWrap>
+        <DetailsDelimiter></DetailsDelimiter>
         <DescriptionWrap>
           <Subtitle>Акційний код:</Subtitle>
           <StyledLink to={PagePaths.root}>
