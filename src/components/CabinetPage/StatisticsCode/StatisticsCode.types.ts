@@ -9,3 +9,7 @@ export interface IProps {
 export interface IStyledCertificateWrapProps {
   partnerLogo: string;
 }
+
+export interface IStyledLinkProps {
+  isCertificateLink?: boolean;
+}

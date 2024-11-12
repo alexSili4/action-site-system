@@ -1,14 +1,14 @@
 import { FC } from 'react';
-import { Container } from './UserPrize.styled';
 import UserPrizeBanner from '@UserPrizePageComponents/UserPrizeBanner';
 import UserPrizeDetails from '@UserPrizePageComponents/UserPrizeDetails';
+import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
 
 const UserPrize: FC = () => {
   return (
-    <Container>
+    <UserStatisticsDetailsContainer>
       <UserPrizeBanner />
       <UserPrizeDetails />
-    </Container>
+    </UserStatisticsDetailsContainer>
   );
 };
 

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import CabinetPageBreadcrumbs from '@GeneralComponents/CabinetPageBreadcrumbs';
-import prizeImg from '@/images/userPrize/мультипіч.png';
+import prizeImg from '@/kitchen-machine.png';
 import { Container, PrizeImg, PrizeImgWrap } from './UserPrizeBanner.styled';
 
 const UserPrizeBanner: FC = () => {

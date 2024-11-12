@@ -14,6 +14,7 @@
         "./src/components/UserCertificatePage/*"
       ],
       "@UserPrizePageComponents/*": ["./src/components/UserPrizePage/*"],
+      "@UserCodePageComponents/*": ["./src/components/UserCodePage/*"],
       "@PromotionDetailsPageComponents/*": [
         "./src/components/PromotionDetailsPage/*"
       ]

@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import certificateImg from '@/images/cabinet/certificate.png';
-import { IStyledCertificateWrapProps } from './StatisticsCode.types';
+import {
+  IStyledCertificateWrapProps,
+  IStyledLinkProps,
+} from './StatisticsCode.types';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -79,18 +83,21 @@ export const LinksWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
+`;
 
-  & > a {
-    display: flex;
-    align-items: center;
-    gap: ${({ theme }) => theme.spacing(2)};
-    color: #7e8494;
+export const StyledLink = styled(Link)<IStyledLinkProps>`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(2)};
+  color: #7e8494;
 
-    & > svg {
-      &:first-of-type {
-        width: 14px;
-        height: 14px;
-      }
+  & > svg {
+    &:first-of-type {
+      width: 14px;
+      height: 14px;
+      fill: ${({ isCertificateLink }) => isCertificateLink && '#7e8494'};
+      stroke-width: 0px;
+      stroke: #7e8494;
     }
   }
 `;

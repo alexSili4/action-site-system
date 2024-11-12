@@ -1,6 +1,6 @@
 import barcode from '@/images/userCertificate/barcode.png';
 import styled from '@emotion/styled';
-import decorativeElement from '@/images/userCertificate/decorativeElement.png';
+import decorativeElement from '@/images/cabinet/decorative-element.png';
 
 export const Container = styled.div`
   flex-shrink: 0;

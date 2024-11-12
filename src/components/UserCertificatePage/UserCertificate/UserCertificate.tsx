@@ -1,14 +1,14 @@
 import { FC } from 'react';
-import { Container } from './UserCertificate.styled';
 import UserCertificateBanner from '@UserCertificatePageComponents/UserCertificateBanner';
 import UserCertificateDetails from '@UserCertificatePageComponents/UserCertificateDetails';
+import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
 
 const UserCertificate: FC = () => {
   return (
-    <Container>
+    <UserStatisticsDetailsContainer>
       <UserCertificateBanner />
       <UserCertificateDetails />
-    </Container>
+    </UserStatisticsDetailsContainer>
   );
 };
 

@@ -18,6 +18,7 @@ export default defineConfig({
       '@ErrorPageComponents': '/src/components/ErrorPage',
       '@UserCertificatePageComponents': '/src/components/UserCertificatePage',
       '@UserPrizePageComponents': '/src/components/UserPrizePage',
+      '@UserCodePageComponents': '/src/components/UserCodePage',
     },
   },
   build: {

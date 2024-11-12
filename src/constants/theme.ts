@@ -47,6 +47,7 @@ interface ITheme {
     cabinetDownloadCertificateLink: number;
     cabinetHotlinePhone: number;
     cabinetGoBackLink: number;
+    userCodeDetailsMarker: number;
   };
   containerWidth: {
     desktop: number;
@@ -116,6 +117,7 @@ const theme: ITheme = {
     showPromotionsSortTypesBtn: 12,
     showDatePickerBtn: 12,
     promotionContactsMapListClose: 12,
+    userCodeDetailsMarker: 13,
     faqBtn: 14,
     cabinet: 14,
     rulesLink: 14,

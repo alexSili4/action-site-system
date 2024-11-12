@@ -17,6 +17,7 @@ import {
   MessageWrap,
   StyledLinkTitle,
   CodeWrap,
+  StyledLink,
 } from './StatisticsCode.styled';
 import { Link, useLocation } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
@@ -49,16 +50,20 @@ const StatisticsCode: FC<IProps> = ({
       </Link>
       <ContentWrap>
         <LinksWrap>
-          <Link to={PagePaths.userCertificate} state={userCertificateLinkState}>
+          <StyledLink
+            to={PagePaths.userCertificate}
+            state={userCertificateLinkState}
+            isCertificateLink
+          >
             <CouponIcon />
             <StyledLinkTitle>Виграний Сертифікат</StyledLinkTitle>
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
-          </Link>
-          <Link to={PagePaths.userPrize}>
+          </StyledLink>
+          <StyledLink to={PagePaths.userPrize}>
             <PrizeIcon />
             <StyledLinkTitle>Виграний Подарунок</StyledLinkTitle>
             <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
-          </Link>
+          </StyledLink>
         </LinksWrap>
         <CertificateWrap partnerLogo={partnerLogo}></CertificateWrap>
       </ContentWrap>
