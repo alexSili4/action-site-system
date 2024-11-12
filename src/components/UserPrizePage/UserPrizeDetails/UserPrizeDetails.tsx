@@ -1,33 +1,33 @@
 import { FC } from 'react';
 import partnerLogo from '@/citrus.svg';
 import { PagePaths, theme } from '@/constants';
+import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import {
-  ConditionsInfo,
-  ConditionsTitle,
   Container,
   DescriptionWrap,
   DetailsWrap,
   HotlineInfo,
+  HotlineInfoWrap,
   HotlinePhone,
   HotlinePhoneNumber,
+  HowToGetInfo,
+  HowToGetTitle,
+  HowToGetWrap,
   Info,
   PartnerLogo,
-  ConditionsWrap,
   StyledLink,
   Subtitle,
   Title,
   TitleWrap,
-  HotlineInfoWrap,
-} from './UserCertificateDetails.styled';
-import { HiOutlinePhone } from 'react-icons/hi';
+} from './UserPrizeDetails.styled';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
-import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
+import { HiOutlinePhone } from 'react-icons/hi';
 
-const UserCertificateDetails: FC = () => {
+const UserPrizeDetails: FC = () => {
   return (
     <Container>
       <TitleWrap>
-        <Title>Сертифікат на 5000грн в мережу магазинів Comfy</Title>
+        <Title>Кухонна машина TEFAL QB813D38</Title>
         <PartnerLogo src={partnerLogo} alt='логотип' />
       </TitleWrap>
       <DetailsWrap>
@@ -37,11 +37,6 @@ const UserCertificateDetails: FC = () => {
             <Info>Хапай вигідні пропозиції</Info>
             <NavArrow />
           </StyledLink>
-        </DescriptionWrap>
-        <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
-        <DescriptionWrap>
-          <Subtitle>Сертифікат дійсний до:</Subtitle>
-          <Info>28.12.2024</Info>
         </DescriptionWrap>
         <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
         <DescriptionWrap>
@@ -56,22 +51,27 @@ const UserCertificateDetails: FC = () => {
             <NavArrow />
           </StyledLink>
         </DescriptionWrap>
+        <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
+        <DescriptionWrap>
+          <Subtitle>Дата розіграшу:</Subtitle>
+          <Info>28.12.2024</Info>
+        </DescriptionWrap>
       </DetailsWrap>
-      <ConditionsWrap>
-        <ConditionsTitle>Умови використання</ConditionsTitle>
-        <ConditionsInfo>
+      <HowToGetWrap>
+        <HowToGetTitle>Як отримати</HowToGetTitle>
+        <HowToGetInfo>
           Сертифікат діє у всіх магазинах мережі. Для активації знижки необхідно
           здійснити покупку на 500 грн або більше. Сертифікат не можна обміняти
           на готівку та не можна використовувати для товарів, на які є інші
           акції. Щоб скористатися сертифікатом, просто введіть його номер під
           час покупки.
-        </ConditionsInfo>
-      </ConditionsWrap>
+        </HowToGetInfo>
+      </HowToGetWrap>
       <HotlineInfoWrap>
         <HotlineInfo>
-          Зверніться на Гарячу лінію за телефоном 0-800-500-415 (з понеділка по
-          п’ятницю з 9:00 до 18:00). Дзвінки для абонентів усіх національних GSM
-          операторів – відповідно до тарифних планів відповідних операторів.
+          Якщо у вас виникли додаткові питання, можете звернутись в Центр
+          Обслуговування Кліентів. Гаряча лінія працює з понеділка по п’ятницю
+          8:00-22:00
         </HotlineInfo>
         {/* TODO fix */}
         <HotlinePhone href='tel:+'>
@@ -83,4 +83,4 @@ const UserCertificateDetails: FC = () => {
   );
 };
 
-export default UserCertificateDetails;
+export default UserPrizeDetails;

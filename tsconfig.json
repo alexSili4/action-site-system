@@ -13,6 +13,7 @@
       "@UserCertificatePageComponents/*": [
         "./src/components/UserCertificatePage/*"
       ],
+      "@UserPrizePageComponents/*": ["./src/components/UserPrizePage/*"],
       "@PromotionDetailsPageComponents/*": [
         "./src/components/PromotionDetailsPage/*"
       ]

@@ -105,7 +105,7 @@ export const Info = styled.p`
   line-height: 1.4;
 `;
 
-export const ConditionsWrap = styled.div`
+export const HowToGetWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
@@ -116,7 +116,7 @@ export const ConditionsWrap = styled.div`
   }
 `;
 
-export const ConditionsTitle = styled.p`
+export const HowToGetTitle = styled.p`
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
@@ -124,7 +124,7 @@ export const ConditionsTitle = styled.p`
   line-height: 1.4;
 `;
 
-export const ConditionsInfo = styled.p`
+export const HowToGetInfo = styled.p`
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16px;
@@ -144,8 +144,8 @@ export const HotlineInfoWrap = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
     align-items: flex-end;
-    gap: ${({ theme }) => theme.spacing(5)};
-    margin-top: ${({ theme }) => theme.spacing(9)};
+    gap: ${({ theme }) => theme.spacing(2)};
+    margin-top: ${({ theme }) => theme.spacing(21)};
   }
 `;
 
