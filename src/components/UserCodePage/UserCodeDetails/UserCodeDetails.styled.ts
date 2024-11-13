@@ -1,33 +1,59 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { IStyledCodeDetailsSubtitleProps } from './UserCodeDetails.types';
+import {
+  IStyledCodeDetailsItemProps,
+  IStyledCodeDetailsSubtitleProps,
+  IStyledPrizesInfoTextProps,
+} from './UserCodeDetails.types';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
   padding: ${({ theme: { spacing } }) =>
     `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    gap: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: ${({ theme: { spacing } }) => `${spacing(10)} ${spacing(14)}`};
+    border-radius: 16px;
+  }
 `;
 
 export const MainInfoWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(9)};
+  }
 `;
 
 export const CodeInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(6)};
+  }
 `;
 
 export const MainInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(10)};
+  }
 `;
 
 export const TitleWrap = styled.div`
@@ -38,6 +64,12 @@ export const TitleWrap = styled.div`
   & > svg {
     width: 47px;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    & > svg {
+      width: 73px;
+    }
+  }
 `;
 
 export const Title = styled.p`
@@ -46,28 +78,54 @@ export const Title = styled.p`
   font-size: 18px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    font-size: 24px;
+    font-weight: 500;
+  }
 `;
 
 export const CodeDetailsWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 `;
 
-export const CodeDetailsItem = styled.div`
+export const CodeDetailsItem = styled.div<IStyledCodeDetailsItemProps>`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: ${({ isHiddenOnMobile }) => isHiddenOnMobile && 'none'};
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: ${({ isHiddenOnDesk }) => isHiddenOnDesk && 'none'};
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
 `;
 
 export const CodeDetailsSubtitle = styled.p<IStyledCodeDetailsSubtitleProps>`
   flex-shrink: 0;
-  width: ${({ isAutoWidth }) => !isAutoWidth && '117px'};
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    width: ${({ isAutoWidth }) => !isAutoWidth && '117px'};
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -90,10 +148,24 @@ export const CodeDetailsText = styled.p`
   white-space: nowrap;
 `;
 
+export const CodeDetailsTextWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing()};
+
+  & > svg {
+    color: #a282f7;
+  }
+`;
+
 export const TargetShopWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: none;
+  }
 `;
 
 export const TargetShopTitle = styled.p`
@@ -102,6 +174,12 @@ export const TargetShopTitle = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  }
 `;
 
 export const TargetShop = styled.p`
@@ -116,22 +194,70 @@ export const TargetShopAddress = styled.span`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  }
 `;
 
 export const UserCodeInfoDelimiter = styled.div`
   border: 1px solid #f4f6f9;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: none;
+  }
+`;
+
+export const PrizeDrawingDateWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
+  }
+`;
+
+export const PrizeDrawingDateTitle = styled.p`
+  color: #7e8494;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+`;
+
+export const PrizeDrawingDateText = styled.p`
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
 `;
 
 export const PrizesInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(8)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const CertificateWrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    gap: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 `;
 
 export const CertificateLink = styled(Link)`
@@ -160,12 +286,21 @@ export const CertificateLink = styled(Link)`
     box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
       1px 1px 0px 0px #7a4ebd;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 342px;
+    height: 54px;
+  }
 `;
 
 export const CertificateInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(3)};
+  }
 `;
 
 export const PrizesInfoTitle = styled.p`
@@ -180,14 +315,22 @@ export const Certificate = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(2)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(4)};
+  }
 `;
 
-export const PrizesInfoText = styled.p`
+export const PrizesInfoText = styled.p<IStyledPrizesInfoTextProps>`
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: ${({ isHiddenOnDesk }) => isHiddenOnDesk && 'none'};
+  }
 `;
 
 export const CertificateNumberWrap = styled.div`
@@ -209,10 +352,28 @@ export const CertificateNumber = styled.p`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    font-size: 18px;
+  }
 `;
 
 export const PrizeWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
+`;
+
+export const PrizesInfoTextWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(3)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: none;
+  }
 `;

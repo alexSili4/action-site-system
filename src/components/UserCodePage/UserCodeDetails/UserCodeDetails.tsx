@@ -32,7 +32,13 @@ import {
   MainInfoWrap,
   UserCodeInfoDelimiter,
   MainInfo,
+  CodeDetailsTextWrap,
+  PrizeDrawingDateWrap,
+  PrizeDrawingDateTitle,
+  PrizeDrawingDateText,
+  PrizesInfoTextWrap,
 } from './UserCodeDetails.styled';
+import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 
 const UserCodeDetails: FC = () => {
   return (
@@ -44,7 +50,7 @@ const UserCodeDetails: FC = () => {
             <AtbLogo />
           </TitleWrap>
           {/* TODO fix */}
-          <UserCodeStatus isErrorStatus={false} isSuccessStatus={false} />
+          <UserCodeStatus isErrorStatus={false} isSuccessStatus={true} />
         </CodeInfo>
         <MainInfo>
           <CodeDetailsWrap>
@@ -55,17 +61,28 @@ const UserCodeDetails: FC = () => {
                 <NavArrow />
               </StyledLink>
             </CodeDetailsItem>
+            <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <CodeDetailsItem>
               <CodeDetailsSubtitle>Дата активації:</CodeDetailsSubtitle>
               <CodeDetailsText>18.07.2024</CodeDetailsText>
             </CodeDetailsItem>
-            <CodeDetailsItem>
+            <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
+            <CodeDetailsItem isHiddenOnDesk>
               <CodeDetailsSubtitle>№ чеку з кодом:</CodeDetailsSubtitle>
               <CodeDetailsText>1346517</CodeDetailsText>
             </CodeDetailsItem>
-            <CodeDetailsItem>
+            <CodeDetailsItem isHiddenOnDesk>
               <CodeDetailsSubtitle>Дата розіграшу призів:</CodeDetailsSubtitle>
               <CodeDetailsText>18.07.2024</CodeDetailsText>
+            </CodeDetailsItem>
+            <CodeDetailsItem isHiddenOnMobile>
+              <CodeDetailsSubtitle>Магазин де отримано:</CodeDetailsSubtitle>
+              <CodeDetailsTextWrap>
+                <CodeDetailsText>№234 Київ, вул. Ватутіна, 168</CodeDetailsText>
+                <HiLocationMarker
+                  size={theme.iconSizes.userCodeDetailsMarker}
+                />
+              </CodeDetailsTextWrap>
             </CodeDetailsItem>
           </CodeDetailsWrap>
           <TargetShopWrap>
@@ -77,6 +94,12 @@ const UserCodeDetails: FC = () => {
               <HiLocationMarker size={theme.iconSizes.userCodeDetailsMarker} />
             </TargetShop>
           </TargetShopWrap>
+          <PrizeDrawingDateWrap>
+            <PrizeDrawingDateTitle>
+              Дата розіграшу призів:
+            </PrizeDrawingDateTitle>
+            <PrizeDrawingDateText>18.07.2024</PrizeDrawingDateText>
+          </PrizeDrawingDateWrap>
         </MainInfo>
       </MainInfoWrap>
       <UserCodeInfoDelimiter></UserCodeInfoDelimiter>
@@ -98,9 +121,13 @@ const UserCodeDetails: FC = () => {
         </CertificateWrap>
         <PrizeWrap>
           <PrizesInfoTitle>Виграний приз:</PrizesInfoTitle>
-          <PrizesInfoText>
+          <PrizesInfoText isHiddenOnDesk>
             18.07.2024 Кухонна машина TEFAL QB813D38
           </PrizesInfoText>
+          <PrizesInfoTextWrap>
+            <PrizesInfoText>18.07.2024</PrizesInfoText>
+            <PrizesInfoText>Кухонна машина TEFAL QB813D38</PrizesInfoText>
+          </PrizesInfoTextWrap>
         </PrizeWrap>
       </PrizesInfo>
     </Container>

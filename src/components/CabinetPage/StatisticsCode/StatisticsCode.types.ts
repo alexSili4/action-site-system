@@ -4,6 +4,8 @@ export interface IProps {
   partnerLogo: string;
   isSuccessStatus: boolean;
   isErrorStatus: boolean;
+  shouldShowUserCertificateLink: boolean;
+  shouldShowUserPrizeLink: boolean;
 }
 
 export interface IStyledCertificateWrapProps {

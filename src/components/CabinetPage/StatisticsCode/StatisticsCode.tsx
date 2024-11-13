@@ -29,6 +29,8 @@ const StatisticsCode: FC<IProps> = ({
   code,
   codeCreatedAt,
   partnerLogo,
+  shouldShowUserCertificateLink,
+  shouldShowUserPrizeLink,
 }) => {
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
@@ -50,20 +52,24 @@ const StatisticsCode: FC<IProps> = ({
       </Link>
       <ContentWrap>
         <LinksWrap>
-          <StyledLink
-            to={PagePaths.userCertificate}
-            state={userCertificateLinkState}
-            isCertificateLink
-          >
-            <CouponIcon />
-            <StyledLinkTitle>Виграний Сертифікат</StyledLinkTitle>
-            <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
-          </StyledLink>
-          <StyledLink to={PagePaths.userPrize}>
-            <PrizeIcon />
-            <StyledLinkTitle>Виграний Подарунок</StyledLinkTitle>
-            <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
-          </StyledLink>
+          {shouldShowUserCertificateLink && (
+            <StyledLink
+              to={PagePaths.userCertificate}
+              state={userCertificateLinkState}
+              isCertificateLink
+            >
+              <CouponIcon />
+              <StyledLinkTitle>Виграний Сертифікат</StyledLinkTitle>
+              <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
+            </StyledLink>
+          )}
+          {shouldShowUserPrizeLink && (
+            <StyledLink to={PagePaths.userPrize}>
+              <PrizeIcon />
+              <StyledLinkTitle>Виграний Подарунок</StyledLinkTitle>
+              <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />
+            </StyledLink>
+          )}
         </LinksWrap>
         <CertificateWrap partnerLogo={partnerLogo}></CertificateWrap>
       </ContentWrap>

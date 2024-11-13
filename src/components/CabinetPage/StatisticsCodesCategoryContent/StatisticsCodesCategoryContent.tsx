@@ -27,6 +27,8 @@ const StatisticsCodesCategoryContent: FC = () => {
             code_created_at: codeCreatedAt,
             code_status: codeStatus,
             present_gift_partner_logo: partnerLogo,
+            wheel_certificate_id: wheelCertificateId,
+            present_gift_id: presentGiftId,
           }) => {
             const partnerLogoUrl = getFileUrl(partnerLogo ?? '');
             const isErrorStatus = codeStatus === 2;
@@ -35,6 +37,9 @@ const StatisticsCodesCategoryContent: FC = () => {
               date: codeCreatedAt * 1000,
               dateFormat: DateFormats.generalDate,
             });
+            const shouldShowUserCertificateLink =
+              typeof wheelCertificateId === 'number';
+            const shouldShowUserPrizeLink = typeof presentGiftId === 'number';
 
             return (
               <ListItem key={code}>
@@ -44,6 +49,8 @@ const StatisticsCodesCategoryContent: FC = () => {
                   isErrorStatus={isErrorStatus}
                   isSuccessStatus={isSuccessStatus}
                   partnerLogo={partnerLogoUrl}
+                  shouldShowUserCertificateLink={shouldShowUserCertificateLink}
+                  shouldShowUserPrizeLink={shouldShowUserPrizeLink}
                 />
               </ListItem>
             );

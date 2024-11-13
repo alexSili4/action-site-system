@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import decorativeElement from '@/images/cabinet/decorative-element.png';
 
 export const Container = styled.div`
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   border-radius: 24px;
