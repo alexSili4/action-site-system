@@ -167,3 +167,8 @@ export interface IUseRegisterUserForm {
   handleSubmit: UseFormHandleSubmit<IRegUserFormData, undefined>;
   disabledBtn: boolean;
 }
+
+export interface IUseIsScrollingDown {
+  isScrollingDown: boolean;
+  isScrolling: boolean;
+}

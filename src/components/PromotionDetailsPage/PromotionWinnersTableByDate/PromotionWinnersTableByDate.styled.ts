@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import {
   IStyledOpenContentBtnTitleProps,
   IStyledProps,
+  IStyledOpenContentBtnProps,
 } from './PromotionWinnersTableByDate.types';
 
 export const Container = styled.div``;
@@ -33,7 +34,7 @@ export const PromotionWinnersTableWrap = styled.div`
 
 export const ResultsBtnWrap = styled.div``;
 
-export const OpenContentBtn = styled.button`
+export const OpenContentBtn = styled.button<IStyledOpenContentBtnProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,6 +44,7 @@ export const OpenContentBtn = styled.button`
   background-color: transparent;
   padding-top: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ theme }) => theme.spacing(2)};
+  cursor: ${({ disabled }) => disabled && 'auto'};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 650px;

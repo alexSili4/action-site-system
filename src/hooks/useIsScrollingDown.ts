@@ -1,8 +1,11 @@
+import { IUseIsScrollingDown } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
 
-const useIsScrollingDown = () => {
+const useIsScrollingDown = (): IUseIsScrollingDown => {
   const [isScrollingDown, setIsScrollingDown] = useState<boolean>(false);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
+
+  const isScrolling = lastScrollY !== 0;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +26,7 @@ const useIsScrollingDown = () => {
     };
   }, [lastScrollY]);
 
-  return isScrollingDown;
+  return { isScrollingDown, isScrolling };
 };
 
 export default useIsScrollingDown;

@@ -13,3 +13,7 @@ export interface IStyledProps {
 export interface IStyledOpenContentBtnTitleProps {
   disabled: boolean;
 }
+
+export interface IStyledOpenContentBtnProps {
+  disabled: boolean;
+}

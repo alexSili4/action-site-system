@@ -9,4 +9,5 @@ export interface IProps {
 export interface IStyledHeaderProps {
   isPromotionDetailsPage: boolean;
   isScrollingDown: boolean;
+  isTransparentHeader: boolean;
 }
