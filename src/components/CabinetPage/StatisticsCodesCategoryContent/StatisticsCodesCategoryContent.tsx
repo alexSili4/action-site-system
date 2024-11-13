@@ -40,6 +40,7 @@ const StatisticsCodesCategoryContent: FC = () => {
             const shouldShowUserCertificateLink =
               typeof wheelCertificateId === 'number';
             const shouldShowUserPrizeLink = typeof presentGiftId === 'number';
+            const shouldShowCertificate = codeStatus === 1;
 
             return (
               <ListItem key={code}>
@@ -51,6 +52,7 @@ const StatisticsCodesCategoryContent: FC = () => {
                   partnerLogo={partnerLogoUrl}
                   shouldShowUserCertificateLink={shouldShowUserCertificateLink}
                   shouldShowUserPrizeLink={shouldShowUserPrizeLink}
+                  shouldShowCertificate={shouldShowCertificate}
                 />
               </ListItem>
             );

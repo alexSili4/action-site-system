@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import CouponIcon from '@/icons/cabinet/coupon.svg?react';
 import PrizeIcon from '@/icons/cabinet/prize.svg?react';
 import { FaChevronRight } from 'react-icons/fa';
@@ -31,6 +31,7 @@ const StatisticsCode: FC<IProps> = ({
   partnerLogo,
   shouldShowUserCertificateLink,
   shouldShowUserPrizeLink,
+  shouldShowCertificate,
 }) => {
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
@@ -38,6 +39,13 @@ const StatisticsCode: FC<IProps> = ({
   });
   const location = useLocation();
   const userCertificateLinkState = { from: location };
+  const shouldShowCodeLinks =
+    shouldShowUserPrizeLink || shouldShowUserCertificateLink;
+  const shouldShowContent = shouldShowCodeLinks || shouldShowCertificate;
+
+  useEffect(() => {
+    console.log(shouldShowCodeLinks);
+  }, [shouldShowCodeLinks]);
 
   return (
     <Container>
@@ -50,8 +58,8 @@ const StatisticsCode: FC<IProps> = ({
           <FaChevronRight size={theme.iconSizes.cabinetCodeLink} />
         </Header>
       </Link>
-      <ContentWrap>
-        <LinksWrap>
+      <ContentWrap shouldShowContent={shouldShowContent}>
+        <LinksWrap shouldShowCodeLinks={shouldShowCodeLinks}>
           {shouldShowUserCertificateLink && (
             <StyledLink
               to={PagePaths.userCertificate}
@@ -71,7 +79,10 @@ const StatisticsCode: FC<IProps> = ({
             </StyledLink>
           )}
         </LinksWrap>
-        <CertificateWrap partnerLogo={partnerLogo}></CertificateWrap>
+        <CertificateWrap
+          partnerLogo={partnerLogo}
+          shouldShowCertificate={shouldShowCertificate}
+        ></CertificateWrap>
       </ContentWrap>
       <MessagesContainer>
         <MessageWrap>

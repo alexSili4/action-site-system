@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 import certificateImg from '@/images/cabinet/certificate.png';
 import {
   IStyledCertificateWrapProps,
+  IStyledContentWrapProps,
   IStyledLinkProps,
+  IStyledLinksWrapProps,
 } from './StatisticsCode.types';
 import { Link } from 'react-router-dom';
 
@@ -73,16 +75,24 @@ export const Date = styled.span`
   line-height: 1.2;
 `;
 
-export const ContentWrap = styled.div`
+export const ContentWrap = styled.div<IStyledContentWrapProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: ${({ shouldShowContent }) => !shouldShowContent && 'none'};
+  }
 `;
 
-export const LinksWrap = styled.div`
+export const LinksWrap = styled.div<IStyledLinksWrapProps>`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: ${({ shouldShowCodeLinks }) => !shouldShowCodeLinks && 'none'};
+  }
 `;
 
 export const StyledLink = styled(Link)<IStyledLinkProps>`
@@ -126,6 +136,11 @@ export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
   background-repeat: no-repeat;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  opacity: ${({ shouldShowCertificate }) => !shouldShowCertificate && 0};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    display: ${({ shouldShowCertificate }) => !shouldShowCertificate && 'none'};
+  }
 `;
 
 export const MessagesContainer = styled.div`
