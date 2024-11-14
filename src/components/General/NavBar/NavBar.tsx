@@ -5,7 +5,7 @@ import { PagePaths } from '@/constants';
 import { LogoLinkTitle, Nav, StyledLink } from './NavBar.styled';
 import NavBarControls from '@GeneralComponents/NavBarControls';
 import LocationFilter from '@GeneralComponents/LocationFilter';
-import { useIsRootPage } from '@/hooks';
+import { useIsRootPage, useIsScrollingUp } from '@/hooks';
 
 const NavBar: FC<IProps> = ({
   isDesktop,
@@ -14,12 +14,14 @@ const NavBar: FC<IProps> = ({
   onRegisterCodeBtnClickOnPromotionPage,
 }) => {
   const isRootPage = useIsRootPage();
+  const { isScrolling } = useIsScrollingUp();
   const showShortLogoLinkTitle = !isRootPage && !isDesktop;
   const showFakeNavControls = isRootPage && isDesktop;
   const logoLinkTitle = showShortLogoLinkTitle
     ? 'Акції'
     : 'Акції з подарунками';
-  const showLocationFilter = !isPromotionDetailsPage && !isRootPage;
+  const hideLocationFilter =
+    (isPromotionDetailsPage && isScrolling) || isRootPage;
 
   return (
     <Nav isRootPage={isRootPage}>
@@ -48,7 +50,7 @@ const NavBar: FC<IProps> = ({
         <AtbLogo />
         <LogoLinkTitle>{logoLinkTitle}</LogoLinkTitle>
       </StyledLink>
-      {showLocationFilter && <LocationFilter isRootPage={isRootPage} />}
+      {!hideLocationFilter && <LocationFilter isRootPage={isRootPage} />}
     </Nav>
   );
 };

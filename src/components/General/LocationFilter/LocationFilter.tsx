@@ -7,14 +7,14 @@ import {
 } from './LocationFilter.styled';
 import { IProps } from './LocationFilter.types';
 import { FaChevronDown } from 'react-icons/fa';
-import { theme } from '@/constants';
+import { SectionsIds, theme } from '@/constants';
 import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import LocationSearchField from '@GeneralComponents/LocationSearchField';
 import LocationList from '@GeneralComponents/LocationList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
 import { useLocationFilter } from '@/hooks';
 
-const LocationFilter: FC<IProps> = ({ isRootPage }) => {
+const LocationFilter: FC<IProps> = ({ isRootPage, makeScroll = false }) => {
   const {
     onShowListBtnClick,
     showLocationList,
@@ -22,12 +22,13 @@ const LocationFilter: FC<IProps> = ({ isRootPage }) => {
     showLocationsBtnTitle,
     onLocationLinkClick,
     toggleShowLocationList,
-  } = useLocationFilter();
+  } = useLocationFilter(makeScroll);
 
   return (
     <>
       <Container isRootPage={isRootPage}>
         <ShowLocationsBtn
+          id={SectionsIds.locationBtn}
           type='button'
           onClick={onShowListBtnClick}
           isRootPage={isRootPage}

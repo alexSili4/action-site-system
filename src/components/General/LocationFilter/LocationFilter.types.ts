@@ -1,5 +1,6 @@
 export interface IProps {
   isRootPage: boolean;
+  makeScroll?: boolean;
 }
 
 export interface IStyledContainerProps {

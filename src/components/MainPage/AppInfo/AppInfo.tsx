@@ -28,7 +28,7 @@ const AppInfo: FC = () => {
           Знайдіть активні акції мережі магазинів АТБ у вашому місті
         </Title>
       </TextWrap>
-      <LocationFilter isRootPage />
+      <LocationFilter isRootPage makeScroll />
     </Container>
   );
 };
