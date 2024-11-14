@@ -1,5 +1,4 @@
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
-import CabinetPageBreadcrumbs from '@GeneralComponents/CabinetPageBreadcrumbs';
 import { FC } from 'react';
 import {
   Container,
@@ -18,8 +17,7 @@ import {
 const UserReceiptDetails: FC = () => {
   return (
     <Container>
-      <CabinetPageBreadcrumbs addPageTitle='Сертифікат' />
-      <CabinetGoBackLink />
+      <CabinetGoBackLink isShowOnDesk />
       <Content>
         <ReceiptInfo>
           <ReceiptTitle>ТОВ “АТБ-Маркет”</ReceiptTitle>

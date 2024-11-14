@@ -1,16 +1,24 @@
 import { PagePaths, theme } from '@/constants';
 import { FC } from 'react';
-import { FaArrowLeft } from 'react-icons/fa';
-import { StyledLink, Content, Title } from './CabinetGoBackLink.styled';
+import { FaChevronLeft } from 'react-icons/fa';
+import {
+  StyledLink,
+  Container,
+  IconWrap,
+  Title,
+} from './CabinetGoBackLink.styled';
+import { IProps } from './CabinetGoBackLink.types';
 
-const CabinetGoBackLink: FC = () => {
+const CabinetGoBackLink: FC<IProps> = ({ isShowOnDesk = false }) => {
   return (
-    <StyledLink to={PagePaths.cabinet}>
-      <Content>
-        <FaArrowLeft size={theme.iconSizes.cabinetGoBackLink} />
+    <Container isShowOnDesk={isShowOnDesk}>
+      <StyledLink to={PagePaths.cabinet}>
+        <IconWrap>
+          <FaChevronLeft size={theme.iconSizes.cabinetGoBackLink} />
+        </IconWrap>
         <Title>Особистий кабінет</Title>
-      </Content>
-    </StyledLink>
+      </StyledLink>
+    </Container>
   );
 };
 

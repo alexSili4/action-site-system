@@ -134,7 +134,7 @@ const theme: ITheme = {
     conditionsSliderBtn: 18,
     cabinetDownloadCertificateLink: 12,
     cabinetHotlinePhone: 14,
-    cabinetGoBackLink: 16,
+    cabinetGoBackLink: 8,
   },
   containerWidth: {
     desktop: 1376,

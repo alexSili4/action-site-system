@@ -1,13 +1,11 @@
 import { FC } from 'react';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
-import CabinetPageBreadcrumbs from '@GeneralComponents/CabinetPageBreadcrumbs';
 import prizeImg from '@/kitchen-machine.png';
 import { Container, PrizeImg, PrizeImgWrap } from './UserPrizeBanner.styled';
 
 const UserPrizeBanner: FC = () => {
   return (
     <Container>
-      <CabinetPageBreadcrumbs addPageTitle='Приз' />
       <CabinetGoBackLink />
       <PrizeImgWrap>
         {/* TODO fix */}
