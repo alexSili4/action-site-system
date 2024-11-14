@@ -10,11 +10,10 @@ export const StyledHeader = styled.header<IStyledHeaderProps>`
   z-index: ${({ theme }) => theme.zIndex.header};
   padding-top: ${({ theme }) => theme.spacing(4)};
   padding-bottom: ${({ theme }) => theme.spacing(4)};
-  background-color: ${({ isTransparentHeader }) =>
-    isTransparentHeader ? 'transparent' : '#b697f3'};
+  background-color: ${({ isMulticolorHeader }) =>
+    isMulticolorHeader ? '#b697f3' : 'transparent'};
   transform: translateY(
-    ${({ isScrollingDown, isPromotionDetailsPage }) =>
-      isPromotionDetailsPage && isScrollingDown ? '-100%' : '0%'}
+    ${({ shouldHideHeader }) => (shouldHideHeader ? '-100%' : '0%')}
   );
   transition: background-color
       ${({ theme }) => theme.transitionDurationAndFunc.header},

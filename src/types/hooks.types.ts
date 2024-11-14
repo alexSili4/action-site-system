@@ -168,7 +168,7 @@ export interface IUseRegisterUserForm {
   disabledBtn: boolean;
 }
 
-export interface IUseIsScrollingDown {
-  isScrollingDown: boolean;
+export interface IUseIsScrollingUp {
+  isScrollingUp: boolean;
   isScrolling: boolean;
 }

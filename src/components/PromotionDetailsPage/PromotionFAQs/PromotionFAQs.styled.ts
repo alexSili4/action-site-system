@@ -30,11 +30,15 @@ export const List = styled.ul`
 `;
 
 export const AdditionalIfoWrap = styled.div`
-  max-width: 532px;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(5)};
   margin-top: ${({ theme }) => theme.spacing(10)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     margin-top: ${({ theme }) => theme.spacing(12)};
+    padding-left: ${({ theme }) => theme.spacing(23)};
+    padding-right: ${({ theme }) => theme.spacing(23)};
   }
 `;
 
@@ -44,10 +48,6 @@ export const AdditionalIfoText = styled.p`
   font-size: 18px;
   font-weight: 400;
   line-height: 1.4;
-
-  &:not(:first-of-type) {
-    margin-top: ${({ theme }) => theme.spacing(2)};
-  }
 `;
 
 export const PhoneLink = styled.a`
@@ -58,7 +58,6 @@ export const PhoneLink = styled.a`
   width: 100%;
   border-radius: 8px;
   background-color: #f4f6f9;
-  margin-top: ${({ theme }) => theme.spacing(5)};
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(6)}`};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

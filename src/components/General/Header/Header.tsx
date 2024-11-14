@@ -3,7 +3,7 @@ import { StyledHeader } from './Header.styled';
 import { IProps } from './Header.types';
 import Container from '@GeneralComponents/Container';
 import NavBar from '@GeneralComponents/NavBar';
-import { useIsPromotionDetailsPage, useIsScrollingDown } from '@/hooks';
+import { useIsPromotionDetailsPage, useIsScrollingUp } from '@/hooks';
 
 const Header: FC<IProps> = ({
   isRootPage,
@@ -11,17 +11,17 @@ const Header: FC<IProps> = ({
   onRegisterCodeBtnClick,
 }) => {
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
-  const { isScrollingDown, isScrolling } = useIsScrollingDown();
+  const { isScrollingUp, isScrolling } = useIsScrollingUp();
 
-  const isTransparentHeader =
-    (isPromotionDetailsPage && !isScrolling) ||
-    (isPromotionDetailsPage && isScrollingDown);
+  const isMulticolorHeader =
+    isPromotionDetailsPage && isScrolling && isScrollingUp;
+  const shouldHideHeader = isPromotionDetailsPage && !isScrollingUp;
 
   return (
     <StyledHeader
+      shouldHideHeader={shouldHideHeader}
+      isMulticolorHeader={isMulticolorHeader}
       isPromotionDetailsPage={isPromotionDetailsPage}
-      isScrollingDown={isScrollingDown}
-      isTransparentHeader={isTransparentHeader}
     >
       <Container>
         <NavBar
