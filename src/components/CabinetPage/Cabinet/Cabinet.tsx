@@ -1,14 +1,14 @@
 import { FC } from 'react';
-import { Container } from './Cabinet.styled';
 import UserInfoContainer from '@CabinetPageComponents/UserInfoContainer';
 import UserStatisticsContainer from '@CabinetPageComponents/UserStatisticsContainer';
+import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
 
 const Cabinet: FC = () => {
   return (
-    <Container>
+    <UserStatisticsDetailsContainer>
       <UserInfoContainer />
       <UserStatisticsContainer />
-    </Container>
+    </UserStatisticsDetailsContainer>
   );
 };
 

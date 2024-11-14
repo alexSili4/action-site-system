@@ -7,10 +7,14 @@ import {
   SunLink,
 } from './Footer.styled';
 import SocialLinksList from '@GeneralComponents/SocialLinksList';
-import { IProps } from './Footer.types';
-import { useTargetPromotionData, useIsPromotionDetailsPage } from '@/hooks';
+import {
+  useTargetPromotionData,
+  useIsPromotionDetailsPage,
+  useIsRootPage,
+} from '@/hooks';
 
-const Footer: FC<IProps> = ({ isRootPage }) => {
+const Footer: FC = () => {
+  const isRootPage = useIsRootPage();
   const { legalText } = useTargetPromotionData();
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
   const shouldShowLegalInfo = isPromotionDetailsPage;

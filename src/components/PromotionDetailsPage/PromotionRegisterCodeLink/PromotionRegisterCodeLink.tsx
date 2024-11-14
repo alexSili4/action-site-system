@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { Container, StyledLink } from './PromotionRegisterCodeLink.styled';
-import { useRegisterCodeLink } from '@/hooks';
+import { useRegisterTargetPromotionCodeLink } from '@/hooks';
 import { IProps } from './PromotionRegisterCodeLink.types';
 
 const PromotionRegisterCodeLink: FC<IProps> = ({
   shouldShowTopSpacing = true,
 }) => {
-  const registerCodeLink = useRegisterCodeLink();
+  const registerCodeLink = useRegisterTargetPromotionCodeLink();
 
   return (
     <Container shouldShowTopSpacing={shouldShowTopSpacing}>

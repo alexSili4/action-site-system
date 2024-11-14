@@ -88,3 +88,8 @@ export interface ISetBtnDisplayProps {
   page?: number;
   step: number;
 }
+
+export interface IGetRegisterCodeLinkProps {
+  promotionId: string | number;
+  cityId: string;
+}

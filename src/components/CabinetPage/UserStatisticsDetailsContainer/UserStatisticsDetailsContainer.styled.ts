@@ -5,7 +5,7 @@ export const Container = styled.div`
   gap: ${({ theme }) => theme.spacing(3)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

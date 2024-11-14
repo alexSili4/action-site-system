@@ -2,17 +2,18 @@ import { FC } from 'react';
 import AtbLogo from '@/icons/atb-logo.svg?react';
 import { IProps } from './NavBar.types';
 import { PagePaths } from '@/constants';
-import { LogoLinkTitle, Nav } from './NavBar.styled';
-import { Link } from 'react-router-dom';
+import { LogoLinkTitle, Nav, StyledLink } from './NavBar.styled';
 import NavBarControls from '@GeneralComponents/NavBarControls';
 import LocationFilter from '@GeneralComponents/LocationFilter';
+import { useIsRootPage } from '@/hooks';
 
 const NavBar: FC<IProps> = ({
-  isRootPage,
   isDesktop,
   isPromotionDetailsPage,
-  onRegisterCodeBtnClick,
+  onRegisterCodeBtnClickOnAllPages,
+  onRegisterCodeBtnClickOnPromotionPage,
 }) => {
+  const isRootPage = useIsRootPage();
   const showShortLogoLinkTitle = !isRootPage && !isDesktop;
   const showFakeNavControls = isRootPage && isDesktop;
   const logoLinkTitle = showShortLogoLinkTitle
@@ -21,24 +22,32 @@ const NavBar: FC<IProps> = ({
   const showLocationFilter = !isPromotionDetailsPage && !isRootPage;
 
   return (
-    <Nav isRootPage={isRootPage} isDesktop={isDesktop}>
+    <Nav isRootPage={isRootPage}>
       {showFakeNavControls && (
         <NavBarControls
           isRootPage={isRootPage}
-          isPromotionDetailsPage={isPromotionDetailsPage}
-          onRegisterCodeBtnClick={onRegisterCodeBtnClick}
+          onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
+          onRegisterCodeBtnClickOnPromotionPage={
+            onRegisterCodeBtnClickOnPromotionPage
+          }
           isFake
         />
       )}
       <NavBarControls
         isRootPage={isRootPage}
-        isPromotionDetailsPage={isPromotionDetailsPage}
-        onRegisterCodeBtnClick={onRegisterCodeBtnClick}
+        onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
+        onRegisterCodeBtnClickOnPromotionPage={
+          onRegisterCodeBtnClickOnPromotionPage
+        }
       />
-      <Link to={PagePaths.root}>
+      <StyledLink
+        to={PagePaths.root}
+        isDesktop={isDesktop}
+        isRootPage={isRootPage}
+      >
         <AtbLogo />
         <LogoLinkTitle>{logoLinkTitle}</LogoLinkTitle>
-      </Link>
+      </StyledLink>
       {showLocationFilter && <LocationFilter isRootPage={isRootPage} />}
     </Nav>
   );

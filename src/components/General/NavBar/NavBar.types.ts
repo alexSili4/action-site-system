@@ -1,13 +1,17 @@
 import { OnBtnClickFunc } from '@/types/types';
 
 export interface IProps {
-  isRootPage: boolean;
   isDesktop: boolean;
   isPromotionDetailsPage: boolean;
-  onRegisterCodeBtnClick: OnBtnClickFunc;
+  onRegisterCodeBtnClickOnAllPages: OnBtnClickFunc;
+  onRegisterCodeBtnClickOnPromotionPage: OnBtnClickFunc;
 }
 
-export interface IStyledProps {
+export interface IStyledNavProps {
   isRootPage: boolean;
+}
+
+export interface IStyledLinkProps {
   isDesktop: boolean;
+  isRootPage: boolean;
 }

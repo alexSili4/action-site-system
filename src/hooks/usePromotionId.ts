@@ -1,8 +1,8 @@
 import { PagePaths } from '@/constants';
 import { useParams } from 'react-router-dom';
 
-const usePromotionId = (): string | undefined => {
-  const promotionId = useParams()[PagePaths.dynamicParam];
+const usePromotionId = (): string => {
+  const promotionId = useParams()[PagePaths.dynamicParam] ?? '';
 
   return promotionId;
 };

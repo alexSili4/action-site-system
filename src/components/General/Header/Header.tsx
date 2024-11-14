@@ -6,9 +6,9 @@ import NavBar from '@GeneralComponents/NavBar';
 import { useIsPromotionDetailsPage, useIsScrollingUp } from '@/hooks';
 
 const Header: FC<IProps> = ({
-  isRootPage,
   isDesktop,
-  onRegisterCodeBtnClick,
+  onRegisterCodeBtnClickOnAllPages,
+  onRegisterCodeBtnClickOnPromotionPage,
 }) => {
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
   const { isScrollingUp, isScrolling } = useIsScrollingUp();
@@ -25,10 +25,12 @@ const Header: FC<IProps> = ({
     >
       <Container>
         <NavBar
-          isRootPage={isRootPage}
           isDesktop={isDesktop}
           isPromotionDetailsPage={isPromotionDetailsPage}
-          onRegisterCodeBtnClick={onRegisterCodeBtnClick}
+          onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
+          onRegisterCodeBtnClickOnPromotionPage={
+            onRegisterCodeBtnClickOnPromotionPage
+          }
         />
       </Container>
     </StyledHeader>

@@ -1,32 +1,43 @@
 import { FC, Suspense, useState } from 'react';
 import { Content, Main } from './SharedLayout.styled';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Loader from '@GeneralComponents/Loader';
 import Header from '@GeneralComponents/Header';
 import Footer from '@GeneralComponents/Footer';
 import AppBackground from '@GeneralComponents/AppBackground';
 import AnimatedModalWinContainer from '@GeneralComponents/AnimatedModalWinContainer';
-import { PagePaths, theme } from '@/constants';
+import { theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
 
 const SharedLayout: FC = () => {
-  const [showRegisterCodeModalWin, setShowRegisterCodeModalWin] =
+  const [
+    showSelectPromotionsLocationModalWin,
+    setShowSelectPromotionsLocationModalWin,
+  ] = useState<boolean>(false);
+  const [showSelectPromotionModalWin, setShowSelectPromotionModalWin] =
     useState<boolean>(false);
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
-  const { pathname } = useLocation();
 
-  const isRootPage = pathname === PagePaths.root;
-
-  const setRegisterCodeModalWinState = () => {
-    setShowRegisterCodeModalWin((prevState) => !prevState);
+  const setSelectPromotionsLocationModalWinState = () => {
+    setShowSelectPromotionsLocationModalWin((prevState) => !prevState);
   };
 
-  const onRegisterCodeBtnClick = (e: BtnClickEvent) => {
+  const setSelectPromotionModalWinState = () => {
+    setShowSelectPromotionModalWin((prevState) => !prevState);
+  };
+
+  const onRegisterCodeBtnClickOnAllPages = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    setRegisterCodeModalWinState();
+    setSelectPromotionsLocationModalWinState();
+  };
+
+  const onRegisterCodeBtnClickOnPromotionPage = (e: BtnClickEvent) => {
+    makeBlur(e.currentTarget);
+
+    setSelectPromotionModalWinState();
   };
 
   return (
@@ -34,22 +45,30 @@ const SharedLayout: FC = () => {
       <AppBackground />
       <Content>
         <Header
-          isRootPage={isRootPage}
           isDesktop={isDesktop}
-          onRegisterCodeBtnClick={onRegisterCodeBtnClick}
+          onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
+          onRegisterCodeBtnClickOnPromotionPage={
+            onRegisterCodeBtnClickOnPromotionPage
+          }
         />
         <Main>
           <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
         </Main>
-        <Footer isRootPage={isRootPage} />
+        <Footer />
       </Content>
       <AnimatedModalWinContainer
-        setModalWinState={setRegisterCodeModalWinState}
-        showModalWin={showRegisterCodeModalWin}
+        setModalWinState={setSelectPromotionsLocationModalWinState}
+        showModalWin={showSelectPromotionsLocationModalWin}
       >
-        <p>registerCode</p>
+        <p>SelectPromotionsLocation</p>
+      </AnimatedModalWinContainer>
+      <AnimatedModalWinContainer
+        setModalWinState={setSelectPromotionModalWinState}
+        showModalWin={showSelectPromotionModalWin}
+      >
+        <p>SelectPromotion</p>
       </AnimatedModalWinContainer>
     </>
   );
