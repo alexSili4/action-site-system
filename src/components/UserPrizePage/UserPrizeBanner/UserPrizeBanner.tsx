@@ -6,7 +6,7 @@ import { Container, PrizeImg, PrizeImgWrap } from './UserPrizeBanner.styled';
 const UserPrizeBanner: FC = () => {
   return (
     <Container>
-      <CabinetGoBackLink />
+      <CabinetGoBackLink isShowOnDesk />
       <PrizeImgWrap>
         {/* TODO fix */}
         <PrizeImg src={prizeImg} alt='приз' />

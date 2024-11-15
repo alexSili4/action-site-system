@@ -2,15 +2,44 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  padding: ${({ theme: { spacing } }) =>
-    `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
-  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
   background-color: ${({ theme }) => theme.colors.white};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     padding: ${({ theme: { spacing } }) =>
       `${spacing(10)} ${spacing(14)} ${spacing(15)}`};
     border-radius: 16px;
+  }
+`;
+
+export const Content = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(8)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    border-radius: 24px;
+    background-color: ${({ theme }) => theme.colors.white};
+    padding: ${({ theme: { spacing } }) =>
+      `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(19)};
+    justify-content: space-between;
+  }
+`;
+
+export const MainInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(25)};
   }
 `;
 
@@ -50,7 +79,6 @@ export const PartnerLogo = styled.img`
 
 export const DetailsWrap = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.spacing(6)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
@@ -60,7 +88,6 @@ export const DetailsWrap = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: ${({ theme }) => theme.spacing(25)};
   }
 `;
 
@@ -105,15 +132,20 @@ export const Info = styled.p`
   line-height: 1.4;
 `;
 
+export const AdditionalInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    gap: ${({ theme }) => theme.spacing(21)};
+  }
+`;
+
 export const HowToGetWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
-  margin-top: ${({ theme }) => theme.spacing(8)};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    margin-top: ${({ theme }) => theme.spacing(19)};
-  }
 `;
 
 export const HowToGetTitle = styled.p`
@@ -134,18 +166,16 @@ export const HowToGetInfo = styled.p`
 
 export const HotlineInfoWrap = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.spacing(4)};
+  gap: ${({ theme }) => theme.spacing(2)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
-    gap: ${({ theme }) => theme.spacing(2)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
     align-items: flex-end;
     gap: ${({ theme }) => theme.spacing(2)};
-    margin-top: ${({ theme }) => theme.spacing(21)};
   }
 `;
 

@@ -2,14 +2,11 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
-    gap: ${({ theme }) => theme.spacing(4)};
     padding: ${({ theme }) => theme.spacing(4)};
   }
 
