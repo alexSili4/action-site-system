@@ -6,7 +6,7 @@ import {
   CodeTitle,
   CodeWrap,
   Content,
-  ReceiptDetails,
+  ReceiptDetailsItem,
   ReceiptDetailsDelimiter,
   ReceiptDetailsText,
   ReceiptDetailsWrap,
@@ -23,19 +23,19 @@ const UserReceiptDetails: FC = () => {
           <ReceiptTitle>ТОВ “АТБ-Маркет”</ReceiptTitle>
           <ReceiptDetailsWrap>
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
-            <ReceiptDetails>
+            <ReceiptDetailsItem>
               <ReceiptDetailsText>№ чеку</ReceiptDetailsText>
               <ReceiptDetailsText>1346517</ReceiptDetailsText>
-            </ReceiptDetails>
+            </ReceiptDetailsItem>
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
-            <ReceiptDetails>
+            <ReceiptDetailsItem>
               <ReceiptDetailsText>Магазин</ReceiptDetailsText>
               <ReceiptDetailsText>№234</ReceiptDetailsText>
-            </ReceiptDetails>
-            <ReceiptDetails>
+            </ReceiptDetailsItem>
+            <ReceiptDetailsItem>
               <ReceiptDetailsText>Cума</ReceiptDetailsText>
               <ReceiptDetailsText>500₴</ReceiptDetailsText>
-            </ReceiptDetails>
+            </ReceiptDetailsItem>
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
           </ReceiptDetailsWrap>
         </ReceiptInfo>

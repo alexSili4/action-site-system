@@ -10,10 +10,7 @@ export const Container = styled.div<IStyledProps>`
       : isSuccessStatus
       ? 'rgba(102, 208, 18, 0.1)'
       : 'rgba(8, 151, 255, 0.1)'};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    align-self: flex-start;
-  }
+  align-self: flex-start;
 `;
 
 export const StatusWrap = styled.div<IStyledProps>`

@@ -10,6 +10,11 @@ export const Container = styled.div<IStyledContainerProps>`
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: ${({ isShowOnDesk }) => isShowOnDesk && 'none'};
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    display: ${({ isShowOnDesk }) => !isShowOnDesk && 'none'};
+    padding: ${({ theme: { spacing } }) => `${spacing(7)} ${spacing(10)}`};
+  }
 `;
 
 export const StyledLink = styled(Link)`

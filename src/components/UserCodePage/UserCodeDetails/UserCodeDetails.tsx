@@ -88,10 +88,11 @@ const UserCodeDetails: FC = () => {
                   <CodeDetailsText>
                     №234 Київ, вул. Ватутіна, 168
                   </CodeDetailsText>
-
-                  <HiLocationMarker
-                    size={theme.iconSizes.userCodeDetailsMarker}
-                  />
+                  <TargetShopAddressIconWrap>
+                    <HiLocationMarker
+                      size={theme.iconSizes.userCodeDetailsMarker}
+                    />
+                  </TargetShopAddressIconWrap>
                 </CodeDetailsTextWrap>
               </CodeDetailsItem>
             </CodeDetailsWrap>
@@ -133,6 +134,7 @@ const UserCodeDetails: FC = () => {
               </Certificate>
             </CertificateInfo>
           </CertificateWrap>
+          <UserCodeInfoDelimiter></UserCodeInfoDelimiter>
           <PrizeWrap>
             <PrizesInfoTitle>Виграний приз:</PrizesInfoTitle>
             <PrizesInfoText isHiddenOnDesk>
