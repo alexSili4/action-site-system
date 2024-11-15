@@ -16,7 +16,7 @@ import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 const UserCertificateBanner: FC = () => {
   return (
     <Container>
-      <CabinetGoBackLink />
+      <CabinetGoBackLink isShowOnDesk />
       <Content>
         <BarcodeWrap>
           <Barcode>

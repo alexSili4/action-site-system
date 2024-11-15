@@ -2,16 +2,35 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  padding: ${({ theme: { spacing } }) =>
-    `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
-  border-radius: 24px;
-  background-color: ${({ theme }) => theme.colors.white};
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    padding: ${({ theme: { spacing } }) =>
-      `${spacing(10)} ${spacing(14)} ${spacing(15)}`};
-    border-radius: 16px;
+    /* background-color: ${({ theme }) => theme.colors.white}; */
+    /* padding: ${({ theme: { spacing } }) =>
+      `${spacing(10)} ${spacing(14)} ${spacing(15)}`}; */
+    /* border-radius: 16px; */
   }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+    background-color: ${({ theme }) => theme.colors.white};
+    border-radius: 24px;
+    padding: ${({ theme: { spacing } }) =>
+      `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
+  }
+`;
+
+export const MainInfoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)};
 `;
 
 export const TitleWrap = styled.div`
@@ -23,8 +42,8 @@ export const TitleWrap = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    align-items: center;
-    justify-content: space-between;
+    /* align-items: center; */
+    /* justify-content: space-between; */
   }
 `;
 
@@ -36,9 +55,8 @@ export const Title = styled.p`
   line-height: 1.4;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.4;
+    /* font-size: 24px; */
+    /* font-weight: 500; */
   }
 `;
 
@@ -50,7 +68,6 @@ export const PartnerLogo = styled.img`
 
 export const DetailsWrap = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.spacing(6)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
@@ -58,9 +75,9 @@ export const DetailsWrap = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: ${({ theme }) => theme.spacing(25)};
+    /* justify-content: space-between; */
+    /* align-items: flex-end; */
+    /* margin-top: ${({ theme }) => theme.spacing(25)}; */
   }
 `;
 
@@ -73,8 +90,8 @@ export const DescriptionWrap = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    flex-direction: column;
-    gap: ${({ theme }) => theme.spacing(2)};
+    /* flex-direction: column; */
+    /* gap: ${({ theme }) => theme.spacing(2)}; */
   }
 `;
 
@@ -105,15 +122,20 @@ export const Info = styled.p`
   line-height: 1.4;
 `;
 
+export const UserCertificateInfoDelimiter = styled.div`
+  border-top: 1px solid #f4f6f9;
+`;
+
+export const AdditionalInfoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)};
+`;
+
 export const ConditionsWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
-  margin-top: ${({ theme }) => theme.spacing(8)};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    margin-top: ${({ theme }) => theme.spacing(19)};
-  }
 `;
 
 export const ConditionsTitle = styled.p`
@@ -134,7 +156,6 @@ export const ConditionsInfo = styled.p`
 
 export const HotlineInfoWrap = styled.div`
   display: flex;
-  margin-top: ${({ theme }) => theme.spacing(4)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
@@ -142,10 +163,10 @@ export const HotlineInfoWrap = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: ${({ theme }) => theme.spacing(5)};
-    margin-top: ${({ theme }) => theme.spacing(9)};
+    /* justify-content: space-between; */
+    /* align-items: flex-end; */
+    /* gap: ${({ theme }) => theme.spacing(5)}; */
+    /* margin-top: ${({ theme }) => theme.spacing(9)}; */
   }
 `;
 
@@ -158,7 +179,7 @@ export const HotlineInfo = styled.p`
 `;
 
 export const HotlinePhone = styled.a`
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,7 +194,7 @@ export const HotlinePhone = styled.a`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    padding: ${({ theme: { spacing } }) => `${spacing(3)} ${spacing(6)}`};
+    /* padding: ${({ theme: { spacing } }) => `${spacing(3)} ${spacing(6)}`}; */
   }
 `;
 
@@ -185,6 +206,6 @@ export const HotlinePhoneNumber = styled.span`
   line-height: 1.4;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    font-size: 18px;
+    /* font-size: 18px; */
   }
 `;
