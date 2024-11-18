@@ -5,14 +5,17 @@ import PromotionsCount from '@PromotionsPageComponents/PromotionsCount';
 import PromotionsDatePicker from '@PromotionsPageComponents/PromotionsDatePicker';
 import { Container } from './PromotionsControls.styled';
 
-const PromotionsControls: FC<IProps> = ({ promotionCategory }) => {
+const PromotionsControls: FC<IProps> = ({
+  promotionCategory,
+  isFake = false,
+}) => {
   const isActiveCategory =
     promotionCategory === PromotionsCategoriesKeys.active;
   const isPreviousCategory =
     promotionCategory === PromotionsCategoriesKeys.previous;
 
   return (
-    <Container>
+    <Container isFake={isFake}>
       {isActiveCategory && <PromotionsCount />}
       {isPreviousCategory && <PromotionsDatePicker />}
     </Container>

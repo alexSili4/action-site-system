@@ -11,16 +11,13 @@ const Header: FC<IProps> = ({
   onRegisterCodeBtnClickOnPromotionPage,
 }) => {
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
-  const { isScrollingUp, isScrolling } = useIsScrollingUp();
+  const { isScrollingUp } = useIsScrollingUp();
 
-  const isMulticolorHeader =
-    isPromotionDetailsPage && isScrolling && isScrollingUp;
   const shouldHideHeader = isPromotionDetailsPage && !isScrollingUp;
 
   return (
     <StyledHeader
       shouldHideHeader={shouldHideHeader}
-      isMulticolorHeader={isMulticolorHeader}
       isPromotionDetailsPage={isPromotionDetailsPage}
     >
       <Container>

@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { Container } from './PromotionsFilter.styled';
 import PromotionsCategories from '@PromotionsPageComponents/PromotionsCategories';
 import { IProps } from './PromotionsFilter.types';
-import PromotionsSortTypesContainer from '@PromotionsPageComponents/PromotionsSortTypesContainer';
 import PromotionsControls from '@PromotionsPageComponents/PromotionsControls';
 
 const PromotionsFilter: FC<IProps> = ({
@@ -18,7 +17,7 @@ const PromotionsFilter: FC<IProps> = ({
         categories={categories}
         promotionCategory={promotionCategory}
       />
-      <PromotionsSortTypesContainer />
+      <PromotionsControls promotionCategory={promotionCategory} isFake />
     </Container>
   );
 };

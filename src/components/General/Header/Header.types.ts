@@ -8,6 +8,5 @@ export interface IProps {
 
 export interface IStyledHeaderProps {
   shouldHideHeader: boolean;
-  isMulticolorHeader: boolean;
   isPromotionDetailsPage: boolean;
 }

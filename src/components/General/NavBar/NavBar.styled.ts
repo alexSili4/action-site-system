@@ -43,9 +43,9 @@ export const StyledLink = styled(Link)<IStyledLinkProps>`
 
 export const LogoLinkTitle = styled.span`
   color: #fd4c3c;
-  font-family: ${({ theme }) => theme.fontFamily.delaGothicOne};
+  font-family: ${({ theme }) => theme.fontFamily.myriadPro};
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 900;
   text-align: center;
   text-transform: uppercase;
 `;

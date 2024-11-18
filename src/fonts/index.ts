@@ -10,3 +10,4 @@ export { default as montserratBold } from './montserrat/Montserrat-Bold.ttf';
 export { default as montserratExtraBold } from './montserrat/Montserrat-ExtraBold.ttf';
 export { default as montserratBlack } from './montserrat/Montserrat-Black.ttf';
 export { default as myriadProRegular } from './myriadPro/MYRIADPRO-REGULAR.otf';
+export { default as myriadProBlack } from './myriadPro/MyriadPro-Black.ttf';

@@ -9,7 +9,3 @@ export interface IStyledContainerProps {
   paddingSideDesk: string;
   slideHeight: number | null;
 }
-
-export interface IStyledRulesCardProps {
-  bgImgUrl: string;
-}

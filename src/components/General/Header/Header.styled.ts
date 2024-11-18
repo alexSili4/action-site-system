@@ -10,8 +10,9 @@ export const StyledHeader = styled.header<IStyledHeaderProps>`
   z-index: ${({ theme }) => theme.zIndex.header};
   padding-top: ${({ theme }) => theme.spacing(4)};
   padding-bottom: ${({ theme }) => theme.spacing(4)};
-  background-color: ${({ isMulticolorHeader }) =>
-    isMulticolorHeader ? '#b697f3' : 'transparent'};
+  background-image: ${({ isPromotionDetailsPage }) =>
+    isPromotionDetailsPage &&
+    'linear-gradient(90.00deg, rgb(253, 206, 189),rgb(242, 191, 197) 31.4%,rgb(199, 141, 236) 61.4%,rgb(184, 119, 240) 100%);'};
   transform: translateY(
     ${({ shouldHideHeader }) => (shouldHideHeader ? '-100%' : '0%')}
   );
