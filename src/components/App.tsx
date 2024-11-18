@@ -44,11 +44,11 @@ const App: FC = () => {
             element={<PrivateRoute element={<CabinetPage />} />}
           />
           <Route
-            path={PagePaths.userCertificate}
+            path={`${PagePaths.userCertificate}/:${PagePaths.dynamicParam}`}
             element={<PrivateRoute element={<UserCertificatePage />} />}
           />
           <Route
-            path={PagePaths.userPrize}
+            path={`${PagePaths.userPrize}/:${PagePaths.dynamicParam}`}
             element={<PrivateRoute element={<UserPrizePage />} />}
           />
           <Route

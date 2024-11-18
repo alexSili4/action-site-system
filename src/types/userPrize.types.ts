@@ -1,7 +1,10 @@
 import { ActionType } from './promotion.types';
 import { Strings } from './types';
 
+export type EntityType = 'wheel' | 'present';
+
 export interface IUserPrize {
+  winner_id: number;
   code: string;
   action_id: number;
   gift_id: number;
@@ -15,8 +18,8 @@ export interface IUserPrize {
   partner_name: string;
   payment_logo: string;
   gift_images: Strings;
-  certificate_code: 'sadsdsgfg';
-  entity_type: string;
+  certificate_code: string;
+  entity_type: EntityType;
   gift_get_conditions: string;
   gift_use_conditions: string;
   partner_logo: string;

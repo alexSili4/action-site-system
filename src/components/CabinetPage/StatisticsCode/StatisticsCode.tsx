@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import CouponIcon from '@/icons/cabinet/coupon.svg?react';
 import PrizeIcon from '@/icons/cabinet/prize.svg?react';
 import { FaChevronRight } from 'react-icons/fa';
@@ -42,10 +42,6 @@ const StatisticsCode: FC<IProps> = ({
   const shouldShowCodeLinks =
     shouldShowUserPrizeLink || shouldShowUserCertificateLink;
   const shouldShowContent = shouldShowCodeLinks || shouldShowCertificate;
-
-  useEffect(() => {
-    console.log(shouldShowCodeLinks);
-  }, [shouldShowCodeLinks]);
 
   return (
     <Container>

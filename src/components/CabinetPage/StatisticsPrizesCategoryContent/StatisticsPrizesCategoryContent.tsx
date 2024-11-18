@@ -12,7 +12,8 @@ import {
   selectTotalPages,
   selectUserPrizes,
 } from '@/store/userPrizes/selectors';
-import { DateFormats } from '@/constants';
+import { DateFormats, PagePaths } from '@/constants';
+import { Link } from 'react-router-dom';
 
 const StatisticsPrizesCategoryContent: FC = () => {
   const userPrizes = useUserPrizesStore(selectUserPrizes);
@@ -32,6 +33,8 @@ const StatisticsPrizesCategoryContent: FC = () => {
               gift_images: giftImages,
               gift_get_conditions: giftGetConditions,
               win_time: winTime,
+              winner_id: winnerId,
+              entity_type: entityType,
             },
             index
           ) => {
@@ -40,16 +43,25 @@ const StatisticsPrizesCategoryContent: FC = () => {
               date: winTime * 1000,
               dateFormat: DateFormats.generalDate,
             });
+            const userPrizePath = `${PagePaths.userPrize}/${winnerId}`;
+            const userCertificatePath = `${PagePaths.userCertificate}/${winnerId}`;
+
+            const isCertificate = entityType === 'wheel';
+            const linkPath = isCertificate
+              ? userCertificatePath
+              : userPrizePath;
 
             return (
               <ListItem key={index}>
-                <StatisticsPrize
-                  code={code}
-                  name={giftName}
-                  prizeImg={prizeImgUrl}
-                  conditions={giftGetConditions}
-                  drawDate={drawDate}
-                />
+                <Link to={linkPath}>
+                  <StatisticsPrize
+                    code={code}
+                    name={giftName}
+                    prizeImg={prizeImgUrl}
+                    conditions={giftGetConditions}
+                    drawDate={drawDate}
+                  />
+                </Link>
               </ListItem>
             );
           }

@@ -11,6 +11,8 @@ import {
   IGetClientPrizesProps,
 } from '@/types/userPrize.types';
 import { getSortType } from '@/utils';
+import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
+import { IUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
 
 class CabinetService extends HttpService {
   constructor() {
@@ -53,6 +55,30 @@ class CabinetService extends HttpService {
     const totalPages = headers[Headers.totalPages];
 
     return { data, totalPages };
+  }
+
+  async getCertificateDetails(
+    id: string
+  ): Promise<IUserCertificateWithDetails> {
+    const { data } = await this.get<IUserCertificateWithDetails>(
+      {
+        url: `client/my-certificate?winner_id=${id}`,
+      },
+      false
+    );
+
+    return data;
+  }
+
+  async getPrizeDetails(id: string): Promise<IUserPrizeWithDetails> {
+    const { data } = await this.get<IUserPrizeWithDetails>(
+      {
+        url: `client/my-present?winner_id=${id}`,
+      },
+      false
+    );
+
+    return data;
   }
 }
 
