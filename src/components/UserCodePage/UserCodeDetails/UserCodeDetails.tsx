@@ -42,11 +42,17 @@ import {
 } from './UserCodeDetails.styled';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { useLocation } from 'react-router-dom';
+import { CabinetState } from '@/types/cabinet.types';
 
 const UserCodeDetails: FC = () => {
+  const {
+    state: { from },
+  } = useLocation() as CabinetState;
+
   return (
     <Container>
-      <CabinetGoBackLink />
+      <CabinetGoBackLink from={from} />
       <Content>
         <MainInfoWrap>
           <CodeInfo>

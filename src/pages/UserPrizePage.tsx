@@ -5,10 +5,12 @@ import UserPrize from '@UserPrizePageComponents/UserPrize';
 import { useParams } from 'react-router-dom';
 import cabinetService from '@/services/cabinet.service';
 import { PagePaths } from '@/constants';
-import { IUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
+import { IPrizeCategoryUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
 
 const UserPrizePage: FC = () => {
-  const [prize, setPrize] = useState<IUserPrizeWithDetails | null>(null);
+  const [prize, setPrize] = useState<IPrizeCategoryUserPrizeWithDetails | null>(
+    null
+  );
   const prizeId = useParams()[PagePaths.dynamicParam] ?? '';
 
   useEffect(() => {

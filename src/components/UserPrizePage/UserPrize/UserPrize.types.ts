@@ -1,5 +1,5 @@
-import { IUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
+import { IPrizeCategoryUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
 
 export interface IProps {
-  prize: IUserPrizeWithDetails;
+  prize: IPrizeCategoryUserPrizeWithDetails;
 }

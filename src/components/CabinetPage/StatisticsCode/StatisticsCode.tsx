@@ -22,6 +22,7 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
 import { getUserCodeMessage } from '@/utils';
+import { ICabinetState } from '@/types/cabinet.types';
 
 const StatisticsCode: FC<IProps> = ({
   isSuccessStatus,
@@ -38,14 +39,14 @@ const StatisticsCode: FC<IProps> = ({
     isSuccessStatus,
   });
   const location = useLocation();
-  const userCertificateLinkState = { from: location };
+  const cabinetState: ICabinetState = { from: location };
   const shouldShowCodeLinks =
     shouldShowUserPrizeLink || shouldShowUserCertificateLink;
   const shouldShowContent = shouldShowCodeLinks || shouldShowCertificate;
 
   return (
     <Container>
-      <Link to={PagePaths.userCode}>
+      <Link to={PagePaths.userCode} state={cabinetState}>
         <Header>
           <CodeWrap>
             <Code>{code}</Code>
@@ -59,7 +60,7 @@ const StatisticsCode: FC<IProps> = ({
           {shouldShowUserCertificateLink && (
             <StyledLink
               to={PagePaths.userCertificate}
-              state={userCertificateLinkState}
+              state={cabinetState}
               isCertificateLink
             >
               <CouponIcon />
@@ -68,7 +69,7 @@ const StatisticsCode: FC<IProps> = ({
             </StyledLink>
           )}
           {shouldShowUserPrizeLink && (
-            <StyledLink to={PagePaths.userPrize}>
+            <StyledLink to={PagePaths.userPrize} state={cabinetState}>
               <PrizeIcon />
               <StyledLinkTitle>Виграний Подарунок</StyledLinkTitle>
               <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />

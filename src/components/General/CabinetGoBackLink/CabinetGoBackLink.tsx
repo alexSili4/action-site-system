@@ -9,10 +9,13 @@ import {
 } from './CabinetGoBackLink.styled';
 import { IProps } from './CabinetGoBackLink.types';
 
-const CabinetGoBackLink: FC<IProps> = ({ isShowOnDesk = false }) => {
+const CabinetGoBackLink: FC<IProps> = ({
+  isShowOnDesk = false,
+  from = PagePaths.cabinet,
+}) => {
   return (
     <Container isShowOnDesk={isShowOnDesk}>
-      <StyledLink to={PagePaths.cabinet}>
+      <StyledLink to={from}>
         <IconWrap>
           <FaChevronLeft size={theme.iconSizes.cabinetGoBackLink} />
         </IconWrap>

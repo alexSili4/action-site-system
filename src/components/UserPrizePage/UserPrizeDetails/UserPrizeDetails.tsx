@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import partnerLogo from '@/citrus.svg';
 import { PagePaths, theme } from '@/constants';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import {
@@ -26,21 +25,36 @@ import {
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import { HiOutlinePhone } from 'react-icons/hi';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { IProps } from './UserPrizeDetails.types';
+import { useLocation } from 'react-router-dom';
+import { CabinetState } from '@/types/cabinet.types';
 
-const UserPrizeDetails: FC = () => {
+const UserPrizeDetails: FC<IProps> = ({
+  createdAtDate,
+  partnerLogo,
+  partnerName,
+  code,
+  conditions,
+  prizeName,
+}) => {
+  const {
+    state: { from },
+  } = useLocation() as CabinetState;
+
   return (
     <Container>
-      <CabinetGoBackLink />
+      <CabinetGoBackLink from={from} />
       <Content>
         <MainInfo>
           <TitleWrap>
-            <Title>Кухонна машина TEFAL QB813D38</Title>
+            <Title>{prizeName}</Title>
             <PartnerLogo src={partnerLogo} alt='логотип' />
           </TitleWrap>
           <DetailsWrap>
             <DescriptionWrap>
               <Subtitle>Акція:</Subtitle>
               <StyledLink to={PagePaths.root}>
+                {/* TODO fix */}
                 <Info>Хапай вигідні пропозиції</Info>
                 <NavArrow />
               </StyledLink>
@@ -48,36 +62,31 @@ const UserPrizeDetails: FC = () => {
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Партнер:</Subtitle>
-              <Info>Comfy</Info>
+              <Info>{partnerName}</Info>
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Акційний код:</Subtitle>
               <StyledLink to={PagePaths.root}>
-                <Info>ZU2L-MFSZ-YWE3</Info>
+                <Info>{code}</Info>
                 <NavArrow />
               </StyledLink>
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Дата розіграшу:</Subtitle>
-              <Info>28.12.2024</Info>
+              <Info>{createdAtDate}</Info>
             </DescriptionWrap>
           </DetailsWrap>
         </MainInfo>
         <AdditionalInfo>
           <HowToGetWrap>
             <HowToGetTitle>Як отримати</HowToGetTitle>
-            <HowToGetInfo>
-              Сертифікат діє у всіх магазинах мережі. Для активації знижки
-              необхідно здійснити покупку на 500 грн або більше. Сертифікат не
-              можна обміняти на готівку та не можна використовувати для товарів,
-              на які є інші акції. Щоб скористатися сертифікатом, просто введіть
-              його номер під час покупки.
-            </HowToGetInfo>
+            <HowToGetInfo>{conditions}</HowToGetInfo>
           </HowToGetWrap>
           <HotlineInfoWrap>
             <HotlineInfo>
+              {/* TODO fix */}
               Якщо у вас виникли додаткові питання, можете звернутись в Центр
               Обслуговування Кліентів. Гаряча лінія працює з понеділка по
               п’ятницю 8:00-22:00
@@ -85,6 +94,7 @@ const UserPrizeDetails: FC = () => {
             {/* TODO fix */}
             <HotlinePhone href='tel:+'>
               <HiOutlinePhone size={theme.iconSizes.cabinetHotlinePhone} />
+              {/* TODO fix */}
               <HotlinePhoneNumber>0-800-500-415</HotlinePhoneNumber>
             </HotlinePhone>
           </HotlineInfoWrap>

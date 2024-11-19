@@ -12,18 +12,26 @@ import {
 import { RiDownloadLine } from 'react-icons/ri';
 import { theme } from '@/constants';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { IProps } from './UserCertificateBanner.types';
+import { useLocation } from 'react-router-dom';
+import { CabinetState } from '@/types/cabinet.types';
 
-const UserCertificateBanner: FC = () => {
+const UserCertificateBanner: FC<IProps> = ({ code }) => {
+  const {
+    state: { from },
+  } = useLocation() as CabinetState;
+
   return (
     <Container>
-      <CabinetGoBackLink isShowOnDesk />
+      <CabinetGoBackLink from={from} isShowOnDesk />
       <Content>
         <BarcodeWrap>
           <Barcode>
             <BarcodeTitle>Код сертифікату:</BarcodeTitle>
-            <BarcodeText>dELIVERY</BarcodeText>
+            <BarcodeText>{code}</BarcodeText>
           </Barcode>
         </BarcodeWrap>
+        {/* TODO fix */}
         <DownloadLink href='/'>
           <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
           <RiDownloadLine

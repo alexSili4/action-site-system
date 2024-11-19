@@ -32,7 +32,7 @@ export interface ICode {
   wheel_status: null;
 }
 
-export interface IUserCertificateWithDetails {
+export interface IPrizeCategoryUserCertificateWithDetails {
   gift: IGift;
   certificate: ICertificate;
   code: ICode;

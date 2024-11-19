@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import partnerLogo from '@/citrus.svg';
 import { PagePaths, theme } from '@/constants';
 import {
   ConditionsInfo,
@@ -27,21 +26,35 @@ import { HiOutlinePhone } from 'react-icons/hi';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { IProps } from './UserCertificateDetails.types';
+import { CabinetState } from '@/types/cabinet.types';
+import { useLocation } from 'react-router-dom';
 
-const UserCertificateDetails: FC = () => {
+const UserCertificateDetails: FC<IProps> = ({
+  prizeName,
+  partnerLogo,
+  partnerName,
+  conditions,
+  code,
+}) => {
+  const {
+    state: { from },
+  } = useLocation() as CabinetState;
+
   return (
     <Container>
-      <CabinetGoBackLink />
+      <CabinetGoBackLink from={from} />
       <Content>
         <MainInfoWrap>
           <TitleWrap>
-            <Title>Сертифікат на 5000грн в мережу магазинів Comfy</Title>
-            <PartnerLogo src={partnerLogo} alt='логотип' />
+            <Title>{prizeName}</Title>
+            <PartnerLogo src={partnerLogo} alt={partnerName} />
           </TitleWrap>
           <DetailsWrap>
             <DescriptionWrap>
               <Subtitle>Акція:</Subtitle>
               <StyledLink to={PagePaths.root}>
+                {/* TODO fix */}
                 <Info>Хапай вигідні пропозиції</Info>
                 <NavArrow />
               </StyledLink>
@@ -54,13 +67,13 @@ const UserCertificateDetails: FC = () => {
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Партнер:</Subtitle>
-              <Info>Comfy</Info>
+              <Info>{partnerName}</Info>
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Акційний код:</Subtitle>
               <StyledLink to={PagePaths.root}>
-                <Info>ZU2L-MFSZ-YWE3</Info>
+                <Info>{code}</Info>
                 <NavArrow />
               </StyledLink>
             </DescriptionWrap>
@@ -70,13 +83,7 @@ const UserCertificateDetails: FC = () => {
         <AdditionalInfoWrap>
           <ConditionsWrap>
             <ConditionsTitle>Умови використання</ConditionsTitle>
-            <ConditionsInfo>
-              Сертифікат діє у всіх магазинах мережі. Для активації знижки
-              необхідно здійснити покупку на 500 грн або більше. Сертифікат не
-              можна обміняти на готівку та не можна використовувати для товарів,
-              на які є інші акції. Щоб скористатися сертифікатом, просто введіть
-              його номер під час покупки.
-            </ConditionsInfo>
+            <ConditionsInfo>{conditions}</ConditionsInfo>
           </ConditionsWrap>
           <HotlineInfoWrap>
             <HotlineInfo>

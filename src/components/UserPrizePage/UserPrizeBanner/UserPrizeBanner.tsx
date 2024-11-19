@@ -1,15 +1,20 @@
 import { FC } from 'react';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
-import prizeImg from '@/kitchen-machine.png';
 import { Container, PrizeImg, PrizeImgWrap } from './UserPrizeBanner.styled';
+import { IProps } from './UserPrizeBanner.types';
+import { useLocation } from 'react-router-dom';
+import { CabinetState } from '@/types/cabinet.types';
 
-const UserPrizeBanner: FC = () => {
+const UserPrizeBanner: FC<IProps> = ({ prizeImg, prizeName }) => {
+  const {
+    state: { from },
+  } = useLocation() as CabinetState;
+
   return (
     <Container>
-      <CabinetGoBackLink isShowOnDesk />
+      <CabinetGoBackLink from={from} isShowOnDesk />
       <PrizeImgWrap>
-        {/* TODO fix */}
-        <PrizeImg src={prizeImg} alt='приз' />
+        <PrizeImg src={prizeImg} alt={prizeName} />
       </PrizeImgWrap>
     </Container>
   );

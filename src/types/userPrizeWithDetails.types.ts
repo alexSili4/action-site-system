@@ -28,7 +28,7 @@ export interface ICode {
   wheel_status: null;
 }
 
-export interface IUserPrizeWithDetails {
+export interface IPrizeCategoryUserPrizeWithDetails {
   gift: IGift;
   code: ICode;
 }

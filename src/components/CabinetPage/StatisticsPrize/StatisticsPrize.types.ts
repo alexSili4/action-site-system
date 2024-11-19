@@ -4,4 +4,5 @@ export interface IProps {
   prizeImg: string;
   conditions: string;
   drawDate: string;
+  linkPath: string;
 }

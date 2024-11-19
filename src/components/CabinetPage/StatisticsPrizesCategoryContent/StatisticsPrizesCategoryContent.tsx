@@ -13,7 +13,6 @@ import {
   selectUserPrizes,
 } from '@/store/userPrizes/selectors';
 import { DateFormats, PagePaths } from '@/constants';
-import { Link } from 'react-router-dom';
 
 const StatisticsPrizesCategoryContent: FC = () => {
   const userPrizes = useUserPrizesStore(selectUserPrizes);
@@ -53,15 +52,14 @@ const StatisticsPrizesCategoryContent: FC = () => {
 
             return (
               <ListItem key={index}>
-                <Link to={linkPath}>
-                  <StatisticsPrize
-                    code={code}
-                    name={giftName}
-                    prizeImg={prizeImgUrl}
-                    conditions={giftGetConditions}
-                    drawDate={drawDate}
-                  />
-                </Link>
+                <StatisticsPrize
+                  code={code}
+                  name={giftName}
+                  prizeImg={prizeImgUrl}
+                  conditions={giftGetConditions}
+                  drawDate={drawDate}
+                  linkPath={linkPath}
+                />
               </ListItem>
             );
           }
