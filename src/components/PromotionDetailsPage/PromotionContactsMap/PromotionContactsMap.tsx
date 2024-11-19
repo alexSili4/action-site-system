@@ -15,7 +15,7 @@ const PromotionContactsMap: FC<IProps> = ({ shops }) => {
 
   const setActiveShop = (id: number) => {
     setActiveShopNum(id);
-    smoothScroll({ id: String(id), isNearestBlock: true });
+    smoothScroll({ id: String(id), block: 'nearest' });
   };
 
   return (

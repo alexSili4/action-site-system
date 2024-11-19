@@ -5,12 +5,15 @@ import {
   Container,
   BackdropWrap,
   CloseBtn,
-} from './AnimatedModalWin.styled';
+} from './AnimatedRegisterCodeModalWin.styled';
 import { useModalWin } from '@/hooks';
 import { CgClose } from 'react-icons/cg';
-import { IProps } from './AnimatedModalWin.types';
+import { IProps } from './AnimatedRegisterCodeModalWin.types';
 
-const AnimatedModalWin: FC<IProps> = ({ children, setModalWinState }) => {
+const AnimatedRegisterCodeModalWin: FC<IProps> = ({
+  children,
+  setModalWinState,
+}) => {
   const { hideModalWin } = useModalWin(setModalWinState);
 
   return (
@@ -39,4 +42,4 @@ const AnimatedModalWin: FC<IProps> = ({ children, setModalWinState }) => {
   );
 };
 
-export default AnimatedModalWin;
+export default AnimatedRegisterCodeModalWin;

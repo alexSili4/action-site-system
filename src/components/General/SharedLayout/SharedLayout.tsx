@@ -5,11 +5,12 @@ import Loader from '@GeneralComponents/Loader';
 import Header from '@GeneralComponents/Header';
 import Footer from '@GeneralComponents/Footer';
 import AppBackground from '@GeneralComponents/AppBackground';
-import AnimatedModalWinContainer from '@GeneralComponents/AnimatedModalWinContainer';
+import AnimatedRegisterCodeModalWinContainer from '@GeneralComponents/AnimatedRegisterCodeModalWinContainer';
 import { theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent } from '@/types/types';
+import RegisterCodeModalWinSelectPromotionsLocation from '@GeneralComponents/RegisterCodeModalWinSelectPromotionsLocation';
 
 const SharedLayout: FC = () => {
   const [
@@ -58,18 +59,16 @@ const SharedLayout: FC = () => {
         </Main>
         <Footer />
       </Content>
-      <AnimatedModalWinContainer
-        setModalWinState={setSelectPromotionsLocationModalWinState}
+      <RegisterCodeModalWinSelectPromotionsLocation
         showModalWin={showSelectPromotionsLocationModalWin}
-      >
-        <p>SelectPromotionsLocation</p>
-      </AnimatedModalWinContainer>
-      <AnimatedModalWinContainer
+        setModalWinState={setSelectPromotionsLocationModalWinState}
+      />
+      <AnimatedRegisterCodeModalWinContainer
         setModalWinState={setSelectPromotionModalWinState}
         showModalWin={showSelectPromotionModalWin}
       >
         <p>SelectPromotion</p>
-      </AnimatedModalWinContainer>
+      </AnimatedRegisterCodeModalWinContainer>
     </>
   );
 };

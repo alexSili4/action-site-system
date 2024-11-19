@@ -14,7 +14,11 @@ import LocationList from '@GeneralComponents/LocationList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
 import { useLocationFilter } from '@/hooks';
 
-const LocationFilter: FC<IProps> = ({ isRootPage, makeScroll = false }) => {
+const LocationFilter: FC<IProps> = ({
+  isRootPage = false,
+  makeScroll = false,
+  isModalWin = false,
+}) => {
   const {
     onShowListBtnClick,
     showLocationList,
@@ -26,12 +30,13 @@ const LocationFilter: FC<IProps> = ({ isRootPage, makeScroll = false }) => {
 
   return (
     <>
-      <Container isRootPage={isRootPage}>
+      <Container isRootPage={isRootPage} isModalWin={isModalWin}>
         <ShowLocationsBtn
           id={SectionsIds.locationBtn}
           type='button'
           onClick={onShowListBtnClick}
           isRootPage={isRootPage}
+          isModalWin={isModalWin}
           showLocationList={showLocationList}
         >
           <ShowLocationsBtnTitle isSelectedCity={isSelectedCity}>
@@ -40,7 +45,10 @@ const LocationFilter: FC<IProps> = ({ isRootPage, makeScroll = false }) => {
           <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
         </ShowLocationsBtn>
         <SmoothFadeInDropdownList isVisible={showLocationList}>
-          <LocationListContainer isRootPage={isRootPage}>
+          <LocationListContainer
+            isRootPage={isRootPage}
+            isModalWin={isModalWin}
+          >
             <LocationSearchField />
             <LocationList onLocationLinkClick={onLocationLinkClick} />
           </LocationListContainer>

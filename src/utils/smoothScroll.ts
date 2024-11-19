@@ -1,15 +1,15 @@
 const smoothScroll = ({
   id,
-  isNearestBlock = false,
+  block = 'start',
 }: {
   id: string;
-  isNearestBlock?: boolean;
+  block?: 'nearest' | 'start' | 'center';
 }) => {
   const targetElement = document.getElementById(id);
 
   targetElement?.scrollIntoView({
     behavior: 'smooth',
-    block: isNearestBlock ? 'nearest' : 'start',
+    block,
   });
 };
 

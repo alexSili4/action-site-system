@@ -1,19 +1,23 @@
 export interface IProps {
-  isRootPage: boolean;
+  isRootPage?: boolean;
   makeScroll?: boolean;
+  isModalWin?: boolean;
 }
 
 export interface IStyledContainerProps {
   isRootPage: boolean;
+  isModalWin: boolean;
 }
 
 export interface IStyledShowLocationsBtnProps {
   isRootPage: boolean;
   showLocationList: boolean;
+  isModalWin: boolean;
 }
 
 export interface IStyledLocationListProps {
   isRootPage: boolean;
+  isModalWin: boolean;
 }
 
 export interface IStyledShowLocationsBtnTitleProps {

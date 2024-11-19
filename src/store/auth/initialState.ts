@@ -8,7 +8,7 @@ const initialState: IAuthInitialState = {
     email: null,
   },
   // TODO fix
-  isLoggedIn: false,
+  isLoggedIn: true,
   isRefreshing: false,
   isLoading: false,
   error: null,
