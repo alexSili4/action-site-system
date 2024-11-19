@@ -8,14 +8,17 @@ import {
   Title,
 } from './CabinetGoBackLink.styled';
 import { IProps } from './CabinetGoBackLink.types';
+import { CabinetState } from '@/types/cabinet.types';
+import { useLocation } from 'react-router-dom';
 
-const CabinetGoBackLink: FC<IProps> = ({
-  isShowOnDesk = false,
-  from = PagePaths.cabinet,
-}) => {
+const CabinetGoBackLink: FC<IProps> = ({ isShowOnDesk = false }) => {
+  const { state }: CabinetState = useLocation();
+
+  const linkPath = state?.from ?? PagePaths.cabinet;
+
   return (
     <Container isShowOnDesk={isShowOnDesk}>
-      <StyledLink to={from}>
+      <StyledLink to={linkPath}>
         <IconWrap>
           <FaChevronLeft size={theme.iconSizes.cabinetGoBackLink} />
         </IconWrap>

@@ -19,7 +19,10 @@ const AnimatedRegisterCodeModalWin: FC<IProps> = ({
   const { hideModalWin } = useModalWin(setModalWinState);
 
   useEffect(() => {
-    smoothScroll({ id: '123', block: 'center' });
+    smoothScroll({
+      id: SectionsIds.registerCodeModalWinBackdrop,
+      block: 'center',
+    });
   }, []);
 
   return (

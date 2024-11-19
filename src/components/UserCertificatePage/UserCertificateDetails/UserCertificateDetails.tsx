@@ -27,8 +27,6 @@ import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import { IProps } from './UserCertificateDetails.types';
-import { CabinetState } from '@/types/cabinet.types';
-import { useLocation } from 'react-router-dom';
 
 const UserCertificateDetails: FC<IProps> = ({
   prizeName,
@@ -37,13 +35,9 @@ const UserCertificateDetails: FC<IProps> = ({
   conditions,
   code,
 }) => {
-  const {
-    state: { from },
-  }: CabinetState = useLocation();
-
   return (
     <Container>
-      <CabinetGoBackLink from={from} />
+      <CabinetGoBackLink />
       <Content>
         <MainInfoWrap>
           <TitleWrap>

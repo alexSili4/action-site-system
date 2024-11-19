@@ -13,17 +13,11 @@ import {
   ReceiptTitle,
   ReceiptInfo,
 } from './UserReceiptDetails.styled';
-import { useLocation } from 'react-router-dom';
-import { CabinetState } from '@/types/cabinet.types';
 
 const UserReceiptDetails: FC = () => {
-  const {
-    state: { from },
-  }: CabinetState = useLocation();
-
   return (
     <Container>
-      <CabinetGoBackLink from={from} isShowOnDesk />
+      <CabinetGoBackLink isShowOnDesk />
       <Content>
         <ReceiptInfo>
           <ReceiptTitle>ТОВ “АТБ-Маркет”</ReceiptTitle>

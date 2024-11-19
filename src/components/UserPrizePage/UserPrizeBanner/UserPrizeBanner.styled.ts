@@ -29,6 +29,7 @@ export const PrizeImgWrap = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    height: 100%;
     padding-top: ${({ theme }) => theme.spacing(35)};
     padding-bottom: ${({ theme }) => theme.spacing(25)};
   }
