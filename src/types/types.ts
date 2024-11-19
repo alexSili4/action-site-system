@@ -98,3 +98,7 @@ export interface IGetRegisterCodeLinkProps {
   promotionId: string | number;
   cityId: string;
 }
+
+export interface IOutletContext {
+  showOtherModalWin: boolean;
+}

@@ -9,7 +9,7 @@ import AnimatedRegisterCodeModalWinContainer from '@GeneralComponents/AnimatedRe
 import { theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 import { makeBlur } from '@/utils';
-import { BtnClickEvent } from '@/types/types';
+import { BtnClickEvent, IOutletContext } from '@/types/types';
 import RegisterCodeModalWinSelectPromotionsLocation from '@GeneralComponents/RegisterCodeModalWinSelectPromotionsLocation';
 
 const SharedLayout: FC = () => {
@@ -20,6 +20,9 @@ const SharedLayout: FC = () => {
   const [showSelectPromotionModalWin, setShowSelectPromotionModalWin] =
     useState<boolean>(false);
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const showOtherModalWin =
+    showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
+  const outletContext: IOutletContext = { showOtherModalWin };
 
   const setSelectPromotionsLocationModalWinState = () => {
     setShowSelectPromotionsLocationModalWin((prevState) => !prevState);
@@ -54,7 +57,7 @@ const SharedLayout: FC = () => {
         />
         <Main>
           <Suspense fallback={<Loader />}>
-            <Outlet />
+            <Outlet context={outletContext} />
           </Suspense>
         </Main>
         <Footer />

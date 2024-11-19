@@ -80,6 +80,7 @@ export interface IUseLocationFilter {
   showLocationsBtnTitle: string;
   isSelectedCity: boolean;
   showLocationList: boolean;
+  showOtherModalWin: boolean;
   toggleShowLocationList: Func;
   onShowListBtnClick: OnBtnClickFunc;
   onLocationLinkClick: OnAnchorClickFunc;

@@ -4,8 +4,9 @@ import { useCitiesStore } from '@/store/store';
 import { selectGetCities, selectCities } from '@/store/cities/selectors';
 import { SearchParamsKeys, SectionsIds, theme } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
-import { AnchorClickEvent, BtnClickEvent } from '@/types/types';
+import { AnchorClickEvent, BtnClickEvent, IOutletContext } from '@/types/types';
 import { IUseLocationFilter } from '@/types/hooks.types';
+import { useOutletContext } from 'react-router-dom';
 
 const useLocationFilter = (makeScroll: boolean): IUseLocationFilter => {
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
@@ -19,6 +20,7 @@ const useLocationFilter = (makeScroll: boolean): IUseLocationFilter => {
     cityId: Number(cityId),
   });
   const shouldMakeScroll = makeScroll && !showLocationList && !isDesktop;
+  const { showOtherModalWin }: IOutletContext = useOutletContext() ?? {};
 
   useEffect(() => {
     if (!cities.length) {
@@ -54,6 +56,7 @@ const useLocationFilter = (makeScroll: boolean): IUseLocationFilter => {
     showLocationsBtnTitle,
     onLocationLinkClick,
     toggleShowLocationList,
+    showOtherModalWin,
   };
 };
 

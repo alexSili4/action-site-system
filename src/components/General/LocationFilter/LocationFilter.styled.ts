@@ -9,7 +9,8 @@ import {
 export const Container = styled.div<IStyledContainerProps>`
   flex-grow: 1;
   position: relative;
-  z-index: ${({ theme }) => theme.zIndex.selectCityDropdown};
+  z-index: ${({ theme, showOtherModalWin }) =>
+    !showOtherModalWin && theme.zIndex.selectCityDropdown};
   width: 100%;
   order: 4;
 

@@ -39,7 +39,7 @@ const UserCertificateDetails: FC<IProps> = ({
 }) => {
   const {
     state: { from },
-  } = useLocation() as CabinetState;
+  }: CabinetState = useLocation();
 
   return (
     <Container>

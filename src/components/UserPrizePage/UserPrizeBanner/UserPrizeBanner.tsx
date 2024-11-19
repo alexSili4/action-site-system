@@ -8,7 +8,7 @@ import { CabinetState } from '@/types/cabinet.types';
 const UserPrizeBanner: FC<IProps> = ({ prizeImg, prizeName }) => {
   const {
     state: { from },
-  } = useLocation() as CabinetState;
+  }: CabinetState = useLocation();
 
   return (
     <Container>

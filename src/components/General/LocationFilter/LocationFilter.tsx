@@ -26,11 +26,16 @@ const LocationFilter: FC<IProps> = ({
     showLocationsBtnTitle,
     onLocationLinkClick,
     toggleShowLocationList,
+    showOtherModalWin,
   } = useLocationFilter(makeScroll);
 
   return (
     <>
-      <Container isRootPage={isRootPage} isModalWin={isModalWin}>
+      <Container
+        isRootPage={isRootPage}
+        isModalWin={isModalWin}
+        showOtherModalWin={showOtherModalWin}
+      >
         <ShowLocationsBtn
           id={SectionsIds.locationBtn}
           type='button'

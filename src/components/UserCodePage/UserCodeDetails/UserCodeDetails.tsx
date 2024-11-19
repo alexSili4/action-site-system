@@ -48,7 +48,7 @@ import { CabinetState } from '@/types/cabinet.types';
 const UserCodeDetails: FC = () => {
   const {
     state: { from },
-  } = useLocation() as CabinetState;
+  }: CabinetState = useLocation() ;
 
   return (
     <Container>
