@@ -1,5 +1,9 @@
 import { FC } from 'react';
-import { StyledHeader } from './Header.styled';
+import {
+  StyledHeaderWrap,
+  StyledHeader,
+  StyledHeaderBackground,
+} from './Header.styled';
 import { IProps } from './Header.types';
 import Container from '@GeneralComponents/Container';
 import NavBar from '@GeneralComponents/NavBar';
@@ -11,26 +15,32 @@ const Header: FC<IProps> = ({
   onRegisterCodeBtnClickOnPromotionPage,
 }) => {
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
-  const { isScrollingUp } = useIsScrollingUp();
+  const { isScrollingUp, isScrolling } = useIsScrollingUp();
 
+  const isColoredBackground = isScrolling && isPromotionDetailsPage;
   const shouldHideHeader = isPromotionDetailsPage && !isScrollingUp;
 
   return (
-    <StyledHeader
-      shouldHideHeader={shouldHideHeader}
+    <StyledHeaderWrap
       isPromotionDetailsPage={isPromotionDetailsPage}
+      shouldHideHeader={shouldHideHeader}
     >
-      <Container>
-        <NavBar
-          isDesktop={isDesktop}
-          isPromotionDetailsPage={isPromotionDetailsPage}
-          onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
-          onRegisterCodeBtnClickOnPromotionPage={
-            onRegisterCodeBtnClickOnPromotionPage
-          }
-        />
-      </Container>
-    </StyledHeader>
+      <StyledHeaderBackground
+        isColoredBackground={isColoredBackground}
+      ></StyledHeaderBackground>
+      <StyledHeader>
+        <Container>
+          <NavBar
+            isDesktop={isDesktop}
+            isPromotionDetailsPage={isPromotionDetailsPage}
+            onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
+            onRegisterCodeBtnClickOnPromotionPage={
+              onRegisterCodeBtnClickOnPromotionPage
+            }
+          />
+        </Container>
+      </StyledHeader>
+    </StyledHeaderWrap>
   );
 };
 

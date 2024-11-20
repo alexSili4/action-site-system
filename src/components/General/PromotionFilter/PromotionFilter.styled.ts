@@ -66,21 +66,23 @@ export const PromotionsListContainer = styled.div`
   position: absolute;
   bottom: -16px;
   left: 50%;
+  display: flex;
+  flex-direction: column;
   width: 330px;
-  height: 272px;
-  padding: ${({ theme }) => theme.spacing(4)};
+  max-height: 272px;
+  padding-left: ${({ theme }) => theme.spacing(4)};
   padding-right: ${({ theme }) => theme.spacing(3)};
   border-radius: 16px;
   box-shadow: 0px -8px 25px 0px rgba(58, 52, 86, 0.1);
   background-color: ${({ theme }) => theme.colors.white};
   transform: translateY(100%) translateX(-50%);
-  overflow-y: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     bottom: -28px;
     width: 710px;
-    height: 291px;
-    padding: ${({ theme }) => theme.spacing(8)};
+    max-height: 291px;
+    padding-left: ${({ theme }) => theme.spacing(8)};
+    padding-right: ${({ theme }) => theme.spacing(8)};
     border-radius: 24px;
   }
 `;

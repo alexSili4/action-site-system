@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import { usePromotionsList } from '@/hooks';
-import { getPromotionDate, getPromotionBannerUrls } from '@/utils';
+import {
+  getPromotionDate,
+  getPromotionBannerUrls,
+  getPromotionDetailsPath,
+} from '@/utils';
 import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
 import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import PromotionName from '@GeneralComponents/PromotionName';
@@ -27,10 +31,11 @@ const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
               bannerDt: mainBannerDt,
               bannerMob: mainBannerMob,
             });
+            const promotionDetailsPath = getPromotionDetailsPath(id);
 
             return (
               <ListItem key={id}>
-                <LinkWithQuery to={`${id}`} state={linkState}>
+                <LinkWithQuery to={promotionDetailsPath} state={linkState}>
                   <Card mainBannerDt={bannerDtUrl} mainBannerMob={bannerMobUrl}>
                     <PromotionPeriodLabel period={date} />
                     <PromotionName name={name} />

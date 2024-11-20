@@ -10,7 +10,7 @@ const RegisterCodeModalWinSelectPromotionsFilter: FC<IProps> = ({
 }) => {
   return (
     <Container>
-      <Title>Щоб продовжити оберіть</Title>
+      <Title>Щоб продовжити</Title>
       {children}
     </Container>
   );

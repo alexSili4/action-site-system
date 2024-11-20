@@ -5,7 +5,6 @@ export const Backdrop = styled.div`
   z-index: ${({ theme }) => theme.zIndex.dropdownBackdrop};
   top: 0;
   left: 0;
-  display: flex;
   width: 100%;
   height: 100%;
   background-color: pink;

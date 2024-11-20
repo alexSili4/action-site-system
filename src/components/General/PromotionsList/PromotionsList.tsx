@@ -1,10 +1,17 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
-import { LinkTitle, List, ListItem } from './PromotionsList.styled';
+import {
+  Container,
+  LinkTitle,
+  LinkTitleWrap,
+  List,
+  ListItem,
+} from './PromotionsList.styled';
 import { usePromotionsStore } from '@/store/store';
 import { selectPromotions } from '@/store/promotions/selectors';
 import { usePromotionCategory } from '@/hooks';
 import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
+import { getPromotionDetailsPath } from '@/utils';
 
 const PromotionsList: FC = () => {
   const promotions = usePromotionsStore(selectPromotions);
@@ -17,17 +24,23 @@ const PromotionsList: FC = () => {
   };
 
   return (
-    <List>
-      {promotions.map(({ name, id }) => {
-        return (
-          <ListItem key={id}>
-            <LinkWithQuery to={`${id}`} state={linkState}>
-              <LinkTitle>{name}</LinkTitle>
-            </LinkWithQuery>
-          </ListItem>
-        );
-      })}
-    </List>
+    <Container>
+      <List>
+        {promotions.map(({ name, id }) => {
+          const promotionDetailsPath = getPromotionDetailsPath(id);
+
+          return (
+            <ListItem key={id}>
+              <LinkWithQuery to={promotionDetailsPath} state={linkState}>
+                <LinkTitleWrap>
+                  <LinkTitle>{name}</LinkTitle>
+                </LinkTitleWrap>
+              </LinkWithQuery>
+            </ListItem>
+          );
+        })}
+      </List>
+    </Container>
   );
 };
 

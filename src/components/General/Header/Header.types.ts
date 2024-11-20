@@ -6,7 +6,11 @@ export interface IProps {
   onRegisterCodeBtnClickOnPromotionPage: OnBtnClickFunc;
 }
 
-export interface IStyledHeaderProps {
-  shouldHideHeader: boolean;
+export interface IStyledHeaderWrapProps {
   isPromotionDetailsPage: boolean;
+  shouldHideHeader: boolean;
+}
+
+export interface IStyledHeaderBackgroundProps {
+  isColoredBackground: boolean;
 }

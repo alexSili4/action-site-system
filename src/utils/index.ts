@@ -23,3 +23,4 @@ export { default as getIsCreatedSortType } from './getIsCreatedSortType';
 export { default as getSortType } from './getSortType';
 export { default as getClosestDateIndex } from './getClosestDateIndex';
 export { default as getRegisterCodeLink } from './getRegisterCodeLink';
+export { default as getPromotionDetailsPath } from './getPromotionDetailsPath';

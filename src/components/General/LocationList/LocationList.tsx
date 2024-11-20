@@ -1,6 +1,12 @@
 import { FC, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { List, ListItem, LinkPart } from './LocationList.styled';
+import {
+  List,
+  ListItem,
+  LinkPart,
+  LinkTitleWrap,
+  Container,
+} from './LocationList.styled';
 import { PagePaths, SearchParamsKeys } from '@/constants';
 import { useSetSearchParams } from '@/hooks';
 import { useCitiesStore } from '@/store/store';
@@ -23,23 +29,27 @@ const LocationList: FC<IProps> = ({ onLocationLinkClick }) => {
   );
 
   return (
-    <List>
-      {filteredLocations.map(({ name, id }) => {
-        const accentPart = name.slice(0, search.length);
-        const otherPart = name.slice(search.length);
+    <Container>
+      <List>
+        {filteredLocations.map(({ name, id }) => {
+          const accentPart = name.slice(0, search.length);
+          const otherPart = name.slice(search.length);
 
-        const path = `${PagePaths.promotions}?${SearchParamsKeys.cityId}=${id}`;
+          const path = `${PagePaths.promotions}?${SearchParamsKeys.cityId}=${id}`;
 
-        return (
-          <ListItem key={id}>
-            <Link to={path} onClick={onLocationLinkClick}>
-              <LinkPart isTitle>{accentPart}</LinkPart>
-              <LinkPart isTitle={!accentPart}>{otherPart}</LinkPart>
-            </Link>
-          </ListItem>
-        );
-      })}
-    </List>
+          return (
+            <ListItem key={id}>
+              <Link to={path} onClick={onLocationLinkClick}>
+                <LinkTitleWrap>
+                  <LinkPart isTitle>{accentPart}</LinkPart>
+                  <LinkPart isTitle={!accentPart}>{otherPart}</LinkPart>
+                </LinkTitleWrap>
+              </Link>
+            </ListItem>
+          );
+        })}
+      </List>
+    </Container>
   );
 };
 

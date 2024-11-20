@@ -80,8 +80,9 @@ export const LocationListContainer = styled.div<IStyledLocationListProps>`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)};
   width: ${({ isBigSize }) => (isBigSize ? '330px' : '100%')};
-  height: 272px;
-  padding: ${({ theme }) => theme.spacing(4)};
+  max-height: 272px;
+  padding-left: ${({ theme }) => theme.spacing(4)};
+  padding-top: ${({ theme }) => theme.spacing(4)};
   padding-right: ${({ theme }) => theme.spacing(3)};
   border-radius: 16px;
   box-shadow: 0px -8px 25px 0px rgba(58, 52, 86, 0.1);
@@ -92,8 +93,10 @@ export const LocationListContainer = styled.div<IStyledLocationListProps>`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     bottom: ${({ isBigSize }) => (isBigSize ? -28 : -16)}px;
     width: ${({ isBigSize }) => (isBigSize ? '710px' : '100%')};
-    height: 291px;
-    padding: ${({ theme }) => theme.spacing(8)};
+    max-height: 291px;
+    padding-left: ${({ theme }) => theme.spacing(8)};
+    padding-right: ${({ theme }) => theme.spacing(8)};
+    padding-top: ${({ theme }) => theme.spacing(8)};
     border-radius: 24px;
   }
 `;
