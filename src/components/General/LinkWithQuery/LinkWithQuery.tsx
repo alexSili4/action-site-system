@@ -3,11 +3,18 @@ import { IProps } from './LinkWithQuery.types';
 import { smoothScroll } from '@/utils';
 import { Symbols } from '@/constants';
 import { AnchorClickEvent } from '@/types/types';
+import { useEffect } from 'react';
 
 const LinkWithQuery = ({ children, to, state }: IProps) => {
   const { search } = useLocation();
   const [toPath = '', hash = ''] = to.split(Symbols.hash);
-  const path = `${toPath}${search}${Symbols.hash}${hash}`;
+
+  const path = `${toPath}${search}`;
+  const fullPath = hash ? `${path}${Symbols.hash}${hash}` : path;
+
+  useEffect(() => {
+    console.log(path);
+  }, [path]);
 
   const onLinkClick = (e: AnchorClickEvent) => {
     const { hash } = e.currentTarget;
@@ -21,7 +28,7 @@ const LinkWithQuery = ({ children, to, state }: IProps) => {
   };
 
   return (
-    <Link to={path} state={state} onClick={onLinkClick}>
+    <Link to={fullPath} state={state} onClick={onLinkClick}>
       {children}
     </Link>
   );

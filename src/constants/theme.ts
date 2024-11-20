@@ -48,6 +48,7 @@ interface ITheme {
     cabinetHotlinePhone: number;
     cabinetGoBackLink: number;
     userCodeDetailsMarker: number;
+    showPromotionsBtn: number;
   };
   containerWidth: {
     desktop: number;
@@ -76,6 +77,7 @@ interface ITheme {
     animatedPrizeWheelModalWin: number;
     animatedPrizeImg: number;
     header: number;
+    selectPromotionDropdown: number;
   };
   transitionDurationAndFunc: {
     header: string;
@@ -114,6 +116,7 @@ const theme: ITheme = {
     promotionPrizesSliderBtn: 10,
     userInfoBtn: 12,
     showLocationsBtn: 12,
+    showPromotionsBtn: 12,
     showPromotionsSortTypesBtn: 12,
     showDatePickerBtn: 12,
     promotionContactsMapListClose: 12,
@@ -157,6 +160,7 @@ const theme: ITheme = {
     header: 10000,
     dropdownBackdrop: 10000,
     selectCityDropdown: 10000,
+    selectPromotionDropdown: 10000,
     selectPromotionsSortTypeDropdown: 10000,
     selectStatisticsSortTypeDropdown: 10000,
     promotionsDatePicker: 10000,

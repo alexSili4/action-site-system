@@ -25,3 +25,5 @@ export { default as useIsPromotionsPage } from './useIsPromotionsPage';
 export { default as useRegisterOnePromotionCodeLink } from './useRegisterOnePromotionCodeLink';
 export { default as useIsRootPage } from './useIsRootPage';
 export { default as useUserCertificate } from './useUserCertificate';
+export { default as usePromotionCategory } from './usePromotionCategory';
+export { default as usePromotionFilter } from './usePromotionFilter';

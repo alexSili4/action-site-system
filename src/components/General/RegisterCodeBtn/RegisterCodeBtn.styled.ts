@@ -14,7 +14,7 @@ export const Button = styled.button`
   box-shadow: 3px 3px 0px 0px #e8c47d,
     inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   color: #3f3d5c;
-  font-family: Geologica;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
@@ -43,7 +43,7 @@ export const StyledLink = styled(Link)`
   box-shadow: 3px 3px 0px 0px #e8c47d,
     inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   color: #3f3d5c;
-  font-family: Geologica;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;

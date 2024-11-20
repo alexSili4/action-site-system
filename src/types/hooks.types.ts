@@ -195,3 +195,9 @@ export interface IUseUserCertificate {
   hotLineWorkHours: string;
   promotionName: string;
 }
+
+export interface IUsePromotionFilter {
+  onShowListBtnClick: OnBtnClickFunc;
+  showPromotionsList: boolean;
+  toggleShowPromotionsList: Func;
+}

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './LocationList.types';
 
 export const List = styled.ul`
   display: flex;
@@ -31,9 +30,9 @@ export const ListItem = styled.li`
   }
 `;
 
-export const LinkPart = styled.span<IStyledProps>`
-  color: ${({ isTitle }) => (isTitle ? '#3f3d5c' : '#7e8494')};
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
+export const LinkTitle = styled.span`
+  color: #3f3d5c;
+  font-family: ${({theme})=>theme.fontFamily.geologica};
   font-size: 16px;
   font-weight: 400;
   line-height: 2;

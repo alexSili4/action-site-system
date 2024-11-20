@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import LocationFilter from '@GeneralComponents/LocationFilter';
 import RegisterCodeModalWinSelectPromotionsFilter from '@GeneralComponents/RegisterCodeModalWinSelectPromotionsFilter';
 import AnimatedRegisterCodeModalWinContainer from '@GeneralComponents/AnimatedRegisterCodeModalWinContainer';
-import { IProps } from './RegisterCodeModalWinSelectPromotionsLocation.types';
+import { IProps } from './RegisterCodeModalWinSelectPromotion.types';
+import PromotionFilter from '@GeneralComponents/PromotionFilter';
 
-const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
+const RegisterCodeModalWinSelectPromotion: FC<IProps> = ({
   setModalWinState,
   showModalWin,
 }) => {
@@ -14,10 +14,10 @@ const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
       showModalWin={showModalWin}
     >
       <RegisterCodeModalWinSelectPromotionsFilter>
-        <LocationFilter isModalWin />
+        <PromotionFilter />
       </RegisterCodeModalWinSelectPromotionsFilter>
     </AnimatedRegisterCodeModalWinContainer>
   );
 };
 
-export default RegisterCodeModalWinSelectPromotionsLocation;
+export default RegisterCodeModalWinSelectPromotion;

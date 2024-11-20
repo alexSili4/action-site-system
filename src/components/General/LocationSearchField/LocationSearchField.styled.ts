@@ -14,7 +14,7 @@ export const Input = styled.input`
     rgba(193, 190, 255, 0.15) 101.342%
   );
   color: #3f3d5c;
-  font-family: Geologica;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
