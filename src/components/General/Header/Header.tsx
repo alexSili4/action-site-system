@@ -25,9 +25,11 @@ const Header: FC<IProps> = ({
       isPromotionDetailsPage={isPromotionDetailsPage}
       shouldHideHeader={shouldHideHeader}
     >
-      <StyledHeaderBackground
-        isColoredBackground={isColoredBackground}
-      ></StyledHeaderBackground>
+      {isPromotionDetailsPage && (
+        <StyledHeaderBackground
+          isColoredBackground={isColoredBackground}
+        ></StyledHeaderBackground>
+      )}
       <StyledHeader>
         <Container>
           <NavBar

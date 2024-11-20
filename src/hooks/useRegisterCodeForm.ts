@@ -80,7 +80,8 @@ const useRegisterCodeForm = (
   };
 
   const handleFormSubmit: SubmitHandler<IRegCodeFormData> = async (data) => {
-    const code = Object.values(data).join('');
+    const code = [data.codePart1, data.codePart2, data.codePart3].join('');
+
     registerCode({ code, csrfToken, csrfTokenName });
   };
 
