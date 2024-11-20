@@ -6,7 +6,7 @@ import { IProps } from './UserPrize.types';
 import { DateFormats } from '@/constants';
 import { formatDate, getFileUrl } from '@/utils';
 
-const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift } }) => {
+const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
   const {
     name: prizeName,
     partner,
@@ -15,6 +15,11 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift } }) => {
   } = gift;
   const { code, created_at: createdAt } = userCode;
   const { logo: partnerLogo, name: partnerName } = partner;
+  const {
+    hot_line_phone: hotLinePhone,
+    name: promotionName,
+    hot_line_work_hours: hotLineWorkHours,
+  } = action;
 
   const createdAtNumber = createdAt * 1000;
   const createdAtDate = formatDate({
@@ -36,6 +41,9 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift } }) => {
         partnerLogo={partnerLgoUrl}
         partnerName={partnerName}
         prizeName={prizeName}
+        hotLinePhone={hotLinePhone}
+        promotionName={promotionName}
+        hotLineWorkHours={hotLineWorkHours}
       />
     </UserStatisticsDetailsContainer>
   );

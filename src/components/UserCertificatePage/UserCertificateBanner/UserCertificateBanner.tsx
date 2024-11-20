@@ -4,7 +4,7 @@ import {
   Barcode,
   BarcodeText,
   BarcodeWrap,
-  Content,
+  ContentWrap,
   DownloadLink,
   DownloadLinkTitle,
   BarcodeTitle,
@@ -14,11 +14,19 @@ import { theme } from '@/constants';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import { IProps } from './UserCertificateBanner.types';
 
-const UserCertificateBanner: FC<IProps> = ({ code }) => {
+const UserCertificateBanner: FC<IProps> = ({
+  code,
+  thirdBannerDt,
+  thirdBannerMob,
+  certificatePdf,
+}) => {
   return (
     <Container>
       <CabinetGoBackLink isShowOnDesk />
-      <Content>
+      <ContentWrap
+        thirdBannerDt={thirdBannerDt}
+        thirdBannerMob={thirdBannerMob}
+      >
         <BarcodeWrap>
           <Barcode>
             <BarcodeTitle>Код сертифікату:</BarcodeTitle>
@@ -26,13 +34,13 @@ const UserCertificateBanner: FC<IProps> = ({ code }) => {
           </Barcode>
         </BarcodeWrap>
         {/* TODO fix */}
-        <DownloadLink href='/'>
+        <DownloadLink href={certificatePdf} download>
           <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
           <RiDownloadLine
             size={theme.iconSizes.cabinetDownloadCertificateLink}
           />
         </DownloadLink>
-      </Content>
+      </ContentWrap>
     </Container>
   );
 };

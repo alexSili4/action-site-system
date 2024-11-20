@@ -5,4 +5,7 @@ export interface IProps {
   code: string;
   conditions: string;
   prizeName: string;
+  hotLinePhone: string;
+  promotionName: string;
+  hotLineWorkHours: string;
 }

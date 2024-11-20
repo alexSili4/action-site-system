@@ -14,7 +14,7 @@ const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
       showModalWin={showModalWin}
     >
       <RegisterCodeModalWinSelectPromotionsLocationContent>
-        <LocationFilter />
+        <LocationFilter isModalWin />
       </RegisterCodeModalWinSelectPromotionsLocationContent>
     </AnimatedRegisterCodeModalWinContainer>
   );

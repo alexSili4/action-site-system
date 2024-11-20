@@ -1,3 +1,5 @@
+import { IPromotion } from './promotion.types';
+
 export interface IImage {
   image: string;
 }
@@ -31,4 +33,5 @@ export interface ICode {
 export interface IPrizeCategoryUserPrizeWithDetails {
   gift: IGift;
   code: ICode;
+  action: IPromotion;
 }

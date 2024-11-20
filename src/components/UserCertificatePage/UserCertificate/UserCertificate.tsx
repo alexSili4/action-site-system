@@ -3,26 +3,42 @@ import UserCertificateBanner from '@UserCertificatePageComponents/UserCertificat
 import UserCertificateDetails from '@UserCertificatePageComponents/UserCertificateDetails';
 import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
 import { IProps } from './UserCertificate.types';
-import { getFileUrl } from '@/utils';
+import { useUserCertificate } from '@/hooks';
 
-const UserCertificate: FC<IProps> = ({
-  certificate: { code: userCode, gift },
-}) => {
-  const { code } = userCode;
-  const { get_conditions: getConditions, partner, name: prizeName } = gift;
-  const { name: partnerName, logo: partnerLogo } = partner;
-
-  const partnerLogoUrl = getFileUrl(partnerLogo);
+const UserCertificate: FC<IProps> = ({ certificate }) => {
+  const {
+    code,
+    bannerMobUrl,
+    bannerDtUrl,
+    certificatePdfUrl,
+    getConditions,
+    partnerLogoUrl,
+    partnerName,
+    prizeName,
+    expiredFormatDate,
+    hotLinePhone,
+    hotLineWorkHours,
+    promotionName,
+  } = useUserCertificate(certificate);
 
   return (
     <UserStatisticsDetailsContainer>
-      <UserCertificateBanner code={code} />
+      <UserCertificateBanner
+        code={code}
+        thirdBannerMob={bannerMobUrl}
+        thirdBannerDt={bannerDtUrl}
+        certificatePdf={certificatePdfUrl}
+      />
       <UserCertificateDetails
         code={code}
         conditions={getConditions}
         partnerLogo={partnerLogoUrl}
         partnerName={partnerName}
         prizeName={prizeName}
+        expiredDate={expiredFormatDate}
+        hotLinePhone={hotLinePhone}
+        hotLineWorkHours={hotLineWorkHours}
+        promotionName={promotionName}
       />
     </UserStatisticsDetailsContainer>
   );

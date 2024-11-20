@@ -34,6 +34,9 @@ const UserPrizeDetails: FC<IProps> = ({
   code,
   conditions,
   prizeName,
+  hotLinePhone,
+  promotionName,
+  hotLineWorkHours,
 }) => {
   return (
     <Container>
@@ -48,8 +51,7 @@ const UserPrizeDetails: FC<IProps> = ({
             <DescriptionWrap>
               <Subtitle>Акція:</Subtitle>
               <StyledLink to={PagePaths.root}>
-                {/* TODO fix */}
-                <Info>Хапай вигідні пропозиції</Info>
+                <Info>{promotionName}</Info>
                 <NavArrow />
               </StyledLink>
             </DescriptionWrap>
@@ -80,16 +82,13 @@ const UserPrizeDetails: FC<IProps> = ({
           </HowToGetWrap>
           <HotlineInfoWrap>
             <HotlineInfo>
-              {/* TODO fix */}
               Якщо у вас виникли додаткові питання, можете звернутись в Центр
-              Обслуговування Кліентів. Гаряча лінія працює з понеділка по
-              п’ятницю 8:00-22:00
+              Обслуговування Кліентів. Гаряча лінія працює {hotLineWorkHours}
             </HotlineInfo>
             {/* TODO fix */}
             <HotlinePhone href='tel:+'>
               <HiOutlinePhone size={theme.iconSizes.cabinetHotlinePhone} />
-              {/* TODO fix */}
-              <HotlinePhoneNumber>0-800-500-415</HotlinePhoneNumber>
+              <HotlinePhoneNumber>{hotLinePhone}</HotlinePhoneNumber>
             </HotlinePhone>
           </HotlineInfoWrap>
         </AdditionalInfo>

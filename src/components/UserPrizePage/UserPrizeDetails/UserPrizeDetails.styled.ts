@@ -5,9 +5,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
-  background-color: ${({ theme }) => theme.colors.white};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    background-color: ${({ theme }) => theme.colors.white};
     padding: ${({ theme: { spacing } }) =>
       `${spacing(10)} ${spacing(14)} ${spacing(15)}`};
     border-radius: 16px;

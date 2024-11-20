@@ -4,4 +4,8 @@ export interface IProps {
   partnerName: string;
   conditions: string;
   code: string;
+  promotionName: string;
+  expiredDate: string;
+  hotLinePhone: string;
+  hotLineWorkHours: string;
 }

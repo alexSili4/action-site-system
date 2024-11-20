@@ -1,3 +1,5 @@
+import { IPromotion } from './promotion.types';
+
 export interface IImage {
   image: string;
 }
@@ -36,4 +38,7 @@ export interface IPrizeCategoryUserCertificateWithDetails {
   gift: IGift;
   certificate: ICertificate;
   code: ICode;
+  action: IPromotion;
+  expired_date: string;
+  certificate_pdf: string;
 }

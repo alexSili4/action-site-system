@@ -15,18 +15,22 @@ export const Backdrop = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-top: ${({ theme }) => theme.spacing(80)};
-  padding-bottom: ${({ theme }) => theme.spacing(80)};
+  padding-top: ${({ theme }) => theme.spacing(60)};
+  padding-bottom: ${({ theme }) => theme.spacing(60)};
   backdrop-filter: blur(20px);
   background-color: rgba(255, 241, 204, 0.14);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding-top: ${({ theme }) => theme.spacing(50)};
+    padding-bottom: ${({ theme }) => theme.spacing(50)};
+  }
 `;
 
 export const Container = styled.div`
   position: relative;
   width: 343px;
-  padding: ${({ theme: { spacing } }) =>
-    `${spacing(28)} ${spacing(4)} ${spacing(16)}`};
-  box-sizing: border-box;
+  padding-top: ${({ theme }) => theme.spacing(28)};
+  padding-bottom: ${({ theme }) => theme.spacing(16)};
   border-bottom: 3px solid rgba(255, 255, 255, 0.3);
   border-right: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
@@ -36,15 +40,21 @@ export const Container = styled.div`
     rgb(231, 59, 243) -34.635%,
     rgb(162, 130, 247) 98.22%
   );
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 901px;
+    padding-top: ${({ theme }) => theme.spacing(18)};
+    padding-bottom: ${({ theme }) => theme.spacing(37)};
+  }
 `;
 
 export const CloseBtn = styled.button`
   position: absolute;
   top: 16px;
+  right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  right: 16px;
   width: 50px;
   height: 50px;
   padding: 0;
@@ -63,5 +73,10 @@ export const CloseBtn = styled.button`
   &:is(:hover, :focus) {
     box-shadow: 1px 1px 0px 0px #e8c47d,
       inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    top: 24px;
+    right: 24px;
   }
 `;

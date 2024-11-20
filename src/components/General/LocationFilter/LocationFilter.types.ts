@@ -7,19 +7,16 @@ export interface IProps {
 
 export interface IStyledContainerProps {
   isRootPage: boolean;
-  isModalWin: boolean;
   showOtherModalWin: boolean;
 }
 
 export interface IStyledShowLocationsBtnProps {
-  isRootPage: boolean;
   showLocationList: boolean;
-  isModalWin: boolean;
+  isBigSize: boolean;
 }
 
 export interface IStyledLocationListProps {
-  isRootPage: boolean;
-  isModalWin: boolean;
+  isBigSize: boolean;
 }
 
 export interface IStyledShowLocationsBtnTitleProps {

@@ -24,3 +24,4 @@ export { default as useIsScrollingUp } from './useIsScrollingUp';
 export { default as useIsPromotionsPage } from './useIsPromotionsPage';
 export { default as useRegisterOnePromotionCodeLink } from './useRegisterOnePromotionCodeLink';
 export { default as useIsRootPage } from './useIsRootPage';
+export { default as useUserCertificate } from './useUserCertificate';

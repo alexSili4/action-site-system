@@ -34,6 +34,10 @@ const UserCertificateDetails: FC<IProps> = ({
   partnerName,
   conditions,
   code,
+  promotionName,
+  expiredDate,
+  hotLinePhone,
+  hotLineWorkHours,
 }) => {
   return (
     <Container>
@@ -49,14 +53,14 @@ const UserCertificateDetails: FC<IProps> = ({
               <Subtitle>Акція:</Subtitle>
               <StyledLink to={PagePaths.root}>
                 {/* TODO fix */}
-                <Info>Хапай вигідні пропозиції</Info>
+                <Info>{promotionName}</Info>
                 <NavArrow />
               </StyledLink>
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Сертифікат дійсний до:</Subtitle>
-              <Info>28.12.2024</Info>
+              <Info>{expiredDate}</Info>
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
@@ -81,15 +85,14 @@ const UserCertificateDetails: FC<IProps> = ({
           </ConditionsWrap>
           <HotlineInfoWrap>
             <HotlineInfo>
-              Зверніться на Гарячу лінію за телефоном 0-800-500-415 (з понеділка
-              по п’ятницю з 9:00 до 18:00). Дзвінки для абонентів усіх
-              національних GSM операторів – відповідно до тарифних планів
-              відповідних операторів.
+              Зверніться на Гарячу лінію за телефоном {hotLinePhone} (
+              {hotLineWorkHours}). Дзвінки для абонентів усіх національних GSM
+              операторів – відповідно до тарифних планів відповідних операторів.
             </HotlineInfo>
             {/* TODO fix */}
             <HotlinePhone href='tel:+'>
               <HiOutlinePhone size={theme.iconSizes.cabinetHotlinePhone} />
-              <HotlinePhoneNumber>0-800-500-415</HotlinePhoneNumber>
+              <HotlinePhoneNumber>{hotLinePhone}</HotlinePhoneNumber>
             </HotlinePhone>
           </HotlineInfoWrap>
         </AdditionalInfoWrap>

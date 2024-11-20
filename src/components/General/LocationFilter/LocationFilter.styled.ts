@@ -24,8 +24,8 @@ export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${({ isRootPage }) => (isRootPage ? '315px' : '100%')};
-  height: ${({ isRootPage }) => (isRootPage ? 48 : 50)}px;
+  width: ${({ isBigSize }) => (isBigSize ? '315px' : '100%')};
+  height: ${({ isBigSize }) => (isBigSize ? 48 : 50)}px;
   padding: 0;
   padding-left: ${({ theme }) => theme.spacing(6)};
   padding-right: ${({ theme }) => theme.spacing(6)};
@@ -53,12 +53,12 @@ export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: ${({ isRootPage }) => (isRootPage ? '676px' : '100%')};
-    height: ${({ isRootPage }) => (isRootPage ? 76 : 50)}px;
+    width: ${({ isBigSize }) => (isBigSize ? '676px' : '100%')};
+    height: ${({ isBigSize }) => (isBigSize ? 76 : 50)}px;
     padding-left: ${({ theme }) => theme.spacing(10)};
     padding-right: ${({ theme }) => theme.spacing(10)};
-    border-radius: ${({ isRootPage }) => (isRootPage ? 24 : 16)}px;
-    outline: ${({ isRootPage }) => (isRootPage ? 16 : 8)}px solid
+    border-radius: ${({ isBigSize }) => (isBigSize ? 24 : 16)}px;
+    outline: ${({ isBigSize }) => (isBigSize ? 16 : 8)}px solid
       rgba(255, 255, 255, 0.25);
   }
 `;
@@ -79,7 +79,7 @@ export const LocationListContainer = styled.div<IStyledLocationListProps>`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)};
-  width: ${({ isRootPage }) => (isRootPage ? '330px' : '100%')};
+  width: ${({ isBigSize }) => (isBigSize ? '330px' : '100%')};
   height: 272px;
   padding: ${({ theme }) => theme.spacing(4)};
   padding-right: ${({ theme }) => theme.spacing(3)};
@@ -90,8 +90,8 @@ export const LocationListContainer = styled.div<IStyledLocationListProps>`
   overflow-y: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    bottom: ${({ isRootPage }) => (isRootPage ? -28 : -16)}px;
-    width: ${({ isRootPage }) => (isRootPage ? '710px' : '100%')};
+    bottom: ${({ isBigSize }) => (isBigSize ? -28 : -16)}px;
+    width: ${({ isBigSize }) => (isBigSize ? '710px' : '100%')};
     height: 291px;
     padding: ${({ theme }) => theme.spacing(8)};
     border-radius: 24px;

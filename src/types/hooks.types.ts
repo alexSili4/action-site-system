@@ -76,11 +76,18 @@ export interface IUseModalWin {
   hideModalWin: OnDivClickFunc;
 }
 
+export interface IUseLocationFilterProps {
+  makeScroll: boolean;
+  isRootPage: boolean;
+  isModalWin: boolean;
+}
+
 export interface IUseLocationFilter {
   showLocationsBtnTitle: string;
   isSelectedCity: boolean;
   showLocationList: boolean;
   showOtherModalWin: boolean;
+  isBigSize: boolean;
   toggleShowLocationList: Func;
   onShowListBtnClick: OnBtnClickFunc;
   onLocationLinkClick: OnAnchorClickFunc;
@@ -172,4 +179,19 @@ export interface IUseRegisterUserForm {
 export interface IUseIsScrollingUp {
   isScrollingUp: boolean;
   isScrolling: boolean;
+}
+
+export interface IUseUserCertificate {
+  code: string;
+  bannerMobUrl: string;
+  bannerDtUrl: string;
+  certificatePdfUrl: string;
+  getConditions: string;
+  partnerLogoUrl: string;
+  partnerName: string;
+  prizeName: string;
+  expiredFormatDate: string;
+  hotLinePhone: string;
+  hotLineWorkHours: string;
+  promotionName: string;
 }

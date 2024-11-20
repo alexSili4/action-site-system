@@ -1,6 +1,7 @@
 import barcode from '@/images/userCertificate/barcode.png';
 import styled from '@emotion/styled';
 import decorativeElement from '@/images/cabinet/decorative-element.png';
+import { IStyledContentWrapProps } from './UserCertificateBanner.types';
 
 export const Container = styled.div`
   flex-shrink: 0;
@@ -20,16 +21,17 @@ export const Container = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const ContentWrap = styled.div<IStyledContentWrapProps>`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   padding: ${({ theme: { spacing } }) =>
     `${spacing(9)} ${spacing(5)} ${spacing(4)}`};
-  background-color: blue;
-  background-image: url(${decorativeElement});
-  background-position: 0 0;
-  background-size: contain;
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  background-image: url(${decorativeElement}),
+    url(${({ thirdBannerMob }) => thirdBannerMob});
+  background-position: 0 0, center;
+  background-size: contain, cover;
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
@@ -41,6 +43,8 @@ export const Content = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
     padding: ${({ theme }) => theme.spacing(8)};
+    background-image: url(${decorativeElement}),
+      url(${({ thirdBannerDt }) => thirdBannerDt});
   }
 `;
 

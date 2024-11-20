@@ -5,10 +5,17 @@ import { selectGetCities, selectCities } from '@/store/cities/selectors';
 import { SearchParamsKeys, SectionsIds, theme } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
 import { AnchorClickEvent, BtnClickEvent, IOutletContext } from '@/types/types';
-import { IUseLocationFilter } from '@/types/hooks.types';
+import {
+  IUseLocationFilterProps,
+  IUseLocationFilter,
+} from '@/types/hooks.types';
 import { useOutletContext } from 'react-router-dom';
 
-const useLocationFilter = (makeScroll: boolean): IUseLocationFilter => {
+const useLocationFilter = ({
+  makeScroll,
+  isRootPage,
+  isModalWin,
+}: IUseLocationFilterProps): IUseLocationFilter => {
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
   const getCities = useCitiesStore(selectGetCities);
   const cities = useCitiesStore(selectCities);
@@ -21,6 +28,7 @@ const useLocationFilter = (makeScroll: boolean): IUseLocationFilter => {
   });
   const shouldMakeScroll = makeScroll && !showLocationList && !isDesktop;
   const { showOtherModalWin }: IOutletContext = useOutletContext() ?? {};
+  const isBigSize = isRootPage || isModalWin;
 
   useEffect(() => {
     if (!cities.length) {
@@ -57,6 +65,7 @@ const useLocationFilter = (makeScroll: boolean): IUseLocationFilter => {
     onLocationLinkClick,
     toggleShowLocationList,
     showOtherModalWin,
+    isBigSize,
   };
 };
 

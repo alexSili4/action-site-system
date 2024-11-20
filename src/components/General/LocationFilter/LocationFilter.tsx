@@ -27,21 +27,17 @@ const LocationFilter: FC<IProps> = ({
     onLocationLinkClick,
     toggleShowLocationList,
     showOtherModalWin,
-  } = useLocationFilter(makeScroll);
+    isBigSize,
+  } = useLocationFilter({ makeScroll, isRootPage, isModalWin });
 
   return (
     <>
-      <Container
-        isRootPage={isRootPage}
-        isModalWin={isModalWin}
-        showOtherModalWin={showOtherModalWin}
-      >
+      <Container isRootPage={isRootPage} showOtherModalWin={showOtherModalWin}>
         <ShowLocationsBtn
           id={SectionsIds.locationBtn}
           type='button'
           onClick={onShowListBtnClick}
-          isRootPage={isRootPage}
-          isModalWin={isModalWin}
+          isBigSize={isBigSize}
           showLocationList={showLocationList}
         >
           <ShowLocationsBtnTitle isSelectedCity={isSelectedCity}>
@@ -50,10 +46,7 @@ const LocationFilter: FC<IProps> = ({
           <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
         </ShowLocationsBtn>
         <SmoothFadeInDropdownList isVisible={showLocationList}>
-          <LocationListContainer
-            isRootPage={isRootPage}
-            isModalWin={isModalWin}
-          >
+          <LocationListContainer isBigSize={isBigSize}>
             <LocationSearchField />
             <LocationList onLocationLinkClick={onLocationLinkClick} />
           </LocationListContainer>
