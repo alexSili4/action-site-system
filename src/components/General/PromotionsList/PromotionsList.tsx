@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Container,
   LinkTitle,
@@ -10,10 +10,10 @@ import {
 import { usePromotionsStore } from '@/store/store';
 import { selectPromotions } from '@/store/promotions/selectors';
 import { usePromotionCategory } from '@/hooks';
-import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
 import { getPromotionDetailsPath } from '@/utils';
+import { IProps } from './PromotionsList.types';
 
-const PromotionsList: FC = () => {
+const PromotionsList: FC<IProps> = ({ onPromotionLinkClick }) => {
   const promotions = usePromotionsStore(selectPromotions);
   const location = useLocation();
   const promotionCategory = usePromotionCategory();
@@ -31,11 +31,15 @@ const PromotionsList: FC = () => {
 
           return (
             <ListItem key={id}>
-              <LinkWithQuery to={promotionDetailsPath} state={linkState}>
+              <Link
+                to={promotionDetailsPath}
+                onClick={onPromotionLinkClick}
+                state={linkState}
+              >
                 <LinkTitleWrap>
                   <LinkTitle>{name}</LinkTitle>
                 </LinkTitleWrap>
-              </LinkWithQuery>
+              </Link>
             </ListItem>
           );
         })}

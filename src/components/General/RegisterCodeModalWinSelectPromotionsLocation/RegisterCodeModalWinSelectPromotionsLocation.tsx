@@ -7,6 +7,7 @@ import { IProps } from './RegisterCodeModalWinSelectPromotionsLocation.types';
 const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
   setModalWinState,
   showModalWin,
+  toggleShowSelectPromotionsLocationModalWin,
 }) => {
   return (
     <AnimatedRegisterCodeModalWinContainer
@@ -14,7 +15,12 @@ const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
       showModalWin={showModalWin}
     >
       <RegisterCodeModalWinSelectPromotionsFilter>
-        <LocationFilter isModalWin />
+        <LocationFilter
+          toggleShowSelectPromotionsLocationModalWin={
+            toggleShowSelectPromotionsLocationModalWin
+          }
+          isModalWin
+        />
       </RegisterCodeModalWinSelectPromotionsFilter>
     </AnimatedRegisterCodeModalWinContainer>
   );

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { makeBlur } from '@/utils';
-import { BtnClickEvent } from '@/types/types';
+import { AnchorClickEvent, BtnClickEvent, Func } from '@/types/types';
 import { IUsePromotionFilter } from '@/types/hooks.types';
 
-const usePromotionFilter = (): IUsePromotionFilter => {
+const usePromotionFilter = (
+  toggleShowSelectPromotionModalWin: Func
+): IUsePromotionFilter => {
   const [showPromotionsList, setShowPromotionsList] = useState<boolean>(false);
 
   const toggleShowPromotionsList = () => {
@@ -16,10 +18,17 @@ const usePromotionFilter = (): IUsePromotionFilter => {
     toggleShowPromotionsList();
   };
 
+  const onPromotionLinkClick = (e: AnchorClickEvent) => {
+    makeBlur(e.currentTarget);
+
+    toggleShowSelectPromotionModalWin();
+  };
+
   return {
     onShowListBtnClick,
     showPromotionsList,
     toggleShowPromotionsList,
+    onPromotionLinkClick,
   };
 };
 

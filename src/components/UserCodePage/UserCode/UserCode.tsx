@@ -6,7 +6,8 @@ import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatistic
 const UserCode: FC = () => {
   return (
     <UserStatisticsDetailsContainer>
-      <UserReceiptDetails />
+      {/* TODO fix */}
+      <UserReceiptDetails isVerifiedCode={false} />
       <UserCodeDetails />
     </UserStatisticsDetailsContainer>
   );

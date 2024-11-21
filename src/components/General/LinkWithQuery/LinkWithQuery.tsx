@@ -3,8 +3,9 @@ import { IProps } from './LinkWithQuery.types';
 import { smoothScroll } from '@/utils';
 import { Symbols } from '@/constants';
 import { AnchorClickEvent } from '@/types/types';
+import { FC } from 'react';
 
-const LinkWithQuery = ({ children, to, state }: IProps) => {
+const LinkWithQuery: FC<IProps> = ({ children, to, state }) => {
   const { search } = useLocation();
   const [toPath = '', hash = ''] = to.split(Symbols.hash);
 

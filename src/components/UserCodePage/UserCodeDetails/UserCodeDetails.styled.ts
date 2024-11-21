@@ -262,7 +262,7 @@ export const CertificateWrap = styled.div`
   }
 `;
 
-export const CertificateLink = styled(Link)`
+export const DownloadCertificateLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,7 +335,7 @@ export const PrizesInfoText = styled.p<IStyledPrizesInfoTextProps>`
   }
 `;
 
-export const CertificateNumberWrap = styled.div`
+export const CertificateLink = styled(Link)`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing()};
@@ -368,7 +368,7 @@ export const PrizesInfoTextWrap = styled.div`
   }
 `;
 
-export const CertificateNumber = styled.p`
+export const PrizeLinkTitle = styled.span`
   color: #a282f7;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16px;
@@ -378,4 +378,10 @@ export const CertificateNumber = styled.p`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     font-size: 18px;
   }
+`;
+
+export const PrizeLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(2)};
 `;

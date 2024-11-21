@@ -18,6 +18,7 @@ const LocationFilter: FC<IProps> = ({
   isRootPage = false,
   makeScroll = false,
   isModalWin = false,
+  toggleShowSelectPromotionsLocationModalWin,
 }) => {
   const {
     onShowListBtnClick,
@@ -28,7 +29,12 @@ const LocationFilter: FC<IProps> = ({
     toggleShowLocationList,
     showOtherModalWin,
     isBigSize,
-  } = useLocationFilter({ makeScroll, isRootPage, isModalWin });
+  } = useLocationFilter({
+    makeScroll,
+    isRootPage,
+    isModalWin,
+    toggleShowSelectPromotionsLocationModalWin,
+  });
 
   return (
     <>

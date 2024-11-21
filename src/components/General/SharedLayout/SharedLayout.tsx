@@ -24,24 +24,24 @@ const SharedLayout: FC = () => {
     showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
   const outletContext: IOutletContext = { showOtherModalWin };
 
-  const setSelectPromotionsLocationModalWinState = () => {
+  const toggleShowSelectPromotionsLocationModalWin = () => {
     setShowSelectPromotionsLocationModalWin((prevState) => !prevState);
   };
 
-  const setSelectPromotionModalWinState = () => {
+  const toggleShowSelectPromotionModalWin = () => {
     setShowSelectPromotionModalWin((prevState) => !prevState);
   };
 
   const onRegisterCodeBtnClickOnAllPages = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    setSelectPromotionsLocationModalWinState();
+    toggleShowSelectPromotionsLocationModalWin();
   };
 
   const onRegisterCodeBtnClickOnPromotionPage = (e: BtnClickEvent) => {
     makeBlur(e.currentTarget);
 
-    setSelectPromotionModalWinState();
+    toggleShowSelectPromotionModalWin();
   };
 
   return (
@@ -64,11 +64,15 @@ const SharedLayout: FC = () => {
       </Content>
       <RegisterCodeModalWinSelectPromotionsLocation
         showModalWin={showSelectPromotionsLocationModalWin}
-        setModalWinState={setSelectPromotionsLocationModalWinState}
+        setModalWinState={toggleShowSelectPromotionsLocationModalWin}
+        toggleShowSelectPromotionsLocationModalWin={
+          toggleShowSelectPromotionsLocationModalWin
+        }
       />
       <RegisterCodeModalWinSelectPromotion
         showModalWin={showSelectPromotionModalWin}
-        setModalWinState={setSelectPromotionModalWinState}
+        setModalWinState={toggleShowSelectPromotionModalWin}
+        toggleShowSelectPromotionModalWin={toggleShowSelectPromotionModalWin}
       />
     </>
   );

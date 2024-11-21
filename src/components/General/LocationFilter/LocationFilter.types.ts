@@ -1,8 +1,10 @@
+import { Func } from '@/types/types';
+
 export interface IProps {
   isRootPage?: boolean;
   makeScroll?: boolean;
   isModalWin?: boolean;
-  showOtherModalWin?: boolean;
+  toggleShowSelectPromotionsLocationModalWin?: Func;
 }
 
 export interface IStyledContainerProps {

@@ -15,6 +15,7 @@ const useLocationFilter = ({
   makeScroll,
   isRootPage,
   isModalWin,
+  toggleShowSelectPromotionsLocationModalWin,
 }: IUseLocationFilterProps): IUseLocationFilter => {
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
   const getCities = useCitiesStore(selectGetCities);
@@ -55,6 +56,10 @@ const useLocationFilter = ({
     makeBlur(e.currentTarget);
 
     toggleShowLocationList();
+
+    if (toggleShowSelectPromotionsLocationModalWin) {
+      toggleShowSelectPromotionsLocationModalWin();
+    }
   };
 
   return {

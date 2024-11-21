@@ -80,6 +80,7 @@ export interface IUseLocationFilterProps {
   makeScroll: boolean;
   isRootPage: boolean;
   isModalWin: boolean;
+  toggleShowSelectPromotionsLocationModalWin?: Func;
 }
 
 export interface IUseLocationFilter {
@@ -200,4 +201,5 @@ export interface IUsePromotionFilter {
   onShowListBtnClick: OnBtnClickFunc;
   showPromotionsList: boolean;
   toggleShowPromotionsList: Func;
+  onPromotionLinkClick: OnAnchorClickFunc;
 }

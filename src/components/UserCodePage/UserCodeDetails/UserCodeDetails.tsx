@@ -10,9 +10,9 @@ import {
   Certificate,
   PrizesInfoText,
   CertificateInfo,
+  DownloadCertificateLink,
+  PrizeLinkTitle,
   CertificateLink,
-  CertificateNumber,
-  CertificateNumberWrap,
   PrizesInfoTitle,
   CertificateWrap,
   CodeDetailsItem,
@@ -39,9 +39,11 @@ import {
   PrizeDrawingDateText,
   PrizesInfoTextWrap,
   TargetShopAddressIconWrap,
+  PrizeLink,
 } from './UserCodeDetails.styled';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { Link } from 'react-router-dom';
 
 const UserCodeDetails: FC = () => {
   return (
@@ -120,17 +122,17 @@ const UserCodeDetails: FC = () => {
         <UserCodeInfoDelimiter></UserCodeInfoDelimiter>
         <PrizesInfo>
           <CertificateWrap>
-            <CertificateLink to={PagePaths.userCertificate}>
+            <DownloadCertificateLink href={PagePaths.root} download>
               Сертифікат
-            </CertificateLink>
+            </DownloadCertificateLink>
             <CertificateInfo>
               <PrizesInfoTitle>Виграний сертифікат:</PrizesInfoTitle>
               <Certificate>
                 <PrizesInfoText>18.07.2024</PrizesInfoText>
-                <CertificateNumberWrap>
+                <CertificateLink to={PagePaths.root}>
                   <CouponIcon />
-                  <CertificateNumber>dELIVERY347FREE</CertificateNumber>
-                </CertificateNumberWrap>
+                  <PrizeLinkTitle>dELIVERY347FREE</PrizeLinkTitle>
+                </CertificateLink>
               </Certificate>
             </CertificateInfo>
           </CertificateWrap>
@@ -138,11 +140,18 @@ const UserCodeDetails: FC = () => {
           <PrizeWrap>
             <PrizesInfoTitle>Виграний приз:</PrizesInfoTitle>
             <PrizesInfoText isHiddenOnDesk>
-              18.07.2024 Кухонна машина TEFAL QB813D38
+              18.07.2024{' '}
+              <Link to={PagePaths.root}>
+                <PrizeLinkTitle>Кухонна машина TEFAL QB813D38</PrizeLinkTitle>{' '}
+                <NavArrow />
+              </Link>
             </PrizesInfoText>
             <PrizesInfoTextWrap>
               <PrizesInfoText>18.07.2024</PrizesInfoText>
-              <PrizesInfoText>Кухонна машина TEFAL QB813D38</PrizesInfoText>
+              <PrizeLink to={PagePaths.root}>
+                <PrizeLinkTitle>Кухонна машина TEFAL QB813D38</PrizeLinkTitle>
+                <NavArrow />
+              </PrizeLink>
             </PrizesInfoTextWrap>
           </PrizeWrap>
         </PrizesInfo>

@@ -13,8 +13,19 @@ import {
   ReceiptTitle,
   ReceiptInfo,
 } from './UserReceiptDetails.styled';
+import { generalSettings } from '@/constants';
+import { IProps } from './UserReceiptDetails.types';
 
-const UserReceiptDetails: FC = () => {
+const UserReceiptDetails: FC<IProps> = ({ isVerifiedCode }) => {
+  // TODO fix
+  const receiptNumber = isVerifiedCode
+    ? 1346517
+    : generalSettings.defaultReceiptText;
+  const shopNumber = isVerifiedCode
+    ? '№234'
+    : generalSettings.defaultReceiptText;
+  const total = isVerifiedCode ? '500₴' : generalSettings.defaultReceiptText;
+
   return (
     <Container>
       <CabinetGoBackLink isShowOnDesk />
@@ -25,16 +36,16 @@ const UserReceiptDetails: FC = () => {
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
             <ReceiptDetailsItem>
               <ReceiptDetailsText>№ чеку</ReceiptDetailsText>
-              <ReceiptDetailsText>1346517</ReceiptDetailsText>
+              <ReceiptDetailsText>{receiptNumber}</ReceiptDetailsText>
             </ReceiptDetailsItem>
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
             <ReceiptDetailsItem>
               <ReceiptDetailsText>Магазин</ReceiptDetailsText>
-              <ReceiptDetailsText>№234</ReceiptDetailsText>
+              <ReceiptDetailsText>{shopNumber}</ReceiptDetailsText>
             </ReceiptDetailsItem>
             <ReceiptDetailsItem>
               <ReceiptDetailsText>Cума</ReceiptDetailsText>
-              <ReceiptDetailsText>500₴</ReceiptDetailsText>
+              <ReceiptDetailsText>{total}</ReceiptDetailsText>
             </ReceiptDetailsItem>
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
           </ReceiptDetailsWrap>

@@ -11,10 +11,15 @@ import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList'
 import PromotionsList from '@GeneralComponents/PromotionsList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
 import { usePromotionFilter } from '@/hooks';
+import { IProps } from './PromotionFilter.types';
 
-const PromotionFilter: FC = () => {
-  const { onShowListBtnClick, showPromotionsList, toggleShowPromotionsList } =
-    usePromotionFilter();
+const PromotionFilter: FC<IProps> = ({ toggleShowSelectPromotionModalWin }) => {
+  const {
+    onShowListBtnClick,
+    showPromotionsList,
+    toggleShowPromotionsList,
+    onPromotionLinkClick,
+  } = usePromotionFilter(toggleShowSelectPromotionModalWin);
 
   return (
     <>
@@ -32,7 +37,7 @@ const PromotionFilter: FC = () => {
         </ShowPromotionsBtn>
         <SmoothFadeInDropdownList isVisible={showPromotionsList}>
           <PromotionsListContainer>
-            <PromotionsList />
+            <PromotionsList onPromotionLinkClick={onPromotionLinkClick} />
           </PromotionsListContainer>
         </SmoothFadeInDropdownList>
       </Container>

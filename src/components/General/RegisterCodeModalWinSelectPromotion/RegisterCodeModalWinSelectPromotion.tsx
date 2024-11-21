@@ -7,6 +7,7 @@ import PromotionFilter from '@GeneralComponents/PromotionFilter';
 const RegisterCodeModalWinSelectPromotion: FC<IProps> = ({
   setModalWinState,
   showModalWin,
+  toggleShowSelectPromotionModalWin,
 }) => {
   return (
     <AnimatedRegisterCodeModalWinContainer
@@ -14,7 +15,9 @@ const RegisterCodeModalWinSelectPromotion: FC<IProps> = ({
       showModalWin={showModalWin}
     >
       <RegisterCodeModalWinSelectPromotionsFilter>
-        <PromotionFilter />
+        <PromotionFilter
+          toggleShowSelectPromotionModalWin={toggleShowSelectPromotionModalWin}
+        />
       </RegisterCodeModalWinSelectPromotionsFilter>
     </AnimatedRegisterCodeModalWinContainer>
   );
