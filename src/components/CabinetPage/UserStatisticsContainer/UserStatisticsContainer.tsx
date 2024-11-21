@@ -10,8 +10,13 @@ import {
 } from '@/constants';
 import { makeBlur } from '@/utils';
 import StatisticsContent from '@CabinetPageComponents/StatisticsContent';
+import { useUserCodesStore, useUserPrizesStore } from '@/store/store';
+import { selectIsLoaded as selectUserCodesIsLoaded } from '@/store/userCodes/selectors';
+import { selectIsLoaded as selectUserPrizesIsLoaded } from '@/store/userPrizes/selectors';
 
 const UserStatisticsContainer: FC = () => {
+  const userCodesIsLoaded = useUserCodesStore(selectUserCodesIsLoaded);
+  const userPrizesIsLoaded = useUserPrizesStore(selectUserPrizesIsLoaded);
   const [showSortTypesList, setShowSortTypesList] = useState<boolean>(false);
   const { searchParams, updateSearchParams } = useSetSearchParams();
   const statisticCategory =
@@ -23,6 +28,9 @@ const UserStatisticsContainer: FC = () => {
   const isCodesCategory = statisticCategory === StatisticsCategoriesKeys.codes;
   const isPrizesCategory =
     statisticCategory === StatisticsCategoriesKeys.prizes;
+  const shouldShowStatisticsContent =
+    (isCodesCategory && userCodesIsLoaded) ||
+    (isPrizesCategory && userPrizesIsLoaded);
 
   const categories = Object.values(StatisticsCategoriesKeys);
 
@@ -74,10 +82,12 @@ const UserStatisticsContainer: FC = () => {
         toggleShowSortTypesList={toggleShowSortTypesList}
         sortType={sortType}
       />
-      <StatisticsContent
-        isCodesCategory={isCodesCategory}
-        isPrizesCategory={isPrizesCategory}
-      />
+      {shouldShowStatisticsContent && (
+        <StatisticsContent
+          isCodesCategory={isCodesCategory}
+          isPrizesCategory={isPrizesCategory}
+        />
+      )}
     </Container>
   );
 };
