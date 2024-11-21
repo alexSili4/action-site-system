@@ -12,7 +12,8 @@ import {
   selectTotalPages,
   selectUserPrizes,
 } from '@/store/userPrizes/selectors';
-import { DateFormats, PagePaths } from '@/constants';
+import { DateFormats, Messages, PagePaths } from '@/constants';
+import EmptyListMessage from '@CabinetPageComponents/EmptyListMessage';
 
 const StatisticsPrizesCategoryContent: FC = () => {
   const userPrizes = useUserPrizesStore(selectUserPrizes);
@@ -20,51 +21,56 @@ const StatisticsPrizesCategoryContent: FC = () => {
   const isManyPages = totalPages > 1;
   const isPrizesLength = Boolean(userPrizes.length);
   const shouldShowPaginationBar = isPrizesLength && isManyPages;
+  const shouldShowUserPrizes = Boolean(userPrizes.length);
 
   return (
     <Container>
-      <List>
-        {userPrizes.map(
-          (
-            {
-              code,
-              gift_name: giftName,
-              gift_images: giftImages,
-              gift_get_conditions: giftGetConditions,
-              win_time: winTime,
-              winner_id: winnerId,
-              entity_type: entityType,
-            },
-            index
-          ) => {
-            const prizeImgUrl = getFileUrl(giftImages[0]);
-            const drawDate = formatDate({
-              date: winTime * 1000,
-              dateFormat: DateFormats.generalDate,
-            });
-            const userPrizePath = `${PagePaths.userPrize}/${winnerId}`;
-            const userCertificatePath = `${PagePaths.userCertificate}/${winnerId}`;
+      {shouldShowUserPrizes ? (
+        <List>
+          {userPrizes.map(
+            (
+              {
+                code,
+                gift_name: giftName,
+                gift_images: giftImages,
+                gift_get_conditions: giftGetConditions,
+                win_time: winTime,
+                winner_id: winnerId,
+                entity_type: entityType,
+              },
+              index
+            ) => {
+              const prizeImgUrl = getFileUrl(giftImages[0]);
+              const drawDate = formatDate({
+                date: winTime * 1000,
+                dateFormat: DateFormats.generalDate,
+              });
+              const userPrizePath = `${PagePaths.userPrize}/${winnerId}`;
+              const userCertificatePath = `${PagePaths.userCertificate}/${winnerId}`;
 
-            const isCertificate = entityType === 'wheel';
-            const linkPath = isCertificate
-              ? userCertificatePath
-              : userPrizePath;
+              const isCertificate = entityType === 'wheel';
+              const linkPath = isCertificate
+                ? userCertificatePath
+                : userPrizePath;
 
-            return (
-              <ListItem key={index}>
-                <StatisticsPrize
-                  code={code}
-                  name={giftName}
-                  prizeImg={prizeImgUrl}
-                  conditions={giftGetConditions}
-                  drawDate={drawDate}
-                  linkPath={linkPath}
-                />
-              </ListItem>
-            );
-          }
-        )}
-      </List>
+              return (
+                <ListItem key={index}>
+                  <StatisticsPrize
+                    code={code}
+                    name={giftName}
+                    prizeImg={prizeImgUrl}
+                    conditions={giftGetConditions}
+                    drawDate={drawDate}
+                    linkPath={linkPath}
+                  />
+                </ListItem>
+              );
+            }
+          )}
+        </List>
+      ) : (
+        <EmptyListMessage message={Messages.emptyUserPrizesList} />
+      )}
       {shouldShowPaginationBar && <PaginationBar totalPages={totalPages} />}
     </Container>
   );

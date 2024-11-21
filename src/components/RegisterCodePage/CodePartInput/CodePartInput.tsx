@@ -7,6 +7,7 @@ const CodePartInput: FC<IProps> = ({
   defaultValue = '',
   maxLength,
   onChange,
+  placeholder,
 }) => {
   return (
     <StyledInput
@@ -15,6 +16,7 @@ const CodePartInput: FC<IProps> = ({
       maxLength={maxLength}
       {...settings}
       onChange={onChange}
+      placeholder={placeholder}
     />
   );
 };

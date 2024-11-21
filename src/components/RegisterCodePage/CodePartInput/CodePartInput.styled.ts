@@ -15,4 +15,8 @@ export const StyledInput = styled.input`
   &:is(:hover, :focus) {
     outline: none;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 134px;
+  }
 `;

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Input } from './LocationSearchField.styled';
 import { InputChangeEvent } from '@/types/types';
 import { useSetSearchParams } from '@/hooks';
-import { SearchParamsKeys } from '@/constants';
+import { InputPlaceholders, SearchParamsKeys } from '@/constants';
 
 const LocationSearchField: FC = () => {
   const { updateSearchParams, searchParams } = useSetSearchParams();
@@ -17,7 +17,7 @@ const LocationSearchField: FC = () => {
   return (
     <Input
       type='text'
-      placeholder='Пошук'
+      placeholder={InputPlaceholders.search}
       name={SearchParamsKeys.search}
       onChange={onInputChange}
       defaultValue={search}

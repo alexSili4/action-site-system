@@ -22,3 +22,4 @@ export { default as translatedStatisticsSortTypesKeys } from './translatedStatis
 export { default as DisplayProp } from './displayProp';
 export { default as Headers } from './headers';
 export { default as SectionsIds } from './sectionsIds';
+export { default as InputPlaceholders } from './inputPlaceholders';

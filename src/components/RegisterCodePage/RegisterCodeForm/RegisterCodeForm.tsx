@@ -18,6 +18,7 @@ import CodePartInput from '@RegisterCodePageComponents/CodePartInput';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import { useRegisterCodeForm } from '@/hooks';
 import RegisterFormCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
+import { InputPlaceholders } from '@/constants';
 
 const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
   const {
@@ -44,6 +45,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
             <CodePartInput
               onChange={onRegCodeInput}
               maxLength={inputMaxLength}
+              placeholder={InputPlaceholders.regCode}
               settings={{
                 ...register('codePart1', {
                   required: true,
@@ -57,6 +59,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
             <CodePartInput
               onChange={onRegCodeInput}
               maxLength={inputMaxLength}
+              placeholder={InputPlaceholders.regCode}
               settings={{
                 ...register('codePart2', {
                   required: true,
@@ -70,6 +73,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
             <CodePartInput
               onChange={onRegCodeInput}
               maxLength={inputMaxLength}
+              placeholder={InputPlaceholders.regCode}
               settings={{
                 ...register('codePart3', {
                   required: true,

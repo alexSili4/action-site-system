@@ -14,6 +14,7 @@ import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterFormCheckb
 import { useRegisterUserForm } from '@/hooks';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import { IProps } from './RegisterUserForm.types';
+import { InputPlaceholders } from '@/constants';
 
 const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
   const { handleFormSubmit, register, handleSubmit, disabledBtn } =
@@ -31,7 +32,7 @@ const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
             {...register('name', {
               required: true,
             })}
-            placeholder='Вкажіть своє ім’я'
+            placeholder={InputPlaceholders.enterName}
           />
         </InputWrap>
         <CertificateInfoWrap>
