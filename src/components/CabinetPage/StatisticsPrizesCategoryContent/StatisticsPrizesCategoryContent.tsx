@@ -13,7 +13,8 @@ import {
   selectUserPrizes,
 } from '@/store/userPrizes/selectors';
 import { DateFormats, Messages, PagePaths } from '@/constants';
-import EmptyListMessage from '@CabinetPageComponents/EmptyListMessage';
+import EmptyPrizesListMessage from '@CabinetPageComponents/EmptyPrizesListMessage';
+import prize from '@/images/cabinet/prize.png';
 
 const StatisticsPrizesCategoryContent: FC = () => {
   const userPrizes = useUserPrizesStore(selectUserPrizes);
@@ -69,7 +70,11 @@ const StatisticsPrizesCategoryContent: FC = () => {
           )}
         </List>
       ) : (
-        <EmptyListMessage message={Messages.emptyUserPrizesList} />
+        <EmptyPrizesListMessage
+          bgImg={prize}
+          title={Messages.emptyUserPrizesList}
+          isBigImgSize
+        />
       )}
       {shouldShowPaginationBar && <PaginationBar totalPages={totalPages} />}
     </Container>

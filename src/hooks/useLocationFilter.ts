@@ -4,7 +4,11 @@ import { useCitiesStore } from '@/store/store';
 import { selectGetCities, selectCities } from '@/store/cities/selectors';
 import { SearchParamsKeys, SectionsIds, theme } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
-import { AnchorClickEvent, BtnClickEvent, IOutletContext } from '@/types/types';
+import {
+  AnchorClickEvent,
+  BtnClickEvent,
+  IGeneralOutletContext,
+} from '@/types/types';
 import {
   IUseLocationFilterProps,
   IUseLocationFilter,
@@ -28,7 +32,7 @@ const useLocationFilter = ({
     cityId: Number(cityId),
   });
   const shouldMakeScroll = makeScroll && !showLocationList && !isDesktop;
-  const { showOtherModalWin }: IOutletContext = useOutletContext() ?? {};
+  const { showOtherModalWin }: IGeneralOutletContext = useOutletContext() ?? {};
   const isBigSize = isRootPage || isModalWin;
 
   useEffect(() => {

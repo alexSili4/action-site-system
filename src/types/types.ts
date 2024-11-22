@@ -99,6 +99,14 @@ export interface IGetRegisterCodeLinkProps {
   cityId: string;
 }
 
-export interface IOutletContext {
+export interface IGeneralOutletContext {
   showOtherModalWin: boolean;
 }
+
+export interface ICabinetPageOutletContext {
+  onEmptyPrizesListBtnClick: OnBtnClickFunc;
+}
+
+export interface IOutletContext
+  extends IGeneralOutletContext,
+    ICabinetPageOutletContext {}

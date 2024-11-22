@@ -5,10 +5,10 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(7)};
-  height: 100%;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(8)};
+    height: 100%;
   }
 `;
 

@@ -22,7 +22,6 @@ const SharedLayout: FC = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
   const showOtherModalWin =
     showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
-  const outletContext: IOutletContext = { showOtherModalWin };
 
   const toggleShowSelectPromotionsLocationModalWin = () => {
     setShowSelectPromotionsLocationModalWin((prevState) => !prevState);
@@ -42,6 +41,11 @@ const SharedLayout: FC = () => {
     makeBlur(e.currentTarget);
 
     toggleShowSelectPromotionModalWin();
+  };
+
+  const outletContext: IOutletContext = {
+    showOtherModalWin,
+    onEmptyPrizesListBtnClick: onRegisterCodeBtnClickOnAllPages,
   };
 
   return (
