@@ -39,6 +39,6 @@ export const PrizeImg = styled.img`
   max-width: 240px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    max-width: 280px;
+    width: 400px;
   }
 `;
