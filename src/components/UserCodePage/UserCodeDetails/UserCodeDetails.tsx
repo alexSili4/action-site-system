@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import UserCodeStatus from '@UserCodePageComponents/UserCodeStatus';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import { HiLocationMarker } from 'react-icons/hi';
 import { PagePaths, theme } from '@/constants';
@@ -41,9 +40,11 @@ import {
   TargetShopAddressIconWrap,
   PrizeLink,
 } from './UserCodeDetails.styled';
-import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
-import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import { Link } from 'react-router-dom';
+// components
+import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
+import UserCodeStatus from '@UserCodePageComponents/UserCodeStatus';
+import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserCodeDetails: FC = () => {
   return (

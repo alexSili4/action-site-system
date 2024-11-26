@@ -14,7 +14,7 @@ export const Background = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     background-size: cover;
     background-position: center;
   }
@@ -30,7 +30,7 @@ export const LeftConfetti = styled.img`
   height: 319px;
   animation: ${animations.moveDownUp} 3s linear infinite;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: -234px;
     right: auto;
     left: -43px;
@@ -47,7 +47,7 @@ export const RightBox = styled.img`
   height: 260px;
   animation: ${animations.moveUpDown} 3s linear infinite;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: auto;
     bottom: 143px;
     right: -185px;
@@ -64,7 +64,7 @@ export const RightConfetti = styled.img`
   height: 311px;
   animation: ${animations.moveDownUp} 3s linear infinite;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     right: 147px;
     bottom: -142px;
     width: 566px;
@@ -80,7 +80,7 @@ export const LeftBox = styled.img`
   height: 221px;
   animation: ${animations.moveUpDown} 3s linear infinite;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     left: -150px;
     bottom: 51px;
     width: 423px;

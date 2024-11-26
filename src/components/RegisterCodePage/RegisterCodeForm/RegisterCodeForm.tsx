@@ -14,11 +14,12 @@ import {
   AcceptedTermsWrap,
   CodeInputWrap,
 } from './RegisterCodeForm.styled';
+import { useRegisterCodeForm } from '@/hooks';
+import { InputPlaceholders } from '@/constants';
+// components
 import CodePartInput from '@RegisterCodePageComponents/CodePartInput';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
-import { useRegisterCodeForm } from '@/hooks';
 import RegisterFormCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
-import { InputPlaceholders } from '@/constants';
 
 const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep }) => {
   const {

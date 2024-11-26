@@ -39,12 +39,18 @@ export const AnswerWrap = styled.div<IStyledProps>`
   overflow-y: hidden;
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc.other};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     width: 259px;
+  }
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.tablet}px) and (max-width: ${({ theme }) =>
+      theme.breakpoints.desktop - 1}px) {
+    padding-right: ${({ theme }) => theme.spacing(20)};
   }
 `;
 
-export const Answer = styled.div`
+export const Answer = styled.p`
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 18px;

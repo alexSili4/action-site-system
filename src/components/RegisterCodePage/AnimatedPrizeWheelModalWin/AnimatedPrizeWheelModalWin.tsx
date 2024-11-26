@@ -20,8 +20,9 @@ import {
 import { IProps } from './AnimatedPrizeWheelModalWin.types';
 import prizeImg from '@/images/code/prize.png';
 import fireworksImg from '@/images/code/fireworks.png';
-import ConfettiAnimation from '@GeneralComponents/ConfettiAnimation';
 import fanfare from '@/audio/fanfare.mp3';
+// components
+import ConfettiAnimation from '@GeneralComponents/ConfettiAnimation';
 
 const AnimatedPrizeWheelModalWin: FC<IProps> = ({
   moveToNextStep,

@@ -32,7 +32,7 @@ export const StyledBtn = styled.button`
       1px 1px 0px 0px #7a4ebd;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: ${({ theme }) => theme.spacing(6)};
   }
 `;

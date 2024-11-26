@@ -3,9 +3,10 @@ import AtbLogo from '@/icons/atb-logo.svg?react';
 import { IProps } from './NavBar.types';
 import { PagePaths } from '@/constants';
 import { LogoLinkTitle, Nav, StyledLink } from './NavBar.styled';
+import { useIsRootPage, useIsScrollingUp } from '@/hooks';
+// components
 import NavBarControls from '@GeneralComponents/NavBarControls';
 import LocationFilter from '@GeneralComponents/LocationFilter';
-import { useIsRootPage, useIsScrollingUp } from '@/hooks';
 
 const NavBar: FC<IProps> = ({
   isDesktop,

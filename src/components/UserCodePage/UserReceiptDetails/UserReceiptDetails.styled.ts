@@ -9,13 +9,17 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     padding: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 300px;
+    border-radius: 16px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 447px;
-    border-radius: 16px;
   }
 `;
 
@@ -32,11 +36,11 @@ export const Content = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     border-radius: 12px;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     justify-content: space-between;
     gap: ${({ theme }) => theme.spacing(30)};
     padding: ${({ theme: { spacing } }) =>
@@ -91,7 +95,7 @@ export const CodeWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing(3)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(2)};
     padding: ${({ theme }) => theme.spacing(5)};
   }

@@ -27,7 +27,7 @@ export const Table = styled.table`
   flex-grow: 1;
   border-collapse: collapse;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 100%;
   }
 `;
@@ -50,7 +50,7 @@ export const Header = styled.th`
     padding-left: ${({ theme }) => theme.spacing(4)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     color: #383e45;
     padding-bottom: ${({ theme }) => theme.spacing(5)};
 
@@ -66,7 +66,7 @@ export const Body = styled.tbody`
     padding-bottom: ${({ theme }) => theme.spacing(2)};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     & > tr:last-of-type > td {
       padding-bottom: ${({ theme }) => theme.spacing(8)};
     }
@@ -85,7 +85,7 @@ export const Data = styled.td`
     padding-left: ${({ theme }) => theme.spacing(4)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     &:last-of-type {
       color: #7e8494;
       text-align: right;

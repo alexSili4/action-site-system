@@ -20,7 +20,7 @@ export const StyledMapContainer = styled(MapContainer)`
     transform: scale(1.3);
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 513px;
   }
 `;

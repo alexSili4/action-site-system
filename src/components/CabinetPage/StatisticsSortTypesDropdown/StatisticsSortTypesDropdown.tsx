@@ -7,11 +7,12 @@ import {
 } from './StatisticsSortTypesDropdown.styled';
 import { FaChevronDown } from 'react-icons/fa';
 import { IProps } from './StatisticsSortTypesDropdown.types';
+import { getTranslatedStatisticsSortType } from '@/utils';
+import { StatisticsSortTypesKeys, theme } from '@/constants';
+// components
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
 import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
-import { StatisticsSortTypesKeys, theme } from '@/constants';
 import StatisticsSortTypesList from '@CabinetPageComponents/StatisticsSortTypesList';
-import { getTranslatedStatisticsSortType } from '@/utils';
 
 const StatisticsSortTypesDropdown: FC<IProps> = ({
   onSortTypeInputChange,

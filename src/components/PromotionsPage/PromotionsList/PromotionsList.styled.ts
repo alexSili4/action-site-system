@@ -7,6 +7,11 @@ export const Container = styled.div`
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    margin-top: ${({ theme }) => theme.spacing(4)};
+    padding: ${({ theme }) => theme.spacing(4)};
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     margin-top: ${({ theme }) => theme.spacing(8)};
     padding: ${({ theme }) => theme.spacing(8)};
@@ -18,7 +23,7 @@ export const List = styled.ul`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(8)};
   }
 `;
@@ -37,9 +42,14 @@ export const Card = styled.div<IStyledProps>`
   border-radius: 8px;
   padding: ${({ theme }) => `${theme.spacing(8)} ${theme.spacing(6)}`};
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    height: 385px;
+    padding: ${({ theme }) => theme.spacing(5)};
+    background-image: url(${({ mainBannerDt }) => mainBannerDt});
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     height: 485px;
     padding: ${({ theme }) => theme.spacing(14)};
-    background-image: url(${({ mainBannerDt }) => mainBannerDt});
   }
 `;

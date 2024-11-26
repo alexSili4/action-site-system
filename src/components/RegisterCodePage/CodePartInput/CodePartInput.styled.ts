@@ -16,6 +16,10 @@ export const StyledInput = styled.input`
     outline: none;
   }
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 100px;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 134px;
   }

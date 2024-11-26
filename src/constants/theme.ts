@@ -52,10 +52,12 @@ interface ITheme {
   };
   containerWidth: {
     desktop: number;
+    tablet: number;
     mobile: number;
     largeMobile: number;
   };
   breakpoints: {
+    tablet: 810;
     desktop: number;
   };
   zIndex: {
@@ -78,6 +80,7 @@ interface ITheme {
     animatedPrizeImg: number;
     header: number;
     selectPromotionDropdown: number;
+    confettiAnimation: number;
   };
   transitionDurationAndFunc: {
     header: string;
@@ -141,10 +144,12 @@ const theme: ITheme = {
   },
   containerWidth: {
     desktop: 1376,
+    tablet: 730,
     mobile: 343,
     largeMobile: 359,
   },
   breakpoints: {
+    tablet: 810,
     desktop: 1410,
   },
   // shadows: {  },
@@ -168,6 +173,7 @@ const theme: ITheme = {
     animatedModalWin: 100000,
     animatedPrizeWheelModalWin: 100000,
     animatedPrizeImg: 100000,
+    confettiAnimation: 10000000000000000000000,
   },
   transitionDurationAndFunc: {
     header: '600ms cubic-bezier(0.4, 0, 0.2, 1)',

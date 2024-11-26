@@ -10,6 +10,10 @@ export const Nav = styled.nav<IStyledNavProps>`
   row-gap: ${({ theme }) => theme.spacing(6)};
   flex-wrap: wrap;
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    gap: ${({ theme }) => theme.spacing(5)};
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(13)};
   }
@@ -29,10 +33,14 @@ export const StyledLink = styled(Link)<IStyledLinkProps>`
     width: ${({ isRootPage }) => (isRootPage ? 90 : 66)}px;
     height: ${({ isRootPage }) => (isRootPage ? 32 : 24)}px;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
       width: 90px;
       height: 32px;
     }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    gap: ${({ theme, isRootPage }) => theme.spacing(isRootPage ? 4 : 2)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

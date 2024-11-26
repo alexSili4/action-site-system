@@ -24,9 +24,10 @@ import {
 } from './UserCertificateDetails.styled';
 import { HiOutlinePhone } from 'react-icons/hi';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
+import { IProps } from './UserCertificateDetails.types';
+// components
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
-import { IProps } from './UserCertificateDetails.types';
 
 const UserCertificateDetails: FC<IProps> = ({
   prizeName,

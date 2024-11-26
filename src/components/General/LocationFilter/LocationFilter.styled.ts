@@ -14,7 +14,7 @@ export const Container = styled.div<IStyledContainerProps>`
   width: 100%;
   order: 4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: auto;
     order: ${({ isRootPage }) => (isRootPage ? 1 : 2)};
   }
@@ -52,7 +52,7 @@ export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
     );
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: ${({ isBigSize }) => (isBigSize ? '676px' : '100%')};
     height: ${({ isBigSize }) => (isBigSize ? 76 : 50)}px;
     padding-left: ${({ theme }) => theme.spacing(10)};
@@ -90,7 +90,7 @@ export const LocationListContainer = styled.div<IStyledLocationListProps>`
   transform: translateY(100%) translateX(-50%);
   overflow-y: hidden;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     bottom: ${({ isBigSize }) => (isBigSize ? -28 : -16)}px;
     width: ${({ isBigSize }) => (isBigSize ? '710px' : '100%')};
     max-height: 291px;

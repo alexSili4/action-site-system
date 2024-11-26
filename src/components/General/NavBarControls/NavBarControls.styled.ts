@@ -11,7 +11,7 @@ export const Container = styled.div<IStyledProps>`
   order: ${({ isRootPage }) => (isRootPage ? 1 : 2)};
   width: ${({ isRootPage }) => (isRootPage ? '100%' : 'auto')};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-grow: 0;
     gap: ${({ theme }) => theme.spacing(2)};
     order: ${({ isFake }) => (isFake ? 1 : 3)};

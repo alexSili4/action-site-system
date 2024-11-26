@@ -1,10 +1,11 @@
 import { usePaginationBar } from '@/hooks';
 import { FC } from 'react';
-import PaginationBarBtn from '@GeneralComponents/PaginationBarBtn';
 import { Container, List, TemplateItem } from './PaginationBar.styled';
 import { IProps } from './PaginationBar.types';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { theme } from '@/constants';
+// components
+import PaginationBarBtn from '@GeneralComponents/PaginationBarBtn';
 import { Button } from '@GeneralComponents/PaginationBarBtn/PaginationBarBtn.styled';
 
 const PaginationBar: FC<IProps> = ({ totalPages }) => {

@@ -5,9 +5,10 @@ import {
   StyledHeaderBackground,
 } from './Header.styled';
 import { IProps } from './Header.types';
+import { useIsPromotionDetailsPage, useIsScrollingUp } from '@/hooks';
+// components
 import Container from '@GeneralComponents/Container';
 import NavBar from '@GeneralComponents/NavBar';
-import { useIsPromotionDetailsPage, useIsScrollingUp } from '@/hooks';
 
 const Header: FC<IProps> = ({
   isDesktop,

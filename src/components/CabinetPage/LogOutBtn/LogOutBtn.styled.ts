@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     margin-top: ${({ theme }) => theme.spacing(6)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-left: ${({ theme }) => theme.spacing(8)};
     padding-right: ${({ theme }) => theme.spacing(8)};
   }
@@ -32,7 +32,7 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.colors.white};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.13;

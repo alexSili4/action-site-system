@@ -5,6 +5,10 @@ export const Form = styled.form`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(8)};
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    margin-top: ${({ theme }) => theme.spacing(15)};
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(4)};
     width: 447px;
@@ -17,7 +21,7 @@ export const Content = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(10)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(8)};
   }
 `;
@@ -34,7 +38,7 @@ export const LabelWrap = styled.span`
   padding-left: ${({ theme }) => theme.spacing()};
   padding-right: ${({ theme }) => theme.spacing()};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     left: 17px;
   }
 `;
@@ -65,7 +69,7 @@ export const Input = styled.input`
     color: #7e8494;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 56px;
     font-size: 16px;
   }

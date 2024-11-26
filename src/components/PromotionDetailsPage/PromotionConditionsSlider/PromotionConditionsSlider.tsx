@@ -1,11 +1,8 @@
 import { FC } from 'react';
 import { getFileUrl } from '@/utils';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import PromotionConditionsListAnimation from '@PromotionDetailsPageComponents/PromotionConditionsListAnimation';
 import rulesCardBg from '@/images/conditions/rules-bg.jpg';
 import { IoDocumentOutline } from 'react-icons/io5';
-import PromotionConditionsSliderControls from '@PromotionDetailsPageComponents/PromotionConditionsSliderControls';
-import PromotionConditionsSliderPagination from '@PromotionDetailsPageComponents/PromotionConditionsSliderPagination';
 import { useTargetPromotionData } from '@/hooks';
 import { IProps } from './PromotionConditionsSlider.types';
 import { theme } from '@/constants';
@@ -20,6 +17,10 @@ import {
   Title,
   TitleWrap,
 } from './PromotionConditionsSlider.styled';
+import PromotionConditionsListAnimation from '@PromotionDetailsPageComponents/PromotionConditionsListAnimation';
+// components
+import PromotionConditionsSliderControls from '@PromotionDetailsPageComponents/PromotionConditionsSliderControls';
+import PromotionConditionsSliderPagination from '@PromotionDetailsPageComponents/PromotionConditionsSliderPagination';
 
 const PromotionConditionsSlider: FC<IProps> = ({
   conditions,
@@ -39,6 +40,7 @@ const PromotionConditionsSlider: FC<IProps> = ({
       slidesPerView={1.075}
       grabCursor={true}
       breakpoints={{
+        [theme.breakpoints.tablet]: { slidesPerView: 2.12 },
         [theme.breakpoints.desktop]: { slidesPerView: 3.077 },
       }}
     >

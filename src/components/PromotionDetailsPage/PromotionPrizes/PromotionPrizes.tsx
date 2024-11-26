@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Container, ContentWrap } from './PromotionPrizes.styled';
 import { IProps } from './PromotionPrizes.types';
-
+// components
 import PromotionPrizesBanner from '@PromotionDetailsPageComponents/PromotionPrizesBanner';
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import PromotionPrizesList from '@PromotionDetailsPageComponents/PromotionPrizesList';

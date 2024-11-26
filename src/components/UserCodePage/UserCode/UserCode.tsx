@@ -1,4 +1,5 @@
 import { FC } from 'react';
+// components
 import UserReceiptDetails from '@UserCodePageComponents/UserReceiptDetails';
 import UserCodeDetails from '@UserCodePageComponents/UserCodeDetails';
 import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';

@@ -7,6 +7,13 @@ export const Container = styled.div`
   padding-left: ${({ theme: { padding } }) => padding.container}px;
   padding-right: ${({ theme: { padding } }) => padding.container}px;
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: ${({ theme: { containerWidth, padding } }) =>
+      containerWidth.tablet + padding.container * 2}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: ${({ theme: { containerWidth, padding } }) =>
       containerWidth.desktop + padding.container * 2}px;
@@ -19,14 +26,14 @@ export const Content = styled.div`
   flex-grow: 1;
   display: flex;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding-top: ${({ theme }) => theme.spacing(6)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     position: relative;
     justify-content: center;
   }
@@ -41,7 +48,7 @@ export const WheelWrap = styled.div`
   width: 100%;
   overflow: hidden;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 650px;
   }
 `;
@@ -54,7 +61,7 @@ export const PointerImg = styled.img`
   height: auto;
   transform: translateX(-50%);
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 64px;
     height: 56px;
   }
@@ -75,7 +82,7 @@ export const Wheel = styled.div<IStyledProps>`
   transition: transform ${({ spinningMs }) => spinningMs}ms ease-in-out;
   overflow: hidden;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 579px;
   }
 `;
@@ -142,11 +149,11 @@ export const SpinWheelBtn = styled.button`
       1px 1px 0px 0px #cc3333;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     margin-top: ${({ theme }) => theme.spacing(13)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     position: absolute;
     top: 50%;
     left: 50%;

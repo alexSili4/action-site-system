@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './AnimatedRegisterCodeModalWinContainer.types';
 import { AnimatePresence } from 'framer-motion';
+// components
 import AnimatedRegisterCodeModalWin from '@GeneralComponents/AnimatedRegisterCodeModalWin';
 
 const AnimatedRegisterCodeModalWinContainer: FC<IProps> = ({

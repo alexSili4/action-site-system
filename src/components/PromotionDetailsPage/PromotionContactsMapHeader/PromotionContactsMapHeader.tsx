@@ -13,10 +13,11 @@ import {
   BtnClickEvent,
   InputChangeEvent,
 } from '@/types/types';
-import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
-import PromotionContactsMapHeaderShopsListContainer from '@PromotionDetailsPageComponents/PromotionContactsMapHeaderShopsListContainer';
 import { useMediaQuery } from '@/hooks';
 import { CgClose } from 'react-icons/cg';
+// components
+import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
+import PromotionContactsMapHeaderShopsListContainer from '@PromotionDetailsPageComponents/PromotionContactsMapHeaderShopsListContainer';
 
 const PromotionContactsMapHeader: FC<IProps> = ({
   activeShopNum,

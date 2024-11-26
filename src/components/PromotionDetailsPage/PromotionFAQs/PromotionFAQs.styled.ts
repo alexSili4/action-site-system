@@ -5,7 +5,7 @@ export const Container = styled.div`
   padding-right: ${({ theme }) => theme.spacing(4)};
   margin-top: ${({ theme }) => theme.spacing(12)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-left: ${({ theme }) => theme.spacing(8)};
     padding-right: ${({ theme }) => theme.spacing(8)};
     margin-top: ${({ theme }) => theme.spacing(20)};
@@ -15,9 +15,12 @@ export const Container = styled.div`
 export const ContentWrap = styled.div`
   margin-top: ${({ theme }) => theme.spacing(8)};
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    margin-top: ${({ theme }) => theme.spacing(14)};
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 800px;
-    margin-top: ${({ theme }) => theme.spacing(14)};
     margin-left: auto;
     margin-right: auto;
   }
@@ -35,8 +38,11 @@ export const AdditionalIfoWrap = styled.div`
   gap: ${({ theme }) => theme.spacing(5)};
   margin-top: ${({ theme }) => theme.spacing(10)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-top: ${({ theme }) => theme.spacing(12)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     padding-left: ${({ theme }) => theme.spacing(23)};
     padding-right: ${({ theme }) => theme.spacing(23)};
   }
@@ -60,7 +66,7 @@ export const PhoneLink = styled.a`
   background-color: #f4f6f9;
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(6)}`};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 206px;
     padding: ${({ theme }) => theme.spacing(2)};
   }

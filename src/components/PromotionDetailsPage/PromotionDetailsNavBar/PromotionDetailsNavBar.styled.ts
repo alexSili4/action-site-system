@@ -16,7 +16,7 @@ export const Container = styled.div`
   );
   transform: translate(-50%);
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
   }
 `;

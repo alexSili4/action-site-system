@@ -15,6 +15,7 @@ import { BtnClickEvent } from '@/types/types';
 import { makeBlur } from '@/utils';
 import circle from '@/images/code/circle.png';
 import pointer from '@/images/code/pointer.png';
+// components
 import AnimatedPrizeWheelModalWinContainer from '@RegisterCodePageComponents/AnimatedPrizeWheelModalWinContainer';
 
 const PrizesWheelSection: FC<IProps> = ({

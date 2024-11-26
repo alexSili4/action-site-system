@@ -5,11 +5,12 @@ import {
   getPromotionBannerUrls,
   getPromotionDetailsPath,
 } from '@/utils';
+import { IProps } from './PromotionsList.types';
+import { Card, Container, List, ListItem } from './PromotionsList.styled';
+// components
 import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
 import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import PromotionName from '@GeneralComponents/PromotionName';
-import { IProps } from './PromotionsList.types';
-import { Card, Container, List, ListItem } from './PromotionsList.styled';
 
 const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
   const { promotions, linkState } = usePromotionsList(promotionCategory);

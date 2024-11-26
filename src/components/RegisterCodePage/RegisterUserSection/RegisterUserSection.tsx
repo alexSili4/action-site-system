@@ -1,5 +1,4 @@
 import { FC, useState } from 'react';
-import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import {
   Container,
   ContentWrap,
@@ -12,10 +11,12 @@ import {
   Text,
 } from './RegisterUserSection.styled';
 import { IProps } from './RegisterUserSection.types';
-import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
-import RegisterUserForm from '@RegisterCodePageComponents/RegisterUserForm';
 import { PagePaths } from '@/constants';
 import { useTargetPromotionData } from '@/hooks';
+// components
+import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
+import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
+import RegisterUserForm from '@RegisterCodePageComponents/RegisterUserForm';
 
 const RegisterUserSection: FC<IProps> = ({ steps, currentStep }) => {
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);

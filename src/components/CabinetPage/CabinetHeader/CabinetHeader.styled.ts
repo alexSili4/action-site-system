@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   padding: ${({ theme: { spacing } }) => `${spacing(7)} ${spacing(10)}`};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;

@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import { IProps } from './StatisticsCategories.types';
-import StatisticsCategory from '@CabinetPageComponents/StatisticsCategory';
 import { List, ListItem } from './StatisticsCategories.styled';
 import { getTranslatedStatisticsCategory } from '@/utils';
+// components
+import StatisticsCategory from '@CabinetPageComponents/StatisticsCategory';
 
 const StatisticsCategories: FC<IProps> = ({
   categories,

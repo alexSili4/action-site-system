@@ -4,14 +4,15 @@ import {
   List,
   ListItem,
 } from './StatisticsCodesCategoryContent.styled';
-import StatisticsCode from '@CabinetPageComponents/StatisticsCode';
 import { useUserCodesStore } from '@/store/store';
 import { selectUserCodes, selectTotalPages } from '@/store/userCodes/selectors';
 import { formatDate, getFileUrl } from '@/utils';
 import { DateFormats, Messages } from '@/constants';
+import receipts from '@/images/cabinet/receipts.png';
+// components
+import StatisticsCode from '@CabinetPageComponents/StatisticsCode';
 import PaginationBar from '@GeneralComponents/PaginationBar';
 import EmptyPrizesListMessage from '@CabinetPageComponents/EmptyPrizesListMessage';
-import receipts from '@/images/cabinet/receipts.png';
 
 const StatisticsCodesCategoryContent: FC = () => {
   const userCodes = useUserCodesStore(selectUserCodes);

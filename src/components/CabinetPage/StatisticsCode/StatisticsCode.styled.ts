@@ -17,7 +17,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing(4)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     border-radius: 10px;
     padding: ${({ theme: { spacing } }) => `${spacing(7)} ${spacing(8)}`};
   }
@@ -34,11 +34,11 @@ export const Header = styled.span`
     color: #7e8494;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     justify-content: space-between;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(4)};
     border-radius: 100px;
   }
@@ -47,12 +47,12 @@ export const Header = styled.span`
 export const CodeWrap = styled.span`
   display: flex;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(2)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-grow: 1;
     justify-content: space-between;
     align-items: center;
@@ -80,7 +80,7 @@ export const ContentWrap = styled.div<IStyledContentWrapProps>`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: ${({ shouldShowContent }) => !shouldShowContent && 'none'};
   }
 `;
@@ -90,7 +90,7 @@ export const LinksWrap = styled.div<IStyledLinksWrapProps>`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: ${({ shouldShowCodeLinks }) => !shouldShowCodeLinks && 'none'};
   }
 `;
@@ -138,7 +138,7 @@ export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
   border-bottom-right-radius: 5px;
   opacity: ${({ shouldShowCertificate }) => !shouldShowCertificate && 0};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: ${({ shouldShowCertificate }) => !shouldShowCertificate && 'none'};
   }
 `;

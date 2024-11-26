@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import { Container, PrizeImg, PrizeImgWrap } from './UserPrizeBanner.styled';
 import { IProps } from './UserPrizeBanner.types';
+// components
+import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserPrizeBanner: FC<IProps> = ({ prizeImg, prizeName }) => {
   return (

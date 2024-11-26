@@ -11,7 +11,7 @@ export const Container = styled.div<IStyledContainerProps>`
   background-size: ${({ isBigImgSize }) => (isBigImgSize ? 218 : 179)}px auto;
   background-repeat: no-repeat;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     justify-content: space-between;
     gap: ${({ theme }) => theme.spacing(81)};
     height: 100%;
@@ -27,7 +27,7 @@ export const Title = styled.p`
   line-height: 1.4;
   text-align: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     width: 243px;
   }
 `;
@@ -63,7 +63,7 @@ export const Button = styled.button`
       1px 1px 0px 0px #7a4ebd;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 238px;
   }
 `;

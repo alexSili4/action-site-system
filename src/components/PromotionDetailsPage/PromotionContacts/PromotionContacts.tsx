@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
-import PromotionContactsBanner from '@PromotionDetailsPageComponents/PromotionContactsBanner';
-import PromotionContactsMap from '@PromotionDetailsPageComponents/PromotionContactsMap';
 import { Container, ContentWrap } from './PromotionContacts.styled';
 import { PromotionDetailsPageSections } from '@/constants';
 import { IProps } from './PromotionContacts.types';
+// components
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
+import PromotionContactsBanner from '@PromotionDetailsPageComponents/PromotionContactsBanner';
+import PromotionContactsMap from '@PromotionDetailsPageComponents/PromotionContactsMap';
 
 const PromotionContacts: FC<IProps> = ({ shops }) => {
   return (

@@ -6,12 +6,13 @@ import {
   LegalInfoWrap,
   SunLink,
 } from './Footer.styled';
-import SocialLinksList from '@GeneralComponents/SocialLinksList';
 import {
   useTargetPromotionData,
   useIsPromotionDetailsPage,
   useIsRootPage,
 } from '@/hooks';
+// components
+import SocialLinksList from '@GeneralComponents/SocialLinksList';
 
 const Footer: FC = () => {
   const isRootPage = useIsRootPage();

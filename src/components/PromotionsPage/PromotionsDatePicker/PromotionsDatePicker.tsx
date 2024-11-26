@@ -10,10 +10,11 @@ import {
 } from './PromotionsDatePicker.styled';
 import { getPromotionsDatePickerBtnLabel, makeBlur } from '@/utils';
 import { BtnClickEvent, DatePickerEvent } from '@/types/types';
+import { FaChevronDown } from 'react-icons/fa';
 import { theme } from '@/constants';
+// components
 import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
-import { FaChevronDown } from 'react-icons/fa';
 
 const PromotionsDatePicker: FC = () => {
   const [date, setDate] = useState<Date | null>(null);

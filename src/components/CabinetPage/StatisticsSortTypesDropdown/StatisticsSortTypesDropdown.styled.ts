@@ -4,7 +4,7 @@ import { IStyledProps } from './StatisticsSortTypesDropdown.types';
 export const Container = styled.div`
   height: 100%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;

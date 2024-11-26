@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './AnimatedPrizeWheelModalWinContainer.types';
 import { AnimatePresence } from 'framer-motion';
+// components
 import AnimatedPrizeWheelModalWin from '@RegisterCodePageComponents/AnimatedPrizeWheelModalWin';
 
 const AnimatedPrizeWheelModalWinContainer: FC<IProps> = ({

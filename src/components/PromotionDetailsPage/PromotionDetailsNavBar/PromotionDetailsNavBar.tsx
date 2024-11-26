@@ -1,9 +1,10 @@
 import { PromotionDetailsPageSections, Symbols } from '@/constants';
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
-import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
 import { Container, List, ListItem } from './PromotionDetailsNavBar.styled';
 import { getTranslatedPromotionDetailsPageSectionName } from '@/utils';
+// components
+import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
 
 const PromotionDetailsNavBar: FC = () => {
   const sectionIds = Object.values(PromotionDetailsPageSections);

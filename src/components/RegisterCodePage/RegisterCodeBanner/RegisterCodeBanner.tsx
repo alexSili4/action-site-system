@@ -6,8 +6,9 @@ import {
   LogoPartner,
   PromotionName,
 } from './RegisterCodeBanner.styled';
-import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import { useRegisterCodeBanner } from '@/hooks';
+// components
+import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 
 const RegisterCodeBanner: FC = () => {
   const { bannerMobUrl, bannerDtUrl, promotionDate, name, logoUrl } =

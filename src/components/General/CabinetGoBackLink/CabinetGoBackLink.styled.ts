@@ -7,11 +7,11 @@ export const Container = styled.div<IStyledContainerProps>`
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing(4)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: ${({ isShowOnDesk }) => isShowOnDesk && 'none'};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: ${({ isShowOnDesk }) => !isShowOnDesk && 'none'};
     padding: ${({ theme: { spacing } }) => `${spacing(7)} ${spacing(10)}`};
   }

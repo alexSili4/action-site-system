@@ -15,7 +15,7 @@ export const Container = styled.div<IStyledContainerProps>`
     padding-left: ${({ paddingSideMobile }) =>
       paddingSideMobile ? paddingSideMobile : '0px'};
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
       padding-left: ${({ paddingSideDesk }) =>
         paddingSideDesk ? paddingSideDesk : '0px'};
     }
@@ -25,7 +25,7 @@ export const Container = styled.div<IStyledContainerProps>`
     padding-right: ${({ paddingSideMobile }) =>
       paddingSideMobile ? paddingSideMobile : '0px'};
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
       padding-right: ${({ paddingSideDesk }) =>
         paddingSideDesk ? paddingSideDesk : '0px'};
     }
@@ -35,7 +35,7 @@ export const Container = styled.div<IStyledContainerProps>`
     }
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-top: ${({ theme }) => theme.spacing(14)};
   }
 `;

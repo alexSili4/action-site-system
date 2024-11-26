@@ -22,7 +22,7 @@ export const StyledLink = styled.span`
       inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;

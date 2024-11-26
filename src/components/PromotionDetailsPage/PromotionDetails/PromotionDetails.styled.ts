@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   padding-top: ${({ theme }) => theme.spacing(39)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(25)};
   }
 `;
@@ -15,7 +15,7 @@ export const Content = styled.div`
   padding-bottom: ${({ theme }) => theme.spacing(4)};
   overflow-x: hidden;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(8)};
     padding-bottom: ${({ theme }) => theme.spacing(8)};
   }

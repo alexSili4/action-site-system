@@ -1,11 +1,12 @@
 import { FC } from 'react';
 import { IProps } from './StatisticsContent.types';
-import StatisticsCodesCategoryContent from '@CabinetPageComponents/StatisticsCodesCategoryContent';
-import StatisticsPrizesCategoryContent from '@CabinetPageComponents/StatisticsPrizesCategoryContent';
 import { Container } from './StatisticsContent.styled';
 import { useUserCodesStore, useUserPrizesStore } from '@/store/store';
 import { selectUserCodes } from '@/store/userCodes/selectors';
 import { selectUserPrizes } from '@/store/userPrizes/selectors';
+// components
+import StatisticsCodesCategoryContent from '@CabinetPageComponents/StatisticsCodesCategoryContent';
+import StatisticsPrizesCategoryContent from '@CabinetPageComponents/StatisticsPrizesCategoryContent';
 
 const StatisticsContent: FC<IProps> = ({
   isPrizesCategory,

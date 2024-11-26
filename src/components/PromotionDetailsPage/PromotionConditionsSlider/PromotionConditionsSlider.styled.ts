@@ -15,7 +15,7 @@ export const TitleWrap = styled.div`
   flex-grow: 1;
   padding: ${({ theme: { spacing } }) => `${spacing(10)} ${spacing(6)}`};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: ${({ theme: { spacing } }) => `${spacing(10)} ${spacing(8)}`};
   }
 `;
@@ -27,7 +27,7 @@ export const Title = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 18px;
   }
 `;

@@ -11,6 +11,7 @@ import {
 } from './PromotionFAQ.styled';
 import { BtnClickEvent, DivRef } from '@/types/types';
 import { makeBlur } from '@/utils';
+// components
 import OpenContentBtnLabel from '@PromotionDetailsPageComponents/OpenContentBtnLabel';
 
 const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {

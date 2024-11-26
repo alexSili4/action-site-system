@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { IProps } from './StatisticsSortTypesList.types';
 import { getTranslatedStatisticsSortType } from '@/utils';
 import { Container, List, ListItem } from './StatisticsSortTypesList.styles';
+// components
 import StatisticsSortType from '@CabinetPageComponents/StatisticsSortType';
 
 const StatisticsSortTypesList: FC<IProps> = ({

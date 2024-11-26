@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import UserPrizeBanner from '@UserPrizePageComponents/UserPrizeBanner';
-import UserPrizeDetails from '@UserPrizePageComponents/UserPrizeDetails';
-import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
 import { IProps } from './UserPrize.types';
 import { DateFormats } from '@/constants';
 import { formatDate, getFileUrl } from '@/utils';
+// components
+import UserPrizeBanner from '@UserPrizePageComponents/UserPrizeBanner';
+import UserPrizeDetails from '@UserPrizePageComponents/UserPrizeDetails';
+import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
 
 const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
   const {

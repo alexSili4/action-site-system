@@ -10,7 +10,7 @@ export const Container = styled.div<IStyledProps>`
   padding-right: ${({ theme, isConditionsSection }) =>
     isConditionsSection ? '0px' : theme.spacing(4)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ isPrizesSection, theme }) =>
       isPrizesSection && theme.spacing(12)};
     margin-top: ${({ marginTopDesk }) => marginTopDesk}px;

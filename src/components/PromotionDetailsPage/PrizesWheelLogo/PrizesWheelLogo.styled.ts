@@ -20,7 +20,7 @@ export const Container = styled.div`
     fill: ${({ theme }) => theme.colors.white};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     & {
       align-self: center;
     }
@@ -28,6 +28,7 @@ export const Container = styled.div`
 `;
 
 export const Text = styled.p`
+  flex-shrink: 0;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16.65px;

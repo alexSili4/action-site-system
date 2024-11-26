@@ -1,16 +1,17 @@
 import { FC, Suspense, useState } from 'react';
 import { Content, Main } from './SharedLayout.styled';
 import { Outlet } from 'react-router-dom';
-import Loader from '@GeneralComponents/Loader';
-import Header from '@GeneralComponents/Header';
-import Footer from '@GeneralComponents/Footer';
-import AppBackground from '@GeneralComponents/AppBackground';
 import { theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent, IOutletContext } from '@/types/types';
+// components
 import RegisterCodeModalWinSelectPromotionsLocation from '@GeneralComponents/RegisterCodeModalWinSelectPromotionsLocation';
 import RegisterCodeModalWinSelectPromotion from '@GeneralComponents/RegisterCodeModalWinSelectPromotion';
+import Loader from '@GeneralComponents/Loader';
+import Header from '@GeneralComponents/Header';
+import Footer from '@GeneralComponents/Footer';
+import AppBackground from '@GeneralComponents/AppBackground';
 
 const SharedLayout: FC = () => {
   const [
@@ -19,7 +20,7 @@ const SharedLayout: FC = () => {
   ] = useState<boolean>(false);
   const [showSelectPromotionModalWin, setShowSelectPromotionModalWin] =
     useState<boolean>(false);
-  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const isDesktop = useMediaQuery(theme.breakpoints.tablet);
   const showOtherModalWin =
     showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
 

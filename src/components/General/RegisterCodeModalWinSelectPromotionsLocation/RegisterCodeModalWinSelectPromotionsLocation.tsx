@@ -1,8 +1,9 @@
 import { FC } from 'react';
+import { IProps } from './RegisterCodeModalWinSelectPromotionsLocation.types';
+// components
 import LocationFilter from '@GeneralComponents/LocationFilter';
 import RegisterCodeModalWinSelectPromotionsFilter from '@GeneralComponents/RegisterCodeModalWinSelectPromotionsFilter';
 import AnimatedRegisterCodeModalWinContainer from '@GeneralComponents/AnimatedRegisterCodeModalWinContainer';
-import { IProps } from './RegisterCodeModalWinSelectPromotionsLocation.types';
 
 const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
   setModalWinState,

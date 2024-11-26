@@ -11,14 +11,14 @@ export const List = styled.ul`
   gap: ${({ theme }) => theme.spacing(2)};
   pointer-events: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     position: absolute;
     z-index: ${({ theme }) => theme.zIndex.conditionsSliderPagination};
     bottom: 16px;
     left: 0;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-top: ${({ theme }) => theme.spacing(9)};
   }
 `;

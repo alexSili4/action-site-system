@@ -1,4 +1,3 @@
-import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import { FC } from 'react';
 import {
   Container,
@@ -15,6 +14,8 @@ import {
 } from './UserReceiptDetails.styled';
 import { generalSettings } from '@/constants';
 import { IProps } from './UserReceiptDetails.types';
+// components
+import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserReceiptDetails: FC<IProps> = ({ isVerifiedCode }) => {
   // TODO fix

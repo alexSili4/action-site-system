@@ -15,6 +15,7 @@ import {
 import { Swiper as ISwiper } from 'swiper';
 import { IProps } from './PromotionPrizeImgSlider.types';
 import { getFileUrl } from '@/utils';
+// components
 import PromotionPrizeImgSliderStatusLabel from '@PromotionDetailsPageComponents/PromotionPrizeImgSliderStatusLabel';
 import PromotionPrizeImgSliderPagination from '@PromotionDetailsPageComponents/PromotionPrizeImgSliderPagination';
 import PromotionPrizeImgSliderControls from '@PromotionDetailsPageComponents/PromotionPrizeImgSliderControls';

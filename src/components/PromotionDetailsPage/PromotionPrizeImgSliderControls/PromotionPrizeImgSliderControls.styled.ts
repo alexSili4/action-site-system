@@ -12,7 +12,7 @@ export const Container = styled.div`
   transform: translateY(-50%);
   pointer-events: none;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
   }
 `;

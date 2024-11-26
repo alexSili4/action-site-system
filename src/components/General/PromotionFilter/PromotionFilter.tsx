@@ -7,11 +7,12 @@ import {
 } from './PromotionFilter.styled';
 import { FaChevronDown } from 'react-icons/fa';
 import { Messages, theme } from '@/constants';
+import { usePromotionFilter } from '@/hooks';
+import { IProps } from './PromotionFilter.types';
+// components
 import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
 import PromotionsList from '@GeneralComponents/PromotionsList';
 import DropdownBackdrop from '@GeneralComponents/DropdownBackdrop';
-import { usePromotionFilter } from '@/hooks';
-import { IProps } from './PromotionFilter.types';
 
 const PromotionFilter: FC<IProps> = ({ toggleShowSelectPromotionModalWin }) => {
   const {

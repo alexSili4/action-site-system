@@ -10,7 +10,7 @@ export const Container = styled.div<IContainerStyledProps>`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: ${({ isHiddenOnMobile }) => isHiddenOnMobile && 'none'};
     gap: ${({ theme }) => theme.spacing()};
     padding: ${({ theme }) => theme.spacing(4)};
@@ -18,7 +18,7 @@ export const Container = styled.div<IContainerStyledProps>`
     background-color: ${({ theme }) => theme.colors.white};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: ${({ isHiddenOnMobile }) => !isHiddenOnMobile && 'none'};
     width: 100%;
   }
@@ -31,7 +31,7 @@ export const Title = styled.p`
   font-weight: 500;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 18px;
   }
 `;
@@ -49,7 +49,7 @@ export const Step = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     text-align: right;
   }
 `;

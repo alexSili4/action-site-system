@@ -10,11 +10,12 @@ import {
   Input,
   RegisterUserCheckboxTitle,
 } from './RegisterUserForm.styled';
-import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
 import { useRegisterUserForm } from '@/hooks';
-import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import { IProps } from './RegisterUserForm.types';
 import { InputPlaceholders } from '@/constants';
+// components
+import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
+import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 
 const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
   const { handleFormSubmit, register, handleSubmit, disabledBtn } =

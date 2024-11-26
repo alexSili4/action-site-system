@@ -17,7 +17,7 @@ export const PromotionWinnersWrap = styled.div<IStyledProps>`
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc.other},
     margin-top ${({ theme }) => theme.transitionDurationAndFunc.other};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: flex;
     flex-direction: row-reverse;
     gap: ${({ theme }) => theme.spacing(24)};
@@ -27,7 +27,7 @@ export const PromotionWinnersWrap = styled.div<IStyledProps>`
 `;
 
 export const PromotionWinnersTableWrap = styled.div`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-grow: 1;
   }
 `;
@@ -46,7 +46,7 @@ export const OpenContentBtn = styled.button<IStyledOpenContentBtnProps>`
   padding-bottom: ${({ theme }) => theme.spacing(2)};
   cursor: ${({ disabled }) => disabled && 'auto'};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 650px;
     margin-left: auto;
     margin-right: auto;
@@ -91,7 +91,7 @@ export const ResultsBtn = styled.button`
       1px 1px 0px 0px #7a4ebd;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 310px;
   }
 `;

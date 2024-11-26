@@ -1,11 +1,12 @@
 import { FC, useState } from 'react';
 import { ActiveShopNum } from '@/types/shop.types';
 import { Container } from './PromotionContactsMap.styled';
-import PromotionContactsMapHeader from '@PromotionDetailsPageComponents/PromotionContactsMapHeader';
-import PromotionContactsVisicomMap from '@PromotionDetailsPageComponents/PromotionContactsVisicomMap';
 import { smoothScroll } from '@/utils';
 import { useTargetPromotionData } from '@/hooks';
 import { IProps } from './PromotionContactsMap.types';
+// components
+import PromotionContactsVisicomMap from '@PromotionDetailsPageComponents/PromotionContactsVisicomMap';
+import PromotionContactsMapHeader from '@PromotionDetailsPageComponents/PromotionContactsMapHeader';
 
 const PromotionContactsMap: FC<IProps> = ({ shops }) => {
   const [activeShopNum, setActiveShopNum] = useState<ActiveShopNum>(null);

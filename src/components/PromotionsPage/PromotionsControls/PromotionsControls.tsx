@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { IProps } from './PromotionsControls.types';
 import { PromotionsCategoriesKeys } from '@/constants';
+import { Container } from './PromotionsControls.styled';
+// components
 import PromotionsCount from '@PromotionsPageComponents/PromotionsCount';
 import PromotionsDatePicker from '@PromotionsPageComponents/PromotionsDatePicker';
-import { Container } from './PromotionsControls.styled';
 
 const PromotionsControls: FC<IProps> = ({
   promotionCategory,

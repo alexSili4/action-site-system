@@ -4,8 +4,6 @@ import {
   List,
   ListItem,
 } from './StatisticsPrizesCategoryContent.styled';
-import PaginationBar from '@GeneralComponents/PaginationBar';
-import StatisticsPrize from '@CabinetPageComponents/StatisticsPrize';
 import { formatDate, getFileUrl } from '@/utils';
 import { useUserPrizesStore } from '@/store/store';
 import {
@@ -13,8 +11,11 @@ import {
   selectUserPrizes,
 } from '@/store/userPrizes/selectors';
 import { DateFormats, Messages, PagePaths } from '@/constants';
-import EmptyPrizesListMessage from '@CabinetPageComponents/EmptyPrizesListMessage';
 import prize from '@/images/cabinet/prize.png';
+// components
+import PaginationBar from '@GeneralComponents/PaginationBar';
+import StatisticsPrize from '@CabinetPageComponents/StatisticsPrize';
+import EmptyPrizesListMessage from '@CabinetPageComponents/EmptyPrizesListMessage';
 
 const StatisticsPrizesCategoryContent: FC = () => {
   const userPrizes = useUserPrizesStore(selectUserPrizes);

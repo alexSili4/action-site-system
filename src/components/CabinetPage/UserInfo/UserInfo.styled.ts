@@ -9,7 +9,7 @@ export const Container = styled.div`
   border-top: 1px solid #e3e7ed;
   padding-top: ${({ theme }) => theme.spacing(2)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(12)};
     padding-left: ${({ theme }) => theme.spacing(8)};
     padding-right: ${({ theme }) => theme.spacing(8)};
@@ -36,13 +36,13 @@ export const InfoBtn = styled.button<IStyledInfoBtnProps>`
     transform: rotate(${({ showInfo }) => (showInfo ? 180 : 0)}deg);
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
   }
 `;
 
 export const InfoBtnTitle = styled.span`
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     color: #383e45;
     font-family: ${({ theme }) => theme.fontFamily.geologica};
     font-size: 16px;
@@ -52,7 +52,7 @@ export const InfoBtnTitle = styled.span`
 `;
 
 export const InfoListWrap = styled.div<IStyledInfoListWrapProps>`
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     padding-top: ${({ theme, showInfo }) => showInfo && theme.spacing(8)};
     transition: padding-top
       ${({ theme }) => theme.transitionDurationAndFunc.other};
@@ -65,7 +65,7 @@ export const InfoList = styled.ul<IStyledProps>`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(8)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     max-height: ${({ showInfo, scrollHeight }) =>
       showInfo ? scrollHeight : 0}px;
     transition: max-height
@@ -84,7 +84,7 @@ export const InfoWrap = styled.div`
   border: 1px solid #e3e7ed;
   border-radius: 8px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 56px;
     padding-left: ${({ theme }) => theme.spacing(5)};
   }
@@ -98,7 +98,7 @@ export const TitleWrap = styled.div`
   padding-right: ${({ theme }) => theme.spacing()};
   background-color: ${({ theme }) => theme.colors.white};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     left: 17px;
   }
 `;
@@ -118,7 +118,7 @@ export const Data = styled.p`
   font-weight: 400;
   line-height: 1.57;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 16px;
     line-height: 1.38;
   }

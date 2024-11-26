@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import PromotionsFilter from '@PromotionsPageComponents/PromotionsFilter';
 import { PromotionsCategoriesKeys } from '@/constants';
-import PromotionsList from '@PromotionsPageComponents/PromotionsList';
 import { usePromotionCategory, useSetSearchParams } from '@/hooks';
 import { InputChangeEvent } from '@/types/types';
+// components
+import PromotionsList from '@PromotionsPageComponents/PromotionsList';
+import PromotionsFilter from '@PromotionsPageComponents/PromotionsFilter';
 
 const Promotions: FC = () => {
   const { updateSearchParams } = useSetSearchParams();

@@ -5,11 +5,11 @@ export const Container = styled.div`
   background-color: #f4f6f9;
   overflow: hidden;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     padding: ${({ theme }) => theme.spacing(4)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-grow: 1;
     display: flex;
     flex-direction: column;

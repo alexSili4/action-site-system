@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import { IProps } from './RegisterCodeModalWinSelectPromotion.types';
+// components
 import RegisterCodeModalWinSelectPromotionsFilter from '@GeneralComponents/RegisterCodeModalWinSelectPromotionsFilter';
 import AnimatedRegisterCodeModalWinContainer from '@GeneralComponents/AnimatedRegisterCodeModalWinContainer';
-import { IProps } from './RegisterCodeModalWinSelectPromotion.types';
 import PromotionFilter from '@GeneralComponents/PromotionFilter';
 
 const RegisterCodeModalWinSelectPromotion: FC<IProps> = ({

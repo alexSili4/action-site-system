@@ -2,10 +2,15 @@ import styled from '@emotion/styled';
 import { IStyledProps } from './RegisterCodeBanner.types';
 
 export const Container = styled.div`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 447px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 300px;
     border-radius: 16px;
     background-color: ${({ theme }) => theme.colors.white};
+    padding: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 447px;
     padding: ${({ theme }) => theme.spacing(7)};
   }
 `;
@@ -19,13 +24,17 @@ export const Banner = styled.div<IStyledProps>`
   background-repeat: no-repeat;
   border-radius: 16px;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding: ${({ theme: { spacing } }) => `${spacing(8)} ${spacing(7)}`};
     border-radius: 8px;
+    padding: ${({ theme: { spacing } }) => `${spacing(5)} ${spacing(5)}`};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding: ${({ theme: { spacing } }) => `${spacing(8)} ${spacing(7)}`};
   }
 `;
 
@@ -47,7 +56,7 @@ export const PromotionName = styled.p`
 export const LogoPartner = styled.img`
   align-self: flex-start;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;

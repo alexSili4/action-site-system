@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(9)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     flex-direction: column;
     border-radius: 24px;
     background-color: ${({ theme }) => theme.colors.white};
@@ -13,13 +13,13 @@ export const Container = styled.div`
       `${spacing(5)} ${spacing(4)} ${spacing(8)}`};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(4)};
   }
 `;
 
 export const ContentWrap = styled.div`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -30,19 +30,24 @@ export const ContentWrap = styled.div`
 `;
 
 export const RegisterUserFormWrap = styled.div`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: ${({ theme: { spacing } }) =>
-      `${spacing(10)} ${spacing(14)} ${spacing(41)}`};
+      `${spacing(5)} ${spacing(7)} ${spacing(6)}`};
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  }
+  padding: ${({ theme: { spacing } }) =>
+    `${spacing(10)} ${spacing(14)} ${spacing(41)}`};
 `;
 
 export const SuccessRegisterUserMsgContainer = styled.div`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,10 +111,13 @@ export const CabinetLink = styled(Link)`
       1px 1px 0px 0px #7a4ebd;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 447px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 54px;
     margin-top: ${({ theme }) => theme.spacing(5)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 447px;
   }
 `;
 

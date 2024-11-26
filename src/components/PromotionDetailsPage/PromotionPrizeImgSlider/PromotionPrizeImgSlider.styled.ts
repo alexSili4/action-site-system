@@ -47,7 +47,7 @@ export const LabelsWrap = styled.div`
   width: calc(100% - 16px * 2);
   transform: translateX(-50%);
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 40px;
     width: calc(100% - 40px * 2);
   }

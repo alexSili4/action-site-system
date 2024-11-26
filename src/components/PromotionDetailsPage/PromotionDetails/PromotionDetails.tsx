@@ -10,6 +10,7 @@ import {
 } from '@/constants';
 import { IProps } from './PromotionDetails.types';
 import { getFileUrl, getPromotionBannerUrls, getPromotionDate } from '@/utils';
+// components
 import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
 import PromotionDetailsSectionContainer from '@PromotionDetailsPageComponents/PromotionDetailsSectionContainer';
 import PromotionPageBreadcrumbs from '@PromotionDetailsPageComponents/PromotionPageBreadcrumbs';

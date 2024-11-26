@@ -10,7 +10,7 @@ export const StyledFooter = styled.footer<IStyledFooterProps>`
   padding-bottom: ${({ theme, isRootPage, isPromotionDetailsPage }) =>
     theme.spacing(isRootPage ? 17 : isPromotionDetailsPage ? 0 : 8)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-bottom: ${({ theme, isRootPage, isPromotionDetailsPage }) =>
       theme.spacing(isRootPage ? 52 : isPromotionDetailsPage ? 0 : 8)};
   }
@@ -41,7 +41,7 @@ export const LegalInfoWrap = styled.div`
   padding-top: ${({ theme }) => theme.spacing(2)};
   padding-bottom: ${({ theme }) => theme.spacing(20)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(10)};
     padding-bottom: ${({ theme }) => theme.spacing(10)};
   }
@@ -56,6 +56,10 @@ export const LegalInfo = styled.div`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.3;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: ${({ theme }) => theme.containerWidth.tablet}px;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: ${({ theme }) => theme.containerWidth.desktop}px;

@@ -25,7 +25,7 @@ export const Button = styled.button`
       inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     min-width: 202px;
   }
 `;
@@ -54,7 +54,7 @@ export const StyledLink = styled(Link)`
       inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     min-width: 202px;
   }
 `;

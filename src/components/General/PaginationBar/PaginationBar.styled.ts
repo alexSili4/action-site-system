@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     justify-content: space-between;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     justify-content: center;
     gap: ${({ theme }) => theme.spacing(7)};
   }

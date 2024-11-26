@@ -12,9 +12,10 @@ import {
   ResultsBtnTitle,
   ResultsBtnWrap,
 } from './PromotionWinnersTableByDate.styled';
-import OpenContentBtnLabel from '@PromotionDetailsPageComponents/OpenContentBtnLabel';
 import { DateFormats, theme } from '@/constants';
 import { IoDocumentOutline } from 'react-icons/io5';
+// components
+import OpenContentBtnLabel from '@PromotionDetailsPageComponents/OpenContentBtnLabel';
 import PromotionWinnersTable from '@PromotionDetailsPageComponents/PromotionWinnersTable';
 import PromotionElementWrap from '@PromotionDetailsPageComponents/PromotionElementWrap';
 

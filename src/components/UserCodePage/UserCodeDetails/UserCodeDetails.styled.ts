@@ -11,14 +11,15 @@ export const Container = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    flex-grow: 1;
+    padding: ${({ theme: { spacing } }) => `${spacing(10)} ${spacing(5)}`};
+    border-radius: 16px;
+    background-color: ${({ theme }) => theme.colors.white};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    flex-grow: 1;
     padding: ${({ theme: { spacing } }) => `${spacing(10)} ${spacing(14)}`};
-    border-radius: 16px;
-    background-color: ${({ theme }) => theme.colors.white};
   }
 `;
 
@@ -27,14 +28,14 @@ export const Content = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     padding: ${({ theme: { spacing } }) =>
       `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
     border-radius: 24px;
     background-color: ${({ theme }) => theme.colors.white};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(30)};
     justify-content: space-between;
   }
@@ -45,7 +46,7 @@ export const MainInfoWrap = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(9)};
   }
 `;
@@ -55,7 +56,7 @@ export const CodeInfo = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(6)};
   }
 `;
@@ -69,7 +70,7 @@ export const TitleWrap = styled.div`
     width: 47px;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     & > svg {
       width: 73px;
     }
@@ -83,7 +84,7 @@ export const Title = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 24px;
     font-weight: 500;
   }
@@ -94,7 +95,7 @@ export const MainInfo = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(10)};
   }
 `;
@@ -136,7 +137,7 @@ export const CodeDetailsSubtitle = styled.p<IStyledCodeDetailsSubtitleProps>`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     width: ${({ isAutoWidth }) => !isAutoWidth && '117px'};
   }
 `;
@@ -208,7 +209,7 @@ export const PrizeDrawingDateWrap = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;
@@ -232,7 +233,7 @@ export const PrizeDrawingDateText = styled.p`
 export const UserCodeInfoDelimiter = styled.div`
   border: 1px solid #f4f6f9;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
   }
 `;
@@ -300,7 +301,7 @@ export const CertificateInfo = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(3)};
   }
 `;
@@ -318,7 +319,7 @@ export const Certificate = styled.div`
   align-items: center;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(3)};
   }
 `;
@@ -353,7 +354,7 @@ export const PrizeWrap = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing()};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(2)};
   }
 `;
@@ -375,7 +376,7 @@ export const PrizeLinkTitle = styled.span`
   font-weight: 500;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 18px;
   }
 `;

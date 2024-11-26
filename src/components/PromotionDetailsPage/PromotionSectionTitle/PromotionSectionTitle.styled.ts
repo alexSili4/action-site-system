@@ -10,7 +10,7 @@ export const Title = styled.p`
   text-align: center;
   text-transform: uppercase;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 32px;
   }
 `;

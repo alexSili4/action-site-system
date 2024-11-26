@@ -4,6 +4,7 @@ import { theme } from '@/constants';
 import { IProps } from './PromotionConditionsSliderContainer.types';
 import { DivRef } from '@/types/types';
 import { Swiper as ISwiper } from 'swiper';
+// components
 import PromotionConditionsSlider from '@PromotionDetailsPageComponents/PromotionConditionsSlider';
 
 const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {

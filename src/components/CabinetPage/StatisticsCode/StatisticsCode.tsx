@@ -3,7 +3,6 @@ import CouponIcon from '@/icons/cabinet/coupon.svg?react';
 import PrizeIcon from '@/icons/cabinet/prize.svg?react';
 import { FaChevronRight } from 'react-icons/fa';
 import { PagePaths, theme } from '@/constants';
-import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
 import {
   CertificateWrap,
   Code,
@@ -23,6 +22,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
 import { getUserCodeMessage } from '@/utils';
 import { ICabinetState } from '@/types/cabinet.types';
+// components
+import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
 
 const StatisticsCode: FC<IProps> = ({
   isSuccessStatus,

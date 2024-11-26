@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import { IProps } from './PromotionWinnersTableByDateList.types';
 import { List, ListItem } from './PromotionWinnersTableByDateList.styled';
-import PromotionWinnersTableByDate from '@PromotionDetailsPageComponents/PromotionWinnersTableByDate';
 import { getClosestDateIndex } from '@/utils';
+// components
+import PromotionWinnersTableByDate from '@PromotionDetailsPageComponents/PromotionWinnersTableByDate';
 
 const PromotionWinnersTableByDateList: FC<IProps> = ({ winners }) => {
   const closestDateIndex = getClosestDateIndex(winners);

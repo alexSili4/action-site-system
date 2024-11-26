@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     background-color: ${({ theme }) => theme.colors.white};
     padding: ${({ theme: { spacing } }) =>
       `${spacing(10)} ${spacing(14)} ${spacing(15)}`};
@@ -19,14 +19,14 @@ export const Content = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 24px;
     padding: ${({ theme: { spacing } }) =>
       `${spacing(6)} ${spacing(5)} ${spacing(8)}`};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(19)};
     justify-content: space-between;
   }
@@ -37,7 +37,7 @@ export const MainInfoWrap = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(25)};
   }
 `;
@@ -46,7 +46,7 @@ export const TitleWrap = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     flex-direction: column;
   }
 
@@ -63,7 +63,7 @@ export const Title = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 24px;
     font-weight: 500;
   }
@@ -133,7 +133,7 @@ export const Info = styled.p`
 export const UserCertificateInfoDelimiter = styled.div`
   border-top: 1px solid #f4f6f9;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
   }
 `;
@@ -173,12 +173,12 @@ export const ConditionsInfo = styled.p`
 export const HotlineInfoWrap = styled.div`
   display: flex;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(2)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     justify-content: space-between;
     align-items: flex-end;
     gap: ${({ theme }) => theme.spacing(5)};
@@ -219,7 +219,7 @@ export const HotlinePhoneNumber = styled.span`
   font-weight: 500;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 18px;
   }
 `;

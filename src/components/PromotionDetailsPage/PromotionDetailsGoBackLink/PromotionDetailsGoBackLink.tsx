@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { StyledLink } from './PromotionDetailsGoBackLink.styled';
 import { IProps } from './PromotionDetailsGoBackLink.types';
 import { FaChevronLeft } from 'react-icons/fa';
+// components
 import GoBackLink from '@GeneralComponents/GoBackLink';
 
 const PromotionGoBackLink: FC<IProps> = ({ from }) => {

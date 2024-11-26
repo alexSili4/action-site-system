@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { PagePaths, theme } from '@/constants';
-import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import {
   Container,
   DescriptionWrap,
@@ -24,8 +23,10 @@ import {
 } from './UserPrizeDetails.styled';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import { HiOutlinePhone } from 'react-icons/hi';
-import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import { IProps } from './UserPrizeDetails.types';
+// components
+import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
+import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserPrizeDetails: FC<IProps> = ({
   createdAtDate,

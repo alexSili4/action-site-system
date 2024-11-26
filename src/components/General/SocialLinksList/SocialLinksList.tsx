@@ -1,10 +1,11 @@
 import { FC } from 'react';
-import SocialLink from '@GeneralComponents/SocialLink';
 import { ExternalLinks, theme } from '@/constants';
 import { List, ListItem } from './SocialLinksList.styled';
 import { RiInstagramFill } from 'react-icons/ri';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { TiSocialFacebook } from 'react-icons/ti';
+// components
+import SocialLink from '@GeneralComponents/SocialLink';
 
 const SocialLinksList: FC = () => {
   return (

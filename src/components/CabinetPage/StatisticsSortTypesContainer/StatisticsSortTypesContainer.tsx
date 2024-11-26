@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Container } from './StatisticsSortTypesContainer.styled';
-import ChangeSortTypeBtn from '@CabinetPageComponents/ChangeSortTypeBtn';
 import { IProps } from './StatisticsSortTypesContainer.types';
+// components
+import ChangeSortTypeBtn from '@CabinetPageComponents/ChangeSortTypeBtn';
 import StatisticsSortTypesDropdown from '@CabinetPageComponents/StatisticsSortTypesDropdown';
 
 const StatisticsSortTypesContainer: FC<IProps> = ({

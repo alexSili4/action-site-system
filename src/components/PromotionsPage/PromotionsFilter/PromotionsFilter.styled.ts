@@ -6,7 +6,7 @@ export const Container = styled.div`
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.white};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     justify-content: space-between;
   }
 `;

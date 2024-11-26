@@ -9,7 +9,7 @@ export const Container = styled.div<IStyledProps>`
   margin-top: ${({ theme, shouldShowTopSpacing }) =>
     shouldShowTopSpacing && theme.spacing(8)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-top: ${({ theme }) => theme.spacing(12)};
   }
 `;

@@ -20,7 +20,7 @@ export const Backdrop = styled.div`
   backdrop-filter: blur(20px);
   background-color: rgba(255, 241, 204, 0.14);
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(50)};
     padding-bottom: ${({ theme }) => theme.spacing(50)};
   }

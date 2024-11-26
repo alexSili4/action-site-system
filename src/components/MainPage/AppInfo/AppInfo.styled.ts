@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   gap: ${({ theme }) => theme.spacing(7)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(8)};
     width: 690px;
     margin-left: auto;
@@ -22,7 +22,7 @@ export const TextWrap = styled.div`
   align-items: center;
   gap: ${({ theme }) => theme.spacing(8)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(4)};
   }
 `;
@@ -39,7 +39,7 @@ export const Description = styled.p`
   text-align: center;
   text-transform: uppercase;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 30px;
   }
 `;
@@ -62,7 +62,7 @@ export const Accent = styled.span<IStyledProps>`
   animation: ${animations.textGlitch} 500ms linear infinite;
   opacity: ${({ isFake }) => isFake && 0};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 70px;
   }
 `;
@@ -82,7 +82,7 @@ export const FirstAccentShadow = styled.span`
   transform: translateX(-50%) translateY(-50%) rotate(1deg);
   animation: ${animations.firstAccentShadowGlitch} 500ms linear infinite;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 70px;
   }
 `;
@@ -100,7 +100,7 @@ export const SecondAccentShadow = styled.span`
   transform: translateX(-50%) translateY(-50%) rotate(-1deg);
   animation: ${animations.secondAccentShadowGlitch} 500ms linear infinite;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 70px;
   }
 `;
@@ -113,7 +113,7 @@ export const Title = styled.h1`
   font-weight: 400;
   text-align: center;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 100%;
   }
 `;

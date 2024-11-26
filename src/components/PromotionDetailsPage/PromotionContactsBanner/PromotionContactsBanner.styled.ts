@@ -13,13 +13,17 @@ export const Container = styled.div<IStyledProps>`
   background-size: cover;
   background-repeat: no-repeat;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     height: 480px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 300px;
+    background-image: url(${({ secondBannerDt }) => secondBannerDt});
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 445px;
-    background-image: url(${({ secondBannerDt }) => secondBannerDt});
   }
 `;
 

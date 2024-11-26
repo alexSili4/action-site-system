@@ -5,14 +5,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     width: 100%;
     margin-top: ${({ theme }) => theme.spacing(9)};
     padding-left: ${({ theme }) => theme.spacing(4)};
     padding-right: ${({ theme }) => theme.spacing(4)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     position: absolute;
     top: -101px;
     right: 32px;

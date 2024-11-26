@@ -6,7 +6,6 @@ import TopLeftConfettiImg from '@/images/layout/top-left-confetti.png';
 import TopMiddleConfettiImg from '@/images/layout/top-middle-confetti.png';
 import TopRightConfettiImg from '@/images/layout/top-right-confetti.png';
 import MiddleLeftConfettiImg from '@/images/layout/middle-left-confetti.png';
-import SmoothFadeInPositionedElement from '@AnimationBlocks/SmoothFadeInPositionedElement';
 import { animations } from '@/constants';
 import {
   Background,
@@ -20,6 +19,8 @@ import RightBoxImg from '@/images/layout/right-box.png';
 import RightConfettiImg from '@/images/layout/right-bg-confetti.png';
 import LeftBoxImg from '@/images/layout/left-box.png';
 import LeftConfettiImg from '@/images/layout/left-bg-confetti.png';
+// components
+import SmoothFadeInPositionedElement from '@AnimationBlocks/SmoothFadeInPositionedElement';
 
 const AppBackground: FC = () => {
   return (

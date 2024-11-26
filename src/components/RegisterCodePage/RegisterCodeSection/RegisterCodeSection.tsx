@@ -1,10 +1,11 @@
 import { useTargetPromotionData } from '@/hooks';
 import { FC } from 'react';
 import { Container, ContentWrap, Text } from './RegisterCodeSection.styled';
+import { IProps } from './RegisterCodeSection.types';
+// components
 import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeForm from '@RegisterCodePageComponents/RegisterCodeForm';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
-import { IProps } from './RegisterCodeSection.types';
 
 const RegisterCodeSection: FC<IProps> = ({
   steps,

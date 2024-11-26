@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
-import PromotionDetailsGoBackLink from '@PromotionDetailsPageComponents/PromotionDetailsGoBackLink';
 import { IProps } from './PromotionBanner.types';
 import { Container, InfoWrap, ContentWrap } from './PromotionBanner.styled';
+// components
+import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
+import PromotionDetailsGoBackLink from '@PromotionDetailsPageComponents/PromotionDetailsGoBackLink';
 import PromotionName from '@GeneralComponents/PromotionName';
 import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
 

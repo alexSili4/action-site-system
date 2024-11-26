@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import LocationFilter from '@GeneralComponents/LocationFilter';
 import {
   Accent,
   AccentWrap,
@@ -10,6 +9,8 @@ import {
   FirstAccentShadow,
   SecondAccentShadow,
 } from './AppInfo.styled';
+// components
+import LocationFilter from '@GeneralComponents/LocationFilter';
 
 const AppInfo: FC = () => {
   return (

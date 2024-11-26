@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { IProps } from './PromotionPrizesList.types';
 import { List, ListItem } from './PromotionPrizesList.styled';
+// components
 import PromotionPrizeImgSlider from '@PromotionDetailsPageComponents/PromotionPrizeImgSlider';
 
 const PromotionPrizesList: FC<IProps> = ({ prizes }) => {

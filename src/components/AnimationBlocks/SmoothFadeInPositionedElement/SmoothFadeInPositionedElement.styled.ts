@@ -13,11 +13,11 @@ export const MotionDiv = styled(motion.div)<IStyledProps>`
   height: ${({ height }) => height}px;
   animation: ${({ animation }) => animation} 3s linear infinite;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: ${({ isHiddenOnMobile }) => isHiddenOnMobile && 'none'};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: ${({ deskTop }) => deskTop}px;
     bottom: ${({ deskBottom }) => deskBottom}px;
     left: ${({ deskLeft }) => deskLeft}px;

@@ -9,7 +9,7 @@ export const Container = styled.div`
   border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.white};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: ${({ theme: { spacing } }) => `${spacing(6)} ${spacing(8)}`};
   }
 `;
@@ -19,13 +19,13 @@ export const PrizeInfoWrap = styled.div`
 
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     align-items: center;
   }
 `;
 
 export const PrizeInfo = styled.div`
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: flex;
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(2)};
@@ -47,7 +47,7 @@ export const Code = styled.p`
   font-weight: 400;
   line-height: 1.2;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     width: 180px;
   }
 
@@ -63,7 +63,7 @@ export const Date = styled.p`
   font-weight: 400;
   line-height: 1.2;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-top: ${({ theme }) => theme.spacing(2)};
   }
 `;

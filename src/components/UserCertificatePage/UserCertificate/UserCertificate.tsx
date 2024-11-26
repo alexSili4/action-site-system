@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import UserCertificateBanner from '@UserCertificatePageComponents/UserCertificateBanner';
-import UserCertificateDetails from '@UserCertificatePageComponents/UserCertificateDetails';
-import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
 import { IProps } from './UserCertificate.types';
 import { useUserCertificate } from '@/hooks';
+// components
+import UserCertificateDetails from '@UserCertificatePageComponents/UserCertificateDetails';
+import UserStatisticsDetailsContainer from '@CabinetPageComponents/UserStatisticsDetailsContainer';
+import UserCertificateBanner from '@UserCertificatePageComponents/UserCertificateBanner';
 
 const UserCertificate: FC<IProps> = ({ certificate }) => {
   const {

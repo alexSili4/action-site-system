@@ -6,7 +6,7 @@ export const Container = styled.div`
   z-index: ${({ theme }) => theme.zIndex.selectPromotionDropdown};
   width: 100%;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: auto;
   }
 `;
@@ -43,7 +43,7 @@ export const ShowPromotionsBtn = styled.button<IStyledShowPromotionsBtnProps>`
     );
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 676px;
     height: 76px;
     padding-left: ${({ theme }) => theme.spacing(10)};
@@ -77,7 +77,7 @@ export const PromotionsListContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   transform: translateY(100%) translateX(-50%);
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     bottom: -28px;
     width: 710px;
     max-height: 291px;

@@ -9,12 +9,13 @@ import {
   PhoneLinkTitle,
   AdditionalIfoText,
 } from './PromotionFAQs.styled';
-import PromotionFAQ from '@PromotionDetailsPageComponents/PromotionFAQ';
-import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import { LuPhone } from 'react-icons/lu';
 import { PromotionDetailsPageSections, theme } from '@/constants';
 import { IProps } from './PromotionFAQs.types';
 import { useTargetPromotionData } from '@/hooks';
+// components
+import PromotionFAQ from '@PromotionDetailsPageComponents/PromotionFAQ';
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 
 const PromotionFAQs: FC<IProps> = ({ faqs }) => {
   const { hotLinePhone, hotLineText, hotLineWorkHours, hotLineOtherText } =

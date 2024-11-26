@@ -1,6 +1,5 @@
 import { FC, useState } from 'react';
 import { Container } from './UserStatisticsContainer.styled';
-import StatisticsFilter from '@CabinetPageComponents/StatisticsFilter';
 import { BtnClickEvent, InputChangeEvent } from '@/types/types';
 import { useSetSearchParams } from '@/hooks';
 import {
@@ -9,10 +8,12 @@ import {
   StatisticsCategoriesKeys,
 } from '@/constants';
 import { makeBlur } from '@/utils';
-import StatisticsContent from '@CabinetPageComponents/StatisticsContent';
 import { useUserCodesStore, useUserPrizesStore } from '@/store/store';
 import { selectIsLoaded as selectUserCodesIsLoaded } from '@/store/userCodes/selectors';
 import { selectIsLoaded as selectUserPrizesIsLoaded } from '@/store/userPrizes/selectors';
+// components
+import StatisticsFilter from '@CabinetPageComponents/StatisticsFilter';
+import StatisticsContent from '@CabinetPageComponents/StatisticsContent';
 
 const UserStatisticsContainer: FC = () => {
   const userCodesIsLoaded = useUserCodesStore(selectUserCodesIsLoaded);

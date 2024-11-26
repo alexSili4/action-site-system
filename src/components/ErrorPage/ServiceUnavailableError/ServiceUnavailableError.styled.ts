@@ -17,7 +17,7 @@ export const Title = styled.p`
   text-align: center;
   text-transform: uppercase;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     order: 2;
     width: auto;
     margin-top: ${({ theme }) => theme.spacing(22)};
@@ -29,24 +29,28 @@ export const Title = styled.p`
 export const ImgWrap = styled.div`
   position: relative;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     margin-top: ${({ theme }) => theme.spacing(18)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     order: 1;
+    width: 700px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 1024px;
   }
 `;
 
 export const MobileImage = styled.img`
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
   }
 `;
 
 export const DeskImage = styled.img`
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;
@@ -55,6 +59,17 @@ export const WheelImgWrap = styled.div`
   position: absolute;
   top: 5px;
   left: 114px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    top: 50%;
+    left: 50%;
+  }
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.tablet}px) and (max-width: ${({ theme }) =>
+      theme.breakpoints.desktop}px) {
+    transform: translateX(-50%) translateY(-50%);
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     top: 39px;
@@ -71,7 +86,7 @@ export const Rays = styled.img`
   height: 1083px;
   pointer-events: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;
@@ -79,6 +94,10 @@ export const Rays = styled.img`
 export const Wheel = styled.img`
   position: relative;
   width: 136px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 280px;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 340px;
@@ -102,7 +121,7 @@ export const Text = styled.p`
   line-height: 1.13;
   text-align: center;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     order: 3;
     margin-top: ${({ theme }) => theme.spacing(6)};
   }

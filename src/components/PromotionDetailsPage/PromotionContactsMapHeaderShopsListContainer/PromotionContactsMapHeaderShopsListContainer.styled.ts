@@ -27,7 +27,7 @@ export const Container = styled.div<IStyledProps>`
     cursor: pointer;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     max-height: none;
     height: calc(513px - 73.2px);
   }

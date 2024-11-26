@@ -11,13 +11,17 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     padding: ${({ theme }) => theme.spacing(4)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 300px;
+    border-radius: 16px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 447px;
-    border-radius: 16px;
   }
 `;
 
@@ -34,13 +38,13 @@ export const ContentWrap = styled.div<IStyledContentWrapProps>`
   background-size: contain, cover;
   background-repeat: no-repeat;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     gap: ${({ theme }) => theme.spacing(42)};
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     justify-content: space-between;
     padding: ${({ theme }) => theme.spacing(8)};
     background-image: url(${decorativeElement}),
@@ -53,14 +57,14 @@ export const BarcodeWrap = styled.div`
   border-radius: 6px;
   background-color: ${({ theme }) => theme.colors.white};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: ${({ theme }) => theme.spacing(5)};
     border-radius: 16px;
   }
 `;
 
 export const Barcode = styled.div`
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     padding-top: ${({ theme }) => theme.spacing(16)};
     background-image: url(${barcode});
     background-position: 0 0;
@@ -68,7 +72,7 @@ export const Barcode = styled.div`
     background-repeat: no-repeat;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,7 +87,7 @@ export const BarcodeTitle = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;
@@ -96,7 +100,7 @@ export const BarcodeText = styled.p`
   line-height: 1.1;
   letter-spacing: 0.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 18px;
     letter-spacing: 0.01;
   }
@@ -119,7 +123,7 @@ export const DownloadLink = styled.a`
   background-color: #9066cc;
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 54px;
   }
 

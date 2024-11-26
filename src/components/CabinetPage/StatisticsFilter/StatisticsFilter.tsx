@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Container } from './StatisticsFilter.styled';
-import StatisticsCategories from '@CabinetPageComponents/StatisticsCategories';
 import { IProps } from './StatisticsFilter.types';
+// components
+import StatisticsCategories from '@CabinetPageComponents/StatisticsCategories';
 import StatisticsSortTypesContainer from '@CabinetPageComponents/StatisticsSortTypesContainer';
 
 const StatisticsFilter: FC<IProps> = ({

@@ -11,8 +11,9 @@ import {
 } from './UserCertificateBanner.styled';
 import { RiDownloadLine } from 'react-icons/ri';
 import { theme } from '@/constants';
-import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 import { IProps } from './UserCertificateBanner.types';
+// components
+import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserCertificateBanner: FC<IProps> = ({
   code,

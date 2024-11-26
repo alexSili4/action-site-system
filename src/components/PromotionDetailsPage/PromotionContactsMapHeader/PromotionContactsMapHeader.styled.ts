@@ -34,7 +34,7 @@ export const Title = styled.span`
   font-weight: 500;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 18px;
   }
 `;

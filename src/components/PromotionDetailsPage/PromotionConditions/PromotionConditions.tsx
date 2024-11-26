@@ -1,12 +1,13 @@
 import { FC } from 'react';
-import PromotionConditionsSliderContainer from '@PromotionDetailsPageComponents/PromotionConditionsSliderContainer';
-import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import {
   Container,
   PromotionRegisterCodeLinkContainer,
 } from './PromotionConditions.styled';
 import { PromotionDetailsPageSections } from '@/constants';
 import { IProps } from './PromotionConditions.types';
+// components
+import PromotionConditionsSliderContainer from '@PromotionDetailsPageComponents/PromotionConditionsSliderContainer';
+import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import PromotionRegisterCodeLink from '@PromotionDetailsPageComponents/PromotionRegisterCodeLink';
 
 const PromotionConditions: FC<IProps> = ({ conditions }) => {

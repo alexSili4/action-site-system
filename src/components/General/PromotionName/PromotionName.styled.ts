@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Name = styled.p`
-  max-width: 500px;
+  max-width: 400px;
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 32px;
@@ -9,7 +9,12 @@ export const Name = styled.p`
   line-height: 1.1;
   text-transform: uppercase;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    font-size: 44px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    max-width: 500px;
     font-size: 56px;
   }
 `;

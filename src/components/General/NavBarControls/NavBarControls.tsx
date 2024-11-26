@@ -3,6 +3,7 @@ import { Container, CabinetLink } from './NavBarControls.styled';
 import { PagePaths, theme } from '@/constants';
 import { IProps } from './NavBarControls.types';
 import { PiUserBold } from 'react-icons/pi';
+// components
 import RegisterCodeBtn from '@GeneralComponents/RegisterCodeBtn';
 
 const NavBarControls: FC<IProps> = ({

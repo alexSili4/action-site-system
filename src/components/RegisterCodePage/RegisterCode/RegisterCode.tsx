@@ -1,11 +1,7 @@
 import { FC, useState } from 'react';
-import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
-import RegisterCodeSection from '@RegisterCodePageComponents/RegisterCodeSection';
 import { Content } from './RegisterCode.styled';
 import { RegPromotionCodeSteps } from '@/constants';
 import { getRegCodeSteps } from '@/utils';
-import PrizesWheelSection from '@RegisterCodePageComponents/PrizesWheelSection';
-import RegisterUserSection from '@RegisterCodePageComponents/RegisterUserSection';
 import { WheelPrizes } from '@/types/code.types';
 // TODO delete icons
 import rozetka from '@/rozetka.svg';
@@ -19,6 +15,11 @@ import morshynska from '@/morshynska.svg';
 import podorozhnyk from '@/podorozhnyk.svg';
 import wog from '@/wog.svg';
 import { useTargetPromotionData } from '@/hooks';
+// components
+import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
+import RegisterCodeSection from '@RegisterCodePageComponents/RegisterCodeSection';
+import PrizesWheelSection from '@RegisterCodePageComponents/PrizesWheelSection';
+import RegisterUserSection from '@RegisterCodePageComponents/RegisterUserSection';
 import Container from '@GeneralComponents/Container';
 
 const RegisterCode: FC = () => {
@@ -37,7 +38,7 @@ const RegisterCode: FC = () => {
     { id: 10, name: 'monobank', icon: monobank, prize: '800₴' },
     { id: 9, name: 'morshynska', icon: morshynska, prize: '900₴' },
   ];
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(3);
   const steps = getRegCodeSteps({
     stepsSequence: RegPromotionCodeSteps,
     shouldShowPrizesWheel,

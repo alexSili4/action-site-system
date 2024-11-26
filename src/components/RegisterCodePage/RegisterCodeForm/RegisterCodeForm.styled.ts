@@ -6,8 +6,12 @@ export const Form = styled.form`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(12)};
+    margin-top: ${({ theme }) => theme.spacing(15)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 447px;
     margin-top: ${({ theme }) => theme.spacing(32)};
   }
@@ -19,7 +23,7 @@ export const Content = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(8)};
   }
 `;
@@ -43,7 +47,7 @@ export const LabelWrap = styled.div`
   padding-left: ${({ theme }) => theme.spacing(2)};
   padding-right: ${({ theme }) => theme.spacing(2)};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     left: 17px;
     bottom: calc(100% - 3px);
   }
@@ -56,7 +60,7 @@ export const Label = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 14px;
   }
 `;
@@ -84,11 +88,11 @@ export const ErrorMessage = styled.p`
   font-weight: 400;
   line-height: 1.4;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     margin-top: ${({ theme }) => theme.spacing(3)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     position: absolute;
     top: calc(100% + 12px);
     left: 0;

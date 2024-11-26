@@ -7,7 +7,7 @@ export const Container = styled.div<IStyledContainerProps>`
   opacity: ${({ isFake }) => isFake && 0};
   pointer-events: ${({ isFake }) => isFake && 'none'};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: none;
   }
 `;
