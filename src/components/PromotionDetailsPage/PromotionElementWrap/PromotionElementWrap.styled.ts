@@ -11,6 +11,13 @@ export const Container = styled.div<IStyledProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding-top: ${({ paddingTopTablet }) => paddingTopTablet}px;
+    padding-bottom: ${({ paddingBottomTablet }) => paddingBottomTablet}px;
+    padding-left: ${({ theme }) => theme.spacing(2)};
+    padding-right: ${({ theme }) => theme.spacing(2)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     padding-top: ${({ paddingTopDesk }) => paddingTopDesk}px;
     padding-bottom: ${({ paddingBottomDesk }) => paddingBottomDesk}px;
   }

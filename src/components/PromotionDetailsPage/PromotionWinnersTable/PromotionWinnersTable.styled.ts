@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const TableWrap = styled.div`
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     padding-right: ${({ theme }) => theme.spacing(5)};
     overflow-x: auto;
 

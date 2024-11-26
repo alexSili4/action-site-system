@@ -5,10 +5,12 @@ import { Container } from './PromotionElementWrap.styled';
 const PromotionElementWrap: FC<IProps> = ({
   children,
   isTable = false,
-  paddingBottomMobile = 0,
-  paddingTopMobile = 0,
-  paddingTopDesk = 0,
-  paddingBottomDesk = 0,
+  paddingBottomMobile,
+  paddingTopMobile,
+  paddingTopDesk,
+  paddingBottomDesk,
+  paddingTopTablet,
+  paddingBottomTablet,
 }) => {
   return (
     <Container
@@ -17,6 +19,8 @@ const PromotionElementWrap: FC<IProps> = ({
       paddingBottomMobile={paddingBottomMobile}
       paddingTopDesk={paddingTopDesk}
       paddingBottomDesk={paddingBottomDesk}
+      paddingBottomTablet={paddingBottomTablet}
+      paddingTopTablet={paddingTopTablet}
     >
       {children}
     </Container>

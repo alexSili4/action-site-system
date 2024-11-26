@@ -17,7 +17,7 @@ export const PromotionWinnersWrap = styled.div<IStyledProps>`
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc.other},
     margin-top ${({ theme }) => theme.transitionDurationAndFunc.other};
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: flex;
     flex-direction: row-reverse;
     gap: ${({ theme }) => theme.spacing(24)};
@@ -91,7 +91,7 @@ export const ResultsBtn = styled.button`
       1px 1px 0px 0px #7a4ebd;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 310px;
   }
 `;

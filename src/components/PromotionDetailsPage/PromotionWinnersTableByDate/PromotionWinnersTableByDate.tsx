@@ -68,6 +68,9 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
         <PromotionWinnersTableWrap>
           <PromotionElementWrap
             paddingTopMobile={41}
+            paddingBottomMobile={0}
+            paddingTopTablet={41}
+            paddingBottomTablet={0}
             paddingTopDesk={40}
             paddingBottomDesk={40}
             isTable
@@ -79,6 +82,8 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
           <PromotionElementWrap
             paddingTopMobile={46}
             paddingBottomMobile={24}
+            paddingTopTablet={46}
+            paddingBottomTablet={24}
             paddingTopDesk={40}
             paddingBottomDesk={40}
           >

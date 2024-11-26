@@ -41,7 +41,7 @@ export const Container = styled.div`
     rgb(162, 130, 247) 98.22%
   );
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 901px;
     padding-top: ${({ theme }) => theme.spacing(18)};
     padding-bottom: ${({ theme }) => theme.spacing(37)};
@@ -75,7 +75,7 @@ export const CloseBtn = styled.button`
       inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1);
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     top: 24px;
     right: 24px;
   }
