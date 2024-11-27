@@ -34,7 +34,7 @@ export const Header = styled.span`
     color: #7e8494;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     justify-content: space-between;
   }
 

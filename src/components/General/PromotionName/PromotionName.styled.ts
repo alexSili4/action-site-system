@@ -13,7 +13,7 @@ export const Name = styled.p`
     font-size: 44px;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     max-width: 500px;
     font-size: 56px;
   }

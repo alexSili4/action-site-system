@@ -47,11 +47,11 @@ export const TitleWrap = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     align-items: center;
     justify-content: space-between;
   }

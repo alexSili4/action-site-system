@@ -30,7 +30,7 @@ export const Banner = styled.div<IStyledProps>`
     justify-content: space-between;
     height: 100%;
     border-radius: 8px;
-    padding: ${({ theme: { spacing } }) => `${spacing(5)} ${spacing(5)}`};
+    padding: ${({ theme: { spacing } }) => `${spacing(5)} ${spacing(3)}`};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -51,6 +51,12 @@ export const PromotionName = styled.p`
   font-weight: 700;
   line-height: 1.1;
   text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.tablet}px) and (max-width: ${({ theme }) =>
+      theme.breakpoints.desktop - 1}px) {
+    font-size: 28px;
+  }
 `;
 
 export const LogoPartner = styled.img`
