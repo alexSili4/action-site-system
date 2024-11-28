@@ -1,4 +1,4 @@
-import { Promotions } from '@/types/promotion.types';
+import { Promotions, IPromotion } from '@/types/promotion.types';
 import { Conditions } from '@/types/condition.types';
 import { Prizes } from '@/types/prize.types';
 import { FAQs } from '@/types/faqs.types';
@@ -18,6 +18,17 @@ class PromotionsService extends HttpService {
       },
       false
     );
+    return response.data;
+  }
+
+  async getPromotionById(actionId: string): Promise<IPromotion> {
+    const response = await this.get<IPromotion>(
+      {
+        url: `promotions/promo?action_id=${actionId}`,
+      },
+      false
+    );
+
     return response.data;
   }
 

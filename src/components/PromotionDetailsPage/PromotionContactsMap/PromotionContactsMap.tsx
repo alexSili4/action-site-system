@@ -2,16 +2,13 @@ import { FC, useState } from 'react';
 import { ActiveShopNum } from '@/types/shop.types';
 import { Container } from './PromotionContactsMap.styled';
 import { smoothScroll } from '@/utils';
-import { useTargetPromotionData } from '@/hooks';
 import { IProps } from './PromotionContactsMap.types';
 // components
 import PromotionContactsVisicomMap from '@PromotionDetailsPageComponents/PromotionContactsVisicomMap';
 import PromotionContactsMapHeader from '@PromotionDetailsPageComponents/PromotionContactsMapHeader';
 
-const PromotionContactsMap: FC<IProps> = ({ shops }) => {
+const PromotionContactsMap: FC<IProps> = ({ shops, isNationalPromotion }) => {
   const [activeShopNum, setActiveShopNum] = useState<ActiveShopNum>(null);
-  const { coverageType } = useTargetPromotionData();
-  const isNationalPromotion = coverageType === 'national';
   const targetShops = isNationalPromotion ? [] : shops;
 
   const setActiveShop = (id: number) => {

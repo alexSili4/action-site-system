@@ -7,7 +7,10 @@ import { Swiper as ISwiper } from 'swiper';
 // components
 import PromotionConditionsSlider from '@PromotionDetailsPageComponents/PromotionConditionsSlider';
 
-const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
+const PromotionConditionsSliderContainer: FC<IProps> = ({
+  conditions,
+  rulesPdf,
+}) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [slideHeight, setSlideHeight] = useState<number | null>(null);
   const sliderContainerRef = useRef<DivRef>(null);
@@ -40,6 +43,7 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({ conditions }) => {
       slideHeight={slideHeight}
     >
       <PromotionConditionsSlider
+        rulesPdf={rulesPdf}
         conditions={conditions}
         activeIndex={activeIndex}
         onSlideChange={onSlideChange}

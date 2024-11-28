@@ -15,20 +15,20 @@ import {
   TitleImgWrap,
 } from './PromotionContactsBanner.styled';
 import { theme } from '@/constants';
-import { useTargetPromotionData } from '@/hooks';
-import { getFileUrl, getPromotionBannerUrls } from '@/utils';
+import { IProps } from './PromotionContactsBanner.types';
 
-const PromotionContactsBanner: FC = () => {
-  const { hotLinePhone, hotLineEmail, logo, secondBannerDt, secondBannerMob } =
-    useTargetPromotionData();
-  const logoUrl = getFileUrl(logo);
-  const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
-    bannerDt: secondBannerDt,
-    bannerMob: secondBannerMob,
-  });
-
+const PromotionContactsBanner: FC<IProps> = ({
+  logoUrl,
+  secondBannerDt,
+  secondBannerMob,
+  hotLinePhone,
+  hotLineEmail,
+}) => {
   return (
-    <Container secondBannerDt={bannerDtUrl} secondBannerMob={bannerMobUrl}>
+    <Container
+      secondBannerDt={secondBannerDt}
+      secondBannerMob={secondBannerMob}
+    >
       <TitleWrap>
         <Title>Організатор акції</Title>
         <TitleImgWrap>

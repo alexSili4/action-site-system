@@ -5,7 +5,7 @@ export interface IProps extends IStyledProps {
   from: PageLocation | undefined;
   period: string;
   name: string;
-  showWheelLogo: boolean;
+  shouldShowPrizesWheel: boolean;
 }
 
 export interface IStyledProps {

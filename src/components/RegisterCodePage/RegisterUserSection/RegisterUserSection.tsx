@@ -12,15 +12,23 @@ import {
 } from './RegisterUserSection.styled';
 import { IProps } from './RegisterUserSection.types';
 import { PagePaths } from '@/constants';
-import { useTargetPromotionData } from '@/hooks';
 // components
 import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import RegisterUserForm from '@RegisterCodePageComponents/RegisterUserForm';
 
-const RegisterUserSection: FC<IProps> = ({ steps, currentStep }) => {
+const RegisterUserSection: FC<IProps> = ({
+  steps,
+  currentStep,
+  logoUrl,
+  name,
+  promotionDate,
+  thirdBannerMob,
+  thirdBannerDt,
+  hotLinePhone,
+  hotLineWorkHours,
+}) => {
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
-  const { hotLinePhone, hotLineWorkHours } = useTargetPromotionData();
 
   const setShowSuccessMsgState = () => {
     setShowSuccessMsg(true);
@@ -28,7 +36,13 @@ const RegisterUserSection: FC<IProps> = ({ steps, currentStep }) => {
 
   return (
     <Container>
-      <RegisterCodeBanner />
+      <RegisterCodeBanner
+        logoUrl={logoUrl}
+        name={name}
+        promotionDate={promotionDate}
+        thirdBannerDt={thirdBannerDt}
+        thirdBannerMob={thirdBannerMob}
+      />
       <ContentWrap>
         {showSuccessMsg ? (
           <SuccessRegisterUserMsgContainer>

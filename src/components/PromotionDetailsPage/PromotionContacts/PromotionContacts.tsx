@@ -7,13 +7,30 @@ import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSect
 import PromotionContactsBanner from '@PromotionDetailsPageComponents/PromotionContactsBanner';
 import PromotionContactsMap from '@PromotionDetailsPageComponents/PromotionContactsMap';
 
-const PromotionContacts: FC<IProps> = ({ shops }) => {
+const PromotionContacts: FC<IProps> = ({
+  shops,
+  hotLineEmail,
+  hotLinePhone,
+  logoUrl,
+  secondBannerDt,
+  secondBannerMob,
+  isNationalPromotion,
+}) => {
   return (
     <Container id={PromotionDetailsPageSections.contacts}>
       <PromotionSectionTitle title='Контакти' />
       <ContentWrap>
-        <PromotionContactsMap shops={shops} />
-        <PromotionContactsBanner />
+        <PromotionContactsMap
+          shops={shops}
+          isNationalPromotion={isNationalPromotion}
+        />
+        <PromotionContactsBanner
+          hotLineEmail={hotLineEmail}
+          hotLinePhone={hotLinePhone}
+          logoUrl={logoUrl}
+          secondBannerDt={secondBannerDt}
+          secondBannerMob={secondBannerMob}
+        />
       </ContentWrap>
     </Container>
   );

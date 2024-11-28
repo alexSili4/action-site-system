@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const Banner = styled.div<IStyledProps>`
   padding: ${({ theme: { spacing } }) =>
     `${spacing(6)} ${spacing(5)} ${spacing(55)}`};
-  background-image: url(${({ bannerMobUrl }) => bannerMobUrl});
+  background-image: url(${({ thirdBannerMob }) => thirdBannerMob});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

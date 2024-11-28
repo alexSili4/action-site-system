@@ -1,4 +1,3 @@
-import { useTargetPromotionData } from '@/hooks';
 import { FC } from 'react';
 import { Container, ContentWrap, Text } from './RegisterCodeSection.styled';
 import { IProps } from './RegisterCodeSection.types';
@@ -11,20 +10,36 @@ const RegisterCodeSection: FC<IProps> = ({
   steps,
   currentStep,
   incrementCurrentStep,
+  rulesPdf,
+  hotLinePhone,
+  hotLineWorkHours,
+  name,
+  logoUrl,
+  thirdBannerMob,
+  thirdBannerDt,
+  promotionDate,
 }) => {
-  const { hotLinePhone, hotLineWorkHours } = useTargetPromotionData();
   // TODO fix
 
   return (
     <Container>
-      <RegisterCodeBanner />
+      <RegisterCodeBanner
+        logoUrl={logoUrl}
+        name={name}
+        promotionDate={promotionDate}
+        thirdBannerDt={thirdBannerDt}
+        thirdBannerMob={thirdBannerMob}
+      />
       <ContentWrap>
         <RegisterCodeStepsBar
           isHiddenOnMobile
           steps={steps}
           currentStep={currentStep}
         />
-        <RegisterCodeForm incrementCurrentStep={incrementCurrentStep} />
+        <RegisterCodeForm
+          incrementCurrentStep={incrementCurrentStep}
+          rulesPdf={rulesPdf}
+        />
         <Text>
           Якщо Вам не вдалося зареєструвати акційний код зверніться на гарячу
           лінію за телефоном {hotLinePhone} ({hotLineWorkHours})

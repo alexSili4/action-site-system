@@ -8,15 +8,10 @@ import {
   OnDivClickFunc,
 } from './types';
 import {
-  ActionType,
-  BannerDt,
-  BannerMob,
-  CoverageType,
-  DateFrom,
-  DateTo,
   IPromotion,
   IPromotionDetailsState,
   Promotions,
+  TargetPromotionDetailsState,
 } from './promotion.types';
 import { Conditions } from './condition.types';
 import { Prizes } from './prize.types';
@@ -96,7 +91,7 @@ export interface IUseLocationFilter {
 
 export interface IUsePromotionsList {
   promotions: Promotions;
-  linkState: IPromotionDetailsState;
+  promotionDetailsState: IPromotionDetailsState;
 }
 
 export interface IUsePromotionDetailsPage {
@@ -106,6 +101,7 @@ export interface IUsePromotionDetailsPage {
   faqs: FAQs;
   winners: WinnersByDates;
   shops: Shops;
+  promotion: TargetPromotionDetailsState;
 }
 
 export type UseTargetPromotion = IPromotion | undefined;
@@ -120,29 +116,6 @@ export interface IUsePromotionContactsVisicomMap {
   customMarkerIcon: DivIcon;
 }
 
-export interface IUseTargetPromotionData {
-  rulesPdf: string;
-  hotLinePhone: string | undefined;
-  hotLineEmail: string | undefined;
-  logo: string;
-  coverageType: CoverageType | undefined;
-  dateFrom: DateFrom;
-  dateTo: DateTo;
-  mainBannerMob: BannerMob;
-  mainBannerDt: BannerDt;
-  secondBannerMob: BannerMob;
-  secondBannerDt: BannerDt;
-  thirdBannerDt: BannerDt;
-  thirdBannerMob: BannerDt;
-  actionType: ActionType | undefined;
-  name: string;
-  hotLineText: string | undefined;
-  hotLineWorkHours: string;
-  logoPartner: string;
-  hotLineOtherText: string | undefined;
-  legalText: string;
-}
-
 export interface IUseRegisterCodeForm {
   handleFormSubmit: SubmitHandler<IRegCodeFormData>;
   register: UseFormRegister<IRegCodeFormData>;
@@ -153,21 +126,11 @@ export interface IUseRegisterCodeForm {
   inputMaxLength: number;
   error: RegisterCodeErr;
   disabledBtn: boolean;
-  rulesPdf: string;
 }
 
 export interface IUseCsrfToken {
   name: string;
   token: string;
-}
-
-export interface IUseRegisterCodeBanner {
-  bannerMobUrl: string;
-  bannerDtUrl: string;
-  promotionDate: string;
-  name: string;
-  logoPartnerUrl: string;
-  logoUrl: string;
 }
 
 export interface IUseRegisterUserForm {
@@ -195,6 +158,7 @@ export interface IUseUserCertificate {
   hotLinePhone: string;
   hotLineWorkHours: string;
   promotionName: string;
+  promotionDetailsPath: string;
 }
 
 export interface IUsePromotionFilter {
@@ -202,4 +166,8 @@ export interface IUsePromotionFilter {
   showPromotionsList: boolean;
   toggleShowPromotionsList: Func;
   onPromotionLinkClick: OnAnchorClickFunc;
+}
+
+export interface IUseTargetPromotionData {
+  legalText: string;
 }

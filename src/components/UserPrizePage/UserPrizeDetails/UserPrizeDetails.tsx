@@ -27,6 +27,7 @@ import { IProps } from './UserPrizeDetails.types';
 // components
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { usePromotionDetailsState } from '@/hooks';
 
 const UserPrizeDetails: FC<IProps> = ({
   createdAtDate,
@@ -38,7 +39,10 @@ const UserPrizeDetails: FC<IProps> = ({
   hotLinePhone,
   promotionName,
   hotLineWorkHours,
+  promotionDetailsPath,
 }) => {
+  const promotionDetailsState = usePromotionDetailsState();
+
   return (
     <Container>
       <CabinetGoBackLink />
@@ -51,7 +55,10 @@ const UserPrizeDetails: FC<IProps> = ({
           <DetailsWrap>
             <DescriptionWrap>
               <Subtitle>Акція:</Subtitle>
-              <StyledLink to={PagePaths.root}>
+              <StyledLink
+                to={promotionDetailsPath}
+                state={promotionDetailsState}
+              >
                 <Info>{promotionName}</Info>
                 <NavArrow />
               </StyledLink>

@@ -3,14 +3,14 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { IRegCodeFormData } from '@/types/regCode.types';
 import { generalSettings } from '@/constants';
 import {
+  Func,
   HTMLInputElements,
   IChangeFocusToNextRegCodeInputProps,
   IGetRegCodeInputProps,
   InputChangeEvent,
-  Func,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import { useCsrfToken, usePromotionId, useTargetPromotionData } from '@/hooks';
+import { useCsrfToken, usePromotionId } from '@/hooks';
 import { IRegisterCodeRes, RegisterCodeErr } from '@/types/code.types';
 import { getCurrentInputIndex } from '@/utils';
 import { IUseRegisterCodeForm } from '@/types/hooks.types';
@@ -26,7 +26,6 @@ const useRegisterCodeForm = (
   const { register, handleSubmit, watch } = useForm<IRegCodeFormData>();
   const promotionId = usePromotionId();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
-  const { rulesPdf } = useTargetPromotionData();
   const isError = Boolean(error);
   const acceptedTerms = watch('acceptedTerms');
 
@@ -183,7 +182,6 @@ const useRegisterCodeForm = (
     inputMaxLength,
     error,
     disabledBtn,
-    rulesPdf,
   };
 };
 

@@ -7,18 +7,18 @@ import {
   SunLink,
 } from './Footer.styled';
 import {
-  useTargetPromotionData,
   useIsPromotionDetailsPage,
   useIsRootPage,
+  useTargetPromotionData,
 } from '@/hooks';
 // components
 import SocialLinksList from '@GeneralComponents/SocialLinksList';
 
 const Footer: FC = () => {
-  const isRootPage = useIsRootPage();
   const { legalText } = useTargetPromotionData();
+  const isRootPage = useIsRootPage();
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
-  const shouldShowLegalInfo = isPromotionDetailsPage;
+  const shouldShowLegalInfo = isPromotionDetailsPage && legalText;
 
   return (
     <StyledFooter

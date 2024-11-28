@@ -62,7 +62,7 @@ export type TranslatedPromotionDetailsPageSections = {
 
 export interface IPromotionDetailsState {
   from: PageLocation;
-  promotionCategory: string;
+  promotionCategory?: string;
 }
 
 export type PromotionDetailsState = {
@@ -85,3 +85,5 @@ export interface IGetPromotionDateProps {
 }
 
 export type SetActiveIndexByIndexFunc = (data: number) => void;
+
+export type TargetPromotionDetailsState = IPromotion | null;

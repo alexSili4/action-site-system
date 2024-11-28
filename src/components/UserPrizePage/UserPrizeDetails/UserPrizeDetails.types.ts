@@ -8,4 +8,5 @@ export interface IProps {
   hotLinePhone: string;
   promotionName: string;
   hotLineWorkHours: string;
+  promotionDetailsPath: string;
 }

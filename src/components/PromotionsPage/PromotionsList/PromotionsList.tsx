@@ -13,7 +13,8 @@ import PromotionPeriodLabel from '@GeneralComponents/PromotionPeriodLabel';
 import PromotionName from '@GeneralComponents/PromotionName';
 
 const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
-  const { promotions, linkState } = usePromotionsList(promotionCategory);
+  const { promotions, promotionDetailsState } =
+    usePromotionsList(promotionCategory);
 
   return (
     <Container>
@@ -36,7 +37,10 @@ const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
 
             return (
               <ListItem key={id}>
-                <LinkWithQuery to={promotionDetailsPath} state={linkState}>
+                <LinkWithQuery
+                  to={promotionDetailsPath}
+                  state={promotionDetailsState}
+                >
                   <Card mainBannerDt={bannerDtUrl} mainBannerMob={bannerMobUrl}>
                     <PromotionPeriodLabel period={date} />
                     <PromotionName name={name} />

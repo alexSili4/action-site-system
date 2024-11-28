@@ -1,7 +1,12 @@
 import { DateFormats } from '@/constants';
 import { IUseUserCertificate } from '@/types/hooks.types';
 import { IPrizeCategoryUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
-import { formatDate, getFileUrl, getPromotionBannerUrls } from '@/utils';
+import {
+  formatDate,
+  getFileUrl,
+  getPromotionBannerUrls,
+  getPromotionDetailsPath,
+} from '@/utils';
 
 const useUserCertificate = (
   certificate: IPrizeCategoryUserCertificateWithDetails
@@ -23,8 +28,10 @@ const useUserCertificate = (
     hot_line_work_hours: hotLineWorkHours,
     third_banner_dt: thirdBannerDt,
     third_banner_mob: thirdBannerMob,
+    id: actionId,
   } = action;
 
+  const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const partnerLogoUrl = getFileUrl(partnerLogo);
   const certificatePdfUrl = getFileUrl(certificatePdf);
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
@@ -50,6 +57,7 @@ const useUserCertificate = (
     hotLinePhone,
     hotLineWorkHours,
     promotionName,
+    promotionDetailsPath,
   };
 };
 

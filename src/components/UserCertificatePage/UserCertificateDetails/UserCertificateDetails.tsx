@@ -28,6 +28,7 @@ import { IProps } from './UserCertificateDetails.types';
 // components
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { usePromotionDetailsState } from '@/hooks';
 
 const UserCertificateDetails: FC<IProps> = ({
   prizeName,
@@ -39,7 +40,10 @@ const UserCertificateDetails: FC<IProps> = ({
   expiredDate,
   hotLinePhone,
   hotLineWorkHours,
+  promotionDetailsPath,
 }) => {
+  const promotionDetailsState = usePromotionDetailsState();
+
   return (
     <Container>
       <CabinetGoBackLink />
@@ -52,8 +56,10 @@ const UserCertificateDetails: FC<IProps> = ({
           <DetailsWrap>
             <DescriptionWrap>
               <Subtitle>Акція:</Subtitle>
-              <StyledLink to={PagePaths.root}>
-                {/* TODO fix */}
+              <StyledLink
+                to={promotionDetailsPath}
+                state={promotionDetailsState}
+              >
                 <Info>{promotionName}</Info>
                 <NavArrow />
               </StyledLink>

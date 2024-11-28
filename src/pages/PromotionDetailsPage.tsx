@@ -6,21 +6,31 @@ import { usePromotionDetailsPage } from '@/hooks';
 import PromotionDetailsNavBar from '@PromotionDetailsPageComponents/PromotionDetailsNavBar';
 
 const PromotionDetailsPage: FC = () => {
-  const { conditions, faqs, otherPrizes, wheelPrizes, winners, shops } =
-    usePromotionDetailsPage();
+  const {
+    conditions,
+    faqs,
+    otherPrizes,
+    wheelPrizes,
+    winners,
+    shops,
+    promotion,
+  } = usePromotionDetailsPage();
 
   return (
     <>
       <Section>
         <Container>
-          <PromotionDetails
-            faqs={faqs}
-            otherPrizes={otherPrizes}
-            wheelPrizes={wheelPrizes}
-            conditions={conditions}
-            winners={winners}
-            shops={shops}
-          />
+          {promotion && (
+            <PromotionDetails
+              faqs={faqs}
+              otherPrizes={otherPrizes}
+              wheelPrizes={wheelPrizes}
+              conditions={conditions}
+              winners={winners}
+              shops={shops}
+              promotion={promotion}
+            />
+          )}
         </Container>
       </Section>
       <PromotionDetailsNavBar />

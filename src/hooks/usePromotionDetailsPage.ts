@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { PagePaths } from '@/constants';
 import promotionsService from '@/services/promotions.service';
 import { Conditions } from '@/types/condition.types';
 import { Prizes } from '@/types/prize.types';
@@ -8,6 +6,8 @@ import { FAQs } from '@/types/faqs.types';
 import { IUsePromotionDetailsPage } from '@/types/hooks.types';
 import { WinnersByDates } from '@/types/winner.types';
 import { Shops } from '@/types/shop.types';
+import usePromotion from './usePromotion';
+import usePromotionId from './usePromotionId';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
@@ -16,8 +16,8 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [faqs, setFaqs] = useState<FAQs>([]);
   const [winners, setWinners] = useState<WinnersByDates>([]);
   const [shops, setShops] = useState<Shops>([]);
-
-  const promotionId = useParams()[PagePaths.dynamicParam] ?? '';
+  const promotionId = usePromotionId();
+  const promotion = usePromotion();
 
   useEffect(() => {
     const getPromotionConditions = async (
@@ -106,7 +106,15 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     getPromotionShops(promotionId);
   }, [promotionId]);
 
-  return { conditions, otherPrizes, wheelPrizes, faqs, winners, shops };
+  return {
+    conditions,
+    otherPrizes,
+    wheelPrizes,
+    faqs,
+    winners,
+    shops,
+    promotion,
+  };
 };
 
 export default usePromotionDetailsPage;

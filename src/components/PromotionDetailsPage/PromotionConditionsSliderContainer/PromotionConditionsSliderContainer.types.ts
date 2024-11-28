@@ -1,6 +1,7 @@
 import { Conditions } from '@/types/condition.types';
 
 export interface IProps {
+  rulesPdf: string;
   conditions: Conditions;
 }
 

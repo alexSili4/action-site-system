@@ -2,14 +2,19 @@ import { FC } from 'react';
 import { Container, Content } from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import { PromotionDetailsState } from '@/types/promotion.types';
-import { useSetSearchParams, useTargetPromotionData } from '@/hooks';
+import { useSetSearchParams } from '@/hooks';
 import {
   PromotionDetailsPageSections,
   PromotionsCategoriesKeys,
   SearchParamsKeys,
 } from '@/constants';
 import { IProps } from './PromotionDetails.types';
-import { getFileUrl, getPromotionBannerUrls, getPromotionDate } from '@/utils';
+import {
+  getFileUrl,
+  getPromotionBannerUrls,
+  getPromotionDate,
+  getShouldShowPrizesWheel,
+} from '@/utils';
 // components
 import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
 import PromotionDetailsSectionContainer from '@PromotionDetailsPageComponents/PromotionDetailsSectionContainer';
@@ -23,6 +28,7 @@ import PromotionWinners from '@PromotionDetailsPageComponents/PromotionWinners';
 import PromotionContacts from '@PromotionDetailsPageComponents/PromotionContacts';
 
 const PromotionDetails: FC<IProps> = ({
+  promotion,
   faqs,
   otherPrizes,
   wheelPrizes,
@@ -31,14 +37,22 @@ const PromotionDetails: FC<IProps> = ({
   shops,
 }) => {
   const {
-    dateFrom,
-    dateTo,
-    secondBannerMob,
-    secondBannerDt,
-    actionType,
+    date_from: dateFrom,
+    date_to: dateTo,
+    second_banner_mob: secondBannerMob,
+    second_banner_dt: secondBannerDt,
+    action_type: actionType,
     name,
-    logoPartner,
-  } = useTargetPromotionData();
+    logo_partner: logoPartner,
+    rules_pdf: rulesPdf,
+    coverage_type: coverageType,
+    hot_line_email: hotLineEmail,
+    hot_line_phone: hotLinePhone,
+    logo,
+    hot_line_work_hours: hotLineWorkHours,
+    hot_line_text: hotLineText,
+    hot_line_text_2: hotLineOtherText,
+  } = promotion;
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
   const { state }: PromotionDetailsState = useLocation();
@@ -50,8 +64,11 @@ const PromotionDetails: FC<IProps> = ({
     bannerDt: secondBannerDt,
     bannerMob: secondBannerMob,
   });
+  const logoUrl = getFileUrl(logo ?? '');
   const logoPartnerUrl = getFileUrl(logoPartner);
-  const showWheelLogo = actionType === 1 || actionType === 3;
+  const rulesPdfUrl = getFileUrl(rulesPdf);
+  const isNationalPromotion = coverageType === 'national';
+  const shouldShowPrizesWheel = getShouldShowPrizesWheel(actionType);
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);
 
@@ -77,10 +94,10 @@ const PromotionDetails: FC<IProps> = ({
             name={name}
             secondBannerDt={bannerDtUrl}
             secondBannerMob={bannerMobUrl}
-            showWheelLogo={showWheelLogo}
+            shouldShowPrizesWheel={shouldShowPrizesWheel}
           />
         </PromotionDetailsSectionContainer>
-        <PromotionConditions conditions={conditions} />
+        <PromotionConditions conditions={conditions} rulesPdf={rulesPdfUrl} />
         <PromotionPrizes
           logo={<PromotionPrizesBannerIcon src={logoPartnerUrl} />}
           prizes={otherPrizes}
@@ -95,9 +112,23 @@ const PromotionDetails: FC<IProps> = ({
           title='Призи «Колеса подарунків»'
           description='Крутіть колесо та вигравайте подарунки'
         />
-        <PromotionFAQs faqs={faqs} />
+        <PromotionFAQs
+          faqs={faqs}
+          hotLineOtherText={hotLineOtherText}
+          hotLinePhone={hotLinePhone}
+          hotLineText={hotLineText}
+          hotLineWorkHours={hotLineWorkHours}
+        />
         {shouldShowWinnersSection && <PromotionWinners winners={winners} />}
-        <PromotionContacts shops={shops} />
+        <PromotionContacts
+          shops={shops}
+          hotLineEmail={hotLineEmail}
+          hotLinePhone={hotLinePhone}
+          logoUrl={logoUrl}
+          secondBannerDt={bannerDtUrl}
+          secondBannerMob={bannerMobUrl}
+          isNationalPromotion={isNationalPromotion}
+        />
       </Content>
     </Container>
   );

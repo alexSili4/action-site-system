@@ -3,7 +3,6 @@ import { getFileUrl } from '@/utils';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import rulesCardBg from '@/images/conditions/rules-bg.jpg';
 import { IoDocumentOutline } from 'react-icons/io5';
-import { useTargetPromotionData } from '@/hooks';
 import { IProps } from './PromotionConditionsSlider.types';
 import { theme } from '@/constants';
 import {
@@ -23,13 +22,13 @@ import PromotionConditionsSliderControls from '@PromotionDetailsPageComponents/P
 import PromotionConditionsSliderPagination from '@PromotionDetailsPageComponents/PromotionConditionsSliderPagination';
 
 const PromotionConditionsSlider: FC<IProps> = ({
+  rulesPdf,
   conditions,
   slideHeight,
   activeIndex,
   onSlideChange,
   setActiveIndexByIndex,
 }) => {
-  const { rulesPdf } = useTargetPromotionData();
   const isManyConditions = conditions.length > 1;
   const shouldShowSliderPagination = isManyConditions && slideHeight;
   const lastStepNum = conditions.length + 1;

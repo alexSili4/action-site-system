@@ -1,4 +1,12 @@
+export interface IProps {
+  logoUrl: string;
+  promotionDate: string;
+  name: string;
+  thirdBannerMob: string;
+  thirdBannerDt: string;
+}
+
 export interface IStyledProps {
-  bannerMobUrl: string;
-  bannerDtUrl: string;
+  thirdBannerMob: string;
+  thirdBannerDt: string;
 }

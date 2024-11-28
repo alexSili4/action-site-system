@@ -8,4 +8,5 @@ export interface IProps {
   expiredDate: string;
   hotLinePhone: string;
   hotLineWorkHours: string;
+  promotionDetailsPath: string;
 }

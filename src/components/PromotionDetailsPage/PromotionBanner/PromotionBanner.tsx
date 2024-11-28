@@ -13,7 +13,7 @@ const PromotionBanner: FC<IProps> = ({
   name,
   secondBannerDt,
   secondBannerMob,
-  showWheelLogo,
+  shouldShowPrizesWheel,
 }) => {
   return (
     <Container
@@ -26,7 +26,7 @@ const PromotionBanner: FC<IProps> = ({
           <PromotionPeriodLabel period={period} />
           <PromotionName name={name} />
         </InfoWrap>
-        {showWheelLogo && <PrizesWheelLogo />}
+        {shouldShowPrizesWheel && <PrizesWheelLogo />}
       </ContentWrap>
     </Container>
   );

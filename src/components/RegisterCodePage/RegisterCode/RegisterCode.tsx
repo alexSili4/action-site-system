@@ -1,7 +1,13 @@
 import { FC, useState } from 'react';
 import { Content } from './RegisterCode.styled';
 import { RegPromotionCodeSteps } from '@/constants';
-import { getRegCodeSteps } from '@/utils';
+import {
+  getFileUrl,
+  getPromotionBannerUrls,
+  getPromotionDate,
+  getRegCodeSteps,
+  getShouldShowPrizesWheel,
+} from '@/utils';
 import { WheelPrizes } from '@/types/code.types';
 // TODO delete icons
 import rozetka from '@/rozetka.svg';
@@ -14,17 +20,35 @@ import monobank from '@/monobank.svg';
 import morshynska from '@/morshynska.svg';
 import podorozhnyk from '@/podorozhnyk.svg';
 import wog from '@/wog.svg';
-import { useTargetPromotionData } from '@/hooks';
 // components
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import RegisterCodeSection from '@RegisterCodePageComponents/RegisterCodeSection';
 import PrizesWheelSection from '@RegisterCodePageComponents/PrizesWheelSection';
 import RegisterUserSection from '@RegisterCodePageComponents/RegisterUserSection';
 import Container from '@GeneralComponents/Container';
+import { IProps } from './RegisterCode.types';
 
-const RegisterCode: FC = () => {
-  const { actionType } = useTargetPromotionData();
-  const shouldShowPrizesWheel = actionType === 1 || actionType === 3;
+const RegisterCode: FC<IProps> = ({ promotion }) => {
+  const {
+    action_type: actionType,
+    name,
+    hot_line_phone: hotLinePhone,
+    hot_line_work_hours: hotLineWorkHours,
+    logo,
+    date_from: dateFrom,
+    date_to: dateTo,
+    third_banner_dt: thirdBannerDt,
+    third_banner_mob: thirdBannerMob,
+    rules_pdf: rulesPdf,
+  } = promotion;
+  const shouldShowPrizesWheel = getShouldShowPrizesWheel(actionType);
+  const logoUrl = getFileUrl(logo ?? '');
+  const rulesPdfUrl = getFileUrl(rulesPdf);
+  const promotionDate = getPromotionDate({ dateFrom, dateTo });
+  const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
+    bannerDt: thirdBannerDt,
+    bannerMob: thirdBannerMob,
+  });
   // TODO delete sectors
   const prizes: WheelPrizes = [
     { id: 2, name: 'citrus', icon: citrus, prize: '10%' },
@@ -73,6 +97,14 @@ const RegisterCode: FC = () => {
       {isRegisterCodeStep && (
         <Container>
           <RegisterCodeSection
+            hotLinePhone={hotLinePhone}
+            hotLineWorkHours={hotLineWorkHours}
+            logoUrl={logoUrl}
+            name={name}
+            promotionDate={promotionDate}
+            rulesPdf={rulesPdfUrl}
+            thirdBannerDt={bannerDtUrl}
+            thirdBannerMob={bannerMobUrl}
             steps={steps}
             currentStep={currentStep}
             incrementCurrentStep={incrementCurrentStep}
@@ -89,7 +121,17 @@ const RegisterCode: FC = () => {
       )}
       {isConfirmEmailStep && (
         <Container>
-          <RegisterUserSection steps={steps} currentStep={currentStep} />
+          <RegisterUserSection
+            steps={steps}
+            currentStep={currentStep}
+            hotLinePhone={hotLinePhone}
+            hotLineWorkHours={hotLineWorkHours}
+            logoUrl={logoUrl}
+            name={name}
+            promotionDate={promotionDate}
+            thirdBannerDt={bannerDtUrl}
+            thirdBannerMob={bannerMobUrl}
+          />
         </Container>
       )}
     </Content>
