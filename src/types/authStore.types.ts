@@ -1,6 +1,6 @@
 import { IUser } from './auth.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
-import { ICsrfToken } from './types';
+import { ICsrfToken, StringOrNull } from './types';
 
 export type Refresh = IUser | null;
 
@@ -9,7 +9,7 @@ export interface IAuthInitialState {
   isLoggedIn: boolean;
   isRefreshing: boolean;
   isLoading: boolean;
-  error: null | string;
+  error: StringOrNull;
 }
 
 export interface IAuthState extends IAuthInitialState {

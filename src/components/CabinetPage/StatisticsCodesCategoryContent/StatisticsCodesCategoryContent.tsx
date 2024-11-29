@@ -6,7 +6,7 @@ import {
 } from './StatisticsCodesCategoryContent.styled';
 import { useUserCodesStore } from '@/store/store';
 import { selectUserCodes, selectTotalPages } from '@/store/userCodes/selectors';
-import { formatDate, getFileUrl } from '@/utils';
+import { formatDate, getCodeStatus, getFileUrl } from '@/utils';
 import { DateFormats, Messages } from '@/constants';
 import receipts from '@/images/cabinet/receipts.png';
 // components
@@ -37,8 +37,8 @@ const StatisticsCodesCategoryContent: FC = () => {
                 present_gift_id: presentGiftId,
               }) => {
                 const partnerLogoUrl = getFileUrl(partnerLogo ?? '');
-                const isErrorStatus = codeStatus === 2;
-                const isSuccessStatus = codeStatus === 1;
+                const { isErrorStatus, isSuccessStatus } =
+                  getCodeStatus(codeStatus);
                 const codeCreatedAtDate = formatDate({
                   date: codeCreatedAt * 1000,
                   dateFormat: DateFormats.generalDate,

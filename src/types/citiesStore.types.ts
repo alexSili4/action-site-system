@@ -1,11 +1,12 @@
 import { Cities } from './city.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
+import { StringOrNull } from './types';
 
 export interface ICitiesInitialState {
   items: Cities;
   isLoading: boolean;
   isLoaded: boolean;
-  error: null | string;
+  error: StringOrNull;
 }
 
 export interface ICitiesState extends ICitiesInitialState {

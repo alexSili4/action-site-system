@@ -18,12 +18,12 @@ import {
   CodeWrap,
   StyledLink,
 } from './StatisticsCode.styled';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
 import { getUserCodeMessage } from '@/utils';
-import { ICabinetState } from '@/types/cabinet.types';
 // components
 import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
+import { useCabinetState } from '@/hooks';
 
 const StatisticsCode: FC<IProps> = ({
   isSuccessStatus,
@@ -39,8 +39,7 @@ const StatisticsCode: FC<IProps> = ({
     isErrorStatus,
     isSuccessStatus,
   });
-  const location = useLocation();
-  const cabinetState: ICabinetState = { from: location };
+  const cabinetState = useCabinetState();
   const shouldShowCodeLinks =
     shouldShowUserPrizeLink || shouldShowUserCertificateLink;
   const shouldShowContent = shouldShowCodeLinks || shouldShowCertificate;

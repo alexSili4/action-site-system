@@ -1,11 +1,12 @@
 import { Promotions } from './promotion.types';
 import { GetStateFunc, SetStateFunc } from './store.types';
+import { StringOrNull } from './types';
 
 export interface IPromotionsInitialState {
   items: Promotions;
   isLoading: boolean;
   isLoaded: boolean;
-  error: null | string;
+  error: StringOrNull;
 }
 
 export interface IPromotionsState extends IPromotionsInitialState {

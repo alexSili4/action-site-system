@@ -4,13 +4,18 @@ import {
   List,
   ListItem,
 } from './StatisticsPrizesCategoryContent.styled';
-import { formatDate, getFileUrl } from '@/utils';
+import {
+  formatDate,
+  getFileUrl,
+  getPrizeDetailsPath,
+  getCertificateDetailsPath,
+} from '@/utils';
 import { useUserPrizesStore } from '@/store/store';
 import {
   selectTotalPages,
   selectUserPrizes,
 } from '@/store/userPrizes/selectors';
-import { DateFormats, Messages, PagePaths } from '@/constants';
+import { DateFormats, Messages } from '@/constants';
 import prize from '@/images/cabinet/prize.png';
 // components
 import PaginationBar from '@GeneralComponents/PaginationBar';
@@ -47,13 +52,14 @@ const StatisticsPrizesCategoryContent: FC = () => {
                 date: winTime * 1000,
                 dateFormat: DateFormats.generalDate,
               });
-              const userPrizePath = `${PagePaths.userPrize}/${winnerId}`;
-              const userCertificatePath = `${PagePaths.userCertificate}/${winnerId}`;
+              const prizeDetailsPath = getPrizeDetailsPath(winnerId);
+              const certificateDetailsPath =
+                getCertificateDetailsPath(winnerId);
 
               const isCertificate = entityType === 'wheel';
               const linkPath = isCertificate
-                ? userCertificatePath
-                : userPrizePath;
+                ? certificateDetailsPath
+                : prizeDetailsPath;
 
               return (
                 <ListItem key={index}>

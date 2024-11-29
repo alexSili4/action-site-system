@@ -1,4 +1,5 @@
 import { GetStateFunc, SetStateFunc } from './store.types';
+import { StringOrNull } from './types';
 import { UserCodes } from './userCode.types';
 
 export interface IUserCodesInitialState {
@@ -6,7 +7,7 @@ export interface IUserCodesInitialState {
   totalPages: number;
   isLoading: boolean;
   isLoaded: boolean;
-  error: null | string;
+  error: StringOrNull;
 }
 
 export interface IUserCodesState extends IUserCodesInitialState {

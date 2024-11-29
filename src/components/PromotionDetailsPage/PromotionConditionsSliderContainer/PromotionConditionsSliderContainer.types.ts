@@ -1,4 +1,5 @@
 import { Conditions } from '@/types/condition.types';
+import { NumberOrNull } from '@/types/types';
 
 export interface IProps {
   rulesPdf: string;
@@ -8,5 +9,5 @@ export interface IProps {
 export interface IStyledContainerProps {
   paddingSideMobile: string;
   paddingSideDesk: string;
-  slideHeight: number | null;
+  slideHeight: NumberOrNull;
 }

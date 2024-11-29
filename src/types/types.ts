@@ -30,6 +30,10 @@ export type SetSlideActiveIndexByIndex = (data: number) => void;
 
 // other
 
+export type NumberOrNull = number | null;
+
+export type StringOrNull = string | null;
+
 export interface IOnPageBtnClickProps {
   e: BtnClickEvent;
   page: number;
@@ -110,3 +114,8 @@ export interface ICabinetPageOutletContext {
 export interface IOutletContext
   extends IGeneralOutletContext,
     ICabinetPageOutletContext {}
+
+export interface IGetCodeStatus {
+  isSuccessStatus: boolean;
+  isErrorStatus: boolean;
+}

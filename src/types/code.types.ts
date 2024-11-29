@@ -11,8 +11,6 @@ export interface IRegisterCode {
 
 export type RegisterCodeResult = 'error' | 'ok' | 'general_error';
 
-export type RegisterCodeErr = string | null;
-
 export interface IRegisterCodeRes {
   result: RegisterCodeResult;
   errors: {

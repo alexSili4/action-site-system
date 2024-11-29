@@ -11,8 +11,9 @@ import {
   IGetClientPrizesProps,
 } from '@/types/userPrize.types';
 import { getSortType } from '@/utils';
-import { IPrizeCategoryUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
-import { IPrizeCategoryUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
+import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
+import { IUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
+import { IUserCodeWithDetails } from '@/types/userCodeWithDetails.types';
 
 class CabinetService extends HttpService {
   constructor() {
@@ -59,8 +60,8 @@ class CabinetService extends HttpService {
 
   async getCertificateDetails(
     id: string
-  ): Promise<IPrizeCategoryUserCertificateWithDetails> {
-    const { data } = await this.get<IPrizeCategoryUserCertificateWithDetails>(
+  ): Promise<IUserCertificateWithDetails> {
+    const { data } = await this.get<IUserCertificateWithDetails>(
       {
         url: `client/my-certificate?winner_id=${id}`,
       },
@@ -70,12 +71,21 @@ class CabinetService extends HttpService {
     return data;
   }
 
-  async getPrizeDetails(
-    id: string
-  ): Promise<IPrizeCategoryUserPrizeWithDetails> {
-    const { data } = await this.get<IPrizeCategoryUserPrizeWithDetails>(
+  async getPrizeDetails(id: string): Promise<IUserPrizeWithDetails> {
+    const { data } = await this.get<IUserPrizeWithDetails>(
       {
         url: `client/my-present?winner_id=${id}`,
+      },
+      false
+    );
+
+    return data;
+  }
+
+  async getCodeDetails(id: string): Promise<IUserCodeWithDetails> {
+    const { data } = await this.get<IUserCodeWithDetails>(
+      {
+        url: `client/my-code?id=${id}`,
       },
       false
     );

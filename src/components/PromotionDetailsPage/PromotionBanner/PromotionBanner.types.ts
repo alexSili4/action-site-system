@@ -1,5 +1,4 @@
-import { BannerDt, BannerMob } from '@/types/promotion.types';
-import { PageLocation } from '@/types/types';
+import { PageLocation, StringOrNull } from '@/types/types';
 
 export interface IProps extends IStyledProps {
   from: PageLocation | undefined;
@@ -9,6 +8,6 @@ export interface IProps extends IStyledProps {
 }
 
 export interface IStyledProps {
-  secondBannerDt: BannerDt;
-  secondBannerMob: BannerMob;
+  secondBannerDt: StringOrNull;
+  secondBannerMob: StringOrNull;
 }

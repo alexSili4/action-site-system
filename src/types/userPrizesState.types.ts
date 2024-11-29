@@ -1,4 +1,5 @@
 import { GetStateFunc, SetStateFunc } from './store.types';
+import { StringOrNull } from './types';
 import { UserPrizes } from './userPrize.types';
 
 export interface IUserPrizesInitialState {
@@ -6,7 +7,7 @@ export interface IUserPrizesInitialState {
   totalPages: number;
   isLoading: boolean;
   isLoaded: boolean;
-  error: null | string;
+  error: StringOrNull;
 }
 
 export interface IUserPrizesState extends IUserPrizesInitialState {

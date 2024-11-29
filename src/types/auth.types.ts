@@ -1,10 +1,11 @@
 import { StatisticsCategoriesKeys, StatisticsSortTypesKeys } from '@/constants';
+import { NumberOrNull, StringOrNull } from './types';
 
 export interface IUser {
-  id: number | null;
-  phone: number | null;
-  name: string | null;
-  email: string | null;
+  id: NumberOrNull;
+  phone: NumberOrNull;
+  name: StringOrNull;
+  email: StringOrNull;
 }
 
 export type StatisticsCategoriesValues = StatisticsCategoriesKeys[];

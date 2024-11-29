@@ -1,4 +1,4 @@
-import { BannerDt, BannerMob } from '@/types/promotion.types';
+import { StringOrNull } from '@/types/types';
 
 export interface IProps {
   logoUrl: string;
@@ -9,6 +9,6 @@ export interface IProps {
 }
 
 export interface IStyledProps {
-  secondBannerDt: BannerDt;
-  secondBannerMob: BannerMob;
+  secondBannerDt: StringOrNull;
+  secondBannerMob: StringOrNull;
 }

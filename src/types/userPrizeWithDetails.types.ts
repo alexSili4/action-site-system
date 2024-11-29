@@ -30,7 +30,7 @@ export interface ICode {
   wheel_status: null;
 }
 
-export interface IPrizeCategoryUserPrizeWithDetails {
+export interface IUserPrizeWithDetails {
   gift: IGift;
   code: ICode;
   action: IPromotion;

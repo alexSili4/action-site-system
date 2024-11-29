@@ -17,15 +17,21 @@ import { IProps } from './UserReceiptDetails.types';
 // components
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
-const UserReceiptDetails: FC<IProps> = ({ isVerifiedCode }) => {
+const UserReceiptDetails: FC<IProps> = ({
+  isVerifiedCode,
+  receiptNumber,
+  shopNumber,
+  total,
+  formattedCode,
+}) => {
   // TODO fix
-  const receiptNumber = isVerifiedCode
-    ? 1346517
+  const userReceiptNumber = isVerifiedCode
+    ? receiptNumber
     : generalSettings.defaultReceiptText;
-  const shopNumber = isVerifiedCode
-    ? '№234'
+  const userShopNumber = isVerifiedCode
+    ? shopNumber
     : generalSettings.defaultReceiptText;
-  const total = isVerifiedCode ? '500₴' : generalSettings.defaultReceiptText;
+  const userTotal = isVerifiedCode ? total : generalSettings.defaultReceiptText;
 
   return (
     <Container>
@@ -37,23 +43,23 @@ const UserReceiptDetails: FC<IProps> = ({ isVerifiedCode }) => {
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
             <ReceiptDetailsItem>
               <ReceiptDetailsText>№ чеку</ReceiptDetailsText>
-              <ReceiptDetailsText>{receiptNumber}</ReceiptDetailsText>
+              <ReceiptDetailsText>{userReceiptNumber}</ReceiptDetailsText>
             </ReceiptDetailsItem>
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
             <ReceiptDetailsItem>
               <ReceiptDetailsText>Магазин</ReceiptDetailsText>
-              <ReceiptDetailsText>{shopNumber}</ReceiptDetailsText>
+              <ReceiptDetailsText>{userShopNumber}</ReceiptDetailsText>
             </ReceiptDetailsItem>
             <ReceiptDetailsItem>
               <ReceiptDetailsText>Cума</ReceiptDetailsText>
-              <ReceiptDetailsText>{total}</ReceiptDetailsText>
+              <ReceiptDetailsText>{userTotal}</ReceiptDetailsText>
             </ReceiptDetailsItem>
             <ReceiptDetailsDelimiter></ReceiptDetailsDelimiter>
           </ReceiptDetailsWrap>
         </ReceiptInfo>
         <CodeWrap>
           <CodeTitle>Акційний код:</CodeTitle>
-          <Code>ZU2L-MFSZ-YWE3</Code>
+          <Code>{formattedCode}</Code>
         </CodeWrap>
       </Content>
     </Container>

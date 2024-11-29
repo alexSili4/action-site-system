@@ -1,5 +1,5 @@
 import { ActionType } from './promotion.types';
-import { Strings } from './types';
+import { NumberOrNull, Strings } from './types';
 
 export type EntityType = 'wheel' | 'present';
 
@@ -13,7 +13,7 @@ export interface IUserPrize {
   action_date_from: number;
   action_date_to: number;
   gift_name: string;
-  gift_price: null | number;
+  gift_price: NumberOrNull;
   gift_discount: null;
   partner_name: string;
   payment_logo: string;

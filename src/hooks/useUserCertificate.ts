@@ -1,6 +1,6 @@
 import { DateFormats } from '@/constants';
 import { IUseUserCertificate } from '@/types/hooks.types';
-import { IPrizeCategoryUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
+import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
 import {
   formatDate,
   getFileUrl,
@@ -9,7 +9,7 @@ import {
 } from '@/utils';
 
 const useUserCertificate = (
-  certificate: IPrizeCategoryUserCertificateWithDetails
+  certificate: IUserCertificateWithDetails
 ): IUseUserCertificate => {
   const {
     code: userCode,

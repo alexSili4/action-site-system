@@ -14,8 +14,8 @@ import {
   Accent,
 } from './StatisticsPrize.styled';
 import { IProps } from './StatisticsPrize.types';
-import { ICabinetState } from '@/types/cabinet.types';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useCabinetState } from '@/hooks';
 
 const StatisticsPrize: FC<IProps> = ({
   name,
@@ -25,11 +25,10 @@ const StatisticsPrize: FC<IProps> = ({
   drawDate,
   linkPath,
 }) => {
-  const location = useLocation();
-  const linkState: ICabinetState = { from: location };
+  const cabinetState = useCabinetState();
 
   return (
-    <Link to={linkPath} state={linkState}>
+    <Link to={linkPath} state={cabinetState}>
       <Container>
         <PrizeInfoWrap>
           <PrizeInfo>

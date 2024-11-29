@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { Container } from './PromotionConditionsSliderContainer.styled';
 import { theme } from '@/constants';
 import { IProps } from './PromotionConditionsSliderContainer.types';
-import { DivRef } from '@/types/types';
+import { DivRef, NumberOrNull } from '@/types/types';
 import { Swiper as ISwiper } from 'swiper';
 // components
 import PromotionConditionsSlider from '@PromotionDetailsPageComponents/PromotionConditionsSlider';
@@ -12,7 +12,7 @@ const PromotionConditionsSliderContainer: FC<IProps> = ({
   rulesPdf,
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [slideHeight, setSlideHeight] = useState<number | null>(null);
+  const [slideHeight, setSlideHeight] = useState<NumberOrNull>(null);
   const sliderContainerRef = useRef<DivRef>(null);
   const shouldChangeHeight = useRef(true);
   const sliderContainerHeight = sliderContainerRef.current?.scrollHeight;

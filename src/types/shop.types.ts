@@ -1,3 +1,5 @@
+import { NumberOrNull } from './types';
+
 export interface ICity {
   name: string;
   coordinates: string;
@@ -20,6 +22,6 @@ export interface IShop {
 
 export type Shops = IShop[];
 
-export type ActiveShopNum = number | null;
+export type ActiveShopNum = NumberOrNull;
 
 export type SetActiveShopFunc = (data: number) => void;

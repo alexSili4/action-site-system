@@ -8,17 +8,18 @@ import {
   IChangeFocusToNextRegCodeInputProps,
   IGetRegCodeInputProps,
   InputChangeEvent,
+  StringOrNull,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
 import { useCsrfToken, usePromotionId } from '@/hooks';
-import { IRegisterCodeRes, RegisterCodeErr } from '@/types/code.types';
+import { IRegisterCodeRes } from '@/types/code.types';
 import { getCurrentInputIndex } from '@/utils';
 import { IUseRegisterCodeForm } from '@/types/hooks.types';
 
 const useRegisterCodeForm = (
   incrementCurrentStep: Func
 ): IUseRegisterCodeForm => {
-  const [error, setError] = useState<RegisterCodeErr>(null);
+  const [error, setError] = useState<StringOrNull>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isFullRegCode, setIsFullRegCode] = useState<boolean>(false);
   const [regCodeInputs, setRegCodeInputs] = useState<HTMLInputElements>([]);

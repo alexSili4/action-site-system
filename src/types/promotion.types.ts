@@ -3,15 +3,7 @@ import {
   PromotionsCategoriesKeys,
   PromotionsSortTypesKeys,
 } from '@/constants';
-import { PageLocation } from './types';
-
-export type BannerDt = string | null;
-
-export type BannerMob = string | null;
-
-export type DateFrom = number | null;
-
-export type DateTo = number | null;
+import { NumberOrNull, PageLocation, StringOrNull } from './types';
 
 export type CoverageType = 'national' | 'base';
 
@@ -20,16 +12,16 @@ export type ActionType = 1 | 2 | 3; // 1 - колесо 2 - розіграш 3 -
 export interface IPromotion {
   id: number;
   name: string;
-  logo: string | null;
-  date_from: DateFrom;
-  date_to: DateTo;
+  logo: StringOrNull;
+  date_from: NumberOrNull;
+  date_to: NumberOrNull;
   conditions_text: string;
-  main_banner_dt: BannerDt;
-  main_banner_mob: BannerMob;
-  second_banner_dt: BannerDt;
-  second_banner_mob: BannerMob;
-  third_banner_mob: string | null;
-  third_banner_dt: string | null;
+  main_banner_dt: StringOrNull;
+  main_banner_mob: StringOrNull;
+  second_banner_dt: StringOrNull;
+  second_banner_mob: StringOrNull;
+  third_banner_mob: StringOrNull;
+  third_banner_dt: StringOrNull;
   hot_line_phone: string;
   hot_line_email: string;
   hot_line_text: string;
@@ -70,8 +62,8 @@ export type PromotionDetailsState = {
 };
 
 export interface IGetPromotionBannerUrlsProps {
-  bannerDt: BannerDt;
-  bannerMob: BannerMob;
+  bannerDt: StringOrNull;
+  bannerMob: StringOrNull;
 }
 
 export interface IGetPromotionBannerUrls {
@@ -80,8 +72,8 @@ export interface IGetPromotionBannerUrls {
 }
 
 export interface IGetPromotionDateProps {
-  dateFrom: DateFrom;
-  dateTo: DateTo;
+  dateFrom: NumberOrNull;
+  dateTo: NumberOrNull;
 }
 
 export type SetActiveIndexByIndexFunc = (data: number) => void;

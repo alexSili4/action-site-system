@@ -45,8 +45,26 @@ import { Link } from 'react-router-dom';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import UserCodeStatus from '@UserCodePageComponents/UserCodeStatus';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
+import { useCabinetState, usePromotionDetailsState } from '@/hooks';
+import { IProps } from './UserCodeDetails.types';
 
-const UserCodeDetails: FC = () => {
+const UserCodeDetails: FC<IProps> = ({
+  isErrorStatus,
+  isSuccessStatus,
+  promotionDetailsPath,
+  actionName,
+  codeCreatedAtDate,
+  shouldShowCertificateInfo,
+  certificateDetailsPath,
+  wheelCertificateCode,
+  prizeDetailsPath,
+  presentGiftName,
+  shouldShowPrizeInfo,
+  shouldShowPrizesInfo,
+}) => {
+  const promotionDetailsState = usePromotionDetailsState();
+  const cabinetState = useCabinetState();
+
   return (
     <Container>
       <CabinetGoBackLink />
@@ -57,35 +75,42 @@ const UserCodeDetails: FC = () => {
               <Title>Акційний код АТБ</Title>
               <AtbLogo />
             </TitleWrap>
-            {/* TODO fix */}
-            <UserCodeStatus isErrorStatus={false} isSuccessStatus={true} />
+            <UserCodeStatus
+              isErrorStatus={isErrorStatus}
+              isSuccessStatus={isSuccessStatus}
+            />
           </CodeInfo>
           <MainInfo>
             <CodeDetailsWrap>
               <CodeDetailsItem>
                 <CodeDetailsSubtitle isAutoWidth>Акція:</CodeDetailsSubtitle>
-                <StyledLink to={PagePaths.root}>
-                  <CodeDetailsText>Хапай вигідні пропозиції</CodeDetailsText>
+                <StyledLink
+                  to={promotionDetailsPath}
+                  state={promotionDetailsState}
+                >
+                  <CodeDetailsText>{actionName}</CodeDetailsText>
                   <NavArrow />
                 </StyledLink>
               </CodeDetailsItem>
               <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
               <CodeDetailsItem>
                 <CodeDetailsSubtitle>Дата активації:</CodeDetailsSubtitle>
-                <CodeDetailsText>18.07.2024</CodeDetailsText>
+                <CodeDetailsText>{codeCreatedAtDate}</CodeDetailsText>
               </CodeDetailsItem>
               <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
               <CodeDetailsItem isHiddenOnDesk>
+                {/* TODO fix */}
                 <CodeDetailsSubtitle>№ чеку з кодом:</CodeDetailsSubtitle>
                 <CodeDetailsText>1346517</CodeDetailsText>
               </CodeDetailsItem>
               <CodeDetailsItem isHiddenOnDesk>
                 <CodeDetailsSubtitle>
-                  Дата розіграшу призів:
+                  {/* TODO fix */} Дата розіграшу призів:
                 </CodeDetailsSubtitle>
                 <CodeDetailsText>18.07.2024</CodeDetailsText>
               </CodeDetailsItem>
               <CodeDetailsItem isHiddenOnMobile>
+                {/* TODO fix */}
                 <CodeDetailsSubtitle>Магазин де отримано:</CodeDetailsSubtitle>
                 <CodeDetailsTextWrap>
                   <CodeDetailsText>
@@ -100,6 +125,7 @@ const UserCodeDetails: FC = () => {
               </CodeDetailsItem>
             </CodeDetailsWrap>
             <TargetShopWrap>
+              {/* TODO fix */}
               <TargetShopTitle>Магазин де отримано:</TargetShopTitle>
               <TargetShop>
                 <TargetShopAddress>
@@ -113,6 +139,7 @@ const UserCodeDetails: FC = () => {
               </TargetShop>
             </TargetShopWrap>
             <PrizeDrawingDateWrap>
+              {/* TODO fix */}
               <PrizeDrawingDateTitle>
                 Дата розіграшу призів:
               </PrizeDrawingDateTitle>
@@ -121,41 +148,53 @@ const UserCodeDetails: FC = () => {
           </MainInfo>
         </MainInfoWrap>
         <UserCodeInfoDelimiter></UserCodeInfoDelimiter>
-        <PrizesInfo>
-          <CertificateWrap>
-            <DownloadCertificateLink href={PagePaths.root} download>
-              Сертифікат
-            </DownloadCertificateLink>
-            <CertificateInfo>
-              <PrizesInfoTitle>Виграний сертифікат:</PrizesInfoTitle>
-              <Certificate>
-                <PrizesInfoText>18.07.2024</PrizesInfoText>
-                <CertificateLink to={PagePaths.root}>
-                  <CouponIcon />
-                  <PrizeLinkTitle>dELIVERY347FREE</PrizeLinkTitle>
-                </CertificateLink>
-              </Certificate>
-            </CertificateInfo>
-          </CertificateWrap>
-          <UserCodeInfoDelimiter></UserCodeInfoDelimiter>
-          <PrizeWrap>
-            <PrizesInfoTitle>Виграний приз:</PrizesInfoTitle>
-            <PrizesInfoText isHiddenOnDesk>
-              18.07.2024{' '}
-              <Link to={PagePaths.root}>
-                <PrizeLinkTitle>Кухонна машина TEFAL QB813D38</PrizeLinkTitle>{' '}
-                <NavArrow />
-              </Link>
-            </PrizesInfoText>
-            <PrizesInfoTextWrap>
-              <PrizesInfoText>18.07.2024</PrizesInfoText>
-              <PrizeLink to={PagePaths.root}>
-                <PrizeLinkTitle>Кухонна машина TEFAL QB813D38</PrizeLinkTitle>
-                <NavArrow />
-              </PrizeLink>
-            </PrizesInfoTextWrap>
-          </PrizeWrap>
-        </PrizesInfo>
+        {shouldShowPrizesInfo && (
+          <PrizesInfo>
+            {shouldShowCertificateInfo && (
+              <>
+                <CertificateWrap>
+                  {/* TODO fix */}
+                  <DownloadCertificateLink href={PagePaths.root} download>
+                    Сертифікат
+                  </DownloadCertificateLink>
+                  <CertificateInfo>
+                    <PrizesInfoTitle>Виграний сертифікат:</PrizesInfoTitle>
+                    <Certificate>
+                      <PrizesInfoText>18.07.2024</PrizesInfoText>
+                      <CertificateLink
+                        to={certificateDetailsPath}
+                        state={cabinetState}
+                      >
+                        <CouponIcon />
+                        <PrizeLinkTitle>{wheelCertificateCode}</PrizeLinkTitle>
+                      </CertificateLink>
+                    </Certificate>
+                  </CertificateInfo>
+                </CertificateWrap>
+                <UserCodeInfoDelimiter></UserCodeInfoDelimiter>
+              </>
+            )}
+            {shouldShowPrizeInfo && (
+              <PrizeWrap>
+                <PrizesInfoTitle>Виграний приз:</PrizesInfoTitle>
+                <PrizesInfoText isHiddenOnDesk>
+                  18.07.2024{' '}
+                  <Link to={prizeDetailsPath} state={cabinetState}>
+                    <PrizeLinkTitle>{presentGiftName}</PrizeLinkTitle>{' '}
+                    <NavArrow />
+                  </Link>
+                </PrizesInfoText>
+                <PrizesInfoTextWrap>
+                  <PrizesInfoText>18.07.2024</PrizesInfoText>
+                  <PrizeLink to={certificateDetailsPath}>
+                    <PrizeLinkTitle>{presentGiftName}</PrizeLinkTitle>
+                    <NavArrow />
+                  </PrizeLink>
+                </PrizesInfoTextWrap>
+              </PrizeWrap>
+            )}
+          </PrizesInfo>
+        )}
       </Content>
     </Container>
   );

@@ -1,11 +1,15 @@
 import { Conditions } from '@/types/condition.types';
-import { OnSwiperSlideChange, SetSlideActiveIndexByIndex } from '@/types/types';
+import {
+  NumberOrNull,
+  OnSwiperSlideChange,
+  SetSlideActiveIndexByIndex,
+} from '@/types/types';
 
 export interface IProps {
   rulesPdf: string;
   conditions: Conditions;
   activeIndex: number;
-  slideHeight: number | null;
+  slideHeight: NumberOrNull;
   onSlideChange: OnSwiperSlideChange;
   setActiveIndexByIndex: SetSlideActiveIndexByIndex;
 }

@@ -1,10 +1,10 @@
-import { BannerDt, BannerMob } from '@/types/promotion.types';
+import { StringOrNull } from '@/types/types';
 
 export interface IProps {
   promotionCategory: string;
 }
 
 export interface IStyledProps {
-  mainBannerDt: BannerDt;
-  mainBannerMob: BannerMob;
+  mainBannerDt: StringOrNull;
+  mainBannerMob: StringOrNull;
 }

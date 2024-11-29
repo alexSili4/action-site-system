@@ -6,6 +6,7 @@ import {
   OnAnchorClickFunc,
   OnBtnClickFunc,
   OnDivClickFunc,
+  StringOrNull,
 } from './types';
 import {
   IPromotion,
@@ -29,7 +30,6 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from 'react-hook-form';
-import { RegisterCodeErr } from './code.types';
 import { RefObject } from 'react';
 import { Shops } from './shop.types';
 
@@ -124,7 +124,7 @@ export interface IUseRegisterCodeForm {
   isError: boolean;
   onRegCodeInput: InputChangeFunc;
   inputMaxLength: number;
-  error: RegisterCodeErr;
+  error: StringOrNull;
   disabledBtn: boolean;
 }
 

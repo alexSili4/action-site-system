@@ -1,5 +1,5 @@
-import { IPrizeCategoryUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
+import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
 
 export interface IProps {
-  certificate: IPrizeCategoryUserCertificateWithDetails;
+  certificate: IUserCertificateWithDetails;
 }

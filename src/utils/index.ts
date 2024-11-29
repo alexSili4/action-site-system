@@ -25,3 +25,6 @@ export { default as getClosestDateIndex } from './getClosestDateIndex';
 export { default as getRegisterCodeLink } from './getRegisterCodeLink';
 export { default as getPromotionDetailsPath } from './getPromotionDetailsPath';
 export { default as getShouldShowPrizesWheel } from './getShouldShowPrizesWheel';
+export { default as getCodeStatus } from './getCodeStatus';
+export { default as getPrizeDetailsPath } from './getPrizeDetailsPath';
+export { default as getCertificateDetailsPath } from './getCertificateDetailsPath';

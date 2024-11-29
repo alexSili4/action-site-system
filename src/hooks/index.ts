@@ -28,3 +28,4 @@ export { default as usePromotion } from './usePromotion';
 export { default as useTargetPromotion } from './useTargetPromotion';
 export { default as useTargetPromotionData } from './useTargetPromotionData';
 export { default as usePromotionDetailsState } from './usePromotionDetailsState';
+export { default as useCabinetState } from './useCabinetState';

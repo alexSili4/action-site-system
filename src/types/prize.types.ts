@@ -1,3 +1,5 @@
+import { NumberOrNull, StringOrNull } from './types';
+
 export type ShowType = 'base' | 'big';
 
 export type GiftType = 'wheel' | 'present' | 'general';
@@ -13,10 +15,10 @@ export interface IGift {
   partner_id: number;
   use_conditions: string;
   get_conditions: string;
-  price: number | null;
-  discount: number | null;
+  price: NumberOrNull;
+  discount: NumberOrNull;
   images: Images;
-  banner: string | null;
+  banner: StringOrNull;
 }
 
 export interface IPartner {
