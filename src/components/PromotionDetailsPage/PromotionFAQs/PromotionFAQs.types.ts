@@ -6,4 +6,5 @@ export interface IProps {
   hotLinePhone: string;
   hotLineWorkHours: string;
   hotLineText: string;
+  validHotLinePhone: string;
 }

@@ -22,6 +22,7 @@ const PromotionFAQs: FC<IProps> = ({
   hotLinePhone,
   hotLineWorkHours,
   hotLineText,
+  validHotLinePhone,
 }) => {
   return (
     <Container id={PromotionDetailsPageSections.faqs}>
@@ -34,7 +35,7 @@ const PromotionFAQs: FC<IProps> = ({
         </List>
         <AdditionalIfoWrap>
           <AdditionalIfoText>{hotLineOtherText}</AdditionalIfoText>
-          <PhoneLink href={`tel:${hotLinePhone}`}>
+          <PhoneLink href={`tel:${validHotLinePhone}`}>
             <PhoneLinkIconWrap>
               <LuPhone size={theme.iconSizes.phoneLink} />
             </PhoneLinkIconWrap>

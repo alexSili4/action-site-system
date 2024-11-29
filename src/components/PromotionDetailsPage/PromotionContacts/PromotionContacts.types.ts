@@ -8,4 +8,5 @@ export interface IProps {
   secondBannerDt: string;
   secondBannerMob: string;
   isNationalPromotion: boolean;
+  validHotLinePhone: string;
 }

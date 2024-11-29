@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { PagePaths, theme } from '@/constants';
+import { theme } from '@/constants';
 import {
   Container,
   DescriptionWrap,
@@ -40,6 +40,8 @@ const UserPrizeDetails: FC<IProps> = ({
   promotionName,
   hotLineWorkHours,
   promotionDetailsPath,
+  codeDetailsPath,
+  validHotLinePhone,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
 
@@ -71,7 +73,7 @@ const UserPrizeDetails: FC<IProps> = ({
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Акційний код:</Subtitle>
-              <StyledLink to={PagePaths.root}>
+              <StyledLink to={codeDetailsPath}>
                 <Info>{code}</Info>
                 <NavArrow />
               </StyledLink>
@@ -93,8 +95,7 @@ const UserPrizeDetails: FC<IProps> = ({
               Якщо у вас виникли додаткові питання, можете звернутись в Центр
               Обслуговування Кліентів. Гаряча лінія працює {hotLineWorkHours}
             </HotlineInfo>
-            {/* TODO fix */}
-            <HotlinePhone href='tel:+'>
+            <HotlinePhone href={`tel:${validHotLinePhone}`}>
               <HiOutlinePhone size={theme.iconSizes.cabinetHotlinePhone} />
               <HotlinePhoneNumber>{hotLinePhone}</HotlinePhoneNumber>
             </HotlinePhone>

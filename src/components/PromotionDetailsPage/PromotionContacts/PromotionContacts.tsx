@@ -15,6 +15,7 @@ const PromotionContacts: FC<IProps> = ({
   secondBannerDt,
   secondBannerMob,
   isNationalPromotion,
+  validHotLinePhone,
 }) => {
   return (
     <Container id={PromotionDetailsPageSections.contacts}>
@@ -30,6 +31,7 @@ const PromotionContacts: FC<IProps> = ({
           logoUrl={logoUrl}
           secondBannerDt={secondBannerDt}
           secondBannerMob={secondBannerMob}
+          validHotLinePhone={validHotLinePhone}
         />
       </ContentWrap>
     </Container>

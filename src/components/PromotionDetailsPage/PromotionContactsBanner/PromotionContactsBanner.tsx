@@ -23,6 +23,7 @@ const PromotionContactsBanner: FC<IProps> = ({
   secondBannerMob,
   hotLinePhone,
   hotLineEmail,
+  validHotLinePhone,
 }) => {
   return (
     <Container
@@ -38,7 +39,7 @@ const PromotionContactsBanner: FC<IProps> = ({
       <Links>
         <LinkWrap>
           <Label>Гаряча лінія</Label>
-          <Link href={`tel:${hotLinePhone}`}>
+          <Link href={`tel:${validHotLinePhone}`}>
             <IconWrap>
               <HiOutlinePhone
                 size={theme.iconSizes.promotionContactsPhoneLink}

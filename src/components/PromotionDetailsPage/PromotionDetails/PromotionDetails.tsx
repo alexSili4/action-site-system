@@ -14,6 +14,7 @@ import {
   getPromotionBannerUrls,
   getPromotionDate,
   getShouldShowPrizesWheel,
+  getValidPhone,
 } from '@/utils';
 // components
 import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
@@ -64,6 +65,7 @@ const PromotionDetails: FC<IProps> = ({
     bannerDt: secondBannerDt,
     bannerMob: secondBannerMob,
   });
+  const validHotLinePhone = getValidPhone(hotLinePhone);
   const logoUrl = getFileUrl(logo ?? '');
   const logoPartnerUrl = getFileUrl(logoPartner);
   const rulesPdfUrl = getFileUrl(rulesPdf);
@@ -118,6 +120,7 @@ const PromotionDetails: FC<IProps> = ({
           hotLinePhone={hotLinePhone}
           hotLineText={hotLineText}
           hotLineWorkHours={hotLineWorkHours}
+          validHotLinePhone={validHotLinePhone}
         />
         {shouldShowWinnersSection && <PromotionWinners winners={winners} />}
         <PromotionContacts
@@ -128,6 +131,7 @@ const PromotionDetails: FC<IProps> = ({
           secondBannerDt={bannerDtUrl}
           secondBannerMob={bannerMobUrl}
           isNationalPromotion={isNationalPromotion}
+          validHotLinePhone={validHotLinePhone}
         />
       </Content>
     </Container>

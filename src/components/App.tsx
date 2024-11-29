@@ -52,7 +52,7 @@ const App: FC = () => {
             element={<PrivateRoute element={<UserPrizePage />} />}
           />
           <Route
-            path={PagePaths.userCode}
+            path={`${PagePaths.userCode}/:${PagePaths.dynamicParam}`}
             element={<PrivateRoute element={<UserCodePage />} />}
           />
           <Route path={PagePaths.promotions} element={<PromotionsPage />} />

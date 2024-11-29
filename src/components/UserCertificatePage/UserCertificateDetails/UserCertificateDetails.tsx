@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { PagePaths, theme } from '@/constants';
+import { theme } from '@/constants';
 import {
   ConditionsInfo,
   ConditionsTitle,
@@ -41,6 +41,8 @@ const UserCertificateDetails: FC<IProps> = ({
   hotLinePhone,
   hotLineWorkHours,
   promotionDetailsPath,
+  codeDetailsPath,
+  validHotLinePhone,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
 
@@ -77,7 +79,7 @@ const UserCertificateDetails: FC<IProps> = ({
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
               <Subtitle>Акційний код:</Subtitle>
-              <StyledLink to={PagePaths.root}>
+              <StyledLink to={codeDetailsPath}>
                 <Info>{code}</Info>
                 <NavArrow />
               </StyledLink>
@@ -96,8 +98,7 @@ const UserCertificateDetails: FC<IProps> = ({
               {hotLineWorkHours}). Дзвінки для абонентів усіх національних GSM
               операторів – відповідно до тарифних планів відповідних операторів.
             </HotlineInfo>
-            {/* TODO fix */}
-            <HotlinePhone href='tel:+'>
+            <HotlinePhone href={`tel:${validHotLinePhone}`}>
               <HiOutlinePhone size={theme.iconSizes.cabinetHotlinePhone} />
               <HotlinePhoneNumber>{hotLinePhone}</HotlinePhoneNumber>
             </HotlinePhone>

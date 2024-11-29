@@ -24,7 +24,6 @@ const UserReceiptDetails: FC<IProps> = ({
   total,
   formattedCode,
 }) => {
-  // TODO fix
   const userReceiptNumber = isVerifiedCode
     ? receiptNumber
     : generalSettings.defaultReceiptText;

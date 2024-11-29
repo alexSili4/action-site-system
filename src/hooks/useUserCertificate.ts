@@ -1,4 +1,4 @@
-import { DateFormats } from '@/constants';
+import { DateFormats, PagePaths } from '@/constants';
 import { IUseUserCertificate } from '@/types/hooks.types';
 import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
 import {
@@ -6,6 +6,7 @@ import {
   getFileUrl,
   getPromotionBannerUrls,
   getPromotionDetailsPath,
+  getValidPhone,
 } from '@/utils';
 
 const useUserCertificate = (
@@ -31,6 +32,10 @@ const useUserCertificate = (
     id: actionId,
   } = action;
 
+  const validHotLinePhone = getValidPhone(hotLinePhone);
+  // TODO fix
+  // const codeDetailsPath = getCodeDetailsPath();
+  const codeDetailsPath = PagePaths.root;
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const partnerLogoUrl = getFileUrl(partnerLogo);
   const certificatePdfUrl = getFileUrl(certificatePdf);
@@ -58,6 +63,8 @@ const useUserCertificate = (
     hotLineWorkHours,
     promotionName,
     promotionDetailsPath,
+    codeDetailsPath,
+    validHotLinePhone,
   };
 };
 

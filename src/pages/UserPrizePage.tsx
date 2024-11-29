@@ -2,14 +2,13 @@ import { FC, useEffect, useState } from 'react';
 import Container from '@GeneralComponents/Container';
 import Section from '@GeneralComponents/Section';
 import UserPrize from '@UserPrizePageComponents/UserPrize';
-import { useParams } from 'react-router-dom';
 import cabinetService from '@/services/cabinet.service';
-import { PagePaths } from '@/constants';
 import { IUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
+import { useDynamicId } from '@/hooks';
 
 const UserPrizePage: FC = () => {
   const [prize, setPrize] = useState<IUserPrizeWithDetails | null>(null);
-  const prizeId = useParams()[PagePaths.dynamicParam] ?? '';
+  const prizeId = useDynamicId();
 
   useEffect(() => {
     const getUserPrizeDetails = async (id: string): Promise<void> => {

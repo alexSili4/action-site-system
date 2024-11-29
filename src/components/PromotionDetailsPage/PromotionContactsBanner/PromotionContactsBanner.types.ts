@@ -6,6 +6,7 @@ export interface IProps {
   secondBannerMob: string;
   hotLinePhone: string;
   hotLineEmail: string;
+  validHotLinePhone: string;
 }
 
 export interface IStyledProps {

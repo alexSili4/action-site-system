@@ -34,7 +34,6 @@ const UserCertificateBanner: FC<IProps> = ({
             <BarcodeText>{code}</BarcodeText>
           </Barcode>
         </BarcodeWrap>
-        {/* TODO fix */}
         <DownloadLink href={certificatePdf} download>
           <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
           <RiDownloadLine

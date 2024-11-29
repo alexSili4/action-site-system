@@ -11,7 +11,7 @@ import {
   StringOrNull,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import { useCsrfToken, usePromotionId } from '@/hooks';
+import { useCsrfToken, useDynamicId } from '@/hooks';
 import { IRegisterCodeRes } from '@/types/code.types';
 import { getCurrentInputIndex } from '@/utils';
 import { IUseRegisterCodeForm } from '@/types/hooks.types';
@@ -25,7 +25,7 @@ const useRegisterCodeForm = (
   const [regCodeInputs, setRegCodeInputs] = useState<HTMLInputElements>([]);
   const inputWrapRef = useRef<HTMLDivElement>(null);
   const { register, handleSubmit, watch } = useForm<IRegCodeFormData>();
-  const promotionId = usePromotionId();
+  const promotionId = useDynamicId();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
   const isError = Boolean(error);
   const acceptedTerms = watch('acceptedTerms');

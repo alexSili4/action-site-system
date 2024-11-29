@@ -19,8 +19,6 @@ const RegisterCodeSection: FC<IProps> = ({
   thirdBannerDt,
   promotionDate,
 }) => {
-  // TODO fix
-
   return (
     <Container>
       <RegisterCodeBanner

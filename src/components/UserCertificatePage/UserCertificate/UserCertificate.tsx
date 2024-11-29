@@ -21,6 +21,8 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
     hotLineWorkHours,
     promotionName,
     promotionDetailsPath,
+    codeDetailsPath,
+    validHotLinePhone,
   } = useUserCertificate(certificate);
 
   return (
@@ -42,6 +44,8 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
         hotLineWorkHours={hotLineWorkHours}
         promotionName={promotionName}
         promotionDetailsPath={promotionDetailsPath}
+        codeDetailsPath={codeDetailsPath}
+        validHotLinePhone={validHotLinePhone}
       />
     </UserStatisticsDetailsContainer>
   );

@@ -1,7 +1,12 @@
 import { FC } from 'react';
 import { IProps } from './UserPrize.types';
-import { DateFormats } from '@/constants';
-import { formatDate, getFileUrl, getPromotionDetailsPath } from '@/utils';
+import { DateFormats, PagePaths } from '@/constants';
+import {
+  formatDate,
+  getFileUrl,
+  getPromotionDetailsPath,
+  getValidPhone,
+} from '@/utils';
 // components
 import UserPrizeBanner from '@UserPrizePageComponents/UserPrizeBanner';
 import UserPrizeDetails from '@UserPrizePageComponents/UserPrizeDetails';
@@ -23,12 +28,16 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
     id: actionId,
   } = action;
 
+  // TODO fix
+  // const codeDetailsPath = getCodeDetailsPath();
+  const codeDetailsPath = PagePaths.root;
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const createdAtNumber = createdAt * 1000;
   const createdAtDate = formatDate({
     date: createdAtNumber,
     dateFormat: DateFormats.winnersDate,
   });
+  const validHotLinePhone = getValidPhone(hotLinePhone);
 
   const partnerLgoUrl = getFileUrl(partnerLogo);
   const image = images[0]?.image ?? '';
@@ -48,6 +57,8 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
         promotionName={promotionName}
         hotLineWorkHours={hotLineWorkHours}
         promotionDetailsPath={promotionDetailsPath}
+        codeDetailsPath={codeDetailsPath}
+        validHotLinePhone={validHotLinePhone}
       />
     </UserStatisticsDetailsContainer>
   );

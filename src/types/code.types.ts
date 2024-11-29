@@ -23,7 +23,6 @@ export interface IGetCurrentInputIndex {
   regCodeInputs: HTMLInputElements;
 }
 
-// TODO fix type
 export interface IWheelPrize {
   id: number;
   name: string;
@@ -31,7 +30,6 @@ export interface IWheelPrize {
   prize: string;
 }
 
-// TODO fix type
 export type WheelPrizes = IWheelPrize[];
 
 export interface IGetRegCodeSteps {

@@ -2,15 +2,14 @@ import { FC, useEffect, useState } from 'react';
 import Container from '@GeneralComponents/Container';
 import Section from '@GeneralComponents/Section';
 import UserCertificate from '@UserCertificatePageComponents/UserCertificate';
-import { useParams } from 'react-router-dom';
-import { PagePaths } from '@/constants';
 import cabinetService from '@/services/cabinet.service';
 import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
+import { useDynamicId } from '@/hooks';
 
 const UserCertificatePage: FC = () => {
   const [certificate, setCertificate] =
     useState<IUserCertificateWithDetails | null>(null);
-  const certificateId = useParams()[PagePaths.dynamicParam] ?? '';
+  const certificateId = useDynamicId();
 
   useEffect(() => {
     const getUserCertificateDetails = async (id: string): Promise<void> => {

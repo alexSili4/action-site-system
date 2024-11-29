@@ -1,11 +1,11 @@
 import promotionsService from '@/services/promotions.service';
 import { TargetPromotionDetailsState } from '@/types/promotion.types';
 import { useEffect, useState } from 'react';
-import usePromotionId from './usePromotionId';
+import useDynamicId from './useDynamicId';
 
 const usePromotion = (): TargetPromotionDetailsState => {
   const [promotion, setPromotion] = useState<TargetPromotionDetailsState>(null);
-  const promotionId = usePromotionId();
+  const promotionId = useDynamicId();
 
   useEffect(() => {
     const getPromotion = async (promotionId: string): Promise<void> => {

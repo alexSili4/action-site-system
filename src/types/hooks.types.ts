@@ -159,6 +159,8 @@ export interface IUseUserCertificate {
   hotLineWorkHours: string;
   promotionName: string;
   promotionDetailsPath: string;
+  codeDetailsPath: string;
+  validHotLinePhone: string;
 }
 
 export interface IUsePromotionFilter {

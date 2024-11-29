@@ -7,7 +7,7 @@ import { IUsePromotionDetailsPage } from '@/types/hooks.types';
 import { WinnersByDates } from '@/types/winner.types';
 import { Shops } from '@/types/shop.types';
 import usePromotion from './usePromotion';
-import usePromotionId from './usePromotionId';
+import useDynamicId from './useDynamicId';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
@@ -16,7 +16,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [faqs, setFaqs] = useState<FAQs>([]);
   const [winners, setWinners] = useState<WinnersByDates>([]);
   const [shops, setShops] = useState<Shops>([]);
-  const promotionId = usePromotionId();
+  const promotionId = useDynamicId();
   const promotion = usePromotion();
 
   useEffect(() => {

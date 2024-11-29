@@ -6,7 +6,7 @@ export { default as usePromotions } from './usePromotions';
 export { default as usePromotionsList } from './usePromotionsList';
 export { default as usePromotionDetailsPage } from './usePromotionDetailsPage';
 export { default as usePromotionContactsVisicomMap } from './usePromotionContactsVisicomMap';
-export { default as usePromotionId } from './usePromotionId';
+export { default as useDynamicId } from './useDynamicId';
 export { default as useCityId } from './useCityId';
 export { default as useRegisterCodeForm } from './useRegisterCodeForm';
 export { default as useCsrfToken } from './useCsrfToken';

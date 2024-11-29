@@ -28,7 +28,6 @@ class CabinetService extends HttpService {
 
     const { data, headers } = await this.get<UserCodes>(
       {
-        // TODO fix
         url: `client/my-codes?page=${page}&per-page=4&sort=${sortType}`,
       },
       false
@@ -47,7 +46,6 @@ class CabinetService extends HttpService {
 
     const { data, headers } = await this.get<UserPrizes>(
       {
-        // TODO fix
         url: `client/my-gifts?page=${page}&per-page=4&sort=${sortType}`,
       },
       false

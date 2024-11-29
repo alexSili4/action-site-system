@@ -30,3 +30,4 @@ export { default as getPrizeDetailsPath } from './getPrizeDetailsPath';
 export { default as getCertificateDetailsPath } from './getCertificateDetailsPath';
 export { default as getFormattedCode } from './getFormattedCode';
 export { default as getCodeDetailsPath } from './getCodeDetailsPath';
+export { default as getValidPhone } from './getValidPhone';

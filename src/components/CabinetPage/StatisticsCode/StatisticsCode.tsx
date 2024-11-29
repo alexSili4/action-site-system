@@ -2,7 +2,7 @@ import { FC } from 'react';
 import CouponIcon from '@/icons/cabinet/coupon.svg?react';
 import PrizeIcon from '@/icons/cabinet/prize.svg?react';
 import { FaChevronRight } from 'react-icons/fa';
-import { PagePaths, theme } from '@/constants';
+import { theme } from '@/constants';
 import {
   CertificateWrap,
   Code,
@@ -34,19 +34,21 @@ const StatisticsCode: FC<IProps> = ({
   shouldShowUserCertificateLink,
   shouldShowUserPrizeLink,
   shouldShowCertificate,
+  codeDetailsPath,
+  certificateDetailsPath,
+  prizeDetailsPath,
+  shouldShowContent,
+  shouldShowCodeLinks,
 }) => {
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
     isSuccessStatus,
   });
   const cabinetState = useCabinetState();
-  const shouldShowCodeLinks =
-    shouldShowUserPrizeLink || shouldShowUserCertificateLink;
-  const shouldShowContent = shouldShowCodeLinks || shouldShowCertificate;
 
   return (
     <Container>
-      <Link to={PagePaths.userCode} state={cabinetState}>
+      <Link to={codeDetailsPath} state={cabinetState}>
         <Header>
           <CodeWrap>
             <Code>{code}</Code>
@@ -59,7 +61,7 @@ const StatisticsCode: FC<IProps> = ({
         <LinksWrap shouldShowCodeLinks={shouldShowCodeLinks}>
           {shouldShowUserCertificateLink && (
             <StyledLink
-              to={PagePaths.userCertificate}
+              to={certificateDetailsPath}
               state={cabinetState}
               isCertificateLink
             >
@@ -69,7 +71,7 @@ const StatisticsCode: FC<IProps> = ({
             </StyledLink>
           )}
           {shouldShowUserPrizeLink && (
-            <StyledLink to={PagePaths.userPrize} state={cabinetState}>
+            <StyledLink to={prizeDetailsPath} state={cabinetState}>
               <PrizeIcon />
               <StyledLinkTitle>Виграний Подарунок</StyledLinkTitle>
               <FaChevronRight size={theme.iconSizes.cabinetSectionLink} />

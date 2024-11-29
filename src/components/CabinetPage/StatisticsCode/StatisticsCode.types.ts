@@ -7,6 +7,11 @@ export interface IProps {
   shouldShowUserCertificateLink: boolean;
   shouldShowUserPrizeLink: boolean;
   shouldShowCertificate: boolean;
+  codeDetailsPath: string;
+  certificateDetailsPath: string;
+  prizeDetailsPath: string;
+  shouldShowContent: boolean;
+  shouldShowCodeLinks: boolean;
 }
 
 export interface IStyledCertificateWrapProps {

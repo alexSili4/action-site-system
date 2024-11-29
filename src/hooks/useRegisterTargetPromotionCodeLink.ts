@@ -1,10 +1,10 @@
 import { getRegisterCodeLink } from '@/utils';
 import useCityId from './useCityId';
-import usePromotionId from './usePromotionId';
+import useDynamicId from './useDynamicId';
 
 const useRegisterTargetPromotionCodeLink = (): string => {
   const cityId = useCityId();
-  const promotionId = usePromotionId();
+  const promotionId = useDynamicId();
 
   const registerCodeLink = getRegisterCodeLink({ promotionId, cityId });
 

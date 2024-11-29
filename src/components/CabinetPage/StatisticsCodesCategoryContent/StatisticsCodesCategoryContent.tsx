@@ -6,7 +6,14 @@ import {
 } from './StatisticsCodesCategoryContent.styled';
 import { useUserCodesStore } from '@/store/store';
 import { selectUserCodes, selectTotalPages } from '@/store/userCodes/selectors';
-import { formatDate, getCodeStatus, getFileUrl } from '@/utils';
+import {
+  formatDate,
+  getCertificateDetailsPath,
+  getCodeDetailsPath,
+  getCodeStatus,
+  getFileUrl,
+  getPrizeDetailsPath,
+} from '@/utils';
 import { DateFormats, Messages } from '@/constants';
 import receipts from '@/images/cabinet/receipts.png';
 // components
@@ -35,6 +42,8 @@ const StatisticsCodesCategoryContent: FC = () => {
                 present_gift_partner_logo: partnerLogo,
                 wheel_certificate_id: wheelCertificateId,
                 present_gift_id: presentGiftId,
+                winner_id: winnerId,
+                code_id: codeId,
               }) => {
                 const partnerLogoUrl = getFileUrl(partnerLogo ?? '');
                 const { isErrorStatus, isSuccessStatus } =
@@ -49,6 +58,16 @@ const StatisticsCodesCategoryContent: FC = () => {
                   typeof presentGiftId === 'number';
                 const shouldShowCertificate = codeStatus === 1;
 
+                const prizeDetailsPath = getPrizeDetailsPath(winnerId);
+                const certificateDetailsPath =
+                  getCertificateDetailsPath(winnerId);
+                const codeDetailsPath = getCodeDetailsPath(codeId);
+
+                const shouldShowCodeLinks =
+                  shouldShowUserPrizeLink || shouldShowUserCertificateLink;
+                const shouldShowContent =
+                  shouldShowCodeLinks || shouldShowCertificate;
+
                 return (
                   <ListItem key={code}>
                     <StatisticsCode
@@ -62,6 +81,11 @@ const StatisticsCodesCategoryContent: FC = () => {
                       }
                       shouldShowUserPrizeLink={shouldShowUserPrizeLink}
                       shouldShowCertificate={shouldShowCertificate}
+                      certificateDetailsPath={certificateDetailsPath}
+                      codeDetailsPath={codeDetailsPath}
+                      prizeDetailsPath={prizeDetailsPath}
+                      shouldShowCodeLinks={shouldShowCodeLinks}
+                      shouldShowContent={shouldShowContent}
                     />
                   </ListItem>
                 );
