@@ -10,6 +10,7 @@ import {
   getCodeStatus,
   getCertificateDetailsPath,
   getPrizeDetailsPath,
+  getFormattedCode,
 } from '@/utils';
 import { DateFormats } from '@/constants';
 
@@ -23,6 +24,8 @@ const UserCode: FC<IProps> = ({ code }) => {
     action_id: actionId,
     code_created_at: codeCreatedAt,
     code_status: codeStatus,
+    code: userCode,
+    winner_id: winnerId,
   } = code;
 
   const shouldShowCertificateInfo = Boolean(wheelCertificateId);
@@ -31,12 +34,13 @@ const UserCode: FC<IProps> = ({ code }) => {
 
   const { isErrorStatus, isSuccessStatus } = getCodeStatus(codeStatus);
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
-  const prizeDetailsPath = getPrizeDetailsPath(presentGiftId);
-  const certificateDetailsPath = getCertificateDetailsPath(presentGiftId);
+  const prizeDetailsPath = getPrizeDetailsPath(winnerId);
+  const certificateDetailsPath = getCertificateDetailsPath(winnerId);
   const codeCreatedAtDate = formatDate({
-    date: codeCreatedAt,
+    date: codeCreatedAt * 1000,
     dateFormat: DateFormats.winnersDate,
   });
+  const formattedCode = getFormattedCode(userCode);
 
   return (
     <UserStatisticsDetailsContainer>

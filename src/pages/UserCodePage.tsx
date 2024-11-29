@@ -8,7 +8,7 @@ import { PagePaths } from '@/constants';
 import cabinetService from '@/services/cabinet.service';
 
 const UserCodePage: FC = () => {
-  const [code, setCode] = useState<IUserCodeWithDetails | null>(null);
+  const [code, setCode] = useState<IUserCodeWithDetails | null>();
   const codeId = useParams()[PagePaths.dynamicParam] ?? '';
 
   useEffect(() => {

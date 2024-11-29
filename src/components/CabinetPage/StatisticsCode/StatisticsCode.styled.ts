@@ -38,7 +38,7 @@ export const Header = styled.span`
     justify-content: space-between;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     gap: ${({ theme }) => theme.spacing(4)};
     border-radius: 100px;
   }
@@ -47,12 +47,12 @@ export const Header = styled.span`
 export const CodeWrap = styled.span`
   display: flex;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(2)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     flex-grow: 1;
     justify-content: space-between;
     align-items: center;

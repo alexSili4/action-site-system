@@ -28,3 +28,5 @@ export { default as getShouldShowPrizesWheel } from './getShouldShowPrizesWheel'
 export { default as getCodeStatus } from './getCodeStatus';
 export { default as getPrizeDetailsPath } from './getPrizeDetailsPath';
 export { default as getCertificateDetailsPath } from './getCertificateDetailsPath';
+export { default as getFormattedCode } from './getFormattedCode';
+export { default as getCodeDetailsPath } from './getCodeDetailsPath';

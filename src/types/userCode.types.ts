@@ -4,6 +4,8 @@ import { NumberOrNull, StringOrNull } from './types';
 export type CodeStatus = 0 | 1 | 2; // 0 - pending, 1 - success, 2 - error
 
 export interface IUserCode {
+  winner_id: NumberOrNull;
+  code_id: number;
   code: string;
   code_status: CodeStatus;
   code_created_at: number;
