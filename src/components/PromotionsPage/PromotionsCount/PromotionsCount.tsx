@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { Accent, Container, Text } from './PromotionsCount.styled';
+import { IProps } from './PromotionsCount.types';
 
-const PromotionsCount: FC = () => {
-  // TODO: fix PromotionsCount
+const PromotionsCount: FC<IProps> = ({ promotionsCount }) => {
   return (
     <Container>
       <Text>
-        <Accent>3</Accent> активних акції
+        <Accent>{promotionsCount}</Accent> активних акції
       </Text>
     </Container>
   );

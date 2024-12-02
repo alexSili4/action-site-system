@@ -1,23 +1,24 @@
 import { FC } from 'react';
 import { IProps } from './PromotionsControls.types';
-import { PromotionsCategoriesKeys } from '@/constants';
 import { Container } from './PromotionsControls.styled';
 // components
 import PromotionsCount from '@PromotionsPageComponents/PromotionsCount';
 import PromotionsDatePicker from '@PromotionsPageComponents/PromotionsDatePicker';
+import { usePromotionsStore } from '@/store/store';
+import { selectPromotions } from '@/store/promotions/selectors';
 
 const PromotionsControls: FC<IProps> = ({
-  promotionCategory,
+  isActiveCategory,
+  isPreviousCategory,
   isFake = false,
 }) => {
-  const isActiveCategory =
-    promotionCategory === PromotionsCategoriesKeys.active;
-  const isPreviousCategory =
-    promotionCategory === PromotionsCategoriesKeys.previous;
+  const promotionsCount = usePromotionsStore(selectPromotions).length;
 
   return (
     <Container isFake={isFake}>
-      {isActiveCategory && <PromotionsCount />}
+      {isActiveCategory && (
+        <PromotionsCount promotionsCount={promotionsCount} />
+      )}
       {isPreviousCategory && <PromotionsDatePicker />}
     </Container>
   );

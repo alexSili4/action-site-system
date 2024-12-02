@@ -13,6 +13,12 @@ export interface IProps {
   presentGiftName: StringOrNull;
   shouldShowPrizeInfo: boolean;
   shouldShowPrizesInfo: boolean;
+  drawDate: string;
+  drawCertificateDate: string;
+  drawPrizeDate: string;
+  shopAddress: string;
+  receiptNumber: number | undefined;
+  certificateUrl: string;
 }
 
 export interface IStyledCodeDetailsSubtitleProps {

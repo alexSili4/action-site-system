@@ -12,26 +12,16 @@ import {
   ReceiptTitle,
   ReceiptInfo,
 } from './UserReceiptDetails.styled';
-import { generalSettings } from '@/constants';
 import { IProps } from './UserReceiptDetails.types';
 // components
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserReceiptDetails: FC<IProps> = ({
-  isVerifiedCode,
-  receiptNumber,
-  shopNumber,
-  total,
   formattedCode,
+  userReceiptNumber,
+  userShopNumber,
+  userTotal,
 }) => {
-  const userReceiptNumber = isVerifiedCode
-    ? receiptNumber
-    : generalSettings.defaultReceiptText;
-  const userShopNumber = isVerifiedCode
-    ? shopNumber
-    : generalSettings.defaultReceiptText;
-  const userTotal = isVerifiedCode ? total : generalSettings.defaultReceiptText;
-
   return (
     <Container>
       <CabinetGoBackLink isShowOnDesk />

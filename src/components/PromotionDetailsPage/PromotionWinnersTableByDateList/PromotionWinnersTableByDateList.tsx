@@ -1,25 +1,24 @@
 import { FC } from 'react';
 import { IProps } from './PromotionWinnersTableByDateList.types';
-import { List, ListItem } from './PromotionWinnersTableByDateList.styled';
+import { List } from './PromotionWinnersTableByDateList.styled';
 import { getClosestDateIndex } from '@/utils';
 // components
-import PromotionWinnersTableByDate from '@PromotionDetailsPageComponents/PromotionWinnersTableByDate';
+import PromotionWinnersTableByDateListItem from '@PromotionDetailsPageComponents/PromotionWinnersTableByDateListItem';
 
 const PromotionWinnersTableByDateList: FC<IProps> = ({ winners }) => {
   const closestDateIndex = getClosestDateIndex(winners);
 
   return (
     <List>
-      {winners.map((data, index) => {
+      {winners.map((winners, index) => {
         const isOpenSection = index === closestDateIndex;
 
         return (
-          <ListItem key={index}>
-            <PromotionWinnersTableByDate
-              winners={data}
-              isOpenSection={isOpenSection}
-            />
-          </ListItem>
+          <PromotionWinnersTableByDateListItem
+            isOpenSection={isOpenSection}
+            winners={winners}
+            key={index}
+          />
         );
       })}
     </List>

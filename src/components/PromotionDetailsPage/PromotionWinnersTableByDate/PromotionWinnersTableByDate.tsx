@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { BtnClickEvent, DivRef } from '@/types/types';
 import { formatDate, makeBlur } from '@/utils';
 import { IProps } from './PromotionWinnersTableByDate.types';
@@ -24,10 +24,16 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
   isOpenSection,
 }) => {
   const [showWinners, setShowWinners] = useState<boolean>(() => isOpenSection);
+  const [scrollHeight, setScrollHeight] = useState<number>(0);
   const winnersRef = useRef<DivRef>(null);
-  const scrollHeight = winnersRef.current?.scrollHeight ?? 0;
   const isEmptyWinnersList = !winners.length;
   const btnTitle = formatDate({ date, dateFormat: DateFormats.winnersDate });
+
+  useEffect(() => {
+    if (winnersRef.current) {
+      setScrollHeight(winnersRef.current?.scrollHeight);
+    }
+  }, []);
 
   const toggleSetShowWinners = () => {
     setShowWinners((prevState) => !prevState);

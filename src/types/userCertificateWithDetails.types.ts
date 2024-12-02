@@ -1,4 +1,5 @@
 import { IPromotion } from './promotion.types';
+import { CodeStatus } from './userCode.types';
 
 export interface IImage {
   image: string;
@@ -28,10 +29,13 @@ export interface ICertificate {
 }
 
 export interface ICode {
+  id: number;
   code: string;
   created_at: number;
   shop_number: number;
   wheel_status: null;
+  status: CodeStatus;
+  action_id: number;
 }
 
 export interface IUserCertificateWithDetails {

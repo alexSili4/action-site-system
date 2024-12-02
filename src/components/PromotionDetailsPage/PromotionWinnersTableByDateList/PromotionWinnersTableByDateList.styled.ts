@@ -5,5 +5,3 @@ export const List = styled.ul`
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)};
 `;
-
-export const ListItem = styled.li``;

@@ -11,25 +11,36 @@ import {
   getCertificateDetailsPath,
   getPrizeDetailsPath,
   getFormattedCode,
+  getFileUrl,
 } from '@/utils';
-import { DateFormats } from '@/constants';
+import { DateFormats, generalSettings } from '@/constants';
 
 const UserCode: FC<IProps> = ({ code }) => {
   const {
-    action_name: actionName,
-    present_gift_name: presentGiftName,
-    wheel_certificate_code: wheelCertificateCode,
-    wheel_certificate_id: wheelCertificateId,
-    present_gift_id: presentGiftId,
-    action_id: actionId,
-    code_created_at: codeCreatedAt,
-    code_status: codeStatus,
-    code: userCode,
-    winner_id: winnerId,
+    client_code: clientCode,
+    atb_code: atbCode,
+    shop,
+    certificate,
+    present,
+    action,
+    winner,
   } = code;
 
-  const shouldShowCertificateInfo = Boolean(wheelCertificateId);
-  const shouldShowPrizeInfo = Boolean(presentGiftId);
+  const {
+    status: codeStatus,
+    created_at: codeCreatedAt,
+    code: userCode,
+  } = clientCode;
+  const { receipt_sum: receiptSum, receipt_number: receiptNumber } =
+    atbCode ?? {};
+  const { shop_num: shopNum, city, street: shopStreet } = shop ?? {};
+  const { name: cityName } = city ?? {};
+  const { id: actionId, name: actionName } = action;
+  const { id: winnerId = null } = winner ?? {};
+  const { name: presentGiftName = null } = present ?? {};
+
+  const shouldShowCertificateInfo = Boolean(certificate);
+  const shouldShowPrizeInfo = Boolean(present);
   const shouldShowPrizesInfo = shouldShowCertificateInfo || shouldShowPrizeInfo;
 
   const { isErrorStatus, isSuccessStatus } = getCodeStatus(codeStatus);
@@ -42,18 +53,33 @@ const UserCode: FC<IProps> = ({ code }) => {
   });
   const formattedCode = getFormattedCode(userCode);
 
+  // TODO fix
+  // const certificateUrl = getFileUrl();
+  const drawDate = '';
+  const drawPrizeDate = '';
+  const drawCertificateDate = '';
+  const wheelCertificateCode = '';
+  const certificateUrl = getFileUrl('');
+
+  const shopAddress = `№${shopNum} ${cityName}, ${shopStreet}`;
+
+  const userReceiptNumber = receiptNumber
+    ? String(receiptNumber)
+    : generalSettings.defaultReceiptText;
+  const userShopNumber = shopNum
+    ? `№${shopNum}`
+    : generalSettings.defaultReceiptText;
+  const userTotal = receiptSum
+    ? receiptSum
+    : generalSettings.defaultReceiptText;
+
   return (
     <UserStatisticsDetailsContainer>
-      {/* TODO fix */}
       <UserReceiptDetails
-        isVerifiedCode={false}
         formattedCode={formattedCode}
-        // receiptNumber={receiptNumber}
-        // shopNumber={shopNumber}
-        // total={total}
-        receiptNumber={'receiptNumber'}
-        shopNumber={'shopNumber'}
-        total={'total'}
+        userReceiptNumber={userReceiptNumber}
+        userShopNumber={userShopNumber}
+        userTotal={userTotal}
       />
       <UserCodeDetails
         actionName={actionName}
@@ -68,6 +94,12 @@ const UserCode: FC<IProps> = ({ code }) => {
         isErrorStatus={isErrorStatus}
         isSuccessStatus={isSuccessStatus}
         prizeDetailsPath={prizeDetailsPath}
+        drawCertificateDate={drawCertificateDate}
+        drawDate={drawDate}
+        drawPrizeDate={drawPrizeDate}
+        receiptNumber={receiptNumber}
+        shopAddress={shopAddress}
+        certificateUrl={certificateUrl}
       />
     </UserStatisticsDetailsContainer>
   );

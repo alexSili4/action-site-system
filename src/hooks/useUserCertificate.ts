@@ -1,8 +1,9 @@
-import { DateFormats, PagePaths } from '@/constants';
+import { DateFormats } from '@/constants';
 import { IUseUserCertificate } from '@/types/hooks.types';
 import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
 import {
   formatDate,
+  getCodeDetailsPath,
   getFileUrl,
   getPromotionBannerUrls,
   getPromotionDetailsPath,
@@ -20,7 +21,7 @@ const useUserCertificate = (
     certificate_pdf: certificatePdf,
   } = certificate;
 
-  const { code } = userCode;
+  const { code, id: codeId } = userCode;
   const { get_conditions: getConditions, partner, name: prizeName } = gift;
   const { name: partnerName, logo: partnerLogo } = partner;
   const {
@@ -33,9 +34,7 @@ const useUserCertificate = (
   } = action;
 
   const validHotLinePhone = getValidPhone(hotLinePhone);
-  // TODO fix
-  // const codeDetailsPath = getCodeDetailsPath();
-  const codeDetailsPath = PagePaths.root;
+  const codeDetailsPath = getCodeDetailsPath(codeId);
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const partnerLogoUrl = getFileUrl(partnerLogo);
   const certificatePdfUrl = getFileUrl(certificatePdf);

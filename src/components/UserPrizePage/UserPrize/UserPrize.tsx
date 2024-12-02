@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import { IProps } from './UserPrize.types';
-import { DateFormats, PagePaths } from '@/constants';
+import { DateFormats } from '@/constants';
 import {
   formatDate,
+  getCodeDetailsPath,
   getFileUrl,
   getPromotionDetailsPath,
   getValidPhone,
@@ -19,7 +20,7 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
     get_conditions: getConditions,
     images,
   } = gift;
-  const { code, created_at: createdAt } = userCode;
+  const { code, created_at: createdAt, id: codeId } = userCode;
   const { logo: partnerLogo, name: partnerName } = partner;
   const {
     hot_line_phone: hotLinePhone,
@@ -28,9 +29,7 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
     id: actionId,
   } = action;
 
-  // TODO fix
-  // const codeDetailsPath = getCodeDetailsPath();
-  const codeDetailsPath = PagePaths.root;
+  const codeDetailsPath = getCodeDetailsPath(codeId);
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const createdAtNumber = createdAt * 1000;
   const createdAtDate = formatDate({

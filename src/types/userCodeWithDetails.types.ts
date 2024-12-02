@@ -1,21 +1,92 @@
-import { NumberOrNull, StringOrNull } from './types';
+import { IPromotion } from './promotion.types';
 import { CodeStatus } from './userCode.types';
 
-export interface IUserCodeWithDetails {
-  winner_id: NumberOrNull;
+export interface IWinner {
+  id: number;
+  client_name: string;
+  client_phone: string;
   code: string;
-  code_status: CodeStatus;
-  code_created_at: number;
+  gift_name: string;
+}
+
+export interface IClientCode {
+  id: number;
+  code: string;
+  created_at: number;
+  shop_number: number;
+  wheel_status: null;
+  status: CodeStatus;
   action_id: number;
-  action_name: string;
-  action_type: number;
-  action_date_from: number;
-  action_date_to: number;
-  present_gift_id: NumberOrNull;
-  present_gift_name: StringOrNull;
-  present_gift_partner_logo: StringOrNull;
-  wheel_is_used: null;
-  wheel_certificate_code: StringOrNull;
-  wheel_certificate_id: NumberOrNull;
-  wheel_gift_name: StringOrNull;
+}
+
+export interface IAtbCode {
+  id: number;
+  promo_id: number;
+  promo_code: string;
+  shop_number: number;
+  receipt_date: string;
+  receipt_number: number;
+  receipt_sum: string;
+  created_at: number;
+}
+
+export interface IShop {
+  shop_num: number;
+  name: string;
+  street: string;
+  geo_lat: string;
+  geo_long: string;
+  work_hours: string;
+  city: {
+    name: string;
+    coordinates: string;
+  };
+  region: {
+    name: string;
+  };
+}
+
+export interface IPartner {
+  name: string;
+  logo: string;
+}
+
+export interface IImage {
+  image: string;
+}
+
+export type Images = IImage[];
+
+export interface IPresent {
+  id: number;
+  name: string;
+  use_conditions: string;
+  get_conditions: string;
+  price: null;
+  discount: null;
+  images: Images;
+  banner: null;
+  partner: IPartner;
+}
+
+export interface ICertificate {
+  id: number;
+  name: string;
+  use_conditions: string;
+  get_conditions: string;
+  price: number;
+  discount: null;
+  images: Images;
+  banner: null;
+  partner: IPartner;
+}
+
+export interface IUserCodeWithDetails {
+  client_code: IClientCode;
+  atb_code: IAtbCode | null;
+  shop: IShop | null;
+  action: IPromotion;
+  winner: IWinner | null;
+  present: IPresent | null;
+  certificate: ICertificate | null;
 }

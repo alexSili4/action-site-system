@@ -1,7 +1,6 @@
 export interface IProps {
-  isVerifiedCode: boolean;
-  receiptNumber: string;
-  shopNumber: string;
-  total: string;
+  userReceiptNumber: string;
+  userShopNumber: string;
+  userTotal: string;
   formattedCode: string;
 }

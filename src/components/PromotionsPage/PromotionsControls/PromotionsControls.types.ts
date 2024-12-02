@@ -1,5 +1,6 @@
 export interface IProps {
-  promotionCategory: string;
+  isActiveCategory: boolean;
+  isPreviousCategory: boolean;
   isFake?: boolean;
 }
 

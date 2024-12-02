@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import { HiLocationMarker } from 'react-icons/hi';
-import { PagePaths, theme } from '@/constants';
+import { theme } from '@/constants';
 import CouponIcon from '@/icons/cabinet/coupon.svg?react';
 import AtbLogo from '@/icons/atb-logo.svg?react';
 import {
@@ -61,6 +61,12 @@ const UserCodeDetails: FC<IProps> = ({
   presentGiftName,
   shouldShowPrizeInfo,
   shouldShowPrizesInfo,
+  drawDate,
+  drawCertificateDate,
+  drawPrizeDate,
+  shopAddress,
+  receiptNumber,
+  certificateUrl,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
   const cabinetState = useCabinetState();
@@ -99,23 +105,19 @@ const UserCodeDetails: FC<IProps> = ({
               </CodeDetailsItem>
               <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
               <CodeDetailsItem isHiddenOnDesk>
-                {/* TODO fix */}
                 <CodeDetailsSubtitle>№ чеку з кодом:</CodeDetailsSubtitle>
-                <CodeDetailsText>1346517</CodeDetailsText>
+                <CodeDetailsText>{receiptNumber}</CodeDetailsText>
               </CodeDetailsItem>
               <CodeDetailsItem isHiddenOnDesk>
                 <CodeDetailsSubtitle>
-                  {/* TODO fix */} Дата розіграшу призів:
+                  Дата розіграшу призів:
                 </CodeDetailsSubtitle>
-                <CodeDetailsText>18.07.2024</CodeDetailsText>
+                <CodeDetailsText>{drawDate}</CodeDetailsText>
               </CodeDetailsItem>
               <CodeDetailsItem isHiddenOnMobile>
-                {/* TODO fix */}
                 <CodeDetailsSubtitle>Магазин де отримано:</CodeDetailsSubtitle>
                 <CodeDetailsTextWrap>
-                  <CodeDetailsText>
-                    №234 Київ, вул. Ватутіна, 168
-                  </CodeDetailsText>
+                  <CodeDetailsText>{shopAddress}</CodeDetailsText>
                   <TargetShopAddressIconWrap>
                     <HiLocationMarker
                       size={theme.iconSizes.userCodeDetailsMarker}
@@ -125,12 +127,9 @@ const UserCodeDetails: FC<IProps> = ({
               </CodeDetailsItem>
             </CodeDetailsWrap>
             <TargetShopWrap>
-              {/* TODO fix */}
               <TargetShopTitle>Магазин де отримано:</TargetShopTitle>
               <TargetShop>
-                <TargetShopAddress>
-                  №234 Київ, вул. Щербаківського Данила, 161
-                </TargetShopAddress>{' '}
+                <TargetShopAddress>{shopAddress}</TargetShopAddress>{' '}
                 <TargetShopAddressIconWrap>
                   <HiLocationMarker
                     size={theme.iconSizes.userCodeDetailsMarker}
@@ -139,11 +138,10 @@ const UserCodeDetails: FC<IProps> = ({
               </TargetShop>
             </TargetShopWrap>
             <PrizeDrawingDateWrap>
-              {/* TODO fix */}
               <PrizeDrawingDateTitle>
                 Дата розіграшу призів:
               </PrizeDrawingDateTitle>
-              <PrizeDrawingDateText>18.07.2024</PrizeDrawingDateText>
+              <PrizeDrawingDateText>{drawPrizeDate}</PrizeDrawingDateText>
             </PrizeDrawingDateWrap>
           </MainInfo>
         </MainInfoWrap>
@@ -153,14 +151,13 @@ const UserCodeDetails: FC<IProps> = ({
             {shouldShowCertificateInfo && (
               <>
                 <CertificateWrap>
-                  {/* TODO fix */}
-                  <DownloadCertificateLink href={PagePaths.root} download>
+                  <DownloadCertificateLink href={certificateUrl} download>
                     Сертифікат
                   </DownloadCertificateLink>
                   <CertificateInfo>
                     <PrizesInfoTitle>Виграний сертифікат:</PrizesInfoTitle>
                     <Certificate>
-                      <PrizesInfoText>18.07.2024</PrizesInfoText>
+                      <PrizesInfoText>{drawCertificateDate}</PrizesInfoText>
                       <CertificateLink
                         to={certificateDetailsPath}
                         state={cabinetState}
