@@ -1,14 +1,6 @@
 import { IPromotion } from './promotion.types';
 import { CodeStatus } from './userCode.types';
 
-export interface IWinner {
-  id: number;
-  client_name: string;
-  client_phone: string;
-  code: string;
-  gift_name: string;
-}
-
 export interface IClientCode {
   id: number;
   code: string;
@@ -17,17 +9,6 @@ export interface IClientCode {
   wheel_status: null;
   status: CodeStatus;
   action_id: number;
-}
-
-export interface IAtbCode {
-  id: number;
-  promo_id: number;
-  promo_code: string;
-  shop_number: number;
-  receipt_date: string;
-  receipt_number: number;
-  receipt_sum: string;
-  created_at: number;
 }
 
 export interface IShop {
@@ -46,9 +27,25 @@ export interface IShop {
   };
 }
 
-export interface IPartner {
-  name: string;
-  logo: string;
+export interface IAtbCode {
+  id: number;
+  promo_id: number;
+  promo_code: string;
+  shop_number: number;
+  receipt_date: string;
+  receipt_number: number;
+  receipt_sum: string;
+  created_at: number;
+  shop: IShop;
+}
+
+export interface IWinner {
+  id: number;
+  client_name: string;
+  client_phone: string;
+  code: string;
+  gift_name: string;
+  win_date: string;
 }
 
 export interface IImage {
@@ -56,6 +53,11 @@ export interface IImage {
 }
 
 export type Images = IImage[];
+
+export interface IPartner {
+  name: string;
+  logo: string;
+}
 
 export interface IPresent {
   id: number;
@@ -69,24 +71,36 @@ export interface IPresent {
   partner: IPartner;
 }
 
+export interface IDateFrom {
+  date_from: string;
+}
+
+export type DatesFrom = IDateFrom[];
+
 export interface ICertificate {
-  id: number;
-  name: string;
-  use_conditions: string;
-  get_conditions: string;
-  price: number;
-  discount: null;
-  images: Images;
-  banner: null;
-  partner: IPartner;
+  certificate_code: string;
+  created_at: number;
+  sent_at: null;
+  gift: {
+    id: number;
+    name: string;
+    use_conditions: string;
+    get_conditions: string;
+    price: number;
+    discount: null;
+    images: Images;
+    banner: null;
+    partner: IPartner;
+  };
+  pdf_url: string;
 }
 
 export interface IUserCodeWithDetails {
   client_code: IClientCode;
   atb_code: IAtbCode | null;
-  shop: IShop | null;
   action: IPromotion;
   winner: IWinner | null;
   present: IPresent | null;
   certificate: ICertificate | null;
+  dates: DatesFrom;
 }

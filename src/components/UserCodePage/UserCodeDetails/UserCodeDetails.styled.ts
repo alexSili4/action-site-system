@@ -38,6 +38,7 @@ export const Content = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(30)};
     justify-content: space-between;
+    height: 100%;
   }
 `;
 
@@ -48,6 +49,7 @@ export const MainInfoWrap = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(9)};
+    height: 100%;
   }
 `;
 

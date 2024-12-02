@@ -7,7 +7,7 @@ import cabinetService from '@/services/cabinet.service';
 import { useDynamicId } from '@/hooks';
 
 const UserCodePage: FC = () => {
-  const [code, setCode] = useState<IUserCodeWithDetails | null>();
+  const [code, setCode] = useState<IUserCodeWithDetails | null>(null);
   const codeId = useDynamicId();
 
   useEffect(() => {

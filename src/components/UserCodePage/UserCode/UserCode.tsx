@@ -19,11 +19,11 @@ const UserCode: FC<IProps> = ({ code }) => {
   const {
     client_code: clientCode,
     atb_code: atbCode,
-    shop,
     certificate,
     present,
     action,
     winner,
+    dates,
   } = code;
 
   const {
@@ -31,13 +31,21 @@ const UserCode: FC<IProps> = ({ code }) => {
     created_at: codeCreatedAt,
     code: userCode,
   } = clientCode;
-  const { receipt_sum: receiptSum, receipt_number: receiptNumber } =
-    atbCode ?? {};
+  const {
+    receipt_sum: receiptSum,
+    receipt_number: receiptNumber,
+    shop,
+  } = atbCode ?? {};
   const { shop_num: shopNum, city, street: shopStreet } = shop ?? {};
   const { name: cityName } = city ?? {};
   const { id: actionId, name: actionName } = action;
-  const { id: winnerId = null } = winner ?? {};
+  const { id: winnerId = null, win_date: winDate = new Date() } = winner ?? {};
   const { name: presentGiftName = null } = present ?? {};
+  const {
+    pdf_url: certificatePdfUrl = '',
+    sent_at: certificateSentAt,
+    certificate_code: certificateCode = null,
+  } = certificate ?? {};
 
   const shouldShowCertificateInfo = Boolean(certificate);
   const shouldShowPrizeInfo = Boolean(present);
@@ -47,19 +55,27 @@ const UserCode: FC<IProps> = ({ code }) => {
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const prizeDetailsPath = getPrizeDetailsPath(winnerId);
   const certificateDetailsPath = getCertificateDetailsPath(winnerId);
+  const formattedCode = getFormattedCode(userCode);
+
   const codeCreatedAtDate = formatDate({
     date: codeCreatedAt * 1000,
     dateFormat: DateFormats.winnersDate,
   });
-  const formattedCode = getFormattedCode(userCode);
+  const drawDate = dates[0].date_from;
+  const formattedDrawDate = formatDate({
+    date: drawDate,
+    dateFormat: DateFormats.winnersDate,
+  });
+  const formattedWinDate = formatDate({
+    date: winDate,
+    dateFormat: DateFormats.winnersDate,
+  });
+  const certificateSentAtDate = formatDate({
+    date: certificateSentAt ?? new Date(),
+    dateFormat: DateFormats.winnersDate,
+  });
 
-  // TODO fix
-  // const certificateUrl = getFileUrl();
-  const drawDate = '';
-  const drawPrizeDate = '';
-  const drawCertificateDate = '';
-  const wheelCertificateCode = '';
-  const certificateUrl = getFileUrl('');
+  const certificateUrl = getFileUrl(certificatePdfUrl);
 
   const shopAddress = `№${shopNum} ${cityName}, ${shopStreet}`;
 
@@ -83,7 +99,7 @@ const UserCode: FC<IProps> = ({ code }) => {
       />
       <UserCodeDetails
         actionName={actionName}
-        wheelCertificateCode={wheelCertificateCode}
+        wheelCertificateCode={certificateCode}
         shouldShowCertificateInfo={shouldShowCertificateInfo}
         shouldShowPrizeInfo={shouldShowPrizeInfo}
         presentGiftName={presentGiftName}
@@ -94,9 +110,9 @@ const UserCode: FC<IProps> = ({ code }) => {
         isErrorStatus={isErrorStatus}
         isSuccessStatus={isSuccessStatus}
         prizeDetailsPath={prizeDetailsPath}
-        drawCertificateDate={drawCertificateDate}
-        drawDate={drawDate}
-        drawPrizeDate={drawPrizeDate}
+        drawCertificateDate={certificateSentAtDate}
+        drawDate={formattedDrawDate}
+        drawPrizeDate={formattedWinDate}
         receiptNumber={receiptNumber}
         shopAddress={shopAddress}
         certificateUrl={certificateUrl}
