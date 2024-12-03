@@ -173,12 +173,12 @@ export const ConditionsInfo = styled.p`
 export const HotlineInfoWrap = styled.div`
   display: flex;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing(2)};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
     align-items: flex-end;
     gap: ${({ theme }) => theme.spacing(5)};

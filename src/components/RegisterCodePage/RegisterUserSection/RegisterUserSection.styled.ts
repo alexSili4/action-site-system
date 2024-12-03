@@ -41,9 +41,9 @@ export const RegisterUserFormWrap = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    padding: ${({ theme: { spacing } }) =>
+      `${spacing(10)} ${spacing(14)} ${spacing(41)}`};
   }
-  padding: ${({ theme: { spacing } }) =>
-    `${spacing(10)} ${spacing(14)} ${spacing(41)}`};
 `;
 
 export const SuccessRegisterUserMsgContainer = styled.div`

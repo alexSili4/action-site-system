@@ -11,7 +11,7 @@ import {
 } from '@/utils';
 
 const useUserCertificate = (
-  certificate: IUserCertificateWithDetails
+  data: IUserCertificateWithDetails
 ): IUseUserCertificate => {
   const {
     code: userCode,
@@ -19,7 +19,8 @@ const useUserCertificate = (
     action,
     expired_date: expiredDate,
     certificate_pdf: certificatePdf,
-  } = certificate;
+    certificate,
+  } = data;
 
   const { code, id: codeId } = userCode;
   const { get_conditions: getConditions, partner, name: prizeName } = gift;
@@ -32,6 +33,7 @@ const useUserCertificate = (
     third_banner_mob: thirdBannerMob,
     id: actionId,
   } = action;
+  const { certificate_code: certificateCode } = certificate;
 
   const validHotLinePhone = getValidPhone(hotLinePhone);
   const codeDetailsPath = getCodeDetailsPath(codeId);
@@ -64,6 +66,7 @@ const useUserCertificate = (
     promotionDetailsPath,
     codeDetailsPath,
     validHotLinePhone,
+    certificateCode,
   };
 };
 

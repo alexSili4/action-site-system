@@ -1,13 +1,14 @@
 import { FC } from 'react';
 import {
   Container,
-  Barcode,
-  BarcodeText,
-  BarcodeWrap,
-  ContentWrap,
+  CertificateCodeText,
+  CertificateCodeWrap,
+  CertificateImg,
   DownloadLink,
   DownloadLinkTitle,
-  BarcodeTitle,
+  CertificateCodeTitle,
+  ContentWrap,
+  CertificateImgWrap,
 } from './UserCertificateBanner.styled';
 import { RiDownloadLine } from 'react-icons/ri';
 import { theme } from '@/constants';
@@ -16,7 +17,7 @@ import { IProps } from './UserCertificateBanner.types';
 import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserCertificateBanner: FC<IProps> = ({
-  code,
+  certificateCode,
   thirdBannerDt,
   thirdBannerMob,
   certificatePdf,
@@ -24,22 +25,24 @@ const UserCertificateBanner: FC<IProps> = ({
   return (
     <Container>
       <CabinetGoBackLink isShowOnDesk />
-      <ContentWrap
-        thirdBannerDt={thirdBannerDt}
-        thirdBannerMob={thirdBannerMob}
-      >
-        <BarcodeWrap>
-          <Barcode>
-            <BarcodeTitle>Код сертифікату:</BarcodeTitle>
-            <BarcodeText>{code}</BarcodeText>
-          </Barcode>
-        </BarcodeWrap>
-        <DownloadLink href={certificatePdf} download>
-          <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
-          <RiDownloadLine
-            size={theme.iconSizes.cabinetDownloadCertificateLink}
-          />
-        </DownloadLink>
+      <ContentWrap>
+        <CertificateImgWrap>
+          <CertificateImg
+            thirdBannerDt={thirdBannerDt}
+            thirdBannerMob={thirdBannerMob}
+          >
+            <DownloadLink href={certificatePdf} download>
+              <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
+              <RiDownloadLine
+                size={theme.iconSizes.cabinetDownloadCertificateLink}
+              />
+            </DownloadLink>
+          </CertificateImg>
+        </CertificateImgWrap>
+        <CertificateCodeWrap>
+          <CertificateCodeTitle>Код сертифікату:</CertificateCodeTitle>
+          <CertificateCodeText>{certificateCode}</CertificateCodeText>
+        </CertificateCodeWrap>
       </ContentWrap>
     </Container>
   );

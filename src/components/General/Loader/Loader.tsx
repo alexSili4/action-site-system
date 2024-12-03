@@ -7,7 +7,7 @@ const Loader: FC = () => (
     height='80'
     width='80'
     radius='48'
-    color='#ffeecc'
+    color='#9066cc'
     ariaLabel='watch-loading'
     wrapperStyle={{
       display: 'flex',

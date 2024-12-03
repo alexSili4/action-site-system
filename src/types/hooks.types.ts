@@ -146,6 +146,7 @@ export interface IUseIsScrollingUp {
 }
 
 export interface IUseUserCertificate {
+  certificateCode: string;
   code: string;
   bannerMobUrl: string;
   bannerDtUrl: string;

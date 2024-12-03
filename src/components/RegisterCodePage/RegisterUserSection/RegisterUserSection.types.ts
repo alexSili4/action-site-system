@@ -1,4 +1,4 @@
-import { Numbers } from '@/types/types';
+import { Numbers, OnBtnClickFunc } from '@/types/types';
 
 export interface IProps {
   steps: Numbers;
@@ -10,4 +10,5 @@ export interface IProps {
   thirdBannerDt: string;
   hotLinePhone: string;
   hotLineWorkHours: string;
+  onCompleteRegCodeBtnClick: OnBtnClickFunc;
 }

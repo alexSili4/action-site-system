@@ -23,12 +23,13 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
     promotionDetailsPath,
     codeDetailsPath,
     validHotLinePhone,
+    certificateCode,
   } = useUserCertificate(certificate);
 
   return (
     <UserStatisticsDetailsContainer>
       <UserCertificateBanner
-        code={code}
+        certificateCode={certificateCode}
         thirdBannerMob={bannerMobUrl}
         thirdBannerDt={bannerDtUrl}
         certificatePdf={certificatePdfUrl}

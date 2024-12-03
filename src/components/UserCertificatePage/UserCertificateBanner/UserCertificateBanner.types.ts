@@ -1,11 +1,11 @@
 export interface IProps {
-  code: string;
+  certificateCode: string;
   thirdBannerDt: string;
   thirdBannerMob: string;
   certificatePdf: string;
 }
 
-export interface IStyledContentWrapProps {
+export interface IStyledCertificateImgProps {
   thirdBannerDt: string;
   thirdBannerMob: string;
 }

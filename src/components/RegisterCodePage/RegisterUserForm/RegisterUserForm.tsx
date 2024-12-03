@@ -51,7 +51,7 @@ const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
           </RegisterUserCheckbox>
         </CertificateInfoWrap>
       </Content>
-      <SubmitRegFormBtn title='Зареєструвати' disabled={disabledBtn} />
+      <SubmitRegFormBtn title='Завершити' disabled={disabledBtn} />
     </Form>
   );
 };

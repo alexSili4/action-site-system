@@ -1,23 +1,17 @@
-import barcode from '@/images/userCertificate/barcode.png';
 import styled from '@emotion/styled';
 import decorativeElement from '@/images/cabinet/decorative-element.png';
-import { IStyledContentWrapProps } from './UserCertificateBanner.types';
+import { IStyledCertificateImgProps } from './UserCertificateBanner.types';
 
 export const Container = styled.div`
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  border-radius: 24px;
-  background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    padding: ${({ theme }) => theme.spacing(4)};
-  }
-
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     border-radius: 16px;
+    background-color: ${({ theme }) => theme.colors.white};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
@@ -25,12 +19,35 @@ export const Container = styled.div`
   }
 `;
 
-export const ContentWrap = styled.div<IStyledContentWrapProps>`
-  flex-grow: 1;
+export const ContentWrap = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    gap: ${({ theme }) => theme.spacing(3)};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    flex-grow: 1;
+  }
+`;
+
+export const CertificateImgWrap = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    background-color: ${({ theme }) => theme.colors.white};
+    padding: ${({ theme }) => theme.spacing(4)};
+    border-radius: 24px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    flex-grow: 1;
+  }
+`;
+
+export const CertificateImg = styled.div<IStyledCertificateImgProps>`
+  display: flex;
   padding: ${({ theme: { spacing } }) =>
-    `${spacing(9)} ${spacing(5)} ${spacing(4)}`};
+    `${spacing(80)} ${spacing(5)} ${spacing(4)}`};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   background-image: url(${decorativeElement}),
     url(${({ thirdBannerMob }) => thirdBannerMob});
@@ -39,70 +56,16 @@ export const ContentWrap = styled.div<IStyledContentWrapProps>`
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    gap: ${({ theme }) => theme.spacing(42)};
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    justify-content: space-between;
+    height: 100%;
+    align-items: flex-end;
     padding: ${({ theme }) => theme.spacing(8)};
     background-image: url(${decorativeElement}),
       url(${({ thirdBannerDt }) => thirdBannerDt});
-  }
-`;
-
-export const BarcodeWrap = styled.div`
-  padding: ${({ theme }) => theme.spacing(3)};
-  border-radius: 6px;
-  background-color: ${({ theme }) => theme.colors.white};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    padding: ${({ theme }) => theme.spacing(5)};
-    border-radius: 16px;
-  }
-`;
-
-export const Barcode = styled.div`
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    padding-top: ${({ theme }) => theme.spacing(16)};
-    background-image: url(${barcode});
-    background-position: 0 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: ${({ theme }) => theme.spacing(2)};
-  }
-`;
-
-export const BarcodeTitle = styled.p`
-  color: #7e8494;
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.4;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    display: none;
-  }
-`;
-
-export const BarcodeText = styled.p`
-  color: #494545;
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 15.33px;
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: 0.4;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 18px;
-    letter-spacing: 0.01;
   }
 `;
 
@@ -111,10 +74,11 @@ export const DownloadLink = styled.a`
   align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing()};
+  width: 100%;
   height: 48px;
   border-radius: 16px;
   box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
-    3px 3px 0px 0px #7a4ebd;
+    3px 3px 0px 0px0 #7a4ebd;
   background-image: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.2),
@@ -144,4 +108,47 @@ export const DownloadLinkTitle = styled.span`
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
+`;
+
+export const CertificateCodeWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(2)};
+  padding: ${({ theme }) => theme.spacing(3)};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    border-radius: 24px;
+    background-color: ${({ theme }) => theme.colors.white};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding: ${({ theme }) => theme.spacing(5)};
+  }
+`;
+
+export const CertificateCodeTitle = styled.p`
+  color: #7e8494;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    font-size: 16px;
+  }
+`;
+
+export const CertificateCodeText = styled.p`
+  color: #494545;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 15.33px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    font-size: 18px;
+    letter-spacing: 0.01;
+  }
 `;

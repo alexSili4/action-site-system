@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { IStyledContainerProps } from './CabinetGoBackLink.types';
 
 export const Container = styled.div<IStyledContainerProps>`
-  border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.spacing(4)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
     display: ${({ isShowOnDesk }) => isShowOnDesk && 'none'};
+    border-radius: 24px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
