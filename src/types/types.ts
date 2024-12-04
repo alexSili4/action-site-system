@@ -1,7 +1,7 @@
 import { Location } from 'react-router-dom';
 import { ChangeEvent, MouseEvent } from 'react';
 import Swiper from 'swiper';
-import { WheelPrizes } from './code.types';
+import { Partners } from './code.types';
 
 // events
 export type DatePickerEvent = Date | null;
@@ -27,7 +27,7 @@ export type OnBtnClickFunc = (e: BtnClickEvent) => void;
 
 export type OnSwiperSlideChange = (swiper: Swiper) => void;
 
-export type SetSlideActiveIndexByIndex = (data: number) => void;
+export type SetNumberFunc = (data: number) => void;
 
 // other
 
@@ -121,13 +121,13 @@ export interface IGetCodeStatus {
   isErrorStatus: boolean;
 }
 
-export interface IGetTargetPrizeProps {
-  prizeIdx: NumberOrNull;
-  prizes: WheelPrizes;
+export interface IGetTargetPartnerProps {
+  partnerIdx: NumberOrNull;
+  partners: Partners;
 }
 
 export interface IGetFinalTotalDegreesProps {
-  prizesLength: number;
-  newPrizeIdx: number;
+  partnersLength: number;
+  newPartnerIdx: number;
   initialTotalDegrees: number;
 }

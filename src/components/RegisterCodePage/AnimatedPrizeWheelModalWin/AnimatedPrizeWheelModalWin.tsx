@@ -27,7 +27,8 @@ import ConfettiAnimation from '@GeneralComponents/ConfettiAnimation';
 const AnimatedPrizeWheelModalWin: FC<IProps> = ({
   moveToNextStep,
   animationDuration = 0.6,
-  targetPrize: { icon, prize },
+  logoUrl,
+  partnerName
 }) => {
   const { hideModalWin } = useModalWin(moveToNextStep);
 
@@ -63,9 +64,9 @@ const AnimatedPrizeWheelModalWin: FC<IProps> = ({
                   <FireworksImg src={fireworksImg} />
                   <CertificateWrap>
                     <Title>сертифікат</Title>
-                    <Prize>{prize}</Prize>
+                    <Prize>{partnerName}</Prize>
                     <LogoPartnerWrap>
-                      <LogoPartner src={icon} />
+                      <LogoPartner src={logoUrl} />
                     </LogoPartnerWrap>
                   </CertificateWrap>
                   <NextStepBtn type='button' onClick={moveToNextStep}>

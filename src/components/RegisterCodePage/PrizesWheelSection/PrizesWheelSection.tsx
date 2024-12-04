@@ -16,15 +16,16 @@ import pointer from '@/images/code/pointer.png';
 // components
 import AnimatedPrizeWheelModalWinContainer from '@RegisterCodePageComponents/AnimatedPrizeWheelModalWinContainer';
 import { usePrizesWheelSection } from '@/hooks';
+import { getFileUrl } from '@/utils';
 
 const PrizesWheelSection: FC<IProps> = ({
-  prizes,
+  partners,
   spinningMs,
   maxSpins,
   moveToNextStep,
 }) => {
-  const { totalDegrees, onSpinWheelBtnClick, isWheelSpun, targetPrize } =
-    usePrizesWheelSection({ prizes, spinningMs, maxSpins });
+  const { totalDegrees, onSpinWheelBtnClick, isWheelSpun, targetPartner } =
+    usePrizesWheelSection({ partners, spinningMs, maxSpins });
 
   return (
     <>
@@ -32,12 +33,13 @@ const PrizesWheelSection: FC<IProps> = ({
         <Content>
           <WheelWrap>
             <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
-              {prizes.map(({ id, icon }, index, array) => {
+              {partners.map(({ id, logo }, index) => {
                 const number = index + 1;
+                const logoUrl = getFileUrl(logo);
 
                 return (
-                  <Sector key={id} number={number} length={array.length}>
-                    <Image src={icon} />
+                  <Sector key={id} number={number} length={partners.length}>
+                    <Image src={logoUrl} />
                   </Sector>
                 );
               })}
@@ -54,11 +56,11 @@ const PrizesWheelSection: FC<IProps> = ({
           </SpinWheelBtn>
         </Content>
       </Container>
-      {targetPrize && (
+      {targetPartner && (
         <AnimatedPrizeWheelModalWinContainer
           showModalWin={isWheelSpun}
           moveToNextStep={moveToNextStep}
-          targetPrize={targetPrize}
+          targetPartner={targetPartner}
         />
       )}
     </>

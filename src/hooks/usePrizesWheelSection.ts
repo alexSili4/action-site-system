@@ -1,24 +1,27 @@
-import { IUsePrizesWheelSectionProps } from '@/types/hooks.types';
+import {
+  IUsePrizesWheelSection,
+  IUsePrizesWheelSectionProps,
+} from '@/types/hooks.types';
 import { BtnClickEvent } from '@/types/types';
 import {
   getFinalTotalDegrees,
   getInitialTotalDegrees,
-  getTargetPrize,
+  getTargetPartner,
   makeBlur,
 } from '@/utils';
 import { useState } from 'react';
 
 const usePrizesWheelSection = ({
-  prizes,
+  partners,
   spinningMs,
   maxSpins,
-}: IUsePrizesWheelSectionProps) => {
+}: IUsePrizesWheelSectionProps): IUsePrizesWheelSection => {
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
   const [totalDegrees, setTotalDegrees] = useState<number>(0);
-  const [prizeIdx, setPrizeIdx] = useState<number | null>(null);
+  const [partnerIdx, setPartnerIdx] = useState<number | null>(null);
   const [isWheelSpun, setIsWheelSpun] = useState<boolean>(false);
 
-  const targetPrize = getTargetPrize({ prizeIdx, prizes });
+  const targetPartner = getTargetPartner({ partners, partnerIdx });
 
   const spinWheel = () => {
     if (isSpinning) return;
@@ -31,12 +34,12 @@ const usePrizesWheelSection = ({
 
     // TODO fix
     // fetchPrizeIdx
-    const newPrizeIdx = Math.floor(Math.random() * prizes.length);
-    setPrizeIdx(newPrizeIdx);
+    const newPartnerIdx = Math.floor(Math.random() * partners.length);
+    setPartnerIdx(newPartnerIdx);
 
     const finalTotalDegrees = getFinalTotalDegrees({
-      prizesLength: prizes.length,
-      newPrizeIdx,
+      partnersLength: partners.length,
+      newPartnerIdx,
       initialTotalDegrees,
     });
     setTotalDegrees(finalTotalDegrees);
@@ -59,7 +62,7 @@ const usePrizesWheelSection = ({
     totalDegrees,
     onSpinWheelBtnClick,
     isWheelSpun,
-    targetPrize,
+    targetPartner,
   };
 };
 

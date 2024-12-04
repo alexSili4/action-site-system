@@ -1,9 +1,9 @@
-import { SetActiveIndexByIndexFunc } from '@/types/promotion.types';
+import { SetNumberFunc } from '@/types/types';
 
 export interface IProps {
   conditions: Array<any>;
   activeIndex: number;
-  setActiveIndexByIndex: SetActiveIndexByIndexFunc;
+  setActiveIndexByIndex: SetNumberFunc;
 }
 
 export interface IStyledProps {

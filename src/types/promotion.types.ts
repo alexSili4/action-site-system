@@ -76,6 +76,4 @@ export interface IGetPromotionDateProps {
   dateTo: NumberOrNull;
 }
 
-export type SetActiveIndexByIndexFunc = (data: number) => void;
-
 export type TargetPromotionDetailsState = IPromotion | null;

@@ -1,4 +1,4 @@
-import { Func, Numbers } from '@/types/types';
+import { Numbers, SetNumberFunc } from '@/types/types';
 
 export interface IProps {
   rulesPdf: string;
@@ -11,5 +11,5 @@ export interface IProps {
   thirdBannerMob: string;
   thirdBannerDt: string;
   promotionDate: string;
-  incrementCurrentStep: Func;
+  onSuccessRegisterCode: SetNumberFunc;
 }

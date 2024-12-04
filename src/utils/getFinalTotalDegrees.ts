@@ -1,12 +1,12 @@
 import { IGetFinalTotalDegreesProps } from '@/types/types';
 
 const getFinalTotalDegrees = ({
-  prizesLength,
-  newPrizeIdx,
+  partnersLength,
+  newPartnerIdx,
   initialTotalDegrees,
 }: IGetFinalTotalDegreesProps): number => {
-  const degreesPerSector = 360 / prizesLength;
-  const baseRotation = degreesPerSector * newPrizeIdx;
+  const degreesPerSector = 360 / partnersLength;
+  const baseRotation = degreesPerSector * newPartnerIdx;
   const randomOffset = Math.random() * 30 - 15;
   const targetDegree = 360 - (baseRotation + randomOffset);
 

@@ -1,7 +1,7 @@
-import { Func } from '@/types/types';
+import { SetNumberFunc } from '@/types/types';
 
 export interface IProps {
-  incrementCurrentStep: Func;
+  onSuccessRegisterCode: SetNumberFunc;
   rulesPdf: string;
 }
 

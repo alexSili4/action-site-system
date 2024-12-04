@@ -168,11 +168,11 @@ export const HotlineInfoWrap = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(2)};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
     align-items: flex-end;
     gap: ${({ theme }) => theme.spacing(2)};

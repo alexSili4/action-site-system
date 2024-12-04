@@ -2,7 +2,7 @@ import { Conditions } from '@/types/condition.types';
 import {
   NumberOrNull,
   OnSwiperSlideChange,
-  SetSlideActiveIndexByIndex,
+  SetNumberFunc,
 } from '@/types/types';
 
 export interface IProps {
@@ -11,7 +11,7 @@ export interface IProps {
   activeIndex: number;
   slideHeight: NumberOrNull;
   onSlideChange: OnSwiperSlideChange;
-  setActiveIndexByIndex: SetSlideActiveIndexByIndex;
+  setActiveIndexByIndex: SetNumberFunc;
 }
 
 export interface IStyledCoverProps {

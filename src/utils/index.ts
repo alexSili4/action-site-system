@@ -32,5 +32,5 @@ export { default as getFormattedCode } from './getFormattedCode';
 export { default as getCodeDetailsPath } from './getCodeDetailsPath';
 export { default as getValidPhone } from './getValidPhone';
 export { default as getInitialTotalDegrees } from './getInitialTotalDegrees';
-export { default as getTargetPrize } from './getTargetPrize';
+export { default as getTargetPartner } from './getTargetPartner';
 export { default as getFinalTotalDegrees } from './getFinalTotalDegrees';

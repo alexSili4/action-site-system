@@ -1,7 +1,8 @@
-import { ActiveShopNum, SetActiveShopFunc, Shops } from '@/types/shop.types';
+import { ActiveShopNum, Shops } from '@/types/shop.types';
+import { SetNumberFunc } from '@/types/types';
 
 export interface IProps {
-  setActiveShop: SetActiveShopFunc;
+  setActiveShop: SetNumberFunc;
   activeShopNum: ActiveShopNum;
   shops: Shops;
 }

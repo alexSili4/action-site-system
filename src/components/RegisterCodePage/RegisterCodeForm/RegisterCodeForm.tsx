@@ -21,7 +21,7 @@ import CodePartInput from '@RegisterCodePageComponents/CodePartInput';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import RegisterFormCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
 
-const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep, rulesPdf }) => {
+const RegisterCodeForm: FC<IProps> = ({ onSuccessRegisterCode, rulesPdf }) => {
   const {
     handleFormSubmit,
     register,
@@ -32,7 +32,7 @@ const RegisterCodeForm: FC<IProps> = ({ incrementCurrentStep, rulesPdf }) => {
     inputMaxLength,
     error,
     disabledBtn,
-  } = useRegisterCodeForm(incrementCurrentStep);
+  } = useRegisterCodeForm(onSuccessRegisterCode);
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>

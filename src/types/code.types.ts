@@ -12,6 +12,7 @@ export interface IRegisterCode {
 export type RegisterCodeResult = 'error' | 'ok' | 'general_error';
 
 export interface IRegisterCodeRes {
+  codeModel: { id: number } | null;
   result: RegisterCodeResult;
   errors: {
     code: string[];
@@ -23,16 +24,16 @@ export interface IGetCurrentInputIndex {
   regCodeInputs: HTMLInputElements;
 }
 
-export interface IWheelPrize {
-  id: number;
-  name: string;
-  icon: string;
-  prize: string;
-}
-
-export type WheelPrizes = IWheelPrize[];
-
 export interface IGetRegCodeSteps {
   stepsSequence: IStepsSequence;
   shouldShowPrizesWheel: boolean;
 }
+
+export interface IPartner {
+  id: number;
+  name: string;
+  logo: string;
+  in_stock: boolean;
+}
+
+export type Partners = IPartner[];

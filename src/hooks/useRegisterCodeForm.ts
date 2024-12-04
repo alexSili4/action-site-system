@@ -3,11 +3,11 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { IRegCodeFormData } from '@/types/regCode.types';
 import { generalSettings } from '@/constants';
 import {
-  Func,
   HTMLInputElements,
   IChangeFocusToNextRegCodeInputProps,
   IGetRegCodeInputProps,
   InputChangeEvent,
+  SetNumberFunc,
   StringOrNull,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
@@ -17,7 +17,7 @@ import { getCurrentInputIndex } from '@/utils';
 import { IUseRegisterCodeForm } from '@/types/hooks.types';
 
 const useRegisterCodeForm = (
-  incrementCurrentStep: Func
+  onSuccessRegisterCode: SetNumberFunc
 ): IUseRegisterCodeForm => {
   const [error, setError] = useState<StringOrNull>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -62,7 +62,11 @@ const useRegisterCodeForm = (
         throw new Error(JSON.stringify(response));
       }
 
-      incrementCurrentStep();
+      const { codeModel } = response;
+
+      if (codeModel) {
+        onSuccessRegisterCode(codeModel.id);
+      }
     } catch (error) {
       if (error instanceof Error) {
         const targetError: IRegisterCodeRes = JSON.parse(error.message);

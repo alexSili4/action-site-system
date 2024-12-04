@@ -1,4 +1,4 @@
-import { IRegisterCode, IRegisterCodeRes } from '@/types/code.types';
+import { IRegisterCode, IRegisterCodeRes, Partners } from '@/types/code.types';
 import HttpService from './http.service';
 
 class CodesService extends HttpService {
@@ -11,6 +11,17 @@ class CodesService extends HttpService {
       {
         url: 'code/register',
         data,
+      },
+      false
+    );
+
+    return response.data;
+  }
+
+  async getPartners(codeId: number): Promise<Partners> {
+    const response = await this.get<Partners>(
+      {
+        url: `client/wheel/get-partners-for-wheel?code_id=${codeId}`,
       },
       false
     );

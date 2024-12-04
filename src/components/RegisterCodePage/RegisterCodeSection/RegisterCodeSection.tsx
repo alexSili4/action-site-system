@@ -9,7 +9,6 @@ import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsB
 const RegisterCodeSection: FC<IProps> = ({
   steps,
   currentStep,
-  incrementCurrentStep,
   rulesPdf,
   hotLinePhone,
   hotLineWorkHours,
@@ -18,6 +17,7 @@ const RegisterCodeSection: FC<IProps> = ({
   thirdBannerMob,
   thirdBannerDt,
   promotionDate,
+  onSuccessRegisterCode,
 }) => {
   return (
     <Container>
@@ -35,7 +35,7 @@ const RegisterCodeSection: FC<IProps> = ({
           currentStep={currentStep}
         />
         <RegisterCodeForm
-          incrementCurrentStep={incrementCurrentStep}
+          onSuccessRegisterCode={onSuccessRegisterCode}
           rulesPdf={rulesPdf}
         />
         <Text>
