@@ -82,9 +82,7 @@ export const Wheel = styled.div<IStyledWheelProps>`
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   transform: rotate(${({ totalDegrees }) => totalDegrees}deg);
-  transition: transform
-    ${({ spinningMs, shouldStopWheel }) =>
-      `${spinningMs}ms ${shouldStopWheel ? 'ease-out' : 'ease-in'}`};
+  transition: transform ${({ spinningMs }) => spinningMs}ms ease-in-out;
   overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {

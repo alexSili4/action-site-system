@@ -3,7 +3,6 @@ import {
   Func,
   InputChangeFunc,
   IOnPageBtnClickProps,
-  NumberOrNull,
   OnAnchorClickFunc,
   OnBtnClickFunc,
   OnDivClickFunc,
@@ -185,7 +184,6 @@ export interface IUsePrizesWheelSectionProps {
 
 export interface IUsePrizesWheelSection {
   totalDegrees: number;
-  prizeIdx: NumberOrNull;
   onSpinWheelBtnClick: OnBtnClickFunc;
   isWheelSpun: boolean;
   targetPrize: IWheelPrize | null;

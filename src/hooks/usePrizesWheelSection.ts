@@ -31,23 +31,20 @@ const usePrizesWheelSection = ({
 
     // TODO fix
     // fetchPrizeIdx
+    const newPrizeIdx = Math.floor(Math.random() * prizes.length);
+    setPrizeIdx(newPrizeIdx);
+
+    const finalTotalDegrees = getFinalTotalDegrees({
+      prizesLength: prizes.length,
+      newPrizeIdx,
+      initialTotalDegrees,
+    });
+    setTotalDegrees(finalTotalDegrees);
+
     setTimeout(() => {
-      // TODO fix
-      const newPrizeIdx = Math.floor(Math.random() * prizes.length);
-      setPrizeIdx(newPrizeIdx);
-
-      const finalTotalDegrees = getFinalTotalDegrees({
-        prizesLength: prizes.length,
-        newPrizeIdx,
-        initialTotalDegrees,
-      });
-      setTotalDegrees(finalTotalDegrees);
-
-      setTimeout(() => {
-        setIsSpinning(false);
-        setIsWheelSpun(true);
-      }, spinningMs);
-    }, 5000);
+      setIsSpinning(false);
+      setIsWheelSpun(true);
+    }, spinningMs);
   };
 
   const onSpinWheelBtnClick = (e: BtnClickEvent) => {
@@ -60,7 +57,6 @@ const usePrizesWheelSection = ({
 
   return {
     totalDegrees,
-    prizeIdx,
     onSpinWheelBtnClick,
     isWheelSpun,
     targetPrize,

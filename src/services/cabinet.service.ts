@@ -28,7 +28,7 @@ class CabinetService extends HttpService {
 
     const { data, headers } = await this.get<UserCodes>(
       {
-        url: `client/my-codes?page=${page}&per-page=4&sort=${sortType}`,
+        url: `client/info/my-codes?page=${page}&per-page=4&sort=${sortType}`,
       },
       false
     );
@@ -46,7 +46,7 @@ class CabinetService extends HttpService {
 
     const { data, headers } = await this.get<UserPrizes>(
       {
-        url: `client/my-gifts?page=${page}&per-page=4&sort=${sortType}`,
+        url: `client/info/my-gifts?page=${page}&per-page=4&sort=${sortType}`,
       },
       false
     );
@@ -61,7 +61,7 @@ class CabinetService extends HttpService {
   ): Promise<IUserCertificateWithDetails> {
     const { data } = await this.get<IUserCertificateWithDetails>(
       {
-        url: `client/my-certificate?winner_id=${id}`,
+        url: `client/info/my-certificate?winner_id=${id}`,
       },
       false
     );
@@ -72,7 +72,7 @@ class CabinetService extends HttpService {
   async getPrizeDetails(id: string): Promise<IUserPrizeWithDetails> {
     const { data } = await this.get<IUserPrizeWithDetails>(
       {
-        url: `client/my-present?winner_id=${id}`,
+        url: `client/info/my-present?winner_id=${id}`,
       },
       false
     );
@@ -83,7 +83,7 @@ class CabinetService extends HttpService {
   async getCodeDetails(id: string): Promise<IUserCodeWithDetails> {
     const { data } = await this.get<IUserCodeWithDetails>(
       {
-        url: `client/my-code?id=${id}`,
+        url: `client/info/my-code?id=${id}`,
       },
       false
     );

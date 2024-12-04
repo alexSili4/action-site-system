@@ -23,24 +23,15 @@ const PrizesWheelSection: FC<IProps> = ({
   maxSpins,
   moveToNextStep,
 }) => {
-  const {
-    totalDegrees,
-    prizeIdx,
-    onSpinWheelBtnClick,
-    isWheelSpun,
-    targetPrize,
-  } = usePrizesWheelSection({ prizes, spinningMs, maxSpins });
+  const { totalDegrees, onSpinWheelBtnClick, isWheelSpun, targetPrize } =
+    usePrizesWheelSection({ prizes, spinningMs, maxSpins });
 
   return (
     <>
       <Container>
         <Content>
           <WheelWrap>
-            <Wheel
-              totalDegrees={totalDegrees}
-              spinningMs={spinningMs}
-              shouldStopWheel={Boolean(prizeIdx)}
-            >
+            <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
               {prizes.map(({ id, icon }, index, array) => {
                 const number = index + 1;
 

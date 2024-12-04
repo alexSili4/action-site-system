@@ -11,7 +11,6 @@ export interface IProps {
 export interface IStyledWheelProps {
   totalDegrees: number;
   spinningMs: number;
-  shouldStopWheel: boolean;
 }
 
 export interface IStyledSectorProps {
