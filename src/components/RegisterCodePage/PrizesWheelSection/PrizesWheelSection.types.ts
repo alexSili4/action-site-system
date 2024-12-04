@@ -8,9 +8,10 @@ export interface IProps {
   moveToNextStep: Func;
 }
 
-export interface IStyledProps {
+export interface IStyledWheelProps {
   totalDegrees: number;
   spinningMs: number;
+  shouldStopWheel: boolean;
 }
 
 export interface IStyledSectorProps {

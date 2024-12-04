@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
-import { IStyledProps, IStyledSectorProps } from './PrizesWheelSection.types';
+import {
+  IStyledWheelProps,
+  IStyledSectorProps,
+} from './PrizesWheelSection.types';
 
 export const Container = styled.div`
   display: flex;
@@ -73,13 +76,15 @@ export const CircleImg = styled.img`
   aspect-ratio: 1 / 1;
 `;
 
-export const Wheel = styled.div<IStyledProps>`
+export const Wheel = styled.div<IStyledWheelProps>`
   position: absolute;
   width: calc(100% - 33px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   transform: rotate(${({ totalDegrees }) => totalDegrees}deg);
-  transition: transform ${({ spinningMs }) => spinningMs}ms ease-in-out;
+  transition: transform
+    ${({ spinningMs, shouldStopWheel }) =>
+      `${spinningMs}ms ${shouldStopWheel ? 'ease-out' : 'ease-in'}`};
   overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 const useRegisterUserForm = (
-  setShowSuccessMsgState: Func
+  toggleShowSuccessMsgState: Func
 ): IUseRegisterUserForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { register, handleSubmit, watch } = useForm<IRegUserFormData>();
@@ -19,7 +19,7 @@ const useRegisterUserForm = (
     console.log(data);
 
     setIsLoading(false);
-    setShowSuccessMsgState();
+    toggleShowSuccessMsgState();
   };
 
   return {

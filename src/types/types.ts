@@ -1,6 +1,7 @@
 import { Location } from 'react-router-dom';
 import { ChangeEvent, MouseEvent } from 'react';
 import Swiper from 'swiper';
+import { WheelPrizes } from './code.types';
 
 // events
 export type DatePickerEvent = Date | null;
@@ -118,4 +119,15 @@ export interface IOutletContext
 export interface IGetCodeStatus {
   isSuccessStatus: boolean;
   isErrorStatus: boolean;
+}
+
+export interface IGetTargetPrizeProps {
+  prizeIdx: NumberOrNull;
+  prizes: WheelPrizes;
+}
+
+export interface IGetFinalTotalDegreesProps {
+  prizesLength: number;
+  newPrizeIdx: number;
+  initialTotalDegrees: number;
 }

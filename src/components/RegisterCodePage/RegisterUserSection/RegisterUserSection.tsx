@@ -3,19 +3,13 @@ import {
   Container,
   ContentWrap,
   RegisterUserFormWrap,
-  SuccessRegisterUserMsgWrap,
-  SuccessRegisterUserMsgTitle,
-  SuccessRegisterUserMsg,
-  SuccessRegisterUserMsgContainer,
-  CabinetLink,
-  Text,
 } from './RegisterUserSection.styled';
 import { IProps } from './RegisterUserSection.types';
-import { PagePaths } from '@/constants';
 // components
 import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import RegisterUserForm from '@RegisterCodePageComponents/RegisterUserForm';
+import SuccessRegisterCodeMsg from '@RegisterCodePageComponents/SuccessRegisterCodeMsg';
 
 const RegisterUserSection: FC<IProps> = ({
   steps,
@@ -30,8 +24,8 @@ const RegisterUserSection: FC<IProps> = ({
 }) => {
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
 
-  const setShowSuccessMsgState = () => {
-    setShowSuccessMsg(true);
+  const toggleShowSuccessMsgState = () => {
+    setShowSuccessMsg((prevState) => !prevState);
   };
 
   return (
@@ -45,23 +39,10 @@ const RegisterUserSection: FC<IProps> = ({
       />
       <ContentWrap>
         {showSuccessMsg ? (
-          <SuccessRegisterUserMsgContainer>
-            <SuccessRegisterUserMsgWrap>
-              <SuccessRegisterUserMsgTitle>
-                Дякуємо, ________!
-              </SuccessRegisterUserMsgTitle>
-              <SuccessRegisterUserMsg>
-                Ваш акційний код буде зареєстровано протягом доби. Ви можете
-                перевірити статус акційного коду та сертифікату у Вашому
-                Особистому кабінеті.
-              </SuccessRegisterUserMsg>
-            </SuccessRegisterUserMsgWrap>
-            <CabinetLink to={PagePaths.cabinet}>Особистий кабінет</CabinetLink>
-            <Text>
-              Якщо Вам не вдалося зареєструвати акційний код зверніться на
-              гарячу лінію за телефоном {hotLinePhone} ({hotLineWorkHours})
-            </Text>
-          </SuccessRegisterUserMsgContainer>
+          <SuccessRegisterCodeMsg
+            hotLinePhone={hotLinePhone}
+            hotLineWorkHours={hotLineWorkHours}
+          />
         ) : (
           <RegisterUserFormWrap>
             <RegisterCodeStepsBar
@@ -69,7 +50,9 @@ const RegisterUserSection: FC<IProps> = ({
               steps={steps}
               currentStep={currentStep}
             />
-            <RegisterUserForm setShowSuccessMsgState={setShowSuccessMsgState} />
+            <RegisterUserForm
+              toggleShowSuccessMsgState={toggleShowSuccessMsgState}
+            />
           </RegisterUserFormWrap>
         )}
       </ContentWrap>

@@ -142,13 +142,13 @@ export const CertificateCodeTitle = styled.p`
 export const CertificateCodeText = styled.p`
   color: #494545;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 15.33px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: 0.4;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.01;
   }
 `;

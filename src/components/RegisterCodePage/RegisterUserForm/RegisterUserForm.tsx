@@ -17,9 +17,9 @@ import { InputPlaceholders } from '@/constants';
 import RegisterUserCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 
-const RegisterUserForm: FC<IProps> = ({ setShowSuccessMsgState }) => {
+const RegisterUserForm: FC<IProps> = ({ toggleShowSuccessMsgState }) => {
   const { handleFormSubmit, register, handleSubmit, disabledBtn } =
-    useRegisterUserForm(setShowSuccessMsgState);
+    useRegisterUserForm(toggleShowSuccessMsgState);
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
