@@ -23,6 +23,7 @@ const RegisterCode: FC<IProps> = ({
   currentStep,
   promotion,
   partners,
+  codeId,
   onSuccessRegisterCode,
   incrementCurrentStep,
 }) => {
@@ -54,6 +55,7 @@ const RegisterCode: FC<IProps> = ({
   const isRegisterCodeStep = isFirstStep;
   const isPrizesWheelStep = shouldShowPrizesWheel && isSecondStep;
 
+  const shouldShowPrizesWheelSection = isPrizesWheelStep && partners && codeId;
   const showAfterPrizesWheel = shouldShowPrizesWheel && isThirdStep;
   const showInsteadPrizesWheel = !shouldShowPrizesWheel && isSecondStep;
   const isConfirmEmailStep = showAfterPrizesWheel || showInsteadPrizesWheel;
@@ -86,12 +88,13 @@ const RegisterCode: FC<IProps> = ({
           />
         </Container>
       )}
-      {isPrizesWheelStep && (
+      {shouldShowPrizesWheelSection && (
         <PrizesWheelSection
           partners={partners}
           spinningMs={8000}
           maxSpins={5}
           moveToNextStep={incrementCurrentStep}
+          codeId={codeId}
         />
       )}
       {isConfirmEmailStep && (

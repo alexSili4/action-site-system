@@ -10,7 +10,7 @@ const RegisterCodePage: FC = () => {
   // TODO fix
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [codeId, setCodeId] = useState<NumberOrNull>(null);
-  const [partners, setPartners] = useState<Partners>([]);
+  const [partners, setPartners] = useState<Partners | null>(null);
   const promotion = usePromotion();
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const RegisterCodePage: FC = () => {
   };
 
   const onSuccessRegisterCode = (codeId: number) => {
-    incrementCurrentStep;
+    incrementCurrentStep();
     updateCodeId(codeId);
   };
 
@@ -58,6 +58,7 @@ const RegisterCodePage: FC = () => {
           partners={partners}
           incrementCurrentStep={incrementCurrentStep}
           currentStep={currentStep}
+          codeId={codeId}
         />
       )}
     </Section>

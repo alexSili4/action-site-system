@@ -180,6 +180,7 @@ export interface IUsePrizesWheelSectionProps {
   partners: Partners;
   spinningMs: number;
   maxSpins: number;
+  codeId: number;
 }
 
 export interface IUsePrizesWheelSection {

@@ -1,4 +1,9 @@
-import { IRegisterCode, IRegisterCodeRes, Partners } from '@/types/code.types';
+import {
+  IRegisterCode,
+  IRegisterCodeRes,
+  ISpinWheelResult,
+  Partners,
+} from '@/types/code.types';
 import HttpService from './http.service';
 
 class CodesService extends HttpService {
@@ -22,6 +27,17 @@ class CodesService extends HttpService {
     const response = await this.get<Partners>(
       {
         url: `client/wheel/get-partners-for-wheel?code_id=${codeId}`,
+      },
+      false
+    );
+
+    return response.data;
+  }
+
+  async spinWheel(codeId: number): Promise<ISpinWheelResult> {
+    const response = await this.get<ISpinWheelResult>(
+      {
+        url: `client/wheel/spin-the-wheel?code_id=${codeId}`,
       },
       false
     );

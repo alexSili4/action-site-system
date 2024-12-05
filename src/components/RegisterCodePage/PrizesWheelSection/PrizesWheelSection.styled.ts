@@ -90,23 +90,66 @@ export const Wheel = styled.div<IStyledWheelProps>`
   }
 `;
 
-export const Sector = styled.div<IStyledSectorProps>`
+export const SectorWrap = styled.div`
   position: absolute;
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform-origin: 50% 50%;
+  overflow: hidden;
+`;
 
-  &:nth-of-type(${({ number }) => number}) {
+export const Backdrop = styled.div<IStyledSectorProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+
+  div:nth-of-type(${({ number }) => number}) > & {
     transform: rotate(
       ${({ length, number }) => (360 / length) * (number - 1)}deg
     );
   }
 
-  &:nth-of-type(odd) {
+  div:nth-of-type(odd) > & {
+    background-image: conic-gradient(
+      from ${({ length }) => 360 - 360 / length / 2}deg,
+      #faf5ed 0deg ${({ length }) => 360 / length}deg,
+      transparent ${({ length }) => 360 / length}deg 360deg
+    );
+  }
+
+  div:nth-of-type(even) > & {
+    background-image: conic-gradient(
+      from ${({ length }) => 360 - 360 / length / 2}deg,
+      ${({ theme }) => theme.colors.grey} 0deg
+        ${({ length }) => 360 / length}deg,
+      transparent ${({ length }) => 360 / length}deg 360deg
+    );
+  }
+`;
+
+export const Sector = styled.div<IStyledSectorProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-origin: 50% 50%;
+
+  div:nth-of-type(${({ number }) => number}) > & {
+    transform: rotate(
+      ${({ length, number }) => (360 / length) * (number - 1)}deg
+    );
+  }
+
+  div:nth-of-type(odd) > & {
     background-image: conic-gradient(
       from ${({ length }) => 360 - 360 / length / 2}deg,
       #6f4ae2 0deg ${({ length }) => 360 / length}deg,
@@ -114,7 +157,7 @@ export const Sector = styled.div<IStyledSectorProps>`
     );
   }
 
-  &:nth-of-type(even) {
+  div:nth-of-type(even) > & {
     background-image: conic-gradient(
       from ${({ length }) => 360 - 360 / length / 2}deg,
       #faf5ed 0deg ${({ length }) => 360 / length}deg,

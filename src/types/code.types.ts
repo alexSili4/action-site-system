@@ -37,3 +37,38 @@ export interface IPartner {
 }
 
 export type Partners = IPartner[];
+
+export interface IGiftPartner {
+  id: number;
+  name: string;
+  logo: string;
+}
+
+export interface IImage {
+  image: string;
+}
+
+export type Images = IImage[];
+
+export interface IGift {
+  id: number;
+  name: string;
+  use_conditions: string;
+  get_conditions: string;
+  price: null;
+  discount: null;
+  images: Images;
+  banner: string;
+  partner: IGiftPartner;
+}
+
+export interface ISpinWheelResult {
+  certificate_code: string;
+  created_at: number;
+  sent_status: number;
+  sent_at: null;
+  win_status: number;
+  win_at: number;
+  gift: IGift;
+  pdf_url: string;
+}

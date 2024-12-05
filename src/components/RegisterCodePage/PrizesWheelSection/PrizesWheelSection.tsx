@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { IProps } from './PrizesWheelSection.types';
 import {
   Wheel,
-  Sector,
+  SectorWrap,
   SpinWheelBtn,
   Content,
   Image,
@@ -10,22 +10,25 @@ import {
   CircleImg,
   PointerImg,
   Container,
+  Sector,
+  Backdrop,
 } from './PrizesWheelSection.styled';
 import circle from '@/images/code/circle.png';
 import pointer from '@/images/code/pointer.png';
-// components
-import AnimatedPrizeWheelModalWinContainer from '@RegisterCodePageComponents/AnimatedPrizeWheelModalWinContainer';
 import { usePrizesWheelSection } from '@/hooks';
 import { getFileUrl } from '@/utils';
+// components
+import AnimatedPrizeWheelModalWinContainer from '@RegisterCodePageComponents/AnimatedPrizeWheelModalWinContainer';
 
 const PrizesWheelSection: FC<IProps> = ({
   partners,
   spinningMs,
   maxSpins,
   moveToNextStep,
+  codeId,
 }) => {
   const { totalDegrees, onSpinWheelBtnClick, isWheelSpun, targetPartner } =
-    usePrizesWheelSection({ partners, spinningMs, maxSpins });
+    usePrizesWheelSection({ partners, spinningMs, maxSpins, codeId });
 
   return (
     <>
@@ -33,14 +36,20 @@ const PrizesWheelSection: FC<IProps> = ({
         <Content>
           <WheelWrap>
             <Wheel totalDegrees={totalDegrees} spinningMs={spinningMs}>
-              {partners.map(({ id, logo }, index) => {
+              {partners.map(({ id, logo, in_stock: inStock }, index) => {
                 const number = index + 1;
                 const logoUrl = getFileUrl(logo);
+                const shouldShowBackdrop = Boolean(!inStock);
 
                 return (
-                  <Sector key={id} number={number} length={partners.length}>
-                    <Image src={logoUrl} />
-                  </Sector>
+                  <SectorWrap key={id}>
+                    <Sector number={number} length={partners.length}>
+                      <Image src={logoUrl} />
+                    </Sector>
+                    {shouldShowBackdrop && (
+                      <Backdrop number={number} length={partners.length} />
+                    )}
+                  </SectorWrap>
                 );
               })}
             </Wheel>

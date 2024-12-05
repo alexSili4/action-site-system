@@ -1,3 +1,4 @@
+import codesService from '@/services/codes.service';
 import {
   IUsePrizesWheelSection,
   IUsePrizesWheelSectionProps,
@@ -15,6 +16,7 @@ const usePrizesWheelSection = ({
   partners,
   spinningMs,
   maxSpins,
+  codeId,
 }: IUsePrizesWheelSectionProps): IUsePrizesWheelSection => {
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
   const [totalDegrees, setTotalDegrees] = useState<number>(0);
@@ -23,31 +25,43 @@ const usePrizesWheelSection = ({
 
   const targetPartner = getTargetPartner({ partners, partnerIdx });
 
-  const spinWheel = () => {
-    if (isSpinning) return;
-
+  const fetchPrizeIdx = async (codeId: number) => {
     setIsSpinning(true);
 
     const initialTotalDegrees = getInitialTotalDegrees(maxSpins);
 
     setTotalDegrees(initialTotalDegrees);
 
-    // TODO fix
-    // fetchPrizeIdx
-    const newPartnerIdx = Math.floor(Math.random() * partners.length);
-    setPartnerIdx(newPartnerIdx);
+    try {
+      const response = await codesService.spinWheel(codeId);
 
-    const finalTotalDegrees = getFinalTotalDegrees({
-      partnersLength: partners.length,
-      newPartnerIdx,
-      initialTotalDegrees,
-    });
-    setTotalDegrees(finalTotalDegrees);
+      const {
+        gift: {
+          partner: { id: newPartnerIdx },
+        },
+      } = response;
 
-    setTimeout(() => {
-      setIsSpinning(false);
-      setIsWheelSpun(true);
-    }, spinningMs);
+      setPartnerIdx(newPartnerIdx);
+      const finalTotalDegrees = getFinalTotalDegrees({
+        partnersLength: partners.length,
+        newPartnerIdx,
+        initialTotalDegrees,
+      });
+      setTotalDegrees(finalTotalDegrees);
+
+      setTimeout(() => {
+        setIsSpinning(false);
+        setIsWheelSpun(true);
+      }, spinningMs);
+    } catch (error) {
+      // TODO error handler
+    }
+  };
+
+  const spinWheel = () => {
+    if (isSpinning) return;
+
+    fetchPrizeIdx(codeId);
   };
 
   const onSpinWheelBtnClick = (e: BtnClickEvent) => {

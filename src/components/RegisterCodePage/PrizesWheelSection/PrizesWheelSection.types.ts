@@ -5,6 +5,7 @@ export interface IProps {
   partners: Partners;
   spinningMs: number;
   maxSpins: number;
+  codeId: number;
   moveToNextStep: Func;
 }
 
