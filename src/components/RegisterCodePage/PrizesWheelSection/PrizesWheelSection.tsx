@@ -27,7 +27,7 @@ const PrizesWheelSection: FC<IProps> = ({
   moveToNextStep,
   codeId,
 }) => {
-  const { totalDegrees, onSpinWheelBtnClick, isWheelSpun, targetPartner } =
+  const { totalDegrees, onSpinWheelBtnClick, isWheelSpun, targetPrize } =
     usePrizesWheelSection({ partners, spinningMs, maxSpins, codeId });
 
   return (
@@ -65,11 +65,11 @@ const PrizesWheelSection: FC<IProps> = ({
           </SpinWheelBtn>
         </Content>
       </Container>
-      {targetPartner && (
+      {targetPrize && (
         <AnimatedPrizeWheelModalWinContainer
           showModalWin={isWheelSpun}
           moveToNextStep={moveToNextStep}
-          targetPartner={targetPartner}
+          targetPrize={targetPrize}
         />
       )}
     </>

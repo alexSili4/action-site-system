@@ -8,8 +8,12 @@ import { getFileUrl } from '@/utils';
 const AnimatedPrizeWheelModalWinContainer: FC<IProps> = ({
   moveToNextStep,
   showModalWin,
-  targetPartner: { logo, name },
+  targetPrize,
 }) => {
+  const {
+    price,
+    partner: { logo },
+  } = targetPrize;
   const logoUrl = getFileUrl(logo);
 
   return (
@@ -18,7 +22,7 @@ const AnimatedPrizeWheelModalWinContainer: FC<IProps> = ({
         <AnimatedPrizeWheelModalWin
           moveToNextStep={moveToNextStep}
           logoUrl={logoUrl}
-          partnerName={name}
+          price={price}
         />
       )}
     </AnimatePresence>

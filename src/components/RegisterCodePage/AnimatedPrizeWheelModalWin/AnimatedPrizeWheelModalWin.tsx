@@ -28,7 +28,7 @@ const AnimatedPrizeWheelModalWin: FC<IProps> = ({
   moveToNextStep,
   animationDuration = 0.6,
   logoUrl,
-  partnerName
+  price,
 }) => {
   const { hideModalWin } = useModalWin(moveToNextStep);
 
@@ -64,7 +64,7 @@ const AnimatedPrizeWheelModalWin: FC<IProps> = ({
                   <FireworksImg src={fireworksImg} />
                   <CertificateWrap>
                     <Title>сертифікат</Title>
-                    <Prize>{partnerName}</Prize>
+                    <Prize>{price}$</Prize>
                     <LogoPartnerWrap>
                       <LogoPartner src={logoUrl} />
                     </LogoPartnerWrap>

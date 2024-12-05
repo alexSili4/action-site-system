@@ -121,13 +121,8 @@ export interface IGetCodeStatus {
   isErrorStatus: boolean;
 }
 
-export interface IGetTargetPartnerProps {
-  partnerIdx: NumberOrNull;
-  partners: Partners;
-}
-
 export interface IGetFinalTotalDegreesProps {
-  partnersLength: number;
+  partners: Partners;
   newPartnerIdx: number;
   initialTotalDegrees: number;
 }

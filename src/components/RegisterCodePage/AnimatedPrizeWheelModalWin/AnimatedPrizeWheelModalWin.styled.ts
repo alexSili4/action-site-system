@@ -60,12 +60,11 @@ export const ContentWrap = styled.div`
   background-image: linear-gradient(180deg, #e73bf3, #a282f7 100%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: ${({ theme }) => theme.spacing(10)};
+    gap: ${({ theme }) => theme.spacing(22)};
     padding-top: ${({ theme }) => theme.spacing(16)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    gap: ${({ theme }) => theme.spacing(22)};
     padding-top: ${({ theme }) => theme.spacing(32)};
   }
 `;
@@ -171,6 +170,9 @@ export const LogoPartnerWrap = styled.div`
   position: absolute;
   bottom: 14px;
   left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: ${({ theme: { spacing } }) => `${spacing(4)} ${spacing(6)}`};
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -183,7 +185,11 @@ export const LogoPartnerWrap = styled.div`
 `;
 
 export const LogoPartner = styled.img`
-  max-width: 120px;
+  max-width: 80px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    max-width: 64px;
+  }
 `;
 
 export const NextStepBtn = styled.button`

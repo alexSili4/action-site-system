@@ -31,6 +31,7 @@ export const Banner = styled.div<IStyledProps>`
     height: 100%;
     border-radius: 8px;
     padding: ${({ theme: { spacing } }) => `${spacing(5)} ${spacing(3)}`};
+    background-image: url(${({ thirdBannerDt }) => thirdBannerDt});
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

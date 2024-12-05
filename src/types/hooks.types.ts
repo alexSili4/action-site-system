@@ -32,7 +32,7 @@ import {
 } from 'react-hook-form';
 import { RefObject } from 'react';
 import { Shops } from './shop.types';
-import { IPartner, Partners } from './code.types';
+import { IGift, Partners } from './code.types';
 
 export type SetPageFunc = (data: IOnPageBtnClickProps) => void;
 
@@ -187,5 +187,5 @@ export interface IUsePrizesWheelSection {
   totalDegrees: number;
   onSpinWheelBtnClick: OnBtnClickFunc;
   isWheelSpun: boolean;
-  targetPartner: IPartner | null;
+  targetPrize: IGift | null;
 }

@@ -55,7 +55,7 @@ export interface IGift {
   name: string;
   use_conditions: string;
   get_conditions: string;
-  price: null;
+  price: number;
   discount: null;
   images: Images;
   banner: string;

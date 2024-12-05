@@ -168,7 +168,7 @@ export const Sector = styled.div<IStyledSectorProps>`
 
 export const Image = styled.img`
   position: absolute;
-  top: 15%;
+  top: 8%;
   width: 20%;
   transform: rotate(90deg);
 `;
