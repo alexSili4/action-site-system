@@ -4,7 +4,12 @@ import { Route, Routes } from 'react-router-dom';
 import SharedLayout from '@GeneralComponents/SharedLayout';
 import { usePromotions } from '@/hooks';
 import { useAuthStore } from '@/store/store';
-import { selectIsRefreshing, selectRefresh } from '@/store/auth/selectors';
+import {
+  selectIsRefreshing,
+  selectRefresh,
+  selectError,
+} from '@/store/auth/selectors';
+import useStoreError from '@/hooks/useStoreError';
 
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const ServiceUnavailablePage = lazy(
@@ -23,7 +28,9 @@ const PrivateRoute = lazy(() => import('@GeneralComponents/PrivateRoute'));
 const App: FC = () => {
   usePromotions();
   const refresh = useAuthStore(selectRefresh);
+  const error = useAuthStore(selectError);
   const isRefreshing = useAuthStore(selectIsRefreshing);
+  useStoreError(error);
 
   useEffect(() => {
     const refreshProfile = async () => {

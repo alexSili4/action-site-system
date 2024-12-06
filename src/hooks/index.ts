@@ -30,3 +30,4 @@ export { default as useTargetPromotionData } from './useTargetPromotionData';
 export { default as usePromotionDetailsState } from './usePromotionDetailsState';
 export { default as useCabinetState } from './useCabinetState';
 export { default as usePrizesWheelSection } from './usePrizesWheelSection';
+export { default as useServiceUnavailablePageNavigate } from './useServiceUnavailablePageNavigate';

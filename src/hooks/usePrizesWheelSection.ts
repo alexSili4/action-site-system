@@ -11,6 +11,7 @@ import {
   makeBlur,
 } from '@/utils';
 import { useState } from 'react';
+import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
 
 const usePrizesWheelSection = ({
   partners,
@@ -22,6 +23,7 @@ const usePrizesWheelSection = ({
   const [totalDegrees, setTotalDegrees] = useState<number>(0);
   const [isWheelSpun, setIsWheelSpun] = useState<boolean>(false);
   const [targetPrize, setTargetPrize] = useState<IGift | null>(null);
+  const navigate = useServiceUnavailablePageNavigate();
 
   const fetchPrizeIdx = async (codeId: number) => {
     setIsSpinning(true);
@@ -51,7 +53,7 @@ const usePrizesWheelSection = ({
         setIsWheelSpun(true);
       }, spinningMs);
     } catch (error) {
-      // TODO error handler
+      navigate();
     }
   };
 

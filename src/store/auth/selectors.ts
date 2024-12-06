@@ -11,3 +11,5 @@ export const selectIsRefreshing = (state: IAuthState) => state.isRefreshing;
 export const selectRefresh = (state: IAuthState) => state.refresh;
 
 export const selectLogout = (state: IAuthState) => state.logout;
+
+export const selectError = (state: IAuthState) => state.error;

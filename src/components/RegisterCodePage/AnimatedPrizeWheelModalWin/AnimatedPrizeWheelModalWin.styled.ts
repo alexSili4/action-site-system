@@ -154,14 +154,14 @@ export const Title = styled.p`
 export const Prize = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.montserrat};
-  font-size: 59.29px;
+  font-size: 56px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.85px;
   text-transform: uppercase;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 74.97px;
+    font-size: 70px;
     letter-spacing: -1.07px;
   }
 `;
@@ -185,10 +185,10 @@ export const LogoPartnerWrap = styled.div`
 `;
 
 export const LogoPartner = styled.img`
-  max-width: 80px;
+  max-width: 65px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    max-width: 64px;
+    max-width: 50px;
   }
 `;
 

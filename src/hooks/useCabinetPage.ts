@@ -1,13 +1,24 @@
 import { useUserCodesStore, useUserPrizesStore } from '@/store/store';
-import { selectGetUserCodes } from '@/store/userCodes/selectors';
+import {
+  selectGetUserCodes,
+  selectError as selectUserCodesError,
+} from '@/store/userCodes/selectors';
 import { useSetSearchParams } from '@/hooks';
 import { SearchParamsKeys, StatisticsCategoriesKeys } from '@/constants';
-import { selectGetUserPrizes } from '@/store/userPrizes/selectors';
+import {
+  selectGetUserPrizes,
+  selectError as selectUserPrizesError,
+} from '@/store/userPrizes/selectors';
 import { useEffect } from 'react';
+import useStoreError from './useStoreError';
 
 const useCabinetPage = () => {
   const getUserCodes = useUserCodesStore(selectGetUserCodes);
   const getUserPrizes = useUserPrizesStore(selectGetUserPrizes);
+  const userCodesError = useUserCodesStore(selectUserCodesError);
+  const userPrizesError = useUserPrizesStore(selectUserPrizesError);
+  useStoreError(userCodesError);
+  useStoreError(userPrizesError);
 
   const { searchParams } = useSetSearchParams();
   const page = searchParams.get(SearchParamsKeys.page) ?? '1';

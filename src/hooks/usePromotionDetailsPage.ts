@@ -8,6 +8,7 @@ import { WinnersByDates } from '@/types/winner.types';
 import { Shops } from '@/types/shop.types';
 import usePromotion from './usePromotion';
 import useDynamicId from './useDynamicId';
+import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
@@ -18,6 +19,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [shops, setShops] = useState<Shops>([]);
   const promotionId = useDynamicId();
   const promotion = usePromotion();
+  const navigate = useServiceUnavailablePageNavigate();
 
   useEffect(() => {
     const getPromotionConditions = async (
@@ -27,12 +29,12 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getConditions(promotionId);
         setConditions(response);
       } catch (error) {
-        // TODO error handler
+        navigate();
       }
     };
 
     getPromotionConditions(promotionId);
-  }, [promotionId]);
+  }, [navigate, promotionId]);
 
   useEffect(() => {
     const getPromotionWheelPrizes = async (
@@ -42,12 +44,12 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getWheelPrizes(promotionId);
         setWheelPrizes(response);
       } catch (error) {
-        // TODO error handler
+        navigate();
       }
     };
 
     getPromotionWheelPrizes(promotionId);
-  }, [promotionId]);
+  }, [navigate, promotionId]);
 
   useEffect(() => {
     const getPromotionOtherPrizes = async (
@@ -60,12 +62,12 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const data = response.flat();
         setOtherPrizes(data);
       } catch (error) {
-        // TODO error handler
+        navigate();
       }
     };
 
     getPromotionOtherPrizes(promotionId);
-  }, [promotionId]);
+  }, [navigate, promotionId]);
 
   useEffect(() => {
     const getPromotionFaqs = async (promotionId: string): Promise<void> => {
@@ -73,12 +75,12 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getFAQs(promotionId);
         setFaqs(response);
       } catch (error) {
-        // TODO error handler
+        navigate();
       }
     };
 
     getPromotionFaqs(promotionId);
-  }, [promotionId]);
+  }, [navigate, promotionId]);
 
   useEffect(() => {
     const getPromotionWinners = async (promotionId: string): Promise<void> => {
@@ -86,12 +88,12 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getWinners(promotionId);
         setWinners(response);
       } catch (error) {
-        // TODO error handler
+        navigate();
       }
     };
 
     getPromotionWinners(promotionId);
-  }, [promotionId]);
+  }, [navigate, promotionId]);
 
   useEffect(() => {
     const getPromotionShops = async (promotionId: string): Promise<void> => {
@@ -99,12 +101,12 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getShops(promotionId);
         setShops(response);
       } catch (error) {
-        // TODO error handler
+        navigate();
       }
     };
 
     getPromotionShops(promotionId);
-  }, [promotionId]);
+  }, [navigate, promotionId]);
 
   return {
     conditions,

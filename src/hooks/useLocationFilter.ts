@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useMediaQuery, useSetSearchParams } from '@/hooks';
 import { useCitiesStore } from '@/store/store';
-import { selectGetCities, selectCities } from '@/store/cities/selectors';
+import {
+  selectGetCities,
+  selectCities,
+  selectError,
+} from '@/store/cities/selectors';
 import { SearchParamsKeys, SectionsIds, theme } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
 import {
@@ -14,6 +18,7 @@ import {
   IUseLocationFilter,
 } from '@/types/hooks.types';
 import { useOutletContext } from 'react-router-dom';
+import useStoreError from './useStoreError';
 
 const useLocationFilter = ({
   makeScroll,
@@ -23,7 +28,9 @@ const useLocationFilter = ({
 }: IUseLocationFilterProps): IUseLocationFilter => {
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
   const getCities = useCitiesStore(selectGetCities);
+  const error = useCitiesStore(selectError);
   const cities = useCitiesStore(selectCities);
+  useStoreError(error);
   const { updateSearchParams, searchParams } = useSetSearchParams();
   const cityId = searchParams.get(SearchParamsKeys.cityId) ?? '';
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
