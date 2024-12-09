@@ -3,8 +3,11 @@ import {
   IRegisterCodeRes,
   ISpinWheelResult,
   Partners,
+  IUserData,
+  IUpdateUserDataProps,
 } from '@/types/code.types';
 import HttpService from './http.service';
+import { ClientCodes } from '@/types/userCodeWithDetails.types';
 
 class CodesService extends HttpService {
   constructor() {
@@ -38,6 +41,43 @@ class CodesService extends HttpService {
     const response = await this.get<ISpinWheelResult>(
       {
         url: `client/wheel/spin-the-wheel?code_id=${codeId}`,
+      },
+      false
+    );
+
+    return response.data;
+  }
+
+  async getUserData(codeId: number): Promise<IUserData> {
+    const response = await this.get<IUserData>(
+      {
+        url: `client/info/name-form?code_id=${codeId}`,
+      },
+      false
+    );
+
+    return response.data;
+  }
+
+  async updateUserData({
+    codeId,
+    ...data
+  }: IUpdateUserDataProps): Promise<IUserData> {
+    const response = await this.post<IUserData, IUserData>(
+      {
+        url: `client/info/name-form?code_id=${codeId}`,
+        data,
+      },
+      false
+    );
+
+    return response.data;
+  }
+
+  async getUnusedCodes(): Promise<ClientCodes> {
+    const response = await this.get<ClientCodes>(
+      {
+        url: 'client/info/get-codes-for-wheel',
       },
       false
     );

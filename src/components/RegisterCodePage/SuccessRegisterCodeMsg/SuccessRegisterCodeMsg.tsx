@@ -13,14 +13,12 @@ import { IProps } from './SuccessRegisterCodeMsg.types';
 const SuccessRegisterCodeMsg: FC<IProps> = ({
   hotLineWorkHours,
   hotLinePhone,
+  userName,
 }) => {
   return (
     <Container>
       <MessageWrap>
-        <MessageTitle>
-          {/* TODO fix */}
-          Дякуємо, ________!
-        </MessageTitle>
+        <MessageTitle>Дякуємо, {userName}!</MessageTitle>
         <Message>
           Ваш акційний код буде зареєстровано протягом доби. Ви можете
           перевірити статус акційного коду та сертифікату у Вашому Особистому

@@ -34,7 +34,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     };
 
     getPromotionConditions(promotionId);
-  }, [navigate, promotionId]);
+  }, [promotionId]);
 
   useEffect(() => {
     const getPromotionWheelPrizes = async (
@@ -49,7 +49,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     };
 
     getPromotionWheelPrizes(promotionId);
-  }, [navigate, promotionId]);
+  }, [promotionId]);
 
   useEffect(() => {
     const getPromotionOtherPrizes = async (
@@ -67,7 +67,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     };
 
     getPromotionOtherPrizes(promotionId);
-  }, [navigate, promotionId]);
+  }, [promotionId]);
 
   useEffect(() => {
     const getPromotionFaqs = async (promotionId: string): Promise<void> => {
@@ -80,7 +80,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     };
 
     getPromotionFaqs(promotionId);
-  }, [navigate, promotionId]);
+  }, [promotionId]);
 
   useEffect(() => {
     const getPromotionWinners = async (promotionId: string): Promise<void> => {
@@ -93,7 +93,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     };
 
     getPromotionWinners(promotionId);
-  }, [navigate, promotionId]);
+  }, [promotionId]);
 
   useEffect(() => {
     const getPromotionShops = async (promotionId: string): Promise<void> => {
@@ -106,7 +106,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     };
 
     getPromotionShops(promotionId);
-  }, [navigate, promotionId]);
+  }, [promotionId]);
 
   return {
     conditions,

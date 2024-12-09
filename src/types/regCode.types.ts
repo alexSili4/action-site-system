@@ -5,7 +5,8 @@ export interface IRegCodeFormData {
   acceptedTerms: boolean;
 }
 
-export interface IRegUserFormData {
+export interface ISentCertificateFormData {
   name: string;
+  email: string;
   sendCertificate: boolean;
 }

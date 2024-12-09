@@ -11,6 +11,8 @@ export interface IClientCode {
   action_id: number;
 }
 
+export type ClientCodes = IClientCode[];
+
 export interface IShop {
   shop_num: number;
   name: string;

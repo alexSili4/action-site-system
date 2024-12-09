@@ -13,7 +13,7 @@ const RegisterFormCheckbox: FC<IProps> = ({ children, settings }) => {
     <Container>
       <BasicCheckbox type='checkbox' {...settings} />
       <CustomCheckbox>
-        <FaCheck size={theme.iconSizes.registerUserFormCheckbox} />
+        <FaCheck size={theme.iconSizes.registerFormCheckbox} />
       </CustomCheckbox>
       {children}
     </Container>

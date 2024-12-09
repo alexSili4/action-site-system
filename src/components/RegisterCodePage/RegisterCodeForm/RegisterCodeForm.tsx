@@ -8,7 +8,6 @@ import {
   Label,
   InputDelimiterWrap,
   InputDelimiter,
-  ErrorMessage,
   RegisterFormCheckboxTitle,
   RegisterFormCheckboxLink,
   AcceptedTermsWrap,
@@ -20,6 +19,7 @@ import { InputPlaceholders } from '@/constants';
 import CodePartInput from '@RegisterCodePageComponents/CodePartInput';
 import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import RegisterFormCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
+import ErrorMessage from '@RegisterCodePageComponents/ErrorMessage';
 
 const RegisterCodeForm: FC<IProps> = ({ onSuccessRegisterCode, rulesPdf }) => {
   const {
@@ -82,7 +82,7 @@ const RegisterCodeForm: FC<IProps> = ({ onSuccessRegisterCode, rulesPdf }) => {
               }}
             />
           </InputWrap>
-          {error && <ErrorMessage>{error}</ErrorMessage>}
+          {error && <ErrorMessage message={error} />}
         </CodeInputWrap>
         <AcceptedTermsWrap>
           <RegisterFormCheckbox

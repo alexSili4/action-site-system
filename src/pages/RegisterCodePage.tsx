@@ -20,7 +20,7 @@ const RegisterCodePage: FC = () => {
 
         setPartners(response);
       } catch (error) {
-        console.log(error);
+        // TODO fix
       }
     };
 

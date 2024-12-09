@@ -76,11 +76,12 @@ export const Progress = styled.div`
 `;
 
 export const Completed = styled.div<ICompletedStyledProps>`
-  width: 30%;
+  width: ${({ isPrevStep, isCurrentStep }) =>
+    isPrevStep ? 100 : isCurrentStep ? 30 : 0}%;
   height: 100%;
   border-radius: 2px;
+  background-color: #a282f7;
 
   li:nth-of-type(${({ currentStep }) => currentStep}) > div > & {
-    background-color: #a282f7;
   }
 `;

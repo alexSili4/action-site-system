@@ -89,7 +89,7 @@ export const CertificateInfo = styled.p`
   line-height: 1.4;
 `;
 
-export const RegisterUserCheckboxTitle = styled.span`
+export const SentCertificateCheckboxTitle = styled.span`
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;

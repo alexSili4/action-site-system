@@ -12,7 +12,7 @@ import {
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import RegisterCodeSection from '@RegisterCodePageComponents/RegisterCodeSection';
 import PrizesWheelSection from '@RegisterCodePageComponents/PrizesWheelSection';
-import RegisterUserSection from '@RegisterCodePageComponents/RegisterUserSection';
+import SentCertificateSection from '@RegisterCodePageComponents/SentCertificateSection';
 import Container from '@GeneralComponents/Container';
 import { IProps } from './RegisterCode.types';
 
@@ -55,10 +55,12 @@ const RegisterCode: FC<IProps> = ({
   const isRegisterCodeStep = isFirstStep;
   const isPrizesWheelStep = shouldShowPrizesWheel && isSecondStep;
 
-  const shouldShowPrizesWheelSection = isPrizesWheelStep && partners && codeId;
   const showAfterPrizesWheel = shouldShowPrizesWheel && isThirdStep;
   const showInsteadPrizesWheel = !shouldShowPrizesWheel && isSecondStep;
   const isConfirmEmailStep = showAfterPrizesWheel || showInsteadPrizesWheel;
+
+  const shouldShowPrizesWheelSection = isPrizesWheelStep && partners && codeId;
+  const shouldShowSentCertificateSection = isConfirmEmailStep && codeId;
 
   return (
     <Content>
@@ -97,9 +99,10 @@ const RegisterCode: FC<IProps> = ({
           codeId={codeId}
         />
       )}
-      {isConfirmEmailStep && (
+      {shouldShowSentCertificateSection && (
         <Container>
-          <RegisterUserSection
+          <SentCertificateSection
+            codeId={codeId}
             steps={steps}
             currentStep={currentStep}
             hotLinePhone={hotLinePhone}

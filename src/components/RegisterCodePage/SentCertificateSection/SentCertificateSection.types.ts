@@ -10,4 +10,5 @@ export interface IProps {
   thirdBannerDt: string;
   hotLinePhone: string;
   hotLineWorkHours: string;
+  codeId: number;
 }

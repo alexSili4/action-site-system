@@ -27,13 +27,23 @@ const RegisterCodeStepsBar: FC<IProps> = ({
           Крок {currentStep} із {lastStep}
         </Step>
         <ProgressList>
-          {steps.map((step) => (
-            <ListItem key={step} stepsCount={steps.length}>
-              <Progress>
-                <Completed currentStep={currentStep}></Completed>
-              </Progress>
-            </ListItem>
-          ))}
+          {steps.map((step, index) => {
+            const stepNumber = index + 1;
+            const isPrevStep = currentStep > stepNumber;
+            const isCurrentStep = currentStep === stepNumber;
+
+            return (
+              <ListItem key={step} stepsCount={steps.length}>
+                <Progress>
+                  <Completed
+                    currentStep={currentStep}
+                    isPrevStep={isPrevStep}
+                    isCurrentStep={isCurrentStep}
+                  ></Completed>
+                </Progress>
+              </ListItem>
+            );
+          })}
         </ProgressList>
       </ProgressListWrap>
     </Container>

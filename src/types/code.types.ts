@@ -1,4 +1,4 @@
-import { HTMLInputElements } from './types';
+import { HTMLInputElements, StringOrNull } from './types';
 
 export interface IStepsSequence {
   [key: string]: string;
@@ -71,4 +71,14 @@ export interface ISpinWheelResult {
   win_at: number;
   gift: IGift;
   pdf_url: string;
+}
+
+export interface IUserData {
+  name: StringOrNull;
+  email: StringOrNull;
+  send_to_email_status: boolean;
+}
+
+export interface IUpdateUserDataProps extends IUserData {
+  codeId: number;
 }

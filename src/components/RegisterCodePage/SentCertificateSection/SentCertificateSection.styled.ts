@@ -28,7 +28,7 @@ export const ContentWrap = styled.div`
   }
 `;
 
-export const RegisterUserFormWrap = styled.div`
+export const SentCertificateFormWrap = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     flex-grow: 1;
     display: flex;

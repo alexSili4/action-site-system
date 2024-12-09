@@ -29,6 +29,8 @@ export type OnSwiperSlideChange = (swiper: Swiper) => void;
 
 export type SetNumberFunc = (data: number) => void;
 
+export type SetStringOrNullFunc = (data: StringOrNull) => void;
+
 // other
 
 export type NumberOrNull = number | null;
@@ -125,4 +127,8 @@ export interface IGetFinalTotalDegreesProps {
   partners: Partners;
   newPartnerIdx: number;
   initialTotalDegrees: number;
+}
+
+export interface IRegExp {
+  email: RegExp;
 }

@@ -12,7 +12,7 @@ export { default as useRegisterCodeForm } from './useRegisterCodeForm';
 export { default as useCsrfToken } from './useCsrfToken';
 export { default as useTargetCity } from './useTargetCity';
 export { default as usePaginationBar } from './usePaginationBar';
-export { default as useRegisterUserForm } from './useRegisterUserForm';
+export { default as useSentCertificateForm } from './useSentCertificateForm';
 export { default as useRegisterTargetPromotionCodeLink } from './useRegisterTargetPromotionCodeLink';
 export { default as useCabinetPage } from './useCabinetPage';
 export { default as useFromLocation } from './useFromLocation';

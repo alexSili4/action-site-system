@@ -16,4 +16,6 @@ export interface IListItemStyledProps {
 
 export interface ICompletedStyledProps {
   currentStep: number;
+  isPrevStep: boolean;
+  isCurrentStep: boolean;
 }

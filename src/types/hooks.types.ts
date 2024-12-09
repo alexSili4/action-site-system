@@ -6,6 +6,7 @@ import {
   OnAnchorClickFunc,
   OnBtnClickFunc,
   OnDivClickFunc,
+  SetStringOrNullFunc,
   StringOrNull,
 } from './types';
 import {
@@ -24,7 +25,7 @@ import {
   LatLngBoundsExpression,
   LatLngExpression,
 } from 'leaflet';
-import { IRegCodeFormData, IRegUserFormData } from './regCode.types';
+import { IRegCodeFormData, ISentCertificateFormData } from './regCode.types';
 import {
   SubmitHandler,
   UseFormHandleSubmit,
@@ -134,11 +135,20 @@ export interface IUseCsrfToken {
   token: string;
 }
 
-export interface IUseRegisterUserForm {
-  handleFormSubmit: SubmitHandler<IRegUserFormData>;
-  register: UseFormRegister<IRegUserFormData>;
-  handleSubmit: UseFormHandleSubmit<IRegUserFormData, undefined>;
+export interface IUseSentCertificateFormProps {
+  userName: StringOrNull;
+  codeId: number;
+  toggleShowSuccessMsgState: Func;
+  updateUserName: SetStringOrNullFunc;
+}
+
+export interface IUseSentCertificateForm {
+  handleFormSubmit: SubmitHandler<ISentCertificateFormData>;
+  register: UseFormRegister<ISentCertificateFormData>;
+  handleSubmit: UseFormHandleSubmit<ISentCertificateFormData, undefined>;
   disabledBtn: boolean;
+  isUserName: boolean;
+  defaultUserName: string;
 }
 
 export interface IUseIsScrollingUp {

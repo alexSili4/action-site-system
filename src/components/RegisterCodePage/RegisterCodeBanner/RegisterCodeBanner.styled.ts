@@ -3,6 +3,7 @@ import { IStyledProps } from './RegisterCodeBanner.types';
 
 export const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    flex-shrink: 0;
     width: 300px;
     border-radius: 16px;
     background-color: ${({ theme }) => theme.colors.white};

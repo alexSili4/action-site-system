@@ -44,7 +44,7 @@ interface ITheme {
     cabinetCodeLink: number;
     cabinetPaginationBtn: number;
     conditionsSliderBtn: number;
-    registerUserFormCheckbox: number;
+    registerFormCheckbox: number;
     cabinetDownloadCertificateLink: number;
     cabinetHotlinePhone: number;
     cabinetGoBackLink: number;
@@ -114,7 +114,7 @@ const theme: ITheme = {
     montserrat: 'Montserrat',
   },
   iconSizes: {
-    registerUserFormCheckbox: 8,
+    registerFormCheckbox: 8,
     cabinetCodeLink: 8,
     cabinetSectionLink: 8,
     goBackLink: 10,

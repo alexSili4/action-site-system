@@ -20,7 +20,7 @@ const usePromotion = (): TargetPromotionDetailsState => {
     };
 
     getPromotion(promotionId);
-  }, [navigate, promotionId]);
+  }, [promotionId]);
 
   return promotion;
 };

@@ -2,16 +2,17 @@ import { FC, useState } from 'react';
 import {
   Container,
   ContentWrap,
-  RegisterUserFormWrap,
-} from './RegisterUserSection.styled';
-import { IProps } from './RegisterUserSection.types';
+  SentCertificateFormWrap,
+} from './SentCertificateSection.styled';
+import { IProps } from './SentCertificateSection.types';
 // components
 import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
-import RegisterUserForm from '@RegisterCodePageComponents/RegisterUserForm';
+import SentCertificateForm from '@RegisterCodePageComponents/SentCertificateForm';
 import SuccessRegisterCodeMsg from '@RegisterCodePageComponents/SuccessRegisterCodeMsg';
+import { StringOrNull } from '@/types/types';
 
-const RegisterUserSection: FC<IProps> = ({
+const SentCertificateSection: FC<IProps> = ({
   steps,
   currentStep,
   logoUrl,
@@ -21,8 +22,15 @@ const RegisterUserSection: FC<IProps> = ({
   thirdBannerDt,
   hotLinePhone,
   hotLineWorkHours,
+  codeId,
 }) => {
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
+  const [userName, setUserName] = useState<StringOrNull>(null);
+  const shouldShowSuccessMsg = showSuccessMsg && userName;
+
+  const updateUserName = (userName: StringOrNull) => {
+    setUserName(userName);
+  };
 
   const toggleShowSuccessMsgState = () => {
     setShowSuccessMsg((prevState) => !prevState);
@@ -38,26 +46,30 @@ const RegisterUserSection: FC<IProps> = ({
         thirdBannerMob={thirdBannerMob}
       />
       <ContentWrap>
-        {showSuccessMsg ? (
+        {shouldShowSuccessMsg ? (
           <SuccessRegisterCodeMsg
             hotLinePhone={hotLinePhone}
             hotLineWorkHours={hotLineWorkHours}
+            userName={userName}
           />
         ) : (
-          <RegisterUserFormWrap>
+          <SentCertificateFormWrap>
             <RegisterCodeStepsBar
               isHiddenOnMobile
               steps={steps}
               currentStep={currentStep}
             />
-            <RegisterUserForm
+            <SentCertificateForm
+              userName={userName}
+              updateUserName={updateUserName}
               toggleShowSuccessMsgState={toggleShowSuccessMsgState}
+              codeId={codeId}
             />
-          </RegisterUserFormWrap>
+          </SentCertificateFormWrap>
         )}
       </ContentWrap>
     </Container>
   );
 };
 
-export default RegisterUserSection;
+export default SentCertificateSection;

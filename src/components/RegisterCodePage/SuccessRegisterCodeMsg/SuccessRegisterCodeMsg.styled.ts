@@ -6,9 +6,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
-    padding-top: ${({ theme }) => theme.spacing(41)};
-    padding-bottom: ${({ theme }) => theme.spacing(12)};
+    padding: ${({ theme: { spacing } }) =>
+      `${spacing(41)} ${spacing(5)} ${spacing(12)}`};
   }
 `;
 
@@ -42,6 +41,7 @@ export const CabinetLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 48px;
   margin-top: ${({ theme }) => theme.spacing(8)};
   border-radius: 16px;
