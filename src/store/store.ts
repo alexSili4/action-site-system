@@ -10,6 +10,8 @@ import userCodesStore from './userCodes/userCodes.store';
 import { IUserCodesState } from '@/types/userCodesState.types';
 import userPrizesStore from './userPrizes/userPrizes.store';
 import { IUserPrizesState } from '@/types/userPrizesState.types';
+import unusedUserCodesStore from './unusedUserCodes/unusedUserCodes.store';
+import { IUnusedUserCodesState } from '@/types/unusedUserCodesStore.types';
 
 export const useAuthStore = create<IAuthState>()(
   devtools(authStore.store, authStore.params)
@@ -29,4 +31,8 @@ export const useUserCodesStore = create<IUserCodesState>()(
 
 export const useUserPrizesStore = create<IUserPrizesState>()(
   devtools(userPrizesStore.store, userPrizesStore.params)
+);
+
+export const useUnusedUserCodesStore = create<IUnusedUserCodesState>()(
+  devtools(unusedUserCodesStore.store, unusedUserCodesStore.params)
 );

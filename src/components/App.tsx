@@ -3,13 +3,18 @@ import { PagePaths } from '@/constants';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from '@GeneralComponents/SharedLayout';
 import { usePromotions } from '@/hooks';
-import { useAuthStore } from '@/store/store';
+import { useAuthStore, useUnusedUserCodesStore } from '@/store/store';
 import {
   selectIsRefreshing,
   selectRefresh,
-  selectError,
+  selectError as selectAuthError,
+  selectIsLoggedIn,
 } from '@/store/auth/selectors';
 import useStoreError from '@/hooks/useStoreError';
+import {
+  selectGetUnusedUserCodes,
+  selectError as selectUnusedUserCodesError,
+} from '@/store/unusedUserCodes/selectors';
 
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const ServiceUnavailablePage = lazy(
@@ -28,9 +33,15 @@ const PrivateRoute = lazy(() => import('@GeneralComponents/PrivateRoute'));
 const App: FC = () => {
   usePromotions();
   const refresh = useAuthStore(selectRefresh);
-  const error = useAuthStore(selectError);
+  const authError = useAuthStore(selectAuthError);
+  const getUnusedCodes = useUnusedUserCodesStore(selectGetUnusedUserCodes);
+  const unusedUserCodesError = useUnusedUserCodesStore(
+    selectUnusedUserCodesError
+  );
   const isRefreshing = useAuthStore(selectIsRefreshing);
-  useStoreError(error);
+  const isLoggedIn = useAuthStore(selectIsLoggedIn);
+  useStoreError(authError);
+  useStoreError(unusedUserCodesError);
 
   useEffect(() => {
     const refreshProfile = async () => {
@@ -39,6 +50,16 @@ const App: FC = () => {
 
     refreshProfile();
   }, [refresh]);
+
+  useEffect(() => {
+    const fetchUnusedCodes = async () => {
+      await getUnusedCodes();
+    };
+
+    if (isLoggedIn) {
+      fetchUnusedCodes();
+    }
+  }, [getUnusedCodes, isLoggedIn]);
 
   return (
     !isRefreshing && (
