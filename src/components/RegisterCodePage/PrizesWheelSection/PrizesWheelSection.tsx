@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { IProps } from './PrizesWheelSection.types';
 import {
   Wheel,
-  SectorWrap,
   SpinWheelBtn,
   Content,
   Image,
@@ -42,14 +41,12 @@ const PrizesWheelSection: FC<IProps> = ({
                 const shouldShowBackdrop = Boolean(!inStock);
 
                 return (
-                  <SectorWrap key={id}>
-                    <Sector number={number} length={partners.length}>
-                      <Image src={logoUrl} />
-                    </Sector>
+                  <Sector key={id} number={number} length={partners.length}>
                     {shouldShowBackdrop && (
                       <Backdrop number={number} length={partners.length} />
                     )}
-                  </SectorWrap>
+                    <Image src={logoUrl} />
+                  </Sector>
                 );
               })}
             </Wheel>

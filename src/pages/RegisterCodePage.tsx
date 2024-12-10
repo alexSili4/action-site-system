@@ -18,7 +18,33 @@ const RegisterCodePage: FC = () => {
     () => targetCurrentStep
   );
   const [codeId, setCodeId] = useState<NumberOrNull>(() => defaultCodeId);
-  const [partners, setPartners] = useState<Partners | null>(null);
+  // TODO fix
+  const [partners, setPartners] = useState<Partners | null>([
+    {
+      id: 1,
+      name: 'Фокстрот',
+      logo: '/partner/0/1_112701.png',
+      in_stock: true,
+    },
+    {
+      id: 2,
+      name: 'Епіцентр',
+      logo: '/partner/0/2_112715.png',
+      in_stock: true,
+    },
+    {
+      id: 3,
+      name: 'Комфі',
+      logo: '/partner/0/3_112730.png',
+      in_stock: true,
+    },
+    {
+      id: 4,
+      name: 'Єльдорадо',
+      logo: '/partner/0/4_155526.webp',
+      in_stock: false,
+    },
+  ]);
   const promotion = usePromotion();
   const navigate = useServiceUnavailablePageNavigate();
 

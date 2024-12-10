@@ -13,8 +13,10 @@ const AnimatedPrizeWheelModalWinContainer: FC<IProps> = ({
   const {
     price,
     partner: { logo },
+    discount,
   } = targetPrize;
   const logoUrl = getFileUrl(logo);
+  const prize = price ? `${price}₴` : `${discount}%`;
 
   return (
     <AnimatePresence>
@@ -22,7 +24,7 @@ const AnimatedPrizeWheelModalWinContainer: FC<IProps> = ({
         <AnimatedPrizeWheelModalWin
           moveToNextStep={moveToNextStep}
           logoUrl={logoUrl}
-          price={price}
+          prize={prize}
         />
       )}
     </AnimatePresence>

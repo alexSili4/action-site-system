@@ -173,14 +173,13 @@ export const LogoPartnerWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${({ theme: { spacing } }) => `${spacing(4)} ${spacing(6)}`};
+  padding: ${({ theme }) => theme.spacing()};
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.white};
   transform: translateY(100%) translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     bottom: 17px;
-    padding: ${({ theme: { spacing } }) => `${spacing(5)} ${spacing(8)}`};
   }
 `;
 
