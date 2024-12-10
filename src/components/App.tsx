@@ -1,6 +1,6 @@
 import { FC, lazy, useEffect } from 'react';
 import { PagePaths } from '@/constants';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import SharedLayout from '@GeneralComponents/SharedLayout';
 import { usePromotions } from '@/hooks';
 import { useAuthStore, useUnusedUserCodesStore } from '@/store/store';
@@ -32,6 +32,7 @@ const PrivateRoute = lazy(() => import('@GeneralComponents/PrivateRoute'));
 
 const App: FC = () => {
   usePromotions();
+  const { pathname } = useLocation();
   const refresh = useAuthStore(selectRefresh);
   const authError = useAuthStore(selectAuthError);
   const getUnusedCodes = useUnusedUserCodesStore(selectGetUnusedUserCodes);
@@ -59,7 +60,7 @@ const App: FC = () => {
     if (isLoggedIn) {
       fetchUnusedCodes();
     }
-  }, [getUnusedCodes, isLoggedIn]);
+  }, [getUnusedCodes, isLoggedIn, pathname]);
 
   return (
     !isRefreshing && (

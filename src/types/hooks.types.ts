@@ -34,6 +34,7 @@ import {
 import { RefObject } from 'react';
 import { Shops } from './shop.types';
 import { IGift, Partners } from './code.types';
+import { IClientCode } from './userCodeWithDetails.types';
 
 export type SetPageFunc = (data: IOnPageBtnClickProps) => void;
 
@@ -208,3 +209,5 @@ export interface IUseCabinetPage {
 export interface IUseCabinetStateProps {
   isRedirectFromRegCodePage: boolean;
 }
+
+export type UseFirstUnusedUserCode = IClientCode | undefined;
