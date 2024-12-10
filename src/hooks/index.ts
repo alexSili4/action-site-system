@@ -33,3 +33,7 @@ export { default as usePrizesWheelSection } from './usePrizesWheelSection';
 export { default as useServiceUnavailablePageNavigate } from './useServiceUnavailablePageNavigate';
 export { default as useIsUnusedUserCodes } from './useIsUnusedUserCodes';
 export { default as useIsErrorPage } from './useIsErrorPage';
+export { default as useUnusedUserCodeLink } from './useUnusedUserCodeLink';
+export { default as useFirstUnusedUserCode } from './useFirstUnusedUserCode';
+export { default as useRegisterUnusedCodeState } from './useRegisterUnusedCodeState';
+export { default as useDefaultCodeId } from './useDefaultCodeId';

@@ -103,7 +103,7 @@ export interface ISetBtnDisplayProps {
 
 export interface IGetRegisterCodeLinkProps {
   promotionId: string | number;
-  cityId: string;
+  cityId?: string;
 }
 
 export interface IGeneralOutletContext {

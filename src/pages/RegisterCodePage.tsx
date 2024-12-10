@@ -1,17 +1,30 @@
 import { FC, useEffect, useState } from 'react';
 import Section from '@GeneralComponents/Section';
 import RegisterCode from '@RegisterCodePageComponents/RegisterCode';
-import { usePromotion, useServiceUnavailablePageNavigate } from '@/hooks';
+import {
+  useDefaultCodeId,
+  usePromotion,
+  useServiceUnavailablePageNavigate,
+} from '@/hooks';
 import { NumberOrNull } from '@/types/types';
 import { Partners } from '@/types/code.types';
 import codesService from '@/services/codes.service';
 
 const RegisterCodePage: FC = () => {
-  const [currentStep, setCurrentStep] = useState<number>(1);
-  const [codeId, setCodeId] = useState<NumberOrNull>(null);
+  const defaultCodeId = useDefaultCodeId();
+  const isDefaultCodeId = Boolean(defaultCodeId);
+  const targetCurrentStep = isDefaultCodeId ? 2 : 1;
+  const [currentStep, setCurrentStep] = useState<number>(
+    () => targetCurrentStep
+  );
+  const [codeId, setCodeId] = useState<NumberOrNull>(() => defaultCodeId);
   const [partners, setPartners] = useState<Partners | null>(null);
   const promotion = usePromotion();
   const navigate = useServiceUnavailablePageNavigate();
+
+  const isFirstStep = currentStep === 1;
+  const isSecondStep = currentStep === 2;
+  const isThirdStep = currentStep === 3;
 
   useEffect(() => {
     const getPartners = async (codeId: number) => {
@@ -41,10 +54,6 @@ const RegisterCodePage: FC = () => {
     incrementCurrentStep();
     updateCodeId(codeId);
   };
-
-  const isFirstStep = currentStep === 1;
-  const isSecondStep = currentStep === 2;
-  const isThirdStep = currentStep === 3;
 
   return (
     <Section>

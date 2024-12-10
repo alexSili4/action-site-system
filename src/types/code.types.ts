@@ -82,3 +82,11 @@ export interface IUserData {
 export interface IUpdateUserDataProps extends IUserData {
   codeId: number;
 }
+
+export interface IRegisterUnusedCodeState {
+  defaultCodeId: number;
+}
+
+export type RegisterUnusedCodeState = {
+  state: Partial<IRegisterUnusedCodeState>;
+};
