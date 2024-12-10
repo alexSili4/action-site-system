@@ -184,10 +184,10 @@ export const LogoPartnerWrap = styled.div`
 `;
 
 export const LogoPartner = styled.img`
-  max-width: 65px;
+  max-width: 95px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    max-width: 50px;
+    max-width: 80px;
   }
 `;
 

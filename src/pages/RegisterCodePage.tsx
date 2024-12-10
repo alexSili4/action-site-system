@@ -2,15 +2,21 @@ import { FC, useEffect, useState } from 'react';
 import Section from '@GeneralComponents/Section';
 import RegisterCode from '@RegisterCodePageComponents/RegisterCode';
 import {
+  useCabinetState,
   useDefaultCodeId,
+  useIsUnusedUserCodes,
   usePromotion,
   useServiceUnavailablePageNavigate,
 } from '@/hooks';
 import { NumberOrNull } from '@/types/types';
 import { Partners } from '@/types/code.types';
 import codesService from '@/services/codes.service';
+import { useNavigate } from 'react-router-dom';
+import { PagePaths } from '@/constants';
 
 const RegisterCodePage: FC = () => {
+  const isUnusedUserCodes = useIsUnusedUserCodes();
+  const cabinetState = useCabinetState({ isRedirectFromRegCodePage: true });
   const defaultCodeId = useDefaultCodeId();
   const isDefaultCodeId = Boolean(defaultCodeId);
   const targetCurrentStep = isDefaultCodeId ? 2 : 1;
@@ -19,38 +25,22 @@ const RegisterCodePage: FC = () => {
   );
   const [codeId, setCodeId] = useState<NumberOrNull>(() => defaultCodeId);
   // TODO fix
-  const [partners, setPartners] = useState<Partners | null>([
-    {
-      id: 1,
-      name: 'Фокстрот',
-      logo: '/partner/0/1_112701.png',
-      in_stock: true,
-    },
-    {
-      id: 2,
-      name: 'Епіцентр',
-      logo: '/partner/0/2_112715.png',
-      in_stock: true,
-    },
-    {
-      id: 3,
-      name: 'Комфі',
-      logo: '/partner/0/3_112730.png',
-      in_stock: true,
-    },
-    {
-      id: 4,
-      name: 'Єльдорадо',
-      logo: '/partner/0/4_155526.webp',
-      in_stock: false,
-    },
-  ]);
+  const [partners, setPartners] = useState<Partners | null>(null);
   const promotion = usePromotion();
-  const navigate = useServiceUnavailablePageNavigate();
+  const navigate = useNavigate();
+  const navigateToErrorPage = useServiceUnavailablePageNavigate();
 
   const isFirstStep = currentStep === 1;
   const isSecondStep = currentStep === 2;
   const isThirdStep = currentStep === 3;
+
+  useEffect(() => {
+    const shouldRedirectToCabinet = isUnusedUserCodes && !defaultCodeId;
+
+    if (shouldRedirectToCabinet) {
+      navigate(PagePaths.cabinet, { state: cabinetState });
+    }
+  }, [cabinetState, defaultCodeId, isUnusedUserCodes]);
 
   useEffect(() => {
     const getPartners = async (codeId: number) => {
@@ -59,7 +49,7 @@ const RegisterCodePage: FC = () => {
 
         setPartners(response);
       } catch (error) {
-        navigate();
+        navigateToErrorPage();
       }
     };
 
