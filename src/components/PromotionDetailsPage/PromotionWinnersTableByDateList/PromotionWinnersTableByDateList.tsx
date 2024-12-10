@@ -15,9 +15,9 @@ const PromotionWinnersTableByDateList: FC<IProps> = ({ winners }) => {
 
         return (
           <PromotionWinnersTableByDateListItem
+            key={index}
             isOpenSection={isOpenSection}
             winners={winners}
-            key={index}
           />
         );
       })}

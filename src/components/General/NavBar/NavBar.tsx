@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import AtbLogo from '@/icons/atb-logo.svg?react';
+import AtbLogo from '@/icons/atbLogo.svg?react';
 import { IProps } from './NavBar.types';
 import { PagePaths } from '@/constants';
 import { LogoLinkTitle, Nav, StyledLink } from './NavBar.styled';

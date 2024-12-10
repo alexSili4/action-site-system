@@ -3,7 +3,7 @@ import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import { HiLocationMarker } from 'react-icons/hi';
 import { theme } from '@/constants';
 import CouponIcon from '@/icons/cabinet/coupon.svg?react';
-import AtbLogo from '@/icons/atb-logo.svg?react';
+import AtbLogo from '@/icons/atbLogo.svg?react';
 import {
   Content,
   Certificate,

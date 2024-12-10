@@ -8,7 +8,7 @@ import {
   OpenContentBtnTitle,
   PromotionWinnersTableWrap,
   PromotionWinnersWrap,
-  ResultsBtn,
+  ResultsLink,
   ResultsBtnTitle,
   ResultsBtnWrap,
 } from './PromotionWinnersTableByDate.styled';
@@ -20,7 +20,7 @@ import PromotionWinnersTable from '@PromotionDetailsPageComponents/PromotionWinn
 import PromotionElementWrap from '@PromotionDetailsPageComponents/PromotionElementWrap';
 
 const PromotionWinnersTableByDate: FC<IProps> = ({
-  winners: { date, winners },
+  winners: { date, winners, pdf_file: pdfFile },
   isOpenSection,
 }) => {
   const [showWinners, setShowWinners] = useState<boolean>(() => isOpenSection);
@@ -43,12 +43,6 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
     makeBlur(e.currentTarget);
 
     toggleSetShowWinners();
-  };
-
-  const onResultsBtnClick = (e: BtnClickEvent) => {
-    makeBlur(e.currentTarget);
-
-    // TODO add action
   };
 
   return (
@@ -93,10 +87,14 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
             paddingTopDesk={40}
             paddingBottomDesk={40}
           >
-            <ResultsBtn onClick={onResultsBtnClick}>
+            <ResultsLink
+              href={pdfFile}
+              target='_blank'
+              rel='noopener noreferrer nofollow'
+            >
               <ResultsBtnTitle>Результати розіграшу</ResultsBtnTitle>
               <IoDocumentOutline size={theme.iconSizes.resultsBtn} />
-            </ResultsBtn>
+            </ResultsLink>
           </PromotionElementWrap>
         </ResultsBtnWrap>
       </PromotionWinnersWrap>

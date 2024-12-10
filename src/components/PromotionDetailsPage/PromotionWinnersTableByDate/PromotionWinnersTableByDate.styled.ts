@@ -61,7 +61,7 @@ export const OpenContentBtnTitle = styled.span<IStyledOpenContentBtnTitleProps>`
   line-height: 1.4;
 `;
 
-export const ResultsBtn = styled.button`
+export const ResultsLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;

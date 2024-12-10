@@ -8,6 +8,7 @@ export interface IWinner {
 export type Winners = IWinner[];
 
 export interface IWinnerByDate {
+  pdf_file: string;
   date: string;
   winners: Winners;
 }

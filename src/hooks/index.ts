@@ -37,3 +37,4 @@ export { default as useUnusedUserCodeLink } from './useUnusedUserCodeLink';
 export { default as useFirstUnusedUserCode } from './useFirstUnusedUserCode';
 export { default as useRegisterUnusedCodeState } from './useRegisterUnusedCodeState';
 export { default as useDefaultCodeId } from './useDefaultCodeId';
+export { default as useIsCabinetPage } from './useIsCabinetPage';
