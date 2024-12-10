@@ -10,9 +10,6 @@ export interface IClientCode {
   wheel_status: NumberOrNull;
   status: CodeStatus;
   action_id: number;
-  // TODO delete
-  verified_at?: NumberOrNull;
-  verified_status?: number;
 }
 
 export type ClientCodes = IClientCode[];

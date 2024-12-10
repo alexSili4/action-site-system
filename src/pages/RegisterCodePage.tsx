@@ -1,17 +1,17 @@
 import { FC, useEffect, useState } from 'react';
 import Section from '@GeneralComponents/Section';
 import RegisterCode from '@RegisterCodePageComponents/RegisterCode';
-import { usePromotion } from '@/hooks';
+import { usePromotion, useServiceUnavailablePageNavigate } from '@/hooks';
 import { NumberOrNull } from '@/types/types';
 import { Partners } from '@/types/code.types';
 import codesService from '@/services/codes.service';
 
 const RegisterCodePage: FC = () => {
-  // TODO fix
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [codeId, setCodeId] = useState<NumberOrNull>(null);
   const [partners, setPartners] = useState<Partners | null>(null);
   const promotion = usePromotion();
+  const navigate = useServiceUnavailablePageNavigate();
 
   useEffect(() => {
     const getPartners = async (codeId: number) => {
@@ -20,7 +20,7 @@ const RegisterCodePage: FC = () => {
 
         setPartners(response);
       } catch (error) {
-        // TODO fix
+        navigate();
       }
     };
 

@@ -8,7 +8,6 @@ import AnimatedRegisterCodeModalWinContainer from '@GeneralComponents/AnimatedRe
 const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
   setModalWinState,
   showModalWin,
-  toggleShowSelectPromotionsLocationModalWin,
 }) => {
   return (
     <AnimatedRegisterCodeModalWinContainer
@@ -17,9 +16,7 @@ const RegisterCodeModalWinSelectPromotionsLocation: FC<IProps> = ({
     >
       <RegisterCodeModalWinSelectPromotionsFilter>
         <LocationFilter
-          toggleShowSelectPromotionsLocationModalWin={
-            toggleShowSelectPromotionsLocationModalWin
-          }
+          toggleShowSelectPromotionsLocationModalWin={setModalWinState}
           isModalWin
         />
       </RegisterCodeModalWinSelectPromotionsFilter>

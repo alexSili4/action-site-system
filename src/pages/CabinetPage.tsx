@@ -3,16 +3,24 @@ import Container from '@GeneralComponents/Container';
 import Section from '@GeneralComponents/Section';
 import Cabinet from '@CabinetPageComponents/Cabinet';
 import { useCabinetPage } from '@/hooks';
+import UnusedUserCodesModalWin from '@CabinetPageComponents/UnusedUserCodesModalWin';
 
 const CabinetPage: FC = () => {
-  useCabinetPage();
+  const { showUnusedUserCodesModalWin, toggleShowUnusedUserCodesModalWin } =
+    useCabinetPage();
 
   return (
-    <Section>
-      <Container>
-        <Cabinet />
-      </Container>
-    </Section>
+    <>
+      <Section>
+        <Container>
+          <Cabinet />
+        </Container>
+      </Section>
+      <UnusedUserCodesModalWin
+        showModalWin={showUnusedUserCodesModalWin}
+        setModalWinState={toggleShowUnusedUserCodesModalWin}
+      />
+    </>
   );
 };
 

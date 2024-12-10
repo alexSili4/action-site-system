@@ -199,3 +199,12 @@ export interface IUsePrizesWheelSection {
   isWheelSpun: boolean;
   targetPrize: IGift | null;
 }
+
+export interface IUseCabinetPage {
+  showUnusedUserCodesModalWin: boolean;
+  toggleShowUnusedUserCodesModalWin: Func;
+}
+
+export interface IUseCabinetStateProps {
+  isRedirectFromRegCodePage: boolean;
+}

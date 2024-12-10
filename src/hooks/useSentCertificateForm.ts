@@ -7,6 +7,7 @@ import { ISentCertificateFormData } from '@/types/regCode.types';
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import useCsrfToken from './useCsrfToken';
+import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
 
 const useSentCertificateForm = ({
   userName,
@@ -22,6 +23,7 @@ const useSentCertificateForm = ({
   const isUserName = Boolean(userName);
   const isValidUserName = userName ? true : Boolean(nameLength);
   const disabledBtn = isLoading || !isValidUserName;
+  const navigate = useServiceUnavailablePageNavigate();
 
   useEffect(() => {
     console.log('defaultUserName ', defaultUserName);
@@ -32,7 +34,9 @@ const useSentCertificateForm = ({
       try {
         const { name } = await codesService.getUserData(codeId);
         updateUserName(name);
-      } catch (error) {}
+      } catch (error) {
+        navigate();
+      }
     };
 
     getUserName(codeId);
@@ -59,6 +63,7 @@ const useSentCertificateForm = ({
       updateUserName(name);
       toggleShowSuccessMsgState();
     } catch (error) {
+      // TODO handle error
     } finally {
       setIsLoading(false);
     }

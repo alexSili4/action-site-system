@@ -70,14 +70,10 @@ const SharedLayout: FC = () => {
       <RegisterCodeModalWinSelectPromotionsLocation
         showModalWin={showSelectPromotionsLocationModalWin}
         setModalWinState={toggleShowSelectPromotionsLocationModalWin}
-        toggleShowSelectPromotionsLocationModalWin={
-          toggleShowSelectPromotionsLocationModalWin
-        }
       />
       <RegisterCodeModalWinSelectPromotion
         showModalWin={showSelectPromotionModalWin}
         setModalWinState={toggleShowSelectPromotionModalWin}
-        toggleShowSelectPromotionModalWin={toggleShowSelectPromotionModalWin}
       />
     </>
   );

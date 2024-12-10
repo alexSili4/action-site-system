@@ -5,6 +5,7 @@ import {
   useIsPromotionsPage,
   useRegisterOnePromotionCodeLink,
   useIsUnusedUserCodes,
+  useCabinetState,
 } from '@/hooks';
 import { Button, StyledLink } from './RegisterCodeBtn.styled';
 import { IProps } from './RegisterCodeBtn.types';
@@ -22,11 +23,12 @@ const RegisterCodeBtn: FC<IProps> = ({
   const registerTargetPromotionCodeLink = useRegisterTargetPromotionCodeLink();
   const registerOnePromotionCodeLink = useRegisterOnePromotionCodeLink();
   const isUnusedUserCodes = useIsUnusedUserCodes();
+  const cabinetState = useCabinetState({ isRedirectFromRegCodePage: true });
   const isOnePromotion = promotions.length === 1;
   const isDefaultLink = !isPromotionDetailsPage && !isPromotionsPage;
 
   return isUnusedUserCodes ? (
-    <StyledLink to={PagePaths.cabinet}>
+    <StyledLink to={PagePaths.cabinet} state={cabinetState}>
       {Messages.regCodeElementTitle}
     </StyledLink>
   ) : (

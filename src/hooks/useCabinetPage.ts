@@ -9,10 +9,17 @@ import {
   selectGetUserPrizes,
   selectError as selectUserPrizesError,
 } from '@/store/userPrizes/selectors';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useStoreError from './useStoreError';
+import { useLocation } from 'react-router-dom';
+import { CabinetState } from '@/types/cabinet.types';
+import { IUseCabinetPage } from '@/types/hooks.types';
 
-const useCabinetPage = () => {
+const useCabinetPage = (): IUseCabinetPage => {
+  const { state }: CabinetState = useLocation();
+  const isRedirectFromRegCodePage = Boolean(state?.isRedirectFromRegCodePage);
+  const [showUnusedUserCodesModalWin, setShowUnusedUserCodesModalWin] =
+    useState<boolean>(() => isRedirectFromRegCodePage);
   const getUserCodes = useUserCodesStore(selectGetUserCodes);
   const getUserPrizes = useUserPrizesStore(selectGetUserPrizes);
   const userCodesError = useUserCodesStore(selectUserCodesError);
@@ -34,6 +41,10 @@ const useCabinetPage = () => {
   const shouldGetUserCodes = isCodesStatisticsCategory;
   const shouldGetUserPrizes = isPrizesStatisticsCategory;
 
+  const toggleShowUnusedUserCodesModalWin = () => {
+    setShowUnusedUserCodesModalWin((prevState) => !prevState);
+  };
+
   useEffect(() => {
     if (!shouldGetUserCodes) {
       return;
@@ -49,6 +60,8 @@ const useCabinetPage = () => {
 
     getUserPrizes({ page: Number(page), sort });
   }, [getUserPrizes, page, sort, shouldGetUserPrizes]);
+
+  return { showUnusedUserCodesModalWin, toggleShowUnusedUserCodesModalWin };
 };
 
 export default useCabinetPage;
