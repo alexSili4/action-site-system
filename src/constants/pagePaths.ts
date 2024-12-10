@@ -1,4 +1,4 @@
-const enum PagePaths {
+enum PagePaths {
   root = '/',
   dynamicParam = 'id',
   dynamicCode = 'code',

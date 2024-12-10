@@ -31,3 +31,5 @@ export { default as usePromotionDetailsState } from './usePromotionDetailsState'
 export { default as useCabinetState } from './useCabinetState';
 export { default as usePrizesWheelSection } from './usePrizesWheelSection';
 export { default as useServiceUnavailablePageNavigate } from './useServiceUnavailablePageNavigate';
+export { default as useIsUnusedUserCodes } from './useIsUnusedUserCodes';
+export { default as useIsErrorPage } from './useIsErrorPage';

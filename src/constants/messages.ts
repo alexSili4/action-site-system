@@ -8,6 +8,7 @@ const enum Messages {
   userCodeDefaultMsg = 'Очікуйте сертифікат після підтвердження реєстрації акційного коду',
   emptyUserCodesList = 'У вас ще немає зареєстрованих кодів',
   emptyUserPrizesList = 'У вас ще немає виграних призів',
+  regCodeElementTitle = 'Зареєструвати код',
 }
 
 export default Messages;

@@ -1,4 +1,5 @@
 import { IPromotion } from './promotion.types';
+import { NumberOrNull } from './types';
 import { CodeStatus } from './userCode.types';
 
 export interface IClientCode {
@@ -6,9 +7,12 @@ export interface IClientCode {
   code: string;
   created_at: number;
   shop_number: number;
-  wheel_status: null;
+  wheel_status: NumberOrNull;
   status: CodeStatus;
   action_id: number;
+  // TODO delete
+  verified_at?: NumberOrNull;
+  verified_status?: number;
 }
 
 export type ClientCodes = IClientCode[];

@@ -4,11 +4,13 @@ import {
   useRegisterTargetPromotionCodeLink,
   useIsPromotionsPage,
   useRegisterOnePromotionCodeLink,
+  useIsUnusedUserCodes,
 } from '@/hooks';
 import { Button, StyledLink } from './RegisterCodeBtn.styled';
 import { IProps } from './RegisterCodeBtn.types';
 import { usePromotionsStore } from '@/store/store';
 import { selectPromotions } from '@/store/promotions/selectors';
+import { Messages, PagePaths } from '@/constants';
 
 const RegisterCodeBtn: FC<IProps> = ({
   onRegisterCodeBtnClickOnAllPages,
@@ -17,32 +19,36 @@ const RegisterCodeBtn: FC<IProps> = ({
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
   const isPromotionsPage = useIsPromotionsPage();
   const promotions = usePromotionsStore(selectPromotions);
-  const isOnePromotion = promotions.length === 1;
-  const isDefaultLink = !isPromotionDetailsPage && !isPromotionsPage;
   const registerTargetPromotionCodeLink = useRegisterTargetPromotionCodeLink();
   const registerOnePromotionCodeLink = useRegisterOnePromotionCodeLink();
-  const regCodeElementTitle = 'Зареєструвати код';
+  const isUnusedUserCodes = useIsUnusedUserCodes();
+  const isOnePromotion = promotions.length === 1;
+  const isDefaultLink = !isPromotionDetailsPage && !isPromotionsPage;
 
-  return (
+  return isUnusedUserCodes ? (
+    <StyledLink to={PagePaths.cabinet}>
+      {Messages.regCodeElementTitle}
+    </StyledLink>
+  ) : (
     <>
       {isPromotionDetailsPage && (
         <StyledLink to={registerTargetPromotionCodeLink}>
-          {regCodeElementTitle}
+          {Messages.regCodeElementTitle}
         </StyledLink>
       )}
       {isPromotionsPage &&
         (isOnePromotion ? (
           <StyledLink to={registerOnePromotionCodeLink}>
-            {regCodeElementTitle}
+            {Messages.regCodeElementTitle}
           </StyledLink>
         ) : (
           <Button type='button' onClick={onRegisterCodeBtnClickOnPromotionPage}>
-            {regCodeElementTitle}
+            {Messages.regCodeElementTitle}
           </Button>
         ))}
       {isDefaultLink && (
         <Button type='button' onClick={onRegisterCodeBtnClickOnAllPages}>
-          {regCodeElementTitle}
+          {Messages.regCodeElementTitle}
         </Button>
       )}
     </>
