@@ -21,6 +21,8 @@ export const Container = styled.div<IStyledContainerProps>`
 `;
 
 export const ShowLocationsBtn = styled.button<IStyledShowLocationsBtnProps>`
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndex.selectCityDropdown};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,6 +76,7 @@ export const ShowLocationsBtnTitle = styled.span<IStyledShowLocationsBtnTitlePro
 
 export const LocationListContainer = styled.div<IStyledLocationListProps>`
   position: absolute;
+  z-index: ${({ theme }) => theme.zIndex.selectCityDropdown};
   bottom: -16px;
   left: 50%;
   display: flex;

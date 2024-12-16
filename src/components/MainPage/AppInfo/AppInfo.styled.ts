@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import { IStyledProps } from './AppInfo.types';
 
 export const Container = styled.div`
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndex.selectCityDropdown};
   display: flex;
   flex-direction: column;
   align-items: center;
