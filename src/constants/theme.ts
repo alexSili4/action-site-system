@@ -167,7 +167,7 @@ const theme: ITheme = {
     promotionShopsList: 1000,
     promotionNavBar: 1000,
     header: 10000,
-    dropdownBackdrop: 10000,
+    dropdownBackdrop: 9999,
     selectCityDropdown: 10000,
     selectPromotionDropdown: 10000,
     selectPromotionsSortTypeDropdown: 10000,
