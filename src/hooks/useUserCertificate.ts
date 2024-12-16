@@ -1,4 +1,4 @@
-import { DateFormats } from '@/constants';
+import { DateFormats, generalSettings } from '@/constants';
 import { IUseUserCertificate } from '@/types/hooks.types';
 import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
 import {
@@ -45,10 +45,12 @@ const useUserCertificate = (
     bannerMob: thirdBannerMob,
   });
 
-  const expiredFormatDate = formatDate({
-    date: expiredDate,
-    dateFormat: DateFormats.winnersDate,
-  });
+  const expiredFormatDate = expiredDate
+    ? formatDate({
+        date: expiredDate,
+        dateFormat: DateFormats.winnersDate,
+      })
+    : generalSettings.defaultDataText;
 
   return {
     code,

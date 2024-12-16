@@ -6,7 +6,6 @@ import {
   OnAnchorClickFunc,
   OnBtnClickFunc,
   OnDivClickFunc,
-  SetStringOrNullFunc,
   StringOrNull,
 } from './types';
 import {
@@ -33,7 +32,7 @@ import {
 } from 'react-hook-form';
 import { RefObject } from 'react';
 import { Shops } from './shop.types';
-import { IGift, Partners } from './code.types';
+import { IGift, Partners, UpdateUserDataFunc } from './code.types';
 import { IClientCode } from './userCodeWithDetails.types';
 
 export type SetPageFunc = (data: IOnPageBtnClickProps) => void;
@@ -138,9 +137,10 @@ export interface IUseCsrfToken {
 
 export interface IUseSentCertificateFormProps {
   userName: StringOrNull;
+  userEmail: StringOrNull;
   codeId: number;
   toggleShowSuccessMsgState: Func;
-  updateUserName: SetStringOrNullFunc;
+  updateUserData: UpdateUserDataFunc;
 }
 
 export interface IUseSentCertificateForm {
@@ -148,7 +148,7 @@ export interface IUseSentCertificateForm {
   register: UseFormRegister<ISentCertificateFormData>;
   handleSubmit: UseFormHandleSubmit<ISentCertificateFormData, undefined>;
   disabledBtn: boolean;
-  isUserName: boolean;
+  defaultUserEmail: string;
   defaultUserName: string;
 }
 
@@ -199,6 +199,8 @@ export interface IUsePrizesWheelSection {
   onSpinWheelBtnClick: OnBtnClickFunc;
   isWheelSpun: boolean;
   targetPrize: IGift | null;
+  sectorSize: number;
+  sectorGradientStart: number;
 }
 
 export interface IUseCabinetPage {

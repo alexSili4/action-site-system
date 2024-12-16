@@ -10,7 +10,7 @@ import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import SentCertificateForm from '@RegisterCodePageComponents/SentCertificateForm';
 import SuccessRegisterCodeMsg from '@RegisterCodePageComponents/SuccessRegisterCodeMsg';
-import { StringOrNull } from '@/types/types';
+import { IUserData } from '@/types/code.types';
 
 const SentCertificateSection: FC<IProps> = ({
   steps,
@@ -25,11 +25,13 @@ const SentCertificateSection: FC<IProps> = ({
   codeId,
 }) => {
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
-  const [userName, setUserName] = useState<StringOrNull>(null);
+  const [userData, setUserData] = useState<IUserData | null>(null);
+
+  const { email: userEmail = null, name: userName = null } = userData ?? {};
   const shouldShowSuccessMsg = showSuccessMsg && userName;
 
-  const updateUserName = (userName: StringOrNull) => {
-    setUserName(userName);
+  const updateUserData = (data: IUserData) => {
+    setUserData(data);
   };
 
   const toggleShowSuccessMsgState = () => {
@@ -61,7 +63,8 @@ const SentCertificateSection: FC<IProps> = ({
             />
             <SentCertificateForm
               userName={userName}
-              updateUserName={updateUserName}
+              userEmail={userEmail}
+              updateUserData={updateUserData}
               toggleShowSuccessMsgState={toggleShowSuccessMsgState}
               codeId={codeId}
             />

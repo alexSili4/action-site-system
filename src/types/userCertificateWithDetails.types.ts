@@ -1,4 +1,5 @@
 import { IPromotion } from './promotion.types';
+import { StringOrNull } from './types';
 import { CodeStatus } from './userCode.types';
 
 export interface IImage {
@@ -43,6 +44,6 @@ export interface IUserCertificateWithDetails {
   certificate: ICertificate;
   code: ICode;
   action: IPromotion;
-  expired_date: string;
+  expired_date: StringOrNull;
   certificate_pdf: string;
 }

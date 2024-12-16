@@ -79,6 +79,8 @@ export interface IUserData {
   send_to_email_status: boolean;
 }
 
+export type UpdateUserDataFunc = (data: IUserData) => void;
+
 export interface IUpdateUserDataProps extends IUserData {
   codeId: number;
 }

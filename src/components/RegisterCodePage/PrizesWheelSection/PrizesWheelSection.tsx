@@ -10,14 +10,16 @@ import {
   PointerImg,
   Container,
   Sector,
-  Backdrop,
+  Delimiter,
 } from './PrizesWheelSection.styled';
 import circle from '@/images/code/circle.png';
 import pointer from '@/images/code/pointer.png';
 import { usePrizesWheelSection } from '@/hooks';
 import { getFileUrl } from '@/utils';
+import { BiLock } from 'react-icons/bi';
 // components
 import AnimatedPrizeWheelModalWinContainer from '@RegisterCodePageComponents/AnimatedPrizeWheelModalWinContainer';
+import { theme } from '@/constants';
 
 const PrizesWheelSection: FC<IProps> = ({
   partners,
@@ -26,8 +28,19 @@ const PrizesWheelSection: FC<IProps> = ({
   moveToNextStep,
   codeId,
 }) => {
-  const { totalDegrees, onSpinWheelBtnClick, isWheelSpun, targetPrize } =
-    usePrizesWheelSection({ partners, spinningMs, maxSpins, codeId });
+  const {
+    totalDegrees,
+    onSpinWheelBtnClick,
+    isWheelSpun,
+    targetPrize,
+    sectorSize,
+    sectorGradientStart,
+  } = usePrizesWheelSection({
+    partners,
+    spinningMs,
+    maxSpins,
+    codeId,
+  });
 
   return (
     <>
@@ -38,14 +51,24 @@ const PrizesWheelSection: FC<IProps> = ({
               {partners.map(({ id, logo, in_stock: inStock }, index) => {
                 const number = index + 1;
                 const logoUrl = getFileUrl(logo);
-                const shouldShowBackdrop = Boolean(!inStock);
+                const isLockPrize = !inStock;
+                const sectorRotate = sectorSize * (number - 1);
+                const delimiterRotate = sectorSize / 2;
 
                 return (
-                  <Sector key={id} number={number} length={partners.length}>
-                    {shouldShowBackdrop && (
-                      <Backdrop number={number} length={partners.length} />
+                  <Sector
+                    key={id}
+                    isLockPrize={isLockPrize}
+                    number={number}
+                    size={sectorSize}
+                    rotate={sectorRotate}
+                    gradientStart={sectorGradientStart}
+                  >
+                    <Image src={logoUrl} isLockPrize={isLockPrize} />
+                    {isLockPrize && (
+                      <BiLock size={theme.iconSizes.prizesWheelLock} />
                     )}
-                    <Image src={logoUrl} />
+                    <Delimiter rotate={delimiterRotate} />
                   </Sector>
                 );
               })}

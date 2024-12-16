@@ -141,7 +141,7 @@ const UserCodeDetails: FC<IProps> = ({
               <PrizeDrawingDateTitle>
                 Дата розіграшу призів:
               </PrizeDrawingDateTitle>
-              <PrizeDrawingDateText>{drawPrizeDate}</PrizeDrawingDateText>
+              <PrizeDrawingDateText>{drawDate}</PrizeDrawingDateText>
             </PrizeDrawingDateWrap>
           </MainInfo>
         </MainInfoWrap>
@@ -175,15 +175,15 @@ const UserCodeDetails: FC<IProps> = ({
               <PrizeWrap>
                 <PrizesInfoTitle>Виграний приз:</PrizesInfoTitle>
                 <PrizesInfoText isHiddenOnDesk>
-                  18.07.2024{' '}
+                  {drawPrizeDate}{' '}
                   <Link to={prizeDetailsPath} state={cabinetState}>
                     <PrizeLinkTitle>{presentGiftName}</PrizeLinkTitle>{' '}
                     <NavArrow />
                   </Link>
                 </PrizesInfoText>
                 <PrizesInfoTextWrap>
-                  <PrizesInfoText>18.07.2024</PrizesInfoText>
-                  <PrizeLink to={certificateDetailsPath}>
+                  <PrizesInfoText>{drawPrizeDate}</PrizesInfoText>
+                  <PrizeLink to={prizeDetailsPath}>
                     <PrizeLinkTitle>{presentGiftName}</PrizeLinkTitle>
                     <NavArrow />
                   </PrizeLink>

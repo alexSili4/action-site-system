@@ -36,7 +36,6 @@ const LocationFilter: FC<IProps> = ({
     isModalWin,
     toggleShowSelectPromotionsLocationModalWin,
   });
-
   return (
     <>
       <Container isRootPage={isRootPage} showOtherModalWin={showOtherModalWin}>
@@ -52,7 +51,10 @@ const LocationFilter: FC<IProps> = ({
           </ShowLocationsBtnTitle>
           <FaChevronDown size={theme.iconSizes.showLocationsBtn} />
         </ShowLocationsBtn>
-        <SmoothFadeInDropdownList isVisible={showLocationList}>
+        <SmoothFadeInDropdownList
+          isVisible={showLocationList}
+          zIndex={theme.zIndex.selectCityDropdown}
+        >
           <LocationListContainer isBigSize={isBigSize}>
             <LocationSearchField />
             <LocationList onLocationLinkClick={onLocationLinkClick} />

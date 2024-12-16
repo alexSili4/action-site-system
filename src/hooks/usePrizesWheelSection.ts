@@ -24,6 +24,8 @@ const usePrizesWheelSection = ({
   const [isWheelSpun, setIsWheelSpun] = useState<boolean>(false);
   const [targetPrize, setTargetPrize] = useState<IGift | null>(null);
   const navigate = useServiceUnavailablePageNavigate();
+  const sectorSize = 360 / partners.length;
+  const sectorGradientStart = 360 - sectorSize / 2;
 
   const fetchPrizeIdx = async (codeId: number) => {
     setIsSpinning(true);
@@ -76,6 +78,8 @@ const usePrizesWheelSection = ({
     onSpinWheelBtnClick,
     isWheelSpun,
     targetPrize,
+    sectorSize,
+    sectorGradientStart,
   };
 };
 

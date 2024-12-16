@@ -16,5 +16,16 @@ export interface IStyledWheelProps {
 
 export interface IStyledSectorProps {
   number: number;
-  length: number;
+  rotate: number;
+  size: number;
+  gradientStart: number;
+  isLockPrize: boolean;
+}
+
+export interface IStyledImage {
+  isLockPrize: boolean;
+}
+
+export interface IStyledDelimiter {
+  rotate: number;
 }

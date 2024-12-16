@@ -81,13 +81,11 @@ const UserCode: FC<IProps> = ({ code }) => {
 
   const userReceiptNumber = receiptNumber
     ? String(receiptNumber)
-    : generalSettings.defaultReceiptText;
+    : generalSettings.defaultDataText;
   const userShopNumber = shopNum
     ? `№${shopNum}`
-    : generalSettings.defaultReceiptText;
-  const userTotal = receiptSum
-    ? receiptSum
-    : generalSettings.defaultReceiptText;
+    : generalSettings.defaultDataText;
+  const userTotal = receiptSum ? receiptSum : generalSettings.defaultDataText;
 
   return (
     <UserStatisticsDetailsContainer>

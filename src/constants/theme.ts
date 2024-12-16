@@ -21,6 +21,7 @@ interface ITheme {
     montserrat: string;
   };
   iconSizes: {
+    prizesWheelLock: number;
     rulesLink: number;
     socialList: number;
     cabinet: number;
@@ -134,6 +135,7 @@ const theme: ITheme = {
     phoneLink: 16,
     certificateStatus: 16,
     promotionContactsPhoneLink: 16,
+    prizesWheelLock: 18,
     promotionContactsMailLink: 18,
     statisticsSortBtn: 20,
     datePickerBtnLabel: 20,

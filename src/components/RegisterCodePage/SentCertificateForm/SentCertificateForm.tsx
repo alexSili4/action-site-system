@@ -19,22 +19,24 @@ import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 
 const SentCertificateForm: FC<IProps> = ({
   toggleShowSuccessMsgState,
-  updateUserName,
+  updateUserData,
   userName,
   codeId,
+  userEmail,
 }) => {
   const {
     handleFormSubmit,
     register,
     handleSubmit,
     disabledBtn,
-    isUserName,
+    defaultUserEmail,
     defaultUserName,
   } = useSentCertificateForm({
     toggleShowSuccessMsgState,
-    updateUserName,
+    updateUserData,
     userName,
     codeId,
+    userEmail,
   });
 
   return (
@@ -46,10 +48,9 @@ const SentCertificateForm: FC<IProps> = ({
           </LabelWrap>
           <Input
             type='text'
-            {...register('name', { required: !isUserName })}
+            {...register('name', { required: true })}
             defaultValue={defaultUserName}
             placeholder={InputPlaceholders.enterName}
-            disabled={isUserName}
           />
         </InputWrap>
         <CertificateInfoWrap>
@@ -75,6 +76,7 @@ const SentCertificateForm: FC<IProps> = ({
             {...register('email', {
               pattern: regExp.email,
             })}
+            defaultValue={defaultUserEmail}
             placeholder={InputPlaceholders.email}
           />
         </InputWrap>

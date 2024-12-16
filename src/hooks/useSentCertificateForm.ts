@@ -11,47 +11,62 @@ import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNaviga
 
 const useSentCertificateForm = ({
   userName,
+  userEmail,
   codeId,
   toggleShowSuccessMsgState,
-  updateUserName,
+  updateUserData,
 }: IUseSentCertificateFormProps): IUseSentCertificateForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [disabledBtn, setDisabledBtn] = useState<boolean>(false);
+  const [userNameLength, setUserNameLength] = useState<number>(0);
   const { name: tokenName, token } = useCsrfToken();
   const defaultUserName = userName ?? '';
+  const defaultUserEmail = userEmail ?? '';
   const { register, handleSubmit, watch } = useForm<ISentCertificateFormData>();
   const nameLength = watch('name')?.length;
-  const isUserName = Boolean(userName);
-  const isValidUserName = userName ? true : Boolean(nameLength);
-  const disabledBtn = isLoading || !isValidUserName;
+  // const isValidUserName = userName ? true : Boolean(nameLength);
   const navigate = useServiceUnavailablePageNavigate();
 
   useEffect(() => {
-    console.log('defaultUserName ', defaultUserName);
-  }, [defaultUserName]);
+    if (isLoading || !userNameLength) {
+      setDisabledBtn(true);
+    } else {
+      setDisabledBtn(false);
+    }
+  }, [isLoading, userNameLength]);
+
+  useEffect(() => {
+    if (userName) {
+      setUserNameLength(userName.length);
+    }
+  }, [userName]);
+
+  useEffect(() => {
+    setUserNameLength(nameLength);
+  }, [nameLength]);
 
   useEffect(() => {
     const getUserName = async (codeId: number): Promise<void> => {
       try {
-        const { name } = await codesService.getUserData(codeId);
-        updateUserName(name);
+        const response = await codesService.getUserData(codeId);
+        updateUserData(response);
       } catch (error) {
         navigate();
       }
     };
 
     getUserName(codeId);
-  }, [codeId, updateUserName]);
+  }, [codeId, updateUserData]);
 
   const handleFormSubmit: SubmitHandler<ISentCertificateFormData> = async ({
     email,
     name,
     sendCertificate,
   }) => {
-    const userName = isUserName ? defaultUserName : name;
     const userData = {
       codeId,
       email,
-      name: userName,
+      name,
       send_to_email_status: sendCertificate,
       [tokenName]: token,
     };
@@ -59,8 +74,8 @@ const useSentCertificateForm = ({
     try {
       setIsLoading(true);
 
-      const { name } = await codesService.updateUserData(userData);
-      updateUserName(name);
+      const response = await codesService.updateUserData(userData);
+      updateUserData(response);
       toggleShowSuccessMsgState();
     } catch (error) {
       // TODO handle error
@@ -74,7 +89,7 @@ const useSentCertificateForm = ({
     register,
     handleSubmit,
     disabledBtn,
-    isUserName,
+    defaultUserEmail,
     defaultUserName,
   };
 };

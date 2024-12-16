@@ -1,7 +1,7 @@
 import { IRegExp } from '@/types/types';
 
 const regExp: IRegExp = {
-  email: /^[-?\w.?!#$&'-~%?]+@\w+\.{1}\w{2,4}$/,
+  email: /^[-?\w.?!#$&'-~%?]+@\w+\.{1}\w{2,10}$/,
 };
 
 export default regExp;
