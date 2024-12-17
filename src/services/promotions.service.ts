@@ -1,4 +1,8 @@
-import { Promotions, IPromotion } from '@/types/promotion.types';
+import {
+  Promotions,
+  IPromotion,
+  IGetPromotionByIdProps,
+} from '@/types/promotion.types';
 import { Conditions } from '@/types/condition.types';
 import { Prizes } from '@/types/prize.types';
 import { FAQs } from '@/types/faqs.types';
@@ -21,10 +25,13 @@ class PromotionsService extends HttpService {
     return response.data;
   }
 
-  async getPromotionById(actionId: string): Promise<IPromotion> {
+  async getPromotionById({
+    actionId,
+    previewId,
+  }: IGetPromotionByIdProps): Promise<IPromotion> {
     const response = await this.get<IPromotion>(
       {
-        url: `promotions/promo?action_id=${actionId}`,
+        url: `promotions/promo?action_id=${actionId}&preview=${previewId}`,
       },
       false
     );

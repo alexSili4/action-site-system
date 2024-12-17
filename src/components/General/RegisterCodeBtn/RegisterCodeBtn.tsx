@@ -8,6 +8,7 @@ import {
   useCabinetState,
   useIsCabinetPage,
   useUnusedUserCodeLink,
+  usePreviewPage,
 } from '@/hooks';
 import { Button, StyledLink } from './RegisterCodeBtn.styled';
 import { IProps } from './RegisterCodeBtn.types';
@@ -23,22 +24,35 @@ const RegisterCodeBtn: FC<IProps> = ({
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
   const isPromotionsPage = useIsPromotionsPage();
   const promotions = usePromotionsStore(selectPromotions);
-  const registerTargetPromotionCodeLink = useRegisterTargetPromotionCodeLink();
-  const unusedUserCodeLink = useUnusedUserCodeLink();
-  const registerOnePromotionCodeLink = useRegisterOnePromotionCodeLink();
   const isUnusedUserCodes = useIsUnusedUserCodes();
   const cabinetState = useCabinetState({ isRedirectFromRegCodePage: true });
   const isOnePromotion = promotions.length === 1;
   const isDefaultLink = !isPromotionDetailsPage && !isPromotionsPage;
+  const { isPreviewPage } = usePreviewPage();
+
+  const registerTargetPromotionCodeLink = useRegisterTargetPromotionCodeLink();
+  const unusedUserCodeLink = useUnusedUserCodeLink();
+  const registerOnePromotionCodeLink = useRegisterOnePromotionCodeLink();
+  const targetRegisterTargetPromotionCodeLink = isPreviewPage
+    ? ''
+    : registerTargetPromotionCodeLink;
+  const targetUnusedUserCodeLink = isPreviewPage ? '' : unusedUserCodeLink;
+  const targetRegisterOnePromotionCodeLink = isPreviewPage
+    ? ''
+    : registerOnePromotionCodeLink;
 
   return isUnusedUserCodes ? (
     <>
       {isCabinetPage ? (
-        <StyledLink to={unusedUserCodeLink}>
+        <StyledLink to={targetUnusedUserCodeLink} isPreviewPage={isPreviewPage}>
           {Messages.regCodeElementTitle}
         </StyledLink>
       ) : (
-        <StyledLink to={PagePaths.cabinet} state={cabinetState}>
+        <StyledLink
+          to={PagePaths.cabinet}
+          state={cabinetState}
+          isPreviewPage={isPreviewPage}
+        >
           {Messages.regCodeElementTitle}
         </StyledLink>
       )}
@@ -46,22 +60,36 @@ const RegisterCodeBtn: FC<IProps> = ({
   ) : (
     <>
       {isPromotionDetailsPage && (
-        <StyledLink to={registerTargetPromotionCodeLink}>
+        <StyledLink
+          to={targetRegisterTargetPromotionCodeLink}
+          isPreviewPage={isPreviewPage}
+        >
           {Messages.regCodeElementTitle}
         </StyledLink>
       )}
       {isPromotionsPage &&
         (isOnePromotion ? (
-          <StyledLink to={registerOnePromotionCodeLink}>
+          <StyledLink
+            to={targetRegisterOnePromotionCodeLink}
+            isPreviewPage={isPreviewPage}
+          >
             {Messages.regCodeElementTitle}
           </StyledLink>
         ) : (
-          <Button type='button' onClick={onRegisterCodeBtnClickOnPromotionPage}>
+          <Button
+            type='button'
+            onClick={onRegisterCodeBtnClickOnPromotionPage}
+            disabled={isPreviewPage}
+          >
             {Messages.regCodeElementTitle}
           </Button>
         ))}
       {isDefaultLink && (
-        <Button type='button' onClick={onRegisterCodeBtnClickOnAllPages}>
+        <Button
+          type='button'
+          onClick={onRegisterCodeBtnClickOnAllPages}
+          disabled={isPreviewPage}
+        >
           {Messages.regCodeElementTitle}
         </Button>
       )}

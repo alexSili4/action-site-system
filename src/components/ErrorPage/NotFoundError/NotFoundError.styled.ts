@@ -1,11 +1,19 @@
 import { animations } from '@/constants';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { IStyledContainerProps } from './NotFoundError.types';
 
-export const Container = styled.div`
+export const Container = styled.div<IStyledContainerProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: ${({ theme, isPromotionDetailsPage }) =>
+    isPromotionDetailsPage && theme.spacing(39)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding-top: ${({ theme, isPromotionDetailsPage }) =>
+      isPromotionDetailsPage && theme.spacing(25)};
+  }
 `;
 
 export const Title = styled.p`

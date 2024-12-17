@@ -5,7 +5,7 @@ const useIsScrollingUp = (): IUseIsScrollingUp => {
   const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
 
-  const isScrolling = lastScrollY !== 0;
+  const isScrolling = lastScrollY > 0;
 
   useEffect(() => {
     const handleScroll = () => {

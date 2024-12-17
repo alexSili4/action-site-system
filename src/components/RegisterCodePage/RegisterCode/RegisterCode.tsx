@@ -44,8 +44,12 @@ const RegisterCode: FC<IProps> = ({
     bannerDt: thirdBannerDt,
     bannerMob: thirdBannerMob,
   });
+
+  const hotLinePhoneString = hotLinePhone ?? '';
+  const hotLineWorkHoursString = hotLineWorkHours ?? '';
+
   const logoUrl = getFileUrl(logo ?? '');
-  const rulesPdfUrl = getFileUrl(rulesPdf);
+  const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
   const promotionDate = getPromotionDate({ dateFrom, dateTo });
   const steps = getRegCodeSteps({
     stepsSequence: RegPromotionCodeSteps,
@@ -76,8 +80,8 @@ const RegisterCode: FC<IProps> = ({
       {isRegisterCodeStep && (
         <Container>
           <RegisterCodeSection
-            hotLinePhone={hotLinePhone}
-            hotLineWorkHours={hotLineWorkHours}
+            hotLinePhone={hotLinePhoneString}
+            hotLineWorkHours={hotLineWorkHoursString}
             logoUrl={logoUrl}
             name={name}
             promotionDate={promotionDate}
@@ -105,8 +109,8 @@ const RegisterCode: FC<IProps> = ({
             codeId={codeId}
             steps={steps}
             currentStep={currentStep}
-            hotLinePhone={hotLinePhone}
-            hotLineWorkHours={hotLineWorkHours}
+            hotLinePhone={hotLinePhoneString}
+            hotLineWorkHours={hotLineWorkHoursString}
             logoUrl={logoUrl}
             name={name}
             promotionDate={promotionDate}

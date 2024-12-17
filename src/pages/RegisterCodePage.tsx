@@ -26,7 +26,7 @@ const RegisterCodePage: FC = () => {
   const [codeId, setCodeId] = useState<NumberOrNull>(() => defaultCodeId);
   // TODO fix
   const [partners, setPartners] = useState<Partners | null>(null);
-  const promotion = usePromotion();
+  const { promotion } = usePromotion();
   const navigate = useNavigate();
   const navigateToErrorPage = useServiceUnavailablePageNavigate();
 

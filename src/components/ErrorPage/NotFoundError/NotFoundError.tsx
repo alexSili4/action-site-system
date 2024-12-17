@@ -17,21 +17,26 @@ import Error404ImgDesk from '@/images/error/error-404-desk.png';
 import WheelImg from '@/images/error/wheel.png';
 import Slots404Img from '@/images/error/slots-404.png';
 import RaysImg from '@/images/error/rays.png';
+import { useIsPromotionDetailsPage } from '@/hooks';
 
-const NotFoundError: FC = () => (
-  <Container>
-    <Title>Сторінка не знайдена</Title>
-    <ImgWrap>
-      <MobileImage src={Error404ImgMobile} />
-      <DeskImage src={Error404ImgDesk} />
-      <WheelImgWrap>
-        <Rays src={RaysImg} />
-        <Slots src={Slots404Img} />
-        <Wheel src={WheelImg} />
-      </WheelImgWrap>
-    </ImgWrap>
-    <StyledLink to={PagePaths.root}>На головну</StyledLink>
-  </Container>
-);
+const NotFoundError: FC = () => {
+  const isPromotionDetailsPage = useIsPromotionDetailsPage();
+
+  return (
+    <Container isPromotionDetailsPage={isPromotionDetailsPage}>
+      <Title>Сторінка не знайдена</Title>
+      <ImgWrap>
+        <MobileImage src={Error404ImgMobile} />
+        <DeskImage src={Error404ImgDesk} />
+        <WheelImgWrap>
+          <Rays src={RaysImg} />
+          <Slots src={Slots404Img} />
+          <Wheel src={WheelImg} />
+        </WheelImgWrap>
+      </ImgWrap>
+      <StyledLink to={PagePaths.root}>На головну</StyledLink>
+    </Container>
+  );
+};
 
 export default NotFoundError;

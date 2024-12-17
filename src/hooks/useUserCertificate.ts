@@ -34,8 +34,9 @@ const useUserCertificate = (
     id: actionId,
   } = action;
   const { certificate_code: certificateCode } = certificate;
+  const hotLinePhoneString = hotLinePhone ?? '';
 
-  const validHotLinePhone = getValidPhone(hotLinePhone);
+  const validHotLinePhone = getValidPhone(hotLinePhoneString);
   const codeDetailsPath = getCodeDetailsPath(codeId);
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const partnerLogoUrl = getFileUrl(partnerLogo);
@@ -62,8 +63,8 @@ const useUserCertificate = (
     partnerName,
     prizeName,
     expiredFormatDate,
-    hotLinePhone,
-    hotLineWorkHours,
+    hotLinePhone: hotLinePhoneString,
+    hotLineWorkHours: hotLineWorkHours ?? '',
     promotionName,
     promotionDetailsPath,
     codeDetailsPath,

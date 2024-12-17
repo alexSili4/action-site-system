@@ -4,6 +4,7 @@ import Section from '@GeneralComponents/Section';
 import PromotionDetails from '@PromotionDetailsPageComponents/PromotionDetails';
 import { usePromotionDetailsPage } from '@/hooks';
 import PromotionDetailsNavBar from '@PromotionDetailsPageComponents/PromotionDetailsNavBar';
+import NotFoundError from '@ErrorPageComponents/NotFoundError';
 
 const PromotionDetailsPage: FC = () => {
   const {
@@ -14,22 +15,27 @@ const PromotionDetailsPage: FC = () => {
     winners,
     shops,
     promotion,
+    shouldShowPromotionDetails,
   } = usePromotionDetailsPage();
 
   return (
     <>
       <Section>
         <Container>
-          {promotion && (
-            <PromotionDetails
-              faqs={faqs}
-              otherPrizes={otherPrizes}
-              wheelPrizes={wheelPrizes}
-              conditions={conditions}
-              winners={winners}
-              shops={shops}
-              promotion={promotion}
-            />
+          {shouldShowPromotionDetails ? (
+            promotion && (
+              <PromotionDetails
+                faqs={faqs}
+                otherPrizes={otherPrizes}
+                wheelPrizes={wheelPrizes}
+                conditions={conditions}
+                winners={winners}
+                shops={shops}
+                promotion={promotion}
+              />
+            )
+          ) : (
+            <NotFoundError />
           )}
         </Container>
       </Section>

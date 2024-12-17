@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { IStyledLinkProps } from './RegisterCodeBtn.types';
 
 export const Button = styled.button`
   display: flex;
@@ -30,7 +31,7 @@ export const Button = styled.button`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<IStyledLinkProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +48,7 @@ export const StyledLink = styled(Link)`
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
+  pointer-events: ${({ isPreviewPage }) => isPreviewPage && 'none'};
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   &:is(:hover, :focus) {

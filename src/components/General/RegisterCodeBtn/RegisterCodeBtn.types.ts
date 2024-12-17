@@ -4,3 +4,7 @@ export interface IProps {
   onRegisterCodeBtnClickOnAllPages: OnBtnClickFunc;
   onRegisterCodeBtnClickOnPromotionPage: OnBtnClickFunc;
 }
+
+export interface IStyledLinkProps {
+  isPreviewPage: boolean;
+}

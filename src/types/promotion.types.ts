@@ -15,23 +15,23 @@ export interface IPromotion {
   logo: StringOrNull;
   date_from: NumberOrNull;
   date_to: NumberOrNull;
-  conditions_text: string;
+  conditions_text: StringOrNull;
   main_banner_dt: StringOrNull;
   main_banner_mob: StringOrNull;
   second_banner_dt: StringOrNull;
   second_banner_mob: StringOrNull;
   third_banner_mob: StringOrNull;
   third_banner_dt: StringOrNull;
-  hot_line_phone: string;
-  hot_line_email: string;
-  hot_line_text: string;
-  hot_line_text_2: string;
-  hot_line_work_hours: string;
+  hot_line_phone: StringOrNull;
+  hot_line_email: StringOrNull;
+  hot_line_text: StringOrNull;
+  hot_line_text_2: StringOrNull;
+  hot_line_work_hours: StringOrNull;
   coverage_type: CoverageType;
-  action_type: ActionType;
-  rules_pdf: string;
-  logo_partner: string;
-  legal_text: string;
+  action_type: ActionType | null;
+  rules_pdf: StringOrNull;
+  logo_partner: StringOrNull;
+  legal_text: StringOrNull;
 }
 
 export type Promotions = IPromotion[];
@@ -77,3 +77,8 @@ export interface IGetPromotionDateProps {
 }
 
 export type TargetPromotionDetailsState = IPromotion | null;
+
+export interface IGetPromotionByIdProps {
+  actionId: string;
+  previewId: string;
+}

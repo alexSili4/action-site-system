@@ -18,8 +18,9 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [winners, setWinners] = useState<WinnersByDates>([]);
   const [shops, setShops] = useState<Shops>([]);
   const promotionId = useDynamicId();
-  const promotion = usePromotion();
+  const { promotion, isNotFoundError } = usePromotion();
   const navigate = useServiceUnavailablePageNavigate();
+  const shouldShowPromotionDetails = !isNotFoundError;
 
   useEffect(() => {
     const getPromotionConditions = async (
@@ -116,6 +117,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     winners,
     shops,
     promotion,
+    shouldShowPromotionDetails,
   };
 };
 

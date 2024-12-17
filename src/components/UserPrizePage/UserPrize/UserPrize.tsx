@@ -36,8 +36,11 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
     date: createdAtNumber,
     dateFormat: DateFormats.winnersDate,
   });
-  const validHotLinePhone = getValidPhone(hotLinePhone);
 
+  const hotLinePhoneString = hotLinePhone ?? '';
+  const hotLineWorkHoursString = hotLineWorkHours ?? '';
+
+  const validHotLinePhone = getValidPhone(hotLinePhoneString);
   const partnerLgoUrl = getFileUrl(partnerLogo);
   const image = images[0]?.image ?? '';
   const prizeImgUrl = getFileUrl(image);
@@ -52,9 +55,9 @@ const UserPrize: FC<IProps> = ({ prize: { code: userCode, gift, action } }) => {
         partnerLogo={partnerLgoUrl}
         partnerName={partnerName}
         prizeName={prizeName}
-        hotLinePhone={hotLinePhone}
+        hotLinePhone={hotLinePhoneString}
         promotionName={promotionName}
-        hotLineWorkHours={hotLineWorkHours}
+        hotLineWorkHours={hotLineWorkHoursString}
         promotionDetailsPath={promotionDetailsPath}
         codeDetailsPath={codeDetailsPath}
         validHotLinePhone={validHotLinePhone}

@@ -1,6 +1,7 @@
 enum PagePaths {
   root = '/',
   dynamicParam = 'id',
+  dynamicPreviewId = 'preview',
   dynamicCode = 'code',
   cabinet = '/cabinet',
   promotions = '/promotions',

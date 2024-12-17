@@ -4,10 +4,10 @@ import useTargetPromotion from './useTargetPromotion';
 const useTargetPromotionData = (): IUseTargetPromotionData => {
   const targetPromotion = useTargetPromotion();
 
-  const { legal_text: legalText = '' } = targetPromotion ?? {};
+  const { legal_text: legalText } = targetPromotion ?? {};
 
   return {
-    legalText,
+    legalText: legalText ?? '',
   };
 };
 

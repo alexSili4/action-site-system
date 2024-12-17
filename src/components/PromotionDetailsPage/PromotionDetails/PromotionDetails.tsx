@@ -48,7 +48,7 @@ const PromotionDetails: FC<IProps> = ({
     rules_pdf: rulesPdf,
     coverage_type: coverageType,
     hot_line_email: hotLineEmail,
-    hot_line_phone: hotLinePhone,
+    hot_line_phone: hotLinePhone = '',
     logo,
     hot_line_work_hours: hotLineWorkHours,
     hot_line_text: hotLineText,
@@ -65,14 +65,26 @@ const PromotionDetails: FC<IProps> = ({
     bannerDt: secondBannerDt,
     bannerMob: secondBannerMob,
   });
-  const validHotLinePhone = getValidPhone(hotLinePhone);
+  const validHotLinePhone = getValidPhone(hotLinePhone ?? '');
   const logoUrl = getFileUrl(logo ?? '');
-  const logoPartnerUrl = getFileUrl(logoPartner);
-  const rulesPdfUrl = getFileUrl(rulesPdf);
+  const logoPartnerUrl = getFileUrl(logoPartner ?? '');
+  const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
   const isNationalPromotion = coverageType === 'national';
   const shouldShowPrizesWheel = getShouldShowPrizesWheel(actionType);
+
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);
+  const shouldShowContactsSection =
+    Boolean(shops.length) && hotLineEmail && hotLinePhone;
+  const shouldShowFAQsSection =
+    Boolean(faqs.length) &&
+    hotLineOtherText &&
+    hotLinePhone &&
+    hotLineText &&
+    hotLineWorkHours;
+  const shouldShowWheelPrizesSection = Boolean(wheelPrizes.length);
+  const shouldShowOtherPrizesSection = Boolean(otherPrizes.length);
+  const shouldShowConditionsSection = Boolean(conditions.length);
 
   const promotionCategoryState = state?.promotionCategory;
   const from = state?.from;
@@ -99,40 +111,50 @@ const PromotionDetails: FC<IProps> = ({
             shouldShowPrizesWheel={shouldShowPrizesWheel}
           />
         </PromotionDetailsSectionContainer>
-        <PromotionConditions conditions={conditions} rulesPdf={rulesPdfUrl} />
-        <PromotionPrizes
-          logo={<PromotionPrizesBannerIcon src={logoPartnerUrl} />}
-          prizes={otherPrizes}
-          title='Призи головного розіграшу'
-          description='Унікальний приз від головного партнера'
-          showRegCodeLink={false}
-          id={PromotionDetailsPageSections.prizes}
-        />
-        <PromotionPrizes
-          logo={<PrizesWheelLogo />}
-          prizes={wheelPrizes}
-          title='Призи «Колеса подарунків»'
-          description='Крутіть колесо та вигравайте подарунки'
-        />
-        <PromotionFAQs
-          faqs={faqs}
-          hotLineOtherText={hotLineOtherText}
-          hotLinePhone={hotLinePhone}
-          hotLineText={hotLineText}
-          hotLineWorkHours={hotLineWorkHours}
-          validHotLinePhone={validHotLinePhone}
-        />
+        {shouldShowConditionsSection && (
+          <PromotionConditions conditions={conditions} rulesPdf={rulesPdfUrl} />
+        )}
+        {shouldShowOtherPrizesSection && (
+          <PromotionPrizes
+            logo={<PromotionPrizesBannerIcon src={logoPartnerUrl} />}
+            prizes={otherPrizes}
+            title='Призи головного розіграшу'
+            description='Унікальний приз від головного партнера'
+            showRegCodeLink={false}
+            id={PromotionDetailsPageSections.prizes}
+          />
+        )}
+        {shouldShowWheelPrizesSection && (
+          <PromotionPrizes
+            logo={<PrizesWheelLogo />}
+            prizes={wheelPrizes}
+            title='Призи «Колеса подарунків»'
+            description='Крутіть колесо та вигравайте подарунки'
+          />
+        )}
+        {shouldShowFAQsSection && (
+          <PromotionFAQs
+            faqs={faqs}
+            hotLineOtherText={hotLineOtherText}
+            hotLinePhone={hotLinePhone}
+            hotLineText={hotLineText}
+            hotLineWorkHours={hotLineWorkHours}
+            validHotLinePhone={validHotLinePhone}
+          />
+        )}
         {shouldShowWinnersSection && <PromotionWinners winners={winners} />}
-        <PromotionContacts
-          shops={shops}
-          hotLineEmail={hotLineEmail}
-          hotLinePhone={hotLinePhone}
-          logoUrl={logoUrl}
-          secondBannerDt={bannerDtUrl}
-          secondBannerMob={bannerMobUrl}
-          isNationalPromotion={isNationalPromotion}
-          validHotLinePhone={validHotLinePhone}
-        />
+        {shouldShowContactsSection && (
+          <PromotionContacts
+            shops={shops}
+            hotLineEmail={hotLineEmail}
+            hotLinePhone={hotLinePhone}
+            logoUrl={logoUrl}
+            secondBannerDt={bannerDtUrl}
+            secondBannerMob={bannerMobUrl}
+            isNationalPromotion={isNationalPromotion}
+            validHotLinePhone={validHotLinePhone}
+          />
+        )}
       </Content>
     </Container>
   );

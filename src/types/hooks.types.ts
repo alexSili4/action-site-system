@@ -104,6 +104,7 @@ export interface IUsePromotionDetailsPage {
   winners: WinnersByDates;
   shops: Shops;
   promotion: TargetPromotionDetailsState;
+  shouldShowPromotionDetails: boolean;
 }
 
 export type UseTargetPromotion = IPromotion | undefined;
@@ -213,3 +214,13 @@ export interface IUseCabinetStateProps {
 }
 
 export type UseFirstUnusedUserCode = IClientCode | undefined;
+
+export interface IUsePromotion {
+  promotion: TargetPromotionDetailsState;
+  isNotFoundError: boolean;
+}
+
+export interface IUsePreviewPage {
+  isPreviewPage: boolean;
+  previewId: string;
+}
