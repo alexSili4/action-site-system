@@ -29,9 +29,14 @@ class PromotionsService extends HttpService {
     actionId,
     previewId,
   }: IGetPromotionByIdProps): Promise<IPromotion> {
+    const promotionUrl = `promotions/promo?action_id=${actionId}`;
+    const fullPromotionUrl = previewId
+      ? `${promotionUrl}&preview=${previewId}`
+      : promotionUrl;
+
     const response = await this.get<IPromotion>(
       {
-        url: `promotions/promo?action_id=${actionId}&preview=${previewId}`,
+        url: fullPromotionUrl,
       },
       false
     );
