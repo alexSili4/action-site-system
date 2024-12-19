@@ -28,6 +28,7 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
   const winnersRef = useRef<DivRef>(null);
   const isEmptyWinnersList = !winners.length;
   const btnTitle = formatDate({ date, dateFormat: DateFormats.winnersDate });
+  const targetPdfFileUrl = winners.length ? pdfFile : '';
 
   useEffect(() => {
     if (winnersRef.current) {
@@ -88,7 +89,7 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
             paddingBottomDesk={40}
           >
             <ResultsLink
-              href={pdfFile}
+              href={targetPdfFileUrl}
               target='_blank'
               rel='noopener noreferrer nofollow'
             >

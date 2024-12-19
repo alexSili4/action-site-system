@@ -4,7 +4,9 @@ import formatDate from './formatDate';
 import { DateFormats } from '@/constants';
 
 const getClosestDateIndex = (winners: WinnersByDates): number => {
-  const allDates = winners.map(({ date }) => date);
+  const allDates = winners
+    .filter(({ winners }) => winners.length)
+    .map(({ date }) => date);
   const closestDate = closestTo(new Date(), allDates) ?? new Date();
   const closestDateIndex = winners.findIndex(
     ({ date }) =>

@@ -5,6 +5,7 @@ import {
   selectGetCities,
   selectCities,
   selectError,
+  selectIsLoaded,
 } from '@/store/cities/selectors';
 import { SearchParamsKeys, SectionsIds, theme } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
@@ -30,6 +31,7 @@ const useLocationFilter = ({
   const getCities = useCitiesStore(selectGetCities);
   const error = useCitiesStore(selectError);
   const cities = useCitiesStore(selectCities);
+  const isLoaded = useCitiesStore(selectIsLoaded);
   useStoreError(error);
   const { updateSearchParams, searchParams } = useSetSearchParams();
   const cityId = searchParams.get(SearchParamsKeys.cityId) ?? '';
@@ -43,10 +45,10 @@ const useLocationFilter = ({
   const isBigSize = isRootPage || isModalWin;
 
   useEffect(() => {
-    if (!cities.length) {
+    if (!cities.length && !isLoaded && !error) {
       getCities();
     }
-  }, [cities, getCities]);
+  }, [cities]);
 
   const toggleShowLocationList = () => {
     setShowLocationList((prevState) => !prevState);
