@@ -202,6 +202,7 @@ export interface IUsePrizesWheelSection {
   targetPrize: IGift | null;
   sectorSize: number;
   sectorGradientStart: number;
+  isOddPartnersNumber: boolean;
 }
 
 export interface IUseCabinetPage {

@@ -20,6 +20,7 @@ export interface IStyledSectorProps {
   size: number;
   gradientStart: number;
   isLockPrize: boolean;
+  isOddPartnersNumber: boolean;
 }
 
 export interface IStyledImage {
@@ -28,4 +29,5 @@ export interface IStyledImage {
 
 export interface IStyledDelimiter {
   rotate: number;
+  isOddPartnersNumber: boolean;
 }

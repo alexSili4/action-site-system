@@ -105,28 +105,22 @@ export const Sector = styled.div<IStyledSectorProps>`
   transform-origin: 50% 50%;
   background-image: conic-gradient(
     from ${({ gradientStart }) => gradientStart}deg,
-    ${({ isLockPrize, theme }) =>
-        isLockPrize ? theme.colors.lightGrey : '#f6effd'}
+    ${({ isLockPrize, theme: { colors } }) =>
+        isLockPrize ? colors.lightGrey : colors.white}
       0deg ${({ size }) => size}deg,
     transparent ${({ size }) => size}deg 360deg
   );
   transform: rotate(${({ rotate }) => rotate}deg);
 
-  &:nth-of-type(2n + 1) {
+  &:nth-of-type(even) {
     background-image: conic-gradient(
       from ${({ gradientStart }) => gradientStart}deg,
-      ${({ isLockPrize, theme }) =>
-          isLockPrize ? theme.colors.lightGrey : '#eff4fd'}
-        0deg ${({ size }) => size}deg,
-      transparent ${({ size }) => size}deg 360deg
-    );
-  }
-
-  &:nth-of-type(3n + 1) {
-    background-image: conic-gradient(
-      from ${({ gradientStart }) => gradientStart}deg,
-      ${({ isLockPrize, theme }) =>
-          isLockPrize ? theme.colors.lightGrey : '#fdeffa'}
+      ${({ isLockPrize, isOddPartnersNumber, theme: { colors } }) =>
+          isLockPrize
+            ? colors.lightGrey
+            : !isOddPartnersNumber
+            ? '#f3f1fe'
+            : colors.white}
         0deg ${({ size }) => size}deg,
       transparent ${({ size }) => size}deg 360deg
     );
@@ -156,9 +150,10 @@ export const Delimiter = styled.div<IStyledDelimiter>`
   position: absolute;
   bottom: 50%;
   left: 50%;
-  width: 2px;
+  width: ${({ isOddPartnersNumber }) => (isOddPartnersNumber ? 4 : 2)}px;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme, isOddPartnersNumber }) =>
+    isOddPartnersNumber ? '#a6a6a6' : theme.colors.lightGrey};
   transform-origin: bottom left;
   transform: translateX(-100%) rotate(${({ rotate }) => rotate}deg);
 `;

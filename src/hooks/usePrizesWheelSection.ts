@@ -26,6 +26,7 @@ const usePrizesWheelSection = ({
   const navigate = useServiceUnavailablePageNavigate();
   const sectorSize = 360 / partners.length;
   const sectorGradientStart = 360 - sectorSize / 2;
+  const isOddPartnersNumber = Boolean(partners.length % 2);
 
   const fetchPrizeIdx = async (codeId: number) => {
     setIsSpinning(true);
@@ -80,6 +81,7 @@ const usePrizesWheelSection = ({
     targetPrize,
     sectorSize,
     sectorGradientStart,
+    isOddPartnersNumber,
   };
 };
 

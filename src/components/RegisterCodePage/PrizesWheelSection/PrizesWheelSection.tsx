@@ -35,6 +35,7 @@ const PrizesWheelSection: FC<IProps> = ({
     targetPrize,
     sectorSize,
     sectorGradientStart,
+    isOddPartnersNumber,
   } = usePrizesWheelSection({
     partners,
     spinningMs,
@@ -63,12 +64,16 @@ const PrizesWheelSection: FC<IProps> = ({
                     size={sectorSize}
                     rotate={sectorRotate}
                     gradientStart={sectorGradientStart}
+                    isOddPartnersNumber={isOddPartnersNumber}
                   >
                     <Image src={logoUrl} isLockPrize={isLockPrize} />
                     {isLockPrize && (
                       <BiLock size={theme.iconSizes.prizesWheelLock} />
                     )}
-                    <Delimiter rotate={delimiterRotate} />
+                    <Delimiter
+                      rotate={delimiterRotate}
+                      isOddPartnersNumber={isOddPartnersNumber}
+                    />
                   </Sector>
                 );
               })}
