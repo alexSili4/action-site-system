@@ -11,7 +11,7 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
     code,
     bannerMobUrl,
     bannerDtUrl,
-    certificatePdfUrl,
+    certificatePdf,
     getConditions,
     partnerLogoUrl,
     partnerName,
@@ -32,7 +32,7 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
         certificateCode={certificateCode}
         thirdBannerMob={bannerMobUrl}
         thirdBannerDt={bannerDtUrl}
-        certificatePdf={certificatePdfUrl}
+        certificatePdf={certificatePdf}
       />
       <UserCertificateDetails
         code={code}

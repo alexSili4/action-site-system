@@ -163,7 +163,7 @@ export interface IUseUserCertificate {
   code: string;
   bannerMobUrl: string;
   bannerDtUrl: string;
-  certificatePdfUrl: string;
+  certificatePdf: string;
   getConditions: string;
   partnerLogoUrl: string;
   partnerName: string;

@@ -27,6 +27,7 @@ export interface IGift {
 
 export interface ICertificate {
   certificate_code: string;
+  pdf_url: string;
 }
 
 export interface ICode {

@@ -31,7 +31,11 @@ const UserCertificateBanner: FC<IProps> = ({
             thirdBannerDt={thirdBannerDt}
             thirdBannerMob={thirdBannerMob}
           >
-            <DownloadLink href={certificatePdf} download>
+            <DownloadLink
+              href={certificatePdf}
+              target='_blank'
+              rel='noopener noreferrer nofollow'
+            >
               <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
               <RiDownloadLine
                 size={theme.iconSizes.cabinetDownloadCertificateLink}

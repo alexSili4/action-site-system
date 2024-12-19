@@ -18,7 +18,6 @@ const useUserCertificate = (
     gift,
     action,
     expired_date: expiredDate,
-    certificate_pdf: certificatePdf,
     certificate,
   } = data;
 
@@ -33,14 +32,14 @@ const useUserCertificate = (
     third_banner_mob: thirdBannerMob,
     id: actionId,
   } = action;
-  const { certificate_code: certificateCode } = certificate;
+  const { certificate_code: certificateCode, pdf_url: certificatePdf } =
+    certificate;
   const hotLinePhoneString = hotLinePhone ?? '';
 
   const validHotLinePhone = getValidPhone(hotLinePhoneString);
   const codeDetailsPath = getCodeDetailsPath(codeId);
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const partnerLogoUrl = getFileUrl(partnerLogo);
-  const certificatePdfUrl = getFileUrl(certificatePdf);
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
     bannerDt: thirdBannerDt,
     bannerMob: thirdBannerMob,
@@ -57,7 +56,7 @@ const useUserCertificate = (
     code,
     bannerMobUrl,
     bannerDtUrl,
-    certificatePdfUrl,
+    certificatePdf,
     getConditions,
     partnerLogoUrl,
     partnerName,
