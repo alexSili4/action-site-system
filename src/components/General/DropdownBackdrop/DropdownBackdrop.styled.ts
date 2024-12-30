@@ -7,6 +7,7 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: pink;
-  opacity: 0.8;
+  /* TODO fix */
+  /* background-color: pink; */
+  /* opacity: 0.8; */
 `;
