@@ -49,7 +49,7 @@ const RegisterCodePage: FC = () => {
 
         setPartners(response);
       } catch (error) {
-        navigateToErrorPage();
+        navigateToErrorPage(true);
       }
     };
 

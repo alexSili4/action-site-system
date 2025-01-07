@@ -29,7 +29,7 @@ const usePromotion = (): IUsePromotion => {
           setIsNotFoundError(true);
         }
       } catch (error) {
-        navigate();
+        navigate(true);
       }
     };
 
