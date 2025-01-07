@@ -10,7 +10,7 @@ import { ServiceUnavailableState } from '@/types/serviceUnavailableState.types';
 const ServiceUnavailablePage: FC = () => {
   const { state }: ServiceUnavailableState = useLocation();
 
-  const shouldRedirect = !state?.isRedirect;
+  const shouldRedirect = !state?.isError;
   const redirectPath = state?.from ?? PagePaths.root;
 
   return shouldRedirect ? (

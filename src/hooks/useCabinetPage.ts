@@ -1,16 +1,9 @@
 import { useUserCodesStore, useUserPrizesStore } from '@/store/store';
-import {
-  selectGetUserCodes,
-  selectError as selectUserCodesError,
-} from '@/store/userCodes/selectors';
+import { selectGetUserCodes } from '@/store/userCodes/selectors';
 import { useSetSearchParams } from '@/hooks';
 import { SearchParamsKeys, StatisticsCategoriesKeys } from '@/constants';
-import {
-  selectGetUserPrizes,
-  selectError as selectUserPrizesError,
-} from '@/store/userPrizes/selectors';
+import { selectGetUserPrizes } from '@/store/userPrizes/selectors';
 import { useEffect, useState } from 'react';
-import useStoreError from './useStoreError';
 import { useLocation } from 'react-router-dom';
 import { CabinetState } from '@/types/cabinet.types';
 import { IUseCabinetPage } from '@/types/hooks.types';
@@ -22,10 +15,6 @@ const useCabinetPage = (): IUseCabinetPage => {
     useState<boolean>(() => isRedirectFromRegCodePage);
   const getUserCodes = useUserCodesStore(selectGetUserCodes);
   const getUserPrizes = useUserPrizesStore(selectGetUserPrizes);
-  const userCodesError = useUserCodesStore(selectUserCodesError);
-  const userPrizesError = useUserPrizesStore(selectUserPrizesError);
-  useStoreError(userCodesError);
-  useStoreError(userPrizesError);
 
   const { searchParams } = useSetSearchParams();
   const page = searchParams.get(SearchParamsKeys.page) ?? '1';

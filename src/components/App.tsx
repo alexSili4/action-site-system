@@ -7,14 +7,10 @@ import { useAuthStore, useUnusedUserCodesStore } from '@/store/store';
 import {
   selectIsRefreshing,
   selectRefresh,
-  selectError as selectAuthError,
   selectIsLoggedIn,
 } from '@/store/auth/selectors';
 import useStoreError from '@/hooks/useStoreError';
-import {
-  selectGetUnusedUserCodes,
-  selectError as selectUnusedUserCodesError,
-} from '@/store/unusedUserCodes/selectors';
+import { selectGetUnusedUserCodes } from '@/store/unusedUserCodes/selectors';
 
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const ServiceUnavailablePage = lazy(
@@ -34,15 +30,10 @@ const App: FC = () => {
   usePromotions();
   const { pathname } = useLocation();
   const refresh = useAuthStore(selectRefresh);
-  const authError = useAuthStore(selectAuthError);
   const getUnusedCodes = useUnusedUserCodesStore(selectGetUnusedUserCodes);
-  const unusedUserCodesError = useUnusedUserCodesStore(
-    selectUnusedUserCodesError
-  );
   const isRefreshing = useAuthStore(selectIsRefreshing);
   const isLoggedIn = useAuthStore(selectIsLoggedIn);
-  useStoreError(authError);
-  useStoreError(unusedUserCodesError);
+  useStoreError();
 
   useEffect(() => {
     const refreshProfile = async () => {

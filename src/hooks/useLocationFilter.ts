@@ -4,8 +4,8 @@ import { useCitiesStore } from '@/store/store';
 import {
   selectGetCities,
   selectCities,
-  selectError,
   selectIsLoaded,
+  selectError,
 } from '@/store/cities/selectors';
 import { SearchParamsKeys, SectionsIds, theme } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
@@ -19,7 +19,6 @@ import {
   IUseLocationFilter,
 } from '@/types/hooks.types';
 import { useOutletContext } from 'react-router-dom';
-import useStoreError from './useStoreError';
 
 const useLocationFilter = ({
   makeScroll,
@@ -29,10 +28,8 @@ const useLocationFilter = ({
 }: IUseLocationFilterProps): IUseLocationFilter => {
   const isDesktop = useMediaQuery(theme.breakpoints.desktop);
   const getCities = useCitiesStore(selectGetCities);
-  const error = useCitiesStore(selectError);
   const cities = useCitiesStore(selectCities);
   const isLoaded = useCitiesStore(selectIsLoaded);
-  useStoreError(error);
   const { updateSearchParams, searchParams } = useSetSearchParams();
   const cityId = searchParams.get(SearchParamsKeys.cityId) ?? '';
   const [showLocationList, setShowLocationList] = useState<boolean>(false);
@@ -42,6 +39,7 @@ const useLocationFilter = ({
   });
   const shouldMakeScroll = makeScroll && !showLocationList && !isDesktop;
   const { showOtherModalWin }: IGeneralOutletContext = useOutletContext() ?? {};
+  const error = useCitiesStore(selectError);
   const isBigSize = isRootPage || isModalWin;
 
   useEffect(() => {

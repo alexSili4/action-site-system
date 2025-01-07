@@ -56,7 +56,7 @@ const usePrizesWheelSection = ({
         setIsWheelSpun(true);
       }, spinningMs);
     } catch (error) {
-      navigate();
+      navigate(true);
     }
   };
 

@@ -29,6 +29,8 @@ export type OnSwiperSlideChange = (swiper: Swiper) => void;
 
 export type SetNumberFunc = (data: number) => void;
 
+export type SetBooleanFunc = (data: boolean) => void;
+
 export type SetStringOrNullFunc = (data: StringOrNull) => void;
 
 // other

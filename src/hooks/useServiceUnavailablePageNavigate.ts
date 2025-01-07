@@ -1,26 +1,21 @@
 import { PagePaths } from '@/constants';
 import { IServiceUnavailableState } from '@/types/serviceUnavailableState.types';
-import { Func } from '@/types/types';
+import { SetBooleanFunc } from '@/types/types';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const useServiceUnavailablePageNavigate = (): Func => {
+const useServiceUnavailablePageNavigate = (): SetBooleanFunc => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const serviceUnavailableState: IServiceUnavailableState = {
-    from: location,
-    isRedirect: true,
-  };
+  const redirectToServiceUnavailablePage = (isError: boolean) => {
+    const serviceUnavailableState: IServiceUnavailableState = {
+      from: location,
+      isError,
+    };
 
-  const redirectToServiceUnavailablePageOptions = {
-    state: serviceUnavailableState,
-  };
-
-  const redirectToServiceUnavailablePage = () => {
-    navigate(
-      PagePaths.serviceUnavailable,
-      redirectToServiceUnavailablePageOptions
-    );
+    navigate(PagePaths.serviceUnavailable, {
+      state: serviceUnavailableState,
+    });
   };
 
   return redirectToServiceUnavailablePage;

@@ -51,7 +51,7 @@ const useSentCertificateForm = ({
         const response = await codesService.getUserData(codeId);
         updateUserData(response);
       } catch (error) {
-        navigate();
+        navigate(true);
       }
     };
 

@@ -2,7 +2,7 @@ import { PageLocation } from './types';
 
 export interface IServiceUnavailableState {
   from: PageLocation;
-  isRedirect: boolean;
+  isError: boolean;
 }
 
 export type ServiceUnavailableState = {
