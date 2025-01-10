@@ -67,6 +67,7 @@ const UserCodeDetails: FC<IProps> = ({
   shopAddress,
   receiptNumber,
   certificateUrl,
+  isValidShopAddress,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
   const cabinetState = useCabinetState();
@@ -118,11 +119,13 @@ const UserCodeDetails: FC<IProps> = ({
                 <CodeDetailsSubtitle>Магазин де отримано:</CodeDetailsSubtitle>
                 <CodeDetailsTextWrap>
                   <CodeDetailsText>{shopAddress}</CodeDetailsText>
-                  <TargetShopAddressIconWrap>
-                    <HiLocationMarker
-                      size={theme.iconSizes.userCodeDetailsMarker}
-                    />
-                  </TargetShopAddressIconWrap>
+                  {isValidShopAddress && (
+                    <TargetShopAddressIconWrap>
+                      <HiLocationMarker
+                        size={theme.iconSizes.userCodeDetailsMarker}
+                      />
+                    </TargetShopAddressIconWrap>
+                  )}
                 </CodeDetailsTextWrap>
               </CodeDetailsItem>
             </CodeDetailsWrap>
@@ -130,11 +133,13 @@ const UserCodeDetails: FC<IProps> = ({
               <TargetShopTitle>Магазин де отримано:</TargetShopTitle>
               <TargetShop>
                 <TargetShopAddress>{shopAddress}</TargetShopAddress>{' '}
-                <TargetShopAddressIconWrap>
-                  <HiLocationMarker
-                    size={theme.iconSizes.userCodeDetailsMarker}
-                  />
-                </TargetShopAddressIconWrap>
+                {isValidShopAddress && (
+                  <TargetShopAddressIconWrap>
+                    <HiLocationMarker
+                      size={theme.iconSizes.userCodeDetailsMarker}
+                    />
+                  </TargetShopAddressIconWrap>
+                )}
               </TargetShop>
             </TargetShopWrap>
             <PrizeDrawingDateWrap>

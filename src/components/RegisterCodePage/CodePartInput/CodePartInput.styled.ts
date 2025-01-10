@@ -10,6 +10,7 @@ export const StyledInput = styled.input`
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 5px;
+  text-transform: uppercase;
   text-align: center;
 
   &:is(:hover, :focus) {

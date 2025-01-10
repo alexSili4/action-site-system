@@ -76,8 +76,13 @@ const UserCode: FC<IProps> = ({ code }) => {
   });
 
   const certificateUrl = getFileUrl(certificatePdfUrl);
+  const isValidShopAddress =
+    Boolean(shopNum) && Boolean(cityName) && Boolean(shopStreet);
 
   const shopAddress = `№${shopNum} ${cityName}, ${shopStreet}`;
+  const targetShopAddress = isValidShopAddress
+    ? shopAddress
+    : generalSettings.defaultDataText;
 
   const userReceiptNumber = receiptNumber
     ? String(receiptNumber)
@@ -112,8 +117,9 @@ const UserCode: FC<IProps> = ({ code }) => {
         drawDate={formattedDrawDate}
         drawPrizeDate={formattedWinDate}
         receiptNumber={receiptNumber}
-        shopAddress={shopAddress}
+        shopAddress={targetShopAddress}
         certificateUrl={certificateUrl}
+        isValidShopAddress={isValidShopAddress}
       />
     </UserStatisticsDetailsContainer>
   );

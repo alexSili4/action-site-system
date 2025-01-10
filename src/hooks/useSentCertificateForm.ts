@@ -56,7 +56,7 @@ const useSentCertificateForm = ({
     };
 
     getUserName(codeId);
-  }, [codeId, updateUserData]);
+  }, [codeId]);
 
   const handleFormSubmit: SubmitHandler<ISentCertificateFormData> = async ({
     email,

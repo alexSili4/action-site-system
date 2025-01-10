@@ -19,6 +19,7 @@ export interface IProps {
   shopAddress: string;
   receiptNumber: number | undefined;
   certificateUrl: string;
+  isValidShopAddress: boolean;
 }
 
 export interface IStyledCodeDetailsSubtitleProps {

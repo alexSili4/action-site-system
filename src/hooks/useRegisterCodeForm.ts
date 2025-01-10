@@ -84,7 +84,11 @@ const useRegisterCodeForm = (
   };
 
   const handleFormSubmit: SubmitHandler<IRegCodeFormData> = async (data) => {
-    const code = [data.codePart1, data.codePart2, data.codePart3].join('');
+    const validCodePart1 = data.codePart1.toUpperCase();
+    const validCodePart2 = data.codePart2.toUpperCase();
+    const validCodePart3 = data.codePart3.toUpperCase();
+
+    const code = [validCodePart1, validCodePart2, validCodePart3].join('');
 
     registerCode({ code, csrfToken, csrfTokenName });
   };

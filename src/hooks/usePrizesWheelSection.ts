@@ -9,9 +9,10 @@ import {
   getFinalTotalDegrees,
   getInitialTotalDegrees,
   makeBlur,
+  toasts,
 } from '@/utils';
+import { AxiosError } from 'axios';
 import { useState } from 'react';
-import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
 
 const usePrizesWheelSection = ({
   partners,
@@ -23,7 +24,6 @@ const usePrizesWheelSection = ({
   const [totalDegrees, setTotalDegrees] = useState<number>(0);
   const [isWheelSpun, setIsWheelSpun] = useState<boolean>(false);
   const [targetPrize, setTargetPrize] = useState<IGift | null>(null);
-  const navigate = useServiceUnavailablePageNavigate();
   const sectorSize = 360 / partners.length;
   const sectorGradientStart = 360 - sectorSize / 2;
   const isOddPartnersNumber = Boolean(partners.length % 2);
@@ -56,7 +56,13 @@ const usePrizesWheelSection = ({
         setIsWheelSpun(true);
       }, spinningMs);
     } catch (error) {
-      navigate(true);
+      if (error instanceof AxiosError) {
+        toasts.errorToast(error.response?.data.message);
+      }
+    } finally {
+      setTimeout(() => {
+        setIsSpinning(false);
+      }, spinningMs);
     }
   };
 
