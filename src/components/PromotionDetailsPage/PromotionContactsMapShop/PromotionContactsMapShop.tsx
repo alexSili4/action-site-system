@@ -9,6 +9,7 @@ import {
   RadioBtn,
   Location,
 } from './PromotionContactsMapShop.styled';
+import { generalSettings } from '@/constants';
 
 const PromotionContactsMapShop: FC<IProps> = ({
   onChange,
@@ -19,13 +20,16 @@ const PromotionContactsMapShop: FC<IProps> = ({
   address,
   location,
 }) => {
+  const targetWorkSchedule = workSchedule
+    ? workSchedule
+    : generalSettings.defaultDataText;
   return (
     <Container id={id}>
       <TitleWrap>
         <Name>АТБ-Маркет</Name>
         <Location>м. {location}</Location>
         <Address>{address}</Address>
-        <WorkSchedule>Режим роботи: {workSchedule}</WorkSchedule>
+        <WorkSchedule>Режим роботи: {targetWorkSchedule}</WorkSchedule>
       </TitleWrap>
       <RadioBtn
         type='radio'

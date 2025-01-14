@@ -44,6 +44,7 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
       />
       {shops.map(
         ({ shop_num: shopNum, geo_lat: geoLat, geo_long: geoLong }) => {
+          const shouldShowShopMarker = Boolean(geoLat) && Boolean(geoLong);
           const isActiveShop = activeShopNum === shopNum;
           const icon = isActiveShop ? customActiveMarkerIcon : customMarkerIcon;
           const markerPosition: LatLngExpression = {
@@ -60,12 +61,14 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
           };
 
           return (
-            <Marker
-              icon={icon}
-              key={shopNum}
-              position={markerPosition}
-              eventHandlers={eventHandlers}
-            ></Marker>
+            shouldShowShopMarker && (
+              <Marker
+                icon={icon}
+                key={shopNum}
+                position={markerPosition}
+                eventHandlers={eventHandlers}
+              ></Marker>
+            )
           );
         }
       )}

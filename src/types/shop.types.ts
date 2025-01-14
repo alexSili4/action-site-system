@@ -1,8 +1,8 @@
-import { NumberOrNull } from './types';
+import { NumberOrNull, StringOrNull } from './types';
 
 export interface ICity {
   name: string;
-  coordinates: string;
+  coordinates: StringOrNull;
 }
 
 export interface IRegion {
@@ -13,9 +13,9 @@ export interface IShop {
   shop_num: number;
   name: string;
   street: string;
-  geo_lat: string;
-  geo_long: string;
-  work_hours: string;
+  geo_lat: StringOrNull;
+  geo_long: StringOrNull;
+  work_hours: StringOrNull;
   city: ICity;
   region: IRegion;
 }

@@ -4,6 +4,7 @@ import { IStyledProps } from './PromotionBanner.types';
 export const Container = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) => theme.spacing(6)};

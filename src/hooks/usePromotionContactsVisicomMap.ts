@@ -17,9 +17,11 @@ const usePromotionContactsVisicomMap = (): IUsePromotionContactsVisicomMap => {
   const tileLayerAttribution =
     "<a href='https://sun.agency' target='_blank' rel='noopener noreferrer'>Зроблено Сонцем ●</a>";
 
-  const targetCityCenter = getTargetCityCenter(targetCity?.coordinates ?? '');
+  const targetCityCenter = getTargetCityCenter(targetCity?.coordinates);
   const defaultMapCenter: LatLngExpression = [50.4501, 30.5234];
-  const mapCenter = targetCity ? targetCityCenter : defaultMapCenter;
+  const mapCenter = targetCity?.coordinates
+    ? targetCityCenter
+    : defaultMapCenter;
   const ukraineBounds: LatLngBoundsExpression = [
     [44.38, 22.14],
     [52.38, 40.23],
