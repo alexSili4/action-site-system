@@ -177,7 +177,7 @@ const theme: ITheme = {
     animatedModalWin: 100000,
     animatedPrizeWheelModalWin: 100000,
     animatedPrizeImg: 100000,
-    confettiAnimation: 10000000000000000000000,
+    confettiAnimation: 1000000,
   },
   transitionDurationAndFunc: {
     header: '600ms cubic-bezier(0.4, 0, 0.2, 1)',

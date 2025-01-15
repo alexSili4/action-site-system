@@ -1,18 +1,19 @@
 import styled from '@emotion/styled';
+import { IStyledContainerProps } from './PromotionContactsMapShop.types';
 
-export const Container = styled.label`
+export const Container = styled.label<IStyledContainerProps>`
   display: block;
   padding: ${({ theme }) => theme.spacing(6)};
   transition: background-color
     ${({ theme }) => theme.transitionDurationAndFunc.other};
-  cursor: pointer;
+  cursor: ${({ disabled }) => !disabled && 'pointer'};
 
   &:is(:hover, :focus, :has(input:checked)) {
-    background-color: #9066cc;
+    background-color: ${({ disabled }) => !disabled && '#9066cc'};
   }
 
   &:is(:hover, :focus, :has(input:checked)) > span > span {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme, disabled }) => !disabled && theme.colors.white};
   }
 `;
 
@@ -49,7 +50,7 @@ export const Address = styled.span`
   transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 `;
 
-export const WorkSchedule = styled.span`
+export const WorkHours = styled.span`
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;

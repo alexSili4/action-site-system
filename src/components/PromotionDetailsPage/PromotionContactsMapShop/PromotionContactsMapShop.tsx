@@ -5,31 +5,28 @@ import {
   Container,
   Name,
   TitleWrap,
-  WorkSchedule,
+  WorkHours,
   RadioBtn,
   Location,
 } from './PromotionContactsMapShop.styled';
-import { generalSettings } from '@/constants';
 
 const PromotionContactsMapShop: FC<IProps> = ({
   onChange,
   checked,
   value,
   id,
-  workSchedule,
+  workHours,
   address,
   location,
+  disabled,
 }) => {
-  const targetWorkSchedule = workSchedule
-    ? workSchedule
-    : generalSettings.defaultDataText;
   return (
-    <Container id={id}>
+    <Container id={id} disabled={disabled}>
       <TitleWrap>
         <Name>АТБ-Маркет</Name>
         <Location>м. {location}</Location>
         <Address>{address}</Address>
-        <WorkSchedule>Режим роботи: {targetWorkSchedule}</WorkSchedule>
+        <WorkHours>Режим роботи: {workHours}</WorkHours>
       </TitleWrap>
       <RadioBtn
         type='radio'
@@ -37,6 +34,7 @@ const PromotionContactsMapShop: FC<IProps> = ({
         onChange={onChange}
         checked={checked}
         value={value}
+        disabled={disabled}
       />
     </Container>
   );

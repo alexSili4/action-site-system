@@ -3,6 +3,7 @@ import { List, ListItem } from './PromotionContactsMapHeaderShopsList.styled';
 import { IProps } from './PromotionContactsMapHeaderShopsList.types';
 // components
 import PromotionContactsMapShop from '@PromotionDetailsPageComponents/PromotionContactsMapShop';
+import { generalSettings } from '@/constants';
 
 const PromotionContactsMapHeaderShopsList: FC<IProps> = ({
   shops,
@@ -17,8 +18,15 @@ const PromotionContactsMapHeaderShopsList: FC<IProps> = ({
           work_hours: workHours,
           street,
           city: { name: cityName },
+          geo_lat: geoLat,
+          geo_long: geoLong,
         }) => {
           const checked = shopNum === activeShopNum;
+
+          const targetWorkHours = workHours
+            ? workHours
+            : generalSettings.defaultDataText;
+          const activeMapMarker = Boolean(geoLong) && Boolean(geoLat);
 
           return (
             <ListItem key={shopNum}>
@@ -27,9 +35,10 @@ const PromotionContactsMapHeaderShopsList: FC<IProps> = ({
                 value={shopNum}
                 onChange={onInputChange}
                 id={String(shopNum)}
-                workSchedule={workHours}
+                workHours={targetWorkHours}
                 address={street}
                 location={cityName}
+                disabled={!activeMapMarker}
               />
             </ListItem>
           );
