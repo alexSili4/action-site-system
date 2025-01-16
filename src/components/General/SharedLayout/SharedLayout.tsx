@@ -6,8 +6,6 @@ import { useMediaQuery } from '@/hooks';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent, IOutletContext } from '@/types/types';
 // components
-import RegisterCodeModalWinSelectPromotionsLocation from '@GeneralComponents/RegisterCodeModalWinSelectPromotionsLocation';
-import RegisterCodeModalWinSelectPromotion from '@GeneralComponents/RegisterCodeModalWinSelectPromotion';
 import Loader from '@GeneralComponents/Loader';
 import Header from '@GeneralComponents/Header';
 import Footer from '@GeneralComponents/Footer';
@@ -67,14 +65,6 @@ const SharedLayout: FC = () => {
         </Main>
         <Footer />
       </Content>
-      <RegisterCodeModalWinSelectPromotionsLocation
-        showModalWin={showSelectPromotionsLocationModalWin}
-        setModalWinState={toggleShowSelectPromotionsLocationModalWin}
-      />
-      <RegisterCodeModalWinSelectPromotion
-        showModalWin={showSelectPromotionModalWin}
-        setModalWinState={toggleShowSelectPromotionModalWin}
-      />
     </>
   );
 };

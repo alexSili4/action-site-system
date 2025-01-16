@@ -7,7 +7,7 @@ const initialState: IAuthInitialState = {
     phone: null,
     email: null,
   },
-  // TODO fix
+  // TODO return
   isLoggedIn: false,
   isRefreshing: false,
   isLoading: false,

@@ -12,7 +12,7 @@ const useServiceUnavailablePageNavigate = (): SetBooleanFunc => {
       from: location,
       isError,
     };
-
+    // TODO return
     navigate(PagePaths.serviceUnavailable, {
       state: serviceUnavailableState,
     });

@@ -6,9 +6,12 @@ import PromotionWinnersTableByDateList from '@PromotionDetailsPageComponents/Pro
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 
 const PromotionWinners: FC<IProps> = ({ winners }) => {
+  const isWinners = winners.some(({ winners }) => winners.length);
+  const sectionTitle = isWinners ? 'Переможці' : 'Дати розіграшів';
+
   return (
     <Container id={PromotionDetailsPageSections.winners}>
-      <PromotionSectionTitle title='Переможці' />
+      <PromotionSectionTitle title={sectionTitle} />
       <ContentWrap>
         <PromotionWinnersTableByDateList winners={winners} />
       </ContentWrap>

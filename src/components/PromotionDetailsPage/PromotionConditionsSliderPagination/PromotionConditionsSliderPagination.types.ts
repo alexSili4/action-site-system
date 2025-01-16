@@ -8,4 +8,6 @@ export interface IProps {
 
 export interface IStyledProps {
   isActiveBtn: boolean;
+  isAnExtraDeskButton: boolean;
+  isAnExtraTabletButton: boolean;
 }

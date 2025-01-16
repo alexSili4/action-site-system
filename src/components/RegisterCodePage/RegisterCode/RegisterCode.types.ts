@@ -1,9 +1,14 @@
 import { Partners } from '@/types/code.types';
 import { IPromotion } from '@/types/promotion.types';
-import { Func, NumberOrNull, SetNumberFunc } from '@/types/types';
+import {
+  Func,
+  NumberOrNull,
+  SetNumberFunc,
+  SetPromotionFunc,
+} from '@/types/types';
 
 export interface IProps {
-  promotion: IPromotion;
+  promotion: IPromotion | null;
   isFirstStep: boolean;
   isSecondStep: boolean;
   isThirdStep: boolean;
@@ -12,4 +17,5 @@ export interface IProps {
   codeId: NumberOrNull;
   onSuccessRegisterCode: SetNumberFunc;
   incrementCurrentStep: Func;
+  updatePromotion: SetPromotionFunc;
 }

@@ -42,4 +42,17 @@ export const Button = styled.button<IStyledProps>`
   &:is(:hover, :focus) {
     background-color: #9e7ad3;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    position: ${({ isAnExtraTabletButton }) =>
+      isAnExtraTabletButton && 'absolute'};
+    transform: ${({ isAnExtraTabletButton }) =>
+      isAnExtraTabletButton && 'scale(0)'};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    position: ${({ isAnExtraDeskButton }) => isAnExtraDeskButton && 'absolute'};
+    transform: ${({ isAnExtraDeskButton }) =>
+      isAnExtraDeskButton && 'scale(0)'};
+  }
 `;

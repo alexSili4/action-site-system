@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const StyledLink = styled.span`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 50px;

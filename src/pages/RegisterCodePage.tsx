@@ -5,7 +5,6 @@ import {
   useCabinetState,
   useDefaultCodeId,
   useIsUnusedUserCodes,
-  usePromotion,
   useServiceUnavailablePageNavigate,
 } from '@/hooks';
 import { NumberOrNull } from '@/types/types';
@@ -13,6 +12,7 @@ import { Partners } from '@/types/code.types';
 import codesService from '@/services/codes.service';
 import { useNavigate } from 'react-router-dom';
 import { PagePaths } from '@/constants';
+import { IPromotion } from '@/types/promotion.types';
 
 const RegisterCodePage: FC = () => {
   const isUnusedUserCodes = useIsUnusedUserCodes();
@@ -24,9 +24,8 @@ const RegisterCodePage: FC = () => {
     () => targetCurrentStep
   );
   const [codeId, setCodeId] = useState<NumberOrNull>(() => defaultCodeId);
-  // TODO fix
   const [partners, setPartners] = useState<Partners | null>(null);
-  const { promotion } = usePromotion();
+  const [promotion, setPromotion] = useState<IPromotion | null>(null);
   const navigate = useNavigate();
   const navigateToErrorPage = useServiceUnavailablePageNavigate();
 
@@ -58,6 +57,10 @@ const RegisterCodePage: FC = () => {
     }
   }, [codeId]);
 
+  const updatePromotion = (promotion: IPromotion) => {
+    setPromotion(promotion);
+  };
+
   const updateCodeId = (codeId: number): void => {
     setCodeId(codeId);
   };
@@ -73,19 +76,18 @@ const RegisterCodePage: FC = () => {
 
   return (
     <Section>
-      {promotion && (
-        <RegisterCode
-          onSuccessRegisterCode={onSuccessRegisterCode}
-          promotion={promotion}
-          isFirstStep={isFirstStep}
-          isSecondStep={isSecondStep}
-          isThirdStep={isThirdStep}
-          partners={partners}
-          incrementCurrentStep={incrementCurrentStep}
-          currentStep={currentStep}
-          codeId={codeId}
-        />
-      )}
+      <RegisterCode
+        onSuccessRegisterCode={onSuccessRegisterCode}
+        promotion={promotion}
+        isFirstStep={isFirstStep}
+        isSecondStep={isSecondStep}
+        isThirdStep={isThirdStep}
+        partners={partners}
+        incrementCurrentStep={incrementCurrentStep}
+        currentStep={currentStep}
+        codeId={codeId}
+        updatePromotion={updatePromotion}
+      />
     </Section>
   );
 };

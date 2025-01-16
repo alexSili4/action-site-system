@@ -265,7 +265,7 @@ export const CertificateWrap = styled.div`
   }
 `;
 
-export const DownloadCertificateLink = styled.a`
+export const CertificateDetailsLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

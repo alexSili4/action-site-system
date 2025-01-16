@@ -9,7 +9,7 @@ import {
   Certificate,
   PrizesInfoText,
   CertificateInfo,
-  DownloadCertificateLink,
+  CertificateDetailsLink,
   PrizeLinkTitle,
   CertificateLink,
   PrizesInfoTitle,
@@ -66,7 +66,6 @@ const UserCodeDetails: FC<IProps> = ({
   drawPrizeDate,
   shopAddress,
   receiptNumber,
-  certificateUrl,
   isValidShopAddress,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
@@ -156,9 +155,9 @@ const UserCodeDetails: FC<IProps> = ({
             {shouldShowCertificateInfo && (
               <>
                 <CertificateWrap>
-                  <DownloadCertificateLink href={certificateUrl} download>
+                  <CertificateDetailsLink to={certificateDetailsPath}>
                     Сертифікат
-                  </DownloadCertificateLink>
+                  </CertificateDetailsLink>
                   <CertificateInfo>
                     <PrizesInfoTitle>Виграний сертифікат:</PrizesInfoTitle>
                     <Certificate>

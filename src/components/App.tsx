@@ -81,7 +81,7 @@ const App: FC = () => {
             element={<PromotionDetailsPage />}
           />
           <Route
-            path={`${PagePaths.code}/:${PagePaths.dynamicParam}`}
+            path={PagePaths.code}
             element={<PrivateRoute element={<RegisterCodePage />} />}
           />
           <Route

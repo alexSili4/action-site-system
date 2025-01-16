@@ -21,7 +21,11 @@ import SubmitRegFormBtn from '@RegisterCodePageComponents/SubmitRegFormBtn';
 import RegisterFormCheckbox from '@RegisterCodePageComponents/RegisterFormCheckbox';
 import ErrorMessage from '@RegisterCodePageComponents/ErrorMessage';
 
-const RegisterCodeForm: FC<IProps> = ({ onSuccessRegisterCode, rulesPdf }) => {
+const RegisterCodeForm: FC<IProps> = ({
+  onSuccessRegisterCode,
+  rulesPdf,
+  updatePromotion,
+}) => {
   const {
     handleFormSubmit,
     register,
@@ -32,7 +36,7 @@ const RegisterCodeForm: FC<IProps> = ({ onSuccessRegisterCode, rulesPdf }) => {
     inputMaxLength,
     error,
     disabledBtn,
-  } = useRegisterCodeForm(onSuccessRegisterCode);
+  } = useRegisterCodeForm({ onSuccessRegisterCode, updatePromotion });
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -105,10 +109,7 @@ const RegisterCodeForm: FC<IProps> = ({ onSuccessRegisterCode, rulesPdf }) => {
           </RegisterFormCheckbox>
         </AcceptedTermsWrap>
       </Content>
-      <SubmitRegFormBtn
-        title='Підтвердити і крутити Колесо подарунків'
-        disabled={disabledBtn}
-      />
+      <SubmitRegFormBtn title='Продовжити' disabled={disabledBtn} />
     </Form>
   );
 };

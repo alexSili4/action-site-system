@@ -33,6 +33,8 @@ export const StyledBtn = styled.button`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    align-self: center;
+    width: auto;
     padding: ${({ theme }) => theme.spacing(6)};
   }
 `;

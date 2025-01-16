@@ -15,6 +15,7 @@ const PromotionConditionsSliderPagination: FC<IProps> = ({
   setActiveIndexByIndex,
 }) => {
   const swiper = useSwiper();
+  const isFullConditionsList = conditions.length > 3;
 
   useEffect(() => {
     swiper.slideTo(activeIndex);
@@ -23,7 +24,13 @@ const PromotionConditionsSliderPagination: FC<IProps> = ({
   return (
     <List>
       {conditions.map((_, index) => {
+        const lastIndex = conditions.length - 1;
+        const isLastIndex = index === lastIndex;
+        const isAnExtraIndex = isLastIndex || index === lastIndex - 1;
         const isActiveBtn = index === activeIndex;
+        const isAnExtraDeskButton = isFullConditionsList && isAnExtraIndex;
+        const isAnExtraTabletButton = isFullConditionsList && isLastIndex;
+
 
         const onClick = (e: BtnClickEvent) => {
           makeBlur(e.currentTarget);
@@ -37,6 +44,8 @@ const PromotionConditionsSliderPagination: FC<IProps> = ({
               type='button'
               onClick={onClick}
               isActiveBtn={isActiveBtn}
+              isAnExtraDeskButton={isAnExtraDeskButton}
+              isAnExtraTabletButton={isAnExtraTabletButton}
             ></Button>
           </ListItem>
         );

@@ -9,13 +9,7 @@ import {
   SearchParamsKeys,
 } from '@/constants';
 import { IProps } from './PromotionDetails.types';
-import {
-  getFileUrl,
-  getPromotionBannerUrls,
-  getPromotionDate,
-  getShouldShowPrizesWheel,
-  getValidPhone,
-} from '@/utils';
+import { getFileUrl, getPromotionBannerUrls, getValidPhone } from '@/utils';
 // components
 import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
 import PromotionDetailsSectionContainer from '@PromotionDetailsPageComponents/PromotionDetailsSectionContainer';
@@ -38,11 +32,8 @@ const PromotionDetails: FC<IProps> = ({
   shops,
 }) => {
   const {
-    date_from: dateFrom,
-    date_to: dateTo,
     second_banner_mob: secondBannerMob,
     second_banner_dt: secondBannerDt,
-    action_type: actionType,
     name,
     logo_partner: logoPartner,
     rules_pdf: rulesPdf,
@@ -57,10 +48,6 @@ const PromotionDetails: FC<IProps> = ({
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
   const { state }: PromotionDetailsState = useLocation();
-  const promotionDate = getPromotionDate({
-    dateFrom,
-    dateTo,
-  });
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
     bannerDt: secondBannerDt,
     bannerMob: secondBannerMob,
@@ -70,7 +57,6 @@ const PromotionDetails: FC<IProps> = ({
   const logoPartnerUrl = getFileUrl(logoPartner ?? '');
   const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
   const isNationalPromotion = coverageType === 'national';
-  const shouldShowPrizesWheel = getShouldShowPrizesWheel(actionType);
 
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);
@@ -104,11 +90,8 @@ const PromotionDetails: FC<IProps> = ({
           />
           <PromotionBanner
             from={from}
-            period={promotionDate}
-            name={name}
             secondBannerDt={bannerDtUrl}
             secondBannerMob={bannerMobUrl}
-            shouldShowPrizesWheel={shouldShowPrizesWheel}
           />
         </PromotionDetailsSectionContainer>
         {shouldShowConditionsSection && (

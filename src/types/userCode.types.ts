@@ -21,6 +21,7 @@ export interface IUserCode {
   wheel_certificate_code: StringOrNull;
   wheel_gift_name: StringOrNull;
   present_gift_partner_logo: StringOrNull;
+  certificate_gift_partner_logo: StringOrNull;
 }
 
 export type UserCodes = IUserCode[];

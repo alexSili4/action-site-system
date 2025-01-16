@@ -7,25 +7,27 @@ import {
   IChangeFocusToNextRegCodeInputProps,
   IGetRegCodeInputProps,
   InputChangeEvent,
-  SetNumberFunc,
   StringOrNull,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import { useCsrfToken, useDynamicId } from '@/hooks';
+import { useCsrfToken } from '@/hooks';
 import { IRegisterCodeRes } from '@/types/code.types';
 import { getCurrentInputIndex } from '@/utils';
-import { IUseRegisterCodeForm } from '@/types/hooks.types';
+import {
+  IUseRegisterCodeForm,
+  IUseRegisterCodeFormProps,
+} from '@/types/hooks.types';
 
-const useRegisterCodeForm = (
-  onSuccessRegisterCode: SetNumberFunc
-): IUseRegisterCodeForm => {
+const useRegisterCodeForm = ({
+  onSuccessRegisterCode,
+  updatePromotion,
+}: IUseRegisterCodeFormProps): IUseRegisterCodeForm => {
   const [error, setError] = useState<StringOrNull>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isFullRegCode, setIsFullRegCode] = useState<boolean>(false);
   const [regCodeInputs, setRegCodeInputs] = useState<HTMLInputElements>([]);
   const inputWrapRef = useRef<HTMLDivElement>(null);
   const { register, handleSubmit, watch } = useForm<IRegCodeFormData>();
-  const promotionId = useDynamicId();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
   const isError = Boolean(error);
   const acceptedTerms = watch('acceptedTerms');
@@ -52,7 +54,6 @@ const useRegisterCodeForm = (
       startRegisterCode();
       const response = await codesService.register({
         code,
-        action_id: Number(promotionId),
         [csrfTokenName]: csrfToken,
       });
 
@@ -62,9 +63,10 @@ const useRegisterCodeForm = (
         throw new Error(JSON.stringify(response));
       }
 
-      const { codeModel } = response;
+      const { codeModel, action } = response;
 
       if (codeModel) {
+        updatePromotion(action);
         onSuccessRegisterCode(codeModel.id);
       }
     } catch (error) {

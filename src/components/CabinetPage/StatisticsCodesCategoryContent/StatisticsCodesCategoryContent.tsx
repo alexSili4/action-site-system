@@ -39,13 +39,16 @@ const StatisticsCodesCategoryContent: FC = () => {
                 code,
                 code_created_at: codeCreatedAt,
                 code_status: codeStatus,
-                present_gift_partner_logo: partnerLogo,
+                present_gift_partner_logo: presentGiftPartnerLogo,
+                certificate_gift_partner_logo: certificateGiftPartnerLogo,
                 wheel_certificate_id: wheelCertificateId,
                 present_gift_id: presentGiftId,
                 winner_id: winnerId,
                 code_id: codeId,
               }) => {
-                const partnerLogoUrl = getFileUrl(partnerLogo ?? '');
+                const partnerLogoUrl = getFileUrl(
+                  presentGiftPartnerLogo ?? certificateGiftPartnerLogo ?? ''
+                );
                 const { isErrorStatus, isSuccessStatus } =
                   getCodeStatus(codeStatus);
                 const codeCreatedAtDate = formatDate({

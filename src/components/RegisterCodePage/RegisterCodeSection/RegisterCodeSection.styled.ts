@@ -14,11 +14,17 @@ export const Container = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(4)};
+    /* TODO return */
+    justify-content: center;
   }
 `;
 
 export const ContentWrap = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    /* TODO return */
+    /*  */
+    max-width: 909px;
+    /*  */
     flex-grow: 1;
     display: flex;
     flex-direction: column;

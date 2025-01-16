@@ -11,7 +11,6 @@ import {
   getCertificateDetailsPath,
   getPrizeDetailsPath,
   getFormattedCode,
-  getFileUrl,
 } from '@/utils';
 import { DateFormats, generalSettings } from '@/constants';
 
@@ -42,7 +41,6 @@ const UserCode: FC<IProps> = ({ code }) => {
   const { id: winnerId = null, win_date: winDate = new Date() } = winner ?? {};
   const { name: presentGiftName = null } = present ?? {};
   const {
-    pdf_url: certificatePdfUrl = '',
     sent_at: certificateSentAt,
     certificate_code: certificateCode = null,
   } = certificate ?? {};
@@ -75,7 +73,6 @@ const UserCode: FC<IProps> = ({ code }) => {
     dateFormat: DateFormats.winnersDate,
   });
 
-  const certificateUrl = getFileUrl(certificatePdfUrl);
   const isValidShopAddress =
     Boolean(shopNum) && Boolean(cityName) && Boolean(shopStreet);
 
@@ -118,7 +115,6 @@ const UserCode: FC<IProps> = ({ code }) => {
         drawPrizeDate={formattedWinDate}
         receiptNumber={receiptNumber}
         shopAddress={targetShopAddress}
-        certificateUrl={certificateUrl}
         isValidShopAddress={isValidShopAddress}
       />
     </UserStatisticsDetailsContainer>

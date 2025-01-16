@@ -3,12 +3,11 @@ import {
   Container,
   List,
   ListItem,
-  Title,
 } from './PromotionPrizesBanner.styled';
 import { IProps } from './PromotionPrizesBanner.types';
 import { getFileUrl } from '@/utils';
 
-const PromotionPrizesBanner: FC<IProps> = ({ prizes, description, logo }) => {
+const PromotionPrizesBanner: FC<IProps> = ({ prizes,  logo }) => {
   return (
     <List>
       {prizes.map(({ gift: { images, banner } }, index) => {
@@ -17,10 +16,7 @@ const PromotionPrizesBanner: FC<IProps> = ({ prizes, description, logo }) => {
 
         return (
           <ListItem key={index}>
-            <Container imageUrl={imageUrl}>
-              {logo}
-              <Title>{description}</Title>
-            </Container>
+            <Container imageUrl={imageUrl}>{logo}</Container>
           </ListItem>
         );
       })}

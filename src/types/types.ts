@@ -2,6 +2,7 @@ import { Location } from 'react-router-dom';
 import { ChangeEvent, MouseEvent } from 'react';
 import Swiper from 'swiper';
 import { Partners } from './code.types';
+import { IPromotion } from './promotion.types';
 
 // events
 export type DatePickerEvent = Date | null;
@@ -32,6 +33,8 @@ export type SetNumberFunc = (data: number) => void;
 export type SetBooleanFunc = (data: boolean) => void;
 
 export type SetStringOrNullFunc = (data: StringOrNull) => void;
+
+export type SetPromotionFunc = (data: IPromotion) => void;
 
 // other
 

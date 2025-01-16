@@ -1,5 +1,4 @@
 const enum Messages {
-  selectedPromotion = 'Оберіть акцію',
   selectedCity = 'Оберіть місто',
   nationalPromotionMapTitle = 'Акція діє у всіх магазинах',
   otherPromotionMapTitle = 'Магазини в яких діє акція',

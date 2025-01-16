@@ -6,7 +6,9 @@ import {
   OnAnchorClickFunc,
   OnBtnClickFunc,
   OnDivClickFunc,
+  SetNumberFunc,
   StringOrNull,
+  SetPromotionFunc,
 } from './types';
 import {
   IPromotion,
@@ -119,16 +121,21 @@ export interface IUsePromotionContactsVisicomMap {
   customMarkerIcon: DivIcon;
 }
 
+export interface IUseRegisterCodeFormProps {
+  onSuccessRegisterCode: SetNumberFunc;
+  updatePromotion: SetPromotionFunc;
+}
+
 export interface IUseRegisterCodeForm {
-  handleFormSubmit: SubmitHandler<IRegCodeFormData>;
-  register: UseFormRegister<IRegCodeFormData>;
-  handleSubmit: UseFormHandleSubmit<IRegCodeFormData, undefined>;
-  inputWrapRef: RefObject<HTMLDivElement>;
-  isError: boolean;
-  onRegCodeInput: InputChangeFunc;
-  inputMaxLength: number;
   error: StringOrNull;
   disabledBtn: boolean;
+  isError: boolean;
+  inputMaxLength: number;
+  inputWrapRef: RefObject<HTMLDivElement>;
+  onRegCodeInput: InputChangeFunc;
+  register: UseFormRegister<IRegCodeFormData>;
+  handleFormSubmit: SubmitHandler<IRegCodeFormData>;
+  handleSubmit: UseFormHandleSubmit<IRegCodeFormData, undefined>;
 }
 
 export interface IUseCsrfToken {

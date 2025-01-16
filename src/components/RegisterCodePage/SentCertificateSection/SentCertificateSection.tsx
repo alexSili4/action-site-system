@@ -6,20 +6,12 @@ import {
 } from './SentCertificateSection.styled';
 import { IProps } from './SentCertificateSection.types';
 // components
-import RegisterCodeBanner from '@RegisterCodePageComponents/RegisterCodeBanner';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import SentCertificateForm from '@RegisterCodePageComponents/SentCertificateForm';
 import SuccessRegisterCodeMsg from '@RegisterCodePageComponents/SuccessRegisterCodeMsg';
 import { IUserData } from '@/types/code.types';
 
 const SentCertificateSection: FC<IProps> = ({
-  steps,
-  currentStep,
-  logoUrl,
-  name,
-  promotionDate,
-  thirdBannerMob,
-  thirdBannerDt,
   hotLinePhone,
   hotLineWorkHours,
   codeId,
@@ -40,13 +32,6 @@ const SentCertificateSection: FC<IProps> = ({
 
   return (
     <Container>
-      <RegisterCodeBanner
-        logoUrl={logoUrl}
-        name={name}
-        promotionDate={promotionDate}
-        thirdBannerDt={thirdBannerDt}
-        thirdBannerMob={thirdBannerMob}
-      />
       <ContentWrap>
         {shouldShowSuccessMsg ? (
           <SuccessRegisterCodeMsg
@@ -56,11 +41,7 @@ const SentCertificateSection: FC<IProps> = ({
           />
         ) : (
           <SentCertificateFormWrap>
-            <RegisterCodeStepsBar
-              isHiddenOnMobile
-              steps={steps}
-              currentStep={currentStep}
-            />
+            <RegisterCodeStepsBar />
             <SentCertificateForm
               userName={userName}
               userEmail={userEmail}

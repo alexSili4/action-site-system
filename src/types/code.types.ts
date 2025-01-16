@@ -1,3 +1,4 @@
+import { IPromotion } from './promotion.types';
 import { HTMLInputElements, StringOrNull } from './types';
 
 export interface IStepsSequence {
@@ -6,7 +7,6 @@ export interface IStepsSequence {
 
 export interface IRegisterCode {
   code: string;
-  action_id: number;
 }
 
 export type RegisterCodeResult = 'error' | 'ok' | 'general_error';
@@ -17,6 +17,7 @@ export interface IRegisterCodeRes {
   errors: {
     code: string[];
   };
+  action: IPromotion;
 }
 
 export interface IGetCurrentInputIndex {
