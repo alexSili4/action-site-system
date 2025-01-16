@@ -33,8 +33,6 @@ const UserCertificateBanner: FC<IProps> = ({
           >
             <DownloadLink
               href={certificatePdf}
-              target='_blank'
-              rel='noopener noreferrer nofollow'
             >
               <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
               <RiDownloadLine

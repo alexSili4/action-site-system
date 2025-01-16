@@ -88,11 +88,7 @@ const PromotionWinnersTableByDate: FC<IProps> = ({
             paddingTopDesk={40}
             paddingBottomDesk={40}
           >
-            <ResultsLink
-              href={targetPdfFileUrl}
-              target='_blank'
-              rel='noopener noreferrer nofollow'
-            >
+            <ResultsLink href={targetPdfFileUrl}>
               <ResultsBtnTitle>Результати розіграшу</ResultsBtnTitle>
               <IoDocumentOutline size={theme.iconSizes.resultsBtn} />
             </ResultsLink>

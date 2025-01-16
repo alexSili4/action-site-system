@@ -87,12 +87,7 @@ const PromotionConditionsSlider: FC<IProps> = ({
               <Title>Умови акції</Title>
             </TitleWrap>
             <Cover bgImgUrl={rulesCardBg}>
-              <RulesLink
-                href={rulesPdf}
-                download='rules'
-                target='_blank'
-                rel='noopener noreferrer nofollow'
-              >
+              <RulesLink href={rulesPdf} download='rules'>
                 <RulesLinkTitle>Правила акції</RulesLinkTitle>
                 <IoDocumentOutline size={theme.iconSizes.rulesLink} />
               </RulesLink>
