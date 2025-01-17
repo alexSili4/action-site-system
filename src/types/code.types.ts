@@ -1,5 +1,6 @@
 import { IPromotion } from './promotion.types';
 import { HTMLInputElements, StringOrNull } from './types';
+import { IUserCode } from './userCode.types';
 
 export interface IStepsSequence {
   [key: string]: string;
@@ -78,6 +79,10 @@ export interface IUserData {
   name: StringOrNull;
   email: StringOrNull;
   send_to_email_status: boolean;
+}
+
+export interface IUserDataWithCode extends IUserData {
+  code: IUserCode;
 }
 
 export type UpdateUserDataFunc = (data: IUserData) => void;

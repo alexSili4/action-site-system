@@ -17,6 +17,7 @@ const CodePartInput: FC<IProps> = ({
       {...settings}
       onChange={onChange}
       placeholder={placeholder}
+      autoComplete='off'
     />
   );
 };

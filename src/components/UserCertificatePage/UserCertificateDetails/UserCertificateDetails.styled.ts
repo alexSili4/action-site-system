@@ -71,8 +71,7 @@ export const Title = styled.p`
 
 export const PartnerLogo = styled.img`
   max-width: 200px;
-  width: 100%;
-  height: 100%;
+  width: auto;
 `;
 
 export const DetailsWrap = styled.div`

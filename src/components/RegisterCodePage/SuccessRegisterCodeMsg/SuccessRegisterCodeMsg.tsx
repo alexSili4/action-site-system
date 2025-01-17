@@ -14,16 +14,13 @@ const SuccessRegisterCodeMsg: FC<IProps> = ({
   hotLineWorkHours,
   hotLinePhone,
   userName,
+  message,
 }) => {
   return (
     <Container>
       <MessageWrap>
         <MessageTitle>Дякуємо, {userName}!</MessageTitle>
-        <Message>
-          Ваш акційний код буде зареєстровано протягом доби. Ви можете
-          перевірити статус акційного коду та сертифікату у Вашому Особистому
-          кабінеті.
-        </Message>
+        <Message>{message}</Message>
       </MessageWrap>
       <CabinetLink to={PagePaths.cabinet}>Особистий кабінет</CabinetLink>
       <Text>

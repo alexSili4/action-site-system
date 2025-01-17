@@ -23,6 +23,7 @@ const SentCertificateForm: FC<IProps> = ({
   userName,
   codeId,
   userEmail,
+  updateIsSuccessStatus,
 }) => {
   const {
     handleFormSubmit,
@@ -37,6 +38,7 @@ const SentCertificateForm: FC<IProps> = ({
     userName,
     codeId,
     userEmail,
+    updateIsSuccessStatus,
   });
 
   return (

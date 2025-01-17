@@ -9,6 +9,7 @@ import {
   SetNumberFunc,
   StringOrNull,
   SetPromotionFunc,
+  SetBooleanFunc,
 } from './types';
 import {
   IPromotion,
@@ -127,6 +128,9 @@ export interface IUseRegisterCodeFormProps {
 }
 
 export interface IUseRegisterCodeForm {
+  defaultCodePart1: string;
+  defaultCodePart2: string;
+  defaultCodePart3: string;
   error: StringOrNull;
   disabledBtn: boolean;
   isError: boolean;
@@ -149,6 +153,7 @@ export interface IUseSentCertificateFormProps {
   codeId: number;
   toggleShowSuccessMsgState: Func;
   updateUserData: UpdateUserDataFunc;
+  updateIsSuccessStatus: SetBooleanFunc;
 }
 
 export interface IUseSentCertificateForm {

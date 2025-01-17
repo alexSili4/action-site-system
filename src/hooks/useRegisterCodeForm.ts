@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IRegCodeFormData } from '@/types/regCode.types';
-import { generalSettings } from '@/constants';
+import { generalSettings, SearchParamsKeys } from '@/constants';
 import {
   HTMLInputElements,
   IChangeFocusToNextRegCodeInputProps,
@@ -10,9 +10,9 @@ import {
   StringOrNull,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import { useCsrfToken } from '@/hooks';
+import { useCsrfToken, useSetSearchParams } from '@/hooks';
 import { IRegisterCodeRes } from '@/types/code.types';
-import { getCurrentInputIndex } from '@/utils';
+import { getCurrentInputIndex, splitString } from '@/utils';
 import {
   IUseRegisterCodeForm,
   IUseRegisterCodeFormProps,
@@ -29,8 +29,15 @@ const useRegisterCodeForm = ({
   const inputWrapRef = useRef<HTMLDivElement>(null);
   const { register, handleSubmit, watch } = useForm<IRegCodeFormData>();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
+  const { searchParams } = useSetSearchParams();
   const isError = Boolean(error);
   const acceptedTerms = watch('acceptedTerms');
+  const defaultCode = searchParams.get(SearchParamsKeys.code) ?? '';
+
+  const [defaultCodePart1, defaultCodePart2, defaultCodePart3] = splitString({
+    string: defaultCode,
+    parts: 3,
+  });
 
   const inputMaxLength = generalSettings.regCodeLength / 3;
 
@@ -94,6 +101,12 @@ const useRegisterCodeForm = ({
 
     registerCode({ code, csrfToken, csrfTokenName });
   };
+
+  useEffect(() => {
+    if (defaultCode.length === 12) {
+      setIsFullRegCode(true);
+    }
+  }, [defaultCode]);
 
   useEffect(() => {
     const regCodeInputs = inputWrapRef.current?.querySelectorAll('input');
@@ -193,6 +206,9 @@ const useRegisterCodeForm = ({
     inputMaxLength,
     error,
     disabledBtn,
+    defaultCodePart1,
+    defaultCodePart2,
+    defaultCodePart3,
   };
 };
 

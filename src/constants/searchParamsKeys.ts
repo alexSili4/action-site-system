@@ -6,6 +6,7 @@ const enum SearchParamsKeys {
   from = 'from',
   to = 'to',
   page = 'page',
+  code = 'code',
 }
 
 export default SearchParamsKeys;

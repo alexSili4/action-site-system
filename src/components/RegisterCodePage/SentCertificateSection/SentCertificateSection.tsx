@@ -16,8 +16,16 @@ const SentCertificateSection: FC<IProps> = ({
   hotLineWorkHours,
   codeId,
 }) => {
+  const [isSuccessStatus, setIsSuccessStatus] = useState<boolean>(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
   const [userData, setUserData] = useState<IUserData | null>(null);
+
+  const regCodeTimeMsg = 'Ваш акційний код буде зареєстровано протягом доби.';
+  const userCodesMsg =
+    'Ви можете перевірити статус акційного коду та сертифікату у Вашому Особистому кабінеті.';
+  const message = isSuccessStatus
+    ? userCodesMsg
+    : `${regCodeTimeMsg} ${userCodesMsg}`;
 
   const { email: userEmail = null, name: userName = null } = userData ?? {};
   const shouldShowSuccessMsg = showSuccessMsg && userName;
@@ -30,6 +38,10 @@ const SentCertificateSection: FC<IProps> = ({
     setShowSuccessMsg((prevState) => !prevState);
   };
 
+  const updateIsSuccessStatus = (isSuccessStatus: boolean) => {
+    setIsSuccessStatus(isSuccessStatus);
+  };
+
   return (
     <Container>
       <ContentWrap>
@@ -38,6 +50,7 @@ const SentCertificateSection: FC<IProps> = ({
             hotLinePhone={hotLinePhone}
             hotLineWorkHours={hotLineWorkHours}
             userName={userName}
+            message={message}
           />
         ) : (
           <SentCertificateFormWrap>
@@ -48,6 +61,7 @@ const SentCertificateSection: FC<IProps> = ({
               updateUserData={updateUserData}
               toggleShowSuccessMsgState={toggleShowSuccessMsgState}
               codeId={codeId}
+              updateIsSuccessStatus={updateIsSuccessStatus}
             />
           </SentCertificateFormWrap>
         )}

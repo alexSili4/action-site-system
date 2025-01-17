@@ -36,6 +36,9 @@ const RegisterCodeForm: FC<IProps> = ({
     inputMaxLength,
     error,
     disabledBtn,
+    defaultCodePart1,
+    defaultCodePart2,
+    defaultCodePart3,
   } = useRegisterCodeForm({ onSuccessRegisterCode, updatePromotion });
 
   return (
@@ -50,6 +53,7 @@ const RegisterCodeForm: FC<IProps> = ({
               onChange={onRegCodeInput}
               maxLength={inputMaxLength}
               placeholder={InputPlaceholders.regCode}
+              defaultValue={defaultCodePart1}
               settings={{
                 ...register('codePart1', {
                   required: true,
@@ -64,6 +68,7 @@ const RegisterCodeForm: FC<IProps> = ({
               onChange={onRegCodeInput}
               maxLength={inputMaxLength}
               placeholder={InputPlaceholders.regCode}
+              defaultValue={defaultCodePart2}
               settings={{
                 ...register('codePart2', {
                   required: true,
@@ -78,6 +83,7 @@ const RegisterCodeForm: FC<IProps> = ({
               onChange={onRegCodeInput}
               maxLength={inputMaxLength}
               placeholder={InputPlaceholders.regCode}
+              defaultValue={defaultCodePart3}
               settings={{
                 ...register('codePart3', {
                   required: true,

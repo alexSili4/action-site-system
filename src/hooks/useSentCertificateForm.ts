@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import useCsrfToken from './useCsrfToken';
 import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
+import { getCodeStatus } from '@/utils';
 
 const useSentCertificateForm = ({
   userName,
@@ -15,6 +16,7 @@ const useSentCertificateForm = ({
   codeId,
   toggleShowSuccessMsgState,
   updateUserData,
+  updateIsSuccessStatus,
 }: IUseSentCertificateFormProps): IUseSentCertificateForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [disabledBtn, setDisabledBtn] = useState<boolean>(false);
@@ -24,7 +26,6 @@ const useSentCertificateForm = ({
   const defaultUserEmail = userEmail ?? '';
   const { register, handleSubmit, watch } = useForm<ISentCertificateFormData>();
   const nameLength = watch('name')?.length;
-  // const isValidUserName = userName ? true : Boolean(nameLength);
   const navigate = useServiceUnavailablePageNavigate();
 
   useEffect(() => {
@@ -75,6 +76,9 @@ const useSentCertificateForm = ({
       setIsLoading(true);
 
       const response = await codesService.updateUserData(userData);
+      const { isSuccessStatus } = getCodeStatus(response.code.code_status);
+
+      updateIsSuccessStatus(isSuccessStatus);
       updateUserData(response);
       toggleShowSuccessMsgState();
     } catch (error) {

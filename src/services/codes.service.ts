@@ -5,6 +5,7 @@ import {
   Partners,
   IUserData,
   IUpdateUserDataProps,
+  IUserDataWithCode,
 } from '@/types/code.types';
 import HttpService from './http.service';
 import { ClientCodes } from '@/types/userCodeWithDetails.types';
@@ -62,8 +63,8 @@ class CodesService extends HttpService {
   async updateUserData({
     codeId,
     ...data
-  }: IUpdateUserDataProps): Promise<IUserData> {
-    const response = await this.post<IUserData, IUserData>(
+  }: IUpdateUserDataProps): Promise<IUserDataWithCode> {
+    const response = await this.post<IUserDataWithCode, IUserData>(
       {
         url: `client/info/name-form?code_id=${codeId}`,
         data,
