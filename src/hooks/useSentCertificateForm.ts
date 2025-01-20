@@ -76,7 +76,7 @@ const useSentCertificateForm = ({
       setIsLoading(true);
 
       const response = await codesService.updateUserData(userData);
-      const { isSuccessStatus } = getCodeStatus(response.code.code_status);
+      const { isSuccessStatus } = getCodeStatus(response.code.status);
 
       updateIsSuccessStatus(isSuccessStatus);
       updateUserData(response);

@@ -2,10 +2,10 @@ import { PagePaths, SearchParamsKeys } from '@/constants';
 import { IGetRegisterCodeLinkProps } from '@/types/types';
 
 const getRegisterCodeLink = ({
-  promotionId,
+  code,
   cityId,
 }: IGetRegisterCodeLinkProps): string => {
-  const generalCodeLink = `${PagePaths.code}/${promotionId}`;
+  const generalCodeLink = `${PagePaths.code}?${SearchParamsKeys.code}=${code}`;
   const targetCodeLink = cityId
     ? `${generalCodeLink}?${SearchParamsKeys.cityId}=${cityId}`
     : generalCodeLink;

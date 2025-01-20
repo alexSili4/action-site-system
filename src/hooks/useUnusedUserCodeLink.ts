@@ -2,11 +2,9 @@ import { getRegisterCodeLink } from '@/utils';
 import useFirstUnusedUserCode from './useFirstUnusedUserCode';
 
 const useUnusedUserCodeLink = (): string => {
-  const { action_id: promotionId } = useFirstUnusedUserCode() ?? {};
+  const { code } = useFirstUnusedUserCode() ?? {};
 
-  const unusedUserCodeLink = promotionId
-    ? getRegisterCodeLink({ promotionId })
-    : '';
+  const unusedUserCodeLink = code ? getRegisterCodeLink({ code }) : '';
 
   return unusedUserCodeLink;
 };

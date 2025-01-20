@@ -1,6 +1,6 @@
 import { IPromotion } from './promotion.types';
 import { HTMLInputElements, StringOrNull } from './types';
-import { IUserCode } from './userCode.types';
+import { CodeStatus } from './userCode.types';
 
 export interface IStepsSequence {
   [key: string]: string;
@@ -82,7 +82,9 @@ export interface IUserData {
 }
 
 export interface IUserDataWithCode extends IUserData {
-  code: IUserCode;
+  code: {
+    status: CodeStatus;
+  };
 }
 
 export type UpdateUserDataFunc = (data: IUserData) => void;

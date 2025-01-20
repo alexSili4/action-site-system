@@ -1,16 +1,14 @@
 import { FC } from 'react';
 import { Container, StyledLink } from './PromotionRegisterCodeLink.styled';
-import { useRegisterTargetPromotionCodeLink } from '@/hooks';
 import { IProps } from './PromotionRegisterCodeLink.types';
+import { PagePaths } from '@/constants';
 
 const PromotionRegisterCodeLink: FC<IProps> = ({
   shouldShowTopSpacing = true,
 }) => {
-  const registerCodeLink = useRegisterTargetPromotionCodeLink();
-
   return (
     <Container shouldShowTopSpacing={shouldShowTopSpacing}>
-      <StyledLink to={registerCodeLink}>Зареєструвати код</StyledLink>
+      <StyledLink to={PagePaths.code}>Зареєструвати код</StyledLink>
     </Container>
   );
 };
