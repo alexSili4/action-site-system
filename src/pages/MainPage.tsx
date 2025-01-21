@@ -1,23 +1,20 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import Container from '@GeneralComponents/Container';
 import HeroSection from '@MainPageComponents/HeroSection';
 import AppInfo from '@MainPageComponents/AppInfo';
-import { useSetSearchParams } from '@/hooks';
-import { SearchParamsKeys } from '@/constants';
-import { getQrCodePath } from '@/utils';
 
 const MainPage: FC = () => {
-  const { searchParams } = useSetSearchParams();
-  const code = searchParams.get(SearchParamsKeys.code);
+  // const { searchParams } = useSetSearchParams();
 
-  useEffect(() => {
-    if (code) {
-      // const qrCodePath = `${PagePaths.qr}/${SearchParamsKeys.code}=${code}`;
-      const qrCodePath = getQrCodePath(code);
+  // const code = searchParams.get(SearchParamsKeys.code);
 
-      window.location.href = qrCodePath;
-    }
-  }, [code]);
+  // useEffect(() => {
+  //   if (code) {
+  //     const qrCodePath = getQrCodePath(code);
+
+  //     window.location.href = qrCodePath;
+  //   }
+  // }, [code]);
 
   return (
     <HeroSection>
