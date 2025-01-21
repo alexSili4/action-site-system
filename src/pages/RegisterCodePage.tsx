@@ -87,6 +87,7 @@ const RegisterCodePage: FC = () => {
         currentStep={currentStep}
         codeId={codeId}
         updatePromotion={updatePromotion}
+        isDefaultCodeId={isDefaultCodeId}
       />
     </Section>
   );

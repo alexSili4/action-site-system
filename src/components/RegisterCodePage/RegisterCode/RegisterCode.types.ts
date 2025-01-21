@@ -12,6 +12,7 @@ export interface IProps {
   isFirstStep: boolean;
   isSecondStep: boolean;
   isThirdStep: boolean;
+  isDefaultCodeId: boolean;
   currentStep: number;
   partners: Partners | null;
   codeId: NumberOrNull;

@@ -15,6 +15,7 @@ const RegisterCode: FC<IProps> = ({
   promotion,
   partners,
   codeId,
+  isDefaultCodeId,
   onSuccessRegisterCode,
   incrementCurrentStep,
   updatePromotion,
@@ -25,7 +26,9 @@ const RegisterCode: FC<IProps> = ({
     hot_line_work_hours: hotLineWorkHours,
     rules_pdf: rulesPdf,
   } = promotion ?? {};
-  const shouldShowPrizesWheel = actionType
+  const shouldShowPrizesWheel = isDefaultCodeId
+    ? true
+    : actionType
     ? getShouldShowPrizesWheel(actionType)
     : false;
 

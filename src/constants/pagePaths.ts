@@ -7,6 +7,7 @@ enum PagePaths {
   promotions = '/promotions',
   serviceUnavailable = '/service-unavailable',
   code = '/code',
+  qr = '/qr',
   userCertificate = `${cabinet}/certificate`,
   userPrize = `${cabinet}/prize`,
   userCode = `${cabinet}/code`,
