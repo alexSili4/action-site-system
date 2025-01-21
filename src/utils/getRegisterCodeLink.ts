@@ -5,7 +5,7 @@ const getRegisterCodeLink = ({
   code,
   cityId,
 }: IGetRegisterCodeLinkProps): string => {
-  const generalCodeLink = `${PagePaths.code}?${SearchParamsKeys.code}=${code}`;
+  const generalCodeLink = `${PagePaths.code}?${SearchParamsKeys.promocode}=${code}`;
   const targetCodeLink = cityId
     ? `${generalCodeLink}?${SearchParamsKeys.cityId}=${cityId}`
     : generalCodeLink;

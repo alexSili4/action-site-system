@@ -32,7 +32,7 @@ const useRegisterCodeForm = ({
   const { searchParams } = useSetSearchParams();
   const isError = Boolean(error);
   const acceptedTerms = watch('acceptedTerms');
-  const defaultCode = searchParams.get(SearchParamsKeys.code) ?? '';
+  const defaultCode = searchParams.get(SearchParamsKeys.promocode) ?? '';
 
   const [defaultCodePart1, defaultCodePart2, defaultCodePart3] = splitString({
     string: defaultCode,
