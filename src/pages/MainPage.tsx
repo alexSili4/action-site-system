@@ -4,19 +4,7 @@ import HeroSection from '@MainPageComponents/HeroSection';
 import AppInfo from '@MainPageComponents/AppInfo';
 
 const MainPage: FC = () => {
-  // const { searchParams } = useSetSearchParams();
-
-  // const code = searchParams.get(SearchParamsKeys.code);
-
-  // useEffect(() => {
-  //   if (code) {
-  //     const qrCodePath = getQrCodePath(code);
-
-  //     window.location.href = qrCodePath;
-  //   }
-  // }, [code]);
-
-  return (
+   return (
     <HeroSection>
       <Container>
         <AppInfo />
