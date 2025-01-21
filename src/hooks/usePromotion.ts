@@ -8,6 +8,7 @@ import useDynamicId from './useDynamicId';
 import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
 import { IUsePromotion } from '@/types/hooks.types';
 import usePreviewPage from './usePreviewPage';
+import { AxiosError } from 'axios';
 
 const usePromotion = (): IUsePromotion => {
   const [promotion, setPromotion] = useState<TargetPromotionDetailsState>(null);
@@ -29,7 +30,13 @@ const usePromotion = (): IUsePromotion => {
           setIsNotFoundError(true);
         }
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 

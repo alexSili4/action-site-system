@@ -5,6 +5,7 @@ const generalSettings = {
   coordinatesSeparator: ',',
   mainMapZoom: 18,
   defaultDataText: 'дані очікуються',
+  defaultErrorMessage: 'Сервіс тимчасово недоступний',
 };
 
 export default generalSettings;

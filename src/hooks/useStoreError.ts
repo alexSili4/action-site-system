@@ -57,9 +57,18 @@ const useStoreError = (): void => {
       isMaintenanceModeError;
 
     if (isError) {
-      navigate(true);
+      const errorMessage: string =
+        authError ||
+        unusedUserCodesError ||
+        userCodesError ||
+        userPrizesError ||
+        citiesError ||
+        promotionsError ||
+        '';
+
+      navigate({ isError: true, errorMessage });
     } else if (isErrorPage) {
-      navigate(isError);
+      navigate({ isError, errorMessage: '' });
     }
   }, [
     authError,

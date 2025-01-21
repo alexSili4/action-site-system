@@ -4,7 +4,7 @@ import ServiceUnavailableError from '@ErrorPageComponents/ServiceUnavailableErro
 
 import { FC } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { PagePaths } from '@/constants';
+import { generalSettings, PagePaths } from '@/constants';
 import { ServiceUnavailableState } from '@/types/serviceUnavailableState.types';
 
 const ServiceUnavailablePage: FC = () => {
@@ -12,13 +12,15 @@ const ServiceUnavailablePage: FC = () => {
 
   const shouldRedirect = !state?.isError;
   const redirectPath = state?.from ?? PagePaths.root;
+  const errorMessage =
+    state?.errorMessage || generalSettings.defaultErrorMessage;
 
   return shouldRedirect ? (
     <Navigate to={redirectPath} />
   ) : (
     <ErrorSection>
       <Container compactPadding>
-        <ServiceUnavailableError />
+        <ServiceUnavailableError errorMessage={errorMessage} />
       </Container>
     </ErrorSection>
   );

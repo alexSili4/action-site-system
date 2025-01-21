@@ -9,6 +9,7 @@ import { Shops } from '@/types/shop.types';
 import usePromotion from './usePromotion';
 import useDynamicId from './useDynamicId';
 import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
+import { AxiosError } from 'axios';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
@@ -30,7 +31,13 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getConditions(promotionId);
         setConditions(response);
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 
@@ -45,7 +52,13 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getWheelPrizes(promotionId);
         setWheelPrizes(response);
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 
@@ -63,7 +76,13 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const data = response.flat();
         setOtherPrizes(data);
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 
@@ -76,7 +95,13 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getFAQs(promotionId);
         setFaqs(response);
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 
@@ -89,7 +114,13 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getWinners(promotionId);
         setWinners(response);
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 
@@ -102,7 +133,13 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
         const response = await promotionsService.getShops(promotionId);
         setShops(response);
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 

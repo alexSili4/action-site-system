@@ -36,6 +36,15 @@ export type SetStringOrNullFunc = (data: StringOrNull) => void;
 
 export type SetPromotionFunc = (data: IPromotion) => void;
 
+export interface ISetServiceUnavailableStateFuncProps {
+  isError: boolean;
+  errorMessage: string;
+}
+
+export type SetServiceUnavailableStateFunc = (
+  data: ISetServiceUnavailableStateFuncProps
+) => void;
+
 // other
 
 export type NumberOrNull = number | null;

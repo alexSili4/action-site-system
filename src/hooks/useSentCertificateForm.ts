@@ -9,6 +9,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import useCsrfToken from './useCsrfToken';
 import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
 import { getCodeStatus } from '@/utils';
+import { AxiosError } from 'axios';
 
 const useSentCertificateForm = ({
   userName,
@@ -52,7 +53,13 @@ const useSentCertificateForm = ({
         const response = await codesService.getUserData(codeId);
         updateUserData(response);
       } catch (error) {
-        navigate(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
       }
     };
 

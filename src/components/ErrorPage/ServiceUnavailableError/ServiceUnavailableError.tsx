@@ -16,11 +16,12 @@ import Error503ImgDesk from '@/images/error/error-503-desk.png';
 import WheelImg from '@/images/error/wheel.png';
 import Slots503Img from '@/images/error/slots-503.png';
 import RaysImg from '@/images/error/rays.png';
+import { IProps } from './ServiceUnavailableError.types';
 
-const ServiceUnavailableError: FC = () => {
+const ServiceUnavailableError: FC<IProps> = ({ errorMessage }) => {
   return (
     <Container>
-      <Title>Сервіс тимчасово недоступний</Title>
+      <Title>{errorMessage}</Title>
       <ImgWrap>
         <MobileImage src={Error503ImgMobile} />
         <DeskImage src={Error503ImgDesk} />

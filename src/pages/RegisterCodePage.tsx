@@ -13,6 +13,7 @@ import codesService from '@/services/codes.service';
 import { useNavigate } from 'react-router-dom';
 import { PagePaths } from '@/constants';
 import { IPromotion } from '@/types/promotion.types';
+import { AxiosError } from 'axios';
 
 const RegisterCodePage: FC = () => {
   const isUnusedUserCodes = useIsUnusedUserCodes();
@@ -48,7 +49,13 @@ const RegisterCodePage: FC = () => {
 
         setPartners(response);
       } catch (error) {
-        navigateToErrorPage(true);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigateToErrorPage({ isError: true, errorMessage });
       }
     };
 

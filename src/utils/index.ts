@@ -33,6 +33,5 @@ export { default as getCodeDetailsPath } from './getCodeDetailsPath';
 export { default as getValidPhone } from './getValidPhone';
 export { default as getInitialTotalDegrees } from './getInitialTotalDegrees';
 export { default as getFinalTotalDegrees } from './getFinalTotalDegrees';
-export { default as toasts } from './toasts';
 export { default as splitString } from './splitString';
 export { default as getQrCodePath } from './getQrCodePath';
