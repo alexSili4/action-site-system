@@ -5,8 +5,8 @@ export interface IProps {
   hotLineEmail: string;
   hotLinePhone: string;
   logoUrl: string;
-  secondBannerDt: string;
-  secondBannerMob: string;
+  bannerDt: string;
+  bannerMob: string;
   isNationalPromotion: boolean;
   validHotLinePhone: string;
 }

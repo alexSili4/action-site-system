@@ -99,6 +99,7 @@ const RegisterCodeForm: FC<IProps> = ({
             settings={{
               ...register('acceptedTerms'),
             }}
+            defaultChecked
           >
             <RegisterFormCheckboxTitle>
               Погоджуюсь з{' '}

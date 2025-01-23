@@ -8,10 +8,18 @@ import {
   CustomCheckbox,
 } from './RegisterFormCheckbox.styled';
 
-const RegisterFormCheckbox: FC<IProps> = ({ children, settings }) => {
+const RegisterFormCheckbox: FC<IProps> = ({
+  children,
+  settings,
+  defaultChecked = false,
+}) => {
   return (
     <Container>
-      <BasicCheckbox type='checkbox' {...settings} />
+      <BasicCheckbox
+        type='checkbox'
+        {...settings}
+        defaultChecked={defaultChecked}
+      />
       <CustomCheckbox>
         <FaCheck size={theme.iconSizes.registerFormCheckbox} />
       </CustomCheckbox>

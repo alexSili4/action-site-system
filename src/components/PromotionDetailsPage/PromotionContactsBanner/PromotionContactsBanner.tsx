@@ -19,17 +19,14 @@ import { IProps } from './PromotionContactsBanner.types';
 
 const PromotionContactsBanner: FC<IProps> = ({
   logoUrl,
-  secondBannerDt,
-  secondBannerMob,
+  bannerDt,
+  bannerMob,
   hotLinePhone,
   hotLineEmail,
   validHotLinePhone,
 }) => {
   return (
-    <Container
-      secondBannerDt={secondBannerDt}
-      secondBannerMob={secondBannerMob}
-    >
+    <Container bannerDt={bannerDt} bannerMob={bannerMob}>
       <TitleWrap>
         <Title>Організатор акції</Title>
         <TitleImgWrap>

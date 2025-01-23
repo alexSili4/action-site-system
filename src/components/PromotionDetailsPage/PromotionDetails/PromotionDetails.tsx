@@ -32,8 +32,6 @@ const PromotionDetails: FC<IProps> = ({
   shops,
 }) => {
   const {
-    second_banner_mob: secondBannerMob,
-    second_banner_dt: secondBannerDt,
     name,
     logo_partner: logoPartner,
     rules_pdf: rulesPdf,
@@ -44,13 +42,15 @@ const PromotionDetails: FC<IProps> = ({
     hot_line_work_hours: hotLineWorkHours,
     hot_line_text: hotLineText,
     hot_line_text_2: hotLineOtherText,
+    third_banner_dt: thirdBannerDt,
+    third_banner_mob: thirdBannerMob,
   } = promotion;
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
   const { state }: PromotionDetailsState = useLocation();
   const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
-    bannerDt: secondBannerDt,
-    bannerMob: secondBannerMob,
+    bannerDt: thirdBannerDt,
+    bannerMob: thirdBannerMob,
   });
   const validHotLinePhone = getValidPhone(hotLinePhone ?? '');
   const logoUrl = getFileUrl(logo ?? '');
@@ -132,8 +132,8 @@ const PromotionDetails: FC<IProps> = ({
             hotLineEmail={hotLineEmail}
             hotLinePhone={hotLinePhone}
             logoUrl={logoUrl}
-            secondBannerDt={bannerDtUrl}
-            secondBannerMob={bannerMobUrl}
+            bannerDt={bannerDtUrl}
+            bannerMob={bannerMobUrl}
             isNationalPromotion={isNationalPromotion}
             validHotLinePhone={validHotLinePhone}
           />
