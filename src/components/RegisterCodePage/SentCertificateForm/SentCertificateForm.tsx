@@ -25,21 +25,15 @@ const SentCertificateForm: FC<IProps> = ({
   userEmail,
   updateIsSuccessStatus,
 }) => {
-  const {
-    handleFormSubmit,
-    register,
-    handleSubmit,
-    disabledBtn,
-    defaultUserEmail,
-    defaultUserName,
-  } = useSentCertificateForm({
-    toggleShowSuccessMsgState,
-    updateUserData,
-    userName,
-    codeId,
-    userEmail,
-    updateIsSuccessStatus,
-  });
+  const { handleFormSubmit, register, handleSubmit, disabledBtn } =
+    useSentCertificateForm({
+      toggleShowSuccessMsgState,
+      updateUserData,
+      userName,
+      codeId,
+      userEmail,
+      updateIsSuccessStatus,
+    });
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -51,7 +45,6 @@ const SentCertificateForm: FC<IProps> = ({
           <Input
             type='text'
             {...register('name', { required: true })}
-            defaultValue={defaultUserName}
             placeholder={InputPlaceholders.enterName}
           />
         </InputWrap>
@@ -78,7 +71,6 @@ const SentCertificateForm: FC<IProps> = ({
             {...register('email', {
               pattern: regExp.email,
             })}
-            defaultValue={defaultUserEmail}
             placeholder={InputPlaceholders.email}
           />
         </InputWrap>

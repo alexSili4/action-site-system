@@ -128,9 +128,6 @@ export interface IUseRegisterCodeFormProps {
 }
 
 export interface IUseRegisterCodeForm {
-  defaultCodePart1: string;
-  defaultCodePart2: string;
-  defaultCodePart3: string;
   error: StringOrNull;
   disabledBtn: boolean;
   isError: boolean;
@@ -161,8 +158,6 @@ export interface IUseSentCertificateForm {
   register: UseFormRegister<ISentCertificateFormData>;
   handleSubmit: UseFormHandleSubmit<ISentCertificateFormData, undefined>;
   disabledBtn: boolean;
-  defaultUserEmail: string;
-  defaultUserName: string;
 }
 
 export interface IUseIsScrollingUp {

@@ -27,7 +27,8 @@ const useRegisterCodeForm = ({
   const [isFullRegCode, setIsFullRegCode] = useState<boolean>(false);
   const [regCodeInputs, setRegCodeInputs] = useState<HTMLInputElements>([]);
   const inputWrapRef = useRef<HTMLDivElement>(null);
-  const { register, handleSubmit, watch } = useForm<IRegCodeFormData>();
+  const { register, handleSubmit, watch, setValue } =
+    useForm<IRegCodeFormData>();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
   const { searchParams } = useSetSearchParams();
   const isError = Boolean(error);
@@ -38,6 +39,12 @@ const useRegisterCodeForm = ({
     string: defaultCode,
     parts: 3,
   });
+
+  useEffect(() => {
+    setValue('codePart1', defaultCodePart1);
+    setValue('codePart2', defaultCodePart2);
+    setValue('codePart3', defaultCodePart3);
+  }, [defaultCodePart1, defaultCodePart2, defaultCodePart3, setValue]);
 
   const inputMaxLength = generalSettings.regCodeLength / 3;
 
@@ -206,9 +213,6 @@ const useRegisterCodeForm = ({
     inputMaxLength,
     error,
     disabledBtn,
-    defaultCodePart1,
-    defaultCodePart2,
-    defaultCodePart3,
   };
 };
 
