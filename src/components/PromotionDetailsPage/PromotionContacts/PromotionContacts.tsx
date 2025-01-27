@@ -11,7 +11,6 @@ const PromotionContacts: FC<IProps> = ({
   shops,
   hotLineEmail,
   hotLinePhone,
-  logoUrl,
   bannerDt,
   bannerMob,
   isNationalPromotion,
@@ -28,7 +27,6 @@ const PromotionContacts: FC<IProps> = ({
         <PromotionContactsBanner
           hotLineEmail={hotLineEmail}
           hotLinePhone={hotLinePhone}
-          logoUrl={logoUrl}
           bannerDt={bannerDt}
           bannerMob={bannerMob}
           validHotLinePhone={validHotLinePhone}

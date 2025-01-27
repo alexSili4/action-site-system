@@ -11,11 +11,7 @@ import SentCertificateForm from '@RegisterCodePageComponents/SentCertificateForm
 import SuccessRegisterCodeMsg from '@RegisterCodePageComponents/SuccessRegisterCodeMsg';
 import { IUserData } from '@/types/code.types';
 
-const SentCertificateSection: FC<IProps> = ({
-  hotLinePhone,
-  hotLineWorkHours,
-  codeId,
-}) => {
+const SentCertificateSection: FC<IProps> = ({ supportServiceText, codeId }) => {
   const [isSuccessStatus, setIsSuccessStatus] = useState<boolean>(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
   const [userData, setUserData] = useState<IUserData | null>(null);
@@ -47,8 +43,7 @@ const SentCertificateSection: FC<IProps> = ({
       <ContentWrap>
         {shouldShowSuccessMsg ? (
           <SuccessRegisterCodeMsg
-            hotLinePhone={hotLinePhone}
-            hotLineWorkHours={hotLineWorkHours}
+            supportServiceText={supportServiceText}
             userName={userName}
             message={message}
           />

@@ -1,7 +1,6 @@
 import { StringOrNull } from '@/types/types';
 
 export interface IProps {
-  logoUrl: string;
   bannerDt: string;
   bannerMob: string;
   hotLinePhone: string;

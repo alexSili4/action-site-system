@@ -1,5 +1,4 @@
 export interface IProps {
-  hotLinePhone: string;
-  hotLineWorkHours: string;
+  supportServiceText: string;
   codeId: number;
 }

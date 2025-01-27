@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import { Content } from './RegisterCode.styled';
-import { getFileUrl, getShouldShowPrizesWheel } from '@/utils';
+import {
+  getFileUrl,
+  getShouldShowPrizesWheel,
+  getSupportServiceText,
+} from '@/utils';
 // components
 import RegisterCodeSection from '@RegisterCodePageComponents/RegisterCodeSection';
 import PrizesWheelSection from '@RegisterCodePageComponents/PrizesWheelSection';
@@ -22,8 +26,8 @@ const RegisterCode: FC<IProps> = ({
 }) => {
   const {
     action_type: actionType,
-    hot_line_phone: hotLinePhone,
-    hot_line_work_hours: hotLineWorkHours,
+    hot_line_phone: hotLinePhone = '',
+    hot_line_work_hours: hotLineWorkHours = '',
     rules_pdf: rulesPdf,
   } = promotion ?? {};
   const shouldShowPrizesWheel = isDefaultCodeId
@@ -31,9 +35,10 @@ const RegisterCode: FC<IProps> = ({
     : actionType
     ? getShouldShowPrizesWheel(actionType)
     : false;
-
-  const hotLinePhoneString = hotLinePhone ?? '';
-  const hotLineWorkHoursString = hotLineWorkHours ?? '';
+  const supportServiceText = getSupportServiceText({
+    hotLinePhone,
+    hotLineWorkHours,
+  });
 
   const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
 
@@ -52,8 +57,7 @@ const RegisterCode: FC<IProps> = ({
       {isRegisterCodeStep && (
         <Container>
           <RegisterCodeSection
-            hotLinePhone={hotLinePhoneString}
-            hotLineWorkHours={hotLineWorkHoursString}
+            supportServiceText={supportServiceText}
             rulesPdf={rulesPdfUrl}
             onSuccessRegisterCode={onSuccessRegisterCode}
             updatePromotion={updatePromotion}
@@ -73,8 +77,7 @@ const RegisterCode: FC<IProps> = ({
         <Container>
           <SentCertificateSection
             codeId={codeId}
-            hotLinePhone={hotLinePhoneString}
-            hotLineWorkHours={hotLineWorkHoursString}
+            supportServiceText={supportServiceText}
           />
         </Container>
       )}

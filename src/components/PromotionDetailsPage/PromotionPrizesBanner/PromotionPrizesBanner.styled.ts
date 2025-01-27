@@ -6,6 +6,8 @@ export const List = styled.ul``;
 export const ListItem = styled.li``;
 
 export const Container = styled.div<IStyledProps>`
+  display: flex;
+  flex-direction: column;
   height: 542px;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
@@ -14,6 +16,10 @@ export const Container = styled.div<IStyledProps>`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    justify-content: flex-end;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 430px;

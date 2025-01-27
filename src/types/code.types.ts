@@ -93,10 +93,11 @@ export interface IUpdateUserDataProps extends IUserData {
   codeId: number;
 }
 
-export interface IRegisterUnusedCodeState {
+export interface IRegisterCodePageState {
   defaultCodeId?: number;
+  defaultPromotion?: IPromotion;
 }
 
-export type RegisterUnusedCodeState = {
-  state: Partial<IRegisterUnusedCodeState>;
+export type RegisterCodePageState = {
+  state: Partial<IRegisterCodePageState>;
 };

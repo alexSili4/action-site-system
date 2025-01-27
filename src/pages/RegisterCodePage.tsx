@@ -3,7 +3,7 @@ import Section from '@GeneralComponents/Section';
 import RegisterCode from '@RegisterCodePageComponents/RegisterCode';
 import {
   useCabinetState,
-  useDefaultCodeId,
+  useRegisterCodePageState,
   useIsUnusedUserCodes,
   useServiceUnavailablePageNavigate,
 } from '@/hooks';
@@ -18,7 +18,7 @@ import { AxiosError } from 'axios';
 const RegisterCodePage: FC = () => {
   const isUnusedUserCodes = useIsUnusedUserCodes();
   const cabinetState = useCabinetState({ isRedirectFromRegCodePage: true });
-  const defaultCodeId = useDefaultCodeId();
+  const { defaultCodeId, defaultPromotion } = useRegisterCodePageState();
   const isDefaultCodeId = Boolean(defaultCodeId);
   const targetCurrentStep = isDefaultCodeId ? 2 : 1;
   const [currentStep, setCurrentStep] = useState<number>(
@@ -26,7 +26,10 @@ const RegisterCodePage: FC = () => {
   );
   const [codeId, setCodeId] = useState<NumberOrNull>(() => defaultCodeId);
   const [partners, setPartners] = useState<Partners | null>(null);
-  const [promotion, setPromotion] = useState<IPromotion | null>(null);
+  const [promotion, setPromotion] = useState<IPromotion | null>(
+    () => defaultPromotion
+    // null
+  );
   const navigate = useNavigate();
   const navigateToErrorPage = useServiceUnavailablePageNavigate();
 

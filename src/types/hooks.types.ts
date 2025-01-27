@@ -10,6 +10,7 @@ import {
   StringOrNull,
   SetPromotionFunc,
   SetBooleanFunc,
+  NumberOrNull,
 } from './types';
 import {
   IPromotion,
@@ -231,4 +232,9 @@ export interface IUsePromotion {
 export interface IUsePreviewPage {
   isPreviewPage: boolean;
   previewId: string;
+}
+
+export interface IUseRegisterCodePageState {
+  defaultCodeId: NumberOrNull;
+  defaultPromotion: IPromotion | null;
 }

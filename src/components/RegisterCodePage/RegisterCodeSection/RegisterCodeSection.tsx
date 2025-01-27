@@ -7,8 +7,7 @@ import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsB
 
 const RegisterCodeSection: FC<IProps> = ({
   rulesPdf,
-  hotLinePhone,
-  hotLineWorkHours,
+  supportServiceText,
   onSuccessRegisterCode,
   updatePromotion,
 }) => {
@@ -21,10 +20,7 @@ const RegisterCodeSection: FC<IProps> = ({
           onSuccessRegisterCode={onSuccessRegisterCode}
           rulesPdf={rulesPdf}
         />
-        <Text>
-          Якщо Вам не вдалося зареєструвати акційний код зверніться на гарячу
-          лінію за телефоном {hotLinePhone} ({hotLineWorkHours})
-        </Text>
+        <Text>{supportServiceText}</Text>
       </ContentWrap>
     </Container>
   );

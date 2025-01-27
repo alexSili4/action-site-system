@@ -4,7 +4,7 @@ import { IStyledProps } from './PromotionContactsBanner.types';
 export const Container = styled.div<IStyledProps>`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) => `${theme.spacing(10)} ${theme.spacing(5)}`};
@@ -26,25 +26,6 @@ export const Container = styled.div<IStyledProps>`
     width: 445px;
   }
 `;
-
-export const TitleWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: ${({ theme }) => theme.spacing(3)};
-`;
-
-export const Title = styled.p`
-  flex-shrink: 0;
-  color: ${({ theme }) => theme.colors.white};
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.4;
-`;
-
-export const TitleImgWrap = styled.div``;
-
-export const TitleImg = styled.img``;
 
 export const Links = styled.div`
   display: flex;

@@ -7,18 +7,13 @@ import {
   Link,
   Links,
   LinkWrap,
-  Title,
-  TitleImg,
-  TitleWrap,
   LinkTitle,
   IconWrap,
-  TitleImgWrap,
 } from './PromotionContactsBanner.styled';
 import { theme } from '@/constants';
 import { IProps } from './PromotionContactsBanner.types';
 
 const PromotionContactsBanner: FC<IProps> = ({
-  logoUrl,
   bannerDt,
   bannerMob,
   hotLinePhone,
@@ -27,12 +22,6 @@ const PromotionContactsBanner: FC<IProps> = ({
 }) => {
   return (
     <Container bannerDt={bannerDt} bannerMob={bannerMob}>
-      <TitleWrap>
-        <Title>Організатор акції</Title>
-        <TitleImgWrap>
-          <TitleImg src={logoUrl} alt='Логотип організатора акції' />
-        </TitleImgWrap>
-      </TitleWrap>
       <Links>
         <LinkWrap>
           <Label>Гаряча лінія</Label>

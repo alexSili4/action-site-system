@@ -2,8 +2,7 @@ import { SetNumberFunc, SetPromotionFunc } from '@/types/types';
 
 export interface IProps {
   rulesPdf: string;
-  hotLinePhone: string;
-  hotLineWorkHours: string;
+  supportServiceText: string;
   onSuccessRegisterCode: SetNumberFunc;
   updatePromotion: SetPromotionFunc;
 }

@@ -146,3 +146,8 @@ export interface IGetFinalTotalDegreesProps {
 export interface IRegExp {
   email: RegExp;
 }
+
+export interface IGetSupportServiceTextProps {
+  hotLinePhone: StringOrNull;
+  hotLineWorkHours: StringOrNull;
+}

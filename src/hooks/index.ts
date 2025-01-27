@@ -34,6 +34,7 @@ export { default as useIsErrorPage } from './useIsErrorPage';
 export { default as useUnusedUserCodeLink } from './useUnusedUserCodeLink';
 export { default as useFirstUnusedUserCode } from './useFirstUnusedUserCode';
 export { default as useRegisterUnusedCodeState } from './useRegisterUnusedCodeState';
-export { default as useDefaultCodeId } from './useDefaultCodeId';
+export { default as useRegisterCodePageState } from './useRegisterCodePageState';
 export { default as useIsCabinetPage } from './useIsCabinetPage';
 export { default as usePreviewPage } from './usePreviewPage';
+export { default as useDefaultPromotionState } from './useDefaultPromotionState';

@@ -11,7 +11,6 @@ const getTargetCityCenter = (data?: string): LatLngExpression => {
     Number(coordinates[1]),
   ];
 
-  console.log(result);
   return result;
 };
 

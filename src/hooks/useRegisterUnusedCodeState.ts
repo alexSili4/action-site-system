@@ -1,9 +1,9 @@
-import { IRegisterUnusedCodeState } from '@/types/code.types';
+import { IRegisterCodePageState } from '@/types/code.types';
 import useFirstUnusedUserCode from './useFirstUnusedUserCode';
 
-const useRegisterUnusedCodeState = (): IRegisterUnusedCodeState => {
+const useRegisterUnusedCodeState = (): IRegisterCodePageState => {
   const { id } = useFirstUnusedUserCode() ?? {};
-  const registerCodeState: IRegisterUnusedCodeState = {
+  const registerCodeState: IRegisterCodePageState = {
     defaultCodeId: id,
   };
 
