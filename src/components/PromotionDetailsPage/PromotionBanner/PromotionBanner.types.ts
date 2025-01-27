@@ -5,6 +5,6 @@ export interface IProps extends IStyledProps {
 }
 
 export interface IStyledProps {
-  secondBannerDt: StringOrNull;
-  secondBannerMob: StringOrNull;
+  bannerDt: StringOrNull;
+  bannerMob: StringOrNull;
 }

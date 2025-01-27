@@ -6,7 +6,7 @@ export const Container = styled.div<IStyledProps>`
   padding: ${({ theme }) => theme.spacing(6)};
   padding-top: ${({ theme }) => theme.spacing(8)};
   border-radius: 8px;
-  background-image: url(${({ secondBannerMob }) => secondBannerMob});
+  background-image: url(${({ bannerMob }) => bannerMob});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,11 +20,11 @@ export const Container = styled.div<IStyledProps>`
     height: 385px;
     padding: ${({ theme }) =>
       `${theme.spacing(6)} ${theme.spacing(7)} ${theme.spacing(9)}`};
-    background-image: url(${({ secondBannerDt }) => secondBannerDt});
+    background-image: url(${({ bannerDt }) => bannerDt});
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    height: 485px;
+    height: 600px;
     padding: ${({ theme }) =>
       `${theme.spacing(12)} ${theme.spacing(14)} ${theme.spacing(18)}`};
   }

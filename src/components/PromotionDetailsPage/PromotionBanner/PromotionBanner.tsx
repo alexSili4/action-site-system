@@ -4,16 +4,9 @@ import { Container } from './PromotionBanner.styled';
 // components
 import PromotionDetailsGoBackLink from '@PromotionDetailsPageComponents/PromotionDetailsGoBackLink';
 
-const PromotionBanner: FC<IProps> = ({
-  from,
-  secondBannerDt,
-  secondBannerMob,
-}) => {
+const PromotionBanner: FC<IProps> = ({ from, bannerDt, bannerMob }) => {
   return (
-    <Container
-      secondBannerDt={secondBannerDt}
-      secondBannerMob={secondBannerMob}
-    >
+    <Container bannerDt={bannerDt} bannerMob={bannerMob}>
       <PromotionDetailsGoBackLink from={from} />
     </Container>
   );

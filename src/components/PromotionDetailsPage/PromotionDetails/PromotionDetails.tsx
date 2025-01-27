@@ -42,16 +42,24 @@ const PromotionDetails: FC<IProps> = ({
     hot_line_work_hours: hotLineWorkHours,
     hot_line_text: hotLineText,
     hot_line_text_2: hotLineOtherText,
+    second_banner_dt: secondBannerDt,
+    second_banner_mob: secondBBannerMob,
     third_banner_dt: thirdBannerDt,
     third_banner_mob: thirdBannerMob,
   } = promotion;
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
   const { state }: PromotionDetailsState = useLocation();
-  const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
-    bannerDt: thirdBannerDt,
-    bannerMob: thirdBannerMob,
-  });
+  const { bannerDtUrl: thirdBannerDtUrl, bannerMobUrl: thirdBannerMobUrl } =
+    getPromotionBannerUrls({
+      bannerDt: thirdBannerDt,
+      bannerMob: thirdBannerMob,
+    });
+  const { bannerDtUrl: secondBannerDtUrl, bannerMobUrl: secondBannerMobUrl } =
+    getPromotionBannerUrls({
+      bannerDt: secondBannerDt,
+      bannerMob: secondBBannerMob,
+    });
   const validHotLinePhone = getValidPhone(hotLinePhone ?? '');
   const logoUrl = getFileUrl(logo ?? '');
   const logoPartnerUrl = getFileUrl(logoPartner ?? '');
@@ -90,8 +98,8 @@ const PromotionDetails: FC<IProps> = ({
           />
           <PromotionBanner
             from={from}
-            secondBannerDt={bannerDtUrl}
-            secondBannerMob={bannerMobUrl}
+            bannerDt={secondBannerDtUrl}
+            bannerMob={secondBannerMobUrl}
           />
         </PromotionDetailsSectionContainer>
         {shouldShowConditionsSection && (
@@ -132,8 +140,8 @@ const PromotionDetails: FC<IProps> = ({
             hotLineEmail={hotLineEmail}
             hotLinePhone={hotLinePhone}
             logoUrl={logoUrl}
-            bannerDt={bannerDtUrl}
-            bannerMob={bannerMobUrl}
+            bannerDt={thirdBannerDtUrl}
+            bannerMob={thirdBannerMobUrl}
             isNationalPromotion={isNationalPromotion}
             validHotLinePhone={validHotLinePhone}
           />
