@@ -45,15 +45,15 @@ const UserCode: FC<IProps> = ({ code }) => {
     certificate_code: certificateCode = null,
   } = certificate ?? {};
 
-  const shouldShowCertificateInfo = Boolean(certificate);
-  const shouldShowPrizeInfo = Boolean(present);
-  const shouldShowPrizesInfo = shouldShowCertificateInfo || shouldShowPrizeInfo;
-
   const { isErrorStatus, isSuccessStatus } = getCodeStatus(codeStatus);
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
   const prizeDetailsPath = getPrizeDetailsPath(winnerId);
   const certificateDetailsPath = getCertificateDetailsPath(winnerId);
   const formattedCode = getFormattedCode(userCode);
+
+  const shouldShowCertificateInfo = Boolean(certificate) && isSuccessStatus;
+  const shouldShowPrizeInfo = Boolean(present);
+  const shouldShowPrizesInfo = shouldShowCertificateInfo || shouldShowPrizeInfo;
 
   const codeCreatedAtDate = formatDate({
     date: codeCreatedAt * 1000,

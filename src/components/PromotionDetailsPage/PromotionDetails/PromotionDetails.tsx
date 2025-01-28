@@ -70,12 +70,7 @@ const PromotionDetails: FC<IProps> = ({
     Array.isArray(winners) && Boolean(winners.length);
   const shouldShowContactsSection =
     Boolean(shops.length) && hotLineEmail && hotLinePhone;
-  const shouldShowFAQsSection =
-    Boolean(faqs.length) &&
-    hotLineOtherText &&
-    hotLinePhone &&
-    hotLineText &&
-    hotLineWorkHours;
+  const shouldShowFAQsSection = Boolean(faqs.length);
   const shouldShowWheelPrizesSection = Boolean(wheelPrizes.length);
   const shouldShowOtherPrizesSection = Boolean(otherPrizes.length);
   const shouldShowConditionsSection = Boolean(conditions.length);

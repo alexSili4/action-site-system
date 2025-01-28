@@ -24,6 +24,13 @@ const PromotionFAQs: FC<IProps> = ({
   hotLineText,
   validHotLinePhone,
 }) => {
+  const shouldShowAdditionalIfo =
+    Boolean(hotLineOtherText) &&
+    Boolean(hotLinePhone) &&
+    Boolean(hotLineWorkHours) &&
+    Boolean(hotLineText) &&
+    Boolean(validHotLinePhone);
+
   return (
     <Container id={PromotionDetailsPageSections.faqs}>
       <PromotionSectionTitle title='Питання та відповіді' />
@@ -33,18 +40,20 @@ const PromotionFAQs: FC<IProps> = ({
             <PromotionFAQ faq={faq} key={faq.title} />
           ))}
         </List>
-        <AdditionalIfoWrap>
-          <AdditionalIfoText>{hotLineOtherText}</AdditionalIfoText>
-          <PhoneLink href={`tel:${validHotLinePhone}`}>
-            <PhoneLinkIconWrap>
-              <LuPhone size={theme.iconSizes.phoneLink} />
-            </PhoneLinkIconWrap>
-            <PhoneLinkTitle>{hotLinePhone}</PhoneLinkTitle>
-          </PhoneLink>
-          <AdditionalIfoText>
-            {hotLineText} {hotLineWorkHours}
-          </AdditionalIfoText>
-        </AdditionalIfoWrap>
+        {shouldShowAdditionalIfo && (
+          <AdditionalIfoWrap>
+            <AdditionalIfoText>{hotLineOtherText}</AdditionalIfoText>
+            <PhoneLink href={`tel:${validHotLinePhone}`}>
+              <PhoneLinkIconWrap>
+                <LuPhone size={theme.iconSizes.phoneLink} />
+              </PhoneLinkIconWrap>
+              <PhoneLinkTitle>{hotLinePhone}</PhoneLinkTitle>
+            </PhoneLink>
+            <AdditionalIfoText>
+              {hotLineText} {hotLineWorkHours}
+            </AdditionalIfoText>
+          </AdditionalIfoWrap>
+        )}
       </ContentWrap>
     </Container>
   );
