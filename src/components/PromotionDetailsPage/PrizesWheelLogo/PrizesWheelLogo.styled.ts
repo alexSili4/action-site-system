@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  align-self: flex-end;
   gap: ${({ theme }) => theme.spacing(2)};
   width: auto;
   padding: ${({ theme }) => `${theme.spacing(3)} ${theme.spacing(4)}`};

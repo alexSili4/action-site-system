@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
+  IStyledCertificateWrapProps,
   IStyledCodeDetailsItemProps,
   IStyledCodeDetailsSubtitleProps,
   IStyledPrizesInfoTextProps,
@@ -251,7 +252,7 @@ export const PrizesInfo = styled.div`
   }
 `;
 
-export const CertificateWrap = styled.div`
+export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
   display: flex;
   flex-direction: column;
 
@@ -260,7 +261,8 @@ export const CertificateWrap = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    flex-direction: row-reverse;
+    flex-direction: ${({ isSuccessStatus }) =>
+      isSuccessStatus && 'row-reverse'};
     justify-content: space-between;
   }
 `;

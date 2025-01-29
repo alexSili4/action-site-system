@@ -6,19 +6,15 @@ import {
   LegalInfoWrap,
   SunLink,
 } from './Footer.styled';
-import {
-  useIsPromotionDetailsPage,
-  useIsRootPage,
-  useTargetPromotionData,
-} from '@/hooks';
+import { useIsPromotionDetailsPage, useIsRootPage } from '@/hooks';
 // components
 import SocialLinksList from '@GeneralComponents/SocialLinksList';
+import { IProps } from './Footer.types';
 
-const Footer: FC = () => {
-  const { legalText } = useTargetPromotionData();
+const Footer: FC<IProps> = ({ legalText }) => {
   const isRootPage = useIsRootPage();
   const isPromotionDetailsPage = useIsPromotionDetailsPage();
-  const shouldShowLegalInfo = isPromotionDetailsPage && legalText;
+  const shouldShowLegalInfo = legalText && isPromotionDetailsPage;
 
   return (
     <StyledFooter

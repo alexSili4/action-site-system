@@ -17,7 +17,6 @@ import PromotionPageBreadcrumbs from '@PromotionDetailsPageComponents/PromotionP
 import PromotionBanner from '@PromotionDetailsPageComponents/PromotionBanner';
 import PromotionConditions from '@PromotionDetailsPageComponents/PromotionConditions';
 import PromotionPrizes from '@PromotionDetailsPageComponents/PromotionPrizes';
-import PromotionPrizesBannerIcon from '@PromotionDetailsPageComponents/PromotionPrizesBannerIcon';
 import PromotionFAQs from '@PromotionDetailsPageComponents/PromotionFAQs';
 import PromotionWinners from '@PromotionDetailsPageComponents/PromotionWinners';
 import PromotionContacts from '@PromotionDetailsPageComponents/PromotionContacts';
@@ -33,7 +32,6 @@ const PromotionDetails: FC<IProps> = ({
 }) => {
   const {
     name,
-    logo_partner: logoPartner,
     rules_pdf: rulesPdf,
     coverage_type: coverageType,
     hot_line_email: hotLineEmail,
@@ -62,7 +60,6 @@ const PromotionDetails: FC<IProps> = ({
     });
   const validHotLinePhone = getValidPhone(hotLinePhone ?? '');
   const logoUrl = getFileUrl(logo ?? '');
-  const logoPartnerUrl = getFileUrl(logoPartner ?? '');
   const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
   const isNationalPromotion = coverageType === 'national';
 
@@ -102,7 +99,6 @@ const PromotionDetails: FC<IProps> = ({
         )}
         {shouldShowOtherPrizesSection && (
           <PromotionPrizes
-            logo={<PromotionPrizesBannerIcon src={logoPartnerUrl} />}
             prizes={otherPrizes}
             title='Призи головного розіграшу'
             description='Унікальний приз від головного партнера'

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  padding-top: ${({ theme }) => theme.spacing(39)};
+  padding-top: ${({ theme }) => theme.spacing(20.5)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(25)};

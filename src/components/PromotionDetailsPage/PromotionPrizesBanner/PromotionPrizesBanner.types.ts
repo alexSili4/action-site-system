@@ -7,6 +7,11 @@ export interface IProps {
   description: string;
 }
 
-export interface IStyledProps {
+export interface IStyledContainerProps {
   imageUrl: string;
+  isLogo: boolean;
+}
+
+export interface IStyledImgWrapProps {
+  isLogo: boolean;
 }

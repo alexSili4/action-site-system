@@ -10,6 +10,8 @@ import usePromotion from './usePromotion';
 import useDynamicId from './useDynamicId';
 import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNavigate';
 import { AxiosError } from 'axios';
+import { IPromotionDetailsPageOutletContext } from '@/types/types';
+import { useOutletContext } from 'react-router-dom';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
@@ -22,6 +24,14 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const { promotion, isNotFoundError } = usePromotion();
   const navigate = useServiceUnavailablePageNavigate();
   const shouldShowPromotionDetails = !isNotFoundError;
+  const { updateLegalText }: IPromotionDetailsPageOutletContext =
+    useOutletContext();
+
+  useEffect(() => {
+    if (promotion) {
+      updateLegalText(promotion.legal_text);
+    }
+  }, [promotion, updateLegalText]);
 
   useEffect(() => {
     const getPromotionConditions = async (

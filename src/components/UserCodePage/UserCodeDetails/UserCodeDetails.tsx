@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
 import { HiLocationMarker } from 'react-icons/hi';
-import { theme } from '@/constants';
+import { generalSettings, theme } from '@/constants';
 import CouponIcon from '@/icons/cabinet/coupon.svg?react';
 import AtbLogo from '@/icons/atbLogo.svg?react';
 import {
@@ -154,22 +154,32 @@ const UserCodeDetails: FC<IProps> = ({
           <PrizesInfo>
             {shouldShowCertificateInfo && (
               <>
-                <CertificateWrap>
-                  <CertificateDetailsLink to={certificateDetailsPath}>
-                    Сертифікат
-                  </CertificateDetailsLink>
+                <CertificateWrap isSuccessStatus={isSuccessStatus}>
+                  {isSuccessStatus && (
+                    <CertificateDetailsLink to={certificateDetailsPath}>
+                      Сертифікат
+                    </CertificateDetailsLink>
+                  )}
                   <CertificateInfo>
                     <PrizesInfoTitle>Виграний сертифікат:</PrizesInfoTitle>
-                    <Certificate>
-                      <PrizesInfoText>{drawCertificateDate}</PrizesInfoText>
-                      <CertificateLink
-                        to={certificateDetailsPath}
-                        state={cabinetState}
-                      >
-                        <CouponIcon />
-                        <PrizeLinkTitle>{wheelCertificateCode}</PrizeLinkTitle>
-                      </CertificateLink>
-                    </Certificate>
+                    {isSuccessStatus ? (
+                      <Certificate>
+                        <PrizesInfoText>{drawCertificateDate}</PrizesInfoText>
+                        <CertificateLink
+                          to={certificateDetailsPath}
+                          state={cabinetState}
+                        >
+                          <CouponIcon />
+                          <PrizeLinkTitle>
+                            {wheelCertificateCode}
+                          </PrizeLinkTitle>
+                        </CertificateLink>
+                      </Certificate>
+                    ) : (
+                      <PrizesInfoText>
+                        {generalSettings.defaultDataText}
+                      </PrizesInfoText>
+                    )}
                   </CertificateInfo>
                 </CertificateWrap>
                 <UserCodeInfoDelimiter></UserCodeInfoDelimiter>

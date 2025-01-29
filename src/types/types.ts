@@ -128,9 +128,14 @@ export interface ICabinetPageOutletContext {
   onEmptyPrizesListBtnClick: OnBtnClickFunc;
 }
 
+export interface IPromotionDetailsPageOutletContext {
+  updateLegalText: SetStringOrNullFunc;
+}
+
 export interface IOutletContext
   extends IGeneralOutletContext,
-    ICabinetPageOutletContext {}
+    ICabinetPageOutletContext,
+    IPromotionDetailsPageOutletContext {}
 
 export interface IGetCodeStatus {
   isSuccessStatus: boolean;

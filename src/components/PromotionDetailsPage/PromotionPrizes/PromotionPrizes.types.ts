@@ -6,7 +6,7 @@ export interface IProps {
   prizes: Prizes;
   title: string;
   description: string;
-  logo: ReactNode;
+  logo?: ReactNode;
   showRegCodeLink?: boolean;
   id?: PromotionDetailsPageSections;
 }

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { theme } from '@/constants';
 import { useMediaQuery } from '@/hooks';
 import { makeBlur } from '@/utils';
-import { BtnClickEvent, IOutletContext } from '@/types/types';
+import { BtnClickEvent, IOutletContext, StringOrNull } from '@/types/types';
 // components
 import Loader from '@GeneralComponents/Loader';
 import Header from '@GeneralComponents/Header';
@@ -12,6 +12,7 @@ import Footer from '@GeneralComponents/Footer';
 import AppBackground from '@GeneralComponents/AppBackground';
 
 const SharedLayout: FC = () => {
+  const [legalText, setLegalText] = useState<StringOrNull>(null);
   const [
     showSelectPromotionsLocationModalWin,
     setShowSelectPromotionsLocationModalWin,
@@ -21,6 +22,10 @@ const SharedLayout: FC = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.tablet);
   const showOtherModalWin =
     showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
+
+  const updateLegalText = (data: StringOrNull) => {
+    setLegalText(data);
+  };
 
   const toggleShowSelectPromotionsLocationModalWin = () => {
     setShowSelectPromotionsLocationModalWin((prevState) => !prevState);
@@ -45,6 +50,7 @@ const SharedLayout: FC = () => {
   const outletContext: IOutletContext = {
     showOtherModalWin,
     onEmptyPrizesListBtnClick: onRegisterCodeBtnClickOnAllPages,
+    updateLegalText,
   };
 
   return (
@@ -63,7 +69,7 @@ const SharedLayout: FC = () => {
             <Outlet context={outletContext} />
           </Suspense>
         </Main>
-        <Footer />
+        <Footer legalText={legalText} />
       </Content>
     </>
   );

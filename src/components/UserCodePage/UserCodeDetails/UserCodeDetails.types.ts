@@ -33,3 +33,7 @@ export interface IStyledCodeDetailsItemProps {
 export interface IStyledPrizesInfoTextProps {
   isHiddenOnDesk?: boolean;
 }
+
+export interface IStyledCertificateWrapProps {
+  isSuccessStatus: boolean;
+}

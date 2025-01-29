@@ -51,7 +51,7 @@ const UserCode: FC<IProps> = ({ code }) => {
   const certificateDetailsPath = getCertificateDetailsPath(winnerId);
   const formattedCode = getFormattedCode(userCode);
 
-  const shouldShowCertificateInfo = Boolean(certificate) && isSuccessStatus;
+  const shouldShowCertificateInfo = Boolean(certificate);
   const shouldShowPrizeInfo = Boolean(present);
   const shouldShowPrizesInfo = shouldShowCertificateInfo || shouldShowPrizeInfo;
 
