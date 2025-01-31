@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { IStyledContainerProps } from './EmptyPrizesListMessage.types';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div<IStyledContainerProps>`
   display: flex;
@@ -32,7 +33,7 @@ export const Title = styled.p`
   }
 `;
 
-export const Button = styled.button`
+export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

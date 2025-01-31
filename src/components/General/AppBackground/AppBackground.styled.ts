@@ -5,19 +5,16 @@ import styled from '@emotion/styled';
 
 export const Background = styled.div`
   position: fixed;
-  top: 0px;
+  bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
   background-image: url(${GradientImg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    background-size: cover;
-    background-position: center;
-  }
 `;
 
 export const StyledImg = styled.img``;

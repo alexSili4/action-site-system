@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import decorativeElement from '@/images/cabinet/decorative-element.png';
-import { IStyledCertificateImgProps } from './UserCertificateBanner.types';
+import { IStyledImageWrapProps } from './UserCertificateBanner.types';
 
 export const Container = styled.div`
   flex-shrink: 0;
@@ -44,15 +44,15 @@ export const CertificateImgWrap = styled.div`
   }
 `;
 
-export const CertificateImg = styled.div<IStyledCertificateImgProps>`
+export const CertificateImg = styled.div`
   display: flex;
+  flex-direction: column;
   padding: ${({ theme: { spacing } }) =>
     `${spacing(80)} ${spacing(5)} ${spacing(4)}`};
   background-color: ${({ theme }) => theme.colors.lightGrey};
-  background-image: url(${decorativeElement}),
-    url(${({ thirdBannerMob }) => thirdBannerMob});
-  background-position: 0 0, center;
-  background-size: contain, cover;
+  background-image: url(${decorativeElement});
+  background-position: 0 0;
+  background-size: contain;
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
@@ -64,12 +64,20 @@ export const CertificateImg = styled.div<IStyledCertificateImgProps>`
     height: 100%;
     align-items: flex-end;
     padding: ${({ theme }) => theme.spacing(8)};
-    background-image: url(${decorativeElement}),
-      url(${({ thirdBannerDt }) => thirdBannerDt});
   }
 `;
 
+export const ImageWrap = styled.div<IStyledImageWrapProps>`
+  width: 100%;
+  height: 100%;
+  background-image: url(${({ certificateImg }) => certificateImg});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
 export const DownloadLink = styled.a`
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;

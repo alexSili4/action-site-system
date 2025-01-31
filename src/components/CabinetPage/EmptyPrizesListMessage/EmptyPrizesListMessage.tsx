@@ -1,23 +1,17 @@
 import { FC } from 'react';
-import { Container, Title, Button } from './EmptyPrizesListMessage.styled';
-import { ICabinetPageOutletContext } from '@/types/types';
-import { useOutletContext } from 'react-router-dom';
+import { Container, Title, StyledLink } from './EmptyPrizesListMessage.styled';
 import { IProps } from './EmptyPrizesListMessage.types';
+import { PagePaths } from '@/constants';
 
 const EmptyPrizesListMessage: FC<IProps> = ({
   title,
   bgImg,
   isBigImgSize = false,
 }) => {
-  const { onEmptyPrizesListBtnClick }: ICabinetPageOutletContext =
-    useOutletContext();
-
   return (
     <Container bgImg={bgImg} isBigImgSize={isBigImgSize}>
       <Title>{title}</Title>
-      <Button type='button' onClick={onEmptyPrizesListBtnClick}>
-        До акцій вашого міста
-      </Button>
+      <StyledLink to={PagePaths.root}>На головну</StyledLink>
     </Container>
   );
 };

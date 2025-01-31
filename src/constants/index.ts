@@ -24,3 +24,4 @@ export { default as Headers } from './headers';
 export { default as SectionsIds } from './sectionsIds';
 export { default as InputPlaceholders } from './inputPlaceholders';
 export { default as regExp } from './regExp';
+export { default as marksData } from './marksData';

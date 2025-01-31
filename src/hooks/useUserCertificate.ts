@@ -32,8 +32,11 @@ const useUserCertificate = (
     third_banner_mob: thirdBannerMob,
     id: actionId,
   } = action;
-  const { certificate_code: certificateCode, pdf_url: certificatePdf } =
-    certificate;
+  const {
+    certificate_code: certificateCode,
+    pdf_url: certificatePdf,
+    gift: { images },
+  } = certificate;
   const hotLinePhoneString = hotLinePhone ?? '';
 
   const validHotLinePhone = getValidPhone(hotLinePhoneString);
@@ -44,6 +47,8 @@ const useUserCertificate = (
     bannerDt: thirdBannerDt,
     bannerMob: thirdBannerMob,
   });
+
+  const certificateImg = getFileUrl(images[0]?.image ?? '');
 
   const expiredFormatDate = expiredDate
     ? formatDate({
@@ -69,6 +74,7 @@ const useUserCertificate = (
     codeDetailsPath,
     validHotLinePhone,
     certificateCode,
+    certificateImg,
   };
 };
 

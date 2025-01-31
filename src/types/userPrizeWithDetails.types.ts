@@ -1,4 +1,5 @@
 import { IPromotion } from './promotion.types';
+import { StringOrNull } from './types';
 import { ICode } from './userCertificateWithDetails.types';
 
 export interface IImage {
@@ -8,6 +9,7 @@ export interface IImage {
 export interface IPartner {
   name: string;
   logo: string;
+  id: number;
 }
 
 export type Images = IImage[] | undefined[];
@@ -20,7 +22,7 @@ export interface IGift {
   price: null;
   discount: null;
   images: Images;
-  banner: null;
+  banner: StringOrNull;
   partner: IPartner;
 }
 

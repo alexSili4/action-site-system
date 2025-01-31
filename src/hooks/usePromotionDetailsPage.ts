@@ -12,6 +12,7 @@ import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNaviga
 import { AxiosError } from 'axios';
 import { IPromotionDetailsPageOutletContext } from '@/types/types';
 import { useOutletContext } from 'react-router-dom';
+import { filterShopsByPromoDateEnd } from '@/utils';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
@@ -26,6 +27,8 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const shouldShowPromotionDetails = !isNotFoundError;
   const { updateLegalText }: IPromotionDetailsPageOutletContext =
     useOutletContext();
+
+  const filteredShops = filterShopsByPromoDateEnd(shops);
 
   useEffect(() => {
     if (promotion) {
@@ -162,7 +165,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     wheelPrizes,
     faqs,
     winners,
-    shops,
+    shops: filteredShops,
     promotion,
     shouldShowPromotionDetails,
   };

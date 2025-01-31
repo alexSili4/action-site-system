@@ -106,6 +106,18 @@ const smoothPrizeImgRotate = keyframes`
   }
 `;
 
+const pulse = keyframes`
+  0% {
+    transform:  scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(-10deg);
+  }
+  100% {
+    transform:  scale(0.85) rotate(10deg);
+  }
+`;
+
 const animations = {
   textGlitch,
   firstAccentShadowGlitch,
@@ -114,6 +126,7 @@ const animations = {
   moveUpDown,
   moveDownUp,
   smoothPrizeImgRotate,
+  pulse,
 };
 
 export default animations;

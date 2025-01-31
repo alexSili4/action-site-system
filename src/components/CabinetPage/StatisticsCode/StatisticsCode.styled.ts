@@ -5,6 +5,7 @@ import {
   IStyledContentWrapProps,
   IStyledLinkProps,
   IStyledLinksWrapProps,
+  IStyledCertificateLinkProps,
 } from './StatisticsCode.types';
 import { Link } from 'react-router-dom';
 
@@ -119,7 +120,17 @@ export const StyledLinkTitle = styled.span`
   line-height: 1.4;
 `;
 
-export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
+export const CertificateLink = styled(Link)<IStyledCertificateLinkProps>`
+  pointer-events: ${({ shouldShowCertificate }) =>
+    !shouldShowCertificate && 'none'};
+  opacity: ${({ shouldShowCertificate }) => !shouldShowCertificate && 0};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    display: ${({ shouldShowCertificate }) => !shouldShowCertificate && 'none'};
+  }
+`;
+
+export const CertificateWrap = styled.span<IStyledCertificateWrapProps>`
   flex-grow: 0;
   flex-shrink: 0;
   display: flex;
@@ -136,16 +147,12 @@ export const CertificateWrap = styled.div<IStyledCertificateWrapProps>`
   background-repeat: no-repeat;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  opacity: ${({ shouldShowCertificate }) => !shouldShowCertificate && 0};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    display: ${({ shouldShowCertificate }) => !shouldShowCertificate && 'none'};
-  }
 `;
 
 export const MessagesContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(2)};
   border-top: 1px solid #f4f6f9;
   padding-top: ${({ theme }) => theme.spacing(4)};

@@ -45,6 +45,7 @@ export const LabelsWrap = styled.div`
   display: flex;
   justify-content: flex-end;
   width: calc(100% - 16px * 2);
+  min-height: 38px;
   transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {

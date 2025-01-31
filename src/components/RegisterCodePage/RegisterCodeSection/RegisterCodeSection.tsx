@@ -10,6 +10,7 @@ const RegisterCodeSection: FC<IProps> = ({
   supportServiceText,
   onSuccessRegisterCode,
   updatePromotion,
+  isPromotion,
 }) => {
   return (
     <Container>
@@ -19,6 +20,7 @@ const RegisterCodeSection: FC<IProps> = ({
           updatePromotion={updatePromotion}
           onSuccessRegisterCode={onSuccessRegisterCode}
           rulesPdf={rulesPdf}
+          isPromotion={isPromotion}
         />
         <Text>{supportServiceText}</Text>
       </ContentWrap>

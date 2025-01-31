@@ -17,11 +17,12 @@ export interface IUserCode {
   present_gift_id: NumberOrNull;
   present_gift_name: StringOrNull;
   wheel_certificate_id: NumberOrNull;
-  wheel_is_used: null;
+  wheel_is_used: NumberOrNull;
   wheel_certificate_code: StringOrNull;
   wheel_gift_name: StringOrNull;
   present_gift_partner_logo: StringOrNull;
   certificate_gift_partner_logo: StringOrNull;
+  marks: NumberOrNull;
 }
 
 export type UserCodes = IUserCode[];

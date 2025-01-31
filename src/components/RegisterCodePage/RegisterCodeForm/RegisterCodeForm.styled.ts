@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
-import { IStyledProps } from './RegisterCodeForm.types';
+import {
+  IStyledProps,
+  IStyledRegisterFormCheckboxLinkProps,
+} from './RegisterCodeForm.types';
 
 export const Form = styled.form`
   display: flex;
@@ -91,6 +94,8 @@ export const RegisterFormCheckboxTitle = styled.span`
   line-height: 1.4;
 `;
 
-export const RegisterFormCheckboxLink = styled.a`
-  color: #a282f7;
+export const RegisterFormCheckboxLink = styled.a<IStyledRegisterFormCheckboxLinkProps>`
+  color: ${({ disabledLink }) => (disabledLink ? 'inherit' : '#a282f7')};
+  pointer-events: ${({ disabledLink }) => disabledLink && 'none'};
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;

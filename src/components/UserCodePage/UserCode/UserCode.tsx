@@ -29,6 +29,7 @@ const UserCode: FC<IProps> = ({ code }) => {
     status: codeStatus,
     created_at: codeCreatedAt,
     code: userCode,
+    marks,
   } = clientCode;
   const {
     receipt_sum: receiptSum,
@@ -116,6 +117,7 @@ const UserCode: FC<IProps> = ({ code }) => {
         receiptNumber={receiptNumber}
         shopAddress={targetShopAddress}
         isValidShopAddress={isValidShopAddress}
+        marks={marks}
       />
     </UserStatisticsDetailsContainer>
   );

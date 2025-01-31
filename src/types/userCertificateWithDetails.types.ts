@@ -1,5 +1,5 @@
 import { IPromotion } from './promotion.types';
-import { StringOrNull } from './types';
+import { NumberOrNull, StringOrNull } from './types';
 import { CodeStatus } from './userCode.types';
 
 export interface IImage {
@@ -11,6 +11,7 @@ export type Images = IImage[] | undefined[];
 export interface IPartner {
   name: string;
   logo: string;
+  id: number;
 }
 
 export interface IGift {
@@ -28,6 +29,13 @@ export interface IGift {
 export interface ICertificate {
   certificate_code: string;
   pdf_url: string;
+  created_at: number;
+  sent_status: number;
+  sent_at: null;
+  win_status: number;
+  win_at: number;
+  gift: IGift;
+  expired_date: string;
 }
 
 export interface ICode {
@@ -35,9 +43,12 @@ export interface ICode {
   code: string;
   created_at: number;
   shop_number: number;
-  wheel_status: null;
+  wheel_status: NumberOrNull;
   status: CodeStatus;
   action_id: number;
+  verified_at: number;
+  verified_status: number;
+  marks: number;
 }
 
 export interface IUserCertificateWithDetails {

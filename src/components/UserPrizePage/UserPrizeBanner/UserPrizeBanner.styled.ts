@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
   border-radius: 24px;
   background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
@@ -34,8 +36,8 @@ export const PrizeImgWrap = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 100%;
-    padding-top: ${({ theme }) => theme.spacing(35)};
-    padding-bottom: ${({ theme }) => theme.spacing(25)};
+    padding-top: ${({ theme }) => theme.spacing()};
+    padding-bottom: ${({ theme }) => theme.spacing()};
   }
 `;
 

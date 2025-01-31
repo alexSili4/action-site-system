@@ -17,13 +17,15 @@ import {
   StyledLinkTitle,
   CodeWrap,
   StyledLink,
+  CertificateLink,
 } from './StatisticsCode.styled';
 import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
 import { getUserCodeMessage } from '@/utils';
+import { useCabinetState } from '@/hooks';
 // components
 import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
-import { useCabinetState } from '@/hooks';
+import StatisticsCodeMarksMessage from '@CabinetPageComponents/StatisticsCodeMarksMessage';
 
 const StatisticsCode: FC<IProps> = ({
   isSuccessStatus,
@@ -39,12 +41,14 @@ const StatisticsCode: FC<IProps> = ({
   prizeDetailsPath,
   shouldShowContent,
   shouldShowCodeLinks,
+  marks,
 }) => {
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
     isSuccessStatus,
   });
   const cabinetState = useCabinetState();
+  const isMarks = marks !== null;
 
   return (
     <Container>
@@ -78,10 +82,12 @@ const StatisticsCode: FC<IProps> = ({
             </StyledLink>
           )}
         </LinksWrap>
-        <CertificateWrap
-          partnerLogo={partnerLogo}
+        <CertificateLink
+          to={certificateDetailsPath}
           shouldShowCertificate={shouldShowCertificate}
-        ></CertificateWrap>
+        >
+          <CertificateWrap partnerLogo={partnerLogo}></CertificateWrap>
+        </CertificateLink>
       </ContentWrap>
       <MessagesContainer>
         <MessageWrap>
@@ -91,6 +97,7 @@ const StatisticsCode: FC<IProps> = ({
           />
           <Message>{userCodeMessage}</Message>
         </MessageWrap>
+        {isMarks && <StatisticsCodeMarksMessage marks={marks} />}
       </MessagesContainer>
     </Container>
   );

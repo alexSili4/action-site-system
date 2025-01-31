@@ -5,7 +5,7 @@ export const Container = styled.div`
   gap: ${({ theme }) => theme.spacing(10)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    flex-direction: column;
+    height: 100%;
     border-radius: 24px;
     background-color: ${({ theme }) => theme.colors.white};
     padding: ${({ theme: { spacing } }) =>
@@ -20,15 +20,17 @@ export const Container = styled.div`
 `;
 
 export const ContentWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    justify-content: space-between;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    /* TODO return */
-    /*  */
-    max-width: 909px;
-    /*  */
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    max-width: 909px;
     border-radius: 16px;
     background-color: ${({ theme }) => theme.colors.white};
     padding: ${({ theme: { spacing } }) =>

@@ -18,6 +18,8 @@ export interface IShop {
   work_hours: StringOrNull;
   city: ICity;
   region: IRegion;
+  promo_shop_date_end: string;
+  promo_shop_date_start: string;
 }
 
 export type Shops = IShop[];

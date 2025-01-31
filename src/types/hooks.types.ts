@@ -126,11 +126,13 @@ export interface IUsePromotionContactsVisicomMap {
 export interface IUseRegisterCodeFormProps {
   onSuccessRegisterCode: SetNumberFunc;
   updatePromotion: SetPromotionFunc;
+  isPromotion: boolean;
 }
 
 export interface IUseRegisterCodeForm {
   error: StringOrNull;
   disabledBtn: boolean;
+  disabledLink: boolean;
   isError: boolean;
   inputMaxLength: number;
   inputWrapRef: RefObject<HTMLDivElement>;
@@ -183,6 +185,7 @@ export interface IUseUserCertificate {
   promotionDetailsPath: string;
   codeDetailsPath: string;
   validHotLinePhone: string;
+  certificateImg: string;
 }
 
 export interface IUsePromotionFilter {

@@ -9,6 +9,7 @@ import {
   CertificateCodeTitle,
   ContentWrap,
   CertificateImgWrap,
+  ImageWrap,
 } from './UserCertificateBanner.styled';
 import { RiDownloadLine } from 'react-icons/ri';
 import { theme } from '@/constants';
@@ -18,8 +19,7 @@ import CabinetGoBackLink from '@GeneralComponents/CabinetGoBackLink';
 
 const UserCertificateBanner: FC<IProps> = ({
   certificateCode,
-  thirdBannerDt,
-  thirdBannerMob,
+  certificateImg,
   certificatePdf,
 }) => {
   return (
@@ -27,13 +27,9 @@ const UserCertificateBanner: FC<IProps> = ({
       <CabinetGoBackLink isShowOnDesk />
       <ContentWrap>
         <CertificateImgWrap>
-          <CertificateImg
-            thirdBannerDt={thirdBannerDt}
-            thirdBannerMob={thirdBannerMob}
-          >
-            <DownloadLink
-              href={certificatePdf}
-            >
+          <CertificateImg>
+            <ImageWrap certificateImg={certificateImg}></ImageWrap>
+            <DownloadLink href={certificatePdf}>
               <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
               <RiDownloadLine
                 size={theme.iconSizes.cabinetDownloadCertificateLink}

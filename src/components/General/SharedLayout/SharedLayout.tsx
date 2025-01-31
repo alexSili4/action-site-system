@@ -49,7 +49,6 @@ const SharedLayout: FC = () => {
 
   const outletContext: IOutletContext = {
     showOtherModalWin,
-    onEmptyPrizesListBtnClick: onRegisterCodeBtnClickOnAllPages,
     updateLegalText,
   };
 

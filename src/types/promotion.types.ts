@@ -32,6 +32,11 @@ export interface IPromotion {
   rules_pdf: StringOrNull;
   logo_partner: StringOrNull;
   legal_text: StringOrNull;
+  rules: StringOrNull;
+  promo_id: number;
+  public_status: number;
+  status: number;
+  v_status: 'in_work' | 'finished' | 'preview_mode';
 }
 
 export type Promotions = IPromotion[];

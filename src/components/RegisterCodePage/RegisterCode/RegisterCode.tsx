@@ -39,6 +39,7 @@ const RegisterCode: FC<IProps> = ({
     hotLinePhone,
     hotLineWorkHours,
   });
+  const isPromotion = Boolean(promotion);
 
   const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
 
@@ -57,6 +58,7 @@ const RegisterCode: FC<IProps> = ({
       {isRegisterCodeStep && (
         <Container>
           <RegisterCodeSection
+            isPromotion={isPromotion}
             supportServiceText={supportServiceText}
             rulesPdf={rulesPdfUrl}
             onSuccessRegisterCode={onSuccessRegisterCode}

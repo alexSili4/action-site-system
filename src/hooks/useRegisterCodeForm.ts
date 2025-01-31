@@ -10,17 +10,24 @@ import {
   StringOrNull,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import { useCsrfToken, useSetSearchParams } from '@/hooks';
+import {
+  useCsrfToken,
+  useServiceUnavailablePageNavigate,
+  useSetSearchParams,
+} from '@/hooks';
 import { IRegisterCodeRes } from '@/types/code.types';
 import { getCurrentInputIndex, splitString } from '@/utils';
 import {
   IUseRegisterCodeForm,
   IUseRegisterCodeFormProps,
 } from '@/types/hooks.types';
+import promotionsService from '@/services/promotions.service';
+import { AxiosError } from 'axios';
 
 const useRegisterCodeForm = ({
   onSuccessRegisterCode,
   updatePromotion,
+  isPromotion,
 }: IUseRegisterCodeFormProps): IUseRegisterCodeForm => {
   const [error, setError] = useState<StringOrNull>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -30,10 +37,39 @@ const useRegisterCodeForm = ({
   const { register, handleSubmit, watch, setValue } =
     useForm<IRegCodeFormData>();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
+  const navigate = useServiceUnavailablePageNavigate();
   const { searchParams } = useSetSearchParams();
   const isError = Boolean(error);
   const acceptedTerms = watch('acceptedTerms');
+  const codePart1 = watch('codePart1');
+  const codePart2 = watch('codePart2');
+  const codePart3 = watch('codePart3');
   const defaultCode = searchParams.get(SearchParamsKeys.promocode) ?? '';
+
+  useEffect(() => {
+    const getPromotion = async (code: string): Promise<void> => {
+      try {
+        const response = await promotionsService.getPromotionByCode(code);
+
+        updatePromotion(response);
+      } catch (error) {
+        updatePromotion(null);
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
+      }
+    };
+
+    const code = `${codePart1}${codePart2}${codePart3}`;
+
+    if (isFullRegCode) {
+      getPromotion(code);
+    }
+  }, [codePart1, codePart2, codePart3]);
 
   const [defaultCodePart1, defaultCodePart2, defaultCodePart3] = splitString({
     string: defaultCode,
@@ -48,7 +84,9 @@ const useRegisterCodeForm = ({
 
   const inputMaxLength = generalSettings.regCodeLength / 3;
 
-  const disabledBtn = !acceptedTerms || !isFullRegCode || isLoading;
+  const disabledBtn =
+    !acceptedTerms || !isFullRegCode || isLoading || !isPromotion;
+  const disabledLink = !isPromotion;
 
   const startRegisterCode = () => {
     setError(null);
@@ -213,6 +251,7 @@ const useRegisterCodeForm = ({
     inputMaxLength,
     error,
     disabledBtn,
+    disabledLink,
   };
 };
 

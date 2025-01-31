@@ -29,8 +29,7 @@ export const CustomCheckbox = styled.span`
     transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
   }
 
-  *:has(input:checked) > &,
-  &:is(:hover, :focus) {
+  *:has(input:checked) > & {
     background-color: #a282f7;
 
     & > svg {

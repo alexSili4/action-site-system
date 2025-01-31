@@ -9,8 +9,6 @@ import UserCertificateBanner from '@UserCertificatePageComponents/UserCertificat
 const UserCertificate: FC<IProps> = ({ certificate }) => {
   const {
     code,
-    bannerMobUrl,
-    bannerDtUrl,
     certificatePdf,
     getConditions,
     partnerLogoUrl,
@@ -24,14 +22,14 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
     codeDetailsPath,
     validHotLinePhone,
     certificateCode,
+    certificateImg,
   } = useUserCertificate(certificate);
 
   return (
     <UserStatisticsDetailsContainer>
       <UserCertificateBanner
         certificateCode={certificateCode}
-        thirdBannerMob={bannerMobUrl}
-        thirdBannerDt={bannerDtUrl}
+        certificateImg={certificateImg}
         certificatePdf={certificatePdf}
       />
       <UserCertificateDetails

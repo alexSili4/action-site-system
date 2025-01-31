@@ -67,7 +67,7 @@ const RegisterCodePage: FC = () => {
     }
   }, [codeId]);
 
-  const updatePromotion = (promotion: IPromotion) => {
+  const updatePromotion = (promotion: IPromotion | null) => {
     setPromotion(promotion);
   };
 

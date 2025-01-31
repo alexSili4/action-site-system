@@ -45,6 +45,7 @@ const StatisticsCodesCategoryContent: FC = () => {
                 present_gift_id: presentGiftId,
                 winner_id: winnerId,
                 code_id: codeId,
+                marks,
               }) => {
                 const partnerLogoUrl = getFileUrl(
                   presentGiftPartnerLogo ?? certificateGiftPartnerLogo ?? ''
@@ -56,9 +57,9 @@ const StatisticsCodesCategoryContent: FC = () => {
                   dateFormat: DateFormats.generalDate,
                 });
                 const shouldShowUserCertificateLink =
-                  typeof wheelCertificateId === 'number';
+                  typeof wheelCertificateId === 'number' && isSuccessStatus;
                 const shouldShowUserPrizeLink =
-                  typeof presentGiftId === 'number';
+                  typeof presentGiftId === 'number' && isSuccessStatus;
                 const shouldShowCertificate = codeStatus === 1;
 
                 const prizeDetailsPath = getPrizeDetailsPath(winnerId);
@@ -89,6 +90,7 @@ const StatisticsCodesCategoryContent: FC = () => {
                       prizeDetailsPath={prizeDetailsPath}
                       shouldShowCodeLinks={shouldShowCodeLinks}
                       shouldShowContent={shouldShowContent}
+                      marks={marks}
                     />
                   </ListItem>
                 );

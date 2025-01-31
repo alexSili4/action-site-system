@@ -1,4 +1,4 @@
-import { StringOrNull } from '@/types/types';
+import { NumberOrNull, StringOrNull } from '@/types/types';
 
 export interface IProps {
   isErrorStatus: boolean;
@@ -19,21 +19,5 @@ export interface IProps {
   shopAddress: string;
   receiptNumber: number | undefined;
   isValidShopAddress: boolean;
-}
-
-export interface IStyledCodeDetailsSubtitleProps {
-  isAutoWidth?: boolean;
-}
-
-export interface IStyledCodeDetailsItemProps {
-  isHiddenOnDesk?: boolean;
-  isHiddenOnMobile?: boolean;
-}
-
-export interface IStyledPrizesInfoTextProps {
-  isHiddenOnDesk?: boolean;
-}
-
-export interface IStyledCertificateWrapProps {
-  isSuccessStatus: boolean;
+  marks: NumberOrNull;
 }

@@ -32,6 +32,10 @@ export const StyledBtn = styled.button`
       1px 1px 0px 0px #7a4ebd;
   }
 
+  &:disabled {
+    cursor: auto;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     align-self: center;
     width: auto;

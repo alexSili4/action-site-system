@@ -34,7 +34,7 @@ export type SetBooleanFunc = (data: boolean) => void;
 
 export type SetStringOrNullFunc = (data: StringOrNull) => void;
 
-export type SetPromotionFunc = (data: IPromotion) => void;
+export type SetPromotionFunc = (data: IPromotion | null) => void;
 
 export interface ISetServiceUnavailableStateFuncProps {
   isError: boolean;
@@ -124,17 +124,12 @@ export interface IGeneralOutletContext {
   showOtherModalWin: boolean;
 }
 
-export interface ICabinetPageOutletContext {
-  onEmptyPrizesListBtnClick: OnBtnClickFunc;
-}
-
 export interface IPromotionDetailsPageOutletContext {
   updateLegalText: SetStringOrNullFunc;
 }
 
 export interface IOutletContext
   extends IGeneralOutletContext,
-    ICabinetPageOutletContext,
     IPromotionDetailsPageOutletContext {}
 
 export interface IGetCodeStatus {

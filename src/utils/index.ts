@@ -36,3 +36,5 @@ export { default as getFinalTotalDegrees } from './getFinalTotalDegrees';
 export { default as splitString } from './splitString';
 export { default as getQrCodePath } from './getQrCodePath';
 export { default as getSupportServiceText } from './getSupportServiceText';
+export { default as filterShopsByPromoDateEnd } from './filterShopsByPromoDateEnd';
+export { default as getMarksData } from './getMarksData';

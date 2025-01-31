@@ -1,3 +1,5 @@
+import { NumberOrNull } from '@/types/types';
+
 export interface IProps {
   code: string;
   codeCreatedAt: string;
@@ -12,11 +14,11 @@ export interface IProps {
   prizeDetailsPath: string;
   shouldShowContent: boolean;
   shouldShowCodeLinks: boolean;
+  marks: NumberOrNull;
 }
 
 export interface IStyledCertificateWrapProps {
   partnerLogo: string;
-  shouldShowCertificate: boolean;
 }
 
 export interface IStyledLinkProps {
@@ -29,4 +31,8 @@ export interface IStyledLinksWrapProps {
 
 export interface IStyledContentWrapProps {
   shouldShowContent: boolean;
+}
+
+export interface IStyledCertificateLinkProps {
+  shouldShowCertificate: boolean;
 }

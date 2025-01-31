@@ -1,5 +1,7 @@
+import { IGift } from './code.types';
 import { IPromotion } from './promotion.types';
 import { NumberOrNull } from './types';
+import { ICode } from './userCertificateWithDetails.types';
 import { CodeStatus } from './userCode.types';
 
 export interface IClientCode {
@@ -10,6 +12,7 @@ export interface IClientCode {
   wheel_status: NumberOrNull;
   status: CodeStatus;
   action_id: number;
+  marks: NumberOrNull;
 }
 
 export type ClientCodes = IClientCode[];
@@ -106,4 +109,6 @@ export interface IUserCodeWithDetails {
   present: IPresent | null;
   certificate: ICertificate | null;
   dates: DatesFrom;
+  gift: IGift;
+  code: ICode;
 }

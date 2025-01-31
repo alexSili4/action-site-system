@@ -25,6 +25,7 @@ const RegisterCodeForm: FC<IProps> = ({
   onSuccessRegisterCode,
   rulesPdf,
   updatePromotion,
+  isPromotion,
 }) => {
   const {
     handleFormSubmit,
@@ -36,7 +37,12 @@ const RegisterCodeForm: FC<IProps> = ({
     inputMaxLength,
     error,
     disabledBtn,
-  } = useRegisterCodeForm({ onSuccessRegisterCode, updatePromotion });
+    disabledLink,
+  } = useRegisterCodeForm({
+    onSuccessRegisterCode,
+    updatePromotion,
+    isPromotion,
+  });
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -102,6 +108,7 @@ const RegisterCodeForm: FC<IProps> = ({
                 download='rules'
                 target='_blank'
                 rel='noopener noreferrer nofollow'
+                disabledLink={disabledLink}
               >
                 умовами участі
               </RegisterFormCheckboxLink>{' '}
