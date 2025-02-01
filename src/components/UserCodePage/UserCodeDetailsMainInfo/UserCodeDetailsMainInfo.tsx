@@ -23,7 +23,7 @@ import {
   MarksMessageWrap,
 } from './UserCodeDetailsMainInfo.styled';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
-import StatisticsCodeMarksMessage from '@CabinetPageComponents/StatisticsCodeMarksMessage';
+import StatisticsCodeMarksMessage from '@GeneralComponents/StatisticsCodeMarksMessage';
 
 const UserCodeDetailsMainInfo: FC<IProps> = ({
   marks,
@@ -95,7 +95,12 @@ const UserCodeDetailsMainInfo: FC<IProps> = ({
         {isMarks && (
           <MarksMessageWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
-            <StatisticsCodeMarksMessage marks={marks} isCodeDetails />
+            <StatisticsCodeMarksMessage
+              marks={marks}
+              mobSize={50}
+              deskSize={50}
+              isCodeDetailsPage
+            />
           </MarksMessageWrap>
         )}
       </CodeDetailsWrap>

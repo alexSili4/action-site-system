@@ -1,5 +1,5 @@
 import { IPromotion } from './promotion.types';
-import { HTMLInputElements, StringOrNull } from './types';
+import { HTMLInputElements, NumberOrNull, StringOrNull } from './types';
 import { CodeStatus } from './userCode.types';
 
 export interface IStepsSequence {
@@ -84,10 +84,11 @@ export interface IUserData {
 export interface IUserDataWithCode extends IUserData {
   code: {
     status: CodeStatus;
+    marks: NumberOrNull;
   };
 }
 
-export type UpdateUserDataFunc = (data: IUserData) => void;
+export type UpdateUserDataWithCodeFunc = (data: IUserDataWithCode) => void;
 
 export interface IUpdateUserDataProps extends IUserData {
   codeId: number;

@@ -36,7 +36,7 @@ import {
 } from 'react-hook-form';
 import { RefObject } from 'react';
 import { Shops } from './shop.types';
-import { IGift, Partners, UpdateUserDataFunc } from './code.types';
+import { IGift, Partners, UpdateUserDataWithCodeFunc } from './code.types';
 import { IClientCode } from './userCodeWithDetails.types';
 
 export type SetPageFunc = (data: IOnPageBtnClickProps) => void;
@@ -152,7 +152,7 @@ export interface IUseSentCertificateFormProps {
   userEmail: StringOrNull;
   codeId: number;
   toggleShowSuccessMsgState: Func;
-  updateUserData: UpdateUserDataFunc;
+  updateUserData: UpdateUserDataWithCodeFunc;
   updateIsSuccessStatus: SetBooleanFunc;
 }
 

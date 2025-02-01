@@ -4,24 +4,45 @@ import {
   Container,
   CabinetLink,
   Message,
-  MessageTitle,
-  MessageWrap,
   Text,
+  MessagePart,
+  TextWrap,
+  AdditionalInfoWrap,
+  Content,
 } from './SuccessRegisterCodeMsg.styled';
 import { IProps } from './SuccessRegisterCodeMsg.types';
+// components
+import StatisticsCodeMarksMessage from '@/components/General/StatisticsCodeMarksMessage';
 
 const SuccessRegisterCodeMsg: FC<IProps> = ({
   supportServiceText,
   userName,
   message,
+  marks,
 }) => {
+  const isMarks = marks !== null;
+
   return (
     <Container>
-      <MessageWrap>
-        <MessageTitle>Дякуємо, {userName}!</MessageTitle>
-        <Message>{message}</Message>
-      </MessageWrap>
-      <CabinetLink to={PagePaths.cabinet}>Особистий кабінет</CabinetLink>
+      <Content>
+        <Message>
+          <MessagePart>Дякуємо, {userName}!</MessagePart>
+          <TextWrap />
+          <TextWrap isHiddenOnDesk />
+          <MessagePart>{message}</MessagePart>
+        </Message>
+        <AdditionalInfoWrap>
+          {isMarks && (
+            <StatisticsCodeMarksMessage
+              marks={marks}
+              mobSize={66}
+              deskSize={66}
+              isRegisterCodePage
+            />
+          )}
+          <CabinetLink to={PagePaths.cabinet}>Особистий кабінет</CabinetLink>
+        </AdditionalInfoWrap>
+      </Content>
       <Text>{supportServiceText}</Text>
     </Container>
   );

@@ -1,4 +1,4 @@
-import { UpdateUserDataFunc } from '@/types/code.types';
+import { UpdateUserDataWithCodeFunc } from '@/types/code.types';
 import { Func, SetBooleanFunc, StringOrNull } from '@/types/types';
 
 export interface IProps {
@@ -6,6 +6,6 @@ export interface IProps {
   userName: StringOrNull;
   userEmail: StringOrNull;
   codeId: number;
-  updateUserData: UpdateUserDataFunc;
+  updateUserData: UpdateUserDataWithCodeFunc;
   updateIsSuccessStatus: SetBooleanFunc;
 }

@@ -25,7 +25,7 @@ import { getUserCodeMessage } from '@/utils';
 import { useCabinetState } from '@/hooks';
 // components
 import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
-import StatisticsCodeMarksMessage from '@CabinetPageComponents/StatisticsCodeMarksMessage';
+import StatisticsCodeMarksMessage from '@GeneralComponents/StatisticsCodeMarksMessage';
 
 const StatisticsCode: FC<IProps> = ({
   isSuccessStatus,
@@ -97,7 +97,14 @@ const StatisticsCode: FC<IProps> = ({
           />
           <Message>{userCodeMessage}</Message>
         </MessageWrap>
-        {isMarks && <StatisticsCodeMarksMessage marks={marks} />}
+        {isMarks && (
+          <StatisticsCodeMarksMessage
+            marks={marks}
+            mobSize={48}
+            deskSize={52}
+            isCabinetPage
+          />
+        )}
       </MessagesContainer>
     </Container>
   );

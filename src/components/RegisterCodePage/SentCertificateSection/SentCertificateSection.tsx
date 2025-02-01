@@ -9,12 +9,12 @@ import { IProps } from './SentCertificateSection.types';
 import RegisterCodeStepsBar from '@RegisterCodePageComponents/RegisterCodeStepsBar';
 import SentCertificateForm from '@RegisterCodePageComponents/SentCertificateForm';
 import SuccessRegisterCodeMsg from '@RegisterCodePageComponents/SuccessRegisterCodeMsg';
-import { IUserData } from '@/types/code.types';
+import { IUserDataWithCode } from '@/types/code.types';
 
 const SentCertificateSection: FC<IProps> = ({ supportServiceText, codeId }) => {
   const [isSuccessStatus, setIsSuccessStatus] = useState<boolean>(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
-  const [userData, setUserData] = useState<IUserData | null>(null);
+  const [userData, setUserData] = useState<IUserDataWithCode | null>(null);
 
   const regCodeTimeMsg = 'Ваш акційний код буде зареєстровано протягом доби.';
   const userCodesMsg =
@@ -23,10 +23,15 @@ const SentCertificateSection: FC<IProps> = ({ supportServiceText, codeId }) => {
     ? userCodesMsg
     : `${regCodeTimeMsg} ${userCodesMsg}`;
 
-  const { email: userEmail = null, name: userName = null } = userData ?? {};
+  const {
+    email: userEmail = null,
+    name: userName = null,
+    code,
+  } = userData ?? {};
   const shouldShowSuccessMsg = showSuccessMsg && userName;
+  const codeMarks = code?.marks ?? null;
 
-  const updateUserData = (data: IUserData) => {
+  const updateUserData = (data: IUserDataWithCode) => {
     setUserData(data);
   };
 
@@ -46,6 +51,7 @@ const SentCertificateSection: FC<IProps> = ({ supportServiceText, codeId }) => {
             supportServiceText={supportServiceText}
             userName={userName}
             message={message}
+            marks={codeMarks}
           />
         ) : (
           <SentCertificateFormWrap>

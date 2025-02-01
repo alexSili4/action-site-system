@@ -1,40 +1,53 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { IStyledTextWrapProps } from './SuccessRegisterCodeMsg.types';
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(8)};
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: ${({ theme }) => theme.spacing(20)};
     padding: ${({ theme: { spacing } }) =>
-      `${spacing(41)} ${spacing(5)} ${spacing(12)}`};
+      `${spacing(29)} ${spacing(5)} ${spacing(12)}`};
   }
 `;
 
-export const MessageWrap = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(7)};
-`;
-
-export const MessageTitle = styled.p`
-  color: #383e45;
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 160%;
-  letter-spacing: 0px;
-  text-align: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(8)};
 `;
 
 export const Message = styled.p`
+  max-width: 484px;
   color: #383e45;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16px;
   font-weight: 400;
-  line-height: 160%;
-  letter-spacing: 0px;
+  line-height: 1.6;
   text-align: center;
+`;
+
+export const MessagePart = styled.span``;
+
+export const TextWrap = styled.br<IStyledTextWrapProps>`
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    display: ${({ isHiddenOnDesk }) => isHiddenOnDesk && 'none'};
+  }
+`;
+
+export const AdditionalInfoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(13)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
+    width: 447px;
+  }
 `;
 
 export const CabinetLink = styled(Link)`
@@ -43,7 +56,6 @@ export const CabinetLink = styled(Link)`
   justify-content: center;
   width: 100%;
   height: 48px;
-  margin-top: ${({ theme }) => theme.spacing(8)};
   border-radius: 16px;
   box-shadow: inset 0px -1px 2px 0px rgba(255, 255, 255, 0.1),
     3px 3px 0px 0px #7a4ebd;
@@ -68,16 +80,10 @@ export const CabinetLink = styled(Link)`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 54px;
-    margin-top: ${({ theme }) => theme.spacing(5)};
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    width: 447px;
   }
 `;
 
 export const Text = styled.p`
-  margin-top: ${({ theme }) => theme.spacing(8)};
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
@@ -87,6 +93,5 @@ export const Text = styled.p`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 439px;
-    margin-top: ${({ theme }) => theme.spacing(40)};
   }
 `;

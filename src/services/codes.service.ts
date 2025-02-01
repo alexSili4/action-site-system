@@ -49,8 +49,8 @@ class CodesService extends HttpService {
     return response.data;
   }
 
-  async getUserData(codeId: number): Promise<IUserData> {
-    const response = await this.get<IUserData>(
+  async getUserData(codeId: number): Promise<IUserDataWithCode> {
+    const response = await this.get<IUserDataWithCode>(
       {
         url: `client/info/name-form?code_id=${codeId}`,
       },
