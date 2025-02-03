@@ -13,25 +13,16 @@ const PromotionsFilter: FC<IProps> = ({
 }) => {
   const isActiveCategory =
     promotionCategory === PromotionsCategoriesKeys.active;
-  const isPreviousCategory =
-    promotionCategory === PromotionsCategoriesKeys.previous;
 
   return (
     <Container>
-      <PromotionsControls
-        isActiveCategory={isActiveCategory}
-        isPreviousCategory={isPreviousCategory}
-      />
+      <PromotionsControls isActiveCategory={isActiveCategory} />
       <PromotionsCategories
         changePromotionCategory={changePromotionCategory}
         categories={categories}
         promotionCategory={promotionCategory}
       />
-      <PromotionsControls
-        isActiveCategory={isActiveCategory}
-        isPreviousCategory={isPreviousCategory}
-        isFake
-      />
+      <PromotionsControls isActiveCategory={isActiveCategory} isFake />
     </Container>
   );
 };

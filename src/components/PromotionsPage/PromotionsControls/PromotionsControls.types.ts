@@ -1,6 +1,5 @@
 export interface IProps {
   isActiveCategory: boolean;
-  isPreviousCategory: boolean;
   isFake?: boolean;
 }
 
