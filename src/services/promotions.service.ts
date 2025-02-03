@@ -2,6 +2,7 @@ import {
   Promotions,
   IPromotion,
   IGetPromotionByIdProps,
+  IGetPromotionsProps,
 } from '@/types/promotion.types';
 import { Conditions } from '@/types/condition.types';
 import { Prizes } from '@/types/prize.types';
@@ -15,10 +16,16 @@ class PromotionsService extends HttpService {
     super();
   }
 
-  async getPromotions(cityId: string): Promise<Promotions> {
+  async getPromotions({
+    cityId,
+    isPreviousCategory,
+  }: IGetPromotionsProps): Promise<Promotions> {
+    const url = `promotions/city?city_id=${cityId}`;
+    const targetUrl = isPreviousCategory ? `${url}&category=previous` : url;
+
     const response = await this.get<Promotions>(
       {
-        url: `promotions/city?city_id=${cityId}`,
+        url: targetUrl,
       },
       false
     );

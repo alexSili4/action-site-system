@@ -1,6 +1,6 @@
 import { IGift } from './code.types';
 import { IPromotion } from './promotion.types';
-import { NumberOrNull } from './types';
+import { NumberOrNull, StringOrNull } from './types';
 import { ICode } from './userCertificateWithDetails.types';
 import { CodeStatus } from './userCode.types';
 
@@ -8,11 +8,13 @@ export interface IClientCode {
   id: number;
   code: string;
   created_at: number;
-  shop_number: number;
+  shop_number: NumberOrNull;
   wheel_status: NumberOrNull;
   status: CodeStatus;
   action_id: number;
   marks: NumberOrNull;
+  verified_at: null;
+  verified_status: number;
 }
 
 export type ClientCodes = IClientCode[];
@@ -50,8 +52,8 @@ export interface IWinner {
   client_name: string;
   client_phone: string;
   code: string;
-  gift_name: string;
-  win_date: string;
+  gift_name: StringOrNull;
+  win_date: StringOrNull;
 }
 
 export interface IImage {
@@ -63,6 +65,7 @@ export type Images = IImage[];
 export interface IPartner {
   name: string;
   logo: string;
+  id: number;
 }
 
 export interface IPresent {
@@ -99,6 +102,10 @@ export interface ICertificate {
     partner: IPartner;
   };
   pdf_url: string;
+  sent_status: number;
+  win_status: number;
+  win_at: number;
+  expired_date: string;
 }
 
 export interface IUserCodeWithDetails {

@@ -7,6 +7,8 @@ const getPromotionsOperation = async ({
   set,
   data,
 }: IGetPromotionsOperationProps): Promise<Promotions | undefined> => {
+  set({ items: [] });
+
   const response = await promotionsService.getPromotions(data);
 
   set({

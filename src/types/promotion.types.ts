@@ -87,3 +87,8 @@ export interface IGetPromotionByIdProps {
   actionId: string;
   previewId: string;
 }
+
+export interface IGetPromotionsProps {
+  cityId: string;
+  isPreviousCategory: boolean;
+}

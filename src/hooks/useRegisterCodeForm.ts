@@ -234,9 +234,12 @@ const useRegisterCodeForm = ({
   };
 
   const onRegCodeInput = (e: InputChangeEvent) => {
-    const { value } = e.currentTarget;
+    const { value, name } = e.currentTarget;
     const { inputFullLength, isFullValue } = getRegCodeInputProps(value.length);
 
+    if (name === 'codePart1' || name === 'codePart2' || name === 'codePart3') {
+      setValue(name, value);
+    }
     changeFocusToNextInput({ isFullValue, currentInput: e.currentTarget });
     setIsFullRegCodeStatus(inputFullLength);
   };
