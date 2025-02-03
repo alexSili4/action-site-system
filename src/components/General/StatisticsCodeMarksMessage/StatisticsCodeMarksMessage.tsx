@@ -20,16 +20,22 @@ const StatisticsCodeMarksMessage: FC<IProps> = ({
   isRegisterCodePage = false,
 }) => {
   const marksData = getMarksData(marks);
-  const textDelimiter = isCabinetPage ? <br /> : ' ';
-  const text = ` Шанс на
+  const textDelimiter = isCabinetPage ? '<br />' : ' ';
+  const text = `Шанс на
         ${textDelimiter}
         виграш:`;
   const textComponent = isRegisterCodePage ? (
-    <RegisterCodeText>{text}</RegisterCodeText>
+    <RegisterCodeText
+      dangerouslySetInnerHTML={{ __html: text }}
+    ></RegisterCodeText>
   ) : isCodeDetailsPage ? (
-    <CodeDetailsText>{text}</CodeDetailsText>
+    <CodeDetailsText
+      dangerouslySetInnerHTML={{ __html: text }}
+    ></CodeDetailsText>
   ) : isCabinetPage ? (
-    <StatisticsCodeText>{text}</StatisticsCodeText>
+    <StatisticsCodeText
+      dangerouslySetInnerHTML={{ __html: text }}
+    ></StatisticsCodeText>
   ) : (
     <></>
   );

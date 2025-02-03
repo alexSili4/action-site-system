@@ -21,7 +21,8 @@ export const Container = styled.div<IStyledContainerProps>`
     isRegisterCodePage && `${spacing(3)} ${spacing(8)}`};
   box-shadow: ${({ isRegisterCodePage }) =>
     isRegisterCodePage && '5px 5px 0px 0px #e8c47d'};
-  background-color: #ffeecc;
+  background-color: ${({ isRegisterCodePage }) =>
+    isRegisterCodePage && '#ffeecc'};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: ${({ theme: { spacing }, isRegisterCodePage }) =>
