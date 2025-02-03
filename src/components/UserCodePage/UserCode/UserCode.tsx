@@ -60,13 +60,16 @@ const UserCode: FC<IProps> = ({ code }) => {
     date: codeCreatedAt * 1000,
     dateFormat: DateFormats.winnersDate,
   });
-  const drawDate = dates[0].date_from;
+  const drawDate = dates[0]?.date_from;
   const formattedDrawDate = formatDate({
-    date: drawDate,
+    date: drawDate ?? new Date(),
     dateFormat: DateFormats.winnersDate,
   });
+  const targetDrawDate = drawDate
+    ? formattedDrawDate
+    : generalSettings.defaultDataText;
   const formattedWinDate = formatDate({
-    date: winDate,
+    date: winDate ?? new Date(),
     dateFormat: DateFormats.winnersDate,
   });
   const certificateSentAtDate = formatDate({
@@ -112,7 +115,7 @@ const UserCode: FC<IProps> = ({ code }) => {
         isSuccessStatus={isSuccessStatus}
         prizeDetailsPath={prizeDetailsPath}
         drawCertificateDate={certificateSentAtDate}
-        drawDate={formattedDrawDate}
+        drawDate={targetDrawDate}
         drawPrizeDate={formattedWinDate}
         receiptNumber={receiptNumber}
         shopAddress={targetShopAddress}

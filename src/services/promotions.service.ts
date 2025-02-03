@@ -52,7 +52,7 @@ class PromotionsService extends HttpService {
   }
 
   async getPromotionByCode(code: string): Promise<IPromotion> {
-    const promotionUrl = `/code/find-action?code=${code}`;
+    const promotionUrl = `code/find-action?code=${code}`;
 
     const response = await this.get<IPromotion>(
       {

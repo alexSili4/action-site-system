@@ -64,7 +64,7 @@ const useRegisterCodeForm = ({
       }
     };
 
-    const code = `${codePart1}${codePart2}${codePart3}`;
+    const code = `${codePart1}${codePart2}${codePart3}`.toUpperCase();
 
     if (isFullRegCode) {
       getPromotion(code);
