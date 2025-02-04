@@ -9,6 +9,8 @@ export type CoverageType = 'national' | 'base';
 
 export type ActionType = 1 | 2 | 3; // 1 - колесо 2 - розіграш 3 - колесо + розіграш
 
+export type PromotionVStatus = 'in_work' | 'finished' | 'preview_mode';
+
 export interface IPromotion {
   id: number;
   name: string;
@@ -36,7 +38,7 @@ export interface IPromotion {
   promo_id: number;
   public_status: number;
   status: number;
-  v_status: 'in_work' | 'finished' | 'preview_mode';
+  v_status: PromotionVStatus;
 }
 
 export type Promotions = IPromotion[];

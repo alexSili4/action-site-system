@@ -38,3 +38,5 @@ export { default as getQrCodePath } from './getQrCodePath';
 export { default as getSupportServiceText } from './getSupportServiceText';
 export { default as filterShopsByPromoDateEnd } from './filterShopsByPromoDateEnd';
 export { default as getMarksData } from './getMarksData';
+export { default as getIsFinishedPromotion } from './getIsFinishedPromotion';
+export { default as getFinishedPromoLabel } from './getFinishedPromoLabel';

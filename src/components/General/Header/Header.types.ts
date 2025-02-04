@@ -2,6 +2,7 @@ import { OnBtnClickFunc } from '@/types/types';
 
 export interface IProps {
   isDesktop: boolean;
+  isFinishedPromotion: boolean;
   onRegisterCodeBtnClickOnAllPages: OnBtnClickFunc;
   onRegisterCodeBtnClickOnPromotionPage: OnBtnClickFunc;
 }

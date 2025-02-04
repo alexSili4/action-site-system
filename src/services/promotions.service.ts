@@ -74,20 +74,10 @@ class PromotionsService extends HttpService {
     return response.data;
   }
 
-  async getGeneralPrizes(actionId: string): Promise<Prizes> {
-    const response = await this.get<Prizes>(
-      {
-        url: `promotions/gifts?action_id=${actionId}&gift_type=general`,
-      },
-      false
-    );
-    return response.data;
-  }
-
   async getWheelPrizes(actionId: string): Promise<Prizes> {
     const response = await this.get<Prizes>(
       {
-        url: `promotions/gifts?action_id=${actionId}&gift_type=wheel`,
+        url: `promotions/gifts-for-raffle?action_id=${actionId}`,
       },
       false
     );
@@ -97,7 +87,7 @@ class PromotionsService extends HttpService {
   async getPresentPrizes(actionId: string): Promise<Prizes> {
     const response = await this.get<Prizes>(
       {
-        url: `promotions/gifts?action_id=${actionId}&gift_type=present`,
+        url: `promotions/gifts-for-raffle?action_id=${actionId}`,
       },
       false
     );

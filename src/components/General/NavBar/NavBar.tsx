@@ -10,6 +10,7 @@ import LocationFilter from '@GeneralComponents/LocationFilter';
 
 const NavBar: FC<IProps> = ({
   isDesktop,
+  isShowRegCodeLink,
   isPromotionDetailsPage,
   onRegisterCodeBtnClickOnAllPages,
   onRegisterCodeBtnClickOnPromotionPage,
@@ -30,6 +31,7 @@ const NavBar: FC<IProps> = ({
     <Nav isRootPage={isRootPage}>
       {showFakeNavControls && (
         <NavBarControls
+          isShowRegCodeLink={isShowRegCodeLink}
           isRootPage={isRootPage}
           onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
           onRegisterCodeBtnClickOnPromotionPage={
@@ -39,6 +41,7 @@ const NavBar: FC<IProps> = ({
         />
       )}
       <NavBarControls
+        isShowRegCodeLink={isShowRegCodeLink}
         isRootPage={isRootPage}
         onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
         onRegisterCodeBtnClickOnPromotionPage={

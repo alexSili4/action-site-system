@@ -98,6 +98,7 @@ export interface IUseLocationFilter {
 export interface IUsePromotionsList {
   promotions: Promotions;
   promotionDetailsState: IPromotionDetailsState;
+  isTablet: boolean;
 }
 
 export interface IUsePromotionDetailsPage {
@@ -109,6 +110,7 @@ export interface IUsePromotionDetailsPage {
   shops: Shops;
   promotion: TargetPromotionDetailsState;
   shouldShowPromotionDetails: boolean;
+  isFinishedPromotion: boolean;
 }
 
 export type UseTargetPromotion = IPromotion | undefined;

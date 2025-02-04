@@ -23,28 +23,32 @@ const PromotionContactsBanner: FC<IProps> = ({
   return (
     <Container bannerDt={bannerDt} bannerMob={bannerMob}>
       <Links>
-        <LinkWrap>
-          <Label>Гаряча лінія</Label>
-          <Link href={`tel:${validHotLinePhone}`}>
-            <IconWrap>
-              <HiOutlinePhone
-                size={theme.iconSizes.promotionContactsPhoneLink}
-              />
-            </IconWrap>
-            <LinkTitle>{hotLinePhone}</LinkTitle>
-          </Link>
-        </LinkWrap>
-        <LinkWrap>
-          <Label>Пошта</Label>
-          <Link href={`mailto:${hotLineEmail}`}>
-            <IconWrap>
-              <MdOutlineMailOutline
-                size={theme.iconSizes.promotionContactsMailLink}
-              />
-            </IconWrap>
-            <LinkTitle>{hotLineEmail}</LinkTitle>
-          </Link>
-        </LinkWrap>
+        {hotLinePhone && (
+          <LinkWrap>
+            <Label>Гаряча лінія</Label>
+            <Link href={`tel:${validHotLinePhone}`}>
+              <IconWrap>
+                <HiOutlinePhone
+                  size={theme.iconSizes.promotionContactsPhoneLink}
+                />
+              </IconWrap>
+              <LinkTitle>{hotLinePhone}</LinkTitle>
+            </Link>
+          </LinkWrap>
+        )}
+        {hotLineEmail && (
+          <LinkWrap>
+            <Label>Пошта</Label>
+            <Link href={`mailto:${hotLineEmail}`}>
+              <IconWrap>
+                <MdOutlineMailOutline
+                  size={theme.iconSizes.promotionContactsMailLink}
+                />
+              </IconWrap>
+              <LinkTitle>{hotLineEmail}</LinkTitle>
+            </Link>
+          </LinkWrap>
+        )}
       </Links>
     </Container>
   );

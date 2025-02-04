@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useMediaQuery, useSetSearchParams } from '@/hooks';
+import { useIsDesktop, useSetSearchParams } from '@/hooks';
 import { useCitiesStore } from '@/store/store';
 import {
   selectGetCities,
@@ -7,7 +7,7 @@ import {
   selectIsLoaded,
   selectError,
 } from '@/store/cities/selectors';
-import { SearchParamsKeys, SectionsIds, theme } from '@/constants';
+import { SearchParamsKeys, SectionsIds } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
 import {
   AnchorClickEvent,
@@ -26,7 +26,7 @@ const useLocationFilter = ({
   isModalWin,
   toggleShowSelectPromotionsLocationModalWin,
 }: IUseLocationFilterProps): IUseLocationFilter => {
-  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const isDesktop = useIsDesktop();
   const getCities = useCitiesStore(selectGetCities);
   const cities = useCitiesStore(selectCities);
   const isLoaded = useCitiesStore(selectIsLoaded);

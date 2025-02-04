@@ -3,8 +3,8 @@ import { StringOrNull } from '@/types/types';
 export interface IProps {
   bannerDt: string;
   bannerMob: string;
-  hotLinePhone: string;
-  hotLineEmail: string;
+  hotLinePhone: StringOrNull;
+  hotLineEmail: StringOrNull;
   validHotLinePhone: string;
 }
 

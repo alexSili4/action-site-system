@@ -29,6 +29,7 @@ const PromotionDetails: FC<IProps> = ({
   conditions,
   winners,
   shops,
+  isFinishedPromotion,
 }) => {
   const {
     name,
@@ -65,8 +66,7 @@ const PromotionDetails: FC<IProps> = ({
 
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);
-  const shouldShowContactsSection =
-    Boolean(shops.length) && hotLineEmail && hotLinePhone;
+  const shouldShowContactsSection = Boolean(shops.length);
   const shouldShowFAQsSection = Boolean(faqs.length);
   const shouldShowWheelPrizesSection = Boolean(wheelPrizes.length);
   const shouldShowOtherPrizesSection = Boolean(otherPrizes.length);
@@ -92,6 +92,7 @@ const PromotionDetails: FC<IProps> = ({
             from={from}
             bannerDt={secondBannerDtUrl}
             bannerMob={secondBannerMobUrl}
+            isFinishedPromotion={isFinishedPromotion}
           />
         </PromotionDetailsSectionContainer>
         {shouldShowConditionsSection && (

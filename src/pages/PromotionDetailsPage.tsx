@@ -16,6 +16,7 @@ const PromotionDetailsPage: FC = () => {
     shops,
     promotion,
     shouldShowPromotionDetails,
+    isFinishedPromotion,
   } = usePromotionDetailsPage();
 
   return (
@@ -25,6 +26,7 @@ const PromotionDetailsPage: FC = () => {
           {shouldShowPromotionDetails ? (
             promotion && (
               <PromotionDetails
+                isFinishedPromotion={isFinishedPromotion}
                 faqs={faqs}
                 otherPrizes={otherPrizes}
                 wheelPrizes={wheelPrizes}

@@ -13,4 +13,5 @@ export interface IProps {
   conditions: Conditions;
   winners: WinnersByDates;
   shops: Shops;
+  isFinishedPromotion: boolean;
 }

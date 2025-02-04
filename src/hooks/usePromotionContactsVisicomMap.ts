@@ -1,15 +1,15 @@
-import { theme } from '@/constants';
-import useMediaQuery from './useMediaQuery';
 import MarkerIcon from '@/icons/contacts-map/marker.svg?raw';
 import { ClassNames } from '@/constants';
 import L, { LatLngBoundsExpression, LatLngExpression } from 'leaflet';
 import { IUsePromotionContactsVisicomMap } from '@/types/hooks.types';
 import useTargetCity from './useTargetCity';
 import { getTargetCityCenter } from '@/utils';
+import useIsDesktop from './useIsDesktop';
 
 const usePromotionContactsVisicomMap = (): IUsePromotionContactsVisicomMap => {
   const targetCity = useTargetCity();
-  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const isDesktop = useIsDesktop();
+
   const zoomControlPosition = isDesktop ? 'bottomleft' : 'bottomright';
   const tileLayerUrl = `https://tms{s}.visicom.ua/2.0.0/world,ua/base/{z}/{x}/{y}.png?key=${
     import.meta.env.VITE_VISICOM_API_KEY

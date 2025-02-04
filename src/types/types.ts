@@ -126,6 +126,7 @@ export interface IGeneralOutletContext {
 
 export interface IPromotionDetailsPageOutletContext {
   updateLegalText: SetStringOrNullFunc;
+  updateIsFinishedPromotion: SetBooleanFunc;
 }
 
 export interface IOutletContext

@@ -13,7 +13,7 @@ import {
   BtnClickEvent,
   InputChangeEvent,
 } from '@/types/types';
-import { useMediaQuery } from '@/hooks';
+import { useIsDesktop } from '@/hooks';
 import { CgClose } from 'react-icons/cg';
 // components
 import SmoothFadeInDropdownList from '@AnimationBlocks/SmoothFadeInDropdownList';
@@ -26,7 +26,7 @@ const PromotionContactsMapHeader: FC<IProps> = ({
   shops,
 }) => {
   const [showShopsList, setShowShopsList] = useState<boolean>(false);
-  const isDesktop = useMediaQuery(theme.breakpoints.desktop);
+  const isDesktop = useIsDesktop();
   const title = isNationalPromotion
     ? Messages.nationalPromotionMapTitle
     : Messages.otherPromotionMapTitle;

@@ -2,6 +2,7 @@ import { OnBtnClickFunc } from '@/types/types';
 
 export interface IProps {
   isRootPage: boolean;
+  isShowRegCodeLink: boolean;
   onRegisterCodeBtnClickOnAllPages: OnBtnClickFunc;
   onRegisterCodeBtnClickOnPromotionPage: OnBtnClickFunc;
   isFake?: boolean;

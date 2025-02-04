@@ -1,8 +1,7 @@
 import { FC, Suspense, useState } from 'react';
 import { Content, Main } from './SharedLayout.styled';
 import { Outlet } from 'react-router-dom';
-import { theme } from '@/constants';
-import { useMediaQuery } from '@/hooks';
+import { useIsTablet } from '@/hooks';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent, IOutletContext, StringOrNull } from '@/types/types';
 // components
@@ -12,6 +11,8 @@ import Footer from '@GeneralComponents/Footer';
 import AppBackground from '@GeneralComponents/AppBackground';
 
 const SharedLayout: FC = () => {
+  const [isFinishedPromotion, setIsFinishedPromotion] =
+    useState<boolean>(false);
   const [legalText, setLegalText] = useState<StringOrNull>(null);
   const [
     showSelectPromotionsLocationModalWin,
@@ -19,9 +20,13 @@ const SharedLayout: FC = () => {
   ] = useState<boolean>(false);
   const [showSelectPromotionModalWin, setShowSelectPromotionModalWin] =
     useState<boolean>(false);
-  const isDesktop = useMediaQuery(theme.breakpoints.tablet);
+  const isTablet = useIsTablet();
   const showOtherModalWin =
     showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
+
+  const updateIsFinishedPromotion = (data: boolean) => {
+    setIsFinishedPromotion(data);
+  };
 
   const updateLegalText = (data: StringOrNull) => {
     setLegalText(data);
@@ -50,6 +55,7 @@ const SharedLayout: FC = () => {
   const outletContext: IOutletContext = {
     showOtherModalWin,
     updateLegalText,
+    updateIsFinishedPromotion,
   };
 
   return (
@@ -57,7 +63,8 @@ const SharedLayout: FC = () => {
       <AppBackground />
       <Content>
         <Header
-          isDesktop={isDesktop}
+          isFinishedPromotion={isFinishedPromotion}
+          isDesktop={isTablet}
           onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
           onRegisterCodeBtnClickOnPromotionPage={
             onRegisterCodeBtnClickOnPromotionPage

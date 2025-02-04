@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { IStyledProps } from './PromotionBanner.types';
 
 export const Container = styled.div<IStyledProps>`
+  position: relative;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) => theme.spacing(6)};
   padding-top: ${({ theme }) => theme.spacing(8)};

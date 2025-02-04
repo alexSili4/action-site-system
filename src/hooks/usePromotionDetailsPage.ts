@@ -12,7 +12,7 @@ import useServiceUnavailablePageNavigate from './useServiceUnavailablePageNaviga
 import { AxiosError } from 'axios';
 import { IPromotionDetailsPageOutletContext } from '@/types/types';
 import { useOutletContext } from 'react-router-dom';
-import { filterShopsByPromoDateEnd } from '@/utils';
+import { filterShopsByPromoDateEnd, getIsFinishedPromotion } from '@/utils';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
@@ -25,10 +25,17 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const { promotion, isNotFoundError } = usePromotion();
   const navigate = useServiceUnavailablePageNavigate();
   const shouldShowPromotionDetails = !isNotFoundError;
-  const { updateLegalText }: IPromotionDetailsPageOutletContext =
-    useOutletContext();
+  const {
+    updateLegalText,
+    updateIsFinishedPromotion,
+  }: IPromotionDetailsPageOutletContext = useOutletContext();
+  const isFinishedPromotion = getIsFinishedPromotion(promotion?.v_status);
 
   const filteredShops = filterShopsByPromoDateEnd(shops);
+
+  useEffect(() => {
+    updateIsFinishedPromotion(isFinishedPromotion);
+  }, [isFinishedPromotion]);
 
   useEffect(() => {
     if (promotion) {
@@ -83,11 +90,11 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
       promotionId: string
     ): Promise<void> => {
       try {
-        const generalPrizes = promotionsService.getGeneralPrizes(promotionId);
-        const presentPrizes = promotionsService.getPresentPrizes(promotionId);
-        const response = await Promise.all([generalPrizes, presentPrizes]);
-        const data = response.flat();
-        setOtherPrizes(data);
+        const presentPrizes = await promotionsService.getPresentPrizes(
+          promotionId
+        );
+
+        setOtherPrizes(presentPrizes);
       } catch (error) {
         let errorMessage: string = '';
 
@@ -168,6 +175,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     shops: filteredShops,
     promotion,
     shouldShowPromotionDetails,
+    isFinishedPromotion,
   };
 };
 

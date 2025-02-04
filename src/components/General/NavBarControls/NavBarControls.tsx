@@ -6,10 +6,14 @@ import { PiUserBold } from 'react-icons/pi';
 // components
 import RegisterCodeBtn from '@GeneralComponents/RegisterCodeBtn';
 
-const NavBarControls: FC<IProps> = ({ isRootPage, isFake = false }) => {
+const NavBarControls: FC<IProps> = ({
+  isRootPage,
+  isShowRegCodeLink,
+  isFake = false,
+}) => {
   return (
     <Container isRootPage={isRootPage} isFake={isFake}>
-      <RegisterCodeBtn />
+      {isShowRegCodeLink && <RegisterCodeBtn />}
       <CabinetLink to={PagePaths.cabinet}>
         <PiUserBold size={theme.iconSizes.cabinet} />
       </CabinetLink>
