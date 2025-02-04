@@ -31,6 +31,7 @@ export const List = styled.ul`
 export const ListItem = styled.li``;
 
 export const Card = styled.div<IStyledProps>`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
