@@ -10,11 +10,7 @@ import {
   StringOrNull,
 } from '@/types/types';
 import codesService from '@/services/codes.service';
-import {
-  useCsrfToken,
-  useServiceUnavailablePageNavigate,
-  useSetSearchParams,
-} from '@/hooks';
+import { useCsrfToken, useSetSearchParams } from '@/hooks';
 import { IRegisterCodeRes } from '@/types/code.types';
 import { getCurrentInputIndex, splitString } from '@/utils';
 import {
@@ -37,7 +33,6 @@ const useRegisterCodeForm = ({
   const { register, handleSubmit, watch, setValue } =
     useForm<IRegCodeFormData>();
   const { name: csrfTokenName, token: csrfToken } = useCsrfToken();
-  const navigate = useServiceUnavailablePageNavigate();
   const { searchParams } = useSetSearchParams();
   const isError = Boolean(error);
   const acceptedTerms = watch('acceptedTerms');
@@ -47,27 +42,25 @@ const useRegisterCodeForm = ({
   const defaultCode = searchParams.get(SearchParamsKeys.promocode) ?? '';
 
   useEffect(() => {
-    const getPromotion = async (code: string): Promise<void> => {
+    const getPromotionByCode = async (code: string): Promise<void> => {
       try {
+        startRegisterCode();
         const response = await promotionsService.getPromotionByCode(code);
 
         updatePromotion(response);
       } catch (error) {
         updatePromotion(null);
-        let errorMessage: string = '';
 
         if (error instanceof AxiosError) {
-          errorMessage = error.response?.data.message;
+          setError(error.response?.data.message);
         }
-
-        navigate({ isError: true, errorMessage });
       }
     };
 
     const code = `${codePart1}${codePart2}${codePart3}`.toUpperCase();
 
     if (isFullRegCode) {
-      getPromotion(code);
+      getPromotionByCode(code);
     }
   }, [codePart1, codePart2, codePart3]);
 
