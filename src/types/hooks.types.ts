@@ -111,6 +111,7 @@ export interface IUsePromotionDetailsPage {
   promotion: TargetPromotionDetailsState;
   shouldShowPromotionDetails: boolean;
   isFinishedPromotion: boolean;
+  isShowRegCodeLink: boolean;
 }
 
 export type UseTargetPromotion = IPromotion | undefined;

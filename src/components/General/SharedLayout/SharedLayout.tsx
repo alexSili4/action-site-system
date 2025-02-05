@@ -1,7 +1,7 @@
 import { FC, Suspense, useState } from 'react';
 import { Content, Main } from './SharedLayout.styled';
 import { Outlet } from 'react-router-dom';
-import { useIsTablet } from '@/hooks';
+import { useIsPromotionDetailsPage, useIsTablet } from '@/hooks';
 import { makeBlur } from '@/utils';
 import { BtnClickEvent, IOutletContext, StringOrNull } from '@/types/types';
 // components
@@ -20,9 +20,12 @@ const SharedLayout: FC = () => {
   ] = useState<boolean>(false);
   const [showSelectPromotionModalWin, setShowSelectPromotionModalWin] =
     useState<boolean>(false);
+  const isPromotionDetailsPage = useIsPromotionDetailsPage();
   const isTablet = useIsTablet();
   const showOtherModalWin =
     showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
+  const isHiddenRegCodeLink = isPromotionDetailsPage && isFinishedPromotion;
+  const isShowRegCodeLink = !isHiddenRegCodeLink;
 
   const updateIsFinishedPromotion = (data: boolean) => {
     setIsFinishedPromotion(data);
@@ -53,6 +56,7 @@ const SharedLayout: FC = () => {
   };
 
   const outletContext: IOutletContext = {
+    isShowRegCodeLink,
     showOtherModalWin,
     updateLegalText,
     updateIsFinishedPromotion,
@@ -63,7 +67,8 @@ const SharedLayout: FC = () => {
       <AppBackground />
       <Content>
         <Header
-          isFinishedPromotion={isFinishedPromotion}
+          isShowRegCodeLink={isShowRegCodeLink}
+          isPromotionDetailsPage={isPromotionDetailsPage}
           isDesktop={isTablet}
           onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
           onRegisterCodeBtnClickOnPromotionPage={

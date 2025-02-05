@@ -54,6 +54,8 @@ const useRegisterCodeForm = ({
         if (error instanceof AxiosError) {
           setError(error.response?.data.message);
         }
+      } finally {
+        setIsLoading(false);
       }
     };
 

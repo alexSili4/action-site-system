@@ -11,4 +11,5 @@ export interface IProps {
 export interface IStyledProps {
   isRootPage: boolean;
   isFake: boolean;
+  isShowRegCodeLink: boolean;
 }

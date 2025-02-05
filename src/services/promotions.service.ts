@@ -77,7 +77,7 @@ class PromotionsService extends HttpService {
   async getWheelPrizes(actionId: string): Promise<Prizes> {
     const response = await this.get<Prizes>(
       {
-        url: `promotions/gifts-for-raffle?action_id=${actionId}`,
+        url: `promotions/gifts-for-wheel?action_id=${actionId}`,
       },
       false
     );

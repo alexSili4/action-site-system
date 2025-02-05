@@ -30,6 +30,7 @@ const PromotionDetails: FC<IProps> = ({
   winners,
   shops,
   isFinishedPromotion,
+  isShowRegCodeLink,
 }) => {
   const {
     name,
@@ -96,7 +97,11 @@ const PromotionDetails: FC<IProps> = ({
           />
         </PromotionDetailsSectionContainer>
         {shouldShowConditionsSection && (
-          <PromotionConditions conditions={conditions} rulesPdf={rulesPdfUrl} />
+          <PromotionConditions
+            conditions={conditions}
+            rulesPdf={rulesPdfUrl}
+            isShowRegCodeLink={isShowRegCodeLink}
+          />
         )}
         {shouldShowOtherPrizesSection && (
           <PromotionPrizes
@@ -105,6 +110,7 @@ const PromotionDetails: FC<IProps> = ({
             description='Унікальний приз від головного партнера'
             showRegCodeLink={false}
             id={PromotionDetailsPageSections.prizes}
+            isShowRegCodeLink={isShowRegCodeLink}
           />
         )}
         {shouldShowWheelPrizesSection && (
@@ -113,6 +119,7 @@ const PromotionDetails: FC<IProps> = ({
             prizes={wheelPrizes}
             title='Призи «Колеса подарунків»'
             description='Крутіть колесо та вигравайте подарунки'
+            isShowRegCodeLink={isShowRegCodeLink}
           />
         )}
         {shouldShowFAQsSection && (

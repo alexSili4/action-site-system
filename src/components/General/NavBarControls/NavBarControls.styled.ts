@@ -6,7 +6,8 @@ export const Container = styled.div<IStyledProps>`
   flex-grow: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: ${({ isShowRegCodeLink }) =>
+    isShowRegCodeLink ? 'center' : 'flex-end'};
   gap: ${({ isRootPage, theme }) => theme.spacing(isRootPage ? 2 : 4)};
   order: ${({ isRootPage }) => (isRootPage ? 1 : 2)};
   width: ${({ isRootPage }) => (isRootPage ? '100%' : 'auto')};

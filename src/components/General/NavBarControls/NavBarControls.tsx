@@ -12,7 +12,11 @@ const NavBarControls: FC<IProps> = ({
   isFake = false,
 }) => {
   return (
-    <Container isRootPage={isRootPage} isFake={isFake}>
+    <Container
+      isRootPage={isRootPage}
+      isFake={isFake}
+      isShowRegCodeLink={isShowRegCodeLink}
+    >
       {isShowRegCodeLink && <RegisterCodeBtn />}
       <CabinetLink to={PagePaths.cabinet}>
         <PiUserBold size={theme.iconSizes.cabinet} />

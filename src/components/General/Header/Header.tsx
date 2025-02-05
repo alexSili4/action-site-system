@@ -5,21 +5,20 @@ import {
   StyledHeaderBackground,
 } from './Header.styled';
 import { IProps } from './Header.types';
-import { useIsPromotionDetailsPage, useIsScrollingUp } from '@/hooks';
+import { useIsScrollingUp } from '@/hooks';
 // components
 import Container from '@GeneralComponents/Container';
 import NavBar from '@GeneralComponents/NavBar';
 
 const Header: FC<IProps> = ({
   isDesktop,
-  isFinishedPromotion,
+  isPromotionDetailsPage,
+  isShowRegCodeLink,
   onRegisterCodeBtnClickOnAllPages,
   onRegisterCodeBtnClickOnPromotionPage,
 }) => {
-  const isPromotionDetailsPage = useIsPromotionDetailsPage();
   const { isScrollingUp, isScrolling } = useIsScrollingUp();
 
-  const isHiddenRegCodeLink = isPromotionDetailsPage && isFinishedPromotion;
   const isColoredBackground = isScrolling && isPromotionDetailsPage;
   const shouldHideHeader = isPromotionDetailsPage && !isScrollingUp;
 
@@ -37,7 +36,7 @@ const Header: FC<IProps> = ({
         <Container>
           <NavBar
             isDesktop={isDesktop}
-            isShowRegCodeLink={!isHiddenRegCodeLink}
+            isShowRegCodeLink={isShowRegCodeLink}
             isPromotionDetailsPage={isPromotionDetailsPage}
             onRegisterCodeBtnClickOnAllPages={onRegisterCodeBtnClickOnAllPages}
             onRegisterCodeBtnClickOnPromotionPage={

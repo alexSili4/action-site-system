@@ -14,4 +14,5 @@ export interface IProps {
   winners: WinnersByDates;
   shops: Shops;
   isFinishedPromotion: boolean;
+  isShowRegCodeLink: boolean;
 }

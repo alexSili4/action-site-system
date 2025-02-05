@@ -28,6 +28,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const {
     updateLegalText,
     updateIsFinishedPromotion,
+    isShowRegCodeLink,
   }: IPromotionDetailsPageOutletContext = useOutletContext();
   const isFinishedPromotion = getIsFinishedPromotion(promotion?.v_status);
 
@@ -176,6 +177,7 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     promotion,
     shouldShowPromotionDetails,
     isFinishedPromotion,
+    isShowRegCodeLink,
   };
 };
 

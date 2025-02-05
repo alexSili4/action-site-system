@@ -14,6 +14,7 @@ const PromotionPrizes: FC<IProps> = ({
   logo,
   showRegCodeLink = true,
   id,
+  isShowRegCodeLink,
 }) => {
   const bigPrizes = prizes.filter(
     ({ show_type: showType }) => showType === 'big'
@@ -24,6 +25,8 @@ const PromotionPrizes: FC<IProps> = ({
 
   const showBigPrizesList = Boolean(bigPrizes.length);
   const showBasePrizesList = Boolean(basePrizes.length);
+
+  const shouldShowRegCodeLink = isShowRegCodeLink && showRegCodeLink;
 
   return (
     <Container id={id}>
@@ -37,7 +40,7 @@ const PromotionPrizes: FC<IProps> = ({
           />
         )}
         {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
-        {showRegCodeLink && <PromotionRegisterCodeLink />}
+        {shouldShowRegCodeLink && <PromotionRegisterCodeLink />}
       </ContentWrap>
     </Container>
   );

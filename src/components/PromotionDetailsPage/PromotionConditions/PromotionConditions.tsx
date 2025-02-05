@@ -10,7 +10,11 @@ import PromotionConditionsSliderContainer from '@PromotionDetailsPageComponents/
 import PromotionSectionTitle from '@PromotionDetailsPageComponents/PromotionSectionTitle';
 import PromotionRegisterCodeLink from '@PromotionDetailsPageComponents/PromotionRegisterCodeLink';
 
-const PromotionConditions: FC<IProps> = ({ conditions, rulesPdf }) => {
+const PromotionConditions: FC<IProps> = ({
+  conditions,
+  rulesPdf,
+  isShowRegCodeLink,
+}) => {
   return (
     <Container id={PromotionDetailsPageSections.conditions}>
       <PromotionSectionTitle title='Умови участі' />
@@ -18,9 +22,11 @@ const PromotionConditions: FC<IProps> = ({ conditions, rulesPdf }) => {
         conditions={conditions}
         rulesPdf={rulesPdf}
       />
-      <PromotionRegisterCodeLinkContainer>
-        <PromotionRegisterCodeLink shouldShowTopSpacing={false} />
-      </PromotionRegisterCodeLinkContainer>
+      {isShowRegCodeLink && (
+        <PromotionRegisterCodeLinkContainer>
+          <PromotionRegisterCodeLink shouldShowTopSpacing={false} />
+        </PromotionRegisterCodeLinkContainer>
+      )}
     </Container>
   );
 };
