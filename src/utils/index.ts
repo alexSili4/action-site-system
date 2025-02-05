@@ -40,3 +40,4 @@ export { default as filterShopsByPromoDateEnd } from './filterShopsByPromoDateEn
 export { default as getMarksData } from './getMarksData';
 export { default as getIsFinishedPromotion } from './getIsFinishedPromotion';
 export { default as getFinishedPromoLabel } from './getFinishedPromoLabel';
+export { default as getPromotionByCodeError } from './getPromotionByCodeError';

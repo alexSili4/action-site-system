@@ -10,6 +10,7 @@ import { FAQs } from '@/types/faqs.types';
 import { WinnersByDates } from '@/types/winner.types';
 import HttpService from './http.service';
 import { Shops } from '@/types/shop.types';
+import { IGetPromotionByCode } from '@/types/types';
 
 class PromotionsService extends HttpService {
   constructor() {
@@ -51,10 +52,10 @@ class PromotionsService extends HttpService {
     return response.data;
   }
 
-  async getPromotionByCode(code: string): Promise<IPromotion> {
+  async getPromotionByCode(code: string): Promise<IGetPromotionByCode> {
     const promotionUrl = `code/find-action?code=${code}`;
 
-    const response = await this.get<IPromotion>(
+    const response = await this.get<IGetPromotionByCode>(
       {
         url: promotionUrl,
       },

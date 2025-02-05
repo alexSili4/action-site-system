@@ -12,7 +12,11 @@ import {
 import codesService from '@/services/codes.service';
 import { useCsrfToken, useSetSearchParams } from '@/hooks';
 import { IRegisterCodeRes } from '@/types/code.types';
-import { getCurrentInputIndex, splitString } from '@/utils';
+import {
+  getCurrentInputIndex,
+  splitString,
+  getPromotionByCodeError,
+} from '@/utils';
 import {
   IUseRegisterCodeForm,
   IUseRegisterCodeFormProps,
@@ -47,12 +51,18 @@ const useRegisterCodeForm = ({
         startRegisterCode();
         const response = await promotionsService.getPromotionByCode(code);
 
-        updatePromotion(response);
+        updatePromotion(response.action);
       } catch (error) {
         updatePromotion(null);
 
         if (error instanceof AxiosError) {
-          setError(error.response?.data.message);
+          const errorData = error.response?.data;
+
+          if (Array.isArray(errorData)) {
+            const message = getPromotionByCodeError(errorData);
+
+            setError(message);
+          }
         }
       } finally {
         setIsLoading(false);

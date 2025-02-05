@@ -66,6 +66,8 @@ export type Numbers = number[];
 
 export type Strings = string[];
 
+export type Objects = {}[];
+
 export interface IFormatDateProps {
   date: Date | string | number;
   dateFormat: string;
@@ -152,4 +154,9 @@ export interface IRegExp {
 export interface IGetSupportServiceTextProps {
   hotLinePhone: StringOrNull;
   hotLineWorkHours: StringOrNull;
+}
+
+export interface IGetPromotionByCode {
+  code: string;
+  action: IPromotion;
 }
