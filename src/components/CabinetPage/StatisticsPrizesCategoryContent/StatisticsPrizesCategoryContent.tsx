@@ -16,7 +16,7 @@ import {
   selectUserPrizes,
 } from '@/store/userPrizes/selectors';
 import { DateFormats, Messages } from '@/constants';
-import prize from '@/images/cabinet/prize.png';
+import prize from '@/images/cabinet/prize-min.png';
 // components
 import PaginationBar from '@GeneralComponents/PaginationBar';
 import StatisticsPrize from '@CabinetPageComponents/StatisticsPrize';

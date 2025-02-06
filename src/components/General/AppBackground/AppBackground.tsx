@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import BottomLeftConfettiImg from '@/images/layout/bottom-left-confetti.png';
-import BottomMiddleConfettiImg from '@/images/layout/bottom-middle-confetti.png';
-import BottomRightConfettiImg from '@/images/layout/bottom-right-confetti.png';
-import TopLeftConfettiImg from '@/images/layout/top-left-confetti.png';
-import TopMiddleConfettiImg from '@/images/layout/top-middle-confetti.png';
-import TopRightConfettiImg from '@/images/layout/top-right-confetti.png';
-import MiddleLeftConfettiImg from '@/images/layout/middle-left-confetti.png';
+import BottomLeftConfettiImg from '@/images/layout/bottom-left-confetti-min.png';
+import BottomMiddleConfettiImg from '@/images/layout/bottom-middle-confetti-min.png';
+import BottomRightConfettiImg from '@/images/layout/bottom-right-confetti-min.png';
+import TopLeftConfettiImg from '@/images/layout/top-left-confetti-min.png';
+import TopMiddleConfettiImg from '@/images/layout/top-middle-confetti-min.png';
+import TopRightConfettiImg from '@/images/layout/top-right-confetti-min.png';
+import MiddleLeftConfettiImg from '@/images/layout/middle-left-confetti-min.png';
 import { animations } from '@/constants';
 import {
   Background,
@@ -15,10 +15,10 @@ import {
   LeftBox,
   LeftConfetti,
 } from './AppBackground.styled';
-import RightBoxImg from '@/images/layout/right-box.png';
-import RightConfettiImg from '@/images/layout/right-bg-confetti.png';
-import LeftBoxImg from '@/images/layout/left-box.png';
-import LeftConfettiImg from '@/images/layout/left-bg-confetti.png';
+import RightBoxImg from '@/images/layout/right-box-min.png';
+import RightConfettiImg from '@/images/layout/right-bg-confetti-min.png';
+import LeftBoxImg from '@/images/layout/left-box-min.png';
+import LeftConfettiImg from '@/images/layout/left-bg-confetti-min.png';
 // components
 import SmoothFadeInPositionedElement from '@AnimationBlocks/SmoothFadeInPositionedElement';
 

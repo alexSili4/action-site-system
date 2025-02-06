@@ -1,5 +1,5 @@
 import { animations } from '@/constants';
-import GradientImg from '@/images/layout/gradient.jpg';
+import GradientImg from '@/images/layout/gradient-min.jpg';
 
 import styled from '@emotion/styled';
 

@@ -11,11 +11,11 @@ import {
   Slots,
   Rays,
 } from './ServiceUnavailableError.styled';
-import Error503ImgMobile from '@/images/error/error-503-mobile.png';
-import Error503ImgDesk from '@/images/error/error-503-desk.png';
-import WheelImg from '@/images/error/wheel.png';
-import Slots503Img from '@/images/error/slots-503.png';
-import RaysImg from '@/images/error/rays.png';
+import Error503ImgMobile from '@/images/error/error-503-mobile-min.png';
+import Error503ImgDesk from '@/images/error/error-503-desk-min.png';
+import WheelImg from '@/images/error/wheel-min.png';
+import Slots503Img from '@/images/error/slots-503-min.png';
+import RaysImg from '@/images/error/rays-min.png';
 import { IProps } from './ServiceUnavailableError.types';
 
 const ServiceUnavailableError: FC<IProps> = ({ errorMessage }) => {

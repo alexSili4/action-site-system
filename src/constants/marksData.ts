@@ -1,8 +1,8 @@
-import blue from '@/images/marks/blue.png';
-import pink from '@/images/marks/pink.png';
-import green from '@/images/marks/green.png';
-import yellow from '@/images/marks/yellow.png';
-import purple from '@/images/marks/purple.png';
+import blue from '@/images/marks/blue-min.png';
+import pink from '@/images/marks/pink-min.png';
+import green from '@/images/marks/green-min.png';
+import yellow from '@/images/marks/yellow-min.png';
+import purple from '@/images/marks/purple-min.png';
 import { Marks } from '@/types/marks';
 
 const marksData: Marks = [

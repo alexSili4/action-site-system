@@ -12,11 +12,11 @@ import {
   Rays,
 } from './NotFoundError.styled';
 import { PagePaths } from '@/constants';
-import Error404ImgMobile from '@/images/error/error-404-mobile.png';
-import Error404ImgDesk from '@/images/error/error-404-desk.png';
-import WheelImg from '@/images/error/wheel.png';
-import Slots404Img from '@/images/error/slots-404.png';
-import RaysImg from '@/images/error/rays.png';
+import Error404ImgMobile from '@/images/error/error-404-mobile-min.png';
+import Error404ImgDesk from '@/images/error/error-404-desk-min.png';
+import WheelImg from '@/images/error/wheel-min.png';
+import Slots404Img from '@/images/error/slots-404-min.png';
+import RaysImg from '@/images/error/rays-min.png';
 import { useIsPromotionDetailsPage } from '@/hooks';
 
 const NotFoundError: FC = () => {

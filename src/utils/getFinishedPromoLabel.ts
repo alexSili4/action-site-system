@@ -1,5 +1,5 @@
-import finishedPromoLabelDesk from '@/images/promotion/finished-promo-label-desk.png';
-import finishedPromoLabelMob from '@/images/promotion/finished-promo-label-mob.png';
+import finishedPromoLabelDesk from '@/images/promotion/finished-promo-label-desk-min.png';
+import finishedPromoLabelMob from '@/images/promotion/finished-promo-label-mob-min.png';
 
 const getFinishedPromoLabel = (isTablet: boolean): string => {
   const finishedPromoLabel = isTablet

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import decorativeElement from '@/images/cabinet/decorative-element.png';
+import decorativeElement from '@/images/cabinet/decorative-element-min.png';
 import { IStyledImageWrapProps } from './UserCertificateBanner.types';
 
 export const Container = styled.div`

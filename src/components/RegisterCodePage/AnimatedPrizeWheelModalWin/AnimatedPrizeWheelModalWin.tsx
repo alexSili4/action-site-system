@@ -18,8 +18,8 @@ import {
   AnimatedPrizeImgContainer,
 } from './AnimatedPrizeWheelModalWin.styled';
 import { IProps } from './AnimatedPrizeWheelModalWin.types';
-import prizeImg from '@/images/code/prize.png';
-import fireworksImg from '@/images/code/fireworks.png';
+import prizeImg from '@/images/code/prize-min.png';
+import fireworksImg from '@/images/code/fireworks-min.png';
 import fanfare from '@/audio/fanfare.mp3';
 // components
 import ConfettiAnimation from '@GeneralComponents/ConfettiAnimation';

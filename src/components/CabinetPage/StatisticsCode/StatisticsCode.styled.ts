@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import certificateImg from '@/images/cabinet/certificate.png';
+import certificateImg from '@/images/cabinet/certificate-min.png';
 import {
   IStyledCertificateWrapProps,
   IStyledContentWrapProps,

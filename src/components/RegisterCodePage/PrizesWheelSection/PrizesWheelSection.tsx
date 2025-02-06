@@ -12,8 +12,8 @@ import {
   Sector,
   Delimiter,
 } from './PrizesWheelSection.styled';
-import circle from '@/images/code/circle.png';
-import pointer from '@/images/code/pointer.png';
+import circle from '@/images/code/circle-min.png';
+import pointer from '@/images/code/pointer-min.png';
 import { usePrizesWheelSection } from '@/hooks';
 import { getFileUrl } from '@/utils';
 import { BiLock } from 'react-icons/bi';

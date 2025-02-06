@@ -15,7 +15,7 @@ import {
   getPrizeDetailsPath,
 } from '@/utils';
 import { DateFormats, Messages } from '@/constants';
-import receipts from '@/images/cabinet/receipts.png';
+import receipts from '@/images/cabinet/receipts-min.png';
 // components
 import StatisticsCode from '@CabinetPageComponents/StatisticsCode';
 import PaginationBar from '@GeneralComponents/PaginationBar';

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { getFileUrl } from '@/utils';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import rulesCardBg from '@/images/conditions/rules-bg.jpg';
+import rulesCardBg from '@/images/conditions/rules-bg-min.jpg';
 import { IoDocumentOutline } from 'react-icons/io5';
 import { IProps } from './PromotionConditionsSlider.types';
 import { theme } from '@/constants';
