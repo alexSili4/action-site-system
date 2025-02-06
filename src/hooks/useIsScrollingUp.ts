@@ -1,7 +1,7 @@
 import { IUseIsScrollingUp } from '@/types/hooks.types';
 import { useEffect, useState } from 'react';
 
-const useIsScrollingUp = (): IUseIsScrollingUp => {
+const useIsScrollingUp = (minScroll: number): IUseIsScrollingUp => {
   const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
 
@@ -14,7 +14,9 @@ const useIsScrollingUp = (): IUseIsScrollingUp => {
       if (currentScrollY < lastScrollY) {
         setIsScrollingUp(true);
       } else {
-        setIsScrollingUp(false);
+        if (lastScrollY > minScroll) {
+          setIsScrollingUp(false);
+        }
       }
 
       setLastScrollY(currentScrollY);

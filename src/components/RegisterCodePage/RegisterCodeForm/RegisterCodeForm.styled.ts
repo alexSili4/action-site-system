@@ -95,7 +95,8 @@ export const RegisterFormCheckboxTitle = styled.span`
 `;
 
 export const RegisterFormCheckboxLink = styled.a<IStyledRegisterFormCheckboxLinkProps>`
-  color: ${({ disabledLink }) => (disabledLink ? 'inherit' : '#a282f7')};
+  color: ${({ disabledLink, theme }) =>
+    disabledLink ? 'inherit' : theme.colors.purple};
   pointer-events: ${({ disabledLink }) => disabledLink && 'none'};
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;

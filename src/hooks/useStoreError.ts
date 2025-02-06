@@ -67,8 +67,10 @@ const useStoreError = (): void => {
         '';
 
       navigate({ isError: true, errorMessage });
-    } else if (isErrorPage) {
-      navigate({ isError, errorMessage: '' });
+    } else {
+      if (isErrorPage) {
+        navigate({ isError: false, errorMessage: '' });
+      }
     }
   }, [
     authError,

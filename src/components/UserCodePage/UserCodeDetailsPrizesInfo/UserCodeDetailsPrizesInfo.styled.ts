@@ -111,14 +111,14 @@ export const CertificateLink = styled(Link)`
 
   & > svg {
     width: 18px;
-    fill: #a282f7;
+    fill: ${({ theme }) => theme.colors.purple};
     stroke-width: 0px;
-    stroke: #a282f7;
+    stroke: ${({ theme }) => theme.colors.purple};
   }
 `;
 
 export const PrizeLinkTitle = styled.span`
-  color: #a282f7;
+  color: ${({theme})=>theme.colors.purple};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 16px;
   font-weight: 500;

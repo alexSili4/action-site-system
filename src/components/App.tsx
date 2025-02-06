@@ -2,7 +2,7 @@ import { FC, lazy, useEffect } from 'react';
 import { PagePaths } from '@/constants';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import SharedLayout from '@GeneralComponents/SharedLayout';
-import { usePromotions } from '@/hooks';
+import { usePromotions, useAppUpdateVersion } from '@/hooks';
 import { useAuthStore, useUnusedUserCodesStore } from '@/store/store';
 import {
   selectIsRefreshing,
@@ -34,6 +34,7 @@ const App: FC = () => {
   const isRefreshing = useAuthStore(selectIsRefreshing);
   const isLoggedIn = useAuthStore(selectIsLoggedIn);
   useStoreError();
+  useAppUpdateVersion();
 
   useEffect(() => {
     const refreshProfile = async () => {

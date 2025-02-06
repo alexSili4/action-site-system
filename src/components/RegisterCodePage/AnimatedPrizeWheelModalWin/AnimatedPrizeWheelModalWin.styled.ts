@@ -57,7 +57,11 @@ export const ContentWrap = styled.div`
   border-right: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   box-shadow: 5px 5px 0px 0px #7a4ebd;
-  background-image: linear-gradient(180deg, #e73bf3, #a282f7 100%);
+  background-image: linear-gradient(
+    180deg,
+    #e73bf3,
+    ${({ theme }) => theme.colors.purple} 100%
+  );
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: ${({ theme }) => theme.spacing(22)};

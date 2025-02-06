@@ -64,4 +64,13 @@ export const LegalInfo = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: ${({ theme }) => theme.containerWidth.desktop}px;
   }
+
+  & a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:visited {
+      color: ${({ theme }) => theme.colors.purple};
+    }
+  }
 `;

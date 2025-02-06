@@ -91,7 +91,7 @@ export const LocationListContainer = styled.div<IStyledLocationListProps>`
   box-shadow: 0px -8px 25px 0px rgba(58, 52, 86, 0.1);
   background-color: ${({ theme }) => theme.colors.white};
   transform: translateY(100%) translateX(-50%);
-  overflow-y: hidden;
+  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     bottom: ${({ isBigSize }) => (isBigSize ? -28 : -16)}px;

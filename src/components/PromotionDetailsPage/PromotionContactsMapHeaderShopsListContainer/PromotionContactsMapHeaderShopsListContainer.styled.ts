@@ -22,7 +22,7 @@ export const Container = styled.div<IStyledProps>`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #a282f7;
+    background-color: ${({ theme }) => theme.colors.purple};
     border-radius: 10px;
     cursor: pointer;
   }

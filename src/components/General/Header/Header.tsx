@@ -17,7 +17,7 @@ const Header: FC<IProps> = ({
   onRegisterCodeBtnClickOnAllPages,
   onRegisterCodeBtnClickOnPromotionPage,
 }) => {
-  const { isScrollingUp, isScrolling } = useIsScrollingUp();
+  const { isScrollingUp, isScrolling } = useIsScrollingUp(200);
 
   const isColoredBackground = isScrolling && isPromotionDetailsPage;
   const shouldHideHeader = isPromotionDetailsPage && !isScrollingUp;

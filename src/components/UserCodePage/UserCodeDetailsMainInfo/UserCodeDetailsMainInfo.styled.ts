@@ -90,7 +90,7 @@ export const TargetShopAddressIconWrap = styled.span`
   padding-right: ${({ theme }) => theme.spacing()};
 
   & > svg {
-    color: #a282f7;
+    color: ${({ theme }) => theme.colors.purple};
   }
 `;
 

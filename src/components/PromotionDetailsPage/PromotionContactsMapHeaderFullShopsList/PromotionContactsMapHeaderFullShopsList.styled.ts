@@ -22,7 +22,7 @@ export const Title = styled.p`
 `;
 
 export const Link = styled.a`
-  color: #a282f7;
+  color: ${({ theme }) => theme.colors.purple};
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 400;

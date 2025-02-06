@@ -8,6 +8,7 @@ interface ITheme {
     white: string;
     lightGrey: string;
     grey: string;
+    purple: string;
   };
   padding: {
     container: number;
@@ -98,6 +99,7 @@ const theme: ITheme = {
     white: '#ffffff',
     lightGrey: '#eeeeee',
     grey: '#808080',
+    purple: '#a282f7',
   },
   // fontFamily: {  },
   // fontWeight: {  },

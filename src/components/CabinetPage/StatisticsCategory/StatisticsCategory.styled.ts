@@ -20,7 +20,7 @@ export const Container = styled.label`
   }
 
   &:is(:hover, :focus, :has(input:checked))::after {
-    background-color: #a282f7;
+    background-color: ${({ theme }) => theme.colors.purple};
   }
 
   &:is(:hover, :focus, :has(input:checked)) > span {

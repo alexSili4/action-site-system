@@ -19,7 +19,7 @@ export const CustomCheckbox = styled.span`
   width: 16px;
   aspect-ratio: 1 / 1;
   border-radius: 2px;
-  border: 1px solid #a282f7;
+  border: 1px solid ${({ theme }) => theme.colors.purple};
   background-color: transparent;
   transition: background-color
     ${({ theme }) => theme.transitionDurationAndFunc.other};
@@ -30,7 +30,7 @@ export const CustomCheckbox = styled.span`
   }
 
   *:has(input:checked) > & {
-    background-color: #a282f7;
+    background-color: ${({ theme }) => theme.colors.purple};
 
     & > svg {
       color: ${({ theme }) => theme.colors.white};

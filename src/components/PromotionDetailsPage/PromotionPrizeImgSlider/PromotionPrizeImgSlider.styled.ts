@@ -44,14 +44,9 @@ export const LabelsWrap = styled.div`
   left: 50%;
   display: flex;
   justify-content: flex-end;
-  width: calc(100% - 16px * 2);
+  width: 89.7vw;
   min-height: 38px;
   transform: translateX(-50%);
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 40px;
-    width: calc(100% - 40px * 2);
-  }
 `;
 
 export const LogoPartner = styled.img`
