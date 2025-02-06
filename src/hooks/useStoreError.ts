@@ -28,7 +28,7 @@ const useStoreError = (): void => {
   const promotionsError = usePromotionsStore(selectPromotionsError);
   const [isMaintenanceModeError, setIsMaintenanceModeError] =
     useState<boolean>(false);
-  const isErrorPage = useIsErrorPage();
+  const { isServiceUnavailablePage } = useIsErrorPage();
 
   useEffect(() => {
     const getIsMaintenanceMode = async (): Promise<void> => {
@@ -68,7 +68,7 @@ const useStoreError = (): void => {
 
       navigate({ isError: true, errorMessage });
     } else {
-      if (isErrorPage) {
+      if (isServiceUnavailablePage) {
         navigate({ isError: false, errorMessage: '' });
       }
     }
@@ -76,6 +76,7 @@ const useStoreError = (): void => {
     authError,
     citiesError,
     isMaintenanceModeError,
+    isServiceUnavailablePage,
     promotionsError,
     unusedUserCodesError,
     userCodesError,

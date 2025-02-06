@@ -16,7 +16,7 @@ const NavBar: FC<IProps> = ({
   onRegisterCodeBtnClickOnPromotionPage,
 }) => {
   const isRootPage = useIsRootPage();
-  const isErrorPage = useIsErrorPage();
+  const { isErrorPage } = useIsErrorPage();
   const { isScrolling } = useIsScrollingUp(0);
   const showShortLogoLinkTitle = !isRootPage && !isDesktop;
   const showFakeNavControls = isRootPage && isDesktop;

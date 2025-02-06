@@ -244,3 +244,9 @@ export interface IUseRegisterCodePageState {
   defaultCodeId: NumberOrNull;
   defaultPromotion: IPromotion | null;
 }
+
+export interface IUseIsErrorPage {
+  isServiceUnavailablePage: boolean;
+  isNotFoundPage: boolean;
+  isErrorPage: boolean;
+}

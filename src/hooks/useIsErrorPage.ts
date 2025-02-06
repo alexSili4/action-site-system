@@ -1,7 +1,8 @@
 import { PagePaths } from '@/constants';
+import { IUseIsErrorPage } from '@/types/hooks.types';
 import { useLocation } from 'react-router-dom';
 
-const useIsErrorPage = (): boolean => {
+const useIsErrorPage = (): IUseIsErrorPage => {
   const { pathname } = useLocation();
 
   const isServiceUnavailablePage = pathname === PagePaths.serviceUnavailable;
@@ -9,7 +10,7 @@ const useIsErrorPage = (): boolean => {
   const isNotFoundPage = pages.every((item) => String(item) !== pathname);
   const isErrorPage = isServiceUnavailablePage || isNotFoundPage;
 
-  return isErrorPage;
+  return { isServiceUnavailablePage, isNotFoundPage, isErrorPage };
 };
 
 export default useIsErrorPage;

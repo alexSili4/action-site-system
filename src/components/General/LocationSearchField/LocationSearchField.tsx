@@ -21,6 +21,7 @@ const LocationSearchField: FC = () => {
       name={SearchParamsKeys.search}
       onChange={onInputChange}
       defaultValue={search}
+      autoFocus
     />
   );
 };
