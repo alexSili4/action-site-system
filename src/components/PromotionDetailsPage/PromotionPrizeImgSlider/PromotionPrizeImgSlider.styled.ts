@@ -44,7 +44,7 @@ export const LabelsWrap = styled.div`
   left: 50%;
   display: flex;
   justify-content: flex-end;
-  width: 89.7vw;
+  width: 89.7%;
   min-height: 38px;
   transform: translateX(-50%);
 `;
