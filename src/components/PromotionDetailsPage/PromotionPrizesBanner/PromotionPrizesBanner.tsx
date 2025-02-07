@@ -14,27 +14,38 @@ const PromotionPrizesBanner: FC<IProps> = ({ prizes, logo }) => {
 
   return (
     <List>
-      {prizes.map(({ gift: { images, banner }, partner }, index) => {
-        const { logo: partnerLogo = '', name: partnerName } = partner ?? {};
-        const { image = '' } = images[0] || {};
-        const imageUrl = getFileUrl(banner ?? image);
-        const partnerLogoUrl = getFileUrl(partnerLogo);
+      {prizes.map(
+        (
+          { gift: { images, banner, banner_mob: bannerMob }, partner },
+          index
+        ) => {
+          const { logo: partnerLogo = '', name: partnerName } = partner ?? {};
+          const { image = '' } = images[0] || {};
 
-        return (
-          <ListItem key={index}>
-            <Container imageUrl={imageUrl} isLogo={isLogo}>
-              <ImgWrap isLogo={isLogo}>
-                {isLogo && <Image src={partnerLogoUrl} alt={partnerName} />}
-                {isLogo ? (
-                  logo
-                ) : (
-                  <Image src={partnerLogoUrl} alt={partnerName} />
-                )}
-              </ImgWrap>
-            </Container>
-          </ListItem>
-        );
-      })}
+          const imageMobUrl = getFileUrl(bannerMob ?? image);
+          const imageUrl = getFileUrl(banner ?? image);
+          const partnerLogoUrl = getFileUrl(partnerLogo);
+
+          return (
+            <ListItem key={index}>
+              <Container
+                imageMobUrl={imageMobUrl}
+                imageUrl={imageUrl}
+                isLogo={isLogo}
+              >
+                <ImgWrap isLogo={isLogo}>
+                  {isLogo && <Image src={partnerLogoUrl} alt={partnerName} />}
+                  {isLogo ? (
+                    logo
+                  ) : (
+                    <Image src={partnerLogoUrl} alt={partnerName} />
+                  )}
+                </ImgWrap>
+              </Container>
+            </ListItem>
+          );
+        }
+      )}
     </List>
   );
 };

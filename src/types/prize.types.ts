@@ -19,6 +19,7 @@ export interface IGift {
   discount: NumberOrNull;
   images: Images;
   banner: StringOrNull;
+  banner_mob: StringOrNull;
 }
 
 export interface IPartner {

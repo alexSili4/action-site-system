@@ -15,7 +15,7 @@ export const Container = styled.div<IStyledContainerProps>`
   border-radius: 12px;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   padding: ${({ theme }) => `${theme.spacing(8)} ${theme.spacing(5)}`};
-  background-image: url(${({ imageUrl }) => imageUrl});
+  background-image: url(${({ imageMobUrl }) => imageMobUrl});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -28,6 +28,7 @@ export const Container = styled.div<IStyledContainerProps>`
     height: 430px;
     padding: ${({ theme, isLogo }) =>
       `${theme.spacing(isLogo ? 6 : 12)} ${theme.spacing(10)}`};
+    background-image: url(${({ imageUrl }) => imageUrl});
   }
 `;
 

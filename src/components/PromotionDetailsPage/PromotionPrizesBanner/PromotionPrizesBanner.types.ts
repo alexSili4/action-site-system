@@ -9,6 +9,7 @@ export interface IProps {
 
 export interface IStyledContainerProps {
   imageUrl: string;
+  imageMobUrl: string;
   isLogo: boolean;
 }
 

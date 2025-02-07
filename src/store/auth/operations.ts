@@ -25,8 +25,9 @@ const refreshOperation = async ({
     return response ?? undefined;
   } catch (error) {
     if (error instanceof AxiosError) {
-      set({ error: error.message });
-      throw new Error(error.response?.data.message);
+      const message = error.response?.data.message;
+      set({ error: message });
+      throw new Error(message);
     }
   } finally {
     set({
@@ -48,8 +49,9 @@ const logOutOperation = async ({
     set(initialState);
   } catch (error) {
     if (error instanceof AxiosError) {
-      set({ error: error.message });
-      throw new Error(error.response?.data.message);
+      const message = error.response?.data.message;
+      set({ error: message });
+      throw new Error(message);
     }
   } finally {
     set({
