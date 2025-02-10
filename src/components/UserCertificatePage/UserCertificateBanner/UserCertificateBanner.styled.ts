@@ -34,6 +34,7 @@ export const ContentWrap = styled.div`
 
 export const CertificateImgWrap = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    height: 414px;
     background-color: ${({ theme }) => theme.colors.white};
     padding: ${({ theme }) => theme.spacing(4)};
     border-radius: 24px;
@@ -48,7 +49,7 @@ export const CertificateImg = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${({ theme: { spacing } }) =>
-    `${spacing(80)} ${spacing(5)} ${spacing(4)}`};
+    `${spacing(8)} ${spacing(5)} ${spacing(4)}`};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   background-image: url(${decorativeElement});
   background-position: 0 0;
@@ -56,6 +57,7 @@ export const CertificateImg = styled.div`
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    height: 100%;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
   }
