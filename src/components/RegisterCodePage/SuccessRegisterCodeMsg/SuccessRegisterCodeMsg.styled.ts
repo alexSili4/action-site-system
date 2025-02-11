@@ -44,6 +44,7 @@ export const AdditionalInfoWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(13)};
+  width: 100%;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     width: 447px;
