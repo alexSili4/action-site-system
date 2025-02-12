@@ -62,18 +62,18 @@ const UserCode: FC<IProps> = ({ code }) => {
   });
   const drawDate = dates[0]?.date_from;
   const formattedDrawDate = formatDate({
-    date: drawDate ?? new Date(),
+    date: drawDate ,
     dateFormat: DateFormats.winnersDate,
   });
   const targetDrawDate = drawDate
     ? formattedDrawDate
     : generalSettings.defaultDataText;
   const formattedWinDate = formatDate({
-    date: winDate ?? new Date(),
+    date: winDate,
     dateFormat: DateFormats.winnersDate,
   });
   const certificateSentAtDate = formatDate({
-    date: certificateSentAt ?? new Date(),
+    date: certificateSentAt ,
     dateFormat: DateFormats.winnersDate,
   });
 

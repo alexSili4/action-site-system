@@ -1,4 +1,4 @@
-import { DateFormats, generalSettings } from '@/constants';
+import { DateFormats } from '@/constants';
 import { IUseUserCertificate } from '@/types/hooks.types';
 import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
 import {
@@ -50,12 +50,10 @@ const useUserCertificate = (
 
   const certificateImg = getFileUrl(images[0]?.image ?? '');
 
-  const expiredFormatDate = expiredDate
-    ? formatDate({
-        date: expiredDate,
-        dateFormat: DateFormats.winnersDate,
-      })
-    : generalSettings.defaultDataText;
+  const expiredFormatDate = formatDate({
+    date: expiredDate,
+    dateFormat: DateFormats.winnersDate,
+  });
 
   return {
     code,

@@ -7,7 +7,7 @@ const getClosestDateIndex = (winners: WinnersByDates): number => {
   const allDates = winners
     .filter(({ winners }) => winners.length)
     .map(({ date }) => date);
-  const closestDate = closestTo(new Date(), allDates) ?? new Date();
+  const closestDate = closestTo(new Date(), allDates);
   const closestDateIndex = winners.findIndex(
     ({ date }) =>
       formatDate({ date, dateFormat: DateFormats.origWinDate }) ===

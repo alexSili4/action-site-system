@@ -69,7 +69,7 @@ export type Strings = string[];
 export type Objects = {}[];
 
 export interface IFormatDateProps {
-  date: Date | string | number;
+  date: Date | string | number | undefined | null;
   dateFormat: string;
 }
 
