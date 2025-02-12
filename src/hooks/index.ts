@@ -41,3 +41,4 @@ export { default as useDefaultPromotionState } from './useDefaultPromotionState'
 export { default as useIsDesktop } from './useIsDesktop';
 export { default as useIsTablet } from './useIsTablet';
 export { default as useAppUpdateVersion } from './useAppUpdateVersion';
+export { default as usePreviousPromotions } from './usePreviousPromotions';

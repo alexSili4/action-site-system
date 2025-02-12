@@ -35,7 +35,6 @@ const UserCodeDetails: FC<IProps> = ({
   drawDate,
   shopAddress,
   receiptNumber,
-  isValidShopAddress,
   marks,
 }) => {
   return (
@@ -60,7 +59,6 @@ const UserCodeDetails: FC<IProps> = ({
             drawDate={drawDate}
             shopAddress={shopAddress}
             receiptNumber={receiptNumber}
-            isValidShopAddress={isValidShopAddress}
             marks={marks}
           />
         </MainInfoWrap>

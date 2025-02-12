@@ -18,6 +18,8 @@ const PromotionDetailsPage: FC = () => {
     shouldShowPromotionDetails,
     isFinishedPromotion,
     isShowRegCodeLink,
+    showPromotionsWinnersNavLink,
+    showPromotionsPrizesNavLink,
   } = usePromotionDetailsPage();
 
   return (
@@ -43,7 +45,10 @@ const PromotionDetailsPage: FC = () => {
           )}
         </Container>
       </Section>
-      <PromotionDetailsNavBar />
+      <PromotionDetailsNavBar
+        showPromotionsWinnersNavLink={showPromotionsWinnersNavLink}
+        showPromotionsPrizesNavLink={showPromotionsPrizesNavLink}
+      />
     </>
   );
 };

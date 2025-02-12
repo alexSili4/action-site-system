@@ -127,9 +127,13 @@ export interface IGeneralOutletContext {
 }
 
 export interface IPromotionDetailsPageOutletContext {
+  updateShowPromotionsWinnersNavLink: SetBooleanFunc;
   updateLegalText: SetStringOrNullFunc;
   updateIsFinishedPromotion: SetBooleanFunc;
+  updateShowPromotionsPrizesNavLink: SetBooleanFunc;
   isShowRegCodeLink: boolean;
+  showPromotionsWinnersNavLink: boolean;
+  showPromotionsPrizesNavLink: boolean;
 }
 
 export interface IOutletContext

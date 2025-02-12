@@ -11,6 +11,10 @@ import Footer from '@GeneralComponents/Footer';
 import AppBackground from '@GeneralComponents/AppBackground';
 
 const SharedLayout: FC = () => {
+  const [showPromotionsPrizesNavLink, setShowPromotionsPrizesNavLink] =
+    useState<boolean>(false);
+  const [showPromotionsWinnersNavLink, setShowPromotionsWinnersNavLink] =
+    useState<boolean>(false);
   const [isFinishedPromotion, setIsFinishedPromotion] =
     useState<boolean>(false);
   const [legalText, setLegalText] = useState<StringOrNull>(null);
@@ -26,6 +30,14 @@ const SharedLayout: FC = () => {
     showSelectPromotionsLocationModalWin || showSelectPromotionModalWin;
   const isHiddenRegCodeLink = isPromotionDetailsPage && isFinishedPromotion;
   const isShowRegCodeLink = !isHiddenRegCodeLink;
+
+  const updateShowPromotionsPrizesNavLink = (data: boolean) => {
+    setShowPromotionsPrizesNavLink(data);
+  };
+
+  const updateShowPromotionsWinnersNavLink = (data: boolean) => {
+    setShowPromotionsWinnersNavLink(data);
+  };
 
   const updateIsFinishedPromotion = (data: boolean) => {
     setIsFinishedPromotion(data);
@@ -56,10 +68,14 @@ const SharedLayout: FC = () => {
   };
 
   const outletContext: IOutletContext = {
+    showPromotionsWinnersNavLink,
     isShowRegCodeLink,
     showOtherModalWin,
+    showPromotionsPrizesNavLink,
     updateLegalText,
     updateIsFinishedPromotion,
+    updateShowPromotionsWinnersNavLink,
+    updateShowPromotionsPrizesNavLink,
   };
 
   return (

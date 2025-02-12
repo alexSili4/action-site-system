@@ -99,6 +99,7 @@ export interface IUsePromotionsList {
   promotions: Promotions;
   promotionDetailsState: IPromotionDetailsState;
   isTablet: boolean;
+  isEmptyList: boolean;
 }
 
 export interface IUsePromotionDetailsPage {
@@ -112,6 +113,8 @@ export interface IUsePromotionDetailsPage {
   shouldShowPromotionDetails: boolean;
   isFinishedPromotion: boolean;
   isShowRegCodeLink: boolean;
+  showPromotionsWinnersNavLink: boolean;
+  showPromotionsPrizesNavLink: boolean;
 }
 
 export type UseTargetPromotion = IPromotion | undefined;
@@ -249,4 +252,9 @@ export interface IUseIsErrorPage {
   isServiceUnavailablePage: boolean;
   isNotFoundPage: boolean;
   isErrorPage: boolean;
+}
+
+export interface IUsePreviousPromotions {
+  isPreviousPromotions: boolean;
+  promotions: Promotions;
 }

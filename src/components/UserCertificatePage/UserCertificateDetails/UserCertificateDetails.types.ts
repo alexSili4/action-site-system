@@ -12,3 +12,7 @@ export interface IProps {
   codeDetailsPath: string;
   validHotLinePhone: string;
 }
+
+export interface IStyledSubtitleProps {
+  nowrap?: boolean;
+}

@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './UserCodeDetailsMainInfo.types';
 import NavArrow from '@/icons/userCertificate/navArrow.svg?react';
-import { HiLocationMarker } from 'react-icons/hi';
-import { theme } from '@/constants';
 import { usePromotionDetailsState } from '@/hooks';
 import {
   CodeDetailsItem,
@@ -17,7 +15,6 @@ import {
   StyledLink,
   TargetShop,
   TargetShopAddress,
-  TargetShopAddressIconWrap,
   TargetShopTitle,
   TargetShopWrap,
   MarksMessageWrap,
@@ -33,7 +30,6 @@ const UserCodeDetailsMainInfo: FC<IProps> = ({
   receiptNumber,
   drawDate,
   shopAddress,
-  isValidShopAddress,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
   const isMarks = marks !== null;
@@ -66,25 +62,13 @@ const UserCodeDetailsMainInfo: FC<IProps> = ({
           <CodeDetailsSubtitle>Магазин де отримано:</CodeDetailsSubtitle>
           <CodeDetailsTextWrap>
             <CodeDetailsText>{shopAddress}</CodeDetailsText>
-            {isValidShopAddress && (
-              <TargetShopAddressIconWrap>
-                <HiLocationMarker
-                  size={theme.iconSizes.userCodeDetailsMarker}
-                />
-              </TargetShopAddressIconWrap>
-            )}
           </CodeDetailsTextWrap>
         </CodeDetailsItem>
       </CodeDetailsWrap>
       <TargetShopWrap>
         <TargetShopTitle>Магазин де отримано:</TargetShopTitle>
         <TargetShop>
-          <TargetShopAddress>{shopAddress}</TargetShopAddress>{' '}
-          {isValidShopAddress && (
-            <TargetShopAddressIconWrap>
-              <HiLocationMarker size={theme.iconSizes.userCodeDetailsMarker} />
-            </TargetShopAddressIconWrap>
-          )}
+          <TargetShopAddress>{shopAddress}</TargetShopAddress>
         </TargetShop>
       </TargetShopWrap>
       <CodeDetailsWrap>

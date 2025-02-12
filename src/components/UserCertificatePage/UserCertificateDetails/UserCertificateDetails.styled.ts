@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { IStyledSubtitleProps } from './UserCertificateDetails.types';
 
 export const Container = styled.div`
   display: flex;
@@ -76,15 +77,15 @@ export const PartnerLogo = styled.img`
 
 export const DetailsWrap = styled.div`
   display: flex;
+  gap: ${({ theme }) => theme.spacing(4)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     flex-direction: column;
-    gap: ${({ theme }) => theme.spacing(4)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     justify-content: space-between;
-    align-items: flex-end;
+    gap: ${({ theme }) => theme.spacing(2)};
   }
 `;
 
@@ -102,12 +103,13 @@ export const DescriptionWrap = styled.div`
   }
 `;
 
-export const Subtitle = styled.p`
+export const Subtitle = styled.p<IStyledSubtitleProps>`
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
+  white-space: ${({ nowrap }) => nowrap && 'nowrap'};
 `;
 
 export const StyledLink = styled(Link)`

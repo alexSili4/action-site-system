@@ -29,7 +29,11 @@ const UserCertificateBanner: FC<IProps> = ({
         <CertificateImgWrap>
           <CertificateImg>
             <ImageWrap certificateImg={certificateImg}></ImageWrap>
-            <DownloadLink href={certificatePdf}>
+            <DownloadLink
+              href={certificatePdf}
+              target='_blank'
+              rel='noopener noreferrer nofollow'
+            >
               <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
               <RiDownloadLine
                 size={theme.iconSizes.cabinetDownloadCertificateLink}

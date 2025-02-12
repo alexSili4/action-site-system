@@ -13,47 +13,52 @@ import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
 import FinishedPromoLabel from '@GeneralComponents/FinishedPromoLabel';
 
 const PromotionsList: FC<IProps> = ({ promotionCategory }) => {
-  const { promotions, promotionDetailsState, isTablet } =
+  const { promotions, promotionDetailsState, isTablet, isEmptyList } =
     usePromotionsList(promotionCategory);
 
   return (
-    <Container>
-      <List>
-        {promotions.map(
-          ({
-            id,
-            main_banner_dt: mainBannerDt,
-            main_banner_mob: mainBannerMob,
-            v_status: vStatus,
-          }) => {
-            const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
-              bannerDt: mainBannerDt,
-              bannerMob: mainBannerMob,
-            });
-            const promotionDetailsPath = getPromotionDetailsPath(id);
-            const isFinishedPromotion = getIsFinishedPromotion(vStatus);
-            const finishedPromoLabel = getFinishedPromoLabel(isTablet);
+    !isEmptyList && (
+      <Container>
+        <List>
+          {promotions.map(
+            ({
+              id,
+              main_banner_dt: mainBannerDt,
+              main_banner_mob: mainBannerMob,
+              v_status: vStatus,
+            }) => {
+              const { bannerDtUrl, bannerMobUrl } = getPromotionBannerUrls({
+                bannerDt: mainBannerDt,
+                bannerMob: mainBannerMob,
+              });
+              const promotionDetailsPath = getPromotionDetailsPath(id);
+              const isFinishedPromotion = getIsFinishedPromotion(vStatus);
+              const finishedPromoLabel = getFinishedPromoLabel(isTablet);
 
-            return (
-              <ListItem key={id}>
-                <LinkWithQuery
-                  to={promotionDetailsPath}
-                  state={promotionDetailsState}
-                >
-                  <Card mainBannerDt={bannerDtUrl} mainBannerMob={bannerMobUrl}>
-                    {isFinishedPromotion && (
-                      <FinishedPromoLabel
-                        finishedPromoLabel={finishedPromoLabel}
-                      />
-                    )}
-                  </Card>
-                </LinkWithQuery>
-              </ListItem>
-            );
-          }
-        )}
-      </List>
-    </Container>
+              return (
+                <ListItem key={id}>
+                  <LinkWithQuery
+                    to={promotionDetailsPath}
+                    state={promotionDetailsState}
+                  >
+                    <Card
+                      mainBannerDt={bannerDtUrl}
+                      mainBannerMob={bannerMobUrl}
+                    >
+                      {isFinishedPromotion && (
+                        <FinishedPromoLabel
+                          finishedPromoLabel={finishedPromoLabel}
+                        />
+                      )}
+                    </Card>
+                  </LinkWithQuery>
+                </ListItem>
+              );
+            }
+          )}
+        </List>
+      </Container>
+    )
   );
 };
 

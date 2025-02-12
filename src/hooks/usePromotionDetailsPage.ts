@@ -28,11 +28,32 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const {
     updateLegalText,
     updateIsFinishedPromotion,
+    updateShowPromotionsWinnersNavLink,
+    updateShowPromotionsPrizesNavLink,
     isShowRegCodeLink,
+    showPromotionsWinnersNavLink,
+    showPromotionsPrizesNavLink,
   }: IPromotionDetailsPageOutletContext = useOutletContext();
   const isFinishedPromotion = getIsFinishedPromotion(promotion?.v_status);
 
   const filteredShops = filterShopsByPromoDateEnd(shops);
+
+  useEffect(() => {
+    const isWheelActionType = promotion?.action_type === 1;
+
+    if (!isWheelActionType) {
+      updateShowPromotionsPrizesNavLink(true);
+    }
+  }, [promotion, winners]);
+
+  useEffect(() => {
+    const isWinners = Boolean(winners.length);
+    const isWheelActionType = promotion?.action_type === 1;
+
+    if (!isWheelActionType) {
+      updateShowPromotionsWinnersNavLink(isWinners);
+    }
+  }, [promotion, winners]);
 
   useEffect(() => {
     updateIsFinishedPromotion(isFinishedPromotion);
@@ -178,6 +199,8 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     shouldShowPromotionDetails,
     isFinishedPromotion,
     isShowRegCodeLink,
+    showPromotionsWinnersNavLink,
+    showPromotionsPrizesNavLink,
   };
 };
 

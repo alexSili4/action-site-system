@@ -5,8 +5,12 @@ import { Container, List, ListItem } from './PromotionDetailsNavBar.styled';
 import { getTranslatedPromotionDetailsPageSectionName } from '@/utils';
 // components
 import LinkWithQuery from '@GeneralComponents/LinkWithQuery';
+import { IProps } from './PromotionDetailsNavBar.types';
 
-const PromotionDetailsNavBar: FC = () => {
+const PromotionDetailsNavBar: FC<IProps> = ({
+  showPromotionsWinnersNavLink,
+  showPromotionsPrizesNavLink,
+}) => {
   const sectionIds = Object.values(PromotionDetailsPageSections);
   const { state, hash } = useLocation();
 
@@ -18,12 +22,26 @@ const PromotionDetailsNavBar: FC = () => {
           const isActive = sectionId === hash.split(Symbols.hash)[1];
           const path = `${Symbols.hash}${sectionId}`;
 
+          const isWinnersSection =
+            sectionId === PromotionDetailsPageSections.winners;
+          const isPrizesSection =
+            sectionId === PromotionDetailsPageSections.prizes;
+
+          const shouldHideWinnersSection =
+            isWinnersSection && !showPromotionsWinnersNavLink;
+          const shouldHidePrizesSection =
+            isPrizesSection && !showPromotionsPrizesNavLink;
+          const shouldHideNavLink =
+            shouldHidePrizesSection || shouldHideWinnersSection;
+
           return (
-            <ListItem key={sectionId} isActive={isActive}>
-              <LinkWithQuery to={path} state={state}>
-                {title}
-              </LinkWithQuery>
-            </ListItem>
+            !shouldHideNavLink && (
+              <ListItem key={sectionId} isActive={isActive}>
+                <LinkWithQuery to={path} state={state}>
+                  {title}
+                </LinkWithQuery>
+              </ListItem>
+            )
           );
         })}
       </List>

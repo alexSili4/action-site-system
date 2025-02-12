@@ -8,7 +8,6 @@ export interface IProps {
   receiptNumber: number | undefined;
   drawDate: string;
   shopAddress: string;
-  isValidShopAddress: boolean;
 }
 
 export interface IStyledCodeDetailsSubtitleProps {

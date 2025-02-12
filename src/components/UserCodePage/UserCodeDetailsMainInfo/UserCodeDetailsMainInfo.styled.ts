@@ -32,6 +32,7 @@ export const CodeDetailsWrap = styled.div`
 export const CodeDetailsItem = styled.div<IStyledCodeDetailsItemProps>`
   display: flex;
   justify-content: space-between;
+  gap: ${({ theme }) => theme.spacing(2)};
   width: 100%;
   height: 100%;
 
@@ -43,7 +44,6 @@ export const CodeDetailsItem = styled.div<IStyledCodeDetailsItemProps>`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     display: ${({ isHiddenOnDesk }) => isHiddenOnDesk && 'none'};
     flex-direction: column;
-    gap: ${({ theme }) => theme.spacing(2)};
     max-width: ${({ maxWidth }) => maxWidth && `${maxWidth}px`};
   }
 `;
@@ -83,15 +83,6 @@ export const CodeDetailsTextWrap = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing()};
-`;
-
-export const TargetShopAddressIconWrap = styled.span`
-  padding-left: ${({ theme }) => theme.spacing()};
-  padding-right: ${({ theme }) => theme.spacing()};
-
-  & > svg {
-    color: ${({ theme }) => theme.colors.purple};
-  }
 `;
 
 export const TargetShopWrap = styled.div`

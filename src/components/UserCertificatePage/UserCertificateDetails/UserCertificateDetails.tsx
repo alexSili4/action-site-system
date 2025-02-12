@@ -57,7 +57,7 @@ const UserCertificateDetails: FC<IProps> = ({
           </TitleWrap>
           <DetailsWrap>
             <DescriptionWrap>
-              <Subtitle>Акція:</Subtitle>
+              <Subtitle nowrap>Акція:</Subtitle>
               <StyledLink
                 to={promotionDetailsPath}
                 state={promotionDetailsState}
@@ -68,17 +68,17 @@ const UserCertificateDetails: FC<IProps> = ({
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
-              <Subtitle>Сертифікат дійсний до:</Subtitle>
+              <Subtitle nowrap>Сертифікат дійсний до:</Subtitle>
               <Info>{expiredDate}</Info>
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
-              <Subtitle>Партнер:</Subtitle>
+              <Subtitle nowrap>Партнер:</Subtitle>
               <Info>{partnerName}</Info>
             </DescriptionWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
             <DescriptionWrap>
-              <Subtitle>Акційний код:</Subtitle>
+              <Subtitle nowrap>Акційний код:</Subtitle>
               <StyledLink to={codeDetailsPath}>
                 <Info>{code}</Info>
                 <NavArrow />

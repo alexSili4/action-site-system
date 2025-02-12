@@ -18,6 +18,5 @@ export interface IProps {
   drawPrizeDate: string;
   shopAddress: string;
   receiptNumber: number | undefined;
-  isValidShopAddress: boolean;
   marks: NumberOrNull;
 }
