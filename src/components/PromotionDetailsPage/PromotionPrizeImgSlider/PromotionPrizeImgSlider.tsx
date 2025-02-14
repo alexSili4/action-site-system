@@ -25,9 +25,9 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const isManyPrizes = slides.length > 1;
-  const { logo: logoPartner = '', name: partnerName } = partner ?? {};
+  const { logo: logoPartner = '' } = partner ?? {};
   const logoPartnerUrl = getFileUrl(logoPartner);
-  const giftType = slides[0].gift_type;
+  const giftType = slides[0]?.gift_type;
 
   const onSlideChange = (swiper: ISwiper) => {
     setActiveIndex(swiper.activeIndex);
@@ -52,6 +52,9 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
                 <ImgWrap>
                   <Image src={imageUrl} alt={prizeName} />
                 </ImgWrap>
+                <TitleWrap>
+                  <Title>{prizeName}</Title>
+                </TitleWrap>
               </Card>
             </SwiperSlide>
           );
@@ -60,9 +63,6 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
           {logoPartner && <LogoPartner src={logoPartnerUrl} />}
           <PromotionPrizeImgSliderStatusLabel giftType={giftType} />
         </LabelsWrap>
-        <TitleWrap>
-          <Title>{partnerName}</Title>
-        </TitleWrap>
         {isManyPrizes && <PromotionPrizeImgSliderControls />}
         {isManyPrizes && (
           <PromotionPrizeImgSliderPagination

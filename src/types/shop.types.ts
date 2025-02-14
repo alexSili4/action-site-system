@@ -1,12 +1,17 @@
 import { NumberOrNull, StringOrNull } from './types';
 
 export interface ICity {
+  id: number;
+  region_id: number;
   name: string;
   coordinates: StringOrNull;
+  status: 1;
 }
 
 export interface IRegion {
+  id: number;
   name: string;
+  status: 1;
 }
 
 export interface IShop {

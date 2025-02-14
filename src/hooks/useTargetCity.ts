@@ -1,15 +1,13 @@
-import { useCitiesStore } from '@/store/store';
+import { Shops } from '@/types/shop.types';
 import useCityId from './useCityId';
-import { selectCities } from '@/store/cities/selectors';
 import { ICity } from '@/types/city.types';
 
-const useTargetCity = (): ICity | undefined => {
+const useTargetCity = (shops: Shops): ICity | undefined => {
   const cityId = useCityId();
 
-  const cities = useCitiesStore(selectCities);
-  const targetCity = cities.find(({ id }) => id === Number(cityId));
+  const targetShop = shops.find(({ city: { id } }) => id === Number(cityId));
 
-  return targetCity;
+  return targetShop?.city ?? shops[0].city;
 };
 
 export default useTargetCity;

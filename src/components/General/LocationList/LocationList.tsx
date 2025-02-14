@@ -12,20 +12,22 @@ import { useSetSearchParams } from '@/hooks';
 import { useCitiesStore } from '@/store/store';
 import { selectCities } from '@/store/cities/selectors';
 import { IProps } from './LocationList.types';
+import { getSortedCities } from '@/utils';
 
 const LocationList: FC<IProps> = ({ onLocationLinkClick }) => {
   const cities = useCitiesStore(selectCities);
+  const sortedCities = getSortedCities(cities);
   const { searchParams } = useSetSearchParams();
   const search = searchParams.get(SearchParamsKeys.search) ?? '';
 
   const filteredLocations = useMemo(
     () =>
       search
-        ? cities.filter(({ name }) =>
+        ? sortedCities.filter(({ name }) =>
             name.toLowerCase().startsWith(search.toLowerCase())
           )
-        : cities,
-    [search, cities]
+        : sortedCities,
+    [search, sortedCities]
   );
 
   return (

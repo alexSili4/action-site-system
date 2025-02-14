@@ -5,9 +5,12 @@ import { IUsePromotionContactsVisicomMap } from '@/types/hooks.types';
 import useTargetCity from './useTargetCity';
 import { getTargetCityCenter } from '@/utils';
 import useIsDesktop from './useIsDesktop';
+import { Shops } from '@/types/shop.types';
 
-const usePromotionContactsVisicomMap = (): IUsePromotionContactsVisicomMap => {
-  const targetCity = useTargetCity();
+const usePromotionContactsVisicomMap = (
+  shops: Shops
+): IUsePromotionContactsVisicomMap => {
+  const targetCity = useTargetCity(shops);
   const isDesktop = useIsDesktop();
 
   const zoomControlPosition = isDesktop ? 'bottomleft' : 'bottomright';

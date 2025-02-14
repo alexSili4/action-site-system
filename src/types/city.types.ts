@@ -1,9 +1,11 @@
+import { StringOrNull } from './types';
+
 export interface ICity {
   id: number;
   name: string;
   region_id: number;
   status: number;
-  coordinates: string;
+  coordinates: StringOrNull;
 }
 
 export type Cities = ICity[];

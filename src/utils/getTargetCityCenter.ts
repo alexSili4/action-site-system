@@ -1,7 +1,8 @@
 import { generalSettings } from '@/constants';
+import { StringOrNull } from '@/types/types';
 import { LatLngExpression } from 'leaflet';
 
-const getTargetCityCenter = (data?: string): LatLngExpression => {
+const getTargetCityCenter = (data?: StringOrNull): LatLngExpression => {
   const cityCoordinates = data ?? generalSettings.coordinatesSeparator;
   const coordinates = cityCoordinates.split(
     generalSettings.coordinatesSeparator

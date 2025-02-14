@@ -71,8 +71,12 @@ const PromotionDetails: FC<IProps> = ({
     Array.isArray(winners) && Boolean(winners.length);
   const shouldShowContactsSection = Boolean(shops.length);
   const shouldShowFAQsSection = Boolean(faqs.length);
-  const shouldShowWheelPrizesSection = Boolean(wheelPrizes.length);
-  const shouldShowOtherPrizesSection = Boolean(otherPrizes.length);
+  const shouldShowWheelPrizesSection = Boolean(
+    wheelPrizes.length || wheelBigPrizes.length
+  );
+  const shouldShowOtherPrizesSection = Boolean(
+    otherPrizes.length || otherBigPrizes.length
+  );
   const shouldShowConditionsSection = Boolean(conditions.length);
 
   const promotionCategoryState = state?.promotionCategory;

@@ -1,3 +1,5 @@
+import { NumberOrNull, StringOrNull } from './types';
+
 export interface IPartner {
   id: number;
   name: string;
@@ -5,6 +7,8 @@ export interface IPartner {
 }
 
 export type GiftType = 'wheel' | 'present' | 'general';
+
+export type ShowType = 'base' | 'big';
 
 export interface IImage {
   image: string;
@@ -17,18 +21,19 @@ export interface IGift {
   name: string;
   use_conditions: string;
   get_conditions: string;
-  price: number;
-  discount: null;
+  price: NumberOrNull;
+  discount: NumberOrNull;
   images: Images;
-  banner: null;
-  banner_mob: string;
+  banner: StringOrNull;
+  banner_mob: StringOrNull;
   partner: IPartner;
 }
 
 export interface ISlide {
   gift_type: GiftType;
+  show_type: ShowType;
   gift: IGift;
-  sort_order: null;
+  sort_order: NumberOrNull;
 }
 
 export type Slides = ISlide[];

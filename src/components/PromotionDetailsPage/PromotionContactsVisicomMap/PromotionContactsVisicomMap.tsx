@@ -20,7 +20,7 @@ const PromotionContactsVisicomMap: FC<IProps> = ({
     tileLayerAttribution,
     customActiveMarkerIcon,
     customMarkerIcon,
-  } = usePromotionContactsVisicomMap();
+  } = usePromotionContactsVisicomMap(shops);
 
   return (
     <StyledMapContainer

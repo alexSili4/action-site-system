@@ -19,7 +19,6 @@ const PromotionPrizes: FC<IProps> = ({
 }) => {
   const showBigPrizesList = Boolean(bigPrizes.length);
   const showPrizesList = Boolean(prizes.length);
-
   const shouldShowRegCodeLink = isShowRegCodeLink && showRegCodeLink;
 
   return (
