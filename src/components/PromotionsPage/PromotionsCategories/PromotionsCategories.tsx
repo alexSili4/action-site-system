@@ -21,7 +21,7 @@ const PromotionsCategories: FC<IProps> = ({
         const title = getTranslatedPromotionsCategory(category);
         const isPreviousCategory =
           category === PromotionsCategoriesKeys.previous;
-        const isHiddenCategory = isPreviousCategory && isPreviousPromotions;
+        const isHiddenCategory = isPreviousCategory && !isPreviousPromotions;
 
         return (
           !isHiddenCategory && (
