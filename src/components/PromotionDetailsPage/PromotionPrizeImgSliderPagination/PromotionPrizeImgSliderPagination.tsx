@@ -10,14 +10,14 @@ import { IProps } from './PromotionPrizeImgSliderPagination.types';
 import { useSwiper } from 'swiper/react';
 
 const PromotionPrizesSliderPagination: FC<IProps> = ({
-  images,
+  prizes,
   activeIndex,
 }) => {
   const swiper = useSwiper();
 
   return (
     <List>
-      {images.map((_, index) => {
+      {prizes.map((_, index) => {
         const isActiveBtn = index === activeIndex;
 
         const onClick = (e: BtnClickEvent) => {

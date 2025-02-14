@@ -25,7 +25,9 @@ const PromotionDetails: FC<IProps> = ({
   promotion,
   faqs,
   otherPrizes,
+  otherBigPrizes,
   wheelPrizes,
+  wheelBigPrizes,
   conditions,
   winners,
   shops,
@@ -106,6 +108,7 @@ const PromotionDetails: FC<IProps> = ({
         {shouldShowOtherPrizesSection && (
           <PromotionPrizes
             prizes={otherPrizes}
+            bigPrizes={otherBigPrizes}
             title='Призи головного розіграшу'
             description='Унікальний приз від головного партнера'
             showRegCodeLink={false}
@@ -117,6 +120,7 @@ const PromotionDetails: FC<IProps> = ({
           <PromotionPrizes
             logo={<PrizesWheelLogo />}
             prizes={wheelPrizes}
+            bigPrizes={wheelBigPrizes}
             title='Призи «Колеса подарунків»'
             description='Крутіть колесо та вигравайте подарунки'
             isShowRegCodeLink={isShowRegCodeLink}

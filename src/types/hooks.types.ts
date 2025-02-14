@@ -38,6 +38,7 @@ import { RefObject } from 'react';
 import { Shops } from './shop.types';
 import { IGift, Partners, UpdateUserDataWithCodeFunc } from './code.types';
 import { IClientCode } from './userCodeWithDetails.types';
+import { BigPrizes } from './bigPrize.types';
 
 export type SetPageFunc = (data: IOnPageBtnClickProps) => void;
 
@@ -105,7 +106,9 @@ export interface IUsePromotionsList {
 export interface IUsePromotionDetailsPage {
   conditions: Conditions;
   otherPrizes: Prizes;
+  otherBigPrizes: BigPrizes;
   wheelPrizes: Prizes;
+  wheelBigPrizes: BigPrizes;
   faqs: FAQs;
   winners: WinnersByDates;
   shops: Shops;

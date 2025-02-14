@@ -1,8 +1,4 @@
-export interface IPartner {
-  id: number;
-  name: string;
-  logo: string;
-}
+export type ShowType = 'base' | 'big';
 
 export type GiftType = 'wheel' | 'present' | 'general';
 
@@ -12,34 +8,30 @@ export interface IImage {
 
 export type Images = IImage[] | undefined[];
 
+export interface IPartner {
+  id: number;
+  name: string;
+  logo: string;
+}
+
 export interface IGift {
   id: number;
   name: string;
   use_conditions: string;
   get_conditions: string;
-  price: number;
+  price: null;
   discount: null;
   images: Images;
-  banner: null;
+  banner: string;
   banner_mob: string;
   partner: IPartner;
 }
 
-export interface ISlide {
+export interface IBigPrize {
   gift_type: GiftType;
+  show_type: ShowType;
   gift: IGift;
   sort_order: null;
 }
 
-export type Slides = ISlide[];
-
-export type Mode = 'group';
-
-export interface IPrize {
-  partner: IPartner;
-  slides: Slides;
-  mode: Mode;
-  sort_order: number;
-}
-
-export type Prizes = IPrize[];
+export type BigPrizes = IBigPrize[];

@@ -1,9 +1,9 @@
-import { Prizes } from '@/types/prize.types';
+import { BigPrizes } from '@/types/bigPrize.types';
 import { ReactNode } from 'react';
 
 export interface IProps {
   logo: ReactNode;
-  prizes: Prizes;
+  prizes: BigPrizes;
   description: string;
 }
 

@@ -13,11 +13,14 @@ import { AxiosError } from 'axios';
 import { IPromotionDetailsPageOutletContext } from '@/types/types';
 import { useOutletContext } from 'react-router-dom';
 import { filterShopsByPromoDateEnd, getIsFinishedPromotion } from '@/utils';
+import { BigPrizes } from '@/types/bigPrize.types';
 
 const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   const [conditions, setConditions] = useState<Conditions>([]);
   const [otherPrizes, setOtherPrizes] = useState<Prizes>([]);
+  const [otherBigPrizes, setOtherBigPrizes] = useState<BigPrizes>([]);
   const [wheelPrizes, setWheelPrizes] = useState<Prizes>([]);
+  const [wheelBigPrizes, setWheelBigPrizes] = useState<BigPrizes>([]);
   const [faqs, setFaqs] = useState<FAQs>([]);
   const [winners, setWinners] = useState<WinnersByDates>([]);
   const [shops, setShops] = useState<Shops>([]);
@@ -108,15 +111,34 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   }, [promotionId]);
 
   useEffect(() => {
+    const getPromotionWheelBigPrizes = async (
+      promotionId: string
+    ): Promise<void> => {
+      try {
+        const response = await promotionsService.getWheelBigPrizes(promotionId);
+        setWheelBigPrizes(response);
+      } catch (error) {
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
+      }
+    };
+
+    getPromotionWheelBigPrizes(promotionId);
+  }, [promotionId]);
+
+  useEffect(() => {
     const getPromotionOtherPrizes = async (
       promotionId: string
     ): Promise<void> => {
       try {
-        const presentPrizes = await promotionsService.getPresentPrizes(
-          promotionId
-        );
+        const response = await promotionsService.getPresentPrizes(promotionId);
 
-        setOtherPrizes(presentPrizes);
+        setOtherPrizes(response);
       } catch (error) {
         let errorMessage: string = '';
 
@@ -129,6 +151,30 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
     };
 
     getPromotionOtherPrizes(promotionId);
+  }, [promotionId]);
+
+  useEffect(() => {
+    const getPromotionOtherBigPrizes = async (
+      promotionId: string
+    ): Promise<void> => {
+      try {
+        const response = await promotionsService.getPresentBigPrizes(
+          promotionId
+        );
+
+        setOtherBigPrizes(response);
+      } catch (error) {
+        let errorMessage: string = '';
+
+        if (error instanceof AxiosError) {
+          errorMessage = error.response?.data.message;
+        }
+
+        navigate({ isError: true, errorMessage });
+      }
+    };
+
+    getPromotionOtherBigPrizes(promotionId);
   }, [promotionId]);
 
   useEffect(() => {
@@ -191,7 +237,9 @@ const usePromotionDetailsPage = (): IUsePromotionDetailsPage => {
   return {
     conditions,
     otherPrizes,
+    otherBigPrizes,
     wheelPrizes,
+    wheelBigPrizes,
     faqs,
     winners,
     shops: filteredShops,

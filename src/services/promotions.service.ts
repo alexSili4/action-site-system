@@ -11,6 +11,7 @@ import { WinnersByDates } from '@/types/winner.types';
 import HttpService from './http.service';
 import { Shops } from '@/types/shop.types';
 import { IGetPromotionByCode } from '@/types/types';
+import { BigPrizes } from '@/types/bigPrize.types';
 
 class PromotionsService extends HttpService {
   constructor() {
@@ -78,7 +79,17 @@ class PromotionsService extends HttpService {
   async getWheelPrizes(actionId: string): Promise<Prizes> {
     const response = await this.get<Prizes>(
       {
-        url: `promotions/gifts-for-wheel?action_id=${actionId}`,
+        url: `promotions/gifts-for-wheel2?action_id=${actionId}`,
+      },
+      false
+    );
+    return response.data;
+  }
+
+  async getWheelBigPrizes(actionId: string): Promise<BigPrizes> {
+    const response = await this.get<BigPrizes>(
+      {
+        url: `promotions/get-general-prizes-for-wheel?action_id=${actionId}`,
       },
       false
     );
@@ -88,7 +99,17 @@ class PromotionsService extends HttpService {
   async getPresentPrizes(actionId: string): Promise<Prizes> {
     const response = await this.get<Prizes>(
       {
-        url: `promotions/gifts-for-raffle?action_id=${actionId}`,
+        url: `promotions/gifts-for-raffle2?action_id=${actionId}`,
+      },
+      false
+    );
+    return response.data;
+  }
+
+  async getPresentBigPrizes(actionId: string): Promise<BigPrizes> {
+    const response = await this.get<BigPrizes>(
+      {
+        url: `promotions/get-general-prizes-for-present?action_id=${actionId}`,
       },
       false
     );

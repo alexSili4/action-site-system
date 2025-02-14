@@ -1,3 +1,4 @@
+import { BigPrizes } from '@/types/bigPrize.types';
 import { Conditions } from '@/types/condition.types';
 import { FAQs } from '@/types/faqs.types';
 import { Prizes } from '@/types/prize.types';
@@ -9,7 +10,9 @@ export interface IProps {
   promotion: IPromotion;
   faqs: FAQs;
   otherPrizes: Prizes;
+  otherBigPrizes: BigPrizes;
   wheelPrizes: Prizes;
+  wheelBigPrizes: BigPrizes;
   conditions: Conditions;
   winners: WinnersByDates;
   shops: Shops;

@@ -21,16 +21,13 @@ import PromotionPrizeImgSliderPagination from '@PromotionDetailsPageComponents/P
 import PromotionPrizeImgSliderControls from '@PromotionDetailsPageComponents/PromotionPrizeImgSliderControls';
 
 const PromotionPrizeImgSlider: FC<IProps> = ({
-  prize: {
-    gift: { images, name },
-    partner,
-    gift_type: giftType,
-  },
+  prize: { partner, slides },
 }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const isManyImages = images.length > 1;
-  const { logo: logoPartner = '' } = partner ?? {};
+  const isManyPrizes = slides.length > 1;
+  const { logo: logoPartner = '', name: partnerName } = partner ?? {};
   const logoPartnerUrl = getFileUrl(logoPartner);
+  const giftType = slides[0].gift_type;
 
   const onSlideChange = (swiper: ISwiper) => {
     setActiveIndex(swiper.activeIndex);
@@ -45,15 +42,15 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
         slidesPerView={1}
         grabCursor
       >
-        {images.map((item, index) => {
-          const { image = '' } = item ?? {};
+        {slides.map(({ gift: { images, name: prizeName } }, index) => {
+          const { image = '' } = images[0] ?? {};
           const imageUrl = getFileUrl(image);
 
           return (
             <SwiperSlide key={index}>
               <Card>
                 <ImgWrap>
-                  <Image src={imageUrl} alt={name} />
+                  <Image src={imageUrl} alt={prizeName} />
                 </ImgWrap>
               </Card>
             </SwiperSlide>
@@ -64,12 +61,12 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
           <PromotionPrizeImgSliderStatusLabel giftType={giftType} />
         </LabelsWrap>
         <TitleWrap>
-          <Title>{name}</Title>
+          <Title>{partnerName}</Title>
         </TitleWrap>
-        {isManyImages && <PromotionPrizeImgSliderControls />}
-        {isManyImages && (
+        {isManyPrizes && <PromotionPrizeImgSliderControls />}
+        {isManyPrizes && (
           <PromotionPrizeImgSliderPagination
-            images={images}
+            prizes={slides}
             activeIndex={activeIndex}
           />
         )}

@@ -11,7 +11,9 @@ const PromotionDetailsPage: FC = () => {
     conditions,
     faqs,
     otherPrizes,
+    otherBigPrizes,
     wheelPrizes,
+    wheelBigPrizes,
     winners,
     shops,
     promotion,
@@ -33,7 +35,9 @@ const PromotionDetailsPage: FC = () => {
                 isShowRegCodeLink={isShowRegCodeLink}
                 faqs={faqs}
                 otherPrizes={otherPrizes}
+                otherBigPrizes={otherBigPrizes}
                 wheelPrizes={wheelPrizes}
+                wheelBigPrizes={wheelBigPrizes}
                 conditions={conditions}
                 winners={winners}
                 shops={shops}

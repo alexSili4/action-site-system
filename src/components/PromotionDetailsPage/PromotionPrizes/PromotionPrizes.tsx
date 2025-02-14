@@ -9,6 +9,7 @@ import PromotionRegisterCodeLink from '@PromotionDetailsPageComponents/Promotion
 
 const PromotionPrizes: FC<IProps> = ({
   prizes,
+  bigPrizes,
   title,
   description,
   logo,
@@ -16,15 +17,8 @@ const PromotionPrizes: FC<IProps> = ({
   id,
   isShowRegCodeLink,
 }) => {
-  const bigPrizes = prizes.filter(
-    ({ show_type: showType }) => showType === 'big'
-  );
-  const basePrizes = prizes.filter(
-    ({ show_type: showType }) => showType === 'base'
-  );
-
   const showBigPrizesList = Boolean(bigPrizes.length);
-  const showBasePrizesList = Boolean(basePrizes.length);
+  const showPrizesList = Boolean(prizes.length);
 
   const shouldShowRegCodeLink = isShowRegCodeLink && showRegCodeLink;
 
@@ -39,7 +33,7 @@ const PromotionPrizes: FC<IProps> = ({
             logo={logo}
           />
         )}
-        {showBasePrizesList && <PromotionPrizesList prizes={basePrizes} />}
+        {showPrizesList && <PromotionPrizesList prizes={prizes} />}
         {shouldShowRegCodeLink && <PromotionRegisterCodeLink />}
       </ContentWrap>
     </Container>

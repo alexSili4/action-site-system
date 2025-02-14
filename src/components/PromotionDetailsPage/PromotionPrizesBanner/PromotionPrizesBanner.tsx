@@ -16,7 +16,7 @@ const PromotionPrizesBanner: FC<IProps> = ({ prizes, logo }) => {
     <List>
       {prizes.map(
         (
-          { gift: { images, banner, banner_mob: bannerMob }, partner },
+          { gift: { images, banner, banner_mob: bannerMob, partner } },
           index
         ) => {
           const { logo: partnerLogo = '', name: partnerName } = partner ?? {};

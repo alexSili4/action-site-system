@@ -1,7 +1,7 @@
-import { Images } from '@/types/prize.types';
+import { Slides } from '@/types/prize.types';
 
 export interface IProps {
-  images: Images;
+  prizes: Slides;
   activeIndex: number;
 }
 
