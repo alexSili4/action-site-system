@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import {
@@ -11,6 +11,7 @@ import {
   TitleWrap,
   LogoPartner,
   LabelsWrap,
+  StyledSwiper,
 } from './PromotionPrizeImgSlider.styled';
 import { Swiper as ISwiper } from 'swiper';
 import { IProps } from './PromotionPrizeImgSlider.types';
@@ -35,7 +36,7 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
 
   return (
     <Container>
-      <Swiper
+      <StyledSwiper
         onSlideChange={onSlideChange}
         speed={800}
         spaceBetween={30}
@@ -70,7 +71,7 @@ const PromotionPrizeImgSlider: FC<IProps> = ({
             activeIndex={activeIndex}
           />
         )}
-      </Swiper>
+      </StyledSwiper>
     </Container>
   );
 };

@@ -1,8 +1,14 @@
 import styled from '@emotion/styled';
+import { Swiper } from 'swiper/react';
 
 export const Container = styled.div`
+  height: 100%;
   border-radius: 12px;
   background-color: #f4f6f9;
+`;
+
+export const StyledSwiper = styled(Swiper)`
+  height: 100% !important;
 `;
 
 export const Card = styled.div`
