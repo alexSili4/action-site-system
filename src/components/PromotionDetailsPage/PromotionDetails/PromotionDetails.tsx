@@ -48,6 +48,7 @@ const PromotionDetails: FC<IProps> = ({
     second_banner_mob: secondBBannerMob,
     third_banner_dt: thirdBannerDt,
     third_banner_mob: thirdBannerMob,
+    action_type: actionType,
   } = promotion;
   const { searchParams } = useSetSearchParams();
   const promotionCategorySQ = searchParams.get(SearchParamsKeys.category);
@@ -66,6 +67,7 @@ const PromotionDetails: FC<IProps> = ({
   const logoUrl = getFileUrl(logo ?? '');
   const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
   const isNationalPromotion = coverageType === 'national';
+  const isPromotionWheelType = actionType === 1 || actionType === 3;
 
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);
@@ -74,9 +76,9 @@ const PromotionDetails: FC<IProps> = ({
   const shouldShowWheelPrizesSection = Boolean(
     wheelPrizes.length || wheelBigPrizes.length
   );
-  const shouldShowOtherPrizesSection = Boolean(
-    otherPrizes.length || otherBigPrizes.length
-  );
+  const shouldShowOtherPrizesSection =
+    Boolean(otherPrizes.length || otherBigPrizes.length) &&
+    isPromotionWheelType;
   const shouldShowConditionsSection = Boolean(conditions.length);
 
   const promotionCategoryState = state?.promotionCategory;
