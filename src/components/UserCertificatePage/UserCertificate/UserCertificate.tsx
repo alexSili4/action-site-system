@@ -23,11 +23,13 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
     validHotLinePhone,
     certificateCode,
     certificateImg,
+    shouldShowDownloadLink,
   } = useUserCertificate(certificate);
 
   return (
     <UserStatisticsDetailsContainer>
       <UserCertificateBanner
+        shouldShowDownloadLink={shouldShowDownloadLink}
         certificateCode={certificateCode}
         certificateImg={certificateImg}
         certificatePdf={certificatePdf}

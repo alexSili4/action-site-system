@@ -32,13 +32,12 @@ export const CodeDetailsWrap = styled.div`
 export const CodeDetailsItem = styled.div<IStyledCodeDetailsItemProps>`
   display: flex;
   justify-content: space-between;
-  gap: ${({ theme }) => theme.spacing(2)};
+  gap: ${({ theme }) => theme.spacing(4)};
   width: 100%;
   height: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
     display: ${({ isHiddenOnMobile }) => isHiddenOnMobile && 'none'};
-    align-items: center;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {

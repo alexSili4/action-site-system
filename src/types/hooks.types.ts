@@ -195,6 +195,7 @@ export interface IUseUserCertificate {
   codeDetailsPath: string;
   validHotLinePhone: string;
   certificateImg: string;
+  shouldShowDownloadLink: boolean;
 }
 
 export interface IUsePromotionFilter {

@@ -21,6 +21,7 @@ const UserCertificateBanner: FC<IProps> = ({
   certificateCode,
   certificateImg,
   certificatePdf,
+  shouldShowDownloadLink,
 }) => {
   return (
     <Container>
@@ -29,16 +30,18 @@ const UserCertificateBanner: FC<IProps> = ({
         <CertificateImgWrap>
           <CertificateImg>
             <ImageWrap certificateImg={certificateImg}></ImageWrap>
-            <DownloadLink
-              href={certificatePdf}
-              target='_blank'
-              rel='noopener noreferrer nofollow'
-            >
-              <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
-              <RiDownloadLine
-                size={theme.iconSizes.cabinetDownloadCertificateLink}
-              />
-            </DownloadLink>
+            {shouldShowDownloadLink && (
+              <DownloadLink
+                href={certificatePdf}
+                target='_blank'
+                rel='noopener noreferrer nofollow'
+              >
+                <DownloadLinkTitle>Завантажити</DownloadLinkTitle>
+                <RiDownloadLine
+                  size={theme.iconSizes.cabinetDownloadCertificateLink}
+                />
+              </DownloadLink>
+            )}
           </CertificateImg>
         </CertificateImgWrap>
         <CertificateCodeWrap>

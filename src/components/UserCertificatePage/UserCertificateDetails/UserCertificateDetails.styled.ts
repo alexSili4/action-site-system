@@ -91,9 +91,9 @@ export const DetailsWrap = styled.div`
 
 export const DescriptionWrap = styled.div`
   display: flex;
+  gap: ${({ theme }) => theme.spacing(4)};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop - 1}px) {
-    align-items: center;
     justify-content: space-between;
   }
 

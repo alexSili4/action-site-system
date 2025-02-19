@@ -4,6 +4,7 @@ import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.
 import {
   formatDate,
   getCodeDetailsPath,
+  getCodeStatus,
   getFileUrl,
   getPromotionBannerUrls,
   getPromotionDetailsPath,
@@ -21,7 +22,7 @@ const useUserCertificate = (
     certificate,
   } = data;
 
-  const { code, id: codeId } = userCode;
+  const { code, id: codeId, status } = userCode;
   const { get_conditions: getConditions, partner, name: prizeName } = gift;
   const { name: partnerName, logo: partnerLogo } = partner;
   const {
@@ -39,6 +40,9 @@ const useUserCertificate = (
   } = certificate;
   const hotLinePhoneString = hotLinePhone ?? '';
 
+  const { isSuccessStatus } = getCodeStatus(status);
+
+  const shouldShowDownloadLink = isSuccessStatus;
   const validHotLinePhone = getValidPhone(hotLinePhoneString);
   const codeDetailsPath = getCodeDetailsPath(codeId);
   const promotionDetailsPath = getPromotionDetailsPath(actionId);
@@ -73,6 +77,7 @@ const useUserCertificate = (
     validHotLinePhone,
     certificateCode,
     certificateImg,
+    shouldShowDownloadLink,
   };
 };
 
