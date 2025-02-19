@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useAppUpdateVersion = () => {
   useEffect(() => {
-    console.log('Last update: 18.02.2025');
+    console.log('Last update: 19.02.2025');
   }, []);
 };
 

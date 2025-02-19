@@ -67,7 +67,7 @@ const PromotionDetails: FC<IProps> = ({
   const logoUrl = getFileUrl(logo ?? '');
   const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
   const isNationalPromotion = coverageType === 'national';
-  const isPromotionWheelType = actionType === 1 || actionType === 3;
+  const isPromotionWheelType = actionType === 1;
 
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);
@@ -78,7 +78,7 @@ const PromotionDetails: FC<IProps> = ({
   );
   const shouldShowOtherPrizesSection =
     Boolean(otherPrizes.length || otherBigPrizes.length) &&
-    isPromotionWheelType;
+    !isPromotionWheelType;
   const shouldShowConditionsSection = Boolean(conditions.length);
 
   const promotionCategoryState = state?.promotionCategory;
