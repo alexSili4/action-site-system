@@ -20,3 +20,5 @@ export const Content = styled.div`
     padding-bottom: ${({ theme }) => theme.spacing(8)};
   }
 `;
+
+export const PrizesWrap = styled.div``;

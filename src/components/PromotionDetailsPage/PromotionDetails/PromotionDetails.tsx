@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Container, Content } from './PromotionDetails.styled';
+import { Container, Content, PrizesWrap } from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import { PromotionDetailsState } from '@/types/promotion.types';
 import { useSetSearchParams } from '@/hooks';
@@ -111,27 +111,28 @@ const PromotionDetails: FC<IProps> = ({
             isShowRegCodeLink={isShowRegCodeLink}
           />
         )}
-        {shouldShowOtherPrizesSection && (
-          <PromotionPrizes
-            prizes={otherPrizes}
-            bigPrizes={otherBigPrizes}
-            title='Призи головного розіграшу'
-            description='Унікальний приз від головного партнера'
-            showRegCodeLink={false}
-            id={PromotionDetailsPageSections.prizes}
-            isShowRegCodeLink={isShowRegCodeLink}
-          />
-        )}
-        {shouldShowWheelPrizesSection && (
-          <PromotionPrizes
-            logo={<PrizesWheelLogo />}
-            prizes={wheelPrizes}
-            bigPrizes={wheelBigPrizes}
-            title='Призи «Колеса подарунків»'
-            description='Крутіть колесо та вигравайте подарунки'
-            isShowRegCodeLink={isShowRegCodeLink}
-          />
-        )}
+        <PrizesWrap id={PromotionDetailsPageSections.prizes}>
+          {shouldShowOtherPrizesSection && (
+            <PromotionPrizes
+              prizes={otherPrizes}
+              bigPrizes={otherBigPrizes}
+              title='Призи головного розіграшу'
+              description='Унікальний приз від головного партнера'
+              showRegCodeLink={false}
+              isShowRegCodeLink={isShowRegCodeLink}
+            />
+          )}
+          {shouldShowWheelPrizesSection && (
+            <PromotionPrizes
+              logo={<PrizesWheelLogo />}
+              prizes={wheelPrizes}
+              bigPrizes={wheelBigPrizes}
+              title='Призи «Колеса подарунків»'
+              description='Крутіть колесо та вигравайте подарунки'
+              isShowRegCodeLink={isShowRegCodeLink}
+            />
+          )}
+        </PrizesWrap>
         {shouldShowFAQsSection && (
           <PromotionFAQs
             faqs={faqs}
