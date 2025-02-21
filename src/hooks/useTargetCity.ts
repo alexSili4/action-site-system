@@ -7,7 +7,7 @@ const useTargetCity = (shops: Shops): ICity | undefined => {
 
   const targetShop = shops.find(({ city: { id } }) => id === Number(cityId));
 
-  return targetShop?.city ?? shops[0].city;
+  return targetShop?.city ?? shops[0]?.city;
 };
 
 export default useTargetCity;
