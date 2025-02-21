@@ -30,9 +30,10 @@ const UserCodeDetailsMainInfo: FC<IProps> = ({
   receiptNumber,
   drawDate,
   shopAddress,
+  actionType,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
-  const isMarks = marks !== null;
+  const isMarks = marks !== null && actionType !== 1;
 
   return (
     <MainInfo>

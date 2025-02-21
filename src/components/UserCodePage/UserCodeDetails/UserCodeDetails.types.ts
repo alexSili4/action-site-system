@@ -1,3 +1,4 @@
+import { ActionType } from '@/types/promotion.types';
 import { NumberOrNull, StringOrNull } from '@/types/types';
 
 export interface IProps {
@@ -19,4 +20,5 @@ export interface IProps {
   shopAddress: string;
   receiptNumber: number | undefined;
   marks: NumberOrNull;
+  actionType: ActionType | null;
 }

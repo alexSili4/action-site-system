@@ -11,7 +11,11 @@ import SentCertificateForm from '@RegisterCodePageComponents/SentCertificateForm
 import SuccessRegisterCodeMsg from '@RegisterCodePageComponents/SuccessRegisterCodeMsg';
 import { IUserDataWithCode } from '@/types/code.types';
 
-const SentCertificateSection: FC<IProps> = ({ supportServiceText, codeId }) => {
+const SentCertificateSection: FC<IProps> = ({
+  supportServiceText,
+  codeId,
+  actionType,
+}) => {
   const [isSuccessStatus, setIsSuccessStatus] = useState<boolean>(false);
   const [showSuccessMsg, setShowSuccessMsg] = useState<boolean>(false);
   const [userData, setUserData] = useState<IUserDataWithCode | null>(null);
@@ -52,6 +56,7 @@ const SentCertificateSection: FC<IProps> = ({ supportServiceText, codeId }) => {
             userName={userName}
             message={message}
             marks={codeMarks}
+            actionType={actionType}
           />
         ) : (
           <SentCertificateFormWrap>

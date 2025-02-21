@@ -38,7 +38,7 @@ const UserCode: FC<IProps> = ({ code }) => {
   } = atbCode ?? {};
   const { shop_num: shopNum, city, street: shopStreet } = shop ?? {};
   const { name: cityName } = city ?? {};
-  const { id: actionId, name: actionName } = action;
+  const { id: actionId, name: actionName, action_type: actionType } = action;
   const { id: winnerId = null, win_date: winDate = new Date() } = winner ?? {};
   const { name: presentGiftName = null } = present ?? {};
   const {
@@ -120,6 +120,7 @@ const UserCode: FC<IProps> = ({ code }) => {
         receiptNumber={receiptNumber}
         shopAddress={targetShopAddress}
         marks={marks}
+        actionType={actionType}
       />
     </UserStatisticsDetailsContainer>
   );

@@ -36,6 +36,7 @@ const UserCodeDetails: FC<IProps> = ({
   shopAddress,
   receiptNumber,
   marks,
+  actionType,
 }) => {
   return (
     <Container>
@@ -60,6 +61,7 @@ const UserCodeDetails: FC<IProps> = ({
             shopAddress={shopAddress}
             receiptNumber={receiptNumber}
             marks={marks}
+            actionType={actionType}
           />
         </MainInfoWrap>
         <UserCodeInfoDelimiter></UserCodeInfoDelimiter>

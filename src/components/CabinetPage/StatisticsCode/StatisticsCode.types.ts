@@ -1,3 +1,4 @@
+import { ActionType } from '@/types/promotion.types';
 import { NumberOrNull } from '@/types/types';
 
 export interface IProps {
@@ -15,6 +16,7 @@ export interface IProps {
   shouldShowContent: boolean;
   shouldShowCodeLinks: boolean;
   marks: NumberOrNull;
+  actionType: ActionType;
 }
 
 export interface IStyledCertificateWrapProps {

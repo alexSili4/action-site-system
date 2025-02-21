@@ -19,8 +19,9 @@ const SuccessRegisterCodeMsg: FC<IProps> = ({
   userName,
   message,
   marks,
+  actionType,
 }) => {
-  const isMarks = marks !== null;
+  const isMarks = marks !== null && actionType !== 1;
 
   return (
     <Container>

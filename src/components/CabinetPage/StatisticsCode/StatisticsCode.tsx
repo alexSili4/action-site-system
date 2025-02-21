@@ -42,13 +42,14 @@ const StatisticsCode: FC<IProps> = ({
   shouldShowContent,
   shouldShowCodeLinks,
   marks,
+  actionType,
 }) => {
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
     isSuccessStatus,
   });
   const cabinetState = useCabinetState();
-  const isMarks = marks !== null;
+  const isMarks = marks !== null && actionType !== 1;
 
   return (
     <Container>

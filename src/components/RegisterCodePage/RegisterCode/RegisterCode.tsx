@@ -80,6 +80,7 @@ const RegisterCode: FC<IProps> = ({
           <SentCertificateSection
             codeId={codeId}
             supportServiceText={supportServiceText}
+            actionType={actionType}
           />
         </Container>
       )}

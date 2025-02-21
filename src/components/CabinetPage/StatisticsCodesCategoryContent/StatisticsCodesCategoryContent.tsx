@@ -46,6 +46,7 @@ const StatisticsCodesCategoryContent: FC = () => {
                 winner_id: winnerId,
                 code_id: codeId,
                 marks,
+                action_type: actionType,
               }) => {
                 const partnerLogoUrl = getFileUrl(
                   presentGiftPartnerLogo ?? certificateGiftPartnerLogo ?? ''
@@ -91,6 +92,7 @@ const StatisticsCodesCategoryContent: FC = () => {
                       shouldShowCodeLinks={shouldShowCodeLinks}
                       shouldShowContent={shouldShowContent}
                       marks={marks}
+                      actionType={actionType}
                     />
                   </ListItem>
                 );
