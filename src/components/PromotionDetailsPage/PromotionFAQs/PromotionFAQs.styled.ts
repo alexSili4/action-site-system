@@ -61,13 +61,12 @@ export const PhoneLink = styled.a`
   align-items: center;
   justify-content: center;
   gap: ${({ theme }) => theme.spacing(2)};
-  width: 100%;
   border-radius: 8px;
   background-color: #f4f6f9;
   padding: ${({ theme }) => `${theme.spacing(2)} ${theme.spacing(6)}`};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    width: 206px;
+    align-self: flex-start;
     padding: ${({ theme }) => theme.spacing(2)};
   }
 `;
