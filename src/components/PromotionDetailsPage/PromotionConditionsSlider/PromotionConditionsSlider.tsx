@@ -84,11 +84,11 @@ const PromotionConditionsSlider: FC<IProps> = ({
         <SwiperSlide key={rulesPdf}>
           <Card>
             <TitleWrap>
-              <Title>Умови акції</Title>
+              <Title>Умови Акції</Title>
             </TitleWrap>
             <Cover bgImgUrl={rulesCardBg}>
               <RulesLink href={rulesPdf} download='rules'>
-                <RulesLinkTitle>Правила акції</RulesLinkTitle>
+                <RulesLinkTitle>Умови Акції</RulesLinkTitle>
                 <IoDocumentOutline size={theme.iconSizes.rulesLink} />
               </RulesLink>
               <StepLabelWrap>
