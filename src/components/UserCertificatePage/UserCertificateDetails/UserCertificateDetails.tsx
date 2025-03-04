@@ -94,9 +94,10 @@ const UserCertificateDetails: FC<IProps> = ({
           </ConditionsWrap>
           <HotlineInfoWrap>
             <HotlineInfo>
-              Зверніться на Гарячу лінію за телефоном {hotLinePhone} (
-              {hotLineWorkHours}). Дзвінки для абонентів усіх національних GSM
-              операторів – відповідно до тарифних планів відповідних операторів.
+              Якщо у Вас є питання, звертайтесь на "Гарячу лінію" (графік
+              роботиЖ з понеділка по неділю {hotLineWorkHours}). Дзвінки для
+              абонентів усіх національних GSM операторів – відповідно до
+              тарифних планів відповідних операторів.
             </HotlineInfo>
             <HotlinePhone href={`tel:${validHotLinePhone}`}>
               <HiOutlinePhone size={theme.iconSizes.cabinetHotlinePhone} />
