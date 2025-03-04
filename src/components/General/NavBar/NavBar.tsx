@@ -3,7 +3,12 @@ import AtbLogo from '@/icons/atbLogo.svg?react';
 import { IProps } from './NavBar.types';
 import { PagePaths } from '@/constants';
 import { LogoLinkTitle, Nav, StyledLink } from './NavBar.styled';
-import { useIsRootPage, useIsScrollingUp, useIsErrorPage } from '@/hooks';
+import {
+  useIsRootPage,
+  useIsScrollingUp,
+  useIsErrorPage,
+  useIsRegisterCodePage,
+} from '@/hooks';
 // components
 import NavBarControls from '@GeneralComponents/NavBarControls';
 import LocationFilter from '@GeneralComponents/LocationFilter';
@@ -15,6 +20,7 @@ const NavBar: FC<IProps> = ({
   onRegisterCodeBtnClickOnAllPages,
   onRegisterCodeBtnClickOnPromotionPage,
 }) => {
+  const isRegisterCodePage = useIsRegisterCodePage();
   const isRootPage = useIsRootPage();
   const { isErrorPage } = useIsErrorPage();
   const { isScrolling } = useIsScrollingUp(0);
@@ -25,7 +31,10 @@ const NavBar: FC<IProps> = ({
     : 'Акції з подарунками';
   const isScrolledPromotionDetailsPage = isPromotionDetailsPage && isScrolling;
   const hideLocationFilter =
-    isScrolledPromotionDetailsPage || isRootPage || isErrorPage;
+    isScrolledPromotionDetailsPage ||
+    isRootPage ||
+    isErrorPage ||
+    isRegisterCodePage;
 
   return (
     <Nav isRootPage={isRootPage}>

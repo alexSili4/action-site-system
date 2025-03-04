@@ -5,12 +5,13 @@ const getSupportServiceText = ({
   hotLineWorkHours,
 }: IGetSupportServiceTextProps): string => {
   const defaultText =
-    'Якщо Вам не вдалося зареєструвати акційний код зверніться на гарячу лінію';
+    'Якщо Вам не вдалося зареєструвати акційний код, зверніться на "Гарячу лінію"';
   const shouldShowPhoneAndWorkHours =
     Boolean(hotLinePhone) && Boolean(hotLineWorkHours);
+  const additionalInfo = `за телефоном ${hotLinePhone} (Графік роботи "Гарячої лінії": з понеділка по неділю ${hotLineWorkHours})`;
 
   const text = shouldShowPhoneAndWorkHours
-    ? `${defaultText}  за телефоном ${hotLinePhone} (${hotLineWorkHours})`
+    ? `${defaultText} ${additionalInfo}`
     : defaultText;
 
   return text;
