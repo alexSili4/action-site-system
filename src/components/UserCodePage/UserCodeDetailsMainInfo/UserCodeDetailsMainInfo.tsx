@@ -77,10 +77,14 @@ const UserCodeDetailsMainInfo: FC<IProps> = ({
         </TargetShop>
       </TargetShopWrap>
       <CodeDetailsWrap>
-        <PrizeDrawingDateWrap>
-          <PrizeDrawingDateTitle>Дата розіграшу призів:</PrizeDrawingDateTitle>
-          <PrizeDrawingDateText>{drawDate}</PrizeDrawingDateText>
-        </PrizeDrawingDateWrap>
+        {!isPromotionWheelType && (
+          <PrizeDrawingDateWrap>
+            <PrizeDrawingDateTitle>
+              Дата розіграшу призів:
+            </PrizeDrawingDateTitle>
+            <PrizeDrawingDateText>{drawDate}</PrizeDrawingDateText>
+          </PrizeDrawingDateWrap>
+        )}
         {isMarks && (
           <MarksMessageWrap>
             <UserStatisticsDetailsDelimiter></UserStatisticsDetailsDelimiter>
