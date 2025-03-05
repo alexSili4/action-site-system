@@ -21,6 +21,7 @@ import {
 } from './UserCodeDetailsMainInfo.styled';
 import UserStatisticsDetailsDelimiter from '@CabinetPageComponents/UserStatisticsDetailsDelimiter';
 import StatisticsCodeMarksMessage from '@GeneralComponents/StatisticsCodeMarksMessage';
+import { getIsPromotionWheelType } from '@/utils';
 
 const UserCodeDetailsMainInfo: FC<IProps> = ({
   marks,
@@ -33,7 +34,8 @@ const UserCodeDetailsMainInfo: FC<IProps> = ({
   actionType,
 }) => {
   const promotionDetailsState = usePromotionDetailsState();
-  const isMarks = marks !== null && actionType !== 1;
+  const isPromotionWheelType = getIsPromotionWheelType(actionType);
+  const isMarks = marks !== null && !isPromotionWheelType;
 
   return (
     <MainInfo>
@@ -55,10 +57,12 @@ const UserCodeDetailsMainInfo: FC<IProps> = ({
           <CodeDetailsSubtitle>№ чеку з кодом:</CodeDetailsSubtitle>
           <CodeDetailsText>{receiptNumber}</CodeDetailsText>
         </CodeDetailsItem>
-        <CodeDetailsItem isHiddenOnDesk>
-          <CodeDetailsSubtitle>Дата розіграшу призів:</CodeDetailsSubtitle>
-          <CodeDetailsText>{drawDate}</CodeDetailsText>
-        </CodeDetailsItem>
+        {!isPromotionWheelType && (
+          <CodeDetailsItem isHiddenOnDesk>
+            <CodeDetailsSubtitle>Дата розіграшу призів:</CodeDetailsSubtitle>
+            <CodeDetailsText>{drawDate}</CodeDetailsText>
+          </CodeDetailsItem>
+        )}
         <CodeDetailsItem isHiddenOnMobile>
           <CodeDetailsSubtitle>Магазин де отримано:</CodeDetailsSubtitle>
           <CodeDetailsTextWrap>

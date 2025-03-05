@@ -9,7 +9,12 @@ import {
   SearchParamsKeys,
 } from '@/constants';
 import { IProps } from './PromotionDetails.types';
-import { getFileUrl, getPromotionBannerUrls, getValidPhone } from '@/utils';
+import {
+  getFileUrl,
+  getIsPromotionWheelType,
+  getPromotionBannerUrls,
+  getValidPhone,
+} from '@/utils';
 // components
 import PrizesWheelLogo from '@PromotionDetailsPageComponents/PrizesWheelLogo';
 import PromotionDetailsSectionContainer from '@PromotionDetailsPageComponents/PromotionDetailsSectionContainer';
@@ -67,7 +72,7 @@ const PromotionDetails: FC<IProps> = ({
   const logoUrl = getFileUrl(logo ?? '');
   const rulesPdfUrl = getFileUrl(rulesPdf ?? '');
   const isNationalPromotion = coverageType === 'national';
-  const isPromotionWheelType = actionType === 1;
+  const isPromotionWheelType = getIsPromotionWheelType(actionType);
 
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);

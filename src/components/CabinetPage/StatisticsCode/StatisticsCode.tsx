@@ -21,7 +21,7 @@ import {
 } from './StatisticsCode.styled';
 import { Link } from 'react-router-dom';
 import { IProps } from './StatisticsCode.types';
-import { getUserCodeMessage } from '@/utils';
+import { getIsPromotionWheelType, getUserCodeMessage } from '@/utils';
 import { useCabinetState } from '@/hooks';
 // components
 import CertificateStatusLabel from '@GeneralComponents/CertificateStatusLabel';
@@ -49,7 +49,8 @@ const StatisticsCode: FC<IProps> = ({
     isSuccessStatus,
   });
   const cabinetState = useCabinetState();
-  const isMarks = marks !== null && actionType !== 1;
+  const isPromotionWheelType = getIsPromotionWheelType(actionType);
+  const isMarks = marks !== null && !isPromotionWheelType;
 
   return (
     <Container>

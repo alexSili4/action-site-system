@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useAppUpdateVersion = () => {
   useEffect(() => {
-    console.log('Last update: 04.03.2025 17:00');
+    console.log('Build time:', __BUILD_TIME__);
   }, []);
 };
 

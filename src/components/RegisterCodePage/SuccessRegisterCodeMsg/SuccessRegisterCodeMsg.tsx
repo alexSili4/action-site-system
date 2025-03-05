@@ -13,6 +13,7 @@ import {
 import { IProps } from './SuccessRegisterCodeMsg.types';
 // components
 import StatisticsCodeMarksMessage from '@/components/General/StatisticsCodeMarksMessage';
+import { getIsPromotionWheelType } from '@/utils';
 
 const SuccessRegisterCodeMsg: FC<IProps> = ({
   supportServiceText,
@@ -21,7 +22,8 @@ const SuccessRegisterCodeMsg: FC<IProps> = ({
   marks,
   actionType,
 }) => {
-  const isMarks = marks !== null && actionType !== 1;
+  const isPromotionWheelType = getIsPromotionWheelType(actionType);
+  const isMarks = marks !== null && !isPromotionWheelType;
 
   return (
     <Container>
