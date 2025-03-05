@@ -43,7 +43,7 @@ const PromotionFAQ: FC<IProps> = ({ faq: { text, title } }) => {
           showAnswer={showAnswer}
           ref={answerRef}
         >
-          <Answer>{text}</Answer>
+          <Answer dangerouslySetInnerHTML={{ __html: text }}></Answer>
         </AnswerWrap>
       </QuestionWrap>
     </ListItem>

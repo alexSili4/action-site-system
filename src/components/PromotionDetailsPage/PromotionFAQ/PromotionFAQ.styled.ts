@@ -57,4 +57,8 @@ export const Answer = styled.p`
   font-weight: 400;
   line-height: 1.4;
   text-align: left;
+
+  & ul {
+    list-style: disc;
+  }
 `;

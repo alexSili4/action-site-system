@@ -95,7 +95,7 @@ const UserCertificateDetails: FC<IProps> = ({
           <HotlineInfoWrap>
             <HotlineInfo>
               Якщо у Вас є питання, звертайтесь на "Гарячу лінію" (графік
-              роботиЖ з понеділка по неділю {hotLineWorkHours}). Дзвінки для
+              роботи: з понеділка по неділю {hotLineWorkHours}). Дзвінки для
               абонентів усіх національних GSM операторів – відповідно до
               тарифних планів відповідних операторів.
             </HotlineInfo>
