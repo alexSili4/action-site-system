@@ -10,7 +10,7 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
   const {
     code,
     certificatePdf,
-    getConditions,
+    useConditions,
     partnerLogoUrl,
     partnerName,
     prizeName,
@@ -36,7 +36,7 @@ const UserCertificate: FC<IProps> = ({ certificate }) => {
       />
       <UserCertificateDetails
         code={code}
-        conditions={getConditions}
+        conditions={useConditions}
         partnerLogo={partnerLogoUrl}
         partnerName={partnerName}
         prizeName={prizeName}

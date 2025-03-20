@@ -34,14 +34,11 @@ export const QuestionBtnTitle = styled.span`
 `;
 
 export const AnswerWrap = styled.div<IStyledProps>`
+  width: 100%;
   max-height: ${({ showAnswer, scrollHeight }) =>
     showAnswer ? `${scrollHeight}px` : '0px'};
   overflow-y: hidden;
   transition: max-height ${({ theme }) => theme.transitionDurationAndFunc.other};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    width: 259px;
-  }
 
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.tablet}px) and (max-width: ${({ theme }) =>
@@ -50,7 +47,7 @@ export const AnswerWrap = styled.div<IStyledProps>`
   }
 `;
 
-export const Answer = styled.p`
+export const Answer = styled.div`
   color: #7e8494;
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 18px;
@@ -60,5 +57,11 @@ export const Answer = styled.p`
 
   & ul {
     list-style: disc;
+
+    & > li {
+      &::before {
+        content: '• ';
+      }
+    }
   }
 `;

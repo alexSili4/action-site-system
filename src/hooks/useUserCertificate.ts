@@ -23,7 +23,12 @@ const useUserCertificate = (
   } = data;
 
   const { code, id: codeId, status } = userCode;
-  const { get_conditions: getConditions, partner, name: prizeName } = gift;
+  const {
+    get_conditions: getConditions,
+    partner,
+    name: prizeName,
+    use_conditions: useConditions,
+  } = gift;
   const { name: partnerName, logo: partnerLogo } = partner;
   const {
     name: promotionName,
@@ -78,6 +83,7 @@ const useUserCertificate = (
     certificateCode,
     certificateImg,
     shouldShowDownloadLink,
+    useConditions,
   };
 };
 

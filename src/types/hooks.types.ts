@@ -184,6 +184,7 @@ export interface IUseUserCertificate {
   bannerDtUrl: string;
   certificatePdf: string;
   getConditions: string;
+  useConditions: string;
   partnerLogoUrl: string;
   partnerName: string;
   prizeName: string;
