@@ -29,7 +29,11 @@ const SuccessRegisterCodeMsg: FC<IProps> = ({
     <Container>
       <Content>
         <Message>
-          <MessagePart>Дякуємо, {userName}!</MessagePart>
+          {userName ? (
+            <MessagePart>Дякуємо, {userName}!</MessagePart>
+          ) : (
+            <MessagePart>Дякуємо!</MessagePart>
+          )}
           <TextWrap />
           <TextWrap isHiddenOnDesk />
           <MessagePart>{message}</MessagePart>

@@ -84,12 +84,14 @@ const StatisticsCode: FC<IProps> = ({
             </StyledLink>
           )}
         </LinksWrap>
-        <CertificateLink
-          to={certificateDetailsPath}
-          shouldShowCertificate={shouldShowCertificate}
-        >
-          <CertificateWrap partnerLogo={partnerLogo}></CertificateWrap>
-        </CertificateLink>
+        {actionType !== 2 && (
+          <CertificateLink
+            to={certificateDetailsPath}
+            shouldShowCertificate={shouldShowCertificate}
+          >
+            <CertificateWrap partnerLogo={partnerLogo}></CertificateWrap>
+          </CertificateLink>
+        )}
       </ContentWrap>
       <MessagesContainer>
         <MessageWrap>

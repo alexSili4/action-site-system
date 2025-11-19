@@ -18,6 +18,7 @@ const useSentCertificateForm = ({
   toggleShowSuccessMsgState,
   updateUserData,
   updateIsSuccessStatus,
+  actionType,
 }: IUseSentCertificateFormProps): IUseSentCertificateForm => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [disabledBtn, setDisabledBtn] = useState<boolean>(false);
@@ -58,6 +59,10 @@ const useSentCertificateForm = ({
         navigate({ isError: true, errorMessage });
       }
     };
+
+    if (actionType === 2) {
+      return;
+    }
 
     getUserName(codeId);
   }, [codeId]);

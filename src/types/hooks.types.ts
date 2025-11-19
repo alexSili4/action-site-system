@@ -13,6 +13,7 @@ import {
   NumberOrNull,
 } from './types';
 import {
+  ActionType,
   IPromotion,
   IPromotionDetailsState,
   Promotions,
@@ -148,7 +149,7 @@ export interface IUseRegisterCodeForm {
   onRegCodeInput: InputChangeFunc;
   register: UseFormRegister<IRegCodeFormData>;
   handleFormSubmit: SubmitHandler<IRegCodeFormData>;
-  handleSubmit: UseFormHandleSubmit<IRegCodeFormData, undefined>;
+  handleSubmit: UseFormHandleSubmit<IRegCodeFormData, IRegCodeFormData>;
 }
 
 export interface IUseCsrfToken {
@@ -163,12 +164,16 @@ export interface IUseSentCertificateFormProps {
   toggleShowSuccessMsgState: Func;
   updateUserData: UpdateUserDataWithCodeFunc;
   updateIsSuccessStatus: SetBooleanFunc;
+  actionType: ActionType;
 }
 
 export interface IUseSentCertificateForm {
   handleFormSubmit: SubmitHandler<ISentCertificateFormData>;
   register: UseFormRegister<ISentCertificateFormData>;
-  handleSubmit: UseFormHandleSubmit<ISentCertificateFormData, undefined>;
+  handleSubmit: UseFormHandleSubmit<
+    ISentCertificateFormData,
+    ISentCertificateFormData
+  >;
   disabledBtn: boolean;
 }
 

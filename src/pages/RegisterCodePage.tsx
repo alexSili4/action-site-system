@@ -62,10 +62,10 @@ const RegisterCodePage: FC = () => {
       }
     };
 
-    if (codeId) {
+    if (codeId && promotion?.action_type !== 2) {
       getPartners(codeId);
     }
-  }, [codeId]);
+  }, [codeId, promotion]);
 
   const updatePromotion = (promotion: IPromotion | null) => {
     setPromotion(promotion);

@@ -24,6 +24,7 @@ const SentCertificateForm: FC<IProps> = ({
   codeId,
   userEmail,
   updateIsSuccessStatus,
+  actionType,
 }) => {
   const { handleFormSubmit, register, handleSubmit, disabledBtn } =
     useSentCertificateForm({
@@ -33,6 +34,7 @@ const SentCertificateForm: FC<IProps> = ({
       codeId,
       userEmail,
       updateIsSuccessStatus,
+      actionType,
     });
 
   return (

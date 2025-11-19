@@ -74,7 +74,7 @@ const useRegisterCodeForm = ({
     if (isFullRegCode) {
       getPromotionByCode(code);
     }
-  }, [codePart1, codePart2, codePart3]);
+  }, [codePart1, codePart2, codePart3, isFullRegCode]);
 
   const [defaultCodePart1, defaultCodePart2, defaultCodePart3] = splitString({
     string: defaultCode,

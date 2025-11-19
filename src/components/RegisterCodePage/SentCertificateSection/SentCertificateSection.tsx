@@ -32,7 +32,7 @@ const SentCertificateSection: FC<IProps> = ({
     name: userName = null,
     code,
   } = userData ?? {};
-  const shouldShowSuccessMsg = showSuccessMsg && userName;
+  const shouldShowSuccessMsg = (showSuccessMsg && userName) || actionType === 2;
   const codeMarks = code?.marks ?? null;
 
   const updateUserData = (data: IUserDataWithCode) => {
@@ -46,6 +46,10 @@ const SentCertificateSection: FC<IProps> = ({
   const updateIsSuccessStatus = (isSuccessStatus: boolean) => {
     setIsSuccessStatus(isSuccessStatus);
   };
+
+  if (actionType === null || actionType === undefined) {
+    return null;
+  }
 
   return (
     <Container>
@@ -68,6 +72,7 @@ const SentCertificateSection: FC<IProps> = ({
               toggleShowSuccessMsgState={toggleShowSuccessMsgState}
               codeId={codeId}
               updateIsSuccessStatus={updateIsSuccessStatus}
+              actionType={actionType}
             />
           </SentCertificateFormWrap>
         )}
