@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   padding-top: ${({ theme }) => theme.spacing(20.5)};
-  overflow: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(25)};
@@ -16,7 +15,6 @@ export const Content = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   padding-top: ${({ theme }) => theme.spacing(4)};
   padding-bottom: ${({ theme }) => theme.spacing(4)};
-  overflow-x: hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding-top: ${({ theme }) => theme.spacing(8)};
@@ -51,34 +49,36 @@ export const Garland = styled.img`
 
 export const Garland2 = styled.img`
   position: absolute;
-  bottom: 4px;
+  bottom: -32px;
   left: -32px;
   width: 290px;
   height: 188px;
 
   body.${ClassNames.newYear} & {
     display: block;
-  }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-    display: none;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+      display: none;
+    }
   }
 `;
 
 export const Garland3 = styled.img`
   position: absolute;
-  top: 74px;
-  right: -7px;
+  top: 60px;
+  right: 0;
   width: 113px;
   height: 247px;
+
+  display: none;
 
   body.${ClassNames.newYear} & {
     display: block;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    top: 4px;
-    right: -49px;
+    top: -42px;
+    right: -30px;
     width: 255px;
     height: 557px;
   }
@@ -95,9 +95,9 @@ export const Garland4 = styled.img`
 
   body.${ClassNames.newYear} & {
     display: block;
-  }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    display: none;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      display: none;
+    }
   }
 `;
