@@ -20,6 +20,7 @@ export const Nav = styled.nav<IStyledNavProps>`
 `;
 
 export const StyledLink = styled(Link)<IStyledLinkProps>`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,4 +57,17 @@ export const LogoLinkTitle = styled.span`
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
+`;
+
+export const AtbLogoCap = styled.img<IStyledLinkProps>`
+  position: absolute;
+  top: -20px;
+  left: ${({ isRootPage }) => (isRootPage ? '111px' : '-22px')};
+  width: 46px;
+  height: 46px;
+  pointer-events: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    left: ${({ isRootPage }) => (isRootPage ? '24px' : '-14px')};
+  }
 `;

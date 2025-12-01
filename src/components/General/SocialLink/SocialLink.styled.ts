@@ -1,3 +1,4 @@
+import { ClassNames } from '@/constants';
 import styled from '@emotion/styled';
 
 export const Link = styled.a`
@@ -16,6 +17,11 @@ export const Link = styled.a`
   );
   background-color: #9066cc;
   transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
+
+  body.${ClassNames.newYear} & {
+    background-color: #fd4b3c;
+    box-shadow: 2px 2px 0px 0px #cc3333;
+  }
 
   & > svg {
     fill: ${({ theme }) => theme.colors.white};

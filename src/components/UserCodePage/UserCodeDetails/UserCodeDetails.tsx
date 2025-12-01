@@ -48,10 +48,12 @@ const UserCodeDetails: FC<IProps> = ({
               <Title>Акційний код АТБ</Title>
               <AtbLogo />
             </TitleWrap>
-            <UserCodeStatus
-              isErrorStatus={isErrorStatus}
-              isSuccessStatus={isSuccessStatus}
-            />
+            {actionType !== 2 && (
+              <UserCodeStatus
+                isErrorStatus={isErrorStatus}
+                isSuccessStatus={isSuccessStatus}
+              />
+            )}
           </CodeInfo>
           <UserCodeDetailsMainInfo
             promotionDetailsPath={promotionDetailsPath}

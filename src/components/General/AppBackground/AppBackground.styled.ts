@@ -1,4 +1,4 @@
-import { animations } from '@/constants';
+import { animations, ClassNames } from '@/constants';
 import GradientImg from '@/images/layout/gradient-min.jpg';
 
 import styled from '@emotion/styled';
@@ -15,6 +15,10 @@ export const Background = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  body.${ClassNames.newYear} & {
+    display: none;
+  }
 `;
 
 export const StyledImg = styled.img``;

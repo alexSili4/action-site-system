@@ -1,5 +1,13 @@
 import { FC } from 'react';
-import { Container, Content, PrizesWrap } from './PromotionDetails.styled';
+import {
+  Container,
+  Content,
+  PrizesWrap,
+  Garland,
+  Garland2,
+  Garland3,
+  Garland4,
+} from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import { PromotionDetailsState } from '@/types/promotion.types';
 import { useSetSearchParams } from '@/hooks';
@@ -25,6 +33,10 @@ import PromotionPrizes from '@PromotionDetailsPageComponents/PromotionPrizes';
 import PromotionFAQs from '@PromotionDetailsPageComponents/PromotionFAQs';
 import PromotionWinners from '@PromotionDetailsPageComponents/PromotionWinners';
 import PromotionContacts from '@PromotionDetailsPageComponents/PromotionContacts';
+import garland from '@/images/new-year/garland.webp';
+import garland2 from '@/images/new-year/garland-2.webp';
+import garland3 from '@/images/new-year/garland-3.webp';
+import garland4 from '@/images/new-year/garland-4.webp';
 
 const PromotionDetails: FC<IProps> = ({
   promotion,
@@ -117,6 +129,7 @@ const PromotionDetails: FC<IProps> = ({
           />
         )}
         <PrizesWrap id={PromotionDetailsPageSections.prizes}>
+          <Garland src={garland} alt='' />
           {shouldShowOtherPrizesSection && (
             <PromotionPrizes
               prizes={otherPrizes}
@@ -161,6 +174,10 @@ const PromotionDetails: FC<IProps> = ({
             validHotLinePhone={validHotLinePhone}
           />
         )}
+
+        <Garland2 src={garland2} alt='' />
+        <Garland3 src={garland3} alt='' />
+        <Garland4 src={garland4} alt='' />
       </Content>
     </Container>
   );

@@ -31,7 +31,11 @@ export default defineConfig({
         assetFileNames: (assetInfo) => {
           const fileName = assetInfo.name || '';
 
-          if (fileName.endsWith('.png') || fileName.endsWith('.jpg')) {
+          if (
+            fileName.endsWith('.png') ||
+            fileName.endsWith('.jpg') ||
+            fileName.endsWith('.webp')
+          ) {
             return 'img/app/[name]-[hash][extname]';
           }
 

@@ -9,6 +9,7 @@ import Loader from '@GeneralComponents/Loader';
 import Header from '@GeneralComponents/Header';
 import Footer from '@GeneralComponents/Footer';
 import AppBackground from '@GeneralComponents/AppBackground';
+import NewYearAppBackground from '@GeneralComponents/NewYearAppBackground';
 
 const SharedLayout: FC = () => {
   const [showPromotionsPrizesNavLink, setShowPromotionsPrizesNavLink] =
@@ -80,6 +81,7 @@ const SharedLayout: FC = () => {
 
   return (
     <>
+      <NewYearAppBackground />
       <AppBackground />
       <Content>
         <Header

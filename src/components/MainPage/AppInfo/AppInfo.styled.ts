@@ -1,4 +1,4 @@
-import { animations } from '@/constants';
+import { animations, ClassNames } from '@/constants';
 import styled from '@emotion/styled';
 import { IStyledProps } from './AppInfo.types';
 
@@ -114,6 +114,10 @@ export const Title = styled.h1`
   font-size: 16px;
   font-weight: 400;
   text-align: center;
+
+  body.${ClassNames.newYear} & {
+    color: rgba(255, 255, 255, 0.66);
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 100%;

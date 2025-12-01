@@ -101,14 +101,10 @@ const theme: ITheme = {
     grey: '#808080',
     purple: '#a282f7',
   },
-  // fontFamily: {  },
-  // fontWeight: {  },
-  // fontSize: {  },
   padding: {
     container: 16,
     compact: 8,
   },
-  // borderRadius: {  },
   fontFamily: {
     geologica: 'Geologica',
     delaGothicOne: 'Dela Gothic One',

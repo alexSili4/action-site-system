@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { IStyledFooterProps, IStyledProps } from './Footer.types';
+import { ClassNames } from '@/constants';
 
 export const StyledFooter = styled.footer<IStyledFooterProps>`
   display: flex;
@@ -23,6 +24,10 @@ export const Copyright = styled.p<IStyledProps>`
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 12px;
   font-weight: 400;
+
+  body.${ClassNames.newYear} & {
+    color: rgba(255, 255, 255, 0.66);
+  }
 `;
 
 export const SunLink = styled.a<IStyledProps>`
@@ -32,6 +37,10 @@ export const SunLink = styled.a<IStyledProps>`
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 12px;
   font-weight: 400;
+
+  body.${ClassNames.newYear} & {
+    color: rgba(255, 255, 255, 0.66);
+  }
 `;
 
 export const LegalInfoWrap = styled.div`

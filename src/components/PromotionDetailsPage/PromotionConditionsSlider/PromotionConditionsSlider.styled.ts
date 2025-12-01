@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { IStyledCoverProps } from './PromotionConditionsSlider.types';
+import rulesCardNewYearBg from '@/images/new-year/condition-new-year.webp';
+import { ClassNames } from '@/constants';
 
 export const Card = styled.div`
   flex-shrink: 0;
@@ -42,6 +44,11 @@ export const Cover = styled.div<IStyledCoverProps>`
   background-color: ${({ theme }) => theme.colors.lightGrey};
   background-image: ${({ bgImgUrl }) => bgImgUrl && `url(${bgImgUrl})`};
   padding: ${({ theme, bgImgUrl }) => bgImgUrl && theme.spacing(6)};
+
+  body.${ClassNames.newYear} & {
+    background-image: url(${rulesCardNewYearBg});
+    object-fit: cover;
+  }
 `;
 
 export const Image = styled.img`

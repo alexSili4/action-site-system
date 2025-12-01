@@ -3,6 +3,8 @@ import {
   IStyledHeaderWrapProps,
   IStyledHeaderBackgroundProps,
 } from './Header.types';
+import { ClassNames } from '@/constants';
+import bgImg from '@/images/new-year/bg-img.webp';
 
 export const StyledHeaderWrap = styled.div<IStyledHeaderWrapProps>`
   position: ${({ isPromotionDetailsPage }) =>
@@ -46,4 +48,11 @@ export const StyledHeaderBackground = styled.div<IStyledHeaderBackgroundProps>`
   );
   opacity: ${({ isColoredBackground }) => (isColoredBackground ? 1 : 0)};
   transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.header};
+
+  body.${ClassNames.newYear} & {
+    background-image: url(${bgImg});
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 `;

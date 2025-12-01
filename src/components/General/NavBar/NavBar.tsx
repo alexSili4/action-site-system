@@ -2,7 +2,7 @@ import { FC } from 'react';
 import AtbLogo from '@/icons/atbLogo.svg?react';
 import { IProps } from './NavBar.types';
 import { PagePaths } from '@/constants';
-import { LogoLinkTitle, Nav, StyledLink } from './NavBar.styled';
+import { LogoLinkTitle, Nav, StyledLink, AtbLogoCap } from './NavBar.styled';
 import {
   useIsRootPage,
   useIsScrollingUp,
@@ -12,6 +12,7 @@ import {
 // components
 import NavBarControls from '@GeneralComponents/NavBarControls';
 import LocationFilter from '@GeneralComponents/LocationFilter';
+import atbLogoCap from '@/images/new-year/atb-logo-cap.webp';
 
 const NavBar: FC<IProps> = ({
   isDesktop,
@@ -63,6 +64,12 @@ const NavBar: FC<IProps> = ({
         isRootPage={isRootPage}
       >
         <AtbLogo />
+        <AtbLogoCap
+          src={atbLogoCap}
+          alt=''
+          isDesktop={isDesktop}
+          isRootPage={isRootPage}
+        />
         <LogoLinkTitle>{logoLinkTitle}</LogoLinkTitle>
       </StyledLink>
       {!hideLocationFilter && <LocationFilter isRootPage={isRootPage} />}
