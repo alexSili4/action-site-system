@@ -68,6 +68,10 @@ export const AtbLogoCap = styled.img<IStyledLinkProps>`
   pointer-events: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    left: ${({ isRootPage }) => (isRootPage ? '24px' : '22px')};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
     left: ${({ isRootPage }) => (isRootPage ? '24px' : '-14px')};
   }
 `;

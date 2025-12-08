@@ -5,6 +5,7 @@ import { IStyledContainerProps } from './PromotionConditionsSliderContainer.type
 export const Container = styled.div<IStyledContainerProps>`
   position: relative;
   margin-top: ${({ theme }) => theme.spacing(8)};
+  overflow: hidden;
 
   & > .${ClassNames.swiper} {
     overflow: visible;

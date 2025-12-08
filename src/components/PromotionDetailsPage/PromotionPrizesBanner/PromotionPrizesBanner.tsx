@@ -34,12 +34,14 @@ const PromotionPrizesBanner: FC<IProps> = ({ prizes, logo }) => {
                 isLogo={isLogo}
               >
                 <ImgWrap isLogo={isLogo}>
-                  {isLogo && <Image src={partnerLogoUrl} alt={partnerName} />}
-                  {isLogo ? (
-                    logo
-                  ) : (
+                  {partnerLogoUrl && (
                     <Image src={partnerLogoUrl} alt={partnerName} />
                   )}
+                  {isLogo ? (
+                    logo
+                  ) : partnerLogoUrl ? (
+                    <Image src={partnerLogoUrl} alt={partnerName} />
+                  ) : null}
                 </ImgWrap>
               </Container>
             </ListItem>

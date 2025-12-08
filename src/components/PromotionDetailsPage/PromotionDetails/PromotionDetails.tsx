@@ -7,6 +7,7 @@ import {
   Garland2,
   Garland3,
   Garland4,
+  Garland5,
 } from './PromotionDetails.styled';
 import { useLocation } from 'react-router-dom';
 import { PromotionDetailsState } from '@/types/promotion.types';
@@ -37,6 +38,7 @@ import garland from '@/images/new-year/garland.webp';
 import garland2 from '@/images/new-year/garland-2.webp';
 import garland3 from '@/images/new-year/garland-3.webp';
 import garland4 from '@/images/new-year/garland-4.webp';
+import garland5 from '@/images/new-year/garland-5.webp';
 
 const PromotionDetails: FC<IProps> = ({
   promotion,
@@ -88,7 +90,6 @@ const PromotionDetails: FC<IProps> = ({
 
   const shouldShowWinnersSection =
     Array.isArray(winners) && Boolean(winners.length);
-  const shouldShowContactsSection = Boolean(shops.length);
   const shouldShowFAQsSection = Boolean(faqs.length);
   const shouldShowWheelPrizesSection = Boolean(
     wheelPrizes.length || wheelBigPrizes.length
@@ -130,6 +131,7 @@ const PromotionDetails: FC<IProps> = ({
         )}
         <PrizesWrap id={PromotionDetailsPageSections.prizes}>
           <Garland src={garland} alt='' />
+          <Garland5 src={garland5} alt='' />
           {shouldShowOtherPrizesSection && (
             <PromotionPrizes
               prizes={otherPrizes}
@@ -140,7 +142,7 @@ const PromotionDetails: FC<IProps> = ({
               isShowRegCodeLink={isShowRegCodeLink}
             />
           )}
-          {shouldShowWheelPrizesSection && (
+          {shouldShowWheelPrizesSection && actionType !== 2 && (
             <PromotionPrizes
               logo={<PrizesWheelLogo />}
               prizes={wheelPrizes}
@@ -162,18 +164,16 @@ const PromotionDetails: FC<IProps> = ({
           />
         )}
         {shouldShowWinnersSection && <PromotionWinners winners={winners} />}
-        {shouldShowContactsSection && (
-          <PromotionContacts
-            shops={shops}
-            hotLineEmail={hotLineEmail}
-            hotLinePhone={hotLinePhone}
-            logoUrl={logoUrl}
-            bannerDt={thirdBannerDtUrl}
-            bannerMob={thirdBannerMobUrl}
-            isNationalPromotion={isNationalPromotion}
-            validHotLinePhone={validHotLinePhone}
-          />
-        )}
+        <PromotionContacts
+          shops={shops}
+          hotLineEmail={hotLineEmail}
+          hotLinePhone={hotLinePhone}
+          logoUrl={logoUrl}
+          bannerDt={thirdBannerDtUrl}
+          bannerMob={thirdBannerMobUrl}
+          isNationalPromotion={isNationalPromotion}
+          validHotLinePhone={validHotLinePhone}
+        />
 
         <Garland2 src={garland2} alt='' />
         <Garland3 src={garland3} alt='' />

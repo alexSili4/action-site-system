@@ -16,6 +16,7 @@ import {
   getCurrentInputIndex,
   splitString,
   getPromotionByCodeError,
+  ga,
 } from '@/utils';
 import {
   IUseRegisterCodeForm,
@@ -23,6 +24,8 @@ import {
 } from '@/types/hooks.types';
 import promotionsService from '@/services/promotions.service';
 import { AxiosError } from 'axios';
+import { useAuthStore } from '@/store/store';
+import { selectUser } from '@/store/auth/selectors';
 
 const useRegisterCodeForm = ({
   onSuccessRegisterCode,
@@ -44,6 +47,7 @@ const useRegisterCodeForm = ({
   const codePart2 = watch('codePart2');
   const codePart3 = watch('codePart3');
   const defaultCode = searchParams.get(SearchParamsKeys.promocode) ?? '';
+  const user = useAuthStore(selectUser);
 
   useEffect(() => {
     const getPromotionByCode = async (code: string): Promise<void> => {
@@ -109,6 +113,12 @@ const useRegisterCodeForm = ({
   }) => {
     try {
       startRegisterCode();
+
+      ga.promoCodeRegistration({
+        promoCode: code,
+        userId: user.id,
+      });
+
       const response = await codesService.register({
         code,
         [csrfTokenName]: csrfToken,
@@ -126,6 +136,11 @@ const useRegisterCodeForm = ({
         updatePromotion(action);
         onSuccessRegisterCode(codeModel.id);
       }
+
+      ga.promoCodeRegistrationSuccess({
+        promoCode: code,
+        userId: user.id,
+      });
     } catch (error) {
       if (error instanceof Error) {
         const targetError: IRegisterCodeRes = JSON.parse(error.message);

@@ -43,3 +43,4 @@ export { default as getFinishedPromoLabel } from './getFinishedPromoLabel';
 export { default as getPromotionByCodeError } from './getPromotionByCodeError';
 export { default as getSortedCities } from './getSortedCities';
 export { default as getIsPromotionWheelType } from './getIsPromotionWheelType';
+export { default as ga } from './ga';

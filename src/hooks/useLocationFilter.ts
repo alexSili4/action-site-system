@@ -9,11 +9,7 @@ import {
 } from '@/store/cities/selectors';
 import { SearchParamsKeys, SectionsIds } from '@/constants';
 import { makeBlur, getShowLocationsBtnTitle, smoothScroll } from '@/utils';
-import {
-  AnchorClickEvent,
-  BtnClickEvent,
-  IGeneralOutletContext,
-} from '@/types/types';
+import { BtnClickEvent, IGeneralOutletContext } from '@/types/types';
 import {
   IUseLocationFilterProps,
   IUseLocationFilter,
@@ -63,9 +59,7 @@ const useLocationFilter = ({
     }
   };
 
-  const onLocationLinkClick = (e: AnchorClickEvent) => {
-    makeBlur(e.currentTarget);
-
+  const onLocationLinkClick = () => {
     toggleShowLocationList();
 
     if (toggleShowSelectPromotionsLocationModalWin) {

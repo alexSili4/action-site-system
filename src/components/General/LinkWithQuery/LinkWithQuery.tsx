@@ -5,7 +5,7 @@ import { Symbols } from '@/constants';
 import { AnchorClickEvent } from '@/types/types';
 import { FC } from 'react';
 
-const LinkWithQuery: FC<IProps> = ({ children, to, state }) => {
+const LinkWithQuery: FC<IProps> = ({ children, to, state, action }) => {
   const { search } = useLocation();
   const [toPath = '', hash = ''] = to.split(Symbols.hash);
 
@@ -14,6 +14,7 @@ const LinkWithQuery: FC<IProps> = ({ children, to, state }) => {
 
   const onLinkClick = (e: AnchorClickEvent) => {
     const { hash } = e.currentTarget;
+    action && action();
 
     if (!hash) {
       return;

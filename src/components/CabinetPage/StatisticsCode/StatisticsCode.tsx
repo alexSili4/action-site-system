@@ -47,6 +47,7 @@ const StatisticsCode: FC<IProps> = ({
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
     isSuccessStatus,
+    actionType,
   });
   const cabinetState = useCabinetState();
   const isPromotionWheelType = getIsPromotionWheelType(actionType);

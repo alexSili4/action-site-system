@@ -30,6 +30,7 @@ export type UserCodes = IUserCode[];
 export interface IGetUserCodeMessage {
   isSuccessStatus: boolean;
   isErrorStatus: boolean;
+  actionType: ActionType;
 }
 
 export interface IGetClientCodesProps {

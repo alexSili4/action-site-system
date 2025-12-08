@@ -94,7 +94,7 @@ export interface IUseLocationFilter {
   isBigSize: boolean;
   toggleShowLocationList: Func;
   onShowListBtnClick: OnBtnClickFunc;
-  onLocationLinkClick: OnAnchorClickFunc;
+  onLocationLinkClick: Func;
 }
 
 export interface IUsePromotionsList {
