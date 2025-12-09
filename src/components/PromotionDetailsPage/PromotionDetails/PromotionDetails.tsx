@@ -136,7 +136,7 @@ const PromotionDetails: FC<IProps> = ({
             <PromotionPrizes
               prizes={otherPrizes}
               bigPrizes={otherBigPrizes}
-              title='Призи головного розіграшу'
+              title='Приз головного розіграшу'
               description='Унікальний приз від головного партнера'
               showRegCodeLink={false}
               isShowRegCodeLink={isShowRegCodeLink}
