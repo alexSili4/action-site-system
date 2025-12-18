@@ -19,6 +19,7 @@ export const Container = styled.div<IStyledProps>`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     width: 300px;
+    aspect-ratio: 445/513;
     background-image: url(${({ bannerDt }) => bannerDt});
   }
 

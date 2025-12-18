@@ -44,13 +44,13 @@ export const Card = styled.div<IStyledProps>`
   padding: ${({ theme }) => `${theme.spacing(8)} ${theme.spacing(6)}`};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    height: 385px;
+    height: auto;
+    aspect-ratio: 1312/487;
     padding: ${({ theme }) => theme.spacing(5)};
     background-image: url(${({ mainBannerDt }) => mainBannerDt});
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    height: 485px;
     padding: ${({ theme }) => theme.spacing(14)};
   }
 `;

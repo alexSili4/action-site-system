@@ -22,7 +22,9 @@ const SentCertificateSection: FC<IProps> = ({
 
   const regCodeTimeMsg = 'Ваш акційний код буде зареєстровано протягом доби.';
   const userCodesMsg =
-    'Ви можете перевірити статус акційного коду та сертифікату у Вашому Особистому кабінеті.';
+    'Ви можете перевірити статус акційного коду у Вашому Особистому кабінеті.';
+  // const userCodesMsg =
+  //     'Ви можете перевірити статус акційного коду та сертифікату у Вашому Особистому кабінеті.';
   const message = isSuccessStatus
     ? userCodesMsg
     : `${regCodeTimeMsg} ${userCodesMsg}`;

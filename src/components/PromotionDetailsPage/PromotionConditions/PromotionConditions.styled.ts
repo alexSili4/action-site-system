@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   margin-top: ${({ theme }) => theme.spacing(12)};
+  padding-top: ${({ theme }) => theme.spacing(2)};
+  padding-bottom: ${({ theme }) => theme.spacing(2)};
+overflow:hidden;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-top: ${({ theme }) => theme.spacing(20)};

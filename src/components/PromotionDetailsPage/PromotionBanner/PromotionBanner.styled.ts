@@ -18,14 +18,14 @@ export const Container = styled.div<IStyledProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    height: 385px;
+    height: auto;
+    aspect-ratio: 1312/600;
     padding: ${({ theme }) =>
       `${theme.spacing(6)} ${theme.spacing(7)} ${theme.spacing(9)}`};
     background-image: url(${({ bannerDt }) => bannerDt});
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}px) {
-    height: 600px;
     padding: ${({ theme }) =>
       `${theme.spacing(12)} ${theme.spacing(14)} ${theme.spacing(18)}`};
   }

@@ -25,7 +25,8 @@ export const Container = styled.div<IStyledContainerProps>`
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    height: 430px;
+    height: auto;
+    aspect-ratio: 1312/600;
     padding: ${({ theme, isLogo }) =>
       `${theme.spacing(isLogo ? 6 : 12)} ${theme.spacing(10)}`};
     background-image: url(${({ imageUrl }) => imageUrl});
