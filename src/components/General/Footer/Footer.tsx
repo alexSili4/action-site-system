@@ -23,7 +23,7 @@ const Footer: FC<IProps> = ({ legalText }) => {
     >
       <SocialLinksList />
       <Copyright isRootPage={isRootPage}>
-        © 2010-2024 ТОВ "АТБ-Маркет". Всі права захищено.
+        © 2010-2026 ТОВ "АТБ-Маркет". Всі права захищено.
       </Copyright>
       <SunLink
         href='https://sun.agency/'
