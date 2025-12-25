@@ -14,40 +14,43 @@ const PromotionPrizesBanner: FC<IProps> = ({ prizes, logo }) => {
 
   return (
     <List>
-      {prizes.map(
-        (
-          { gift: { images, banner, banner_mob: bannerMob, partner } },
-          index
-        ) => {
-          const { logo: partnerLogo = '', name: partnerName } = partner ?? {};
-          const { image = '' } = images[0] || {};
+      {Array.isArray(prizes)
+        ? prizes.map(
+            (
+              { gift: { images, banner, banner_mob: bannerMob, partner } },
+              index
+            ) => {
+              const { logo: partnerLogo = '', name: partnerName } =
+                partner ?? {};
+              const { image = '' } = images[0] || {};
 
-          const imageMobUrl = getFileUrl(bannerMob ?? image);
-          const imageUrl = getFileUrl(banner ?? image);
-          const partnerLogoUrl = getFileUrl(partnerLogo);
+              const imageMobUrl = getFileUrl(bannerMob ?? image);
+              const imageUrl = getFileUrl(banner ?? image);
+              const partnerLogoUrl = getFileUrl(partnerLogo);
 
-          return (
-            <ListItem key={index}>
-              <Container
-                imageMobUrl={imageMobUrl}
-                imageUrl={imageUrl}
-                isLogo={isLogo}
-              >
-                <ImgWrap isLogo={isLogo}>
-                  {partnerLogoUrl && (
-                    <Image src={partnerLogoUrl} alt={partnerName} />
-                  )}
-                  {isLogo ? (
-                    logo
-                  ) : partnerLogoUrl ? (
-                    <Image src={partnerLogoUrl} alt={partnerName} />
-                  ) : null}
-                </ImgWrap>
-              </Container>
-            </ListItem>
-          );
-        }
-      )}
+              return (
+                <ListItem key={index}>
+                  <Container
+                    imageMobUrl={imageMobUrl}
+                    imageUrl={imageUrl}
+                    isLogo={isLogo}
+                  >
+                    <ImgWrap isLogo={isLogo}>
+                      {partnerLogoUrl && (
+                        <Image src={partnerLogoUrl} alt={partnerName} />
+                      )}
+                      {isLogo ? (
+                        logo
+                      ) : partnerLogoUrl ? (
+                        <Image src={partnerLogoUrl} alt={partnerName} />
+                      ) : null}
+                    </ImgWrap>
+                  </Container>
+                </ListItem>
+              );
+            }
+          )
+        : []}
     </List>
   );
 };

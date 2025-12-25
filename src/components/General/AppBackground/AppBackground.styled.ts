@@ -15,9 +15,11 @@ export const Background = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
   }
 `;
 

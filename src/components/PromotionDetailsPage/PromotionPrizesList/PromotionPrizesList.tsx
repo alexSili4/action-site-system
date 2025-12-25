@@ -7,11 +7,13 @@ import PromotionPrizeImgSlider from '@PromotionDetailsPageComponents/PromotionPr
 const PromotionPrizesList: FC<IProps> = ({ prizes }) => {
   return (
     <List>
-      {prizes.map((prize, index) => (
-        <ListItem key={index}>
-          <PromotionPrizeImgSlider prize={prize} />
-        </ListItem>
-      ))}
+      {Array.isArray(prizes)
+        ? prizes.map((prize, index) => (
+            <ListItem key={index}>
+              <PromotionPrizeImgSlider prize={prize} />
+            </ListItem>
+          ))
+        : []}
     </List>
   );
 };

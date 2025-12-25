@@ -34,10 +34,12 @@ export const Garland = styled.img`
   height: 798px;
   transform: translateX(-50%) translateY(-50%);
   pointer-events: none;
+  opacity: 0;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-      display: block;
+      opacity: 1;
     }
   }
 `;
@@ -49,12 +51,12 @@ export const Garland2 = styled.img`
   width: 290px;
   height: 188px;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
-    display: block;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
-      display: none;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      opacity: 1;
     }
   }
 `;
@@ -66,11 +68,11 @@ export const Garland3 = styled.img`
   width: 113px;
   height: 247px;
   pointer-events: none;
-
-  display: none;
+  opacity: 0;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
-    display: block;
+    opacity: 1;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
@@ -88,14 +90,14 @@ export const Garland4 = styled.img`
   width: 161px;
   height: 105px;
   pointer-events: none;
-
-  display: none;
+  opacity: 0;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
-    display: block;
+    opacity: 1;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-      display: none;
+      opacity: 0;
     }
   }
 `;
@@ -107,14 +109,14 @@ export const Garland5 = styled.img`
   height: 77px;
   transform: translateX(-50%);
   pointer-events: none;
-
-  display: none;
+  opacity: 0;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
-    display: block;
+    opacity: 1;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-      display: none;
+      opacity: 0;
     }
   }
 `;

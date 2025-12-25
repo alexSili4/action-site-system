@@ -50,9 +50,61 @@ export const StyledHeaderBackground = styled.div<IStyledHeaderBackgroundProps>`
   transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.header};
 
   body.${ClassNames.newYear} & {
-    background-image: url(${bgImg});
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    opacity: 0;
+  }
+`;
+
+export const StyledNewyearHeaderBackground = styled.div<IStyledHeaderBackgroundProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(${bgImg});
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.header};
+
+  body.${ClassNames.newYear} & {
+    opacity: ${({ isColoredBackground }) => (isColoredBackground ? 1 : 0)};
+  }
+`;
+
+export const NewYearToggleBtn = styled.button`
+  position: absolute;
+  top: 50%;
+  right: ${({ theme }) => theme.spacing(4)};
+  transform: translateY(-50%);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.white};
+  border: 4px solid ${({ theme }) => theme.colors.purple};
+  color: ${({ theme }) => theme.colors.purple};
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  body.${ClassNames.newYear} & {
+    background-color: ${({ theme }) => theme.colors.purple};
+    color: ${({ theme }) => theme.colors.white};
+    border-color: ${({ theme }) => theme.colors.white};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet - 1}px) {
+    right: ${({ theme }) => theme.spacing(2)};
+    width: 32px;
+    height: 32px;
+    border-width: 2px;
   }
 `;

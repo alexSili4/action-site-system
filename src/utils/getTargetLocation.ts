@@ -4,6 +4,6 @@ const getTargetLocation = ({
   cities,
   cityId,
 }: IGetLocationInfo): GetTargetLocation =>
-  cities.find(({ id }) => id === cityId);
+  Array.isArray(cities) ? cities.find(({ id }) => id === cityId) : undefined;
 
 export default getTargetLocation;

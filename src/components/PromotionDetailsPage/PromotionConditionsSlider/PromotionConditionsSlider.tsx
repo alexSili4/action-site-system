@@ -43,43 +43,45 @@ const PromotionConditionsSlider: FC<IProps> = ({
         [theme.breakpoints.desktop]: { slidesPerView: 3.077 },
       }}
     >
-      {conditions.map(
-        (
-          {
-            title,
-            gift_num: giftNum,
-            img_source_json: imgSourceJson,
-            main_img: mainImg,
-          },
-          idx
-        ) => {
-          const animationData = imgSourceJson && JSON.parse(imgSourceJson);
-          const isAnimation = Boolean(imgSourceJson);
-          const mainImgUrl = getFileUrl(mainImg);
+      {Array.isArray(conditions)
+        ? conditions.map(
+            (
+              {
+                title,
+                gift_num: giftNum,
+                img_source_json: imgSourceJson,
+                main_img: mainImg,
+              },
+              idx
+            ) => {
+              const animationData = imgSourceJson && JSON.parse(imgSourceJson);
+              const isAnimation = Boolean(imgSourceJson);
+              const mainImgUrl = getFileUrl(mainImg);
 
-          return (
-            <SwiperSlide key={idx}>
-              <Card>
-                <TitleWrap>
-                  <Title>{title}</Title>
-                </TitleWrap>
-                <Cover>
-                  {isAnimation ? (
-                    <PromotionConditionsListAnimation
-                      animationData={animationData}
-                    />
-                  ) : (
-                    <Image src={mainImgUrl} />
-                  )}
-                  <StepLabelWrap>
-                    <StepLabel>{giftNum}</StepLabel>
-                  </StepLabelWrap>
-                </Cover>
-              </Card>
-            </SwiperSlide>
-          );
-        }
-      )}
+              return (
+                <SwiperSlide key={idx}>
+                  <Card>
+                    <TitleWrap>
+                      <Title>{title}</Title>
+                    </TitleWrap>
+                    <Cover>
+                      {isAnimation ? (
+                        <PromotionConditionsListAnimation
+                          animationData={animationData}
+                        />
+                      ) : (
+                        <Image src={mainImgUrl} />
+                      )}
+                      <StepLabelWrap>
+                        <StepLabel>{giftNum}</StepLabel>
+                      </StepLabelWrap>
+                    </Cover>
+                  </Card>
+                </SwiperSlide>
+              );
+            }
+          )
+        : []}
       {slideHeight && (
         <SwiperSlide key={rulesPdf}>
           <Card>

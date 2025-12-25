@@ -114,6 +114,7 @@ export const Title = styled.h1`
   font-size: 16px;
   font-weight: 400;
   text-align: center;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
     color: rgba(255, 255, 255, 0.66);

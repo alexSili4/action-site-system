@@ -9,11 +9,12 @@ export const Container = styled.div`
   height: 100dvh;
   background-color: #162e5b;
   overflow: hidden;
-
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
-    display: block;
+    opacity: 1;
   }
 `;
 

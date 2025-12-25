@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { IStyledNavProps, IStyledLinkProps } from './NavBar.types';
 import { Link } from 'react-router-dom';
+import { ClassNames } from '@/constants';
 
 export const Nav = styled.nav<IStyledNavProps>`
   display: flex;
@@ -66,6 +67,12 @@ export const AtbLogoCap = styled.img<IStyledLinkProps>`
   width: 46px;
   height: 46px;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc.other};
+
+  body.${ClassNames.newYear} & {
+    opacity: 1;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     left: ${({ isRootPage }) => (isRootPage ? '24px' : '22px')};

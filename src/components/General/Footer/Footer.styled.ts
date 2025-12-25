@@ -24,6 +24,7 @@ export const Copyright = styled.p<IStyledProps>`
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 12px;
   font-weight: 400;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
     color: rgba(255, 255, 255, 0.66);
@@ -37,6 +38,7 @@ export const SunLink = styled.a<IStyledProps>`
   font-family: ${({ theme }) => theme.fontFamily.geologica};
   font-size: 12px;
   font-weight: 400;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
     color: rgba(255, 255, 255, 0.66);

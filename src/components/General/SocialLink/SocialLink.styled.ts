@@ -16,7 +16,8 @@ export const Link = styled.a`
     rgba(255, 255, 255, 0) 100%
   );
   background-color: #9066cc;
-  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other};
+  transition: box-shadow ${({ theme }) => theme.transitionDurationAndFunc.other},
+    background-color ${({ theme }) => theme.transitionDurationAndFunc.other};
 
   body.${ClassNames.newYear} & {
     background-color: #fd4b3c;

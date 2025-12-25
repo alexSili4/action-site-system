@@ -36,9 +36,9 @@ const PromotionFAQs: FC<IProps> = ({
       <PromotionSectionTitle title='Питання та відповіді' />
       <ContentWrap>
         <List>
-          {faqs.map((faq) => (
-            <PromotionFAQ faq={faq} key={faq.title} />
-          ))}
+          {Array.isArray(faqs)
+            ? faqs.map((faq) => <PromotionFAQ faq={faq} key={faq.title} />)
+            : []}
         </List>
         {shouldShowAdditionalIfo && (
           <AdditionalIfoWrap>

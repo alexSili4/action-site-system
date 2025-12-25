@@ -11,7 +11,7 @@ export interface ICity {
 export type Cities = ICity[];
 
 export interface IGetLocationInfo {
-  cities: Cities;
+  cities: Cities | undefined;
   cityId: number;
 }
 
