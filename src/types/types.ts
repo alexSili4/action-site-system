@@ -143,6 +143,7 @@ export interface IOutletContext
 export interface IGetCodeStatus {
   isSuccessStatus: boolean;
   isErrorStatus: boolean;
+  isCanceledStatus: boolean;
 }
 
 export interface IGetFinalTotalDegreesProps {

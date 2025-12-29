@@ -43,11 +43,13 @@ const StatisticsCode: FC<IProps> = ({
   shouldShowCodeLinks,
   marks,
   actionType,
+  isCanceledStatus,
 }) => {
   const userCodeMessage = getUserCodeMessage({
     isErrorStatus,
     isSuccessStatus,
     actionType,
+    isCanceledStatus,
   });
   const cabinetState = useCabinetState();
   const isPromotionWheelType = getIsPromotionWheelType(actionType);
@@ -97,7 +99,7 @@ const StatisticsCode: FC<IProps> = ({
       <MessagesContainer>
         <MessageWrap>
           <CertificateStatusLabel
-            isErrorStatus={isErrorStatus}
+            isErrorStatus={isErrorStatus || isCanceledStatus}
             isSuccessStatus={isSuccessStatus}
           />
           <Message>{userCodeMessage}</Message>

@@ -1,7 +1,7 @@
 import { ActionType } from './promotion.types';
 import { NumberOrNull, StringOrNull } from './types';
 
-export type CodeStatus = 0 | 1 | 2; // 0 - pending, 1 - success, 2 - error
+export type CodeStatus = 0 | 1 | 2 | 5; // 0 - pending, 1 - success, 2 - error, 5 - canceled
 
 export interface IUserCode {
   winner_id: NumberOrNull;
@@ -23,22 +23,4 @@ export interface IUserCode {
   present_gift_partner_logo: StringOrNull;
   certificate_gift_partner_logo: StringOrNull;
   marks: NumberOrNull;
-}
-
-export type UserCodes = IUserCode[];
-
-export interface IGetUserCodeMessage {
-  isSuccessStatus: boolean;
-  isErrorStatus: boolean;
-  actionType: ActionType;
-}
-
-export interface IGetClientCodesProps {
-  page: number;
-  sort: string;
-}
-
-export interface IGetClientCodes {
-  data: UserCodes;
-  totalPages: number;
 }

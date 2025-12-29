@@ -1,9 +1,9 @@
 import { GetStateFunc, SetStateFunc } from './store.types';
 import { StringOrNull } from './types';
-import { UserCodes } from './userCode.types';
+import { IUserCode } from './userCode.types';
 
 export interface IUserCodesInitialState {
-  items: UserCodes;
+  items: IUserCode[];
   totalPages: number;
   isLoading: boolean;
   isLoaded: boolean;
@@ -13,7 +13,7 @@ export interface IUserCodesInitialState {
 export interface IUserCodesState extends IUserCodesInitialState {
   getUserCodes: (
     data: IGetUserCodesOperationData
-  ) => Promise<UserCodes | undefined>;
+  ) => Promise<IUserCode[] | undefined>;
 }
 
 export type GetUserCodesStateFunc = GetStateFunc<IUserCodesState>;

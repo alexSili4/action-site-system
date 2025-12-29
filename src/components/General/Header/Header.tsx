@@ -3,7 +3,6 @@ import {
   StyledHeaderWrap,
   StyledHeader,
   StyledHeaderBackground,
-  NewYearToggleBtn,
   StyledNewyearHeaderBackground,
 } from './Header.styled';
 import { IProps } from './Header.types';
@@ -11,8 +10,6 @@ import { useIsScrollingUp } from '@/hooks';
 // components
 import Container from '@GeneralComponents/Container';
 import NavBar from '@GeneralComponents/NavBar';
-import { PiSnowflake } from 'react-icons/pi';
-import { ClassNames } from '@/constants';
 
 const Header: FC<IProps> = ({
   isDesktop,
@@ -43,12 +40,6 @@ const Header: FC<IProps> = ({
       )}
       <StyledHeader>
         <Container>
-          <NewYearToggleBtn
-            type='button'
-            onClick={() => document.body.classList.toggle(ClassNames.newYear)}
-          >
-            <PiSnowflake size={24} />
-          </NewYearToggleBtn>
           <NavBar
             isDesktop={isDesktop}
             isShowRegCodeLink={isShowRegCodeLink}

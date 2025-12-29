@@ -51,7 +51,7 @@ const StatisticsCodesCategoryContent: FC = () => {
                 const partnerLogoUrl = getFileUrl(
                   presentGiftPartnerLogo ?? certificateGiftPartnerLogo ?? ''
                 );
-                const { isErrorStatus, isSuccessStatus } =
+                const { isErrorStatus, isSuccessStatus, isCanceledStatus } =
                   getCodeStatus(codeStatus);
                 const codeCreatedAtDate = formatDate({
                   date: codeCreatedAt * 1000,
@@ -77,6 +77,7 @@ const StatisticsCodesCategoryContent: FC = () => {
                   <ListItem key={code}>
                     <StatisticsCode
                       code={code}
+                      isCanceledStatus={isCanceledStatus}
                       codeCreatedAt={codeCreatedAtDate}
                       isErrorStatus={isErrorStatus}
                       isSuccessStatus={isSuccessStatus}

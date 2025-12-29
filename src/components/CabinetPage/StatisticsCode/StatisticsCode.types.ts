@@ -17,6 +17,7 @@ export interface IProps {
   shouldShowCodeLinks: boolean;
   marks: NumberOrNull;
   actionType: ActionType;
+  isCanceledStatus: boolean;
 }
 
 export interface IStyledCertificateWrapProps {

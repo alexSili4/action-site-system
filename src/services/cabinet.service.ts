@@ -1,10 +1,6 @@
 import { Headers } from '@/constants';
 import HttpService from './http.service';
-import {
-  UserCodes,
-  IGetClientCodes,
-  IGetClientCodesProps,
-} from '@/types/userCode.types';
+import { IUserCode } from '@/types/userCode.types';
 import {
   UserPrizes,
   IGetClientPrizes,
@@ -14,6 +10,16 @@ import { getSortType } from '@/utils';
 import { IUserCertificateWithDetails } from '@/types/userCertificateWithDetails.types';
 import { IUserPrizeWithDetails } from '@/types/userPrizeWithDetails.types';
 import { IUserCodeWithDetails } from '@/types/userCodeWithDetails.types';
+
+interface IGetClientCodesProps {
+  page: number;
+  sort: string;
+}
+
+interface IGetClientCodes {
+  data: IUserCode[];
+  totalPages: number;
+}
 
 class CabinetService extends HttpService {
   constructor() {
@@ -26,7 +32,7 @@ class CabinetService extends HttpService {
   }: IGetClientCodesProps): Promise<IGetClientCodes> {
     const sortType = getSortType(sort);
 
-    const { data, headers } = await this.get<UserCodes>(
+    const { data, headers } = await this.get<IUserCode[]>(
       {
         url: `client/info/my-codes?page=${page}&per-page=4&sort=${sortType}`,
       },

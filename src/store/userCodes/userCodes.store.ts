@@ -7,7 +7,7 @@ import {
   IUserCodesState,
   SetUserCodesStateFunc,
 } from '@/types/userCodesState.types';
-import { UserCodes } from '@/types/userCode.types';
+import { IUserCode } from '@/types/userCode.types';
 
 const userCodesSlice = (
   set: SetUserCodesStateFunc,
@@ -16,7 +16,7 @@ const userCodesSlice = (
   ...initialState,
   getUserCodes: async (
     data: IGetUserCodesOperationData
-  ): Promise<UserCodes | undefined> =>
+  ): Promise<IUserCode[] | undefined> =>
     await getUserCodes({
       set: setState({ set, name: 'getUserCodes' }),
       get,
