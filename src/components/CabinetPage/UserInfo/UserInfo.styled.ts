@@ -19,7 +19,8 @@ export const Container = styled.div`
 export const InfoBtn = styled.button<IStyledInfoBtnProps>`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: ${({ theme }) => theme.spacing(2)};
+
   width: 100%;
   padding: ${({ theme }) => `${theme.spacing(2)} 0px`};
   border: none;
@@ -73,20 +74,40 @@ export const InfoList = styled.ul<IStyledProps>`
   }
 `;
 
-export const ListItem = styled.li``;
-
-export const InfoWrap = styled.div`
+export const ListItem = styled.li`
   position: relative;
-  display: flex;
-  align-items: center;
+`;
+
+export const InfoWrap = styled.input`
+  width: 100%;
   height: 48px;
   padding-left: ${({ theme }) => theme.spacing(4)};
+  padding-right: ${({ theme }) => theme.spacing(4)};
   border: 1px solid #e3e7ed;
   border-radius: 8px;
+  background-color: transparent;
+  outline: none;
+
+  color: #383e45;
+  font-family: ${({ theme }) => theme.fontFamily.geologica};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.57;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: 56px;
     padding-left: ${({ theme }) => theme.spacing(5)};
+    padding-right: ${({ theme }) => theme.spacing(5)};
+    font-size: 16px;
+    line-height: 1.38;
+  }
+
+  &:is(:focus, :hover) {
+    border-color: ${({ readOnly }) => !readOnly && '#a282f7'};
+  }
+
+  &:read-only {
+    cursor: default;
   }
 `;
 
@@ -111,15 +132,14 @@ export const Title = styled.p`
   line-height: 1.4;
 `;
 
-export const Data = styled.p`
-  color: #383e45;
-  font-family: ${({ theme }) => theme.fontFamily.geologica};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.57;
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
+export const EditUserBtnWrap = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    font-size: 16px;
-    line-height: 1.38;
+    display: none;
   }
 `;

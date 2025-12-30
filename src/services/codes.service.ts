@@ -4,7 +4,6 @@ import {
   ISpinWheelResult,
   Partners,
   IUserData,
-  IUpdateUserDataProps,
   IUserDataWithCode,
 } from '@/types/code.types';
 import HttpService from './http.service';
@@ -60,13 +59,10 @@ class CodesService extends HttpService {
     return response.data;
   }
 
-  async updateUserData({
-    codeId,
-    ...data
-  }: IUpdateUserDataProps): Promise<IUserDataWithCode> {
+  async updateUserData({ ...data }: IUserData): Promise<IUserDataWithCode> {
     const response = await this.post<IUserDataWithCode, IUserData>(
       {
-        url: `client/info/name-form?code_id=${codeId}`,
+        url: 'client/info/name-form',
         data,
       },
       false

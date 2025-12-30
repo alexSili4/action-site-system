@@ -1,10 +1,24 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import { Container, Title } from './CabinetHeader.styled';
+import EditUserBtn from '@CabinetPageComponents/EditUserBtn';
 
-const CabinetHeader: FC = () => {
+const CabinetHeader: FC<{
+  isEdit: boolean;
+  isSubmitting: boolean;
+  onEditBtnClick: MouseEventHandler;
+  title: string;
+  editBtnLabel: string;
+}> = ({ onEditBtnClick, title, isSubmitting, editBtnLabel, isEdit }) => {
   return (
     <Container>
-      <Title>Основна інформація</Title>
+      <Title>{title}</Title>
+
+      <EditUserBtn
+        onClick={onEditBtnClick}
+        disabled={isSubmitting}
+        label={editBtnLabel}
+        showIcon={!isEdit}
+      />
     </Container>
   );
 };

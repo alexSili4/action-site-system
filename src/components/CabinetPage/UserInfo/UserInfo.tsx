@@ -1,12 +1,10 @@
 import { theme } from '@/constants';
-import { selectUser } from '@/store/auth/selectors';
-import { useAuthStore } from '@/store/store';
 import { BtnClickEvent, ListRef } from '@/types/types';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, MouseEventHandler, useEffect, useRef, useState } from 'react';
 import { FaChevronUp } from 'react-icons/fa';
 import {
   Container,
-  Data,
+  Controls,
   InfoBtn,
   InfoBtnTitle,
   InfoList,
@@ -15,13 +13,31 @@ import {
   ListItem,
   Title,
   TitleWrap,
+  EditUserBtnWrap,
 } from './UserInfo.styled';
 import { makeBlur } from '@/utils';
+import EditUserBtn from '@CabinetPageComponents/EditUserBtn';
+import { UseFormRegister } from 'react-hook-form';
+import { IUserFormInput } from '@/types/cabinet.types';
 
-const UserInfo: FC = () => {
-  const { email, name, phone } = useAuthStore(selectUser);
+const UserInfo: FC<{
+  isEdit: boolean;
+  isSubmitting: boolean;
+  onEditBtnClick: MouseEventHandler;
+  title: string;
+  editBtnLabel: string;
+  register: UseFormRegister<IUserFormInput>;
+}> = ({
+  isEdit,
+  isSubmitting,
+  onEditBtnClick,
+  title,
+  editBtnLabel,
+  register,
+}) => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
   const infoRef = useRef<ListRef>(null);
+
   const scrollHeight = infoRef.current?.scrollHeight ?? 0;
 
   useEffect(() => {
@@ -40,35 +56,48 @@ const UserInfo: FC = () => {
 
   return (
     <Container>
-      <InfoBtn type='button' onClick={onInfoBtnClick} showInfo={showInfo}>
-        <InfoBtnTitle>Основна інформація</InfoBtnTitle>
-        <FaChevronUp size={theme.iconSizes.userInfoBtn} />
-      </InfoBtn>
+      <Controls>
+        <InfoBtn type='button' onClick={onInfoBtnClick} showInfo={showInfo}>
+          <FaChevronUp size={theme.iconSizes.userInfoBtn} />
+          <InfoBtnTitle>{title}</InfoBtnTitle>
+        </InfoBtn>
+
+        <EditUserBtnWrap>
+          <EditUserBtn
+            onClick={onEditBtnClick}
+            disabled={isSubmitting}
+            label={editBtnLabel}
+            showIcon={!isEdit}
+          />
+        </EditUserBtnWrap>
+      </Controls>
       <InfoListWrap showInfo={showInfo}>
         <InfoList scrollHeight={scrollHeight} showInfo={showInfo} ref={infoRef}>
           <ListItem>
-            <InfoWrap>
-              <TitleWrap>
-                <Title>Ім&#8217;я</Title>
-              </TitleWrap>
-              <Data>{name}</Data>
-            </InfoWrap>
+            <TitleWrap>
+              <Title>Ім&#8217;я</Title>
+            </TitleWrap>
+            <InfoWrap
+              {...register('name')}
+              readOnly={!isEdit}
+              autoComplete='name'
+            />
           </ListItem>
           <ListItem>
-            <InfoWrap>
-              <TitleWrap>
-                <Title>Телефон</Title>
-              </TitleWrap>
-              <Data>{phone}</Data>
-            </InfoWrap>
+            <TitleWrap>
+              <Title>Телефон</Title>
+            </TitleWrap>
+            <InfoWrap {...register('phone')} readOnly autoComplete='tel' />
           </ListItem>
           <ListItem>
-            <InfoWrap>
-              <TitleWrap>
-                <Title>Email</Title>
-              </TitleWrap>
-              <Data>{email}</Data>
-            </InfoWrap>
+            <TitleWrap>
+              <Title>Email</Title>
+            </TitleWrap>
+            <InfoWrap
+              {...register('email')}
+              readOnly={!isEdit}
+              autoComplete='email'
+            />
           </ListItem>
         </InfoList>
       </InfoListWrap>

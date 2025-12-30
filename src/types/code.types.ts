@@ -78,7 +78,7 @@ export interface ISpinWheelResult {
 export interface IUserData {
   name: StringOrNull;
   email: StringOrNull;
-  send_to_email_status: boolean;
+  send_to_email_status?: boolean;
 }
 
 export interface IUserDataWithCode extends IUserData {
@@ -89,10 +89,6 @@ export interface IUserDataWithCode extends IUserData {
 }
 
 export type UpdateUserDataWithCodeFunc = (data: IUserDataWithCode) => void;
-
-export interface IUpdateUserDataProps extends IUserData {
-  codeId: number;
-}
 
 export interface IRegisterCodePageState {
   defaultCodeId?: number;

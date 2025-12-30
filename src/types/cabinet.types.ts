@@ -8,3 +8,9 @@ export interface ICabinetState {
 export type CabinetState = {
   state: Partial<ICabinetState>;
 };
+
+export interface IUserFormInput {
+  name: string;
+  phone: string;
+  email: string;
+}
