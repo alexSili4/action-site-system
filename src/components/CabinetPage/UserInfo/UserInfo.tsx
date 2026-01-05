@@ -37,12 +37,19 @@ const UserInfo: FC<{
 }) => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
   const infoRef = useRef<ListRef>(null);
+  const nameInputRef = useRef<HTMLInputElement | null>(null);
 
   const scrollHeight = infoRef.current?.scrollHeight ?? 0;
 
   useEffect(() => {
     setShowInfo(true);
   }, []);
+
+  useEffect(() => {
+    if (isEdit && nameInputRef.current) {
+      nameInputRef.current.focus();
+    }
+  }, [isEdit]);
 
   const toggleSetShowInfo = () => {
     setShowInfo((prevState) => !prevState);
@@ -53,6 +60,10 @@ const UserInfo: FC<{
 
     toggleSetShowInfo();
   };
+
+  const { ref: nameRegisterRef, ...nameRegisterProps } = register('name', {
+    required: true,
+  });
 
   return (
     <Container>
@@ -78,7 +89,11 @@ const UserInfo: FC<{
               <Title>Ім&#8217;я</Title>
             </TitleWrap>
             <InfoWrap
-              {...register('name')}
+              {...nameRegisterProps}
+              ref={(element) => {
+                nameRegisterRef(element);
+                nameInputRef.current = element;
+              }}
               readOnly={!isEdit}
               autoComplete='name'
             />
@@ -94,7 +109,7 @@ const UserInfo: FC<{
               <Title>Email</Title>
             </TitleWrap>
             <InfoWrap
-              {...register('email')}
+              {...register('email', { required: true })}
               readOnly={!isEdit}
               autoComplete='email'
             />
