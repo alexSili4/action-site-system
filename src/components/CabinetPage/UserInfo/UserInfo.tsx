@@ -17,7 +17,7 @@ import {
 } from './UserInfo.styled';
 import { makeBlur } from '@/utils';
 import EditUserBtn from '@CabinetPageComponents/EditUserBtn';
-import { UseFormRegister } from 'react-hook-form';
+import { UseFormRegister, useFormContext } from 'react-hook-form';
 import { IUserFormInput } from '@/types/cabinet.types';
 
 const UserInfo: FC<{
@@ -27,6 +27,7 @@ const UserInfo: FC<{
   title: string;
   editBtnLabel: string;
   register: UseFormRegister<IUserFormInput>;
+  allFieldsFilled?: boolean;
 }> = ({
   isEdit,
   isSubmitting,
@@ -34,12 +35,18 @@ const UserInfo: FC<{
   title,
   editBtnLabel,
   register,
+  allFieldsFilled,
 }) => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
   const infoRef = useRef<ListRef>(null);
   const nameInputRef = useRef<HTMLInputElement | null>(null);
+  const { watch } = useFormContext<IUserFormInput>();
 
   const scrollHeight = infoRef.current?.scrollHeight ?? 0;
+
+  // Отримуємо поточні значення полів для задізейблювання
+  const nameValue = watch('name') || '';
+  const emailValue = watch('email') || '';
 
   useEffect(() => {
     setShowInfo(true);
@@ -73,14 +80,16 @@ const UserInfo: FC<{
           <InfoBtnTitle>{title}</InfoBtnTitle>
         </InfoBtn>
 
-        <EditUserBtnWrap>
-          <EditUserBtn
-            onClick={onEditBtnClick}
-            disabled={isSubmitting}
-            label={editBtnLabel}
-            showIcon={!isEdit}
-          />
-        </EditUserBtnWrap>
+        {!allFieldsFilled && (
+          <EditUserBtnWrap>
+            <EditUserBtn
+              onClick={onEditBtnClick}
+              disabled={isSubmitting}
+              label={editBtnLabel}
+              showIcon={!isEdit}
+            />
+          </EditUserBtnWrap>
+        )}
       </Controls>
       <InfoListWrap showInfo={showInfo}>
         <InfoList scrollHeight={scrollHeight} showInfo={showInfo} ref={infoRef}>
@@ -95,6 +104,7 @@ const UserInfo: FC<{
                 nameInputRef.current = element;
               }}
               readOnly={!isEdit}
+              disabled={nameValue !== ''}
               autoComplete='name'
             />
           </ListItem>
@@ -111,6 +121,7 @@ const UserInfo: FC<{
             <InfoWrap
               {...register('email', { required: true })}
               readOnly={!isEdit}
+              disabled={emailValue !== ''}
               autoComplete='email'
             />
           </ListItem>

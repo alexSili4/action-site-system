@@ -8,17 +8,27 @@ const CabinetHeader: FC<{
   onEditBtnClick: MouseEventHandler;
   title: string;
   editBtnLabel: string;
-}> = ({ onEditBtnClick, title, isSubmitting, editBtnLabel, isEdit }) => {
+  allFieldsFilled?: boolean;
+}> = ({
+  onEditBtnClick,
+  title,
+  isSubmitting,
+  editBtnLabel,
+  isEdit,
+  allFieldsFilled,
+}) => {
   return (
     <Container>
       <Title>{title}</Title>
 
-      <EditUserBtn
-        onClick={onEditBtnClick}
-        disabled={isSubmitting}
-        label={editBtnLabel}
-        showIcon={!isEdit}
-      />
+      {!allFieldsFilled && (
+        <EditUserBtn
+          onClick={onEditBtnClick}
+          disabled={isSubmitting}
+          label={editBtnLabel}
+          showIcon={!isEdit}
+        />
+      )}
     </Container>
   );
 };

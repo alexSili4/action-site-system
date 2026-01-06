@@ -8,7 +8,7 @@ import codesService from '@/services/codes.service';
 import { useCsrfToken } from '@/hooks';
 import { selectUser } from '@/store/auth/selectors';
 import { useAuthStore } from '@/store/store';
-import { useForm } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import { IUserFormInput } from '@/types/cabinet.types';
 
 const UserInfoContainer: FC = () => {
@@ -16,18 +16,21 @@ const UserInfoContainer: FC = () => {
   const { email, name, phone } = useAuthStore(selectUser);
   const { name: tokenName, token } = useCsrfToken();
 
-  const {
-    register,
-    reset,
-    handleSubmit,
-    formState: { isSubmitting },
-  } = useForm<IUserFormInput>({
+  const methods = useForm<IUserFormInput>({
     defaultValues: {
       name: name || '',
       phone: phone ? String(phone) : '',
       email: email || '',
     },
   });
+
+  const {
+    register,
+    reset,
+    handleSubmit,
+    watch,
+    formState: { isSubmitting },
+  } = methods;
 
   useEffect(() => {
     reset({
@@ -63,34 +66,42 @@ const UserInfoContainer: FC = () => {
     }
   };
 
-  const title = isEdit ? 'Редагувати профіль' : 'Основна інформація';
+  const nameValue = watch('name') || '';
+  const emailValue = watch('email') || '';
+  const allFieldsFilled = nameValue !== '' && emailValue !== '';
+
+  const title = isEdit ? 'Заповнити профіль' : 'Основна інформація';
   const editBtnLabel = isSubmitting
     ? 'Збереження...'
     : isEdit
     ? 'Зберегти зміни'
-    : 'Редагувати';
+    : 'Заповнити';
 
   return (
-    <Container>
-      <CabinetHeader
-        editBtnLabel={editBtnLabel}
-        isEdit={isEdit}
-        isSubmitting={isSubmitting}
-        onEditBtnClick={onEditBtnClick}
-        title={title}
-      />
-      <ContentWrap>
-        <UserInfo
+    <FormProvider {...methods}>
+      <Container>
+        <CabinetHeader
           editBtnLabel={editBtnLabel}
           isEdit={isEdit}
           isSubmitting={isSubmitting}
           onEditBtnClick={onEditBtnClick}
-          register={register}
           title={title}
+          allFieldsFilled={allFieldsFilled}
         />
-        <LogOutBtn />
-      </ContentWrap>
-    </Container>
+        <ContentWrap>
+          <UserInfo
+            editBtnLabel={editBtnLabel}
+            isEdit={isEdit}
+            isSubmitting={isSubmitting}
+            onEditBtnClick={onEditBtnClick}
+            register={register}
+            title={title}
+            allFieldsFilled={allFieldsFilled}
+          />
+          <LogOutBtn />
+        </ContentWrap>
+      </Container>
+    </FormProvider>
   );
 };
 
